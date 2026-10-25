@@ -50,8 +50,12 @@
     "state/manifests/ai-course.jsonl",
     "reports/framework/"
   ],
-  "open_findings": ["F-0001", "F-0002", "F-0003"],
-  "git_state_note": "commit created after this checkpoint; see handoff for hash",
+  "open_findings": [
+    "F-0001",
+    "F-0002",
+    "F-0003"
+  ],
+  "git_state_note": "work commit 8c0f9c176761114fc529806c12dc10c60adb8dca (BOOT-000); evidence reports regenerated at that commit; state/evidence commit follows",
   "safe_resume": {
     "command": "PYTHONPATH=src python3 -m vault_unification selftest && PYTHONPATH=src python3 -m pytest tests -q",
     "next_task": "BOOT-001"

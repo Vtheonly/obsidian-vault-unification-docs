@@ -5,9 +5,8 @@
 - Current milestone: Milestone 1A — Python framework foundation (COMPLETED);
   entering Milestone 0 formalization (BOOT-001)
 - Current task ID: BOOT-001 (status: ready)
-- Current Git commit: (recorded after this session's push; run
-  `git log -1 --format=%H` to obtain — the state commit references the work
-  commit)
+- Current Git commit: 8c0f9c176761114fc529806c12dc10c60adb8dca (BOOT-000
+  work commit) followed by the evidence/state commit of this session
 - Working tree status: clean after commit/push (verify with `git status`)
 - Registry/checkpoint version: task-queue v2 (BOOT-000 completed with
   tests_run evidence); checkpoint `state/checkpoints/checkpoint-2026-10-25-boot-000.json`

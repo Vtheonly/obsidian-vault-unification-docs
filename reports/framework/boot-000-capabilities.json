@@ -1,7 +1,7 @@
 {
   "framework_version": "0.1.0",
   "verified": true,
-  "pytest_command": "/home/z/.venv/bin/python3 -m pytest -q --json-report --json-report-file=/tmp/vu-pytest-sbovs0hh.json tests/test_cli.py tests/test_inventory.py tests/test_linkcheck.py tests/test_mdextract.py tests/test_pathsafety.py tests/test_registry.py tests/test_reporting.py tests/test_search.py tests/test_selftest.py",
+  "pytest_command": "/home/z/.venv/bin/python3 -m pytest -q --json-report --json-report-file=/tmp/vu-pytest-xv9vxcl0.json tests/test_cli.py tests/test_inventory.py tests/test_linkcheck.py tests/test_mdextract.py tests/test_pathsafety.py tests/test_registry.py tests/test_reporting.py tests/test_search.py tests/test_selftest.py",
   "pytest_returncode": 0,
   "tests_total": 138,
   "tests_passed": 138,
@@ -228,7 +228,7 @@
       "verify": true,
       "report": "/home/z/vault-repo/reports/framework/boot-000-capabilities.json"
     },
-    "utc_timestamp": "2026-10-25T16:24:52+00:00",
-    "git_commit": "af4d5f4"
+    "utc_timestamp": "2026-10-25T16:32:47+00:00",
+    "git_commit": "8c0f9c1"
   }
 }

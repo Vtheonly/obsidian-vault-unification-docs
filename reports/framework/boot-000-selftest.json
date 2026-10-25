@@ -3,9 +3,7 @@
   "result": {
     "ok": true,
     "mandatory_checks_passed": true,
-    "optional_missing": [
-      "_pytest_jsonreport"
-    ],
+    "optional_missing": [],
     "checks": [
       {
         "name": "python_version",
@@ -39,10 +37,10 @@
         "detail": "test runner (run-tests, capabilities --verify)"
       },
       {
-        "name": "optional:_pytest_jsonreport",
+        "name": "optional:pytest_jsonreport",
         "required": false,
-        "ok": false,
-        "detail": "MISSING - machine-readable test reports (run-tests) degraded"
+        "ok": true,
+        "detail": "machine-readable test reports (run-tests)"
       }
     ],
     "platform": {
@@ -61,7 +59,7 @@
       "command": "selftest",
       "report": "/home/z/vault-repo/reports/framework/boot-000-selftest.json"
     },
-    "utc_timestamp": "2026-10-25T16:22:17+00:00",
-    "git_commit": "af4d5f4"
+    "utc_timestamp": "2026-10-25T16:30:28+00:00",
+    "git_commit": "8c0f9c1"
   }
 }
