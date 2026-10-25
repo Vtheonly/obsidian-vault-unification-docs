@@ -99,3 +99,17 @@ If a required capability is missing:
 Do not pause every task to build speculative features. Add tools incrementally when needed, while ensuring the mandatory foundation and omission-detection pilot pass before large-scale synthesis. For unsafe or inherently semantic work, explain why deterministic automation is insufficient and use structured evidence bundles and independent review.
 
 Every task must state whether it builds/changes framework capabilities or consumes existing ones. Any framework change must be reviewed for source immutability, output path safety, deterministic behavior, and regression risk.
+
+## Additional operating rules for large-corpus work
+
+### Tool-first mechanical operations
+Do not rely on model attention or manually estimated counts for exhaustive work. Use repository tools for file and folder enumeration, hashing, term and alias counts, regex search, exact/normalized matching, line and heading locators, wikilink/anchor resolution, code/math extraction, source/output diffs, and provenance joins. If a recurring deterministic operation lacks a tested command, create a bounded tooling task, implement it, add normal/boundary/malformed-input tests, document its CLI, and run it before relying on its results.
+
+### Bounded batches and context hygiene
+Choose tasks small enough to finish with time for integration tests and a handoff. Do not fill the context window as a target. Save durable progress after each meaningful batch. If context quality, tool reliability, or remaining execution time becomes doubtful, stop safely, persist exact state, and hand off instead of guessing or claiming completion.
+
+### Subagent isolation
+Subagents may research or draft within explicitly assigned boundaries. Specify input files, output files, expected schemas, acceptance criteria, and prohibited side effects. Treat all subagent output as unverified. The coordinating agent integrates changes, runs deterministic checks, checks semantic completeness, and prevents concurrent edits to shared files or registry records.
+
+### Required checkpoint evidence
+A handoff must distinguish planned, attempted, completed, and independently verified work. Include actual command strings, exit codes, report paths, counts with denominators, known parser limitations, unresolved findings, and the precise next task. Never fabricate test output or infer that a task succeeded because a file exists.
