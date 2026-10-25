@@ -49,3 +49,17 @@ The AI agent—not the user—must implement and maintain a Python framework for
 The framework must support inventory and statistics, exact/normalized/fuzzy searching and matching, controlled extraction/chunking/splitting/output operations, duplicate detection, structural and Obsidian integrity checks, registry and provenance validation, automated test execution, omission/corruption detection, regression comparison, and machine-readable reports. This is an evolving capability set: the agent must add further tools whenever concrete work demonstrates a useful, safe, testable need.
 
 Automation does not remove the requirement for semantic reasoning. Scripts measure and validate defined properties; evidence-based semantic review determines whether knowledge and reasoning survived. Neither should impersonate the other.
+
+## Expanded preservation contract
+
+The expected source corpus exceeds five million tokens, but actual inventory results must establish the real counts and supported file types. Vault A is characterized by iterative, noisy, potentially repetitive material that may contain deeper derivations, mathematical proofs, implementation code, project failures, inference optimizations, interview insights, and historical caveats. Vault B is characterized by more uniform organization and concise prose, but may omit depth, extensions, and edge cases. These are working hypotheses to verify, not a reason to treat either vault as globally authoritative.
+
+Every meaningful item must be accounted for, including obscure or single-instance material. The target is not merely a clean summary: it is a standalone body of knowledge that preserves technical substance while consolidating true redundancy. Distinguish the five overlap relationships (exact duplicate, semantic duplicate, partial overlap, complementary content, conflict/historical difference) from the six disposition states (Preserved, Consolidated, Contextualized, Superseded with rationale, Needs review, Unaccounted). Unaccounted knowledge blocks release.
+
+Before synthesis, concept dossiers must aggregate all applicable definitions, assumptions, mathematical foundations, derivation steps, computational mechanics, alternate explanations, worked examples, edge cases, code, practical/project insights, interview questions, historical/version distinctions, and critical conceptual boundaries. Every source unit must map to a defensible disposition and, where incorporated, one or more canonical destinations.
+
+## Mandatory pre-synthesis gates
+
+Full-corpus synthesis is forbidden until (1) the repository-owned Python framework's foundational safety, inventory, hashing, search, link-checking, and reporting paths are implemented and tested, and (2) a repeatable synthetic omission-detection pilot detects and localizes 100% of planted omissions/corruptions. The pilot must include rare derivation steps, project caveats, equations, and broken links. Record evidence, not just a status label.
+
+The final definition of done includes complete source inventory and fingerprints; complete knowledge-unit accounting; zero Unaccounted units; documented review items; valid links, anchors, and embeds; technical code/math checks within their declared scope; consistent editorial depth across all domains; no reader-facing merge narration; and independent usability of the output vault.
