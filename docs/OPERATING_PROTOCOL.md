@@ -81,3 +81,21 @@ Failures go to `Repair`, followed by relevant audits and regression checks. Do n
 6. Write `docs/agent-handoff/next-agent.md` or the canonical handoff path established by the project.
 7. Identify the next exact task and its acceptance criteria.
 8. Report verified results, limitations, and unresolved issues.
+
+
+## Framework-first work protocol
+
+Before any sizeable corpus operation, inspect the framework capability inventory and run relevant existing commands. Do not manually count, search, compare, inventory, validate, or calculate results that the framework can deterministically produce.
+
+If a required capability is missing:
+1. Create a bounded tooling task with stable ID, use case, input/output contract, safety constraints, acceptance criteria, and regression scope.
+2. Implement the smallest reusable tool that safely meets the need.
+3. Add unit tests for normal, boundary, malformed, and failure cases; add integration tests when the tool touches files, registry data, or other commands.
+4. Add CLI help, machine-readable output, error/exit semantics, and documentation.
+5. Run the new tests and relevant existing regression suite.
+6. Update the capability inventory, task queue, checkpoint, and handoff with actual evidence.
+7. Only then rely on the new tool for the original task.
+
+Do not pause every task to build speculative features. Add tools incrementally when needed, while ensuring the mandatory foundation and omission-detection pilot pass before large-scale synthesis. For unsafe or inherently semantic work, explain why deterministic automation is insufficient and use structured evidence bundles and independent review.
+
+Every task must state whether it builds/changes framework capabilities or consumes existing ones. Any framework change must be reviewed for source immutability, output path safety, deterministic behavior, and regression risk.
