@@ -23,6 +23,7 @@ from . import FRAMEWORK_NAME, __version__
 from . import capabilities as capabilities_mod
 from . import inventory as inventory_mod
 from . import kuregistry as kuregistry_mod
+from . import kuextract as kuextract_mod
 from . import linkcheck as linkcheck_mod
 from . import mdextract as mdextract_mod
 from . import omission as omission_mod
@@ -244,6 +245,40 @@ def build_parser() -> argparse.ArgumentParser:
         help="knowledge-unit JSON Schema path",
     )
     p.add_argument("--report", help="optional JSON report path")
+
+    # ---- extract-kus ----
+    p = sub.add_parser(
+        "extract-kus",
+        help="deterministically segment source notes into schema-valid KU records",
+    )
+    p.add_argument("--root", required=True, help="source vault root (read-only)")
+    p.add_argument(
+        "--scope",
+        required=True,
+        help="root-relative directory (or single file) to extract; '.' = whole vault",
+    )
+    p.add_argument(
+        "--vault-id",
+        required=True,
+        help="stable vault identifier used in source_id (e.g. ai-course); keep constant across sessions",
+    )
+    p.add_argument(
+        "--manifest",
+        required=True,
+        help="baseline manifest JSONL (root-relative relpaths + sha256) the scope is verified against",
+    )
+    p.add_argument("--out", required=True, help="KU batch JSONL destination (explicit; never under --root)")
+    p.add_argument(
+        "--kus-schema",
+        default=str(REPO_ROOT / "schemas" / "knowledge-unit.schema.json"),
+        help="knowledge-unit JSON Schema path",
+    )
+    p.add_argument(
+        "--unclosed-fence-finding",
+        default=None,
+        help="finding id to attach to units from unclosed fences/math blocks (e.g. F-0002)",
+    )
+    p.add_argument("--report", help="optional JSON coverage report path")
 
     # ---- omission-pilot ----
     p = sub.add_parser(
@@ -703,6 +738,54 @@ def cmd_audit_output(args) -> int:
     return 0 if result["valid"] else 1
 
 
+def cmd_extract_kus(args) -> int:
+    root = Path(args.root)
+    if not root.is_dir():
+        print(f"error: source root is not a directory: {root}", file=sys.stderr)
+        return 1
+    # the batch destination must never live inside the read-only source root
+    try:
+        out_dest = ensure_dest_safe(args.out, [root])
+    except PathSafetyError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    try:
+        result = kuextract_mod.extract_scope(
+            root,
+            args.scope,
+            args.vault_id,
+            args.manifest,
+            out_dest,
+            kus_schema=args.kus_schema,
+            unclosed_finding=args.unclosed_fence_finding,
+        )
+    except kuextract_mod.ExtractionError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    payload = {"command": "extract-kus", "result": result}
+    report_path = getattr(args, "report", None)
+    if report_path:
+        try:
+            dest = ensure_dest_safe(report_path, [root])
+        except PathSafetyError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 1
+        write_json_report(dest, "extract-kus", payload, args=vars(args) | {"report": str(dest)}, repo_root=REPO_ROOT)
+    _emit_summary(
+        {
+            "ok": result["ok"],
+            "vault_id": result["vault_id"],
+            "scope": result["scope"],
+            "denominators": result["denominators"],
+            "records_written": result["records_written"],
+            "units_by_type": result["units_by_type"],
+            "batch_path": result["batch_path"],
+            "batch_valid": result["batch_validation"]["valid"],
+        }
+    )
+    return 0 if result["ok"] else 1
+
+
 def cmd_omission_pilot(args) -> int:
     explicit = getattr(args, "protected_root", None) or []
     if explicit:
@@ -758,6 +841,7 @@ HANDLERS = {
     "kureg-query": cmd_kureg_query,
     "kureg-validate": cmd_kureg_validate,
     "audit-output": cmd_audit_output,
+    "extract-kus": cmd_extract_kus,
     "omission-pilot": cmd_omission_pilot,
 }
 

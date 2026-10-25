@@ -57,6 +57,7 @@ def run_cli(*args: str, cwd: Path | None = None, timeout: int = 300) -> subproce
         "kureg-query",
         "kureg-validate",
         "audit-output",
+        "extract-kus",
         "omission-pilot",
     ],
 )
@@ -527,6 +528,119 @@ class TestCapabilitiesCLI:
     # logic is covered in tests/test_capabilities.py at function level using
     # bounded subsets; the CLI --verify wiring itself is exercised by the
     # session evidence run recorded in reports/framework/.
+
+
+class TestExtractKusCLI:
+    """CLI wiring for vu extract-kus (CAP-016)."""
+
+    def _build_vault(self, tmp_path: Path) -> tuple[Path, Path, Path]:
+        import hashlib
+
+        root = tmp_path / "src-vault"
+        (root / "notes").mkdir(parents=True)
+        (root / "notes" / "a.md").write_text(
+            "# A\n\nContent with $math$ and [[link]].\n\n- one\n- two\n",
+            encoding="utf-8",
+        )
+        (root / "notes" / "b.md").write_text(
+            "# B\n\nIntro.\n\n```python\nx = 42\n",  # unclosed fence on purpose
+            encoding="utf-8",
+        )
+        lines = []
+        for rel in ["notes/a.md", "notes/b.md"]:
+            raw = (root / rel).read_bytes()
+            lines.append(
+                json.dumps({"relpath": rel, "sha256": hashlib.sha256(raw).hexdigest(), "size": len(raw)})
+            )
+        manifest = tmp_path / "manifest.jsonl"
+        manifest.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        return root, manifest, tmp_path / "batch.jsonl"
+
+    def test_missing_required_args_exits_2(self, tmp_path):
+        proc = run_cli("extract-kus", "--root", str(tmp_path))
+        assert proc.returncode == 2
+        assert "usage:" in proc.stderr
+
+    def test_happy_path_extracts_writes_batch_and_report(self, tmp_path):
+        root, manifest, out = self._build_vault(tmp_path)
+        report = tmp_path / "report.json"
+        proc = run_cli(
+            "extract-kus",
+            "--root", str(root),
+            "--scope", "notes",
+            "--vault-id", "vault-x",
+            "--manifest", str(manifest),
+            "--out", str(out),
+            "--report", str(report),
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        assert out.is_file()
+        records = [json.loads(line) for line in out.read_text(encoding="utf-8").splitlines()]
+        assert records
+        assert all(r["disposition"] == "Unaccounted" for r in records)
+        data = json.loads(report.read_text(encoding="utf-8"))
+        assert data["result"]["denominators"]["files_in_scope"] == 2
+        assert data["result"]["denominators"]["files_failed"] == 0
+
+    def test_unclosed_finding_option_links_units(self, tmp_path):
+        root, manifest, out = self._build_vault(tmp_path)
+        proc = run_cli(
+            "extract-kus",
+            "--root", str(root),
+            "--scope", "notes",
+            "--vault-id", "vault-x",
+            "--manifest", str(manifest),
+            "--out", str(out),
+            "--unclosed-fence-finding", "F-0002",
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        records = [json.loads(line) for line in out.read_text(encoding="utf-8").splitlines()]
+        linked = [r for r in records if r.get("finding_ids") == ["F-0002"]]
+        assert len(linked) == 1 and linked[0]["unit_type"] == "code_block"
+
+    def test_out_inside_source_root_rejected(self, tmp_path):
+        root, manifest, _ = self._build_vault(tmp_path)
+        proc = run_cli(
+            "extract-kus",
+            "--root", str(root),
+            "--scope", "notes",
+            "--vault-id", "vault-x",
+            "--manifest", str(manifest),
+            "--out", str(root / "notes" / "batch.jsonl"),
+        )
+        assert proc.returncode == 1
+        assert "error" in proc.stderr
+        assert not (root / "notes" / "batch.jsonl").exists()
+
+    def test_hash_mismatch_exits_one(self, tmp_path):
+        root, manifest, out = self._build_vault(tmp_path)
+        (root / "notes" / "a.md").write_text("# tampered\n", encoding="utf-8")
+        proc = run_cli(
+            "extract-kus",
+            "--root", str(root),
+            "--scope", "notes",
+            "--vault-id", "vault-x",
+            "--manifest", str(manifest),
+            "--out", str(out),
+        )
+        assert proc.returncode == 1
+        assert '"files_failed": 1' in proc.stdout
+        assert '"ok": false' in proc.stdout
+
+    def test_double_run_is_byte_identical(self, tmp_path):
+        root, manifest, out = self._build_vault(tmp_path)
+        first = tmp_path / "first.jsonl"
+        proc1 = run_cli(
+            "extract-kus", "--root", str(root), "--scope", "notes",
+            "--vault-id", "vault-x", "--manifest", str(manifest), "--out", str(first),
+        )
+        assert proc1.returncode == 0, proc1.stderr
+        proc2 = run_cli(
+            "extract-kus", "--root", str(root), "--scope", "notes",
+            "--vault-id", "vault-x", "--manifest", str(manifest), "--out", str(out),
+        )
+        assert proc2.returncode == 0, proc2.stderr
+        assert first.read_bytes() == out.read_bytes()
 
 
 class TestOmissionCLI:

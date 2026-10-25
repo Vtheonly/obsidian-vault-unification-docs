@@ -1,4 +1,4 @@
-# Framework Setup and Usage (v0.3.0)
+# Framework Setup and Usage (v0.4.0)
 
 Implementation documentation for the Python tooling framework specified in
 [TOOLING_FRAMEWORK.md](TOOLING_FRAMEWORK.md). This document describes what
@@ -8,18 +8,19 @@ the implemented surface and evidence.
 
 ## Status
 
-- Version: 0.3.0 (BOOT-000 deliverable; `stats` added in BOOT-002 as CAP-015;
+- Version: 0.4.0 (BOOT-000 deliverable; `stats` added in BOOT-002 as CAP-015;
   KU registry commands added in BOOT-003 as CAP-011; omission-detection pilot
-  and output auditor added in BOOT-004 as CAP-012)
+  and output auditor added in BOOT-004 as CAP-012; deterministic KU extraction
+  added in EXT-001 as CAP-016, plus the first real extraction batch)
 - Layout: `src/vault_unification/` package, `tests/` pytest suite,
   `reports/framework/` + `reports/bootstrap/` evidence reports,
   `state/manifests/` hash manifests, `state/knowledge-units/` canonical KU
   store, `state/registries/` derived registry databases (git-ignored).
 - Test evidence: 153 tests passed at BOOT-000; 178 after BOOT-002; 248 after
-  the BOOT-003 registry addition; 285 after the BOOT-004 pilot — see
-  `reports/bootstrap/boot-004-pytest-report.json`.
+  the BOOT-003 registry addition; 285 after the BOOT-004 pilot; 338 after the
+  EXT-001 extractor — see `reports/extraction/ext001-pytest-report.json`.
 - Capability inventory (verified against test runs):
-  `reports/bootstrap/boot-004-capabilities.json`. 14 code-backed capabilities
+  `reports/extraction/ext001-capabilities.json`. 15 code-backed capabilities
   verified `implemented-and-tested`; 2 roadmap capabilities `planned`.
 - Source immutability evidence: per-task reports under
   `reports/bootstrap/boot-00N-immutable-*.json` (0 added/removed/changed
@@ -65,6 +66,7 @@ Runtime: Python >= 3.10. Optional dependencies (checked by `selftest`):
 | `kureg-query --db D [filters]` | query registry, reconstruct schema-shaped records | always (unless invalid args/missing db) | missing/corrupt db, unknown disposition filter |
 | `kureg-validate --db D` | registry integrity + accounting report | no errors | any dangling reference, enum violation, missing Superseded rationale, corrupt JSON |
 | `audit-output --source-root S --output-root O --ku-batch F [--accepted-manifest M]` | full omission/corruption audit of a candidate output vault (KU batch validity, drift vs accepted manifest, disposition/destination accounting, rare-term + equation + code marker retention, link integrity, heading-convention and prose-quality lint) | audit valid (no critical/major findings) | any blocking finding or unusable input |
+| `extract-kus --root R --scope S --vault-id V --manifest M --out F [--unclosed-fence-finding ID]` | deterministic segmentation of source notes into schema-valid KU records with stable content-derived IDs, exact excerpts and a coverage report with per-file outcomes and line accounting | every scope file extracted or explicitly excluded; batch schema-valid | any failed file outcome (hash mismatch, encoding, internal inconsistency), scope/manifest problems, or batch validation failure |
 | `omission-pilot --dest D [--keep-mutations]` | build the synthetic paired-source fixture, plant 12 declared defects one at a time into mutated copies, re-run the audit pipeline and report detection + localization, false positives and the verdict (hard gate before large-scale synthesis) | verdict pass (all defects detected and localized, clean baseline, sources unchanged) | verdict fail (any missed/unlocalized defect, false positives on the clean baseline, or audit error) |
 | `run-tests --tests-dir D --json-report P` | pytest orchestration, machine-readable | suite passed | suite failed |
 | `capabilities [--verify]` | capability inventory | declared mode; verify mode with all referenced tests passing | verification failed |
@@ -196,7 +198,55 @@ bullet-only prose degradation, version-distinction loss (silent conflict
 resolution), accepted-output drift during later repair, and code-parameter
 deletion.
 
-## Known limitations (v0.3.0)
+## Deterministic KU extraction (CAP-016)
+
+`vu extract-kus` turns a bounded scope of source notes into the canonical KU
+batch, deterministically and read-only:
+
+```bash
+PYTHONPATH=src python3 -m vault_unification extract-kus \
+  --root 'source-vaults/AI /AI Course' \      # quoted: trailing-space parent (F-0001)
+  --scope '03 - Machine Learning/03.1 - Regression' \  # root-relative dir or file
+  --vault-id 'ai-course' \                   # stable across sessions; keep constant
+  --manifest state/manifests/ai-course.jsonl \  # baseline hashes; scope verified against it
+  --out state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl \
+  --unclosed-fence-finding F-0002 \          # optional: link unclosed-construct units
+  --report reports/extraction/ext001-coverage.json
+```
+
+What it guarantees:
+
+- **Structural only.** Unit types describe Markdown block syntax
+  (prose/list/table/code_block/math_block/callout/quote/frontmatter/
+  empty_section). Every record starts as disposition `Unaccounted`; the
+  extractor never assigns overlap types, concepts or destinations — those
+  are later evidence-based decisions (EXT-002+).
+- **Line-accounting invariant.** Every line of every processed file is
+  accounted for in exactly one bucket (unit span, heading context, excluded
+  blank, excluded horizontal rule); a violation fails the run. Content
+  cannot silently disappear between reported lines.
+- **Immutable-locator provenance.** Records carry source id/path/hash,
+  heading path, line range, exact excerpt and excerpt hash; IDs are minted
+  via `kuregistry.mint_ku_id` from that basis, so re-extracting unchanged
+  sources is byte-identical and idempotent on re-load.
+- **Explicit outcomes.** The coverage report enumerates every scope file
+  with exactly one outcome: `extracted` (with per-type unit counts, warnings
+  and line accounting), `excluded_non_markdown` (reason recorded), or a
+  `failed_*` outcome (hash mismatch, encoding, missing from manifest/disk,
+  internal inconsistency) that makes the run exit 1.
+- **Batch self-validation.** The written batch is re-validated against the
+  KU schema + cross-checks before the tool reports success.
+
+Vault-id discipline: `ai-course` and `master-ai` are the pinned identifiers
+for the two source vaults (recorded in the handoff); using a different id
+for the same vault would mint different source ids and KU ids — treat that
+as an explicit reconciliation, never an accident.
+
+First real batch (EXT-001): `state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl`
+— 6/6 files extracted, 298 records, all `Unaccounted`, evidence in
+`reports/extraction/ext001-*.json`.
+
+## Known limitations (v0.4.0)
 
 - Inline `$...$` math detection is delimiter-based; currency-style dollar
   signs can produce false positives; no LaTeX syntax validation.

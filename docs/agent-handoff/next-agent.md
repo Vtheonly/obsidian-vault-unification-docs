@@ -2,160 +2,163 @@
 
 ## Project state
 
-- Current milestone: Milestone 0 (DONE: BOOT-001 source location, BOOT-002
-  inventory) + Milestone 1 operating foundation (DONE: BOOT-000 framework,
-  BOOT-003 KU registry) + Milestone 2 verification prototype (DONE: BOOT-004
-  omission-detection pilot PASSED — the hard gate).
-- Current task ID: EXT-001 (status: ready)
-- Current Git commit: the BOOT-004 work commit on `main` (after the BOOT-003
-  state commit `7d0088b`); verify with `git log --oneline -5`
+- Current milestone: Milestone 3 (extraction). Framework bootstrap is DONE
+  and verified (BOOT-000..004; omission-detection hard gate PASSED at
+  BOOT-004). EXT-001 (first real extraction) is DONE and verified.
+- Current task ID: EXT-002 (status: ready)
+- Current Git commit: the EXT-001 state commit on `main` (after the EXT-001
+  work commit); verify with `git log --oneline -5`
 - Working tree status: clean after commit/push (verify with `git status`)
-- Registry/checkpoint version: task-queue v2 (BOOT-000..004 completed with
-  tests_run evidence; EXT-001 ready); KU schema v1.1 (ADR-0008); checkpoint
-  `state/checkpoints/checkpoint-2026-10-26-boot-004.json`
+- Registry/checkpoint version: task-queue v3 (BOOT-000..004 + EXT-001
+  completed with tests_run evidence; EXT-002 ready); KU schema v1.1
+  (ADR-0008); checkpoint
+  `state/checkpoints/checkpoint-2026-10-26-ext-001.json`
+- Framework version: 0.4.0 (CAP-016 added); 338/338 tests; capabilities:
+  15 implemented-and-tested, 2 planned (CAP-013, CAP-014)
 
 ## Verified completed work
 
-- BOOT-004 (2026-10-26), framework-first, hard gate PASSED:
-  - New capability CAP-012 (omission-detection pilot + reusable output
-    auditor): module `src/vault_unification/omission.py`; CLI
-    `vu omission-pilot` and `vu audit-output`; framework version 0.3.0.
-  - Synthetic paired-source fixture (deterministic, in an explicit temp
-    dest, never inside `source-vaults/`): vault-a (deep notes: chain-rule
-    theory, 4-step equation derivation, 2022 warehouse-forecast project
-    caveat, Linnainmaa rare fact, PyTorch 1.x-vs-2.0 version distinction,
-    reference code, wikilinks) + vault-b (course notes: semantic-duplicate
-    overview with a conflicting Parker-1985 attribution, exact-duplicate
-    equation, partial-overlap update rule, complementary numerical-gradient
-    code, further-reading link) + known-good baseline synthesis (4 notes,
-    consistent numbering, prose everywhere, all links resolve) + 11 KU
-    records with `mint_ku_id` stable IDs, dispositions/overlap types and
-    destinations + accepted manifest.
-  - 12 planted defects (one per mutated copy of the baseline): unique-detail
-    omission, equation omission, derivation-step omission, caveat omission,
-    equation sign alteration, obscure one-file concept removal, wikilink
-    break, heading-convention change, bullet-only prose degradation,
-    version-distinction loss, accepted-output drift (post-acceptance repair
-    scenario), code-parameter deletion — mirroring VERIFICATION_SPECIFICATION
-    "Deliberate omission tests" + section 6.
-  - Pilot result (real run, recorded exit codes): verdict PASS; 12/12
-    detected; 12/12 localized to the expected KU and destination note;
-    0 false negatives; 0 false positives on the clean baseline; fixture
-    sources byte-identical before/after.
-  - `vu audit-output` reusable checks: KU-batch schema+cross-checks, output
-    drift vs accepted manifest, disposition/destination accounting,
-    marker retention (rare-term + equation + code fingerprints per KU),
-    link integrity (CAP-004), heading-convention lint, prose-quality lint;
-    findings carry KU IDs, destinations, expected/observed, repair hints.
-  - Honesty guarantees: the pilot FAILS by design when an injected defect is
-    undetectable (test DX99 injects an invisible paraphrase -> verdict
-    fail); mutation anchors raise when not found exactly once; audit
-    exceptions per defect are recorded as honest misses.
-- Evidence: 285/285 tests (`reports/bootstrap/boot-004-pytest-report.json`);
-  capabilities --verify: 14 implemented-and-tested incl. CAP-012, 2 planned
-  (`reports/bootstrap/boot-004-capabilities.json`); pilot evidence
-  (`reports/bootstrap/boot-004-omission-pilot.json` + `boot-004-run-summary.json`);
-  source immutability before AND after
-  (`reports/bootstrap/boot-004-immutable-{before,after}-{master-ai,ai-course}.json`).
+- EXT-001 (2026-10-26), deterministic KU extraction, first real batch:
+  - New capability CAP-016 `vu extract-kus` (module
+    `src/vault_unification/kuextract.py`): deterministic structural
+    segmentation of source notes into schema-v1.1 KU records with stable
+    content-derived IDs (via CAP-011 `mint_ku_id`), immutable locators
+    (source id/path/hash, heading path, line range, excerpt, excerpt hash)
+    and exact byte-excerpts. Construct detection delegates to CAP-003 via a
+    new `mdextract.extract_structure_text` entry point (one authority).
+  - Line-accounting invariant: every line of every file lands in exactly
+    one bucket (unit span / heading context / excluded blank / excluded
+    horizontal rule); violations fail the run. The invariant caught a real
+    double-count bug during development (frontmatter span) — it is load-bearing.
+  - First real batch
+    `state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl`:
+    scope `AI Course/03 - Machine Learning/03.1 - Regression` — 6/6 files
+    extracted (0 excluded, 0 failed), 298 records (prose 149, list 62,
+    math_block 50, code_block 23, callout 10, table 3, quote 1), all
+    disposition `Unaccounted` (extractor claims no semantics), batch
+    schema-valid, double-run byte-identical
+    (sha256 b3ffdf972203cbe804a69e1e3fc8b2f9f1118a8d6c713d79f799ae419831af4a).
+  - Independent review (EXT-001-REVIEW subagent, read-only): verdict PASS —
+    10/10 sampled rare details found with KU-id evidence (incl. the 1/2m
+    trick callout, simultaneous-update theta example, odds examples, OLS
+    O(m^3) caveat, taxi-fare analogy, French random_state=42 and softmax
+    explanations, NaN learning-rate warning); 100/100 headings covered; no
+    span crosses a heading; no overlaps/type misclassifications; French
+    diacritics + oe ligature intact, no mojibake.
+  - SCOPE-COUNT CORRECTION (F-0005): the previous handoff said "7 files";
+    the actual scope holds 6 (numbering skips 06). Denominators always come
+    from manifests, never from handoff prose.
+- Evidence: `reports/extraction/ext001-coverage.json` (per-file outcomes +
+  line accounting), `ext001-pytest-report.json` (338/338),
+  `ext001-capabilities.json` (15+2), `ext001-kureg-{init,load,validate}.json`
+  (298 inserted, 0 errors/warnings), `ext001-immutable-{before,after}-
+  {master-ai,ai-course}.json` (all unchanged).
 
 ## Tests actually run
 
 | Command/test | Result | Evidence/report | Limitations |
 |---|---|---|---|
-| `python3 scripts/boot004_pilot.py` | exit 0; 5 steps all exit 0 | reports/bootstrap/boot-004-run-summary.json | fixture is synthetic by design |
-| `vu omission-pilot --dest <temp> --report ...` | exit 0; verdict pass, 12/12, 0 FP | reports/bootstrap/boot-004-omission-pilot.json | — |
-| `vu run-tests --tests-dir tests` | exit 0; 285/285 passed | reports/bootstrap/boot-004-pytest-report.json | — |
-| `vu capabilities --verify` | exit 0; 14 implemented-and-tested, 2 planned | reports/bootstrap/boot-004-capabilities.json | runs only referenced test files (270 tests) |
-| `vu verify-manifest` both vaults, before + after | exit 0 x4; unchanged | reports/bootstrap/boot-004-immutable-*.json | — |
-| `vu validate-registry --tasks state/task-queue.jsonl` | exit 0; 6 records valid | terminal (rerun to verify) | schema + cross-checks only |
-| `vu selftest` (resume verification) | exit 0 | terminal | — |
+| `python3 -m pytest tests -q` | exit 0; 338/338 | reports/extraction/ext001-pytest-report.json | — |
+| `vu capabilities --verify` | exit 0; 15 implemented-and-tested incl. CAP-016, 2 planned | reports/extraction/ext001-capabilities.json | runs only referenced test files (323 tests) |
+| `vu extract-kus` (real scope) | exit 0; 6/6 files, 298 records, batch valid | reports/extraction/ext001-coverage.json | structural extraction only |
+| determinism: second run + `cmp` | exit 0; byte-identical | session tests_run record | — |
+| `vu kureg-init --force` + `kureg-load` | exit 0; 298/298 inserted, 0 errors | reports/extraction/ext001-kureg-load.json | — |
+| `vu kureg-validate` | exit 0; valid, 0 errors, 0 warnings, unaccounted 298 (expected) | reports/extraction/ext001-kureg-validate.json | — |
+| `vu verify-manifest` both vaults, before + after | exit 0 x4; unchanged | reports/extraction/ext001-immutable-*.json | — |
+| `vu validate-registry --tasks state/task-queue.jsonl` | exit 0; 7 records valid | terminal (rerun to verify) | schema + cross-checks only |
+| excerpt fidelity ad-hoc check | 298/298 byte-exact, 298/298 unique IDs | session tests_run record | — |
 
 ## Findings and unresolved work
 
-- Open finding IDs: F-0001 (trailing-space dir `source-vaults/AI ` — always
-  quote; never rename), F-0002 (14 AI Course unclosed-fence files — extraction
-  must record content with parse warning, never silently drop), F-0003 (175
-  broken wikilinks + 10 missing anchors in AI Course — synthesis-time
-  dispositions needed), F-0004 (README/status wording — see findings.jsonl).
-- Blockers: none for EXT-001.
-- Unverified claims: none made; capability statuses are test-backed.
-- Known gaps (deliberate non-claims): the canonical KU store holds 0 records
-  (no real extraction yet); no synthesis output exists; Master AI has never
-  been link-checked; the pilot verified the auditor on SYNTHETIC data —
-  corpus-scale marker noise must be re-measured on real batches (feeds
-  CAP-014).
+- Open findings: F-0001 (trailing-space dir `source-vaults/AI ` — always
+  quote), F-0002 (14 AI Course unclosed-fence files — extractor handles
+  them: content preserved + warning + `--unclosed-fence-finding` linkage;
+  none of the 6 EXT-001 files are affected), F-0003 (175 broken wikilinks +
+  10 missing anchors in AI Course — synthesis-time dispositions),
+  F-0005 (resolved: handoff scope-count discrepancy 7 vs 6; manifest is the
+  denominator authority).
+- Blockers: none for EXT-002.
+- Known gaps (deliberate non-claims): only 6 of 609 source files extracted
+  (1.0%); no dispositions/overlap/concepts/destinations exist anywhere yet;
+  no synthesis output exists; Master AI has never been link-checked;
+  CAP-013 (duplicate discovery) and CAP-014 (coverage/frequency regression)
+  are still planned — build CAP-013 when cross-vault overlap classification
+  begins in earnest.
 
 ## Decisions and configuration
 
-- CAP-012 auditor design: deterministic evidence classes only (term/math/code
-  fingerprints, structure, links, manifest hashes); semantic verification
-  stays a separate human/AI evidence class. Limitations are machine-emitted
-  into every audit/pilot report and the capability inventory.
-- Pilot pass criteria (all required): 100% detection, 100% localization to
-  expected KU + note, zero false positives on the clean baseline, fixture
-  sources unchanged. An audit exception counts as an honest miss.
-- Defect D11 (accepted-output drift) is audited WITH the accepted manifest
-  (post-acceptance regression scenario); the other eleven are audited
-  WITHOUT it (pre-acceptance synthesis state) so detection cannot lean on
-  the manifest alone.
-- Framework version 0.3.0; capability roadmap after BOOT-004: CAP-013
-  (duplicate discovery) and CAP-014 (source-to-output coverage/frequency
-  regression) remain planned — both become relevant during EXT/synthesis.
+- CAP-016 design: extraction is STRUCTURAL. Controlled unit types
+  (prose/list/table/code_block/math_block/callout/quote/frontmatter/
+  empty_section); disposition always `Unaccounted` at extraction;
+  no overlap_type/concept_ids/destinations. Semantic classification is
+  later, evidence-based work (prevents metric laundering per
+  TOOLING_FRAMEWORK.md principle 10).
+- Pinned vault-ids: `ai-course` and `master-ai` (changing them would mint
+  different source ids and KU ids — treat as explicit reconciliation,
+  never an accident). Recorded in docs/FRAMEWORK_SETUP.md.
+- `verification_status` wording inside records is part of the stable
+  fingerprint (idempotent re-loads); keep it version-free — versions live
+  in reports.
+- Batch naming convention (state/knowledge-units/README.md):
+  `<sequence>-<task-id>-<scope>.jsonl`.
 
 ## Next task
 
-- Task ID and title: EXT-001 — Build the deterministic KU extraction pipeline
-  and extract the first bounded real batch
-- Why it is next: BOOT-004 hard gate passed, so Milestone 3 (complete
-  inventory and extraction) begins; extraction is the first real work on
-  source content and everything downstream (dossiers, synthesis, coverage
-  reports CAP-014) depends on it.
-- Exact inputs: read-only source vaults (quoted paths, see current-state);
-  `state/manifests/*.jsonl` baselines; `schemas/knowledge-unit.schema.json`
-  v1.1; CAP-003 `mdextract`; CAP-011 `kuregistry.mint_ku_id`/`kureg-load`;
-  docs/KNOWLEDGE_AND_PROVENANCE.md; docs/EDITORIAL_STYLE_GUIDE.md.
-- Expected outputs: new framework capability (e.g. CAP-016 `vu extract-kus`)
-  that segments source notes into schema-valid KU records with stable IDs,
-  locators and excerpts; first real batch under `state/knowledge-units/`
-  for ONE bounded domain (suggested: AI Course `03 - Machine
-  Learning/03.1 - Regression`, 7 files); extraction coverage report with
-  explicit denominators and exclusions; registry rebuild + `kureg-validate`
-  accounting evidence; unit/integration/CLI tests.
-- Acceptance criteria (from task queue): every file in scope has a verified
-  extraction outcome or explicit failure/exclusion disposition; batches
-  validate and load; sources unchanged before/after (`vu verify-manifest`);
-  malformed-input tests include the F-0002 unclosed-fence case; the extractor
-  claims no semantic dispositions (units + locators only; overlap/disposition
-  classification is later, evidence-based work).
-- Forbidden side effects: do not modify source vaults; do not claim semantic
-  preservation from extraction counts; do not skip short/obscure/duplicated
-  files.
+- Task ID and title: EXT-002 — Extract the paired Master AI regression
+  domain batch (cross-vault evidence for overlap classification)
+- Why it is next: the AI Course side of the linear/logistic regression
+  domain is extracted; overlap classification and concept dossiers need the
+  Master AI side. Term search shows the primary paired source is
+  `Master AI/03 - Machine Learning/Supervised Learning/02 - Linear and
+  Logistic Regression.md` (167 lines, 25 headings; 27 "regression" + 13
+  "logistic regression" matches — the highest in that vault).
+- Exact inputs: read-only `source-vaults/AI /Master AI` (quoted);
+  `state/manifests/master-ai.jsonl`; CAP-016 `vu extract-kus` with
+  `--vault-id master-ai`; the EXT-001 batch for reference.
+- Expected outputs: batch under `state/knowledge-units/` (suggest
+  `002-ext002-master-ai-linear-logistic-regression.jsonl`) for that file
+  (or the whole `03 - Machine Learning/Supervised Learning` folder: 2
+  files, 334 lines); coverage report; registry rebuild + kureg-validate;
+  determinism check; verify-manifest before/after.
+- Acceptance criteria: every scope file has a verified outcome or explicit
+  failure/exclusion; batch validates + loads (0 anomalies); sources
+  unchanged; double run byte-identical; no semantic claims.
+- Suggested follow-up (EXT-003+, decide next session with evidence):
+  cross-vault overlap classification for the regression domain
+  (evidence-based, likely wants CAP-013 duplicate/near-duplicate candidate
+  discovery built first — see TOOLING_FRAMEWORK.md section 9 loop).
 
 ## Resume procedure
 
 1. `git clone` / `git pull`; `git status` must be clean; confirm HEAD
-   includes the BOOT-004 commit.
+   includes the EXT-001 commits.
 2. Read `AGENTS.md`, this file, `state/current-state.json`,
    `state/task-queue.jsonl`, `state/findings.jsonl`.
 3. Sanity-verify the framework: `PYTHONPATH=src python3 -m vault_unification
    selftest` (exit 0) and `PYTHONPATH=src python3 -m pytest tests -q`
-   (285/285 unless tests were legitimately added — update the count then).
+   (338/338 unless tests were legitimately added — update the count then).
 4. Verify source immutability: `vu verify-manifest` on both vaults (exit 0).
-5. Re-verify the hard gate if desired:
-   `python3 scripts/boot004_pilot.py` must exit 0 (deterministic).
-6. Execute EXT-001 per the acceptance criteria above; framework-first (the
-   extractor is a reusable, tested capability, not a one-off script); record
-   evidence with actual exit codes; update task queue, current-state,
-   checkpoint, findings; write this handoff file; commit and push to main.
+5. Verify the registry rebuilds from the canonical batch:
+   `vu kureg-init --db state/registries/kuregistry.db --force` then
+   `vu kureg-load --db state/registries/kuregistry.db --kus
+   state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl` then
+   `vu kureg-validate --db state/registries/kuregistry.db` (298 KUs,
+   0 errors).
+6. Execute EXT-002 per the acceptance criteria above; framework-first;
+   record evidence with actual exit codes; update task queue,
+   current-state, checkpoint, findings; write this handoff file; commit and
+   push to main.
 
 ## Explicit non-claims
 
-- No knowledge units have been extracted from the real vaults; the canonical
-  store `state/knowledge-units/` holds 0 records.
-- No semantic verification of real source content has occurred; BOOT-004
-  verified the auditor machinery on synthetic data.
+- No dispositions, overlap classifications, concept assignments or
+  destinations exist for any of the 298 extracted records; all are
+  `Unaccounted`.
+- No semantic verification of real source content has occurred; the
+  EXT-001-REVIEW subagent spot-check verified extraction fidelity
+  (byte-exact excerpts, detail presence, heading coverage), not semantic
+  completeness of any future synthesis.
 - No synthesis output exists; `output_synthesis_started` is false.
-- Pilot metrics (12/12, 0 FP, 0 FN) apply to the declared synthetic fixture
-  only; corpus-scale behavior is unmeasured until EXT-001+ produces real
-  batches.
-- Master AI has not yet been link-checked at all.
+- Only 6 of 609 source files (1.0%) have been extracted; do not extrapolate
+  corpus-wide claims from this batch.
+- Master AI has not been link-checked at all.

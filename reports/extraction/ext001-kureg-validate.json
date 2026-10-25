@@ -1,0 +1,30 @@
+{
+  "command": "kureg-validate",
+  "db_path": "state/registries/kuregistry.db",
+  "registry_schema_version": 1,
+  "valid": true,
+  "errors": [],
+  "warnings": [],
+  "counts": {
+    "total_kus": 298,
+    "by_disposition": {
+      "Unaccounted": 298
+    }
+  },
+  "unaccounted_count": 298,
+  "needs_review_count": 0,
+  "note": "Unaccounted units block release (docs/KNOWLEDGE_AND_PROVENANCE.md invariant 2); counts are record accounting, never proof of semantic preservation",
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.4.0",
+    "report_schema_version": "1.0",
+    "command": "kureg-validate",
+    "args": {
+      "command": "kureg-validate",
+      "db": "state/registries/kuregistry.db",
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/extraction/ext001-kureg-validate.json"
+    },
+    "utc_timestamp": "2026-10-25T21:34:51+00:00",
+    "git_commit": "26ebd3f"
+  }
+}

@@ -36,16 +36,10 @@ def _is_blank(text: str) -> bool:
     return not text.strip()
 
 
-def extract_structure(file_path: str | Path) -> dict:
-    """Extract structural elements from one Markdown file.
-
-    Returns a dict with ``errors`` and ``warnings`` lists so that malformed
-    input is reported, never silently dropped.
-    """
-    path = Path(file_path)
-    result: dict[str, Any] = {
-        "path": str(path),
-        "exists": path.is_file(),
+def _new_result(path: str | None) -> dict[str, Any]:
+    return {
+        "path": path,
+        "exists": path is not None,
         "errors": [],
         "warnings": [],
         "frontmatter": None,
@@ -63,6 +57,16 @@ def extract_structure(file_path: str | Path) -> dict:
         "ends_with_newline": None,
         "reading_error": None,
     }
+
+
+def extract_structure(file_path: str | Path) -> dict:
+    """Extract structural elements from one Markdown file.
+
+    Returns a dict with ``errors`` and ``warnings`` lists so that malformed
+    input is reported, never silently dropped.
+    """
+    path = Path(file_path)
+    result = _new_result(str(path))
     if not path.exists():
         result["errors"].append("file does not exist")
         return result
@@ -81,11 +85,26 @@ def extract_structure(file_path: str | Path) -> dict:
         result["reading_error"] = f"UTF-8 decode error: {exc}"
         result["errors"].append(result["reading_error"])
         return result
+    return _scan_text(result, text)
 
+
+def extract_structure_text(text: str) -> dict:
+    """Same scan as :func:`extract_structure` over in-memory text.
+
+    Added for CAP-016 (kuextract) so segmentation and file-level structure
+    extraction share ONE construct-detection authority. Byte-level facts
+    (``is_empty``, ``ends_with_newline``) are derived from the text itself:
+    ``text`` is empty exactly when the decoded file bytes are empty, and a
+    trailing "\n" in decoded text corresponds to a trailing newline byte.
+    """
+    return _scan_text(_new_result(None), text)
+
+
+def _scan_text(result: dict[str, Any], text: str) -> dict:
     lines = text.splitlines()
     result["line_count"] = len(lines)
-    result["is_empty"] = len(raw) == 0
-    result["ends_with_newline"] = raw.endswith(b"\n") if raw else None
+    result["is_empty"] = not text
+    result["ends_with_newline"] = text.endswith("\n") if text else None
 
     # ---- frontmatter ----
     start = 0

@@ -1,0 +1,77 @@
+{
+  "checkpoint_id": "CHK-2026-10-26-EXT-001",
+  "created_utc": "2026-10-25T21:37:59+00:00",
+  "stage": "extraction",
+  "task_id": "EXT-001",
+  "task_status": "completed",
+  "last_verified_state": {
+    "framework_version": "0.4.0 + CAP-016 (deterministic KU extraction)",
+    "test_result": "338 passed, 0 failed, 0 skipped",
+    "test_evidence": "reports/extraction/ext001-pytest-report.json",
+    "capabilities_evidence": "reports/extraction/ext001-capabilities.json (15 implemented-and-tested, 2 planned)",
+    "ku_schema_version": "1.1 (ADR-0008)",
+    "registry_store": "state/knowledge-units/ (298 records in 1 committed batch)",
+    "derived_index": "state/registries/kuregistry.db (rebuilt; kureg-validate valid, 0 errors/warnings)",
+    "first_batch": {
+      "path": "state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl",
+      "sha256": "b3ffdf972203cbe804a69e1e3fc8b2f9f1118a8d6c713d79f799ae419831af4a",
+      "files": "6/6 extracted, 0 excluded, 0 failed",
+      "records": 298,
+      "units_by_type": {
+        "prose": 149,
+        "list": 62,
+        "math_block": 50,
+        "code_block": 23,
+        "callout": 10,
+        "table": 3,
+        "quote": 1
+      },
+      "dispositions": {
+        "Unaccounted": 298
+      },
+      "coverage_report": "reports/extraction/ext001-coverage.json"
+    },
+    "independent_review": "EXT-001-REVIEW subagent verdict PASS (10/10 rare details, 100/100 headings, 0 anomalies)",
+    "source_immutability": "reports/extraction/ext001-immutable-{before,after}-{master-ai,ai-course}.json (all 0 added/removed/changed)",
+    "determinism": "second run byte-identical (cmp + sha256 recorded in tests_run)"
+  },
+  "changed_paths": [
+    "src/vault_unification/kuextract.py",
+    "src/vault_unification/mdextract.py",
+    "src/vault_unification/cli.py",
+    "src/vault_unification/capabilities.py",
+    "src/vault_unification/__init__.py",
+    "tests/test_kuextract.py",
+    "tests/test_cli.py",
+    "docs/FRAMEWORK_SETUP.md",
+    "state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl",
+    "state/knowledge-units/README.md",
+    "state/task-queue.jsonl",
+    "state/current-state.json",
+    "state/findings.jsonl",
+    "state/checkpoints/checkpoint-2026-10-26-ext-001.json",
+    "reports/extraction/ext001-*",
+    "docs/agent-handoff/next-agent.md"
+  ],
+  "next_task": {
+    "task_id": "EXT-002",
+    "title": "Extract the paired Master AI regression domain batch",
+    "status": "ready",
+    "dependencies": [
+      "EXT-001"
+    ]
+  },
+  "open_findings": [
+    "F-0001",
+    "F-0002",
+    "F-0003",
+    "F-0004",
+    "F-0005"
+  ],
+  "explicit_non_claims": [
+    "The 298 extracted records have no dispositions, overlap classifications, concepts or destinations; semantic work has not started",
+    "Only 6 of 609 source files have been extracted (1.0%); extraction coverage is NOT semantic preservation",
+    "No synthesis output exists; output_synthesis_started is false",
+    "CAP-013 (duplicate discovery) and CAP-014 (coverage/frequency regression) remain planned"
+  ]
+}

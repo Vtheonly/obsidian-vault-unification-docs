@@ -7,12 +7,20 @@ rebuildable from the batch files committed here.
 
 ## Current status
 
-**0 records.** No extraction has been performed yet (BOOT-003 delivered the
-registry mechanism only). The first extraction task will create the first
-batch files here. Do not fabricate seed records to "test" the store — the
-mechanism is covered by the test suite
-(`tests/test_kuregistry.py`, `tests/test_cli.py`) and the demonstration
-report in `reports/bootstrap/boot-003-kureg-demo.json`.
+**298 records in 1 batch** (EXT-001, 2026-10-26):
+`001-ext001-ai-course-03.1-regression.jsonl` — deterministic structural
+extraction (CAP-016 `vu extract-kus`) of all 6 files in
+`source-vaults/AI /AI Course/03 - Machine Learning/03.1 - Regression`
+(6/6 `extracted`, 0 excluded, 0 failed; every line accounted for by the
+line-accounting invariant; every record disposition `Unaccounted`).
+Coverage evidence: `reports/extraction/ext001-coverage.json`; registry
+load/validate evidence: `reports/extraction/ext001-kureg-*.json`.
+An independent review (EXT-001-REVIEW) verified 10/10 sampled rare details,
+100/100 headings, byte-exact excerpts and intact French diacritics.
+
+**Non-claims:** `Unaccounted` is the honest initial state — no overlap
+classification, no dispositions, no destinations and no semantic
+verification have been performed on these records yet (EXT-002+ work).
 
 ## Conventions
 

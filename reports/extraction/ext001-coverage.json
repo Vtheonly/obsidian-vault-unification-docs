@@ -1,0 +1,265 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "command": "extract-kus",
+    "framework_version": "0.4.0",
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "03 - Machine Learning/03.1 - Regression",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/home/z/my-project/obsidian-vault-unification-docs/state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl",
+    "records_written": 298,
+    "denominators": {
+      "files_in_scope": 6,
+      "files_extracted": 6,
+      "files_excluded": 0,
+      "files_failed": 0,
+      "scope_note": "denominator = every file enumerated under the scope (all classes); each has exactly one outcome"
+    },
+    "units_by_type": {
+      "prose": 149,
+      "list": 62,
+      "math_block": 50,
+      "code_block": 23,
+      "table": 3,
+      "callout": 10,
+      "quote": 1
+    },
+    "file_outcomes": [
+      {
+        "relpath": "03 - Machine Learning/03.1 - Regression/01. Introduction to Regression.md",
+        "outcome": "extracted",
+        "sha256": "ce017481d8630e3b3b167437012353b20130b41727301a8f2c95b5e8b2f4a485",
+        "manifest_match": true,
+        "units": 12,
+        "units_by_type": {
+          "prose": 4,
+          "list": 3,
+          "math_block": 2,
+          "code_block": 1,
+          "table": 1,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 30,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 14,
+          "excluded_horizontal_rule": 1,
+          "accounted": 52,
+          "lines_total": 52,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 14,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.1 - Regression/02. Linear Regression from Scratch.md",
+        "outcome": "extracted",
+        "sha256": "62070ec115bf0673796876e6710b6faed8394815528a7bff4b8c0f8574d1dc44",
+        "manifest_match": true,
+        "units": 73,
+        "units_by_type": {
+          "prose": 32,
+          "list": 20,
+          "code_block": 6,
+          "math_block": 13,
+          "quote": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 194,
+          "frontmatter_lines": 0,
+          "heading_context": 28,
+          "excluded_blank": 75,
+          "excluded_horizontal_rule": 8,
+          "accounted": 305,
+          "lines_total": 305,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 75,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.1 - Regression/03. Linear Regression (DL Perspective).md",
+        "outcome": "extracted",
+        "sha256": "850de33485d5e5017e03780370b1a70138afb12a7b781e30844178049470553b",
+        "manifest_match": true,
+        "units": 53,
+        "units_by_type": {
+          "prose": 26,
+          "list": 11,
+          "math_block": 12,
+          "callout": 3,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 82,
+          "frontmatter_lines": 0,
+          "heading_context": 11,
+          "excluded_blank": 49,
+          "excluded_horizontal_rule": 1,
+          "accounted": 143,
+          "lines_total": 143,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 49,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.1 - Regression/04. Logistic Regression.md",
+        "outcome": "extracted",
+        "sha256": "fe0ff4dc24c91c391ebf1a1bf58582e37aff88274b0c6c0928f6f3369bf1b09d",
+        "manifest_match": true,
+        "units": 62,
+        "units_by_type": {
+          "prose": 41,
+          "list": 8,
+          "math_block": 12,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 76,
+          "frontmatter_lines": 0,
+          "heading_context": 16,
+          "excluded_blank": 70,
+          "excluded_horizontal_rule": 1,
+          "accounted": 163,
+          "lines_total": 163,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 70,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.1 - Regression/05. Regression Fundamentals (In Depth).md",
+        "outcome": "extracted",
+        "sha256": "c841022acd508595fe5f8410c910e40525f7805c679c9ff9b065fe1a2b9bc5c3",
+        "manifest_match": true,
+        "units": 53,
+        "units_by_type": {
+          "prose": 27,
+          "code_block": 3,
+          "list": 9,
+          "callout": 5,
+          "math_block": 8,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 130,
+          "frontmatter_lines": 0,
+          "heading_context": 19,
+          "excluded_blank": 48,
+          "excluded_horizontal_rule": 4,
+          "accounted": 201,
+          "lines_total": 201,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 48,
+          "horizontal_rule": 4
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.1 - Regression/07. Lab - Guide Complet R\u00e9gression Lin\u00e9aire et Deep Learning (MNIST).md",
+        "outcome": "extracted",
+        "sha256": "dcf1669fd67d0ee23ec7766aab1677ef988a58248f7d5184cac8434524863a1e",
+        "manifest_match": true,
+        "units": 45,
+        "units_by_type": {
+          "prose": 19,
+          "math_block": 3,
+          "list": 11,
+          "code_block": 12
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 117,
+          "frontmatter_lines": 0,
+          "heading_context": 19,
+          "excluded_blank": 28,
+          "excluded_horizontal_rule": 2,
+          "accounted": 166,
+          "lines_total": 166,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 28,
+          "horizontal_rule": 2
+        },
+        "finding_ids": []
+      }
+    ],
+    "batch_validation": {
+      "file": "/home/z/my-project/obsidian-vault-unification-docs/state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl",
+      "schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/knowledge-unit.schema.json",
+      "valid": true,
+      "records_total": 298,
+      "records_valid": 298,
+      "errors": [],
+      "cross_checks": {
+        "status": "run",
+        "kus_total": 298,
+        "rules": [
+          "duplicate_id",
+          "self_parent",
+          "superseded_rationale_missing",
+          "self_support"
+        ],
+        "note": "cross-batch parent/support references are checked at registry load time"
+      }
+    },
+    "determinism_note": "records contain no timestamps and IDs are content-derived; re-extracting unchanged sources produces a byte-identical batch",
+    "limitations": [
+      "structural segmentation only: unit types describe Markdown block syntax, not meaning",
+      "no dispositions are assigned: every unit is 'Unaccounted' until evidence-based classification",
+      "excerpts normalize CR characters away (splitlines reconstruction); source bytes are untouched",
+      "construct detection inherits mdextract limitations (ATX headings, delimiter-based math)",
+      "extraction coverage is NOT semantic preservation; it is the accounting baseline for later audits"
+    ]
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.4.0",
+    "report_schema_version": "1.0",
+    "command": "extract-kus",
+    "args": {
+      "command": "extract-kus",
+      "root": "source-vaults/AI /AI Course",
+      "scope": "03 - Machine Learning/03.1 - Regression",
+      "vault_id": "ai-course",
+      "manifest": "state/manifests/ai-course.jsonl",
+      "out": "state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl",
+      "kus_schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/knowledge-unit.schema.json",
+      "unclosed_fence_finding": "F-0002",
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/extraction/ext001-coverage.json"
+    },
+    "utc_timestamp": "2026-10-25T21:34:47+00:00",
+    "git_commit": "26ebd3f"
+  }
+}
