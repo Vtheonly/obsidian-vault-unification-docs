@@ -54,3 +54,16 @@ Use stable IDs such as `ADR-0001`. Each decision records:
 ### ADR-0005 — Independent verification
 **Decision:** Synthesis cannot self-certify completeness; acceptance uses separate evidence-based audit.  
 **Rationale:** A fluent, polished output can still omit or distort knowledge.
+
+## Additional risks and mitigations
+
+| ID | Risk | Severity | Mitigation |
+|---|---|---|---|
+| R-009 | Rare or one-off details disappear while high-frequency concepts look complete. | Critical | Atomic knowledge-unit accounting, per-concept coverage, frequency alarms, and deliberate omission mutation tests. |
+| R-010 | Global coverage percentages hide an entirely missing domain, file, or unusual subtopic. | Critical | Report explicit numerators and denominators by vault, file, domain, concept, and KU; unresolved units block release. |
+| R-011 | Tool documentation is mistaken for a working implementation. | High | Capability status must be generated from inspected code and actual test runs, with command, exit code, and report evidence. |
+| R-012 | A parser silently drops unfamiliar Markdown, malformed math, embedded assets, or code blocks. | Critical | Preserve raw source locators, report unsupported cases, test malformed fixtures, and keep affected units unaccounted or under review until resolved. |
+| R-013 | Automated similarity incorrectly labels complementary or conflicting content as duplicates. | High | Treat deterministic matching as candidate generation; retain independent semantic classification and explicit conflict review. |
+| R-014 | Repairs erase already accepted content or regenerate too much of the vault. | High | Require targeted repairs with regression checks, preserve unaffected sections, and quarantine after three failed attempts. |
+
+Coverage statistics and frequency distributions are diagnostic signals, not standalone proof of semantic preservation. A high percentage cannot override a single unaccounted critical knowledge unit, and a frequency drop must trigger investigation rather than automatic rewriting.
