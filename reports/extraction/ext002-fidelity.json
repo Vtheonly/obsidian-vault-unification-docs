@@ -1,0 +1,15 @@
+{
+  "command": "scripts/ext002_fidelity.py",
+  "batch": "state/knowledge-units/002-ext002-master-ai-supervised-learning.jsonl",
+  "records_total": 65,
+  "excerpt_byte_exact": 65,
+  "excerpt_hash_valid": 65,
+  "unique_ids": 65,
+  "vault_id": "master-ai",
+  "files_covered": [
+    "03 - Machine Learning/Supervised Learning/02 - Linear and Logistic Regression.md",
+    "03 - Machine Learning/Supervised Learning/03 - Decision Trees and Gradient Boosting.md"
+  ],
+  "errors": [],
+  "ok": true
+}

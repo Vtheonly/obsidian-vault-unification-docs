@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "vault_id": "master-ai",
+  "scope": "03 - Machine Learning/Supervised Learning",
+  "denominators": {
+    "files_in_scope": 2,
+    "files_extracted": 2,
+    "files_excluded": 0,
+    "files_failed": 0,
+    "scope_note": "denominator = every file enumerated under the scope (all classes); each has exactly one outcome"
+  },
+  "records_written": 65,
+  "units_by_type": {
+    "frontmatter": 2,
+    "callout": 2,
+    "prose": 31,
+    "math_block": 10,
+    "code_block": 3,
+    "table": 1,
+    "list": 16
+  },
+  "batch_path": "/home/z/ovu/repo/reports/extraction/ext002-determinism-run2.jsonl",
+  "batch_valid": true
+}

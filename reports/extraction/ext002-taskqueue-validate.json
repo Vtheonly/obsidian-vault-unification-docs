@@ -1,0 +1,37 @@
+{
+  "command": "validate-registry",
+  "validations": {
+    "tasks": {
+      "file": "state/task-queue.jsonl",
+      "schema": "/home/z/ovu/repo/schemas/task.schema.json",
+      "valid": true,
+      "records_total": 8,
+      "records_valid": 8,
+      "errors": [],
+      "cross_checks": {
+        "status": "run",
+        "tasks_total": 8,
+        "unique_task_ids": 8,
+        "duplicate_task_ids": []
+      }
+    }
+  },
+  "problems_total": 0,
+  "valid": true,
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.4.0",
+    "report_schema_version": "1.0",
+    "command": "validate-registry",
+    "args": {
+      "command": "validate-registry",
+      "tasks": "state/task-queue.jsonl",
+      "tasks_schema": "/home/z/ovu/repo/schemas/task.schema.json",
+      "kus": null,
+      "kus_schema": "/home/z/ovu/repo/schemas/knowledge-unit.schema.json",
+      "report": "/home/z/ovu/repo/reports/extraction/ext002-taskqueue-validate.json"
+    },
+    "utc_timestamp": "2026-10-25T22:05:26+00:00",
+    "git_commit": "081bd1a"
+  }
+}

@@ -53,9 +53,9 @@
     "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)"
   },
   "output_synthesis_started": false,
-  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-26-ext-001.json",
-  "current_task_id": "EXT-002",
-  "notes": "EXT-001 completed: CAP-016 deterministic KU extraction (vu extract-kus) built, tested (46 unit + 7 CLI tests) and run on the first real bounded batch - AI Course '03 - Machine Learning/03.1 - Regression': 6/6 files extracted (handoff said 7; actual 6, F-0005), 298 KU records, line-accounting invariant consistent for every file, byte-exact excerpts (298/298), unique content-derived IDs, byte-identical determinism check, batch schema-valid, registry load 298/298 with 0 anomalies. Independent subagent review PASS (10/10 rare details, 100/100 headings, 0 boundary anomalies, French intact). Framework 0.3.0 -> 0.4.0; 338/338 tests; capabilities: 15 implemented-and-tested, 2 planned (CAP-013 duplicates, CAP-014 coverage regression - both become relevant as batches grow). Sources unchanged before/after. Next: EXT-002 - extract the paired Master AI regression note (03 - Machine Learning/Supervised Learning/02 - Linear and Logistic Regression.md) with vault-id 'master-ai' to enable evidence-based cross-vault overlap classification.",
+  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-26-ext-002.json",
+  "current_task_id": "EXT-003",
+  "notes": "EXT-002 completed: extracted the whole Master AI '03 - Machine Learning/Supervised Learning' folder (2/2 files, 65 KUs; regression pairing file '02 - Linear and Logistic Regression.md' = 35 KUs, decision-trees file = 30 KUs for a later AI-Course-03.7 pairing). Consumed existing CAP-016 (no framework changes; 338/338 tests). Byte-identical determinism; line accounting 167/167 per file; 65/65 byte-exact excerpts + manifest-hash agreement (scripts/ext002_fidelity.py); registry 363 KUs, 0 anomalies; sources unchanged before/after. Independent EXT-002-REVIEW verdict PASS (32/32 rare details, 40/40 headings, 0 boundary anomalies, 65/65 structurally pure, in-memory extractor re-run reproduces the batch exactly); orchestrator spot-checked the review evidence. New finding F-0006 (open): naive substring matching false-positives ('bridge'->'ridge', mermaid L1[/L2[ labels) \u2014 CAP-013 must use word-boundary matching + excerpt confirmation. Next: EXT-003 \u2014 build CAP-013 and classify overlap for the regression domain from the 7 evidenced topic-pair hypotheses in reports/extraction/ext002-review.md (hypotheses, not classifications).",
   "corpus_statistics": {
     "files_total": 609,
     "markdown_files": 609,
@@ -84,11 +84,11 @@
   "knowledge_registry": {
     "canonical_store": "state/knowledge-units/ (committed JSONL batches; ADR-0007)",
     "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load)",
-    "records": 298,
+    "records": 363,
     "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)",
     "commands": "vu kureg-init / kureg-load / kureg-query / kureg-validate",
     "capability": "CAP-011 implemented-and-tested (reports/bootstrap/boot-004-capabilities.json)",
-    "note": "EXT-001 delivered the first real batch (state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl: 6/6 files from AI Course 03.1 - Regression, 298 structural KU records, all Unaccounted). Derived index rebuilt at state/registries/kuregistry.db (kureg-validate clean). Extraction claims no semantics; overlap/disposition classification is EXT-002+ work."
+    "note": "EXT-001 + EXT-002 delivered 2 committed batches (363 structural KU records, all Unaccounted): 001-ext001-ai-course-03.1-regression.jsonl (298 KUs, 6 files) + 002-ext002-master-ai-supervised-learning.jsonl (65 KUs, 2 files incl. the regression pairing file). Derived index rebuilt at state/registries/kuregistry.db (kureg-validate clean, 0 warnings). Extraction claims no semantics; overlap/disposition classification (EXT-003) requires CAP-013 with word-boundary matching per F-0006."
   },
   "framework_foundation_evidence": {
     "test_run": "reports/extraction/ext001-pytest-report.json",

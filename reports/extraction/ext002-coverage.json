@@ -1,0 +1,143 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "command": "extract-kus",
+    "framework_version": "0.4.0",
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "03 - Machine Learning/Supervised Learning",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/home/z/ovu/repo/state/knowledge-units/002-ext002-master-ai-supervised-learning.jsonl",
+    "records_written": 65,
+    "denominators": {
+      "files_in_scope": 2,
+      "files_extracted": 2,
+      "files_excluded": 0,
+      "files_failed": 0,
+      "scope_note": "denominator = every file enumerated under the scope (all classes); each has exactly one outcome"
+    },
+    "units_by_type": {
+      "frontmatter": 2,
+      "callout": 2,
+      "prose": 31,
+      "math_block": 10,
+      "code_block": 3,
+      "table": 1,
+      "list": 16
+    },
+    "file_outcomes": [
+      {
+        "relpath": "03 - Machine Learning/Supervised Learning/02 - Linear and Logistic Regression.md",
+        "outcome": "extracted",
+        "sha256": "ee1cfd184b9e1bf280d937c6308bae73bb81a6d737ba5ac5367df04aded5889a",
+        "manifest_match": true,
+        "units": 35,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 18,
+          "math_block": 9,
+          "code_block": 1,
+          "table": 1,
+          "list": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 93,
+          "frontmatter_lines": 6,
+          "heading_context": 22,
+          "excluded_blank": 52,
+          "excluded_horizontal_rule": 0,
+          "accounted": 167,
+          "lines_total": 167,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 52,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/Supervised Learning/03 - Decision Trees and Gradient Boosting.md",
+        "outcome": "extracted",
+        "sha256": "ca947193018d3c45d3396b14d2308b0278e955a5b73f309cc0fa4702b7df8f5c",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 13,
+          "code_block": 2,
+          "list": 12,
+          "math_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 105,
+          "frontmatter_lines": 6,
+          "heading_context": 18,
+          "excluded_blank": 44,
+          "excluded_horizontal_rule": 0,
+          "accounted": 167,
+          "lines_total": 167,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 44,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ],
+    "batch_validation": {
+      "file": "/home/z/ovu/repo/state/knowledge-units/002-ext002-master-ai-supervised-learning.jsonl",
+      "schema": "/home/z/ovu/repo/schemas/knowledge-unit.schema.json",
+      "valid": true,
+      "records_total": 65,
+      "records_valid": 65,
+      "errors": [],
+      "cross_checks": {
+        "status": "run",
+        "kus_total": 65,
+        "rules": [
+          "duplicate_id",
+          "self_parent",
+          "superseded_rationale_missing",
+          "self_support"
+        ],
+        "note": "cross-batch parent/support references are checked at registry load time"
+      }
+    },
+    "determinism_note": "records contain no timestamps and IDs are content-derived; re-extracting unchanged sources produces a byte-identical batch",
+    "limitations": [
+      "structural segmentation only: unit types describe Markdown block syntax, not meaning",
+      "no dispositions are assigned: every unit is 'Unaccounted' until evidence-based classification",
+      "excerpts normalize CR characters away (splitlines reconstruction); source bytes are untouched",
+      "construct detection inherits mdextract limitations (ATX headings, delimiter-based math)",
+      "extraction coverage is NOT semantic preservation; it is the accounting baseline for later audits"
+    ]
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.4.0",
+    "report_schema_version": "1.0",
+    "command": "extract-kus",
+    "args": {
+      "command": "extract-kus",
+      "root": "source-vaults/AI /Master AI",
+      "scope": "03 - Machine Learning/Supervised Learning",
+      "vault_id": "master-ai",
+      "manifest": "state/manifests/master-ai.jsonl",
+      "out": "state/knowledge-units/002-ext002-master-ai-supervised-learning.jsonl",
+      "kus_schema": "/home/z/ovu/repo/schemas/knowledge-unit.schema.json",
+      "unclosed_fence_finding": null,
+      "report": "/home/z/ovu/repo/reports/extraction/ext002-coverage.json"
+    },
+    "utc_timestamp": "2026-10-25T21:48:50+00:00",
+    "git_commit": "081bd1a"
+  }
+}

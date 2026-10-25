@@ -1,0 +1,6 @@
+{
+  "determinism": "byte-identical",
+  "cmp": "exit 0",
+  "sha256": "e0ef12187b3792dbdc9e2868a31ff7a77f57eb4809fc3ad09aab6663d5871118",
+  "run2_records": 65
+}
