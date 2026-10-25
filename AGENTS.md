@@ -89,3 +89,22 @@ At every session end, report:
 7. Next task and precise resume procedure.
 
 Do not claim the overall project is complete until all release gates pass.
+
+
+## 10. Mandatory framework-first execution and continuous tool-building
+
+The project must be operated through a Python tooling framework that the agent itself builds and evolves in this repository. The framework specification is [docs/TOOLING_FRAMEWORK.md](docs/TOOLING_FRAMEWORK.md); it is a requirement, not evidence that implementation already exists.
+
+- Before doing manual repetitive work, check whether a framework command already supports it. If not, determine whether a reusable deterministic tool should be added before proceeding.
+- Do not use model attention/context as the source of truth for file counts, folder existence, hashes, exact/fuzzy search results, term frequency, link validation, duplicate detection, registry integrity, provenance joins, test outcomes, or regression comparisons when code can compute them.
+- The agent owns framework implementation: design, code, tests, CLI/help, documentation, integration, maintenance, and incremental expansion. Do not expect the user to supply the framework.
+- Build a small reliable foundation first, then add capabilities as concrete project needs emerge. Each tool must have defined inputs, outputs, exit behavior, error handling, and tests.
+- Tool output must be machine-readable where practical (JSON/JSONL/CSV plus a human-readable summary), reproducible, and explicit about scope, denominator, exclusions, and failures.
+- A successful command is not automatically proof of semantic correctness. Keep deterministic checks, AI-assisted review, and independent acceptance as separate evidence classes.
+- Never invent a command's result or claim a test passed unless it was actually run. Preserve logs/reports sufficient for another session to verify it.
+- Every new tool or change must include unit tests, appropriate integration/regression tests, a documentation update, and a check that existing tools still work. Test failure paths and malformed inputs, not only happy paths.
+- Do not let the framework silently mutate either source vault. Source operations are read-only by default; output-writing commands must require explicit destination paths and guard against source/output overlap.
+- Before large-scale synthesis, complete the framework foundation and an omission-detection pilot that demonstrates detection and localization of deliberately injected defects.
+- At each session's end, identify repeated manual actions or verification gaps encountered; either add a bounded framework task or document why automation would be unsafe or not worthwhile.
+
+The canonical specification defines initial modules, interfaces, tool lifecycle, testing, reports, and expansion policy. Do not create competing undocumented tool inventories.
