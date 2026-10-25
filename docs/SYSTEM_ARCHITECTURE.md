@@ -99,3 +99,10 @@ Makes bounded corrections referencing the findings and source-unit IDs. Repairs 
 
 ### Session orchestrator
 Selects work based on actual state, delegates bounded tasks, reviews results, persists checkpoints, and prepares handoffs.
+
+
+## Python tooling framework (mandatory execution layer)
+
+The framework specified in [TOOLING_FRAMEWORK.md](TOOLING_FRAMEWORK.md) is the execution layer for deterministic operations across the pipeline. It must be built and expanded by the project agent, not assumed to exist. Inventory, extraction checks, counts, search/matching, hashes, link/asset validation, registry/provenance checks, test execution, and regression reports should be produced by tested commands. The framework prepares evidence bundles for semantic reviewers; it does not replace semantic reasoning or independent acceptance.
+
+Large-scale synthesis is blocked until the initial framework foundation and omission-detection pilot have passed. Every later task must check existing capabilities first and create a bounded tool-building task when a reusable deterministic capability is missing. Source paths remain read-only, and all write-capable commands must enforce destination safety.
