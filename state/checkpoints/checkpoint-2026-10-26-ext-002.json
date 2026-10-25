@@ -34,7 +34,7 @@
     "independent_review": "EXT-002-REVIEW subagent verdict PASS (32/32 rare details, 40/40 headings, 0 anomalies, 65/65 pure); orchestrator spot-check confirmed sampled evidence",
     "source_immutability": "reports/extraction/ext002-immutable-{before,after}-{master-ai,ai-course}.json (all 0 added/removed/changed)",
     "determinism": "second run byte-identical (cmp exit 0; sha256 in reports/extraction/ext002-determinism.json)",
-    "work_commit": "<WORK_COMMIT>"
+    "work_commit": "cc05fc2"
   },
   "changed_paths": [
     "state/knowledge-units/002-ext002-master-ai-supervised-learning.jsonl",
