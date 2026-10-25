@@ -1,0 +1,66 @@
+{
+  "checkpoint_id": "CHK-2026-10-26-BOOT-004",
+  "created_utc": "2026-10-25T20:39:28+00:00",
+  "stage": "framework_bootstrap",
+  "task_id": "BOOT-004",
+  "task_status": "completed",
+  "last_verified_state": {
+    "framework_version": "0.3.0 + CAP-012 (omission pilot and output auditor)",
+    "test_result": "285 passed, 0 failed, 0 skipped",
+    "test_evidence": "reports/bootstrap/boot-004-pytest-report.json",
+    "capabilities_evidence": "reports/bootstrap/boot-004-capabilities.json (14 implemented-and-tested, 2 planned)",
+    "omission_pilot_evidence": {
+      "pilot_report": "reports/bootstrap/boot-004-omission-pilot.json",
+      "run_summary": "reports/bootstrap/boot-004-run-summary.json",
+      "verdict": "pass",
+      "detection": "12/12 defects detected",
+      "localization": "12/12 localized to expected KU and destination note",
+      "false_negatives": 0,
+      "false_positives_on_clean_baseline": 0,
+      "hard_gate": "PASSED - large-scale synthesis unblocked (AGENTS.md 7.5)"
+    },
+    "ku_schema_version": "1.1 (ADR-0008)",
+    "registry_store": "state/knowledge-units/ (0 records; canonical, committed)",
+    "source_immutability": {
+      "master_ai": "reports/bootstrap/boot-004-immutable-{before,after}-master-ai.json (0 added/removed/changed)",
+      "ai_course": "reports/bootstrap/boot-004-immutable-{before,after}-ai-course.json (0 added/removed/changed)"
+    }
+  },
+  "changed_paths": [
+    "src/vault_unification/omission.py",
+    "src/vault_unification/cli.py",
+    "src/vault_unification/capabilities.py",
+    "src/vault_unification/__init__.py",
+    "tests/test_omission.py",
+    "tests/test_cli.py",
+    "tests/test_capabilities.py",
+    "docs/FRAMEWORK_SETUP.md",
+    "scripts/boot004_pilot.py",
+    "scripts/boot004_state_update.py",
+    "reports/bootstrap/boot-004-*",
+    "state/task-queue.jsonl",
+    "state/current-state.json",
+    "state/checkpoints/checkpoint-2026-10-26-boot-004.json",
+    "docs/agent-handoff/next-agent.md"
+  ],
+  "next_task": {
+    "task_id": "EXT-001",
+    "title": "Build the deterministic KU extraction pipeline and extract the first bounded real batch",
+    "status": "ready",
+    "dependencies": [
+      "BOOT-004"
+    ]
+  },
+  "open_findings": [
+    "F-0001",
+    "F-0002",
+    "F-0003",
+    "F-0004"
+  ],
+  "explicit_non_claims": [
+    "No knowledge units have been extracted from the real vaults; state/knowledge-units/ holds 0 records",
+    "No semantic verification of real source content has occurred; the pilot verified the AUDITOR on synthetic data",
+    "No synthesis output exists yet; output_synthesis_started is false",
+    "Master AI has not been link-checked yet"
+  ]
+}

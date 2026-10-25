@@ -56,6 +56,8 @@ def run_cli(*args: str, cwd: Path | None = None, timeout: int = 300) -> subproce
         "kureg-load",
         "kureg-query",
         "kureg-validate",
+        "audit-output",
+        "omission-pilot",
     ],
 )
 def test_help_works(command):
@@ -525,3 +527,78 @@ class TestCapabilitiesCLI:
     # logic is covered in tests/test_capabilities.py at function level using
     # bounded subsets; the CLI --verify wiring itself is exercised by the
     # session evidence run recorded in reports/framework/.
+
+
+class TestOmissionCLI:
+    """CLI wiring for vu audit-output and vu omission-pilot (CAP-012)."""
+
+    def _build(self, dest: Path) -> dict:
+        from vault_unification.omission import build_fixture
+
+        return build_fixture(dest)
+
+    def test_audit_output_clean_exits_zero(self, tmp_path):
+        fixture = self._build(tmp_path / "fixture")
+        json_report = tmp_path / "audit.json"
+        proc = run_cli(
+            "audit-output",
+            "--source-root", fixture["sources_root"],
+            "--output-root", fixture["output_root"],
+            "--ku-batch", fixture["ku_batch_path"],
+            "--accepted-manifest", fixture["accepted_manifest_path"],
+            "--report", str(json_report),
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        data = json.loads(json_report.read_text(encoding="utf-8"))
+        assert data["result"]["valid"] is True
+        assert data["result"]["findings"] == []
+
+    def test_audit_output_defects_exit_one(self, tmp_path):
+        from vault_unification.omission import apply_mutation
+
+        fixture = self._build(tmp_path / "fixture")
+        mutated = tmp_path / "mutated"
+        apply_mutation(fixture["output_root"], mutated, "D01")
+        proc = run_cli(
+            "audit-output",
+            "--source-root", fixture["sources_root"],
+            "--output-root", str(mutated),
+            "--ku-batch", fixture["ku_batch_path"],
+        )
+        assert proc.returncode == 1
+        assert "unique-detail-omission" in proc.stdout
+
+    def test_audit_output_report_refused_inside_source(self, tmp_path):
+        fixture = self._build(tmp_path / "fixture")
+        proc = run_cli(
+            "audit-output",
+            "--source-root", fixture["sources_root"],
+            "--output-root", fixture["output_root"],
+            "--ku-batch", fixture["ku_batch_path"],
+            "--report", str(Path(fixture["sources_root"]) / "report.json"),
+        )
+        assert proc.returncode == 1
+        assert "refusing to write" in proc.stderr
+
+    def test_omission_pilot_exits_zero(self, tmp_path):
+        json_report = tmp_path / "pilot.json"
+        proc = run_cli(
+            "omission-pilot",
+            "--dest", str(tmp_path / "pilot"),
+            "--report", str(json_report),
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        data = json.loads(json_report.read_text(encoding="utf-8"))
+        assert data["result"]["verdict"]["pass"] is True
+        assert data["result"]["summary"]["detection_rate"] == "12/12"
+
+    def test_omission_pilot_dest_inside_source_vaults_refused(self, tmp_path):
+        protected = tmp_path / "source-vaults"
+        (protected / "AI Course").mkdir(parents=True)
+        proc = run_cli(
+            "omission-pilot",
+            "--dest", str(protected / "AI Course" / "pilot"),
+            "--protected-root", str(protected),
+        )
+        assert proc.returncode == 1
+        assert "refusing to write" in proc.stderr

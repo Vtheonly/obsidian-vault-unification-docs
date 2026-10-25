@@ -1,4 +1,4 @@
-# Framework Setup and Usage (v0.2.0)
+# Framework Setup and Usage (v0.3.0)
 
 Implementation documentation for the Python tooling framework specified in
 [TOOLING_FRAMEWORK.md](TOOLING_FRAMEWORK.md). This document describes what
@@ -8,18 +8,19 @@ the implemented surface and evidence.
 
 ## Status
 
-- Version: 0.2.0 (BOOT-000 deliverable; `stats` added in BOOT-002 as CAP-015;
-  KU registry commands added in BOOT-003 as CAP-011)
+- Version: 0.3.0 (BOOT-000 deliverable; `stats` added in BOOT-002 as CAP-015;
+  KU registry commands added in BOOT-003 as CAP-011; omission-detection pilot
+  and output auditor added in BOOT-004 as CAP-012)
 - Layout: `src/vault_unification/` package, `tests/` pytest suite,
   `reports/framework/` + `reports/bootstrap/` evidence reports,
   `state/manifests/` hash manifests, `state/knowledge-units/` canonical KU
   store, `state/registries/` derived registry databases (git-ignored).
 - Test evidence: 153 tests passed at BOOT-000; 178 after BOOT-002; 248 after
-  the BOOT-003 registry addition — see
-  `reports/bootstrap/boot-003-pytest-report.json`.
+  the BOOT-003 registry addition; 285 after the BOOT-004 pilot — see
+  `reports/bootstrap/boot-004-pytest-report.json`.
 - Capability inventory (verified against test runs):
-  `reports/bootstrap/boot-003-capabilities.json`. 13 code-backed capabilities
-  verified `implemented-and-tested`; 3 roadmap capabilities `planned`.
+  `reports/bootstrap/boot-004-capabilities.json`. 14 code-backed capabilities
+  verified `implemented-and-tested`; 2 roadmap capabilities `planned`.
 - Source immutability evidence: per-task reports under
   `reports/bootstrap/boot-00N-immutable-*.json` (0 added/removed/changed
   before and after all session operations).
@@ -63,6 +64,8 @@ Runtime: Python >= 3.10. Optional dependencies (checked by `selftest`):
 | `kureg-load --db D --kus F [--mint-ids]` | validate + atomically load a KU JSONL batch | batch valid and inserted (or identical re-load skipped) | any schema/cross-check/parse error or ID conflict (nothing written) |
 | `kureg-query --db D [filters]` | query registry, reconstruct schema-shaped records | always (unless invalid args/missing db) | missing/corrupt db, unknown disposition filter |
 | `kureg-validate --db D` | registry integrity + accounting report | no errors | any dangling reference, enum violation, missing Superseded rationale, corrupt JSON |
+| `audit-output --source-root S --output-root O --ku-batch F [--accepted-manifest M]` | full omission/corruption audit of a candidate output vault (KU batch validity, drift vs accepted manifest, disposition/destination accounting, rare-term + equation + code marker retention, link integrity, heading-convention and prose-quality lint) | audit valid (no critical/major findings) | any blocking finding or unusable input |
+| `omission-pilot --dest D [--keep-mutations]` | build the synthetic paired-source fixture, plant 12 declared defects one at a time into mutated copies, re-run the audit pipeline and report detection + localization, false positives and the verdict (hard gate before large-scale synthesis) | verdict pass (all defects detected and localized, clean baseline, sources unchanged) | verdict fail (any missed/unlocalized defect, false positives on the clean baseline, or audit error) |
 | `run-tests --tests-dir D --json-report P` | pytest orchestration, machine-readable | suite passed | suite failed |
 | `capabilities [--verify]` | capability inventory | declared mode; verify mode with all referenced tests passing | verification failed |
 
@@ -154,7 +157,46 @@ Semantics worth knowing:
   root (`--protected-root`, defaulting to the repository's `source-vaults/`
   when present); registry commands never touch the source vaults.
 
-## Known limitations (v0.2.0)
+## Omission-detection pilot and output auditor (CAP-012)
+
+The hard gate before large-scale synthesis (AGENTS.md 7.5) has two halves:
+
+- **`vu omission-pilot --dest D`** builds a synthetic paired-source fixture
+  (never inside `source-vaults/`) with exact/semantic duplicates, partial
+  overlap, complementary theory/code, a conflicting historical attribution,
+  a rare fact, equations with intermediate derivation steps, a project
+  caveat, code blocks and internal links; a known-good baseline synthesis;
+  11 KU records with minted stable IDs and destinations; and an accepted
+  manifest. It then plants each of 12 declared defects into a *copy* of the
+  baseline, re-runs the audit pipeline and reports detection, localization
+  to the expected KU + destination note, false positives on the clean
+  baseline and an overall verdict. Exit 0 only when every defect is detected
+  AND localized, the clean baseline audits with zero findings and the
+  fixture sources stayed byte-identical.
+- **`vu audit-output --source-root S --output-root O --ku-batch F
+  [--accepted-manifest M]`** is the reusable real-work pipeline every
+  synthesis batch must eventually pass: KU-batch validation, output drift
+  against the accepted manifest, disposition/destination accounting,
+  marker retention (rare-term, equation and code fingerprints per KU), link
+  integrity, heading-convention and prose-quality lint. Findings always
+  carry stable KU IDs, destination locators, expected/observed evidence and
+  a repair hint.
+
+Evidence from the BOOT-004 run: 12/12 defects detected and localized, 0
+false negatives, 0 false positives on the clean baseline, source vaults
+unchanged before and after (`reports/bootstrap/boot-004-omission-pilot.json`,
+`reports/bootstrap/boot-004-run-summary.json`). Deterministic repetition:
+`python3 scripts/boot004_pilot.py`.
+
+The 12 defect classes mirror VERIFICATION_SPECIFICATION.md "Deliberate
+omission tests" plus section 6: unique-detail omission, equation omission,
+ derivation-step omission, caveat omission, sign alteration, obscure
+one-file concept removal, wikilink break, heading-convention change,
+bullet-only prose degradation, version-distinction loss (silent conflict
+resolution), accepted-output drift during later repair, and code-parameter
+deletion.
+
+## Known limitations (v0.3.0)
 
 - Inline `$...$` math detection is delimiter-based; currency-style dollar
   signs can produce false positives; no LaTeX syntax validation.
@@ -186,6 +228,16 @@ Semantics worth knowing:
   separation are enforced by cross-check code, not by JSON Schema
   (ADR-0008): a record with a bad conditional value passes pure-schema
   validation but fails `validate-registry --kus` and `kureg-load`.
+- CAP-012 auditor limitations (full list in `vu capabilities` and in every
+  audit/pilot report): term markers are frequency-based and cannot cover
+  claims carried only by common vocabulary; no stemming or grammar-level
+  matching, so reworded claims are caught only through shared distinctive
+  vocabulary; equation/code matching compares normalized source strings;
+  heading-convention detects mixed schemes per note only; prose-quality is
+  a word-count heuristic; drift detection requires an accepted manifest;
+  link findings attribute KU ownership by destination note plus wikilink
+  presence in the excerpt; the pilot fixture is small by design and
+  corpus-scale noise must be re-measured on real extraction batches.
 
 ## Recovery and troubleshooting
 

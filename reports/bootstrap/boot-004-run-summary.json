@@ -1,0 +1,74 @@
+{
+  "task_id": "BOOT-004",
+  "purpose": "omission-detection pilot evidence run (hard gate before large-scale synthesis)",
+  "steps": [
+    {
+      "command": "vu verify-manifest --root source-vaults/AI /Master AI --manifest state/manifests/master-ai.jsonl --report /home/z/my-project/obsidian-vault-unification-docs/reports/bootstrap/boot-004-immutable-before-master-ai.json",
+      "exit_code": 0,
+      "report": "reports/bootstrap/boot-004-immutable-before-master-ai.json",
+      "report_exists": true,
+      "stdout_tail": "{\n  \"root\": \"source-vaults/AI /Master AI\",\n  \"diff_counts\": {\n    \"before\": 333,\n    \"after\": 333,\n    \"added\": 0,\n    \"removed\": 0,\n    \"changed\": 0,\n    \"unchanged\": 333\n  },\n  \"added\": [],\n  \"removed\": [],\n  \"changed\": []\n}\n",
+      "vault": "master-ai",
+      "phase": "before"
+    },
+    {
+      "command": "vu verify-manifest --root source-vaults/AI /AI Course --manifest state/manifests/ai-course.jsonl --report /home/z/my-project/obsidian-vault-unification-docs/reports/bootstrap/boot-004-immutable-before-ai-course.json",
+      "exit_code": 0,
+      "report": "reports/bootstrap/boot-004-immutable-before-ai-course.json",
+      "report_exists": true,
+      "stdout_tail": "{\n  \"root\": \"source-vaults/AI /AI Course\",\n  \"diff_counts\": {\n    \"before\": 276,\n    \"after\": 276,\n    \"added\": 0,\n    \"removed\": 0,\n    \"changed\": 0,\n    \"unchanged\": 276\n  },\n  \"added\": [],\n  \"removed\": [],\n  \"changed\": []\n}\n",
+      "vault": "ai-course",
+      "phase": "before"
+    },
+    {
+      "command": "vu omission-pilot --dest /tmp/boot004-pilot-gpdmeq0n --report /home/z/my-project/obsidian-vault-unification-docs/reports/bootstrap/boot-004-omission-pilot.json",
+      "exit_code": 0,
+      "report": "reports/bootstrap/boot-004-omission-pilot.json",
+      "report_exists": true,
+      "stdout_tail": "{\n  \"verdict\": {\n    \"pass\": true,\n    \"failed_criteria\": []\n  },\n  \"summary\": {\n    \"defects_total\": 12,\n    \"defects_detected\": 12,\n    \"defects_missed\": [],\n    \"defects_not_localized\": [],\n    \"detection_rate\": \"12/12\",\n    \"localization_rate\": \"12/12\",\n    \"false_negatives\": [],\n    \"false_positives_on_clean_baseline\": 0\n  },\n  \"fixture\": {\n    \"ku_records\": 11,\n    \"output_files\": 4,\n    \"defects_declared\": 12\n  },\n  \"source_immutability\": true\n}\n"
+    },
+    {
+      "command": "vu verify-manifest --root source-vaults/AI /Master AI --manifest state/manifests/master-ai.jsonl --report /home/z/my-project/obsidian-vault-unification-docs/reports/bootstrap/boot-004-immutable-after-master-ai.json",
+      "exit_code": 0,
+      "report": "reports/bootstrap/boot-004-immutable-after-master-ai.json",
+      "report_exists": true,
+      "stdout_tail": "{\n  \"root\": \"source-vaults/AI /Master AI\",\n  \"diff_counts\": {\n    \"before\": 333,\n    \"after\": 333,\n    \"added\": 0,\n    \"removed\": 0,\n    \"changed\": 0,\n    \"unchanged\": 333\n  },\n  \"added\": [],\n  \"removed\": [],\n  \"changed\": []\n}\n",
+      "vault": "master-ai",
+      "phase": "after"
+    },
+    {
+      "command": "vu verify-manifest --root source-vaults/AI /AI Course --manifest state/manifests/ai-course.jsonl --report /home/z/my-project/obsidian-vault-unification-docs/reports/bootstrap/boot-004-immutable-after-ai-course.json",
+      "exit_code": 0,
+      "report": "reports/bootstrap/boot-004-immutable-after-ai-course.json",
+      "report_exists": true,
+      "stdout_tail": "{\n  \"root\": \"source-vaults/AI /AI Course\",\n  \"diff_counts\": {\n    \"before\": 276,\n    \"after\": 276,\n    \"added\": 0,\n    \"removed\": 0,\n    \"changed\": 0,\n    \"unchanged\": 276\n  },\n  \"added\": [],\n  \"removed\": [],\n  \"changed\": []\n}\n",
+      "vault": "ai-course",
+      "phase": "after"
+    }
+  ],
+  "pilot_verdict": {
+    "pass": true,
+    "failed_criteria": []
+  },
+  "pilot_summary": {
+    "defects_total": 12,
+    "defects_detected": 12,
+    "defects_missed": [],
+    "defects_not_localized": [],
+    "detection_rate": "12/12",
+    "localization_rate": "12/12",
+    "false_negatives": [],
+    "false_positives_on_clean_baseline": 0
+  },
+  "source_immutability": {
+    "before_exit_codes": [
+      0,
+      0
+    ],
+    "after_exit_codes": [
+      0,
+      0
+    ]
+  },
+  "all_steps_ok": true
+}

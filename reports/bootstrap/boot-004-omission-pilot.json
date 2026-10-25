@@ -1,0 +1,1901 @@
+{
+  "command": "omission-pilot",
+  "result": {
+    "pilot_schema_version": "1.0",
+    "fixture": {
+      "sources_root": "/tmp/boot004-pilot-gpdmeq0n/sources",
+      "output_root": "/tmp/boot004-pilot-gpdmeq0n/output-baseline",
+      "ku_batch_path": "/tmp/boot004-pilot-gpdmeq0n/ku-batch.jsonl",
+      "accepted_manifest_path": "/tmp/boot004-pilot-gpdmeq0n/accepted-manifest.jsonl",
+      "ku_records": 11,
+      "ku_ids": [
+        "KU-12055234181caa14",
+        "KU-1ae723dbe2965d11",
+        "KU-2669654f8542e5d3",
+        "KU-2f48878d65c5eb83",
+        "KU-557936a66d36214c",
+        "KU-915bc9ca25146311",
+        "KU-a4aa60074f0e3070",
+        "KU-b2d4bf2e322503dd",
+        "KU-b55aee2ca3489b5a",
+        "KU-b6a7265b218f51a3",
+        "KU-f1522ed1cf7b46de"
+      ],
+      "output_files": [
+        "Neural Networks/Automatic Differentiation.md",
+        "Neural Networks/Backpropagation.md",
+        "Neural Networks/Chain Rule Refresher.md",
+        "Neural Networks/Gradient Descent.md"
+      ],
+      "source_files": {
+        "vault-a": "dadf7323fcf2574942ab482e8014d9e7590027db6355116fc31df158c164738e",
+        "vault-b": "5e13cfd5b1261316da6a1f4ec5c65a8fbe426439c31301a7d5de1cb8502e9d22"
+      },
+      "defects_declared": 12
+    },
+    "baseline_audit": {
+      "finding_count": 0,
+      "findings": [],
+      "false_positive_count": 0
+    },
+    "defect_results": [
+      {
+        "defect_id": "D01",
+        "category": "unique-detail-omission",
+        "expected_detector": "marker-retention (rare terms)",
+        "regression_scenario": false,
+        "expected_note": "Neural Networks/Backpropagation.md",
+        "applied_mutation": "removed the Linnainmaa rare-fact sentences from section 3",
+        "audit_error": null,
+        "detected": true,
+        "localized_ku": true,
+        "localized_note": true,
+        "findings": [
+          {
+            "finding_id": "AF-001",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-002",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-003",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-004",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-005",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-006",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-007",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-008",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-009",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-010",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-011",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-012",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-013",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-014",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-015",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b2d4bf2e322503dd"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "3. Rare Historical Note on Priority"
+            },
+            "observed": "term not found anywhere in the output vault"
+          }
+        ],
+        "expected_ku_ids": [
+          "KU-b2d4bf2e322503dd"
+        ]
+      },
+      {
+        "defect_id": "D02",
+        "category": "equation-omission",
+        "expected_detector": "marker-retention (equation fingerprint)",
+        "regression_scenario": false,
+        "expected_note": "Neural Networks/Backpropagation.md",
+        "applied_mutation": "removed the timestep update-rule display equation from section 1.1",
+        "audit_error": null,
+        "detected": true,
+        "localized_ku": true,
+        "localized_note": true,
+        "findings": [
+          {
+            "finding_id": "AF-001",
+            "check": "marker-retention",
+            "category": "equation-omission",
+            "severity": "critical",
+            "ku_ids": [
+              "KU-557936a66d36214c"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1.1 Derivation Step by Step"
+            },
+            "observed": "equation not found (omitted or altered)"
+          }
+        ],
+        "expected_ku_ids": [
+          "KU-557936a66d36214c"
+        ]
+      },
+      {
+        "defect_id": "D03",
+        "category": "derivation-step-omission",
+        "expected_detector": "marker-retention (equation fingerprint)",
+        "regression_scenario": false,
+        "expected_note": "Neural Networks/Backpropagation.md",
+        "applied_mutation": "removed the intermediate sigmoid-derivative equation from section 1.1",
+        "audit_error": null,
+        "detected": true,
+        "localized_ku": true,
+        "localized_note": true,
+        "findings": [
+          {
+            "finding_id": "AF-001",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-557936a66d36214c"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1.1 Derivation Step by Step"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-002",
+            "check": "marker-retention",
+            "category": "equation-omission",
+            "severity": "critical",
+            "ku_ids": [
+              "KU-557936a66d36214c"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1.1 Derivation Step by Step"
+            },
+            "observed": "equation not found (omitted or altered)"
+          }
+        ],
+        "expected_ku_ids": [
+          "KU-557936a66d36214c"
+        ]
+      },
+      {
+        "defect_id": "D04",
+        "category": "caveat-omission",
+        "expected_detector": "marker-retention + prose-quality",
+        "regression_scenario": false,
+        "expected_note": "Neural Networks/Backpropagation.md",
+        "applied_mutation": "replaced the 2022 warehouse-forecast caveat paragraph with a stub sentence",
+        "audit_error": null,
+        "detected": true,
+        "localized_ku": true,
+        "localized_note": true,
+        "findings": [
+          {
+            "finding_id": "AF-001",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-002",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-003",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-004",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-005",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-006",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-007",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-008",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-009",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-010",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-011",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-012",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-013",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-014",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-015",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-016",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-017",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-018",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-019",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-020",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-021",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-022",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-023",
+            "check": "prose-quality",
+            "category": "prose-degradation",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2f48878d65c5eb83"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "2. Project Caveats From the 2022 Warehouse Forecast"
+            },
+            "observed": "only 6 prose words outside lists/code/math"
+          }
+        ],
+        "expected_ku_ids": [
+          "KU-2f48878d65c5eb83"
+        ]
+      },
+      {
+        "defect_id": "D05",
+        "category": "equation-sign-alteration",
+        "expected_detector": "marker-retention (equation fingerprint)",
+        "regression_scenario": false,
+        "expected_note": "Neural Networks/Backpropagation.md",
+        "applied_mutation": "flipped the sign in the loss-gradient equation (a - y -> a + y)",
+        "audit_error": null,
+        "detected": true,
+        "localized_ku": true,
+        "localized_note": true,
+        "findings": [
+          {
+            "finding_id": "AF-001",
+            "check": "marker-retention",
+            "category": "equation-omission",
+            "severity": "critical",
+            "ku_ids": [
+              "KU-557936a66d36214c"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1.1 Derivation Step by Step"
+            },
+            "observed": "equation not found (omitted or altered)"
+          },
+          {
+            "finding_id": "AF-002",
+            "check": "marker-retention",
+            "category": "equation-omission",
+            "severity": "critical",
+            "ku_ids": [
+              "KU-f1522ed1cf7b46de"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1.1 Derivation Step by Step"
+            },
+            "observed": "equation not found (omitted or altered)"
+          }
+        ],
+        "expected_ku_ids": [
+          "KU-557936a66d36214c"
+        ]
+      },
+      {
+        "defect_id": "D06",
+        "category": "obscure-concept-omission",
+        "expected_detector": "marker-retention + destination-anchor",
+        "regression_scenario": false,
+        "expected_note": "Neural Networks/Backpropagation.md",
+        "applied_mutation": "deleted the whole Numerical Gradient Check section (one-file concept)",
+        "audit_error": null,
+        "detected": true,
+        "localized_ku": true,
+        "localized_note": true,
+        "findings": [
+          {
+            "finding_id": "AF-001",
+            "check": "destination",
+            "category": "destination-heading-missing",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2669654f8542e5d3"
+            ],
+            "destination": {
+              "heading": "6. Numerical Gradient Check",
+              "path": "Neural Networks/Backpropagation.md"
+            },
+            "observed": "heading not found in destination note"
+          },
+          {
+            "finding_id": "AF-002",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2669654f8542e5d3"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "6. Numerical Gradient Check"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-003",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2669654f8542e5d3"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "6. Numerical Gradient Check"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-004",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2669654f8542e5d3"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "6. Numerical Gradient Check"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-005",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2669654f8542e5d3"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "6. Numerical Gradient Check"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-006",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2669654f8542e5d3"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "6. Numerical Gradient Check"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-007",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2669654f8542e5d3"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "6. Numerical Gradient Check"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-008",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2669654f8542e5d3"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "6. Numerical Gradient Check"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-009",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2669654f8542e5d3"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "6. Numerical Gradient Check"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-010",
+            "check": "marker-retention",
+            "category": "code-omission",
+            "severity": "critical",
+            "ku_ids": [
+              "KU-2669654f8542e5d3"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "6. Numerical Gradient Check"
+            },
+            "observed": "code block not found (omitted or altered)"
+          }
+        ],
+        "expected_ku_ids": [
+          "KU-2669654f8542e5d3"
+        ]
+      },
+      {
+        "defect_id": "D07",
+        "category": "link-break",
+        "expected_detector": "link-integrity",
+        "regression_scenario": false,
+        "expected_note": "Neural Networks/Backpropagation.md",
+        "applied_mutation": "retargeted the Chain Rule Refresher wikilink to a missing note",
+        "audit_error": null,
+        "detected": true,
+        "localized_ku": true,
+        "localized_note": true,
+        "findings": [
+          {
+            "finding_id": "AF-001",
+            "check": "link-integrity",
+            "category": "link-broken",
+            "severity": "major",
+            "ku_ids": [
+              "KU-1ae723dbe2965d11",
+              "KU-b6a7265b218f51a3"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": null
+            },
+            "observed": "link problem: broken (Chain Rule Basics)"
+          }
+        ],
+        "expected_ku_ids": [
+          "KU-1ae723dbe2965d11"
+        ]
+      },
+      {
+        "defect_id": "D08",
+        "category": "heading-convention-change",
+        "expected_detector": "heading-convention + destination-anchor",
+        "regression_scenario": false,
+        "expected_note": "Neural Networks/Backpropagation.md",
+        "applied_mutation": "dropped the numbering of heading 4, breaking the section convention",
+        "audit_error": null,
+        "detected": true,
+        "localized_ku": true,
+        "localized_note": true,
+        "findings": [
+          {
+            "finding_id": "AF-001",
+            "check": "destination",
+            "category": "destination-heading-missing",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0",
+              "path": "Neural Networks/Backpropagation.md"
+            },
+            "observed": "heading not found in destination note"
+          },
+          {
+            "finding_id": "AF-002",
+            "check": "heading-convention",
+            "category": "mixed-numbering-scheme",
+            "severity": "major",
+            "ku_ids": [],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "unnumbered heading mixed into a numbered note"
+          }
+        ],
+        "expected_ku_ids": [
+          "KU-b55aee2ca3489b5a"
+        ]
+      },
+      {
+        "defect_id": "D09",
+        "category": "prose-degradation",
+        "expected_detector": "prose-quality + marker-retention",
+        "regression_scenario": false,
+        "expected_note": "Neural Networks/Backpropagation.md",
+        "applied_mutation": "degraded section 1 prose into bullet-only fragments",
+        "audit_error": null,
+        "detected": true,
+        "localized_ku": true,
+        "localized_note": true,
+        "findings": [
+          {
+            "finding_id": "AF-001",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-002",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-003",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-004",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-005",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-006",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-007",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-008",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-009",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-010",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-011",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-012",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-013",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-014",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-015",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-016",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-017",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-018",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-915bc9ca25146311"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-019",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-915bc9ca25146311"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-020",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-915bc9ca25146311"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-021",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-915bc9ca25146311"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-022",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-915bc9ca25146311"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-023",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-915bc9ca25146311"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-024",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-915bc9ca25146311"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-025",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-915bc9ca25146311"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-026",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-915bc9ca25146311"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-027",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-915bc9ca25146311"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-028",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-915bc9ca25146311"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-029",
+            "check": "prose-quality",
+            "category": "prose-degradation",
+            "severity": "major",
+            "ku_ids": [
+              "KU-915bc9ca25146311",
+              "KU-a4aa60074f0e3070"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "1. The Chain Rule Foundation"
+            },
+            "observed": "only 0 prose words outside lists/code/math"
+          }
+        ],
+        "expected_ku_ids": [
+          "KU-a4aa60074f0e3070"
+        ]
+      },
+      {
+        "defect_id": "D10",
+        "category": "version-distinction-loss",
+        "expected_detector": "marker-retention (rare terms)",
+        "regression_scenario": false,
+        "expected_note": "Neural Networks/Backpropagation.md",
+        "applied_mutation": "collapsed the PyTorch 1.x vs 2.0 distinction into one unversioned claim",
+        "audit_error": null,
+        "detected": true,
+        "localized_ku": true,
+        "localized_note": true,
+        "findings": [
+          {
+            "finding_id": "AF-001",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-002",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-003",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-004",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-005",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-006",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-007",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-008",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-009",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-010",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-011",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-012",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-013",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-014",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-015",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-016",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-017",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-018",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-019",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-020",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-021",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-022",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-023",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-024",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-025",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-026",
+            "check": "prose-quality",
+            "category": "prose-degradation",
+            "severity": "major",
+            "ku_ids": [
+              "KU-b55aee2ca3489b5a"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "4. Version Distinction: PyTorch 1.x vs 2.0"
+            },
+            "observed": "only 10 prose words outside lists/code/math"
+          }
+        ],
+        "expected_ku_ids": [
+          "KU-b55aee2ca3489b5a"
+        ]
+      },
+      {
+        "defect_id": "D11",
+        "category": "accepted-output-drift",
+        "expected_detector": "output-manifest regression",
+        "regression_scenario": true,
+        "expected_note": "Neural Networks/Backpropagation.md",
+        "applied_mutation": "appended a TODO line to the accepted synthesis note",
+        "audit_error": null,
+        "detected": true,
+        "localized_ku": true,
+        "localized_note": true,
+        "findings": [
+          {
+            "finding_id": "AF-001",
+            "check": "output-drift",
+            "category": "accepted-file-changed",
+            "severity": "critical",
+            "ku_ids": [
+              "KU-12055234181caa14",
+              "KU-1ae723dbe2965d11",
+              "KU-2669654f8542e5d3",
+              "KU-2f48878d65c5eb83",
+              "KU-557936a66d36214c",
+              "KU-915bc9ca25146311",
+              "KU-a4aa60074f0e3070",
+              "KU-b2d4bf2e322503dd",
+              "KU-b55aee2ca3489b5a",
+              "KU-b6a7265b218f51a3",
+              "KU-f1522ed1cf7b46de"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": null
+            },
+            "observed": "content hash differs from the accepted manifest"
+          }
+        ],
+        "expected_ku_ids": [
+          "KU-a4aa60074f0e3070"
+        ]
+      },
+      {
+        "defect_id": "D12",
+        "category": "code-parameter-deletion",
+        "expected_detector": "marker-retention (code fingerprint)",
+        "regression_scenario": false,
+        "expected_note": "Neural Networks/Backpropagation.md",
+        "applied_mutation": "deleted the eps=1e-5 parameter from numerical_gradient",
+        "audit_error": null,
+        "detected": true,
+        "localized_ku": true,
+        "localized_note": true,
+        "findings": [
+          {
+            "finding_id": "AF-001",
+            "check": "marker-retention",
+            "category": "unique-detail-omission",
+            "severity": "major",
+            "ku_ids": [
+              "KU-2669654f8542e5d3"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "6. Numerical Gradient Check"
+            },
+            "observed": "term not found anywhere in the output vault"
+          },
+          {
+            "finding_id": "AF-002",
+            "check": "marker-retention",
+            "category": "code-omission",
+            "severity": "critical",
+            "ku_ids": [
+              "KU-2669654f8542e5d3"
+            ],
+            "destination": {
+              "path": "Neural Networks/Backpropagation.md",
+              "heading": "6. Numerical Gradient Check"
+            },
+            "observed": "code block not found (omitted or altered)"
+          }
+        ],
+        "expected_ku_ids": [
+          "KU-2669654f8542e5d3"
+        ]
+      }
+    ],
+    "summary": {
+      "defects_total": 12,
+      "defects_detected": 12,
+      "defects_missed": [],
+      "defects_not_localized": [],
+      "detection_rate": "12/12",
+      "localization_rate": "12/12",
+      "false_negatives": [],
+      "false_positives_on_clean_baseline": 0
+    },
+    "source_immutability": {
+      "sources_unchanged_during_pilot": true,
+      "source_hashes_before": {
+        "vault-a": "dadf7323fcf2574942ab482e8014d9e7590027db6355116fc31df158c164738e",
+        "vault-b": "5e13cfd5b1261316da6a1f4ec5c65a8fbe426439c31301a7d5de1cb8502e9d22"
+      },
+      "source_hashes_after": {
+        "vault-a": "dadf7323fcf2574942ab482e8014d9e7590027db6355116fc31df158c164738e",
+        "vault-b": "5e13cfd5b1261316da6a1f4ec5c65a8fbe426439c31301a7d5de1cb8502e9d22"
+      }
+    },
+    "verdict": {
+      "pass": true,
+      "failed_criteria": []
+    },
+    "limitations": [
+      "the fixture is deliberately small; corpus-scale marker noise and performance must be re-measured on real extraction batches (CAP-014 coverage reports)",
+      "detection here proves the deterministic checks fire on the declared defect classes; it is not proof of semantic preservation (separate evidence class)",
+      "reworded-but-preserved claims are not a defect class here; the auditor only guarantees fingerprint/vocabulary retention, and the fixture baseline models the editorial discipline of retaining distinctive vocabulary during consolidation",
+      "the twelve defect categories cover the taxonomy of VERIFICATION_SPECIFICATION.md 'Deliberate omission tests' plus section 6; new defect classes require new pilot entries"
+    ]
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.3.0",
+    "report_schema_version": "1.0",
+    "command": "omission-pilot",
+    "args": {
+      "command": "omission-pilot",
+      "dest": "/tmp/boot004-pilot-gpdmeq0n",
+      "protected_root": null,
+      "keep_mutations": false,
+      "ku_schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/knowledge-unit.schema.json",
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/bootstrap/boot-004-omission-pilot.json"
+    },
+    "utc_timestamp": "2026-10-25T20:30:34+00:00",
+    "git_commit": "7d0088b"
+  }
+}

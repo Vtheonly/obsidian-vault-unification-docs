@@ -80,11 +80,13 @@ class TestVerifyLogic:
         # CAP-002's tests were not part of the subset -> blocked, not claimed
         assert by_id["CAP-002"]["status_verified"] == "blocked"
         # planned capabilities keep their declared status
-        # (CAP-011 became code-backed in BOOT-003; CAP-012 is still planned)
-        assert by_id["CAP-012"]["status_verified"] == "planned"
+        # (CAP-011 became code-backed in BOOT-003; CAP-012 became code-backed
+        # in BOOT-004 and now references real test files; CAP-013 is planned)
+        assert by_id["CAP-013"]["status_verified"] == "planned"
         # code-backed capabilities whose tests were not in the subset are
-        # blocked, not claimed (CAP-011 now references real test files)
+        # blocked, not claimed (CAP-011 and CAP-012 now reference real files)
         assert by_id["CAP-011"]["status_verified"] == "blocked"
+        assert by_id["CAP-012"]["status_verified"] == "blocked"
 
     def test_failing_test_prevents_upgrade(self, tmp_path, monkeypatch):
         # a failing test file that a fake capability references

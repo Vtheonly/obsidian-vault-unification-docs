@@ -25,11 +25,13 @@ from . import inventory as inventory_mod
 from . import kuregistry as kuregistry_mod
 from . import linkcheck as linkcheck_mod
 from . import mdextract as mdextract_mod
+from . import omission as omission_mod
 from . import registry as registry_mod
 from . import search as search_mod
 from . import selftest as selftest_mod
 from . import vaultstats as vaultstats_mod
 from .kuregistry import RegistryError
+from .omission import AuditError
 from .pathsafety import PathSafetyError, ensure_dest_safe, validate_roots
 from .reporting import write_json_report
 
@@ -222,6 +224,49 @@ def build_parser() -> argparse.ArgumentParser:
         help="integrity + accounting-invariant report for a registry database",
     )
     p.add_argument("--db", required=True, help="registry database path")
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- audit-output ----
+    p = sub.add_parser(
+        "audit-output",
+        help="run the omission/corruption audit pipeline over a candidate output vault",
+    )
+    p.add_argument("--source-root", required=True, help="source vault root (read-only; term-frequency corpus)")
+    p.add_argument("--output-root", required=True, help="candidate output vault root to audit")
+    p.add_argument("--ku-batch", required=True, help="KU JSONL batch with source units and destinations")
+    p.add_argument(
+        "--accepted-manifest",
+        help="optional accepted-output manifest (JSONL) enabling drift regression checks",
+    )
+    p.add_argument(
+        "--ku-schema",
+        default=str(REPO_ROOT / "schemas" / "knowledge-unit.schema.json"),
+        help="knowledge-unit JSON Schema path",
+    )
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- omission-pilot ----
+    p = sub.add_parser(
+        "omission-pilot",
+        help="build the synthetic omission-detection fixture and verify the auditor (hard gate)",
+    )
+    p.add_argument("--dest", required=True, help="explicit working directory for the pilot fixture (must not be inside a protected root)")
+    p.add_argument(
+        "--protected-root",
+        action="append",
+        default=None,
+        help="path the pilot must not write under (repeatable); default: <repo>/source-vaults when present",
+    )
+    p.add_argument(
+        "--keep-mutations",
+        action="store_true",
+        help="keep the mutated copies under <dest>/mutated for inspection (temporary by default)",
+    )
+    p.add_argument(
+        "--ku-schema",
+        default=str(REPO_ROOT / "schemas" / "knowledge-unit.schema.json"),
+        help="knowledge-unit JSON Schema path",
+    )
     p.add_argument("--report", help="optional JSON report path")
 
     return parser
@@ -620,6 +665,81 @@ def cmd_kureg_validate(args) -> int:
     return 0 if result["valid"] else 1
 
 
+def cmd_audit_output(args) -> int:
+    validation = validate_roots(args.source_root, args.output_root)
+    if not validation.ok:
+        _emit_summary({"error": "root validation failed", "problems": validation.problems})
+        return 1
+    try:
+        result = omission_mod.audit_output(
+            args.source_root,
+            args.output_root,
+            args.ku_batch,
+            accepted_manifest_path=args.accepted_manifest,
+            ku_schema_path=args.ku_schema,
+        )
+    except omission_mod.AuditError as exc:
+        _emit_summary({"error": str(exc)})
+        return 1
+    payload = {"command": "audit-output", "result": result}
+    report_path = getattr(args, "report", None)
+    if report_path:
+        try:
+            dest = ensure_dest_safe(report_path, [Path(args.source_root), Path(args.output_root)])
+        except PathSafetyError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 1
+        write_json_report(dest, "audit-output", payload, args=vars(args) | {"report": str(dest)}, repo_root=REPO_ROOT)
+    _emit_summary(
+        {
+            "valid": result["valid"],
+            "checks_run": result["checks_run"],
+            "findings_total": result["stats"].get("findings_total", 0),
+            "findings_by_severity": result["stats"].get("findings_by_severity", {}),
+            "kus_total": result["stats"].get("kus_total", 0),
+            "categories": sorted({f["category"] for f in result["findings"]}),
+        }
+    )
+    return 0 if result["valid"] else 1
+
+
+def cmd_omission_pilot(args) -> int:
+    explicit = getattr(args, "protected_root", None) or []
+    if explicit:
+        protected = [Path(p) for p in explicit]
+    else:
+        default = REPO_ROOT / "source-vaults"
+        protected = [default] if default.is_dir() else []
+    report = omission_mod.run_pilot(
+        args.dest,
+        protected_roots=protected,
+        keep_mutations=args.keep_mutations,
+        ku_schema_path=args.ku_schema,
+    )
+    payload = {"command": "omission-pilot", "result": report}
+    report_path = getattr(args, "report", None)
+    if report_path:
+        try:
+            dest = ensure_dest_safe(report_path, protected + [Path(args.dest)])
+        except PathSafetyError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 1
+        write_json_report(dest, "omission-pilot", payload, args=vars(args) | {"report": str(dest)}, repo_root=REPO_ROOT)
+    _emit_summary(
+        {
+            "verdict": report["verdict"],
+            "summary": report["summary"],
+            "fixture": {
+                "ku_records": report["fixture"]["ku_records"],
+                "output_files": len(report["fixture"]["output_files"]),
+                "defects_declared": report["fixture"]["defects_declared"],
+            },
+            "source_immutability": report["source_immutability"]["sources_unchanged_during_pilot"],
+        }
+    )
+    return 0 if report["verdict"]["pass"] else 1
+
+
 HANDLERS = {
     "selftest": cmd_selftest,
     "check-paths": cmd_check_paths,
@@ -637,6 +757,8 @@ HANDLERS = {
     "kureg-load": cmd_kureg_load,
     "kureg-query": cmd_kureg_query,
     "kureg-validate": cmd_kureg_validate,
+    "audit-output": cmd_audit_output,
+    "omission-pilot": cmd_omission_pilot,
 }
 
 
@@ -649,7 +771,7 @@ def main(argv: list[str] | None = None) -> int:
     handler = HANDLERS[args.command]
     try:
         return handler(args)
-    except (PathSafetyError, NotADirectoryError, ValueError, RegistryError) as exc:
+    except (PathSafetyError, NotADirectoryError, ValueError, RegistryError, AuditError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
     except FileNotFoundError as exc:

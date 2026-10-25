@@ -35,16 +35,27 @@
   "framework_foundation_built": true,
   "framework_foundation_tested": true,
   "framework_evidence": {
-    "test_run": "reports/bootstrap/boot-003-pytest-report.json",
-    "test_summary": "248 passed, 0 failed, 0 skipped",
-    "capabilities": "reports/bootstrap/boot-003-capabilities.json",
+    "test_run": "reports/bootstrap/boot-004-pytest-report.json",
+    "test_summary": "285 passed, 0 failed, 0 skipped",
+    "capabilities": "reports/bootstrap/boot-004-capabilities.json",
     "setup_doc": "docs/FRAMEWORK_SETUP.md"
   },
-  "verification_pilot_passed": false,
+  "verification_pilot_passed": true,
+  "verification_pilot_evidence": {
+    "pilot_report": "reports/bootstrap/boot-004-omission-pilot.json",
+    "run_summary": "reports/bootstrap/boot-004-run-summary.json",
+    "verdict": "pass",
+    "detection_rate": "12/12",
+    "localization_rate": "12/12",
+    "false_negatives": 0,
+    "false_positives_on_clean_baseline": 0,
+    "defect_classes": 12,
+    "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)"
+  },
   "output_synthesis_started": false,
-  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-26-boot-003.json",
-  "current_task_id": "BOOT-004",
-  "notes": "BOOT-000..BOOT-003 completed. Framework v0.2.0: 13 code-backed capabilities implemented-and-tested, 248/248 tests. KU registry mechanism (CAP-011) delivered with schema v1.1, stable-ID minting, atomic validated loads, integrity/accounting validation and rebuild reproducibility; canonical store empty by design (no extraction yet). Canonical inventory complete: 609 markdown files, 1.16M words, ~2.03M tokens est. Sources unchanged throughout. Next: BOOT-004 omission-detection pilot - the hard gate before any large-scale synthesis.",
+  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-26-boot-004.json",
+  "current_task_id": "EXT-001",
+  "notes": "BOOT-000..BOOT-004 completed. Framework v0.3.0: 14 code-backed capabilities implemented-and-tested (285/285 tests), 2 planned (CAP-013 duplicates, CAP-014 coverage regression). The omission-detection hard gate (AGENTS.md 7.5) PASSED: synthetic paired-source fixture, 12 planted defects across the VERIFICATION_SPECIFICATION taxonomy, 12/12 detected AND localized to expected KU + destination, 0 false negatives, 0 false positives on the clean baseline; reusable real-work pipeline exposed as 'vu audit-output' (KU-batch validation, manifest drift, disposition/destination accounting, rare-term/equation/code marker retention, link integrity, heading-convention and prose-quality lint). Sources unchanged throughout. Canonical inventory complete: 609 markdown files, 1.16M words, ~2.03M tokens est. Canonical KU store still 0 records (no real extraction yet). Next: EXT-001 - deterministic KU extraction pipeline + first bounded real batch (suggest AI Course 03.1 - Regression, 7 files).",
   "corpus_statistics": {
     "files_total": 609,
     "markdown_files": 609,
@@ -76,7 +87,7 @@
     "records": 0,
     "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)",
     "commands": "vu kureg-init / kureg-load / kureg-query / kureg-validate",
-    "capability": "CAP-011 implemented-and-tested (reports/bootstrap/boot-003-capabilities.json)",
-    "note": "mechanism only; extraction has not started"
+    "capability": "CAP-011 implemented-and-tested (reports/bootstrap/boot-004-capabilities.json)",
+    "note": "mechanism only; real extraction has not started (EXT-001 is next)"
   }
 }
