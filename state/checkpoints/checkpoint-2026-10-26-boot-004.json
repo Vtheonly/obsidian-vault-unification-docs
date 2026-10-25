@@ -24,7 +24,8 @@
     "source_immutability": {
       "master_ai": "reports/bootstrap/boot-004-immutable-{before,after}-master-ai.json (0 added/removed/changed)",
       "ai_course": "reports/bootstrap/boot-004-immutable-{before,after}-ai-course.json (0 added/removed/changed)"
-    }
+    },
+    "work_commit": "6a4207dcd5c604149c0b4eb76e5486e31e944f1b"
   },
   "changed_paths": [
     "src/vault_unification/omission.py",
