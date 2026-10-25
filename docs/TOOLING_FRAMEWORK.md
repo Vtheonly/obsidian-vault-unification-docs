@@ -170,3 +170,32 @@ Framework readiness is not project completion. The omission pilot must then pass
 ## 11. Session-end evidence
 
 Record capabilities used, added, changed, or missing; exact commands and actual exit codes/results; tests run and skipped tests with reasons; report paths; source immutability checks; limitations and unresolved defects; and next task priority. Never report “framework complete” without specifying which capabilities are implemented, tested, partial, planned, or blocked.
+
+## 8. Required capability roadmap and expansion discipline
+
+The framework is intended to grow continuously as repeatable operations are discovered. Build reusable, tested modules and CLI subcommands rather than disposable scripts. Prioritize safe, inspectable primitives; every new capability needs help text, machine-readable output, tests for ordinary/boundary/malformed inputs, and evidence from an actual run.
+
+The capability roadmap must account for:
+
+- Corpus inventory and integrity: recursive file/folder enumeration; extension, byte-size and file-type statistics; SHA-256 manifests; change detection; unreadable/corrupt/unsupported-file reports; before/after source immutability checks.
+- Search and statistics: exact and normalized term counts; aliases and phrase counts; regex search with source locators; heading/folder distribution; per-domain and per-note metrics; frequency-regression comparisons with explicit denominators.
+- Safe extraction and splitting: parse Markdown headings, paragraphs, lists, code fences, LaTeX math blocks, frontmatter, wikilinks, embeds, images, diagrams, and attachments without silently discarding malformed or unknown content. Preserve line ranges and excerpt fingerprints.
+- Matching and overlap discovery: exact hash matching, normalized-text matching, candidate semantic-match queues, partial-overlap evidence, complementary-content mapping, and conflict/version-difference reports. Deterministic similarity is candidate generation, not a substitute for semantic judgment.
+- Knowledge accounting and provenance: stable source and knowledge-unit IDs; hierarchical concepts; dossier membership; many-to-many source-to-destination edges; disposition validation; foreign-key integrity; queries for unaccounted units, unsupported claims, and impact analysis.
+- Obsidian integrity: resolve internal wikilinks, aliases, heading anchors, block references, embeds, images, attachments, and paths; report ambiguity separately from broken references.
+- Code/math validation: extract code blocks and LaTeX blocks; validate delimiters and syntax where appropriate; preserve language, line locators, and validation limitations. Domain-specific checks must not silently rewrite source expressions.
+- Merge and output safety: generate candidate manifests and reports, compare accepted output against baselines, detect unexpected deletion or overwrites, enforce output-root boundaries, and refuse writes into source-vaults/.
+- Verification and omission testing: source-to-output coverage reports, per-topic frequency alarms, targeted semantic-audit queues, mutation fixtures, exact defect localization, and regression checks after every repair.
+- Operational utilities: task queue validation, checkpoint consistency, report schema validation, reproducible batch manifests, and session handoff generation.
+
+Do not claim the entire roadmap is implemented merely because it appears here. Track each capability as planned, implemented, tested, or blocked in a generated capability report, with test evidence and known limitations.
+
+## 9. Omission-detection pilot acceptance contract
+
+The pilot must be synthetic and reproducible; never mutate original source vaults to test detection. Start with paired notes containing exact and semantic duplicates, partial overlap, complementary theory/code, conflicting versions, rare facts, equations and intermediate derivation steps, project caveats, code blocks, and internal links. Save a clean baseline and a manifest of planted defects. Create mutated copies that each omit or corrupt a known item. Run the same end-to-end tooling and audit pipeline used for real work.
+
+Acceptance requires every injected defect to be detected and localized to its expected source knowledge-unit ID and affected destination/section, with zero false negatives across the declared fixture. Report false positives, test corpus, defect inventory, commands, exit codes, versions, and results. A passing unit test that does not exercise the omission path is insufficient. Any missed defect blocks full-corpus synthesis.
+
+## 10. Evidence and reporting rules
+
+Every command that informs a decision should record the input scope, command/version, timestamp when available, exit code, report path, and limitations. JSON/JSONL reports should be schema-validated and deterministic where feasible. A global percentage must never conceal a missing subtopic: report per-vault, per-file, per-domain, and per-KU denominators where meaningful. Frequency shifts are triage alarms, not automatic proof of loss or proof of successful consolidation.
