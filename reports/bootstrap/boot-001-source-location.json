@@ -1,0 +1,177 @@
+{
+  "purpose": "BOOT-001 formal record: both source vaults located, inventoried at file level, and confirmed unchanged against baseline manifests; git and repository structure recorded. No source files modified (evidence below).",
+  "git_state": {
+    "head_commit": "bbbad066c5be5e60508d924c9bf6ef32c47dd077",
+    "branch": "main",
+    "working_tree_clean": false,
+    "porcelain_output": "?? scripts/",
+    "origin_slug": "github.com/Vtheonly/obsidian-vault-unification-docs",
+    "source_vaults_introduced_in_commit": "b7f58fe72604554754355e25e5caf8c153abe276"
+  },
+  "repository_structure": {
+    "top_level_directories": [
+      ".pytest_cache",
+      "docs",
+      "reports",
+      "schemas",
+      "scripts",
+      "source-vaults",
+      "src",
+      "state",
+      "tests"
+    ],
+    "top_level_files": [
+      ".gitignore",
+      "AGENTS.md",
+      "ENTRY_PROMPT.md",
+      "README.md",
+      "conftest.py",
+      "pyproject.toml"
+    ]
+  },
+  "source_vaults": [
+    {
+      "name": "Master AI",
+      "root_exact": "source-vaults/AI /Master AI",
+      "root_exists": true,
+      "path_note": "parent directory 'source-vaults/AI ' contains a trailing space (finding F-0001); every consumer must pass the literal quoted path",
+      "file_counts": {
+        "code": 0,
+        "image": 0,
+        "markdown": 333,
+        "other": 0,
+        "pdf": 0,
+        "text": 0,
+        "unreadable": 0
+      },
+      "total_files": 333,
+      "unreadable_files": [],
+      "manifested_files": 333,
+      "manifest_bytes": 4601557,
+      "on_disk_bytes_du": 4601557,
+      "baseline_manifest": "state/manifests/master-ai.jsonl",
+      "immutability_vs_baseline": {
+        "added": [],
+        "removed": [],
+        "changed": [],
+        "unchanged_count": 333,
+        "source_unchanged": true
+      },
+      "symlinks_present": false,
+      "top_level": {
+        "directories": [
+          "00 - Vault Management",
+          "01 - AI Foundations",
+          "02 - Mathematics",
+          "03 - Machine Learning",
+          "04 - Neural Networks",
+          "05 - NLP Fundamentals",
+          "06 - Attention Mechanisms",
+          "07 - Transformers",
+          "08 - LLMs",
+          "09 - Foundation Models",
+          "10 - Model Architecture Research",
+          "11 - Training",
+          "12 - Fine-Tuning",
+          "13 - Inference",
+          "14 - Interpretability",
+          "15 - AI Agents",
+          "16 - Multi-Agent Systems",
+          "17 - RAG",
+          "18 - Memory Systems",
+          "19 - MCP",
+          "20 - AI Infrastructure",
+          "21 - LLMOps and MLOps",
+          "22 - Production AI",
+          "23 - Multimodal AI",
+          "24 - Research Frontiers",
+          "25 - Frameworks and Tools",
+          "26 - Papers",
+          "27 - Projects",
+          "28 - Glossary",
+          "29 - Interview Prep"
+        ],
+        "files": [
+          "Index.md",
+          "Learning Roadmap.md",
+          "MOC.md",
+          "Reading Order.md",
+          "README.md"
+        ]
+      }
+    },
+    {
+      "name": "AI Course",
+      "root_exact": "source-vaults/AI /AI Course",
+      "root_exists": true,
+      "path_note": "parent directory 'source-vaults/AI ' contains a trailing space (finding F-0001); every consumer must pass the literal quoted path",
+      "file_counts": {
+        "code": 0,
+        "image": 0,
+        "markdown": 276,
+        "other": 0,
+        "pdf": 0,
+        "text": 0,
+        "unreadable": 0
+      },
+      "total_files": 276,
+      "unreadable_files": [],
+      "manifested_files": 276,
+      "manifest_bytes": 3546362,
+      "on_disk_bytes_du": 3546362,
+      "baseline_manifest": "state/manifests/ai-course.jsonl",
+      "immutability_vs_baseline": {
+        "added": [],
+        "removed": [],
+        "changed": [],
+        "unchanged_count": 276,
+        "source_unchanged": true
+      },
+      "symlinks_present": false,
+      "top_level": {
+        "directories": [
+          "01 - Foundations and Overview",
+          "02 - Python and Data Tooling",
+          "03 - Machine Learning",
+          "04 - Neural Networks and Deep Learning Foundations",
+          "05 - Convolutional Neural Networks (CNN)",
+          "06 - Image Processing",
+          "07 - Sequence Models and RNNs",
+          "08 - Attention and Transformers",
+          "09 - Quizzes and Question Banks",
+          "10 - Generative Models"
+        ],
+        "files": [
+          "00 - Master Index.md",
+          "README.md"
+        ]
+      }
+    }
+  ],
+  "backup_and_recovery": {
+    "strategy": "Both source vaults are committed to git (first commit) and pushed to the origin remote; git history plus the SHA-256 baseline manifests (state/manifests/) provide the recoverable snapshot required by docs/SOURCE_POLICY.md.",
+    "baseline_manifests": [
+      "state/manifests/master-ai.jsonl",
+      "state/manifests/ai-course.jsonl"
+    ],
+    "verification_command": "PYTHONPATH=src python3 -m vault_unification verify-manifest --root <vault root> --manifest <manifest>"
+  },
+  "limitations": [
+    "File-level inventory only: no content, semantic, or knowledge-unit claims are made by this record (BOOT-002+).",
+    "Counts and hashes are lexical evidence, not semantic coverage."
+  ],
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.1.0",
+    "report_schema_version": "1.0",
+    "command": "boot-001-record",
+    "args": {
+      "roots": [
+        "source-vaults/AI /Master AI",
+        "source-vaults/AI /AI Course"
+      ]
+    },
+    "utc_timestamp": "2026-10-25T17:57:43+00:00",
+    "git_commit": "bbbad06"
+  }
+}

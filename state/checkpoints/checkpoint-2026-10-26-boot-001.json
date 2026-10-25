@@ -1,0 +1,43 @@
+{
+  "checkpoint_id": "CHK-2026-10-26-BOOT-001",
+  "created_utc": "2026-10-25",
+  "stage": "framework_bootstrap",
+  "task_id": "BOOT-001",
+  "task_status": "completed",
+  "last_verified_state": {
+    "framework_version": "0.1.0",
+    "resume_verification": {
+      "selftest": "exit 0, ok=true",
+      "pytest": "153 passed / 0 failed / 0 skipped",
+      "manifests": "both vaults 0 added/removed/changed vs baseline"
+    },
+    "source_location_record": "reports/bootstrap/boot-001-source-location.json",
+    "source_immutability": {
+      "master_ai": "fresh scan vs state/manifests/master-ai.jsonl: unchanged (333 files)",
+      "ai_course": "fresh scan vs state/manifests/ai-course.jsonl: unchanged (276 files)"
+    }
+  },
+  "changed_paths": [
+    "reports/bootstrap/boot-001-source-location.json",
+    "scripts/boot001_record.py",
+    "README.md",
+    "state/task-queue.jsonl",
+    "state/current-state.json",
+    "state/findings.jsonl",
+    "state/checkpoints/checkpoint-2026-10-26-boot-001.json",
+    "docs/agent-handoff/next-agent.md"
+  ],
+  "open_findings": [
+    "F-0001",
+    "F-0002",
+    "F-0003"
+  ],
+  "resolved_findings": [
+    "F-0004"
+  ],
+  "git_state_note": "BOOT-001 work commit follows on main after bbbad06",
+  "safe_resume": {
+    "command": "PYTHONPATH=src python3 -m vault_unification selftest && PYTHONPATH=src python3 -m pytest tests -q",
+    "next_task": "BOOT-002"
+  }
+}

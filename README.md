@@ -18,7 +18,7 @@ The output must be newly synthesized and rewritten from combined source evidence
 
 ## Repository status
 
-This is the project documentation and operating specification. It does not contain the two source vaults, and it does not claim that inventory, extraction, synthesis, or testing has already happened. The first agent must inspect the repository and establish actual state.
+This repository is the project documentation and operating specification, and it also contains the two immutable source vaults under `source-vaults/` (committed in the repository's first commit; see `reports/bootstrap/boot-001-source-location.json` for the verified location record, file counts, and hash manifests). Inventory at file level has been performed (BOOT-000/BOOT-001); knowledge-unit extraction and synthesis have not started. The task queue in `state/task-queue.jsonl` records verified progress claims.
 
 ## Suggested top-level layout
 
