@@ -65,3 +65,24 @@ Release is permitted only when all applicable criteria below pass:
 ## Definition of done
 
 “Done” means the release gates are satisfied with evidence, not merely that all files have been generated. If some material cannot be extracted or semantically verified, report the limitation honestly and do not claim absolute completeness.
+
+
+## Additional mandatory framework gates
+
+### Milestone 1A — Python framework foundation
+- Inspect the actual runtime and repository before choosing implementation details.
+- Implement a discoverable CLI, test harness, structured logging/report conventions, path safety, and capability inventory.
+- Implement initial deterministic inventory, hashing, search/counting, Markdown structure/link checks, registry validation, and report commands in small tested increments appropriate to the actual repository.
+- Add unit, integration, CLI, negative-path, and regression tests.
+- Document setup, command examples, output schemas, limitations, and recovery.
+- Do not claim any capability until its implementation and tests are present and run.
+
+### Milestone 2A — Omission-detection pilot
+- Use temporary test fixtures, not destructive edits to source vaults.
+- Inject known missing facts, caveats, equations/steps, unique rare concepts, links/assets, and editorial drift into test copies.
+- Demonstrate that the framework reports and localizes each defect type it claims to detect.
+- Record detection rates using explicit numerator and denominator, false negatives, false positives, and unsupported cases.
+- Block large-scale synthesis until this pilot has evidence-backed acceptance.
+
+### Continuous framework evolution gate
+For every project task, identify whether it exposes a recurring deterministic operation or verification gap. Add reusable tools when useful, with tests, documentation, and regression protection. Keep the capability inventory synchronized with actual code and test evidence. The framework is a living project subsystem, not a one-time bootstrap script and not a substitute for semantic review.
