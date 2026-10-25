@@ -40,3 +40,12 @@ Examples mentioned during planning—CNNs, VGG, attention, Transformers, deep ne
 8. Document architecture, procedures, decisions, tools, state, limitations, and handoffs for future agents.
 9. Operate in repeatable, persistent iterations across fresh GLM 5.3 sessions.
 10. Use the repository—not conversational memory—as the project's durable source of truth.
+
+
+## Required self-built Python tooling subsystem
+
+The AI agent—not the user—must implement and maintain a Python framework for the project's repeatable operations and verification. The framework must grow incrementally as work exposes new requirements. It should turn mechanical work into reproducible commands with evidence-bearing outputs rather than consuming model context with manual counting, searching, file inspection, arithmetic, matching, or unsupported test claims.
+
+The framework must support inventory and statistics, exact/normalized/fuzzy searching and matching, controlled extraction/chunking/splitting/output operations, duplicate detection, structural and Obsidian integrity checks, registry and provenance validation, automated test execution, omission/corruption detection, regression comparison, and machine-readable reports. This is an evolving capability set: the agent must add further tools whenever concrete work demonstrates a useful, safe, testable need.
+
+Automation does not remove the requirement for semantic reasoning. Scripts measure and validate defined properties; evidence-based semantic review determines whether knowledge and reasoning survived. Neither should impersonate the other.
