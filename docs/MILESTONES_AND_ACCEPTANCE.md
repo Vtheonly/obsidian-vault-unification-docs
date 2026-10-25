@@ -86,3 +86,11 @@ Release is permitted only when all applicable criteria below pass:
 
 ### Continuous framework evolution gate
 For every project task, identify whether it exposes a recurring deterministic operation or verification gap. Add reusable tools when useful, with tests, documentation, and regression protection. Keep the capability inventory synchronized with actual code and test evidence. The framework is a living project subsystem, not a one-time bootstrap script and not a substitute for semantic review.
+
+## Additional gate interpretation and acceptance evidence
+
+The milestone sequence is a dependency contract, not a suggested order. Large-scale extraction/synthesis must not bypass the foundational tooling and omission pilot. The framework foundation is not complete merely because a CLI exists: the required commands must work on controlled fixtures, enforce source-vault write protection, emit auditable reports, and pass tests covering normal, boundary, malformed, and unsafe-path inputs.
+
+The omission pilot must test the same core pipeline intended for the corpus. It must include exact duplicates, semantic candidates, partial overlap, complementary theory/code, conflicts across versions, rare details, intermediate derivation steps, project caveats, equation corruption, code snippets, and broken Obsidian links. A defect manifest defines the expected detections before the test runs. Acceptance requires 100% of planted defects detected and localized to the expected source unit and affected destination; no result may be inferred from an agent's recollection or a hand-written assertion without executable evidence.
+
+For every milestone, persist actual commands, exit codes, test counts, report locations, measured coverage, known limitations, and unresolved findings. A milestone remains blocked when evidence is absent or contradictory. Never mark a source inventory complete if any discovered file is missing, unreadable, unsupported, or unaccounted for; record such cases explicitly and keep the gate open until disposition is justified.
