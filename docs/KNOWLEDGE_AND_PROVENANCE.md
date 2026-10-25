@@ -74,3 +74,19 @@ The dossier is an evidence pack, not necessarily a final note. It should be boun
 ## Source text and generated additions
 
 Original vaults are authoritative for what knowledge must be preserved. General model knowledge can help interpret or validate content, but it must not be confused with source-derived content. New factual corrections or additions should be identified in internal records and independently verified where possible.
+
+## 7. Accounting invariants and dossier completeness
+
+Overlap classification and disposition answer different questions and must be stored separately. The overlap type describes the relationship between pieces of evidence: Exact Duplicate, Semantic Duplicate, Partial Overlap, Complementary Content, or Conflict or Historical Difference. Disposition records what happened to an individual knowledge unit: Preserved, Consolidated, Contextualized, Superseded, Needs review, or Unaccounted. A schema or implementation must not collapse these fields into one status.
+
+A concept dossier should aggregate all applicable evidence in ten categories: (1) definitions and terminology; (2) mathematical foundations, notation, assumptions, derivations and proofs; (3) computational mechanics, shapes and complexity; (4) alternative explanations and interpretations; (5) worked examples and boundary/failure cases; (6) code and implementation details; (7) applications, project findings, debugging and engineering trade-offs; (8) interview questions, misconceptions and comparisons; (9) historical, version-specific and deprecated approaches; and (10) critical distinctions between neighboring concepts.
+
+Accounting invariants:
+
+1. Every extracted KU has a stable identifier, immutable source locator, excerpt fingerprint, unit type, and verification state.
+2. Every KU has exactly one current disposition; Unaccounted is permitted during work but blocks release.
+3. A Superseded decision includes rationale and evidence that unique details were preserved elsewhere or are genuinely obsolete without loss of relevant historical knowledge.
+4. A Needs review unit remains visible in findings and cannot be silently treated as accepted.
+5. Provenance is many-to-many: multiple KUs can support one destination, and one KU can contribute to multiple destinations.
+6. Source-note-level links do not establish claim-level coverage; traceability must reach the atomic evidence unit and destination section.
+7. All counts and coverage percentages include explicit numerators, denominators, scope, and exclusions.
