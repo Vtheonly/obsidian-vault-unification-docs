@@ -95,3 +95,16 @@ Each finding should include a stable ID, severity, category, affected source-uni
 - Extraction failures and inaccessible assets must be reported and handled, not hidden.
 - Full-corpus audits are required; sampling may help during development but cannot replace final checks.
 - A polished note is not proof of completeness.
+
+
+## 13. Framework-backed verification is mandatory
+
+The Python framework specified in [TOOLING_FRAMEWORK.md](TOOLING_FRAMEWORK.md) must be the operational implementation of this verification specification. This document defines what must be verified; the framework provides repeatable commands and machine-generated evidence. A written checklist alone does not satisfy this requirement.
+
+For every verification class, identify the command/module, input scope and exclusions, output schema/report path, exit/failure semantics, unit and integration tests, and known limitations. At minimum, automate inventory and hashes, extraction coverage/failures, exact/normalized phrase search, term and marker distributions, heading/structure differences, link/embed/asset integrity, registry schemas, source-to-output provenance joins, task/finding state, and regression diffs. Add checks whenever project work reveals a repeatable verification need.
+
+Testing layers include unit tests, integration tests across temporary vault fixtures, CLI/end-to-end tests, negative/error-path tests, and deliberate omission/corruption tests. Include fixtures for unique facts, equations and derivation steps, caveats, obscure one-off concepts, broken links, asset loss, heading drift, and malformed registry records. Verify both detection and localization of defects. Record false positives and false negatives.
+
+Use scripts to calculate counts, ratios, denominators, and diffs. The model may interpret evidence but must not silently recompute or replace script results with estimates. Reports identify command/version, inputs or inventory snapshot IDs, scope, denominators, exclusions, timestamp, and failures. Store evidence so a fresh session can reproduce the result.
+
+A framework test passing proves only the behavior covered by that test. Lexical frequency is a triage signal, not semantic proof. Semantic audits remain evidence-based and independent; decisions should be recorded against stable source-unit IDs.
