@@ -1,0 +1,14 @@
+{
+  "project": "Obsidian Vault Unification",
+  "execution_environment": "Z AI / GLM 5.3 with available subagents",
+  "stage": "documentation_bootstrap",
+  "status": "not_started",
+  "source_vaults_located": false,
+  "source_inventory_complete": false,
+  "knowledge_registry_initialized": false,
+  "verification_pilot_passed": false,
+  "output_synthesis_started": false,
+  "last_verified_checkpoint": null,
+  "current_task_id": "BOOT-001",
+  "notes": "This is an initial template, not evidence that any source vault has been inspected or processed. The first agent must validate and update all fields from actual repository evidence."
+}

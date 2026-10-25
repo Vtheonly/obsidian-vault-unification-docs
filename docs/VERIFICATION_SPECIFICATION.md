@@ -1,0 +1,97 @@
+# Verification and Testing Specification
+
+## Objective
+
+Build an exhaustive, layered verification system designed to discover omissions, distortions, technical errors, inconsistencies, and regressions across the entire corpus. Testing is not a final cosmetic phase; it is continuous throughout inventory, extraction, synthesis, repair, and release.
+
+No single metric or AI self-assessment proves correctness. Automated checks have limitations; unresolved uncertainty must be explicit.
+
+## Verification layers
+
+### 1. Inventory integrity
+Detect missing, renamed, duplicated, unreadable, unexpectedly changed, or unclassified files and assets. Compare source snapshots and current inventories. Track unsupported formats and access failures.
+
+### 2. Extraction integrity
+Compare source file counts, extracted content, heading trees, links, tables, code fences, formulas, metadata, images, embeds, and attachments. Flag truncation, encoding problems, parser errors, OCR failures, and unhandled content. A PDF containing diagrams or a Markdown file containing image references requires asset-aware handling.
+
+### 3. Knowledge accounting
+Every extracted knowledge unit must have a disposition and a defensible destination or documented unresolved state. `Unaccounted` blocks acceptance. Track partial omissions by splitting compound units into independently testable claims when needed.
+
+### 4. Lexical and structural regression
+Track terms, aliases, rare phrases, named entities, identifiers, equations, code symbols, file names, heading depth, example labels, and other content markers. Compare source and output distributions. Frequency differences are alerts requiring investigation, not automatic proof of loss or proof of preservation.
+
+### 5. Semantic preservation
+Independently verify that meaning, assumptions, exceptions, caveats, scope, relationships, reasoning, practical implications, and level of detail survive. Look for weakened claims, overgeneralization, lost context, conflated concepts, and unsupported conclusions.
+
+### 6. Cross-source reconciliation
+Detect conflicting definitions, equations, conventions, terminology, version-specific behavior, and examples. Every contradiction must be resolved with evidence, explicitly contextualized, or remain an open finding. Never silently choose a source merely because it is more polished.
+
+### 7. Technical/domain correctness
+Use tests appropriate to the actual corpus. For mathematics, check notation, assumptions, derivation steps, dimensions, boundary conditions, and conventions. For code and algorithms, validate identifiers, behavior, dependencies, and examples when feasible. Examples such as convolution, attention, Transformers, VGG, deep neural networks, and loss functions can be pilot cases, but the system must discover and test all other relevant technical material too.
+
+### 8. Provenance integrity
+Verify every source reference, fingerprint, target path, heading anchor, and many-to-many relationship. Ensure each output note has valid supporting evidence and each source unit has a recorded outcome.
+
+### 9. Obsidian integrity
+Check wikilinks, Markdown links, aliases, embeds, anchors, attachment paths, tags, metadata, filename changes, orphan notes, and navigation structures. Distinguish intentionally external/broken links from accidental ones.
+
+### 10. Editorial consistency
+Check titles, filenames, numbering, heading hierarchy, terminology, section ordering, prose quality, formatting, note-type conventions, and cross-batch drift against the canonical style guide. Do not force all notes into one identical template.
+
+### 11. Regression protection
+After any repair or global style change, rerun relevant prior tests. Maintain tests for previously discovered defects so they do not recur. Do not overwrite accepted content without recording impact and validating affected knowledge units.
+
+### 12. Independent acceptance audit
+A reviewer other than the synthesis author checks the source registry, evidence bundles, output notes, findings, and test results. The reviewer must actively search for omissions rather than merely approve the author's explanation.
+
+## Deliberate omission tests
+
+The test harness must demonstrate that it can catch intentionally introduced defects before scaling:
+- remove a unique claim from a candidate note;
+- remove an equation or a derivation step;
+- remove an example or caveat;
+- alter a symbol, sign, dimension, or assumption;
+- remove a minor concept mentioned in one obscure file;
+- break an Obsidian link or attachment;
+- change a heading/numbering convention;
+- degrade one batch to bullet-only, shallow prose;
+- create a contradiction that is silently resolved incorrectly;
+- alter an accepted note during a later repair.
+
+For each injected defect, record whether the relevant test detected it, whether it localized the issue, and any known false negatives. Do not claim the auditor is effective until these tests run and results are recorded.
+
+## Metrics
+
+At minimum report:
+- inventory coverage;
+- asset inspection coverage;
+- extraction coverage and extraction-failure rate;
+- knowledge units with source evidence;
+- units with dispositions;
+- units with valid destinations;
+- units semantically validated;
+- unique-detail retention;
+- math/code/example integrity;
+- unresolved contradictions;
+- provenance completeness;
+- broken links/assets;
+- editorial violations and cross-batch drift;
+- regressions introduced and repaired;
+- open findings by severity and type;
+- observed false-positive/false-negative rates where measurable;
+- uncertainty and human-review burden.
+
+Every metric must define its numerator, denominator, measurement procedure, and limitations. Separate accounted-for from semantically validated. Do not report 100% merely because every file was opened or every unit received a status. Do not use a single aggregate score that lets good prose compensate for missing technical content.
+
+## Finding record
+
+Each finding should include a stable ID, severity, category, affected source-unit IDs, source evidence, target note/heading, expected condition, observed failure, reproduction steps, repair recommendation, status, and verification evidence after repair.
+
+## Acceptance behavior
+
+- Any `Unaccounted` unit blocks acceptance.
+- `Needs review` remains visible and blocks a claim of complete semantic validation where it could affect correctness.
+- Critical math, code, project implementation, or source-coverage findings must be resolved or explicitly accepted through documented human review.
+- Extraction failures and inaccessible assets must be reported and handled, not hidden.
+- Full-corpus audits are required; sampling may help during development but cannot replace final checks.
+- A polished note is not proof of completeness.

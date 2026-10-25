@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Traceable Source Knowledge Unit",
+  "type": "object",
+  "required": [
+    "knowledge_unit_id",
+    "source_id",
+    "source_path",
+    "source_file_hash",
+    "unit_type",
+    "disposition",
+    "verification_status"
+  ],
+  "properties": {
+    "knowledge_unit_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_file_hash": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_format": {
+      "type": "string"
+    },
+    "heading_path": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "line_start": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "line_end": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "excerpt_hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "excerpt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "unit_type": {
+      "type": "string"
+    },
+    "concept_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "parent_unit_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_context": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "disposition": {
+      "enum": [
+        "Preserved",
+        "Consolidated",
+        "Contextualized",
+        "Superseded",
+        "Needs review",
+        "Unaccounted"
+      ]
+    },
+    "destinations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "heading": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "supporting_unit_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification_status": {
+      "type": "object"
+    },
+    "finding_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewer": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "review_method": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "review_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    }
+  },
+  "additionalProperties": false
+}

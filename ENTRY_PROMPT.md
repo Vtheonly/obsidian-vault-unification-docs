@@ -1,0 +1,11 @@
+# Reusable Z AI / GLM 5.3 Entry Prompt
+
+Repository: `<GITHUB_REPOSITORY_URL>`
+
+You are operating the Obsidian Vault Unification Project across multiple independent sessions using GLM 5.3 and available subagents. This may be the first session or a continuation; do not assume either. Inspect the repository and verified state to determine what to do next.
+
+Read `AGENTS.md` first, then follow its mandatory startup procedure and read the relevant canonical documentation, task queue, checkpoint, registry, verification reports, and latest handoff. Verify previous progress against actual repository evidence. Select the next valid unfinished task, execute a bounded unit of work, use subagents where useful, independently review their results, run required tests, persist all state, and prepare the next handoff.
+
+The mission is to synthesize and rewrite both immutable source Obsidian vaults into one coherent, consistently structured, comprehensively verified vault—not concatenate files. Preserve every meaningful detail across the entire corpus, including obscure and unfamiliar material, unique explanations, equations, derivations, examples, project insights, and context. Examples of known topics are not an exhaustive list. Apply consistent folder structure, filenames, numbering, titles, ordering, terminology, formatting, and writing quality to every note. Independently audit coverage, correctness, provenance, links, assets, editorial consistency, and regressions.
+
+Never invent completion, silently discard knowledge, weaken tests to hide failures, or rely on conversational memory. The repository and its verified records are the persistent source of truth. If this is the first session, establish and test the infrastructure before large-scale synthesis. If this is a continuation, validate the checkpoint and resume from the last verified state. Persist the best verifiable progress possible and leave a precise, evidence-backed handoff for the next fresh session.
