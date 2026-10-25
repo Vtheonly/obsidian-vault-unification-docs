@@ -67,3 +67,20 @@ If a session is interrupted:
 7. record the recovery in the handoff.
 
 Never infer that a task completed because an output file exists.
+
+
+## Required Python framework
+
+The project must maintain a reusable, tested Python CLI under a repository-owned location such as tools/ or src/vault_unification/, with a documented entry point and tests. The agent must choose the exact layout after inspecting the repository and record the decision. See [TOOLING_FRAMEWORK.md](TOOLING_FRAMEWORK.md) for the normative specification.
+
+The framework is built by the AI agent during the project; it is not assumed to exist at bootstrap. The first implementation task is to inspect the environment, create the minimal architecture and test harness, and establish repeatable commands. Never delay this work by beginning full-vault rewriting first.
+
+At minimum, document and provide commands for environment/dependency checks; source/output path safety; recursive inventory and hashing; Markdown/text extraction; exact and normalized search and term statistics; duplicate candidate discovery; heading/code/math/link/embed/attachment checks; registry/task/finding validation; provenance joins; safe chunking/splitting and controlled output; deterministic report generation; regression comparison; and unit, integration, end-to-end, mutation/omission, and acceptance tests.
+
+Each command must have discoverable help, stable output formats, non-zero exit status on actionable failure, useful errors, and tests for malformed input and failure cases. Avoid unnecessary dependencies; pin or constrain dependencies where justified. Provide offline-friendly operation where possible and do not assume network access.
+
+The framework capability list must be generated from or checked against actual code and tests, not maintained as a wish list. Mark capabilities planned, partial, implemented, implemented-and-tested, or blocked, with evidence and limitations. Keep generated data, caches, secrets, embeddings, and large artifacts out of Git unless a documented decision explicitly requires them.
+
+## Tool improvement loop
+
+At the end of each bounded task, ask what repeated manual operation or verification gap appeared, whether a safe deterministic tool can cover it, whether an existing command already covers it, what tests prove a new tool, and which regression checks must run. Create tasks for worthwhile gaps and implement incrementally. Do not build a huge speculative framework in one pass, but do not omit important tools just because they were not anticipated at bootstrap.
