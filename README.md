@@ -37,6 +37,8 @@ docs/
   RISKS_AND_DECISIONS.md
   SOURCE_POLICY.md
   TOOLING_AND_SETUP.md
+
+  TOOLING_FRAMEWORK.md
 schemas/
 state/
 scripts/
