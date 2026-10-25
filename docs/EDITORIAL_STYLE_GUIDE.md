@@ -60,3 +60,15 @@ Every note should be checked for:
 ## Style changes
 
 A session cannot unilaterally change global style rules. Propose the change in the decision register, identify affected note types and files, explain the benefit and risks, and specify migration/regression checks. Approved changes must be applied consistently, including to previously generated notes where necessary.
+
+## Additional mandatory preservation and quality rules
+
+The canonical note template is a quality scaffold, not a demand to invent irrelevant sections. A section may be omitted or marked not applicable only when the reason is genuine and the note's relevant knowledge has been preserved elsewhere with traceability. Never turn a rich technical source into a shallow bullet list merely to satisfy a uniform visual template.
+
+Every note must preserve all applicable equations, symbol definitions, assumptions, intermediate derivation steps, proofs, dimensions, numerical examples, boundary conditions, code parameters, project-specific debugging lessons, interview distinctions, historical/API caveats, and failure modes. If content is too large for one canonical note, split it along meaningful conceptual boundaries and create navigable links; do not drop details to keep a note short.
+
+Editorial quality must not decline as work progresses. Use the same depth, explanation, terminology discipline, mathematical rigor, examples, link quality, and review process for prominent topics and obscure or single-instance notes. Familiar examples are not a whitelist of what deserves attention.
+
+Remove redundant repetition and conversational filler, but preserve the unique information contained inside repetitive passages. Resolve apparent contradictions only after identifying assumptions, versions, scope, and provenance. When uncertainty cannot be resolved from evidence, contextualize it or mark it for review rather than silently selecting one answer.
+
+The final reader-facing vault must not narrate its own assembly. Source provenance belongs in the project registry and audit artifacts, not in ordinary explanatory prose. Legitimate technical citations, version distinctions, and historical explanations remain allowed.
