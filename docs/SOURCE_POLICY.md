@@ -38,3 +38,10 @@ Retain historical/version-specific details when they provide educational, compar
 ## Final-vault presentation
 
 Ordinary notes should not narrate the merge process or refer to “Vault A” and “Vault B” as their source. Internal provenance records hold merge traceability. Keep legitimate citations, links, version context, and source references that belong to the subject matter.
+
+
+## Enforcement through the framework
+
+Source immutability is an executable safety requirement, not merely an instruction. The Python framework must validate source/output path separation, default to read-only source operations, record source hashes, and compare manifests around operations where practical. Any command that writes files must require an explicit destination and reject unsafe source overlap. Tests must prove these protections using temporary fixture vaults; never use original vaults as destructive test fixtures.
+
+All inventory and extraction exclusions, failures, unsupported formats, and inaccessible assets must be emitted in machine-readable reports. Do not treat an item as handled merely because a command skipped it.
