@@ -108,3 +108,34 @@ The project must be operated through a Python tooling framework that the agent i
 - At each session's end, identify repeated manual actions or verification gaps encountered; either add a bounded framework task or document why automation would be unsafe or not worthwhile.
 
 The canonical specification defines initial modules, interfaces, tool lifecycle, testing, reports, and expansion policy. Do not create competing undocumented tool inventories.
+
+## 7. Corpus-Scale Preservation Contract (Expanded)
+
+The source corpus is expected to exceed five million tokens and to contain thousands of notes, code examples, equations, diagrams, project logs, and interview-preparation material. Treat that scale as a planning constraint, not as permission to sample, summarize, or skip content.
+
+### 7.1 Source asymmetry
+- Vault A is the rich, iterative, noisy source: it may contain deeper mathematics, full derivations, implementation details, debugging lessons, inference optimizations, interview questions, and historical/API caveats, mixed with repetition and conversational wording.
+- Vault B is the comparatively uniform, concise source: it may have better hierarchy and consistency while omitting extensions, proofs, edge cases, project-specific knowledge, and implementation nuance.
+- Neither source is the winner. The target is synthesized from both. Never infer that a detail is unimportant because it appears once, in an awkward paragraph, in an unfamiliar topic, or in only one vault.
+
+### 7.2 No selective excellence
+Apply identical extraction, synthesis, and verification standards to every domain and note. Familiar examples such as CNNs, VGG, attention, Transformers, deep neural networks, and loss functions are examples only. Rare footnotes, isolated equations, obscure hardware constraints, and one-off failures must receive equal care.
+
+### 7.3 Overlap and disposition are separate decisions
+Classify relationships between overlapping content as exactly one of: Exact Duplicate, Semantic Duplicate, Partial Overlap, Complementary Content, or Conflict or Historical Difference. Separately assign each knowledge unit a disposition: Preserved, Consolidated, Contextualized, Superseded (with rationale and unique information retained), Needs review, or Unaccounted. Do not confuse an overlap classification with a disposition. Any Unaccounted unit blocks release.
+
+### 7.4 Synthesis evidence contract
+Before drafting a canonical note, assemble a concept dossier from all related evidence. Cover, where applicable: definitions; mathematical foundations and proofs; computational mechanics; alternative explanations; worked examples; code implementations; practical applications and project insights; interview pitfalls; historical/era-specific material; and critical distinctions. Record source locators and evidence links for every meaningful claim. A source-note citation alone does not prove that every claim inside it was accounted for.
+
+### 7.5 Hard gates
+Large-scale synthesis is prohibited until both conditions have verified evidence:
+1. Framework foundation: a working, tested Python package and CLI with path-safety enforcement, recursive inventory and hashing, search/counting, link validation, and machine-readable reports.
+2. Omission-detection pilot: a synthetic fixture with intentionally removed or corrupted details demonstrates detection and exact localization of every injected defect, including obscure derivations, project caveats, equations, and broken links.
+
+Do not mark either gate passed based on documentation, planned tests, or an agent's own unsupported assertion. Preserve command, exit code, report path, scope, and limitations.
+
+### 7.6 Non-destructive repair
+Audits must produce findings tied to source knowledge-unit identifiers and target destinations. Repairs are narrow: modify only the affected note/section, preserve accepted material, rerun relevant tests and regression checks, and cap retries at three. After three unsuccessful attempts, quarantine as Needs review, explain the blocker, and hand it off rather than looping or silently dropping the unit.
+
+### 7.7 Honest state and handoffs
+Never state that source vaults have been located, inventoried, backed up, protected, or processed unless repository evidence confirms it. Never claim tests passed unless they were actually run. At every session end, update the task queue, checkpoint, registry when applicable, reports, and canonical session handoff with exact paths, commands, real exit codes, metrics, blockers, and the next bounded task.
