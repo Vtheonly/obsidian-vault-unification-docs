@@ -1,0 +1,67 @@
+{
+  "command": "selftest",
+  "result": {
+    "ok": true,
+    "mandatory_checks_passed": true,
+    "optional_missing": [
+      "_pytest_jsonreport"
+    ],
+    "checks": [
+      {
+        "name": "python_version",
+        "required": true,
+        "ok": true,
+        "detail": "3.12.15",
+        "requirement": ">=3.10"
+      },
+      {
+        "name": "framework_import",
+        "required": true,
+        "ok": true,
+        "detail": "vault_unification 0.1.0 imported"
+      },
+      {
+        "name": "optional:jsonschema",
+        "required": false,
+        "ok": true,
+        "detail": "registry validation (validate-registry)"
+      },
+      {
+        "name": "optional:yaml",
+        "required": false,
+        "ok": true,
+        "detail": "frontmatter parsing (structure)"
+      },
+      {
+        "name": "optional:pytest",
+        "required": false,
+        "ok": true,
+        "detail": "test runner (run-tests, capabilities --verify)"
+      },
+      {
+        "name": "optional:_pytest_jsonreport",
+        "required": false,
+        "ok": false,
+        "detail": "MISSING - machine-readable test reports (run-tests) degraded"
+      }
+    ],
+    "platform": {
+      "python": "3.12.15",
+      "implementation": "CPython",
+      "platform": "Linux-5.10.134-013.15.kangaroo.al8.x86_64-x86_64-with-glibc2.41",
+      "executable": "/home/z/.venv/bin/python3"
+    }
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.1.0",
+    "report_schema_version": "1.0",
+    "command": "selftest",
+    "args": {
+      "command": "selftest",
+      "report": "/home/z/vault-repo/reports/framework/boot-000-selftest.json"
+    },
+    "utc_timestamp": "2026-10-25T16:22:17+00:00",
+    "git_commit": "af4d5f4"
+  }
+}

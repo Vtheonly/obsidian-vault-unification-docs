@@ -1,14 +1,40 @@
 {
   "project": "Obsidian Vault Unification",
   "execution_environment": "Z AI / GLM 5.3 with available subagents",
-  "stage": "documentation_bootstrap",
-  "status": "not_started",
-  "source_vaults_located": false,
+  "stage": "framework_bootstrap",
+  "status": "in_progress",
+  "source_vaults_located": true,
+  "source_vaults": [
+    {
+      "name": "Master AI",
+      "path": "source-vaults/AI /Master AI",
+      "note": "path contains a trailing space in parent directory 'AI ' (finding F-0001); always quote",
+      "files": 333,
+      "file_classes": {"markdown": 333},
+      "baseline_manifest": "state/manifests/master-ai.jsonl"
+    },
+    {
+      "name": "AI Course",
+      "path": "source-vaults/AI /AI Course",
+      "note": "path contains a trailing space in parent directory 'AI ' (finding F-0001); always quote",
+      "files": 276,
+      "file_classes": {"markdown": 276},
+      "baseline_manifest": "state/manifests/ai-course.jsonl"
+    }
+  ],
   "source_inventory_complete": false,
   "knowledge_registry_initialized": false,
+  "framework_foundation_built": true,
+  "framework_foundation_tested": true,
+  "framework_evidence": {
+    "test_run": "reports/framework/boot-000-pytest-report.json",
+    "test_summary": "153 passed, 0 failed, 0 skipped",
+    "capabilities": "reports/framework/boot-000-capabilities.json",
+    "setup_doc": "docs/FRAMEWORK_SETUP.md"
+  },
   "verification_pilot_passed": false,
   "output_synthesis_started": false,
-  "last_verified_checkpoint": null,
-  "current_task_id": "BOOT-000",
-  "notes": "Initial template updated to make the agent-built Python tooling framework the first task. This is task planning only, not evidence that the framework or source inventory exists."
+  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-25-boot-000.json",
+  "current_task_id": "BOOT-001",
+  "notes": "BOOT-000 completed: Python tooling framework v0.1.0 implemented and tested (11 capabilities implemented-and-tested, 4 planned). Source immutability verified around all operations. Both source vaults located with baseline manifests. Next: BOOT-001 formal source-location record, then BOOT-002 canonical inventory. Large-scale synthesis remains gated on BOOT-004."
 }

@@ -81,6 +81,10 @@
         "type": "string"
       }
     },
+    "notes": {
+      "type": "string",
+      "description": "Optional cross-session context. Added by ADR-0006; does not affect task state semantics."
+    },
     "commit": {
       "type": [
         "string",

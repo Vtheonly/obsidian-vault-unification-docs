@@ -67,3 +67,26 @@ Use stable IDs such as `ADR-0001`. Each decision records:
 | R-014 | Repairs erase already accepted content or regenerate too much of the vault. | High | Require targeted repairs with regression checks, preserve unaffected sections, and quarantine after three failed attempts. |
 
 Coverage statistics and frequency distributions are diagnostic signals, not standalone proof of semantic preservation. A high percentage cannot override a single unaccounted critical knowledge unit, and a frequency drop must trigger investigation rather than automatic rewriting.
+
+### ADR-0006 — Optional `notes` field on task records
+**Status:** accepted (2026-10-25, BOOT-000 session)
+**Context:** Cross-session handoffs need free-text context attached to specific
+task records (e.g. preliminary evidence gathered while executing a
+predecessor task). The original task schema had `additionalProperties: false`
+and no place for such context, forcing either loss of context or schema
+violations.
+**Options considered:** (1) keep context only in handoff documents; (2) extend
+task records with an optional `notes` string; (3) a separate task-notes file.
+**Decision:** Option 2: add optional `notes` (string) to
+`schemas/task.schema.json`.
+**Rationale:** Task-attached context survives task-queue-first navigation and
+cannot drift from its task; a separate file adds a second authority to keep in
+sync. The field is optional and does not participate in state-machine
+semantics, dependencies, or acceptance criteria.
+**Impact / migration:** Backward compatible — existing records remain valid
+(none used `notes` before). `validate-registry` (CAP-006) picks up the schema
+change automatically; its tests are schema-driven and unaffected. Verified by
+re-running `vu validate-registry --tasks state/task-queue.jsonl` after the
+change (exit 0).
+**Verification plan:** every future schema change follows the same pattern:
+documented ADR + schema edit + validator re-run + suite re-run.

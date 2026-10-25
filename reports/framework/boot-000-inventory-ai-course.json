@@ -1,0 +1,32 @@
+{
+  "command": "inventory",
+  "root": "source-vaults/AI /AI Course",
+  "counts": {
+    "code": 0,
+    "image": 0,
+    "markdown": 276,
+    "other": 0,
+    "pdf": 0,
+    "text": 0,
+    "unreadable": 0
+  },
+  "total_files": 276,
+  "manifest_path": "/home/z/vault-repo/state/manifests/ai-course.jsonl",
+  "manifest_records": 276,
+  "unreadable_files": [],
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.1.0",
+    "report_schema_version": "1.0",
+    "command": "inventory",
+    "args": {
+      "command": "inventory",
+      "root": "source-vaults/AI /AI Course",
+      "manifest": "state/manifests/ai-course.jsonl",
+      "report": "/home/z/vault-repo/reports/framework/boot-000-inventory-ai-course.json",
+      "follow_symlinks": false
+    },
+    "utc_timestamp": "2026-10-25T16:22:00+00:00",
+    "git_commit": "af4d5f4"
+  }
+}

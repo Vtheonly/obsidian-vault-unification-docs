@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vault-unification"
+version = "0.1.0"
+description = "Deterministic tooling framework for the Obsidian Vault Unification project"
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+# Runtime extras used by some commands; the framework degrades explicitly if absent.
+full = ["jsonschema>=4.0", "PyYAML>=6.0"]
+
+[project.scripts]
+vu = "vault_unification.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,32 @@
+{
+  "command": "inventory",
+  "root": "source-vaults/AI /Master AI",
+  "counts": {
+    "code": 0,
+    "image": 0,
+    "markdown": 333,
+    "other": 0,
+    "pdf": 0,
+    "text": 0,
+    "unreadable": 0
+  },
+  "total_files": 333,
+  "manifest_path": "/home/z/vault-repo/state/manifests/master-ai.jsonl",
+  "manifest_records": 333,
+  "unreadable_files": [],
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.1.0",
+    "report_schema_version": "1.0",
+    "command": "inventory",
+    "args": {
+      "command": "inventory",
+      "root": "source-vaults/AI /Master AI",
+      "manifest": "state/manifests/master-ai.jsonl",
+      "report": "/home/z/vault-repo/reports/framework/boot-000-inventory-master-ai.json",
+      "follow_symlinks": false
+    },
+    "utc_timestamp": "2026-10-25T16:21:54+00:00",
+    "git_commit": "af4d5f4"
+  }
+}

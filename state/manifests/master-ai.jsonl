@@ -1,0 +1,333 @@
+{"relpath": "Index.md", "sha256": "2eb389279524dc1696ba9ddc660ccdee84d6df2a2837c234f774f9c4e8bcbfb3", "size": 2204}
+{"relpath": "Learning Roadmap.md", "sha256": "0b67884e6eaa3698a41deb3b189194df0425d67790b22e9332526c895b6b7009", "size": 10444}
+{"relpath": "MOC.md", "sha256": "c76717f4666e91f0a2f8b1a03d3fee6ca17b947e0e0561ee06aa4e6622d69fd1", "size": 6927}
+{"relpath": "README.md", "sha256": "12dddb9ac6aba332001d3fbdb489db4e1d4d2b55be797a5f2c87288df3a0b371", "size": 8668}
+{"relpath": "Reading Order.md", "sha256": "ef5e92772a3aec102efd5090d138c56da941b3abb537a14db700ed7cf86232b0", "size": 2977}
+{"relpath": "00 - Vault Management/Architecture Decisions.md", "sha256": "64dc95e22caab6b2269abd34145c07e346a4674341f70011d9634eed8edece6e", "size": 48652}
+{"relpath": "00 - Vault Management/Completed Work.md", "sha256": "fa1a1d40cea0ac5070d134966e21e19f0198b2681d757e9b6db58d8fb33a3eab", "size": 6995}
+{"relpath": "00 - Vault Management/Coverage Audit.md", "sha256": "577cfc37b57f13b5e9b184743ab4b93b146179ac7149565c1e21784a53ab66a6", "size": 11709}
+{"relpath": "00 - Vault Management/Current Iteration.md", "sha256": "1fe5d783f0c1ecac632e97bbf8bd49e3dfb111eb136e411741a1abffd93305ea", "size": 4100}
+{"relpath": "00 - Vault Management/Master Roadmap.md", "sha256": "8c362d76eb26261d97b265cfdb856992006355c842ae16d1059078e27981884f", "size": 25207}
+{"relpath": "00 - Vault Management/Next Iteration.md", "sha256": "4632ca83a1cb914d6aafa759663f3b5e6c5d3d449fab71d9afdc0179cfc58aab", "size": 5780}
+{"relpath": "00 - Vault Management/README.md", "sha256": "edc992c23a35a4e0814fee173d6a637b77f110efa1162a5c5880d87b8dde0a6f", "size": 3459}
+{"relpath": "00 - Vault Management/Remaining Work.md", "sha256": "b360de3fafce3736b4e08ab59649b0e739f35fb9453a26ac19a23003949d4aa8", "size": 4953}
+{"relpath": "00 - Vault Management/Research Queue.md", "sha256": "b9577a32183854075b526ac42afa142f002989aed150b9535d1bce1e4c4f5f04", "size": 13727}
+{"relpath": "00 - Vault Management/Vault Status.md", "sha256": "2e47e5266572429dd83355f722ee9915484c6da079e90eb9f735fa5134b8438d", "size": 6164}
+{"relpath": "01 - AI Foundations/01 - What Is AI Engineering.md", "sha256": "9209fa9995054695a7eaddb6616881aeda9632bccb1f6307514961680f3cfcc9", "size": 18546}
+{"relpath": "01 - AI Foundations/02 - AI vs ML vs DL vs GenAI vs Agentic AI.md", "sha256": "476259d8f59b3d9a3cffaf906b0f2b6a0a94563603bd4c58cb0eec6753593b3d", "size": 17058}
+{"relpath": "01 - AI Foundations/03 - A Brief History of AI.md", "sha256": "9c863bfad3e4575ee46cdeb7428aadf472bfc40571054fcd95ed20b0928df638", "size": 19034}
+{"relpath": "01 - AI Foundations/04 - The Modern AI Stack.md", "sha256": "615623bf3001d5c34a1338048cfc90143c6157311ceb50c88b00607068f5b277", "size": 7223}
+{"relpath": "01 - AI Foundations/05 - AI Engineer Roles.md", "sha256": "d51371b7d547a31738f95859c7562ae2a0d18db489540fde69ef725d8c9d0c57", "size": 8543}
+{"relpath": "01 - AI Foundations/06 - Map of the Field.md", "sha256": "66a09eef8a1f155e8ff12d3c5df500c81335abf7d202f43a5635ff0791d48150", "size": 7359}
+{"relpath": "01 - AI Foundations/MOC.md", "sha256": "93ec84d6de1eddd832c4d5378228eeff41ef48d6c7aefa3d3e178750f1c64f2a", "size": 2091}
+{"relpath": "02 - Mathematics/MOC.md", "sha256": "559c1874f429abb65e5496631a2b7a9e001949f268fd62a31eb857ebfcfa1692", "size": 4511}
+{"relpath": "02 - Mathematics/Calculus/10 - Gradient and Chain Rule.md", "sha256": "cf7d45fb6538d7696911969f2a5e3c36f4a80c92a14cb69eac5c58281bf4d85a", "size": 19057}
+{"relpath": "02 - Mathematics/Calculus/11 - Jacobians and Hessians.md", "sha256": "b2b42cb1fd0c1ad40836e259e6ff05ad55c7ef0dc141911d87cfdf481bcf7aae", "size": 19476}
+{"relpath": "02 - Mathematics/Information Theory/15 - Entropy Cross-Entropy KL.md", "sha256": "607424ad313f0071d81abed6bfdd7d7712bf50533f889bb882ea9ec0828993f0", "size": 18954}
+{"relpath": "02 - Mathematics/Linear Algebra/01 - Vectors.md", "sha256": "04b27daada8f9ac5af8f6d364c2f5534a39e7d12ee9f4408bae5e15b7a38cf24", "size": 21010}
+{"relpath": "02 - Mathematics/Linear Algebra/02 - Dot Product.md", "sha256": "31b330edf11178142038fe8c282cfebb6496e521f97cc7bc282705b49e1784ed", "size": 22328}
+{"relpath": "02 - Mathematics/Linear Algebra/03 - Cosine Similarity.md", "sha256": "870863501807aee649cdd4ed48a61232855be4a4f3423bf9bdb41d822adc434c", "size": 19618}
+{"relpath": "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md", "sha256": "f41ace7ad6076ae66872de9d47b100a7b0a8ddc2fc52a4142206b0125d90f0d5", "size": 19567}
+{"relpath": "02 - Mathematics/Linear Algebra/05 - Matrix Decomposition.md", "sha256": "209d8f02c1302f50dfe102548875569a43add04891b9b0d7925484c5c2c08901", "size": 18601}
+{"relpath": "02 - Mathematics/Linear Algebra/06 - Tensors and Broadcasting.md", "sha256": "5bc4c9393ef35304a1be82c0c7b977bf2950479a696fb57c26f8dca790a842bd", "size": 24943}
+{"relpath": "02 - Mathematics/Optimization/12 - Optimization Essentials.md", "sha256": "61468b7634181ce17de33bdd762090a91b1288532baae893d1234fe267e32560", "size": 27767}
+{"relpath": "02 - Mathematics/Optimization/13 - Adam Derivation.md", "sha256": "a90ba31c96a83e8f7a170a69588c517063a4372533e464b68dd4c388092a57f0", "size": 20973}
+{"relpath": "02 - Mathematics/Optimization/14 - Learning Rate Schedules.md", "sha256": "c16ef213df0bcb45233cca4efed984691d041d4ad93924e936b96b810148c672", "size": 18910}
+{"relpath": "02 - Mathematics/Probability/07 - Probability Essentials.md", "sha256": "7b3efed4896cad672c5294ea50c20dbc53f02b2a2c2f51c2b54e554e31f2ba2f", "size": 25920}
+{"relpath": "02 - Mathematics/Probability/08 - Bayes Theorem Deep Dive.md", "sha256": "22cef05f214aa9c17074eb5093063605c9d08e80ac192a9f206551caa78f6dcf", "size": 21521}
+{"relpath": "02 - Mathematics/Probability/09 - Gaussian Distribution.md", "sha256": "83f3aee46a88c2dd60d94a04ed5fab9491c7e6524306cf00e1919d018cf40801", "size": 21265}
+{"relpath": "02 - Mathematics/Statistics/16 - Estimators and Bias.md", "sha256": "6b55a83d025eac81b7b82286d309fba0e9484b7719c286a2f5085a5269b4a8f6", "size": 21440}
+{"relpath": "02 - Mathematics/Statistics/17 - Hypothesis Testing.md", "sha256": "9a4c6698abeaeec51260cc4ac7740f9bc0ecc579912f070f906cba921aff648c", "size": 20077}
+{"relpath": "03 - Machine Learning/MOC.md", "sha256": "5fba5becf845631ba3cd192303e8a8d72527e78495c0d6047a781289dcc7754d", "size": 3640}
+{"relpath": "03 - Machine Learning/Evaluation/05 - ML Evaluation Metrics.md", "sha256": "72af1c3db6d86dc2f93167093465fbd6126cb919742ddb5484666ad31dda8a39", "size": 8154}
+{"relpath": "03 - Machine Learning/Generalization/01 - Bias Variance Tradeoff.md", "sha256": "8122240ed48f9189bd645653a8ce6eea45b00332a7c4ecd8d1889c6d1436f57c", "size": 20158}
+{"relpath": "03 - Machine Learning/Generalization/06 - Regularization Techniques.md", "sha256": "f5aefac5eb7aaecf05113e049a3a95e5a35e4ae2c8565595580aec167cce8bfd", "size": 8157}
+{"relpath": "03 - Machine Learning/Reinforcement Learning/07 - MDPs and Bellman Equations.md", "sha256": "4c45ca9416c4b11fdb1c850c7a955a82754266006ec9335e5a921a78fb5c2611", "size": 7316}
+{"relpath": "03 - Machine Learning/Reinforcement Learning/08 - Q-Learning and DQN.md", "sha256": "10200a5fd0c0d64368a984b276d0dabd53933db1d553d3814ff3b1e0f72f8c7b", "size": 22652}
+{"relpath": "03 - Machine Learning/Reinforcement Learning/09 - Policy Gradients and Actor Critic.md", "sha256": "09a3237bf6a3163aac989c344f351023b85b124503104405b4376919f68d0b4b", "size": 8188}
+{"relpath": "03 - Machine Learning/Reinforcement Learning/10 - PPO Deep Treatment.md", "sha256": "0bc854c2437524bc89043abfe711819731174dcb42ab0dc35186328e18f08bff", "size": 9888}
+{"relpath": "03 - Machine Learning/Supervised Learning/02 - Linear and Logistic Regression.md", "sha256": "ee1cfd184b9e1bf280d937c6308bae73bb81a6d737ba5ac5367df04aded5889a", "size": 6995}
+{"relpath": "03 - Machine Learning/Supervised Learning/03 - Decision Trees and Gradient Boosting.md", "sha256": "ca947193018d3c45d3396b14d2308b0278e955a5b73f309cc0fa4702b7df8f5c", "size": 7646}
+{"relpath": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md", "sha256": "a23ad7be3ae15573086750a5ea8e6542f9d4bf40b1f44d062c8bd2db6e1afe91", "size": 5935}
+{"relpath": "04 - Neural Networks/MOC.md", "sha256": "4ff99d3f011861a36c39a8455c56caae78e0a80dc33ee13c34620e24354fdde1", "size": 2622}
+{"relpath": "04 - Neural Networks/Architectures/03 - CNNs.md", "sha256": "3ae643458ce996e8c7a95f0742027ee12012c671e4696e8f371a402eef827482", "size": 18831}
+{"relpath": "04 - Neural Networks/Architectures/04 - RNN LSTM GRU.md", "sha256": "95a159aff497f9f6b9dd1224c57b81f70c52b19609c0e7cd8a8c3130996ea1a8", "size": 28676}
+{"relpath": "04 - Neural Networks/Architectures/05 - Seq2Seq and the Information Bottleneck.md", "sha256": "066dc80c7c4a64a24f8cc86d76cc980446cb3f520784b8d402df4f1fe93d5dff", "size": 18939}
+{"relpath": "04 - Neural Networks/Foundations/01 - Perceptrons and MLPs.md", "sha256": "03a188aeb8904f2d449a2883ab09bef23eadb2a3667f602600b521f381eb3419", "size": 18920}
+{"relpath": "04 - Neural Networks/Foundations/02 - Activation Functions.md", "sha256": "dec34964391314f75b213cdba898913a20061bfb12bb3b58f1b5950c4d86ac96", "size": 18590}
+{"relpath": "04 - Neural Networks/Training/06 - Backpropagation.md", "sha256": "d66d302576b7018761b0a34e2f122626a69fbf8e090fdb5558879b902d99d966", "size": 20641}
+{"relpath": "04 - Neural Networks/Training/07 - Initialization Schemes.md", "sha256": "5388a231a256e040b5f9dcbcdfc295d6baa48b5bfb93cdf23a9c78c19560fd71", "size": 16219}
+{"relpath": "04 - Neural Networks/Training/08 - Vanishing and Exploding Gradients.md", "sha256": "4e1742fbf93861e400930438237a52d36f424f8b238982e82ca03f502cee7802", "size": 18580}
+{"relpath": "05 - NLP Fundamentals/MOC.md", "sha256": "c1124a7926967ef839b36c7899747859de0821038eb9d2706ad4290be469b452", "size": 3004}
+{"relpath": "05 - NLP Fundamentals/Embeddings/05 - Word2Vec GloVe FastText.md", "sha256": "b116a869bd3daaa038eb49fe0bdfdbf4bd2a006eb93496a3e9fa3cb2d98c1f31", "size": 20484}
+{"relpath": "05 - NLP Fundamentals/Embeddings/06 - Contextual Embeddings ELMo to BERT.md", "sha256": "91a02e2edeeb31335cfb31400a3b3c54fec639a6d4ecb7e89cb5f7e09d60e2fe", "size": 18439}
+{"relpath": "05 - NLP Fundamentals/Language Modeling/07 - N-gram Language Models.md", "sha256": "2e40477b842d4c91b8cb44e45cd3be48509a6d0947991781fc89b77de992729d", "size": 16689}
+{"relpath": "05 - NLP Fundamentals/Language Modeling/08 - Perplexity.md", "sha256": "dbe3a0dade4bbd8684bb735688fcb72525244624e3f261481840d5e02bcec2ef", "size": 15929}
+{"relpath": "05 - NLP Fundamentals/Pre-Transformer NLP/09 - TF-IDF.md", "sha256": "caa710e1508287494c23fc315f548556e53c8a44646ef1dd06bc92be753e64b5", "size": 16869}
+{"relpath": "05 - NLP Fundamentals/Pre-Transformer NLP/10 - BM25.md", "sha256": "1569519544a5685ec01e5179ecea5330ac431fd7a5a08fb29bd8d88045aca263", "size": 18035}
+{"relpath": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md", "sha256": "46f117d3be4aa50810085abd349abe05e38ed72da30c11d2da1edce91d117345", "size": 21418}
+{"relpath": "05 - NLP Fundamentals/Tokenization/02 - BPE.md", "sha256": "d469675a9bbcc34dbc206b8999e8416c78cab24d39d7d7a0fe81605cef2977d1", "size": 16810}
+{"relpath": "05 - NLP Fundamentals/Tokenization/03 - WordPiece.md", "sha256": "b4c1e4a80f1037a8356c8c6f1d63bb5103d9847037bfa7b7e3fef7a932cbec02", "size": 14793}
+{"relpath": "05 - NLP Fundamentals/Tokenization/04 - SentencePiece.md", "sha256": "b115291fb1da9703d7f53195913637abaf937f3a088cb06531249ca5a47d9b23", "size": 17447}
+{"relpath": "06 - Attention Mechanisms/MOC.md", "sha256": "46112db6d8ca2a8be33ed4a3bdeaa065d977b21aee8d569aa432e902729388e2", "size": 4369}
+{"relpath": "06 - Attention Mechanisms/Efficient Attention/11 - FlashAttention.md", "sha256": "eeaf18eda28f543d1c2a44029348a7a3ce035e6b88e031f2473a88a58f7d4b84", "size": 16468}
+{"relpath": "06 - Attention Mechanisms/Efficient Attention/12 - Sparse Attention.md", "sha256": "c082ece26b59af6d4f034d40554a43fa37f3ee1c1b0fed74c2d8fc8b71d4942b", "size": 11811}
+{"relpath": "06 - Attention Mechanisms/Efficient Attention/13 - Linear Attention.md", "sha256": "6fa92565d2d0a430398fedbf232d01bcec559fff8c0e29c3cd78d4657702eee1", "size": 12840}
+{"relpath": "06 - Attention Mechanisms/Modern Attention/14 - GQA MQA MLA.md", "sha256": "90faf455feb692a955362932355e8e401ee28c74032a30d75aff152097add2ff", "size": 16323}
+{"relpath": "06 - Attention Mechanisms/Modern Attention/15 - Sliding Window Attention.md", "sha256": "2c1ee57071923ab9f115fa894d63409481ab5cd6fcc54cf93c6b4f951d8250d3", "size": 16500}
+{"relpath": "06 - Attention Mechanisms/Multi-Head Attention/05 - Multi-Head Attention.md", "sha256": "e76fab76322a483152199dc8ccc56db75a00eca19a779b047217435b725dcea2", "size": 19709}
+{"relpath": "06 - Attention Mechanisms/Origins/01 - Origins of Attention.md", "sha256": "1b984f14dae1e35ae55523f66c7bfaa5ad32cec82eeb865c9cf27df89e5b167a", "size": 16849}
+{"relpath": "06 - Attention Mechanisms/Origins/02 - Bahdanau Attention.md", "sha256": "2b2079630096ee3c231b261ab1ce43660c3a420a5ddc52c7ec453a45e6acded4", "size": 17578}
+{"relpath": "06 - Attention Mechanisms/Origins/03 - Luong Attention.md", "sha256": "3b52d2a69afd29fa4fcccea7381424b72222df59df8cd5cf59c276bd8a0fb8ef", "size": 18952}
+{"relpath": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md", "sha256": "e6d17f04dce333bbc56f1ad1a03d040f9578cd75397f7555c5bb15806d937c57", "size": 16289}
+{"relpath": "06 - Attention Mechanisms/Positional Information/07 - Sinusoidal and Learned Positional.md", "sha256": "8e94adca5ee9e3223212071d447e202b1eae83fde8bf6be28c2a66a44ad41288", "size": 11072}
+{"relpath": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md", "sha256": "c6780420e4ebbef264acd464549fc93bbd9576b6142ee4fa6b091fefded3838c", "size": 16535}
+{"relpath": "06 - Attention Mechanisms/Positional Information/09 - ALiBi.md", "sha256": "e84c7f38ba9e55c50550bf7f7af49efc1a600369ddca527f474b4faf9c7b524f", "size": 16524}
+{"relpath": "06 - Attention Mechanisms/Positional Information/10 - YaRN and NTK-aware Scaling.md", "sha256": "a1e31a0a62c194c30caceb264d91b30033d1e0e27d004a4780a69d2543d9beac", "size": 15702}
+{"relpath": "06 - Attention Mechanisms/Self-Attention/04 - Self-Attention.md", "sha256": "36209a34fb7928fb88cf18fb25982555fd4190aa1a7c613ae48af43abeadf080", "size": 24457}
+{"relpath": "07 - Transformers/MOC.md", "sha256": "d365060f783f02073b7a98520221a132dfa1efc5992ebf0933f3007f133cf971", "size": 2866}
+{"relpath": "07 - Transformers/Architecture/01 - Transformer Block.md", "sha256": "1d41f00c3d93adce6717e675b672b2ec14545e30d0ac3c93c1cd6a56d2a567e0", "size": 8604}
+{"relpath": "07 - Transformers/Architecture/02 - Pre-Norm vs Post-Norm.md", "sha256": "4378b80fdee74c744102f226f65be2b965ca260e09966af62663b12c1a6f597e", "size": 6834}
+{"relpath": "07 - Transformers/Architecture/03 - Residual Connections.md", "sha256": "a877bb784ad92d879e1b0f2ee6344ffb06e59b71a00f0afefa832754958a21d5", "size": 6416}
+{"relpath": "07 - Transformers/Components/04 - Normalization Layers.md", "sha256": "370725c10a4a1b9aa52989d1c202eb98fa846c00c3f54672658cbcf6351139dc", "size": 7106}
+{"relpath": "07 - Transformers/Components/05 - Feed-Forward Network Deep.md", "sha256": "6189ebfaad21ac7f5a919e438873f680091c7e987991418e48440105325735a8", "size": 7040}
+{"relpath": "07 - Transformers/Components/06 - Embedding Layer.md", "sha256": "b66ca003f8f0812ec5eb817e0f730ff53b835d1a100eb413494f8f516ece3f47", "size": 6768}
+{"relpath": "07 - Transformers/Decoder Models/09 - GPT Family Evolution.md", "sha256": "4f9033ee424089f21bdbae3ab408264565abf601db302664017074818f1d945c", "size": 7719}
+{"relpath": "07 - Transformers/Encoder Models/07 - BERT.md", "sha256": "f3c02d5e0c1455f81a9574ec891780bfff6e1d85deb30494f680ad8521900831", "size": 5833}
+{"relpath": "07 - Transformers/Encoder-Decoder Models/12 - T5 and BART.md", "sha256": "44ff33b9e20e19d71b7f0e50d606a8da3574aad8b66be883bdb93e2c28f2d8eb", "size": 19918}
+{"relpath": "07 - Transformers/Variants/13 - Vision Transformer ViT.md", "sha256": "c16525aa2b21c5d81eeabb5bd4792aa949ab579916b2cfacae9e6cfc5f64c95a", "size": 15813}
+{"relpath": "07 - Transformers/Variants/15 - Mixture of Experts Transformer.md", "sha256": "449c39455bae335122d2516e6041d9de3a8c8de393973b8de6e14423574fa2dc", "size": 7272}
+{"relpath": "08 - LLMs/MOC.md", "sha256": "162babeb451c2675e89f82b06b5a12722876612a471f9ae9d691c59d2a69f9a3", "size": 2061}
+{"relpath": "08 - LLMs/Architecture/01 - Decoder-Only Architecture.md", "sha256": "34efee8c04da8ebc68d6ed1512cb3f216b0e493fb25a9f963de7f04fbdfaa784", "size": 22114}
+{"relpath": "08 - LLMs/Capabilities/04 - In-Context Learning.md", "sha256": "c1116808ab1107e2bf446c5fbec771f935860cfff3c136ed996751adffaef31c", "size": 14296}
+{"relpath": "08 - LLMs/Context and KV Cache/02 - KV Cache Mechanics.md", "sha256": "0b3df1e25f37d7e057585f31ae1dffd2e35949a59ffda2b09ec284ed14611caf", "size": 21343}
+{"relpath": "08 - LLMs/Evaluation/06 - LLM Benchmarks.md", "sha256": "446f3b6ddd600d3a88a79fe51359d2d672eeb8d5e8f897edaed06371d58a65df", "size": 13192}
+{"relpath": "08 - LLMs/Limitations/05 - Hallucination.md", "sha256": "a262d3a95d0ed83b929231c7c39313e4d8e61d035b60b14a5af2a8ddeba3484a", "size": 22210}
+{"relpath": "08 - LLMs/Sampling/03 - Sampling Strategies.md", "sha256": "a5914ede7cd1c9b37c1fe5c892c356557965e7ff4e0ebb8888f3f2c97c11cef5", "size": 17873}
+{"relpath": "09 - Foundation Models/MOC.md", "sha256": "122e70a0bc6c4abd656eaa30e87c7c998fa34672913c0f42b0d3859c9b5cbb68", "size": 4043}
+{"relpath": "09 - Foundation Models/Code Models/04 - Code Models.md", "sha256": "52f3c4de0fc3095fa5780c820a62f68dfbcabe9c8f49cf1b5195878841a86ae4", "size": 11330}
+{"relpath": "09 - Foundation Models/Embedding Models/02 - Embedding Models for Retrieval.md", "sha256": "190bff8a0f677372b87516dbb386b2ca9c65a476fc36cdfe370ca1d43a6873ac", "size": 17568}
+{"relpath": "09 - Foundation Models/Embedding Models/06 - Embedding Model Training.md", "sha256": "4680da05cb567a419a5bfd2ca1855bef5ba50087409dbe687a06d42dd677e422", "size": 12296}
+{"relpath": "09 - Foundation Models/Multimodal/05 - Multimodal Foundation Models.md", "sha256": "d4cd192953a08e6bec0f1c41b7545fa4c1551a5c84903279a387c37493e295a5", "size": 12577}
+{"relpath": "09 - Foundation Models/Reasoning Models/03 - Reasoning Models.md", "sha256": "6b5aa1b3f74dcaedfdaa26437928cb5bc1f39714c150010bfa04c385a8465637", "size": 17980}
+{"relpath": "09 - Foundation Models/Vision/01 - Vision Foundation Models.md", "sha256": "a67b2cc92e8d2901095e1129cf6b0c1e709ff708ccb2e506f5eb501cc28cf65a", "size": 14738}
+{"relpath": "10 - Model Architecture Research/2026 Frontier Model Synthesis.md", "sha256": "11a60e05b5262e860a934d8b8fecc2e8e6dfcc3b8e0dd96ab0e82780a9c9442c", "size": 12436}
+{"relpath": "10 - Model Architecture Research/MOC.md", "sha256": "152b6427ec598955d874a20aa17992b1aea88b109e7ad01a892a989277c80ddb", "size": 6341}
+{"relpath": "10 - Model Architecture Research/Closed Source/07 - GPT-4 Inferred Architecture.md", "sha256": "04d4e2b351f9c668321e9e046fd15cd351c0feb86581677c1fe2e28b9486372b", "size": 18378}
+{"relpath": "10 - Model Architecture Research/Closed Source/08 - Claude Architecture.md", "sha256": "85d12459e7865fb5ad1f0711f2166ffd76d8606fb0934e5399094c8024581629", "size": 8487}
+{"relpath": "10 - Model Architecture Research/Closed Source/09 - Gemini Architecture.md", "sha256": "f1d36e93fb02dd2b60d95cf00cfdac308479c22b2b7a502819bb36beaa46accd", "size": 8787}
+{"relpath": "10 - Model Architecture Research/Closed Source/10 - Fable 5 Architecture.md", "sha256": "8c51b6ace4939f85ad3e42b74a32869f7b0558c4620a8789c4f443e7e5987cc4", "size": 7357}
+{"relpath": "10 - Model Architecture Research/Closed Source/11 - Kimi K3 Architecture.md", "sha256": "cbd1ea84d6db1661395ece312e2a7ce009b2ddf38f6c68f2863d596d649892dc", "size": 7159}
+{"relpath": "10 - Model Architecture Research/Closed Source/12 - Opus 5 Architecture.md", "sha256": "db23e9ffb6d8a5d6140ae38c9ba96816d577956fbf88f7e123c0d120d2845d03", "size": 9479}
+{"relpath": "10 - Model Architecture Research/Closed Source/13 - Mythos Architecture.md", "sha256": "01583cdfda14f0e6c1701e03e1edab733152d9ba0bd66af9dc889caacd895d20", "size": 5249}
+{"relpath": "10 - Model Architecture Research/Open Source/01 - DeepSeek Architecture.md", "sha256": "748d8d9a5f3e99b52c1ea069179682565316b4c1df575e83e317253e909029b2", "size": 6905}
+{"relpath": "10 - Model Architecture Research/Open Source/02 - Llama Mistral Qwen Comparison.md", "sha256": "6afc30e9ba0a033b050894d48783afc5b7ea4e47c83687a175f15acb34f4058b", "size": 5730}
+{"relpath": "10 - Model Architecture Research/Open Source/03 - Llama Family Architecture.md", "sha256": "700cfe1285e67cdf9623ee3d7715436fe60cb47193910c84801731ecee168e18", "size": 8977}
+{"relpath": "10 - Model Architecture Research/Open Source/04 - Mistral and Mixtral Architecture.md", "sha256": "4f71b890c1d20d7ed6e84e113c57de4c331ccfe62d6740215abe2981a844e12d", "size": 9608}
+{"relpath": "10 - Model Architecture Research/Open Source/05 - Qwen Family Architecture.md", "sha256": "a36f51cd822f5e02246df9260d61f2f7998ae2a24c4de21b3e224c595c45a60f", "size": 9168}
+{"relpath": "10 - Model Architecture Research/Open Source/06 - Gemma Architecture.md", "sha256": "9a71a487110add9af22f167125e69e025df58b85aae4e915b7e80f2c21e551b3", "size": 10360}
+{"relpath": "10 - Model Architecture Research/Open Source/07 - GLM 5.2 Architecture.md", "sha256": "4e3bf86e60eb1dfacde1f56b4245d0b8c069049c54dda40e45a7d6d89624680f", "size": 7698}
+{"relpath": "10 - Model Architecture Research/Open Source/08 - Qwen 3.8 Architecture.md", "sha256": "6177bb14ec7b54b03edcd684d6f1a9ff192d677f88549a645e415d3b45e5ad90", "size": 8396}
+{"relpath": "10 - Model Architecture Research/Open Source/09 - MiniMax 3 Architecture.md", "sha256": "289e4d2a7858f8c59aff9d847af40cef031d0a80c0e4474ca49da8cf5ef96c52", "size": 8630}
+{"relpath": "11 - Training/MOC.md", "sha256": "88163e50080745a7509b0eeb99486da47450d1bc0a4da0f82674962ccd67dd0e", "size": 4008}
+{"relpath": "11 - Training/Data/03 - Data Pipelines and Deduplication.md", "sha256": "ea5347cd0d49c33498b879177224893570364401836acf80bafd229b76f918a3", "size": 15050}
+{"relpath": "11 - Training/Distributed Training/02 - Distributed Training.md", "sha256": "1168629ec7112b2c3104eb5029e34fc97b823af96ac06c4c0f3f60b2373b42cf", "size": 9981}
+{"relpath": "11 - Training/Optimization/04 - Mixed Precision Training.md", "sha256": "a891bdf51c4b3d72505f1da394143cf5f59284f53777fc13b1d65009c2970ecf", "size": 14850}
+{"relpath": "11 - Training/Optimization/05 - Loss Spikes and Stability.md", "sha256": "f42ba85ec6aacc4e76d4006bec4b747bd6bbe76f84ef3dadb592137d9f4dc835", "size": 15583}
+{"relpath": "11 - Training/Pretraining/01 - Pretraining Objectives and Scaling Laws.md", "sha256": "6d65b9a33c5decefa7a36a3b2a903fb0ed128a4a30a3d4d866e311bcfb49ac68", "size": 17895}
+{"relpath": "12 - Fine-Tuning/MOC.md", "sha256": "a5e6c6a3c300491f2afd9897960de1692271b22738347e5059e8b2ef83b88d1b", "size": 1943}
+{"relpath": "12 - Fine-Tuning/DPO/04 - DPO Derivation.md", "sha256": "b9bf119188e56f8eda916f1048091f6e6a2fa4927e7ec824924b49e5494b9fb2", "size": 13470}
+{"relpath": "12 - Fine-Tuning/Instruction Tuning/03 - Instruction Tuning and Chat Templates.md", "sha256": "5cf863c9e13b49d9be16f7657737e4f8ad662335446e0013fe65ebf32e886993", "size": 8822}
+{"relpath": "12 - Fine-Tuning/PEFT/01 - LoRA.md", "sha256": "0f136bd197dd47e81ac28853e98fe791f85900cd6d529974e8d52b59cbd5b3ac", "size": 22217}
+{"relpath": "12 - Fine-Tuning/PEFT/02 - QLoRA.md", "sha256": "49694fd23a2e79a16ce71152cad9d1a223e1c941b32a69cded7ec5c514f4bb26", "size": 10188}
+{"relpath": "12 - Fine-Tuning/RLHF/05 - RLHF with PPO.md", "sha256": "e8702dc390717419e68f9d126e340c44b921680332125ceca18f9243da261d0a", "size": 9835}
+{"relpath": "13 - Inference/MOC.md", "sha256": "dca1db366a36b9aef67d0b0a3bb8b74dffd04f38fb1d4441afa04a89ae06e349", "size": 4711}
+{"relpath": "13 - Inference/Decoding/07 - Constrained Decoding and CFG.md", "sha256": "906d60b0fcc04e711b80763ecc6f63e6e25a05c64703db4a4e9ed14528d798fb", "size": 16184}
+{"relpath": "13 - Inference/KV Cache/02 - PagedAttention.md", "sha256": "e359d5b15e9e0cf24c9b8670f1185a7aa56e0b67a640228088195a311abca03a", "size": 10975}
+{"relpath": "13 - Inference/Quantization/03 - Quantization.md", "sha256": "fc85e6920294d8bbd0425c4ba709fd486706357321c9cf59500133c2277630cc", "size": 18325}
+{"relpath": "13 - Inference/Serving/04 - vLLM and Continuous Batching.md", "sha256": "9183599c2e6b13a2dda531f5a39d4f8e330a182bb2929c413dfa0f90ec56dcf0", "size": 10767}
+{"relpath": "13 - Inference/Serving/06 - Continuous Batching Deep Dive.md", "sha256": "980116a81632e321f3ba2133a7548e2d26e11f5ade1381ff6cd0708d24b88b7f", "size": 14398}
+{"relpath": "13 - Inference/Serving/08 - TensorRT-LLM.md", "sha256": "c177a109eb5a8871b87bf14770c10c7213fa90963172d1f247ca88db60c2eb3d", "size": 14757}
+{"relpath": "13 - Inference/Speculative Decoding/05 - Speculative Decoding.md", "sha256": "5cb60df74b9d135a260e9c9a009143c3bfbe3b6b51161631560e5e6e487f3512", "size": 12486}
+{"relpath": "14 - Interpretability/MOC.md", "sha256": "c8f390a67fa5909fe0eded8cf64420935d13c2bfe9a6de75f9287043bd6b5d5c", "size": 3453}
+{"relpath": "14 - Interpretability/Mechanistic/01 - Mechanistic Interpretability.md", "sha256": "e7195b72e739ed10e836c580ad81e617a7dafbcfa2d123e598e787d0dd5462cf", "size": 18938}
+{"relpath": "14 - Interpretability/Mechanistic/02 - Logit Lens and Tuned Lens.md", "sha256": "7a887af6fee21fe6bbc27e7cef2f8df4219038dc38f6c2cb6e907900b501e30d", "size": 9807}
+{"relpath": "14 - Interpretability/Mechanistic/04 - Activation Patching and Causal Tracing.md", "sha256": "704caff1eb24e3ece273948a48d320e5c1daccaca76d1ecef87e028f9721aab8", "size": 10598}
+{"relpath": "14 - Interpretability/Probing/05 - Probing.md", "sha256": "e15fbe330a3a2523e6920582a65a3f21b9c7662da1a6d27579991775ea439772", "size": 20927}
+{"relpath": "14 - Interpretability/Sparse Autoencoders/03 - Sparse Autoencoders Deep Dive.md", "sha256": "85f9579da2700cc209156ff1240a9ec64fed5acb9003829fa88b22f7f7447c95", "size": 10488}
+{"relpath": "15 - AI Agents/MOC.md", "sha256": "62cd6f953fb5beae00a8837bb586063fd2234c6ab757edde9ea228a7e8d38186", "size": 4430}
+{"relpath": "15 - AI Agents/Architecture/01 - Agent vs Workflow vs LLM Application.md", "sha256": "808825a65a0cbaf0a014c9efd40661e2527ea4f440512477995ae9bc3844ce50", "size": 7870}
+{"relpath": "15 - AI Agents/Autonomy/08 - Autonomous Agent Lifecycles.md", "sha256": "8630c05dc09e272d0b0596185ae91fd0fd53fe048302c8cd21473d1de2518c29", "size": 16760}
+{"relpath": "15 - AI Agents/Autonomy/09 - Human-in-the-Loop Patterns.md", "sha256": "608bd392bb0fb22a4eb51f3d31e07c08aed199b33190fc43c56dd941b2905e14", "size": 16885}
+{"relpath": "15 - AI Agents/Patterns/05 - Reflection.md", "sha256": "37648c239c8e6c0c4663be5661e78d7b66c858ca58a2c226675295e05edc4be6", "size": 10523}
+{"relpath": "15 - AI Agents/Planning/07 - Planner-Executor Pattern.md", "sha256": "153090b9d21d7508433921080ac36232f3cf520fb5b2f4fa1305623e79edaf50", "size": 14708}
+{"relpath": "15 - AI Agents/Reasoning/02 - Chain-of-Thought.md", "sha256": "410a456a8bba4d68dc58d0d92a3436e117bb37fe59e8833ae89f583c771256e3", "size": 11518}
+{"relpath": "15 - AI Agents/Reasoning/03 - ReAct Pattern.md", "sha256": "889ec92d69744f47d8e33d0cb9bfe990aac5159ef7cc82e92466c6d03ef6af9e", "size": 21660}
+{"relpath": "15 - AI Agents/Reasoning/06 - Tree of Thoughts and Self Consistency.md", "sha256": "2a6c8e3f0a88dc5d31d66876e6918d039a4579342745a79246c0d079bba85e71", "size": 9270}
+{"relpath": "15 - AI Agents/Tool Calling/04 - Function Calling.md", "sha256": "8b011fa9f81cd579f7ca2a3871a1992db13bdc7df6b86854ee288f2278f71bd3", "size": 9025}
+{"relpath": "16 - Multi-Agent Systems/MOC.md", "sha256": "3ded4e6be3ed05797971cc021aca3f47a946ee8b147d8909e412a66d9498773e", "size": 3048}
+{"relpath": "16 - Multi-Agent Systems/Architectures/01 - Multi-Agent Architectures.md", "sha256": "03d44882008ce172dce98d0b921f42460a74d7540710e1faf147e8ebf4d28191", "size": 19623}
+{"relpath": "16 - Multi-Agent Systems/Communication/02 - Communication Patterns.md", "sha256": "930cd2bfb0cd2a36f86607609298583c2f2c9179f0d80b219ea39ff7b876ee64", "size": 11256}
+{"relpath": "16 - Multi-Agent Systems/Coordination/03 - Coordination and Consensus.md", "sha256": "15aab1344642bc3c72201a6b32ad8ee4b2b215e6dcdf4bf6cdebb173222e13bd", "size": 10116}
+{"relpath": "16 - Multi-Agent Systems/Enterprise/04 - Enterprise Multi-Agent Architectures.md", "sha256": "e999fe861ed33ed861a34ae7d87ef624686978c7d1e2ed15a56d42c3889ae017", "size": 11875}
+{"relpath": "17 - RAG/MOC.md", "sha256": "3b88d57520348190451b9fc2dd82d0aca210a5220174fa7b871d74a5820a6baf", "size": 1854}
+{"relpath": "17 - RAG/Advanced Patterns/03 - Advanced RAG Patterns.md", "sha256": "d859e5156c7932a69b4951198c619e1845099950c5450eb75b5dd4964d036ea0", "size": 6925}
+{"relpath": "17 - RAG/Ingestion and Retrieval/01 - RAG Pipeline Overview.md", "sha256": "beb03a47394d092d1ca2b22011b123cacfb1c0e4dbf6a192c8a6ec151806e230", "size": 26606}
+{"relpath": "17 - RAG/Ingestion and Retrieval/02 - Chunking Hybrid Search Reranking.md", "sha256": "599fed2785a9f4535e77305fb98570eb393c42cc45e9d066c7b55e991fe905a8", "size": 18760}
+{"relpath": "18 - Memory Systems/MOC.md", "sha256": "697856a37fa76b131787eb8a23350c6187842ff732b648b5de13fc38498c393d", "size": 2706}
+{"relpath": "18 - Memory Systems/Architectures/02 - MemGPT and Letta.md", "sha256": "128218e0ff71f738b0786612ab1ceec837e09c072f5961e6318fc29e93a5217b", "size": 21808}
+{"relpath": "18 - Memory Systems/Operations/03 - Memory Operations.md", "sha256": "0e499f5f938d2e9d4519e4f62d8c570fd14ab1792f409d4a73b8a7173c2f37f6", "size": 23783}
+{"relpath": "18 - Memory Systems/Types/01 - Memory Types.md", "sha256": "7431e3253ff66e6388358fca966fb21be06d41fe6290321de95ea9834ac78ddd", "size": 23368}
+{"relpath": "18 - Memory Systems/Vector Memory/04 - Vector Memory Backends.md", "sha256": "27a8f6d2031620474a6f5166a4e42d4a4e90da9eb5f52ffa40934708184c4e97", "size": 28312}
+{"relpath": "19 - MCP/MOC.md", "sha256": "2bfaa4af1c421c25f9d9ea1727d1f2b46157e96f06e2c343a1fe371a69ed3ac0", "size": 3275}
+{"relpath": "19 - MCP/Architecture/01 - MCP Overview.md", "sha256": "030be23550ec5839c63ef55fba7aa9a6488d3216bd0475b23dd08d496e7a91d3", "size": 25789}
+{"relpath": "19 - MCP/Components/02 - MCP Components.md", "sha256": "0bdff759f295a4e0c71021031464836ff7f98437463efc9d947e627ec4ec4b32", "size": 23194}
+{"relpath": "19 - MCP/Integration/04 - MCP Enterprise Integration.md", "sha256": "f44bad79690460105719de67da10cf9a125b79549a8a4196129faba99756387c", "size": 26404}
+{"relpath": "19 - MCP/Security/03 - MCP Security.md", "sha256": "06d706a05a573ca8de033550940a0a738d0876f312efa630553d41cf38555f65", "size": 27565}
+{"relpath": "20 - AI Infrastructure/MOC.md", "sha256": "bc566e731b2e90bdddf4faee8cc5056f23c94fb61e5423ba35b9fa7f740ab5fd", "size": 4127}
+{"relpath": "20 - AI Infrastructure/Compute/04 - GPU Infrastructure and Sizing.md", "sha256": "7d61ceedbfacdf0394aa7f0702e5949fde201ce504d8bcada1f5ff94af337908", "size": 11412}
+{"relpath": "20 - AI Infrastructure/Messaging/03 - Messaging with Kafka and Celery.md", "sha256": "468b2ee6152951b9b396cbd9b1707f54230829a8abdb99ded491a7f21c468535", "size": 11651}
+{"relpath": "20 - AI Infrastructure/Observability/05 - Observability Stack.md", "sha256": "b17299f1b0098c7b9b2b99d55251d22517c79abb357af0b822552ae8cf77d150", "size": 12747}
+{"relpath": "20 - AI Infrastructure/Serving/01 - Production AI Stack.md", "sha256": "1783574f59aba4310646daaaa3dba885b0197371293f210f2cc1b08a2d9ef826", "size": 22090}
+{"relpath": "20 - AI Infrastructure/Storage/02 - Vector Storage with pgvector.md", "sha256": "909cb321616d90ed4467280f8b15022973034e600f2758ced1c6e4dd49e65e54", "size": 10276}
+{"relpath": "21 - LLMOps and MLOps/MOC.md", "sha256": "cfd1128b4d343a82c4333798170077d8ab66528020c220dee909fd02ee0a352f", "size": 4910}
+{"relpath": "21 - LLMOps and MLOps/Cost/06 - Cost Optimization.md", "sha256": "efa8126e2487604b537c1d851d3ed96d2644561411c054b9a688a45cabecb062", "size": 9903}
+{"relpath": "21 - LLMOps and MLOps/Deployment/07 - A-B Testing and Shadow Deployment.md", "sha256": "c51edbd5db9bd1b3254c8378936345ae7204eaa0252ed6d5b7468d9478e7b6e6", "size": 9528}
+{"relpath": "21 - LLMOps and MLOps/Evaluation/04 - LLM-as-Judge Evaluation.md", "sha256": "106eb73552db800ea40746e6de8a087a39a2ac965611a8859017672617553d6f", "size": 9980}
+{"relpath": "21 - LLMOps and MLOps/Monitoring/05 - Production Monitoring.md", "sha256": "cda7bd52cad6b8b13938c33293c387874de73a216d317dd94907e630923a7639", "size": 10014}
+{"relpath": "21 - LLMOps and MLOps/Pipelines/01 - LLMOps vs MLOps.md", "sha256": "3abdacdde24c1b4d260ab082087c7fe5ed295d899b620a155adcad5ec643f279", "size": 19361}
+{"relpath": "21 - LLMOps and MLOps/Pipelines/02 - Prompt Management.md", "sha256": "f79ed69a49fb004c84f9bc7706af8255a1ed6d505d226d4c6508136c41b4c7d1", "size": 8667}
+{"relpath": "21 - LLMOps and MLOps/Pipelines/03 - Model Registry and Versioning.md", "sha256": "a88e3d5e0558a34b50d730ee0f2615dce5c4a6f86989a66b8d4cc9dad865eae4", "size": 9123}
+{"relpath": "22 - Production AI/MOC.md", "sha256": "d19064aec915b236dc4355b5a3e6118522129d3f27fb3a2032087d6491ceb1f4", "size": 3543}
+{"relpath": "22 - Production AI/Architecture/02 - Reference Production Architectures.md", "sha256": "7d42752a5ed79854efbf2286efac4ebb3ad9dd5804596bd2f559460d9c134bb1", "size": 9120}
+{"relpath": "22 - Production AI/Architecture/03 - Gateway and Router Patterns.md", "sha256": "82aec8e8f2369b426018300ed247c7994e062f91f679bb792daec9e29e271737", "size": 9966}
+{"relpath": "22 - Production AI/Reliability/06 - Failure Modes and Graceful Degradation.md", "sha256": "1f9f7e5cb8f4ed8e3432754bb1ec44db5aaf0aea9ac66ff62993e02dd55cc87b", "size": 12667}
+{"relpath": "22 - Production AI/Security/01 - LLM Security and Prompt Injection.md", "sha256": "f5a018c54c9048000f5c4d363dd10b6f609a9cc61b68f8302fdf73d8a3e379fe", "size": 23551}
+{"relpath": "22 - Production AI/Security/04 - Guardrails.md", "sha256": "6a50b77410237d6f5a56c90f746655cd215e9e92cea43cacb3f7eadb3f8f567f", "size": 10056}
+{"relpath": "22 - Production AI/Security/05 - PII and Data Leakage.md", "sha256": "afec02bf816427eba84c460c22000e48aa862d77b19b5c95137bd0786b7b3f8c", "size": 10120}
+{"relpath": "23 - Multimodal AI/MOC.md", "sha256": "c75bab60c29ee1b41ed038da5657e9e4c5247d3b9121f320bf5e2d6b5178570c", "size": 3765}
+{"relpath": "23 - Multimodal AI/Audio/04 - Whisper.md", "sha256": "c19fe7a5c8d1934d84672892b35985cfe9c11e49abed706a006b160da6d3afa6", "size": 10476}
+{"relpath": "23 - Multimodal AI/Diffusion/05 - DiT and FLUX.md", "sha256": "43bfba0a1d071b111f761eb2f122968beaf57361ea551abf4496ae608c2c66d8", "size": 19866}
+{"relpath": "23 - Multimodal AI/Fusion Architectures/06 - Cross-Modal Attention.md", "sha256": "d3f77236e66bf6ba4e9fd8b6cb23e0a11a317a98723f822967e3e3bfe1f54617", "size": 11093}
+{"relpath": "23 - Multimodal AI/Vision-Language/01 - Multimodal AI Overview.md", "sha256": "cf748ef22f966c339eba8f4d9e2f5d846b130e01e4e63204bf24265a22f67e55", "size": 16701}
+{"relpath": "23 - Multimodal AI/Vision-Language/02 - CLIP.md", "sha256": "11781e8a66c85193f54470fe715f677bb5e2d74c4c1c6ec72bed5834cd6e24d5", "size": 10714}
+{"relpath": "23 - Multimodal AI/Vision-Language/03 - LLaVA.md", "sha256": "d800e1ebbf692b2487d1e87311da6bb6167e901829bf4c94c8ce724fea8c3426", "size": 9916}
+{"relpath": "24 - Research Frontiers/08 - 2026 Research Frontier Update.md", "sha256": "4d40ca6f68df079f2dd2f62de160bbd0b6c3c3e8476267bd624a0589f168197e", "size": 11817}
+{"relpath": "24 - Research Frontiers/MOC.md", "sha256": "b1e502ecfcf3c4a614679f878ac8300eef66c04e9ee1b445a00c5186ed8602f5", "size": 5732}
+{"relpath": "24 - Research Frontiers/Hybrid Architectures/03 - RWKV and RetNet.md", "sha256": "8d07ef450439ee38169e537410bfb53f811069114b72f20440e2148f412e6b22", "size": 9628}
+{"relpath": "24 - Research Frontiers/Hybrid Architectures/04 - Hyena and Long Convolutions.md", "sha256": "46e6f97d8456159cde4ff7dff65997fca07daf09dfc2e86085cbf1f71bb149ab", "size": 8362}
+{"relpath": "24 - Research Frontiers/Long-Context/07 - Long-Context Architectures.md", "sha256": "f5aea8214dc0e1488444f57ecb2d4b63e45841745816af6ba057716e218306c6", "size": 10674}
+{"relpath": "24 - Research Frontiers/Reasoning/06 - Test-Time Compute Scaling.md", "sha256": "c2904f1121169a091adc4efe69b766f630f0ca78f74785a22bb02ea13ceacc17", "size": 10074}
+{"relpath": "24 - Research Frontiers/State Space Models/01 - SSMs Mamba and Frontiers.md", "sha256": "655bd4eae8e899c3429b391c921806a12d0dcf39b555a80c38b67135f54e3f84", "size": 18638}
+{"relpath": "24 - Research Frontiers/State Space Models/02 - Mamba-2 and Structured Attention.md", "sha256": "9f38955d46efc7d5f87db1e0868f73445831c6fd41ae8711d3cb1ff46af7a614", "size": 9807}
+{"relpath": "24 - Research Frontiers/State Space Models/05 - DeltaNet and Titans.md", "sha256": "3a4c1e056e91fbf142db634771658b8a6c5d280c5c8890b745cb6db81681cbaf", "size": 10500}
+{"relpath": "25 - Frameworks and Tools/MOC.md", "sha256": "d2584bb7cfa3270d8be2be25509c043144d055864e4c85f1748bc89acff53146", "size": 6325}
+{"relpath": "25 - Frameworks and Tools/Agent Frameworks/01 - Framework Selection Guide.md", "sha256": "af5aca13189889ff7f18fd8e72fbdeaee6be6d879160f508eb78a48459860e4b", "size": 6375}
+{"relpath": "25 - Frameworks and Tools/Agent Frameworks/03 - LangGraph.md", "sha256": "144e16557d4b83b3e78641a253707311def6670b2c85af197582603c450876d0", "size": 10581}
+{"relpath": "25 - Frameworks and Tools/Agent Frameworks/09 - AutoGen.md", "sha256": "051350b1869279567d1740e160dfed735d6dbcd95960b2e8065241726a3d7de1", "size": 11231}
+{"relpath": "25 - Frameworks and Tools/Agent Frameworks/10 - CrewAI.md", "sha256": "0a8d493c5f5eb014a6db3ea06cb447e3583c711b0a921cd8eacd24f758ae1cde", "size": 11810}
+{"relpath": "25 - Frameworks and Tools/Agent Frameworks/11 - PydanticAI.md", "sha256": "5556e1bdbdf3337e3d67b36f46c00009ec9920b03fab95b8c64d1cb2a0c18b13", "size": 13005}
+{"relpath": "25 - Frameworks and Tools/Agent Frameworks/15 - Semantic Kernel.md", "sha256": "bd5c5c0d3d128b666111dc54ba48e4c88c0bc3b0fb9283d457ba174d53f04d41", "size": 18354}
+{"relpath": "25 - Frameworks and Tools/LLM Frameworks/02 - LangChain.md", "sha256": "393b579cfc1c5fa00b34b274870ef878e2614bbe2e814acf532dd215a92b233f", "size": 18533}
+{"relpath": "25 - Frameworks and Tools/LLM Frameworks/04 - DSPy.md", "sha256": "635b766c189b2348e6c0e91bf1f5407665f6be450ba93d42354a53fc405e6acb", "size": 11021}
+{"relpath": "25 - Frameworks and Tools/LLM Frameworks/05 - LlamaIndex.md", "sha256": "2c4d3f47a2833ccf70f60b3576b474c6baded93989d879fec9854cc1b9d3744f", "size": 10180}
+{"relpath": "25 - Frameworks and Tools/LLM Frameworks/06 - OpenAI SDK and Agents SDK.md", "sha256": "40adac792acd295fa23a11e0a68c1b935900f3972d0e141f97bb86f8e6664e0a", "size": 11203}
+{"relpath": "25 - Frameworks and Tools/LLM Frameworks/16 - Haystack.md", "sha256": "cdb881c3e9c5b81513f47a85ae614a60efbda8081c4deb073d09eae6652fb806", "size": 18031}
+{"relpath": "25 - Frameworks and Tools/Serving/07 - vLLM.md", "sha256": "f1d1bc3dbe43f92a0d0f700a0525bb5b561bd79d853916f29e7eaa6ccf2d114b", "size": 10898}
+{"relpath": "25 - Frameworks and Tools/Serving/08 - Ollama and llama.cpp.md", "sha256": "77a9f37117a5e6e57a80aaeb0d21640439dd6388c4d4d8fd646e5ae6326f053c", "size": 11971}
+{"relpath": "25 - Frameworks and Tools/Serving/12 - TGI.md", "sha256": "ea42ce0aeaa2546a0b7c9b07b4d43c51c20a14249b32881c8e05010ea7ed9830", "size": 12437}
+{"relpath": "25 - Frameworks and Tools/Serving/13 - TensorRT-LLM.md", "sha256": "6b3ca3af66488bceeca6eb57cfc6711050a46115a6a424ba1094c611723551aa", "size": 12737}
+{"relpath": "25 - Frameworks and Tools/Serving/14 - SGLang.md", "sha256": "347755fa1d31996b86a80cee6236ca81243b0275492457b74a5eb702a922fbab", "size": 14501}
+{"relpath": "26 - Papers/MOC.md", "sha256": "3c4e96cb5f82efa6debbcfc1fc1f10839aa2feda47e15d40c32de47c886705f0", "size": 13763}
+{"relpath": "26 - Papers/2024-2026/11 - Mamba 2023.md", "sha256": "7962542ecf2090b18fc46a0763cb5dd8f3da3c24bf618b950b5e8a85dfd1b98c", "size": 11060}
+{"relpath": "26 - Papers/2024-2026/12 - DeepSeek-R1 2025.md", "sha256": "f8a231f9fd2420245e58326d2815213a60451626b75c3bb723b740605ffeb668", "size": 11126}
+{"relpath": "26 - Papers/2024-2026/24 - GPT-4 Technical Report 2023.md", "sha256": "7836d47488757b43270b3cfe4e5cb9f7e1537b3ea78925784fb1bc92b0147c1b", "size": 11290}
+{"relpath": "26 - Papers/2024-2026/28 - DeepSeek-V2 and V3 2024.md", "sha256": "9308bc8d199dd2527fd320cef6c53358d737438bf25652987f5bf0973ca01dbe", "size": 12310}
+{"relpath": "26 - Papers/2024-2026/30 - Kimi Linear 2025.md", "sha256": "884249508c07a91e8a4be3bcc00d7051e53980dab8b9f860c1209830ef9dcc6e", "size": 10845}
+{"relpath": "26 - Papers/2024-2026/41 - Jamba 2024.md", "sha256": "0359819f420fbcff32838f065d20785a899d45b80b11919b342886f371353783", "size": 17559}
+{"relpath": "26 - Papers/2024-2026/42 - Scaling Laws (Kaplan and Chinchilla).md", "sha256": "63a8e960302c4414ea129fd7681c87c87041d4b1c632cf8cd1e0ad33003a84a8", "size": 18024}
+{"relpath": "26 - Papers/2024-2026/43 - MiniMax-01 2025.md", "sha256": "2fb32636ccb242235fa21487e2d3f839f5dfed8e4488a5f4b6568ae92b8077a6", "size": 20390}
+{"relpath": "26 - Papers/2024-2026/44 - H3 2022.md", "sha256": "e44539f1a2a5ac90b9f7fc205191f1a5c6dfc58f18c89dc5b8f9f25353fa54c9", "size": 9609}
+{"relpath": "26 - Papers/2024-2026/45 - Mamba-2 2024.md", "sha256": "81924275f96d13a6023718bcc58d524140dc2f35190baf7beee15db7598e95d9", "size": 10241}
+{"relpath": "26 - Papers/2024-2026/46 - Titans 2024.md", "sha256": "3861a1e3fcdf5ac903b991ef963d227c98602f05b3d11093dc5a04724d96395a", "size": 11507}
+{"relpath": "26 - Papers/2024-2026/47 - Based 2024.md", "sha256": "bbab337a3825f1979e49c79b15fa6ce60abd5ae0f0e11ca70499636b44bfe088", "size": 9888}
+{"relpath": "26 - Papers/Agents and RAG/32 - Reflexion 2023.md", "sha256": "9791b7f49b924c6567f70c90eaa20e86dc916bf8eaf4a139c84033c83320e205", "size": 11073}
+{"relpath": "26 - Papers/Agents and RAG/33 - Self-Refine 2023.md", "sha256": "e3d49c77be4e864a82129b58e7ded57cb308db93fe7c1b0de7dccf0ad219fa84", "size": 9432}
+{"relpath": "26 - Papers/Agents and RAG/34 - Tree of Thoughts 2023.md", "sha256": "c781d44076f471cafa6d002fc90dae12f94143b501ab4083d5014a15307d948d", "size": 10830}
+{"relpath": "26 - Papers/Agents and RAG/35 - RAG 2020.md", "sha256": "9158e86273bd195027e09429a4461e567342da798c6589173a585b279b9fc48d", "size": 10482}
+{"relpath": "26 - Papers/Agents and RAG/38 - Self-Consistency 2022.md", "sha256": "0f72bcafb19437f1d6198d50491edfa7967d92823f0e03089dd1d0f5db8de86f", "size": 16994}
+{"relpath": "26 - Papers/Agents and RAG/39 - Graph of Thoughts 2023.md", "sha256": "2067acfe54740c18da0ad89dde0283bf710c78d2098455b48e484438bf3c4bda", "size": 15254}
+{"relpath": "26 - Papers/Alignment/06 - LoRA 2021.md", "sha256": "70b0fc99be97b4e8dc56fc1d8ee95115c0ff842f01ab55e8c99479c5f9ef1231", "size": 9084}
+{"relpath": "26 - Papers/Alignment/07 - InstructGPT 2022.md", "sha256": "1a9165d8fdb9db1f35dde16142f3ac7330a122d942133a57967b75c438aafce7", "size": 9778}
+{"relpath": "26 - Papers/Alignment/09 - DPO 2023.md", "sha256": "7af36304e56e9de8183e7b589e4bf89c586e76a390eaa6eb94ce64350bc7a367", "size": 10114}
+{"relpath": "26 - Papers/Alignment/31 - Constitutional AI 2022.md", "sha256": "6981c571e8743633f18f16a5a5670cc631b1309c1b59c0c6fe60048631b2c626", "size": 11087}
+{"relpath": "26 - Papers/Alignment/50 - Process Reward Models 2023.md", "sha256": "10aac74021f4d0697084b3f46f3e0ba4f8c4586600584dcffd48d45114f5bc09", "size": 12032}
+{"relpath": "26 - Papers/Alignment/53 - Verifiable Rewards vs PRMs.md", "sha256": "de33692259ad041e21cc6cf6a74f127f24cb686ff25a5fed8988bb6a7a5d8f65", "size": 15913}
+{"relpath": "26 - Papers/Attention Origins/01 - Bahdanau Attention 2014.md", "sha256": "90c3eb31a9c530f82d4ccd6d092ea39b924a467f9f5c4f3ac244dde9738722b8", "size": 8862}
+{"relpath": "26 - Papers/Attention Origins/13 - Luong Attention 2015.md", "sha256": "18ade940db34c0608aadc113411d310f7eeb5c34dea7e67ae37359a42d91fba5", "size": 8746}
+{"relpath": "26 - Papers/Efficient Attention/08 - FlashAttention 2022.md", "sha256": "fbddca213966135a1e136d77ba29a9480917d3c5ca56ef92dd1b77d3465863a5", "size": 10663}
+{"relpath": "26 - Papers/Efficient Attention/10 - PagedAttention vLLM 2023.md", "sha256": "ac2960b2d9e41f2d968ab7006ffd519d6aa2f1d471cc5a5bb55aca896484cf47", "size": 10041}
+{"relpath": "26 - Papers/Efficient Attention/16 - Transformer-XL 2019.md", "sha256": "dc31d3aa2cb4d2ca703d4c092db0a0f0f824bdd8f47cc51d26e9eafee3759285", "size": 10167}
+{"relpath": "26 - Papers/Efficient Attention/17 - Reformer 2020.md", "sha256": "b426d5142622500d0ac5c0543eed8f7bec55803e72481217404c13b3dacdd062", "size": 9032}
+{"relpath": "26 - Papers/Efficient Attention/18 - Longformer 2020.md", "sha256": "0e6b1d2eab0feef2691d6277ea39c1440dd31dc5b63b6f7b6e07aff93dd69696", "size": 9389}
+{"relpath": "26 - Papers/Efficient Attention/19 - Linformer 2020.md", "sha256": "50b691bffec790ef47223e136791b48c6ea680833713c49888e2b4859dd3a25b", "size": 9171}
+{"relpath": "26 - Papers/Efficient Attention/20 - BigBird 2020.md", "sha256": "7f95af65e399acf86d6fb5dade9485872dbb33358fc401ed98ca36f5a531c68f", "size": 9161}
+{"relpath": "26 - Papers/Efficient Attention/22 - Performer 2021.md", "sha256": "dee515f988f1232ac364f03cdebc85488e5f26076b845bf03c4c2dda3b8b4979", "size": 9488}
+{"relpath": "26 - Papers/Efficient Attention/27 - FlashAttention-2 and FlashAttention-3.md", "sha256": "7e5a9f9594fd46b18366f5b9ca67edbcf952b9a3684f0cb46b909610b8b7a5f2", "size": 10160}
+{"relpath": "26 - Papers/Efficient Attention/29 - GQA 2024.md", "sha256": "c30040aac362c6d6c8b9bb66da3d2163685e7c366c6912396a9a9cb627ba64cf", "size": 9039}
+{"relpath": "26 - Papers/Efficient Attention/49 - Medusa and EAGLE 2024.md", "sha256": "917a625c44027790890ddc95a2cec0870cf6f49d1740ebbf4f03c08ea6d1845e", "size": 11750}
+{"relpath": "26 - Papers/Efficient Attention/51 - EAGLE-3 2025.md", "sha256": "743a699601701be0a13090f2f29ac2a692ddfe655bd0ee6675eaf96d61b5dc1f", "size": 12898}
+{"relpath": "26 - Papers/Efficient Attention/52 - MTP Multi-Token Prediction.md", "sha256": "210d3ece0bdaf82e308d81c60faf3f11c643aa0518c96be72c7061160a18e36d", "size": 12515}
+{"relpath": "26 - Papers/LLMs/04 - GPT-3 2020.md", "sha256": "784ed9e3a07bf20c0602e0b9c832ca52acd0f827a0427fe46ae93212ce077b17", "size": 9482}
+{"relpath": "26 - Papers/LLMs/15 - GPT-2 2019.md", "sha256": "b23fff3c00b59a92eea7d3e7ceed61b2f609ad94190fab1b95e9d04116895f93", "size": 10681}
+{"relpath": "26 - Papers/LLMs/25 - LLaMA 2023.md", "sha256": "83398363343e81d6cdb29820682dffe599f6b6ecfd0baeeb8f6243c5e80b4fcb", "size": 10493}
+{"relpath": "26 - Papers/LLMs/26 - Mistral 7B 2023.md", "sha256": "2c5389003ea15bd330f956eb8bf1d4531bab71751f0997decb4086764f4982eb", "size": 9468}
+{"relpath": "26 - Papers/Multimodal/36 - Perceiver 2022.md", "sha256": "25b8eccf47c30baa0773b6c0f1d12ca24e32eb3bf75aefa03e1d613a717c3d7d", "size": 10460}
+{"relpath": "26 - Papers/Multimodal/37 - Flamingo 2022.md", "sha256": "bfece055f31cf70fee1546919932c6124092a7e0bf42668163a4167678400894", "size": 11645}
+{"relpath": "26 - Papers/Multimodal/40 - BLIP-2 2023.md", "sha256": "cd7f9ea8cc3b1201525f8eea50714696c55bdab9cf1254a951eff82a594e1f18", "size": 17802}
+{"relpath": "26 - Papers/Multimodal/48 - ColPali 2024.md", "sha256": "d425a63318e423e8e5c74f0f4a0e56bfdfe168fa8c0f6b8af50da305a57c925f", "size": 11181}
+{"relpath": "26 - Papers/Multimodal/55 - SigLIP-2 2025.md", "sha256": "b9442c9a5d4e58055bb1bd020ea4ccdb59c01370cf759d6126050720d209774c", "size": 13007}
+{"relpath": "26 - Papers/Transformers/02 - Vaswani Attention Is All You Need 2017.md", "sha256": "44711f33ca21c8fd09681a348a2c60a71bad2171d577f59bae9ec9adb07ba8a0", "size": 9359}
+{"relpath": "26 - Papers/Transformers/03 - BERT 2018.md", "sha256": "1496202f745df444fc1b94f25e2e50c989d9f0f9f69ca3a289962810706ba3ea", "size": 9585}
+{"relpath": "26 - Papers/Transformers/05 - T5 2019.md", "sha256": "155652d932666dcbc5a004c833fb03f090e372db1c5b8acaa5c9497c5accd357", "size": 10123}
+{"relpath": "26 - Papers/Transformers/14 - GPT-1 2018.md", "sha256": "bc754cbec95c250689916227b9117cfc2c534d929d26b126ea5409cfa7c29b62", "size": 21881}
+{"relpath": "26 - Papers/Transformers/21 - Vision Transformer ViT 2020.md", "sha256": "d7b53ed96d9cea82ee17cd8894b4cd6134476746eecf02497e99824d8f2540b8", "size": 11609}
+{"relpath": "26 - Papers/Transformers/23 - Swin Transformer 2021.md", "sha256": "7dba3f8842883427507bfe510d81abd89870829b98cd1ea5ed27bca5a89c015a", "size": 11284}
+{"relpath": "26 - Papers/Transformers/54 - DeiT v2 2024.md", "sha256": "4219f993edbf59c03c9d8f3208caa35c7884acf7baa14d7b74ff5614cd183920", "size": 12304}
+{"relpath": "27 - Projects/MOC.md", "sha256": "c43e39d4608ef9d4296896bc9ba473303547dfe252b44d9d720005681ddb0cd3", "size": 7803}
+{"relpath": "27 - Projects/Capstones/06 - Build a Multi-Agent System.md", "sha256": "62da1b13a35331b8aff92b2619ebecfe2f7f9cbe1ab9999c9f89aa863a69c4b1", "size": 21608}
+{"relpath": "27 - Projects/Capstones/07 - Build a Reasoning Model Fine-Tune.md", "sha256": "8a8bfd3706162d69cc58dab926af6508e36ec4c95f5a4b145831e53aa7521b42", "size": 23673}
+{"relpath": "27 - Projects/Capstones/08 - Build an MCP Server.md", "sha256": "5b4834cb01a17c915948a2e2e6fe2ba6e960bf036d80ce750f819337bc858023", "size": 21562}
+{"relpath": "27 - Projects/Capstones/10 - Build a Vision-Language Model.md", "sha256": "1b9c5e8fa8422bbb60b4fb404e8042d290480ae0c4685e627ed895c373178af6", "size": 27984}
+{"relpath": "27 - Projects/Capstones/11 - Build a Distributed Training Pipeline.md", "sha256": "99bb2a20c7baf4dee72904e7d216544794c99cd926c37dddb75abf85c3bc2003", "size": 26095}
+{"relpath": "27 - Projects/Capstones/12 - Build a Code Agent.md", "sha256": "55b064467d581874fc8115ce0c5f0ec415d0a418d985a846f8b30e40b461c036", "size": 25757}
+{"relpath": "27 - Projects/Capstones/13 - Build a RAG Evaluation Harness.md", "sha256": "ada41b134ec826a3260b6f506d426a4650036fa61e846db40550d1b2282d6e4d", "size": 29302}
+{"relpath": "27 - Projects/Capstones/14 - Build a Multimodal RAG Pipeline.md", "sha256": "18258d134aa4f17ecd8d3ab80d0e88d093b80fe57becb9594648185071260595", "size": 28750}
+{"relpath": "27 - Projects/Capstones/15 - Build a Multimodal Agent.md", "sha256": "58043c05809d68b1499426fb6ac7b26ef0d7a19011368f2a51cb449449265f8d", "size": 15997}
+{"relpath": "27 - Projects/Capstones/16 - Build a Speculative Decoding Server.md", "sha256": "44125cdc0e495e82d4b645b61e16cd55f700058b136af6235fe7cdba7b8487b5", "size": 16320}
+{"relpath": "27 - Projects/Capstones/17 - Build a Quantization Toolkit.md", "sha256": "2c779cf1ed75b6784e27355f368d257235534b4fe64989ec98f75fe937717450", "size": 19772}
+{"relpath": "27 - Projects/Capstones/18 - Build an MCP Marketplace.md", "sha256": "8c7a48a44f8ed5105f445616a844f7fd1205a8cfbe392b9e2c93d8926c3f8a29", "size": 20059}
+{"relpath": "27 - Projects/Capstones/19 - Build a Fine-Tuning Pipeline with LoRA and DPO.md", "sha256": "d151b5d576bceb41b1293d07c69769d8465d52e37211ee9974471febb64bc9b4", "size": 19711}
+{"relpath": "27 - Projects/Capstones/20 - Build an RLHF Pipeline with PPO.md", "sha256": "54cb9c1271d4b847abe0487411ce2aa6565c530e47a6c89efd4953deb5c5d5e4", "size": 22217}
+{"relpath": "27 - Projects/Capstones/21 - Build a Knowledge-Graph Construction Pipeline.md", "sha256": "8ca045867bd06a0555a5d49acb32fdf2eff320547730da5a140639b5e29097ab", "size": 24092}
+{"relpath": "27 - Projects/Capstones/22 - Build a Long-Context Evaluation Harness.md", "sha256": "9b6c03ac24714536af6dc98f2d0dd2309d47c0a596d94f7fa129323d03a69853", "size": 20221}
+{"relpath": "27 - Projects/Capstones/23 - Build an Agent Observability Platform.md", "sha256": "66f5a5c6ffbba4a10b066ff3da7e0d14f01a333e44d716cd88b25b601807c17a", "size": 26912}
+{"relpath": "27 - Projects/Capstones/24 - Build a Model Distillation Pipeline.md", "sha256": "5ba3dd14a3f8818cb4aacc0beddfd93190839f9a3b952d3d61b73d6ddc6ee803", "size": 29263}
+{"relpath": "27 - Projects/Implementations/01 - Build Attention and Transformer From Scratch.md", "sha256": "75ccba660a0fce9616514f25846fc80fc6eb5aa327ce91f2857fa0aacf53884b", "size": 21058}
+{"relpath": "27 - Projects/Implementations/04 - Build a Mini MoE.md", "sha256": "d36156d378b21301398c89b2ff4cde44854220136e88a2ad705ee70a14ae8c78", "size": 20491}
+{"relpath": "27 - Projects/Implementations/05 - Build a Tiny LLM Trainer.md", "sha256": "ce607217bd2bda44d6a46f180c11997ae30b415427911b1ed6a2a0716f493a1f", "size": 21626}
+{"relpath": "27 - Projects/Implementations/09 - Build a Mini SSM.md", "sha256": "2fc96ad9c6ffbca305381738a834cd1b513f6efc8f830af944c922c9228e067c", "size": 23850}
+{"relpath": "27 - Projects/Mini-Projects/02 - Build a Mini RAG Pipeline.md", "sha256": "eeda7ba979749f401ddd50d19953dbcbb314bc1a5e0cb9254e02681c2ff33107", "size": 24138}
+{"relpath": "27 - Projects/Mini-Projects/03 - Build a Mini Agent.md", "sha256": "9b6c4b073dfd9a2d3e20aeafb6221a5966ab440c987c3b85f756e93769669fc9", "size": 24167}
+{"relpath": "28 - Glossary/03 - Notation Conventions.md", "sha256": "ebc923f9166fce438ff4159c066cd326755f2d1fef6aa803274dcf20c99b9f9f", "size": 10610}
+{"relpath": "28 - Glossary/MOC.md", "sha256": "4762d98af801f3715fd43e74a842e6b7f652ee0dc39aa1148ad5090fbc8cba55", "size": 3273}
+{"relpath": "28 - Glossary/Acronyms/Acronyms Index.md", "sha256": "a865c183dbb4d50662a1b87c0c87ab568da4f0a0b9512729e818b45b625dcee2", "size": 9084}
+{"relpath": "28 - Glossary/Terms/A-Z Terms.md", "sha256": "635070925590863690282593ceadb688f087e7e68d76298b6e52798db875621e", "size": 21984}
+{"relpath": "29 - Interview Prep/MOC.md", "sha256": "ac15d5e590bc5a6b7161babb7d4ba04875137a3cf2f70b9d73ea72bb820c25fd", "size": 7201}
+{"relpath": "29 - Interview Prep/Coding/03 - Coding Interview Questions.md", "sha256": "af803534c2bf416de2b24bcd3ce6c8000dd4be8ab43a95ca4dca40b7adad3948", "size": 17832}
+{"relpath": "29 - Interview Prep/Coding/04 - Coding Interview Questions 2.md", "sha256": "f250ecb7e99bd43701300e1c4c0e7213c1d4d962f3ab429b93944970da987d1e", "size": 39580}
+{"relpath": "29 - Interview Prep/Coding/05 - Coding Interview Questions 3.md", "sha256": "2d041118059d74d65001256bdf4ccf88acf54cab7271c595fb4d6a170604a369", "size": 25273}
+{"relpath": "29 - Interview Prep/Conceptual/01 - Conceptual Interview Questions.md", "sha256": "6b7a886a15f107b395fad8524d59976c2009416828f1f11bcae94afb2d4a7665", "size": 27094}
+{"relpath": "29 - Interview Prep/Conceptual/06 - Conceptual Interview Questions 2.md", "sha256": "b375ecfe9dfbdb7a35f739fa7efa876507bf5873f6fc9cd854a3ed9d811330e9", "size": 28093}
+{"relpath": "29 - Interview Prep/System Design/02 - System Design Interview Questions.md", "sha256": "eba62e598da5bb0f5816505657cc755571c5f5014f6bb89c82522066fc6e7ba4", "size": 15769}
+{"relpath": "29 - Interview Prep/System Design/05 - System Design Interview Questions 2.md", "sha256": "c89e681ebe21d6a342103cbc7628b5e606e6d7b9cfb81d7139326321896ef799", "size": 27510}

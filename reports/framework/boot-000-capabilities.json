@@ -1,0 +1,234 @@
+{
+  "framework_version": "0.1.0",
+  "verified": true,
+  "pytest_command": "/home/z/.venv/bin/python3 -m pytest -q --json-report --json-report-file=/tmp/vu-pytest-sbovs0hh.json tests/test_cli.py tests/test_inventory.py tests/test_linkcheck.py tests/test_mdextract.py tests/test_pathsafety.py tests/test_registry.py tests/test_reporting.py tests/test_search.py tests/test_selftest.py",
+  "pytest_returncode": 0,
+  "tests_total": 138,
+  "tests_passed": 138,
+  "capabilities": [
+    {
+      "id": "CAP-000",
+      "name": "environment self-test",
+      "module": "vault_unification.selftest",
+      "command": "vu selftest",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_selftest.py"
+      ],
+      "limitations": [
+        "checks importability only; does not validate corpus data"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-001",
+      "name": "path safety and source immutability",
+      "module": "vault_unification.pathsafety",
+      "command": "vu check-paths",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_pathsafety.py"
+      ],
+      "limitations": [
+        "trailing-space directory names are legal but hazardous; validation reports them as-is",
+        "race conditions between check and write are not prevented (no locking)"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-002",
+      "name": "recursive inventory and SHA-256 manifests",
+      "module": "vault_unification.inventory",
+      "command": "vu inventory / vu verify-manifest",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_inventory.py"
+      ],
+      "limitations": [
+        "symlinks are recorded, not followed, unless --follow-symlinks is passed",
+        "counts measure files, never semantic coverage"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-003",
+      "name": "markdown structure extraction",
+      "module": "vault_unification.mdextract",
+      "command": "vu structure",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_mdextract.py"
+      ],
+      "limitations": [
+        "inline $...$ math detection is delimiter-based; currency symbols can yield false positives",
+        "no LaTeX syntax validation",
+        "nested fences inside fences are treated as fence content"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-004",
+      "name": "obsidian link/embed/anchor integrity",
+      "module": "vault_unification.linkcheck",
+      "command": "vu check-links",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_linkcheck.py"
+      ],
+      "limitations": [
+        "heading anchor matching is normalized text equality; exotic anchors may be flagged",
+        "percent-encoded markdown links are matched literally"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-005",
+      "name": "exact/case-insensitive/normalized search and term stats",
+      "module": "vault_unification.search",
+      "command": "vu search / vu term-stats",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_search.py"
+      ],
+      "limitations": [
+        "normalized mode collapses whitespace per line; multi-line phrase matches are not supported",
+        "binary detection is heuristic (null-byte sniff)",
+        "counts are lexical evidence only, never proof of semantic preservation"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-006",
+      "name": "registry and task-queue schema validation",
+      "module": "vault_unification.registry",
+      "command": "vu validate-registry",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_registry.py"
+      ],
+      "limitations": [
+        "cross-checks only task dependency references and id uniqueness",
+        "requires jsonschema package"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-007",
+      "name": "machine-readable report generation",
+      "module": "vault_unification.reporting",
+      "command": "(library; used by all commands)",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_reporting.py"
+      ],
+      "limitations": [
+        "reports include timestamps; not byte-stable across runs (by design)"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-008",
+      "name": "test orchestration with machine-readable results",
+      "module": "vault_unification.cli (run-tests)",
+      "command": "vu run-tests",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "depends on pytest and pytest-json-report; missing plugins are reported, not hidden"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-009",
+      "name": "capability inventory with test verification",
+      "module": "vault_unification.capabilities",
+      "command": "vu capabilities [--verify]",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "verification runs the referenced test files; runtime is proportional to suite size",
+        "tests/test_capabilities.py verifies the verification logic itself using bounded subsets and is therefore not referenced here (avoids recursive test execution)"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-010",
+      "name": "stable CLI entry point with help and exit codes",
+      "module": "vault_unification.cli",
+      "command": "vu --help (python -m vault_unification)",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "exit code 2 comes from argparse for usage errors"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-011",
+      "name": "knowledge-unit registry persistence (SQLite/JSONL)",
+      "module": null,
+      "command": null,
+      "status_declared": "planned",
+      "tests": [],
+      "limitations": [
+        "planned for BOOT-003; schema drafts exist in schemas/"
+      ],
+      "status_verified": "planned"
+    },
+    {
+      "id": "CAP-012",
+      "name": "omission-detection pilot harness",
+      "module": null,
+      "command": null,
+      "status_declared": "planned",
+      "tests": [],
+      "limitations": [
+        "planned for BOOT-004; hard gate before large-scale synthesis"
+      ],
+      "status_verified": "planned"
+    },
+    {
+      "id": "CAP-013",
+      "name": "duplicate/near-duplicate candidate discovery",
+      "module": null,
+      "command": null,
+      "status_declared": "planned",
+      "tests": [],
+      "limitations": [
+        "planned; deterministic similarity is candidate generation only"
+      ],
+      "status_verified": "planned"
+    },
+    {
+      "id": "CAP-014",
+      "name": "source-to-output coverage and frequency regression reports",
+      "module": null,
+      "command": null,
+      "status_declared": "planned",
+      "tests": [],
+      "limitations": [
+        "planned; required before synthesis batches are accepted"
+      ],
+      "status_verified": "planned"
+    }
+  ],
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.1.0",
+    "report_schema_version": "1.0",
+    "command": "capabilities",
+    "args": {
+      "command": "capabilities",
+      "verify": true,
+      "report": "/home/z/vault-repo/reports/framework/boot-000-capabilities.json"
+    },
+    "utc_timestamp": "2026-10-25T16:24:52+00:00",
+    "git_commit": "af4d5f4"
+  }
+}

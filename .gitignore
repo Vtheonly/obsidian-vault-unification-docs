@@ -23,3 +23,6 @@ logs/*.log
 Thumbs.db
 .idea/
 .vscode/
+
+# Python test caches
+.pytest_cache/

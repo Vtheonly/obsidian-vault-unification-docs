@@ -1,0 +1,59 @@
+{
+  "checkpoint_id": "CHK-2026-10-25-BOOT-000",
+  "created_utc": "2026-10-25",
+  "stage": "framework_bootstrap",
+  "task_id": "BOOT-000",
+  "task_status": "completed",
+  "last_verified_state": {
+    "framework_version": "0.1.0",
+    "test_result": "153 passed / 0 failed / 0 skipped",
+    "test_evidence": "reports/framework/boot-000-pytest-report.json",
+    "capabilities_evidence": "reports/framework/boot-000-capabilities.json",
+    "source_immutability": {
+      "master_ai": "reports/framework/boot-000-immutable-master-ai.json (0 added/removed/changed)",
+      "ai_course": "reports/framework/boot-000-immutable-ai-course.json (0 added/removed/changed)"
+    }
+  },
+  "changed_paths": [
+    "pyproject.toml",
+    "conftest.py",
+    ".gitignore",
+    "src/vault_unification/__init__.py",
+    "src/vault_unification/__main__.py",
+    "src/vault_unification/cli.py",
+    "src/vault_unification/pathsafety.py",
+    "src/vault_unification/inventory.py",
+    "src/vault_unification/mdextract.py",
+    "src/vault_unification/linkcheck.py",
+    "src/vault_unification/search.py",
+    "src/vault_unification/registry.py",
+    "src/vault_unification/reporting.py",
+    "src/vault_unification/selftest.py",
+    "src/vault_unification/capabilities.py",
+    "tests/conftest.py",
+    "tests/test_pathsafety.py",
+    "tests/test_inventory.py",
+    "tests/test_mdextract.py",
+    "tests/test_linkcheck.py",
+    "tests/test_search.py",
+    "tests/test_registry.py",
+    "tests/test_reporting.py",
+    "tests/test_selftest.py",
+    "tests/test_capabilities.py",
+    "tests/test_cli.py",
+    "tests/test_repo_state.py",
+    "docs/FRAMEWORK_SETUP.md",
+    "state/task-queue.jsonl",
+    "state/current-state.json",
+    "state/findings.jsonl",
+    "state/manifests/master-ai.jsonl",
+    "state/manifests/ai-course.jsonl",
+    "reports/framework/"
+  ],
+  "open_findings": ["F-0001", "F-0002", "F-0003"],
+  "git_state_note": "commit created after this checkpoint; see handoff for hash",
+  "safe_resume": {
+    "command": "PYTHONPATH=src python3 -m vault_unification selftest && PYTHONPATH=src python3 -m pytest tests -q",
+    "next_task": "BOOT-001"
+  }
+}
