@@ -108,3 +108,21 @@ Testing layers include unit tests, integration tests across temporary vault fixt
 Use scripts to calculate counts, ratios, denominators, and diffs. The model may interpret evidence but must not silently recompute or replace script results with estimates. Reports identify command/version, inputs or inventory snapshot IDs, scope, denominators, exclusions, timestamp, and failures. Store evidence so a fresh session can reproduce the result.
 
 A framework test passing proves only the behavior covered by that test. Lexical frequency is a triage signal, not semantic proof. Semantic audits remain evidence-based and independent; decisions should be recorded against stable source-unit IDs.
+
+## 5. Corpus-wide coverage and omission controls
+
+Verification must apply the same gates to every domain, including notes with very few source mentions. Familiar concepts are not allowed to consume disproportionate audit effort while obscure derivations, footnotes, project failures, hardware caveats, or unusual equations remain unchecked.
+
+Frequency regression is a triage mechanism. Establish source baselines for technical terms, aliases, phrases, model names, and relevant mathematical notation; compare them with accepted output using deterministic tooling. A sharp drop (for example, a term appearing hundreds of times in source material but only a couple of times in output) triggers a localized audit. It does not automatically prove omission, because legitimate consolidation changes frequencies; nor does a stable frequency prove that all meanings survived.
+
+Every report must disclose its scope, excluded file types, unreadable inputs, unknown parser cases, numerator, denominator, and unresolved items. Do not use one corpus-wide percentage to hide an unprocessed file, domain, or knowledge unit. Report coverage by source vault, file, domain/concept, and KU wherever possible.
+
+## 6. Adversarial omission pilot — release blocker
+
+Use synthetic copies and a reproducible baseline fixture. Plant and enumerate omissions/corruptions such as: removing a rare derivation step, dropping a project-specific caveat, altering an equation, deleting an implementation parameter, removing a historical/version distinction, and breaking an internal link or attachment reference. Run the real pipeline and verify that each defect is detected and localized to the exact KU and affected output section.
+
+The mandatory pass criterion is 100% detection/localization of all declared injected defects and zero false negatives for the fixture. Record false positives separately, along with commands, exit codes, tool versions, fixture manifest, defect manifest, and machine-readable results. Never mutate the original source vaults to run the pilot. Any missed planted defect blocks large-scale synthesis.
+
+## 7. Repair policy
+
+Repairs must be evidence-targeted and non-destructive. Give the repair task the accepted note, the missing or corrupted source units, their provenance, and the exact destination section. Do not regenerate the whole vault or rewrite unaffected accepted sections. Rerun focused checks and the relevant regression suite after each repair. Stop after three unsuccessful attempts, set the affected item to Needs review, create a finding, and include it in the handoff.
