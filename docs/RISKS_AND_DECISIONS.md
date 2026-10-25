@@ -90,3 +90,76 @@ re-running `vu validate-registry --tasks state/task-queue.jsonl` after the
 change (exit 0).
 **Verification plan:** every future schema change follows the same pattern:
 documented ADR + schema edit + validator re-run + suite re-run.
+
+### ADR-0007 — Persistent KU registry: canonical JSONL store + derived SQLite index
+**Status:** accepted (2026-10-26, BOOT-003 session)
+**Context:** BOOT-003 requires a persistent knowledge-unit registry that
+survives fresh sessions, supports many-to-many provenance (units to
+destinations, concepts, findings, supporting units), enforces disposition
+accounting, and is queryable at corpus scale (est. tens of thousands of
+units). `docs/TOOLING_AND_SETUP.md` suggests SQLite as a reasonable default
+at this scale; the project already uses committed JSONL for tasks and
+findings.
+**Options considered:** (1) SQLite as the sole store, committed to Git;
+(2) JSONL files only, no relational index; (3) hybrid: canonical committed
+JSONL batches plus a derived, rebuildable SQLite index.
+**Decision:** Option 3. JSONL batch files under `state/knowledge-units/`
+(each validated against `schemas/knowledge-unit.schema.json` before use) are
+the canonical, committed record of every knowledge unit — diff-friendly,
+append-only and auditable like the existing task queue. A SQLite database
+(default under `state/registries/`, git-ignored) is a derived index rebuilt
+via `vu kureg-init` + `vu kureg-load`; in v1 all writes flow exclusively
+through `kureg-load`, which schema-validates, cross-checks and atomically
+inserts each batch. No direct-to-database record creation exists.
+**Rationale:** committing a binary database invites merge conflicts and
+opaque diffs, and makes "trust the repository evidence" harder; plain JSONL
+cannot enforce referential integrity or answer provenance queries
+efficiently. The hybrid keeps Git as the durable authority while SQLite
+provides integrity and queries. Database corruption or loss is recoverable
+by rebuild from the canonical batches (tested: two independent rebuilds from
+the same JSONL produce byte-identical query output).
+**Consequences / risks:** the database can lag behind the canonical batches
+if someone loads selectively — rebuilds are cheap and validated
+(`kureg-validate`); reconciliation after a source-file change is explicit
+(new IDs, never silent reuse) per `docs/KNOWLEDGE_AND_PROVENANCE.md`.
+**Affected artifacts:** `src/vault_unification/kuregistry.py`,
+`src/vault_unification/cli.py` (kureg-* commands),
+`state/knowledge-units/README.md`, `.gitignore` (`state/registries/`),
+`tests/test_kuregistry.py`, `tests/test_cli.py`.
+**Migration/verification plan:** `vu kureg-init --db <path> [--force]` then
+`vu kureg-load --db <path> --kus <batch.jsonl>` per batch; `vu
+kureg-validate --db <path>` reports integrity and accounting counts. Suite:
+248/248 passed at adoption (evidence:
+`reports/bootstrap/boot-003-pytest-report.json`).
+
+### ADR-0008 — KU schema v1.1: separate `overlap_type` and required `superseded_rationale`
+**Status:** accepted (2026-10-26, BOOT-003 session)
+**Context:** `docs/KNOWLEDGE_AND_PROVENANCE.md` section 7 requires overlap
+classification (Exact Duplicate / Semantic Duplicate / Partial Overlap /
+Complementary Content / Conflict or Historical Difference) to be stored
+separately from disposition, and requires Superseded decisions to record a
+rationale with evidence that unique details were preserved elsewhere. The
+v1.0 draft schema had neither field; the only place for a rationale was the
+free-form `verification_status` object.
+**Options considered:** (1) keep the free object as the only place for
+rationale and omit overlap; (2) add `overlap_type` (optional enum) and
+`superseded_rationale` (optional string) to the schema; (3) encode the
+conditional requirement in JSON Schema `if/then`.
+**Decision:** Option 2, with the conditional rule (rationale non-empty when
+disposition is `Superseded`) enforced by cross-check code shared between
+file-level validation (`validate_ku_file`) and registry loads
+(`kuregistry.load_records`), not by JSON Schema.
+**Rationale:** a dedicated structured field is queryable and auditable;
+hiding the rationale in `verification_status` would make invariant 3
+unenforceable by code. Keeping the conditional rule in cross-checks (rather
+than `if/then`) preserves uniform, actionable error messages across both
+validation layers and keeps the schema declarative about shape only.
+**Impact / migration:** backward compatible — both fields are optional and
+nullable; no KU records existed before this change (zero migration).
+Verified per the ADR-0006 pattern: schema edit + `vu validate-registry`
+re-run + full suite re-run (248/248).
+**Affected artifacts:** `schemas/knowledge-unit.schema.json` (version 1.1),
+`src/vault_unification/registry.py` (`check_ku_records`,
+`validate_ku_file`), `src/vault_unification/kuregistry.py` (CHECK
+constraints + validate rules), `tests/test_kuregistry.py`,
+`tests/test_cli.py`.

@@ -31,20 +31,20 @@
     }
   ],
   "source_inventory_complete": true,
-  "knowledge_registry_initialized": false,
+  "knowledge_registry_initialized": true,
   "framework_foundation_built": true,
   "framework_foundation_tested": true,
   "framework_evidence": {
-    "test_run": "reports/bootstrap/boot-002-pytest-report.json",
-    "test_summary": "178 passed, 0 failed, 0 skipped",
-    "capabilities": "reports/bootstrap/boot-002-capabilities.json",
+    "test_run": "reports/bootstrap/boot-003-pytest-report.json",
+    "test_summary": "248 passed, 0 failed, 0 skipped",
+    "capabilities": "reports/bootstrap/boot-003-capabilities.json",
     "setup_doc": "docs/FRAMEWORK_SETUP.md"
   },
   "verification_pilot_passed": false,
   "output_synthesis_started": false,
-  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-26-boot-002.json",
-  "current_task_id": "BOOT-003",
-  "notes": "BOOT-000, BOOT-001, BOOT-002 completed. Framework v0.1.0 + CAP-015 content statistics (12 capabilities implemented-and-tested, 178/178 tests). Canonical inventory complete: 609 markdown files (333 Master AI + 276 AI Course, 0 non-text assets), 1.16M words, ~2.03M tokens estimated (chars/4). All stats/inventory outputs reproducible byte-identically; sources unchanged throughout. Corpus is smaller than the >5M-token planning assumption - bounded batches still apply. Next: BOOT-003 persistent KU registry, then BOOT-004 omission pilot (hard gate for synthesis).",
+  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-26-boot-003.json",
+  "current_task_id": "BOOT-004",
+  "notes": "BOOT-000..BOOT-003 completed. Framework v0.2.0: 13 code-backed capabilities implemented-and-tested, 248/248 tests. KU registry mechanism (CAP-011) delivered with schema v1.1, stable-ID minting, atomic validated loads, integrity/accounting validation and rebuild reproducibility; canonical store empty by design (no extraction yet). Canonical inventory complete: 609 markdown files, 1.16M words, ~2.03M tokens est. Sources unchanged throughout. Next: BOOT-004 omission-detection pilot - the hard gate before any large-scale synthesis.",
   "corpus_statistics": {
     "files_total": 609,
     "markdown_files": 609,
@@ -69,5 +69,14 @@
       }
     },
     "evidence": "reports/bootstrap/boot-002-inventory-summary.json"
+  },
+  "knowledge_registry": {
+    "canonical_store": "state/knowledge-units/ (committed JSONL batches; ADR-0007)",
+    "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load)",
+    "records": 0,
+    "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)",
+    "commands": "vu kureg-init / kureg-load / kureg-query / kureg-validate",
+    "capability": "CAP-011 implemented-and-tested (reports/bootstrap/boot-003-capabilities.json)",
+    "note": "mechanism only; extraction has not started"
   }
 }

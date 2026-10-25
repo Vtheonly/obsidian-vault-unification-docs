@@ -1,0 +1,28 @@
+BOOT-003 test-run summary (machine-readable evidence:
+  reports/bootstrap/boot-003-pytest-report.json)
+
+Suite result: 248 passed, 0 failed, 0 skipped
+Duration: 94.89s
+
+New in BOOT-003:
+- 55 tests in tests/test_kuregistry.py (ID minting, init/load/query/validate,
+  cross-record rules, corruption, recovery, rebuild reproducibility)
+- 11 new CLI tests + 4 new help checks in tests/test_cli.py
+- 1 test in tests/test_capabilities.py updated (CAP-011 now code-backed;
+  CAP-012 is the planned-status example)
+
+Capability verification (vu capabilities --verify):
+  13 implemented-and-tested: CAP-000, CAP-001, CAP-002, CAP-003, CAP-004, CAP-005, CAP-006, CAP-007, CAP-008, CAP-009, CAP-010, CAP-011, CAP-015
+  planned: CAP-012, CAP-013, CAP-014
+
+Registry demo (scripts/boot003_demo.py):
+  expected_exit_pattern: True
+  rebuild_reproducible: True
+  canonical_store_records: 0 (no extraction yet - mechanism only)
+
+Source immutability after all BOOT-003 operations:
+  Master AI: 0 added/removed/changed
+  AI Course: 0 added/removed/changed
+
+Non-claims: no knowledge units extracted/classified/dispositioned;
+no semantic verification; omission pilot (BOOT-004) not started.

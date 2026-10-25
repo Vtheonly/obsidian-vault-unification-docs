@@ -105,6 +105,155 @@ def validate_records_against_schema(
     return report
 
 
+KU_CROSS_CHECK_RULES = (
+    "duplicate_id",
+    "self_parent",
+    "superseded_rationale_missing",
+    "self_support",
+    "unknown_parent",
+    "unknown_support",
+)
+
+
+def check_ku_records(
+    records: list[dict],
+    *,
+    check_parent_refs: bool = False,
+    known_external_ids: set[str] | None = None,
+) -> list[dict]:
+    """Cross-record checks over a list of KU records (plain dicts).
+
+    Shared authority for KU cross-check rules; used by ``validate_ku_file``
+    (file-level) and ``kuregistry.load_records`` (database-level) so the two
+    validation layers cannot drift apart.
+
+    Rules:
+    - ``duplicate_id``: the same knowledge_unit_id appears twice in the list;
+    - ``self_parent``: parent_unit_id equals the record's own id;
+    - ``superseded_rationale_missing``: disposition 'Superseded' without a
+      non-empty ``superseded_rationale`` (schema v1.1, ADR-0008);
+    - ``self_support``: supporting_unit_ids contains the record's own id;
+    - ``unknown_parent`` / ``unknown_support``: only when ``check_parent_refs``
+      is True (database loads know the full ID universe); a file-level batch
+      may legitimately reference units stored in an earlier batch.
+
+    Returns error dicts: record_index, knowledge_unit_id, rule, message.
+    """
+    errors: list[dict] = []
+    known = known_external_ids or set()
+    ids = [record.get("knowledge_unit_id") for record in records]
+    id_set = set(ids)
+
+    for index, record in enumerate(records):
+        ku_id = record.get("knowledge_unit_id")
+
+        if ids.count(ku_id) > 1 and ku_id is not None:
+            errors.append(
+                {
+                    "record_index": index,
+                    "knowledge_unit_id": ku_id,
+                    "rule": "duplicate_id",
+                    "message": f"knowledge_unit_id {ku_id!r} appears more than once",
+                }
+            )
+
+        parent = record.get("parent_unit_id")
+        if parent is not None:
+            if parent == ku_id:
+                errors.append(
+                    {
+                        "record_index": index,
+                        "knowledge_unit_id": ku_id,
+                        "rule": "self_parent",
+                        "message": "parent_unit_id references the unit itself",
+                    }
+                )
+            elif check_parent_refs and parent not in id_set and parent not in known:
+                errors.append(
+                    {
+                        "record_index": index,
+                        "knowledge_unit_id": ku_id,
+                        "rule": "unknown_parent",
+                        "message": f"parent_unit_id {parent!r} not found in batch or registry",
+                    }
+                )
+
+        if record.get("disposition") == "Superseded":
+            rationale = record.get("superseded_rationale")
+            if not isinstance(rationale, str) or not rationale.strip():
+                errors.append(
+                    {
+                        "record_index": index,
+                        "knowledge_unit_id": ku_id,
+                        "rule": "superseded_rationale_missing",
+                        "message": "disposition 'Superseded' requires a non-empty "
+                        "superseded_rationale (unique information preserved elsewhere "
+                        "must be recorded, docs/KNOWLEDGE_AND_PROVENANCE.md invariant 3)",
+                    }
+                )
+
+        supports = record.get("supporting_unit_ids") or []
+        for supported in supports:
+            if supported == ku_id:
+                errors.append(
+                    {
+                        "record_index": index,
+                        "knowledge_unit_id": ku_id,
+                        "rule": "self_support",
+                        "message": "supporting_unit_ids contains the unit itself",
+                    }
+                )
+            elif (
+                check_parent_refs
+                and supported not in id_set
+                and supported not in known
+            ):
+                errors.append(
+                    {
+                        "record_index": index,
+                        "knowledge_unit_id": ku_id,
+                        "rule": "unknown_support",
+                        "message": f"supporting_unit_id {supported!r} not found in batch or registry",
+                    }
+                )
+    return errors
+
+
+def validate_ku_file(path: str | Path, schema_path: str | Path) -> dict:
+    """Validate a KU JSONL batch file: schema + cross-record checks.
+
+    File-level cross-checks cover duplicate IDs, self-parents, self-supports
+    and the Superseded rationale rule. Parent/support references to units in
+    *other* batch files are not file-level errors (append-only batches may be
+    split across files); the authoritative check runs at registry load time
+    against the union of batch + database IDs.
+    """
+    report = validate_records_against_schema(path, schema_path)
+    if report["errors"]:
+        report["cross_checks"] = {"status": "not_run", "reason": "per-record errors present"}
+        return report
+
+    entries, _ = load_jsonl_records(path)
+    records = [entry["record"] for entry in entries]
+    for error in check_ku_records(records, check_parent_refs=False):
+        report["errors"].append(
+            {
+                "line": None,
+                "knowledge_unit_id": error.get("knowledge_unit_id"),
+                "rule": error["rule"],
+                "error": error["message"],
+            }
+        )
+    report["valid"] = not report["errors"]
+    report["cross_checks"] = {
+        "status": "run",
+        "kus_total": len(records),
+        "rules": ["duplicate_id", "self_parent", "superseded_rationale_missing", "self_support"],
+        "note": "cross-batch parent/support references are checked at registry load time",
+    }
+    return report
+
+
 def validate_task_queue(path: str | Path, schema_path: str | Path) -> dict:
     """Validate the task queue JSONL and cross-check dependency references.
 

@@ -3,128 +3,136 @@
 ## Project state
 
 - Current milestone: Milestone 0 — repository and source discovery (DONE:
-  BOOT-001) + Milestone 3-level file inventory (DONE: BOOT-002); entering
-  Milestone 1 formalization (BOOT-003 persistent registry)
-- Current task ID: BOOT-003 (status: ready)
-- Current Git commit: the BOOT-002 work commit on `main` (after the BOOT-001
-  commit `648c6c3`); verify with `git log --oneline -5`
+  BOOT-001) + file inventory (DONE: BOOT-002) + registry formalization (DONE:
+  BOOT-003); next: BOOT-004 omission-detection pilot (Milestone 1 gate).
+- Current task ID: BOOT-004 (status: ready)
+- Current Git commit: the BOOT-003 work commit on `main` (after the BOOT-002
+  commit `6169cfe`); verify with `git log --oneline -5`
 - Working tree status: clean after commit/push (verify with `git status`)
-- Registry/checkpoint version: task-queue v2 (BOOT-000/001/002 completed
-  with tests_run evidence); checkpoint
-  `state/checkpoints/checkpoint-2026-10-26-boot-002.json`
+- Registry/checkpoint version: task-queue v2 (BOOT-000..003 completed with
+  tests_run evidence); KU schema v1.1 (ADR-0008); checkpoint
+  `state/checkpoints/checkpoint-2026-10-26-boot-003.json`
 
 ## Verified completed work
 
-- BOOT-002 (continuation session, 2026-10-26), framework-first:
-  - New capability CAP-015 (content statistics): module
-    `src/vault_unification/vaultstats.py`, CLI `vu stats --root R
-    [--per-file F2]`, 19 unit tests (`tests/test_vaultstats.py`) + 6 CLI
-    tests; counting methods documented in code and reports (words =
-    whitespace tokens over full decoded text; words_outside_fences excludes
-    fence/math lines, unclosed constructs extend to EOF; tokens_estimate =
-    chars//4 heuristic).
-  - Canonical inventory evidence:
-    `reports/bootstrap/boot-002-inventory-summary.json` (aggregates,
-    reproducibility fingerprints, unsupported-asset statement, F-0002
-    cross-validation) plus per-vault stats reports + per-file JSONL.
-  - Corpus facts (code-computed): 609 files total, 100% markdown, 0
-    unreadable, 0 non-text assets; Master AI 333 files / 638,004 words /
-    8,610 headings / ~1,144,484 tokens est.; AI Course 276 files / 519,933
-    words / 4,175 headings / ~882,863 tokens est.; corpus totals: 1,157,937
-    words, ~2,027,347 tokens est. (chars/4). NOTE: actual corpus is smaller
-    than the >5M-token planning assumption in AGENTS.md §7 — planning
-    constraint relaxes but bounded batches still apply.
-  - Reproducibility: stats payloads + per-file JSONL byte-identical across
-    two runs per vault; fresh inventory manifests identical to baselines
-    (which also re-proves source immutability — exit 0, 0 changed).
-  - F-0002 cross-validation: the 14 AI Course unclosed-fence files reported
-    by `vu stats` exactly match the 14 parse-error files from the
-    independent `check-links` smoke run (two code paths, one defect set).
-- BOOT-001 (same session, earlier): formal source-location record
-  `reports/bootstrap/boot-001-source-location.json`; README status section
-  corrected (F-0004, resolved).
+- BOOT-003 (continuation session, 2026-10-26), framework-first:
+  - New capability CAP-011 (KU registry persistence): module
+    `src/vault_unification/kuregistry.py`; CLI `vu kureg-init / kureg-load /
+    kureg-query / kureg-validate`; hybrid design per ADR-0007 — canonical
+    committed JSONL batches in `state/knowledge-units/` (0 records: no
+    extraction yet) + derived rebuildable SQLite index in
+    `state/registries/` (git-ignored).
+  - Load semantics: schema validation (v1.1) before insert; shared
+    cross-record rules (`registry.check_ku_records`: duplicate IDs,
+    self-parents, self-supports, Superseded rationale, parent/support
+    references against batch ∪ database); atomic single-transaction inserts
+    with deferred FKs; idempotent identical re-loads; conflicting IDs
+    rejected; failed batches leave the DB unchanged.
+  - Stable IDs: `mint_ku_id` derives IDs from source id + file hash + heading
+    path + line range + excerpt hash (explicit excerpt_hash authoritative
+    over excerpt text); locator-less records are rejected explicitly.
+  - Schema v1.1 per ADR-0008: `overlap_type` (separate from disposition)
+    and `superseded_rationale` (required when disposition is Superseded —
+    enforced by cross-checks in both `validate-registry --kus` and
+    `kureg-load`).
+  - `kureg-validate`: referential integrity, enum violations, corrupt JSON,
+    accounting counts by disposition with denominators, unaccounted /
+    needs-review counts, needs-review-without-finding as warning.
+  - Path safety: `kureg-init`/`kureg-load` refuse databases under protected
+    roots (default `<repo>/source-vaults/` when present; `--protected-root`
+    repeatable); reports pass through `ensure_dest_safe`.
+  - Evidence: 248/248 tests
+    (`reports/bootstrap/boot-003-pytest-report.json`); capabilities --verify:
+    13 implemented-and-tested incl. CAP-011, 3 planned
+    (`reports/bootstrap/boot-003-capabilities.json`); 9-step lifecycle demo
+    with double-rebuild reproducibility
+    (`reports/bootstrap/boot-003-kureg-demo.json`); post-op immutability
+    both vaults 0 added/removed/changed.
 
 ## Tests actually run
 
 | Command/test | Result | Evidence/report | Limitations |
 |---|---|---|---|
-| `vu stats` Master AI | exit 0; 333 files, 0 errors | reports/bootstrap/boot-002-stats-master-ai.json + .jsonl | lexical counts only |
-| `vu stats` AI Course | exit 1 (14 genuine unclosed-fence defects = F-0002); reports still written | reports/bootstrap/boot-002-stats-ai-course.json + .jsonl | exit 1 is correct fail-visible behavior |
-| stats reproducibility (2 runs/vault) | payload + JSONL byte-identical | boot-002-inventory-summary.json reproducibility blocks | — |
-| `vu inventory` re-runs | exit 0; manifests identical to baselines | same summary, inventory_reproducibility blocks | — |
-| `vu run-tests --tests-dir tests` | exit 0; 178/178 passed | reports/bootstrap/boot-002-pytest-report.json, boot-002-test-run-summary.txt | — |
-| `vu capabilities --verify` | exit 0; 12 implemented-and-tested incl. CAP-015 | reports/bootstrap/boot-002-capabilities.json | runs only referenced test files (163 tests) |
-| `vu verify-manifest` both vaults (post-ops) | exit 0; unchanged | reports/bootstrap/boot-002-immutable-{master-ai,ai-course}.json | — |
-| `vu validate-registry --tasks state/task-queue.jsonl` | exit 0; valid | terminal after queue update | schema + cross-checks only |
+| `vu run-tests --tests-dir tests` | exit 0; 248/248 passed | reports/bootstrap/boot-003-pytest-report.json | — |
+| `vu capabilities --verify` | exit 0; 13 implemented-and-tested, 3 planned | reports/bootstrap/boot-003-capabilities.json | runs only referenced test files (233 tests) |
+| `python3 scripts/boot003_demo.py` | exit 0; expected exit pattern + byte-identical double rebuild | reports/bootstrap/boot-003-kureg-demo.json | synthetic records only |
+| `vu verify-manifest` both vaults (post-ops) | exit 0; unchanged | reports/bootstrap/boot-003-immutable-{master-ai,ai-course}.json | — |
+| `vu validate-registry --tasks state/task-queue.jsonl` | exit 0; valid | reports/bootstrap/boot-003-queue-valid.json | schema + cross-checks only |
+| `vu selftest` (resume verification) | exit 0 | terminal | — |
 
 ## Findings and unresolved work
 
 - Open finding IDs: F-0001 (trailing-space dir `source-vaults/AI ` — always
   quote; never rename), F-0002 (14 AI Course unclosed-fence files —
-  cross-validated set; extraction must record content with parse warning,
-  never silently drop), F-0003 (175 broken wikilinks + 10 missing anchors
-  in AI Course — synthesis-time dispositions needed).
-- Blockers: none for BOOT-003.
+  extraction must record content with parse warning, never silently drop),
+  F-0003 (175 broken wikilinks + 10 missing anchors in AI Course —
+  synthesis-time dispositions needed).
+- Blockers: none for BOOT-004.
 - Unverified claims: none made; capability statuses are test-backed.
-- Tool limitations: see docs/FRAMEWORK_SETUP.md "Known limitations"
-  (tokens_estimate is a chars//4 approximation; inline-math false positives;
-  folder wikilinks reported broken by check-links; no LaTeX validation; no
-  concurrency control).
+- Known gaps (not findings, deliberate non-claims): Master AI has never been
+  link-checked (only AI Course was, in BOOT-000); no KU extraction has
+  started; the canonical KU store is empty by design.
 
 ## Decisions and configuration
 
-- CAP-015 stats semantics: unclosed fences/math extend to EOF for prose-word
-  counting (content is treated as real, consistent with F-0002 policy);
-  `vu stats` exits 1 when any analyzed file has errors (fail visibly) but
-  always writes full reports.
-- BOOT-002 summary generated by persisted `scripts/boot002_summary.py`
-  (recomputes all fingerprints itself; no pasted-in numbers).
-- Capability IDs: CAP-015 now used for content statistics; planned IDs
-  CAP-011 (KU registry), CAP-012 (omission pilot), CAP-013 (duplicates),
-  CAP-014 (coverage/frequency regression) unchanged.
+- ADR-0007 (canonical JSONL store + derived SQLite index; all writes through
+  kureg-load; rebuild not repair) and ADR-0008 (KU schema v1.1:
+  overlap_type + superseded_rationale via cross-checks) — see
+  docs/RISKS_AND_DECISIONS.md.
+- Framework version 0.2.0; capability IDs: CAP-011 now code-backed; planned
+  IDs CAP-012 (omission pilot), CAP-013 (duplicates), CAP-014 (coverage /
+  frequency regression) unchanged.
+- Registry conventions documented in `state/knowledge-units/README.md`
+  (batch naming `<sequence>-<task-id>.jsonl`, append-only).
 
 ## Next task
 
-- Task ID and title: BOOT-003 — Implement persistent registry, checkpoints,
-  and task validation
-- Why it is next: BOOT-002 complete; the knowledge-unit registry is required
-  before extraction (BOOT-002+ extraction work) and before the omission
-  pilot (BOOT-004).
-- Dependencies: BOOT-000, BOOT-001 (completed).
-- Exact inputs: `docs/KNOWLEDGE_AND_PROVENANCE.md` (record fields,
-  dispositions, overlap taxonomy, accounting invariants),
-  `schemas/knowledge-unit.schema.json` (existing draft),
-  `docs/TOOLING_AND_SETUP.md` (SQLite vs JSONL decision), corpus stats for
-  scale planning.
-- Expected outputs: persistent KU registry (choose and document format:
-  SQLite recommended by TOOLING_AND_SETUP.md at this scale; document the
-  ADR), schema validation, stable-ID generation rules, load/query/validate
-  CLI commands, tests (unit + negative + integration + CLI), docs update.
-- Acceptance criteria (from task queue): schema is documented and validated;
-  task state persists across fresh sessions; recovery behavior is tested.
-- Forbidden side effects: do not modify source vaults; do not start
-  extraction before the registry exists and validates.
+- Task ID and title: BOOT-004 — Build omission-detection pilot and verify
+  the auditor
+- Why it is next: all dependencies complete (BOOT-002, BOOT-003); it is the
+  hard gate before any large-scale synthesis (AGENTS.md section 7.5,
+  TOOLING_FRAMEWORK.md sections 7 and 9).
+- Exact inputs: synthetic paired notes with exact/semantic duplicates,
+  partial overlap, complementary theory/code, conflicting versions, rare
+  facts, equations + intermediate derivation steps, project caveats, code
+  blocks, internal links; a clean baseline + manifest of planted defects;
+  the registry (state/registries/ + state/knowledge-units/) for
+  source-unit IDs; docs/VERIFICATION_SPECIFICATION.md;
+  docs/TOOLING_FRAMEWORK.md sections 7 and 9 (acceptance contract).
+- Expected outputs: pilot fixture generator (script, committed), mutated
+  copies (temporary only), detection/localization report per injected
+  defect (detected vs missed, affected KU ID + destination, false
+  positives/negatives), machine-readable results in reports/, new
+  capability CAP-012 wired into capabilities.py with tests.
+- Acceptance criteria (from task queue): injected unique-detail, equation,
+  caveat, link, and style defects are detected or limitations explicitly
+  documented; findings link to stable source-unit IDs; the pilot does not
+  modify original vaults (mutate only temporary copies).
+- Forbidden side effects: do not modify original vaults; do not begin
+  large-scale synthesis before the pilot passes.
 
 ## Resume procedure
 
 1. `git clone` / `git pull`; `git status` must be clean; confirm HEAD
-   includes the BOOT-002 commit.
+   includes the BOOT-003 commit.
 2. Read `AGENTS.md`, this file, `state/current-state.json`,
    `state/task-queue.jsonl`, `state/findings.jsonl`.
 3. Sanity-verify the framework: `PYTHONPATH=src python3 -m vault_unification
    selftest` (exit 0) and `PYTHONPATH=src python3 -m pytest tests -q`
-   (178/178 unless tests were legitimately added — update the count then).
+   (248/248 unless tests were legitimately added — update the count then).
 4. Verify source immutability: `vu verify-manifest` on both vaults (exit 0).
-5. Execute BOOT-003 per the acceptance criteria above; framework-first;
-   record evidence with actual exit codes; update task queue, current-state,
-   checkpoint, findings; write this handoff file; commit and push to main.
+5. Execute BOOT-004 per the acceptance criteria above; framework-first
+   (build the pilot as reusable, tested tooling — CAP-012 — not as a
+   one-off script); record evidence with actual exit codes; update task
+   queue, current-state, checkpoint, findings; write this handoff file;
+   commit and push to main.
 
 ## Explicit non-claims
 
-- No knowledge units have been extracted, classified, or dispositioned yet.
+- No knowledge units have been extracted, classified, or dispositioned; the
+  canonical store `state/knowledge-units/` holds 0 records.
 - No semantic verification of any source content has occurred.
 - The omission-detection pilot (BOOT-004) has NOT been run; large-scale
   synthesis remains blocked (hard gate).
 - Word/heading/token counts are lexical facts, not semantic coverage.
-- Master AI has not yet been link-checked at all (only AI Course was, during
-  the BOOT-000 smoke test).
+- Master AI has not yet been link-checked at all.

@@ -1,0 +1,54 @@
+{
+  "checkpoint_id": "CHK-2026-10-26-BOOT-003",
+  "created_utc": "2026-10-25T18:52:40+00:00",
+  "stage": "framework_bootstrap",
+  "task_id": "BOOT-003",
+  "task_status": "completed",
+  "last_verified_state": {
+    "framework_version": "0.2.0 + CAP-011 (kuregistry)",
+    "test_result": "248 passed, 0 failed, 0 skipped",
+    "test_evidence": "reports/bootstrap/boot-003-pytest-report.json",
+    "capabilities_evidence": "reports/bootstrap/boot-003-capabilities.json (13 implemented-and-tested, 3 planned)",
+    "kureg_demo_evidence": "reports/bootstrap/boot-003-kureg-demo.json (expected exit pattern; double-rebuild byte-identical; canonical store 0 records)",
+    "ku_schema_version": "1.1 (ADR-0008)",
+    "registry_store": "state/knowledge-units/ (0 records; canonical, committed)",
+    "source_immutability": {
+      "master_ai": "reports/bootstrap/boot-003-immutable-master-ai.json (0 added/removed/changed)",
+      "ai_course": "reports/bootstrap/boot-003-immutable-ai-course.json (0 added/removed/changed)"
+    }
+  },
+  "changed_paths": [
+    "src/vault_unification/kuregistry.py",
+    "src/vault_unification/registry.py",
+    "src/vault_unification/cli.py",
+    "src/vault_unification/capabilities.py",
+    "src/vault_unification/__init__.py",
+    "schemas/knowledge-unit.schema.json",
+    "tests/test_kuregistry.py",
+    "tests/test_cli.py",
+    "tests/test_capabilities.py",
+    "docs/RISKS_AND_DECISIONS.md",
+    "docs/FRAMEWORK_SETUP.md",
+    "state/knowledge-units/README.md",
+    "reports/bootstrap/boot-003-*",
+    "scripts/boot003_demo.py",
+    ".gitignore",
+    "state/task-queue.jsonl",
+    "state/current-state.json",
+    "state/checkpoints/checkpoint-2026-10-26-boot-003.json",
+    "docs/agent-handoff/next-agent.md"
+  ],
+  "open_findings": [
+    "F-0001",
+    "F-0002",
+    "F-0003"
+  ],
+  "resolved_findings": [
+    "F-0004"
+  ],
+  "git_state_note": "BOOT-003 work commit follows the BOOT-002 commit on main",
+  "safe_resume": {
+    "command": "PYTHONPATH=src python3 -m vault_unification selftest && PYTHONPATH=src python3 -m pytest tests -q",
+    "next_task": "BOOT-004"
+  }
+}

@@ -1,6 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Traceable Source Knowledge Unit",
+  "$id": "https://github.com/Vtheonly/obsidian-vault-unification-docs/schemas/knowledge-unit.schema.json",
+  "version": "1.1",
   "type": "object",
   "required": [
     "knowledge_unit_id",
@@ -93,6 +95,25 @@
         "Needs review",
         "Unaccounted"
       ]
+    },
+    "overlap_type": {
+      "enum": [
+        null,
+        "Exact Duplicate",
+        "Semantic Duplicate",
+        "Partial Overlap",
+        "Complementary Content",
+        "Conflict or Historical Difference"
+      ],
+      "description": "Relationship between pieces of evidence; stored separately from disposition per docs/KNOWLEDGE_AND_PROVENANCE.md section 7. Added by ADR-0008."
+    },
+    "superseded_rationale": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "description": "Required (non-empty, enforced by cross-checks) when disposition is Superseded: rationale plus evidence that unique details were preserved elsewhere. Added by ADR-0008."
     },
     "destinations": {
       "type": "array",

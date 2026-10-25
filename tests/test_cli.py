@@ -52,6 +52,10 @@ def run_cli(*args: str, cwd: Path | None = None, timeout: int = 300) -> subproce
         "validate-registry",
         "run-tests",
         "capabilities",
+        "kureg-init",
+        "kureg-load",
+        "kureg-query",
+        "kureg-validate",
     ],
 )
 def test_help_works(command):
@@ -322,6 +326,156 @@ class TestValidateRegistryCLI:
     def test_no_targets_is_usage_error(self):
         proc = run_cli("validate-registry")
         assert proc.returncode == 1
+
+
+class TestKuRegistryCLI:
+    VALID_KU = {
+        "knowledge_unit_id": "KU-0001",
+        "source_id": "SRC-1",
+        "source_path": "vault/note.md",
+        "source_file_hash": "0" * 64,
+        "line_start": 1,
+        "line_end": 2,
+        "excerpt": "synthetic registry test record",
+        "unit_type": "claim",
+        "disposition": "Preserved",
+        "verification_status": {},
+    }
+
+    def _write_batch(self, tmp_path, records):
+        path = tmp_path / "batch.jsonl"
+        with open(path, "w", encoding="utf-8") as handle:
+            for rec in records:
+                handle.write(json.dumps(rec) + "\n")
+        return path
+
+    def test_init_load_query_validate_end_to_end(self, tmp_path):
+        db = tmp_path / "reg" / "registry.sqlite"
+        report = tmp_path / "reg" / "report.json"
+        proc = run_cli(
+            "kureg-init", "--db", str(db),
+            "--protected-root", str(tmp_path / "sources"),
+            "--report", str(report),
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        assert json.loads(report.read_text(encoding="utf-8"))["report_meta"]["command"] == "kureg-init"
+
+        batch = self._write_batch(tmp_path, [self.VALID_KU])
+        proc = run_cli(
+            "kureg-load", "--db", str(db), "--kus", str(batch),
+            "--protected-root", str(tmp_path / "sources"),
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        assert json.loads(proc.stdout)["inserted"] == 1
+
+        proc = run_cli(
+            "kureg-query", "--db", str(db), "--disposition", "Preserved",
+            "--format", "jsonl",
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        lines = [line for line in proc.stdout.splitlines() if line]
+        assert len(lines) == 1
+        assert json.loads(lines[0])["knowledge_unit_id"] == "KU-0001"
+
+        proc = run_cli("kureg-validate", "--db", str(db))
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        payload = json.loads(proc.stdout)
+        assert payload["valid"] is True
+        assert payload["counts"]["total_kus"] == 1
+
+    def test_init_refuses_db_inside_protected_root(self, tmp_path):
+        sources = tmp_path / "sources"
+        (sources / "vault").mkdir(parents=True)
+        sneaky = sources / "vault" / "registry.sqlite"
+        proc = run_cli(
+            "kureg-init", "--db", str(sneaky),
+            "--protected-root", str(sources),
+        )
+        assert proc.returncode == 1
+        assert "protected" in proc.stderr
+
+    def test_init_twice_rejected(self, tmp_path):
+        db = tmp_path / "registry.sqlite"
+        assert run_cli("kureg-init", "--db", str(db)).returncode == 0
+        proc = run_cli("kureg-init", "--db", str(db))
+        assert proc.returncode == 1
+        assert "--force" in proc.stderr
+
+    def test_init_force_recreates(self, tmp_path):
+        db = tmp_path / "registry.sqlite"
+        assert run_cli("kureg-init", "--db", str(db)).returncode == 0
+        proc = run_cli("kureg-init", "--db", str(db), "--force")
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+
+    def test_load_invalid_batch_nonzero(self, tmp_path):
+        db = tmp_path / "registry.sqlite"
+        assert run_cli("kureg-init", "--db", str(db)).returncode == 0
+        batch = self._write_batch(tmp_path, [dict(self.VALID_KU, disposition="Deleted")])
+        proc = run_cli("kureg-load", "--db", str(db), "--kus", str(batch))
+        assert proc.returncode == 1
+        payload = json.loads(proc.stdout)
+        assert payload["valid"] is False
+        assert payload["errors_total"] >= 1
+
+    def test_load_missing_file_nonzero(self, tmp_path):
+        db = tmp_path / "registry.sqlite"
+        assert run_cli("kureg-init", "--db", str(db)).returncode == 0
+        proc = run_cli(
+            "kureg-load", "--db", str(db), "--kus", str(tmp_path / "ghost.jsonl")
+        )
+        assert proc.returncode == 1
+
+    def test_load_superseded_rationale_enforced(self, tmp_path):
+        db = tmp_path / "registry.sqlite"
+        assert run_cli("kureg-init", "--db", str(db)).returncode == 0
+        batch = self._write_batch(
+            tmp_path, [dict(self.VALID_KU, disposition="Superseded")]
+        )
+        proc = run_cli("kureg-load", "--db", str(db), "--kus", str(batch))
+        assert proc.returncode == 1
+        assert "superseded_rationale" in proc.stdout
+
+    def test_query_missing_db_nonzero(self, tmp_path):
+        proc = run_cli("kureg-query", "--db", str(tmp_path / "ghost.sqlite"))
+        assert proc.returncode == 1
+        assert "kureg-init" in proc.stderr
+
+    def test_validate_corrupt_db_nonzero(self, tmp_path):
+        junk = tmp_path / "junk.sqlite"
+        junk.write_bytes(b"garbage bytes, not sqlite")
+        proc = run_cli("kureg-validate", "--db", str(junk))
+        assert proc.returncode == 1
+        assert "error" in proc.stderr
+
+    def test_load_mint_ids_flag(self, tmp_path):
+        db = tmp_path / "registry.sqlite"
+        assert run_cli("kureg-init", "--db", str(db)).returncode == 0
+        anonymous = {
+            k: v for k, v in self.VALID_KU.items() if k != "knowledge_unit_id"
+        }
+        batch = self._write_batch(tmp_path, [anonymous])
+        proc = run_cli(
+            "kureg-load", "--db", str(db), "--kus", str(batch), "--mint-ids"
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        assert json.loads(proc.stdout)["inserted"] == 1
+
+    def test_validate_registry_kus_uses_cross_checks(self, tmp_path):
+        """validate-registry --kus must run the v1.1 cross-check rules too."""
+        report = tmp_path / "vr.json"
+        bad = self._write_batch(
+            tmp_path, [dict(self.VALID_KU, disposition="Superseded")]
+        )
+        proc = run_cli("validate-registry", "--kus", str(bad), "--report", str(report))
+        assert proc.returncode == 1
+        payload = json.loads(proc.stdout)
+        assert payload["valid"] is False
+        assert payload["problems_total"] >= 1
+        data = json.loads(report.read_text(encoding="utf-8"))
+        assert any(
+            e.get("rule") == "superseded_rationale_missing"
+            for e in data["validations"]["knowledge_units"]["errors"]
+        )
 
 
 class TestRunTestsCLI:

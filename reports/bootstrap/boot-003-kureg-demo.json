@@ -1,0 +1,191 @@
+{
+  "purpose": "BOOT-003 KU registry mechanism demonstration (synthetic records only; no source vault data, no real knowledge units)",
+  "synthetic_records": 3,
+  "steps": [
+    {
+      "command": "kureg-init --db /tmp/boot003-demo-yin94uuz/registry/knowledge-registry.sqlite --protected-root /home/z/my-project/vault-repo/source-vaults",
+      "exit_code": 0,
+      "output": {
+        "db_path": "/tmp/boot003-demo-yin94uuz/registry/knowledge-registry.sqlite",
+        "registry_schema_version": 1,
+        "id_namespace": "vault_unification-ku-v1",
+        "force_used": false
+      }
+    },
+    {
+      "command": "kureg-load --db /tmp/boot003-demo-yin94uuz/registry/knowledge-registry.sqlite --kus /tmp/boot003-demo-yin94uuz/batch.jsonl --protected-root /home/z/my-project/vault-repo/source-vaults",
+      "exit_code": 0,
+      "output": {
+        "valid": true,
+        "records_file": "/tmp/boot003-demo-yin94uuz/batch.jsonl",
+        "records_in_batch": 3,
+        "inserted": 3,
+        "skipped_identical": 0,
+        "errors_total": 0,
+        "counts_after_load": {
+          "total_kus": 3,
+          "by_disposition": {
+            "Contextualized": 1,
+            "Preserved": 1,
+            "Superseded": 1
+          }
+        }
+      }
+    },
+    {
+      "command": "kureg-load --db /tmp/boot003-demo-yin94uuz/registry/knowledge-registry.sqlite --kus /tmp/boot003-demo-yin94uuz/batch.jsonl --protected-root /home/z/my-project/vault-repo/source-vaults",
+      "exit_code": 0,
+      "output": {
+        "valid": true,
+        "records_file": "/tmp/boot003-demo-yin94uuz/batch.jsonl",
+        "records_in_batch": 3,
+        "inserted": 0,
+        "skipped_identical": 3,
+        "errors_total": 0,
+        "counts_after_load": {
+          "total_kus": 3,
+          "by_disposition": {
+            "Contextualized": 1,
+            "Preserved": 1,
+            "Superseded": 1
+          }
+        }
+      }
+    },
+    {
+      "command": "kureg-load --db /tmp/boot003-demo-yin94uuz/registry/knowledge-registry.sqlite --kus /tmp/boot003-demo-yin94uuz/conflicting.jsonl --protected-root /home/z/my-project/vault-repo/source-vaults",
+      "exit_code": 1,
+      "output": {
+        "valid": false,
+        "records_file": "/tmp/boot003-demo-yin94uuz/conflicting.jsonl",
+        "records_in_batch": 1,
+        "inserted": 0,
+        "skipped_identical": 0,
+        "errors_total": 1,
+        "counts_after_load": null
+      }
+    },
+    {
+      "command": "kureg-load --db /tmp/boot003-demo-yin94uuz/registry/knowledge-registry.sqlite --kus /tmp/boot003-demo-yin94uuz/invalid.jsonl --protected-root /home/z/my-project/vault-repo/source-vaults",
+      "exit_code": 1,
+      "output": {
+        "valid": false,
+        "records_file": "/tmp/boot003-demo-yin94uuz/invalid.jsonl",
+        "records_in_batch": 1,
+        "inserted": 0,
+        "skipped_identical": 0,
+        "errors_total": 1,
+        "counts_after_load": null
+      }
+    },
+    {
+      "command": "kureg-query --db /tmp/boot003-demo-yin94uuz/registry/knowledge-registry.sqlite --disposition Preserved",
+      "exit_code": 0,
+      "output": {
+        "filters": {
+          "disposition": "Preserved"
+        },
+        "count": 1,
+        "total_kus": 3
+      }
+    },
+    {
+      "command": "kureg-query --db /tmp/boot003-demo-yin94uuz/registry/knowledge-registry.sqlite --concept softmax --format jsonl",
+      "exit_code": 0,
+      "output": {
+        "concept_ids": [
+          "attention",
+          "softmax"
+        ],
+        "destinations": [
+          {
+            "heading": "Mechanics",
+            "path": "Deep Learning/Attention.md"
+          },
+          {
+            "heading": "Scaling",
+            "path": "Deep Learning/Attention.md"
+          }
+        ],
+        "disposition": "Preserved",
+        "excerpt": "Synthetic demonstration record: attention scores are scaled by the square root of the key dimension.",
+        "excerpt_hash": "1111111111111111111111111111111111111111111111111111111111111111",
+        "finding_ids": [
+          "F-0001"
+        ],
+        "heading_path": [
+          "Attention",
+          "Scaled Dot-Product"
+        ],
+        "knowledge_unit_id": "KU-DEMO-0001",
+        "line_end": 18,
+        "line_start": 10,
+        "overlap_type": "Partial Overlap",
+        "source_file_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "source_id": "SRC-DEMO-MAI-0001",
+        "source_path": "demo-vault/attention.md",
+        "unit_type": "claim",
+        "verification_status": {
+          "extraction": "demo"
+        }
+      }
+    },
+    {
+      "command": "kureg-query --db /tmp/boot003-demo-yin94uuz/registry/knowledge-registry.sqlite --finding F-0001",
+      "exit_code": 0,
+      "output": {
+        "filters": {
+          "finding": "F-0001"
+        },
+        "count": 1,
+        "total_kus": 3
+      }
+    },
+    {
+      "command": "kureg-validate --db /tmp/boot003-demo-yin94uuz/registry/knowledge-registry.sqlite",
+      "exit_code": 0,
+      "output": {
+        "valid": true,
+        "errors_total": 0,
+        "warnings_total": 0,
+        "counts": {
+          "total_kus": 3,
+          "by_disposition": {
+            "Contextualized": 1,
+            "Preserved": 1,
+            "Superseded": 1
+          }
+        },
+        "unaccounted_count": 0,
+        "needs_review_count": 0
+      }
+    }
+  ],
+  "recovery": {
+    "double_rebuild_from_canonical_jsonl": {
+      "byte_identical_query_output": true
+    }
+  },
+  "canonical_store": {
+    "path": "state/knowledge-units",
+    "records": 0,
+    "batch_files": [],
+    "note": "empty by design: BOOT-003 delivers the registry mechanism; extraction starts in a later bounded task"
+  },
+  "checks": {
+    "all_step_exits_as_expected": true,
+    "rebuild_reproducible": true,
+    "expected_exit_pattern": true
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.2.0",
+    "report_schema_version": "1.0",
+    "command": "boot003-demo",
+    "args": {
+      "script": "scripts/boot003_demo.py"
+    },
+    "utc_timestamp": "2026-10-25T18:50:07+00:00",
+    "git_commit": "6169cfe"
+  }
+}

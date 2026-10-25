@@ -150,6 +150,22 @@ CAPABILITIES: list[dict] = [
         "limitations": ["exit code 2 comes from argparse for usage errors"],
     },
     {
+        "id": "CAP-011",
+        "name": "knowledge-unit registry persistence (derived SQLite index over canonical JSONL)",
+        "module": "vault_unification.kuregistry",
+        "command": "vu kureg-init / kureg-load / kureg-query / kureg-validate",
+        "status_declared": "implemented-and-tested",
+        "tests": ["tests/test_kuregistry.py", "tests/test_cli.py"],
+        "limitations": [
+            "the SQLite database is a derived index; the committed JSONL batches under state/knowledge-units/ are the canonical record (ADR-0007) - rebuild the DB instead of repairing it",
+            "all writes flow through kureg-load; no direct-to-database record creation in v1",
+            "the conditional Superseded-rationale rule and overlap/disposition separation are enforced by cross-checks, not by JSON Schema",
+            "mint_ku_id requires an excerpt, excerpt hash or line range; records without any locator must carry an explicit id",
+            "single-writer assumption: no concurrency control on the database file",
+            "query reconstruction issues O(n) grouped queries; acceptable at project scale, not benchmarked for millions of rows",
+        ],
+    },
+    {
         "id": "CAP-015",
         "name": "content statistics: words, headings, token estimates",
         "module": "vault_unification.vaultstats",
@@ -164,15 +180,6 @@ CAPABILITIES: list[dict] = [
         ],
     },
     # ---- planned capabilities (no code, no tests - not claimable) ----
-    {
-        "id": "CAP-011",
-        "name": "knowledge-unit registry persistence (SQLite/JSONL)",
-        "module": None,
-        "command": None,
-        "status_declared": "planned",
-        "tests": [],
-        "limitations": ["planned for BOOT-003; schema drafts exist in schemas/"],
-    },
     {
         "id": "CAP-012",
         "name": "omission-detection pilot harness",

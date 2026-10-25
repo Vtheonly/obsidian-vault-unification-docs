@@ -26,3 +26,6 @@ Thumbs.db
 
 # Python test caches
 .pytest_cache/
+
+# Derived registry indexes (rebuildable from state/knowledge-units/; ADR-0007)
+state/registries/

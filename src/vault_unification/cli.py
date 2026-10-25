@@ -22,12 +22,14 @@ from pathlib import Path
 from . import FRAMEWORK_NAME, __version__
 from . import capabilities as capabilities_mod
 from . import inventory as inventory_mod
+from . import kuregistry as kuregistry_mod
 from . import linkcheck as linkcheck_mod
 from . import mdextract as mdextract_mod
 from . import registry as registry_mod
 from . import search as search_mod
 from . import selftest as selftest_mod
 from . import vaultstats as vaultstats_mod
+from .kuregistry import RegistryError
 from .pathsafety import PathSafetyError, ensure_dest_safe, validate_roots
 from .reporting import write_json_report
 
@@ -147,6 +149,79 @@ def build_parser() -> argparse.ArgumentParser:
     # ---- capabilities ----
     p = sub.add_parser("capabilities", help="emit capability inventory (optionally test-verified)")
     p.add_argument("--verify", action="store_true", help="run referenced tests before reporting statuses")
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- kureg-init ----
+    p = sub.add_parser(
+        "kureg-init",
+        help="create an empty knowledge-unit registry database (derived SQLite index)",
+    )
+    p.add_argument("--db", required=True, help="registry database path to create (explicit destination)")
+    p.add_argument("--force", action="store_true", help="delete and re-create an existing registry (rebuilds start here)")
+    p.add_argument(
+        "--protected-root",
+        action="append",
+        default=None,
+        help="path the database must not be written under (repeatable); default: <repo>/source-vaults when present",
+    )
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- kureg-load ----
+    p = sub.add_parser(
+        "kureg-load",
+        help="validate a KU JSONL batch and load it atomically into the registry",
+    )
+    p.add_argument("--db", required=True, help="registry database path (must exist; run kureg-init first)")
+    p.add_argument("--kus", required=True, help="KU batch JSONL file (schema-validated before insert)")
+    p.add_argument(
+        "--mint-ids",
+        action="store_true",
+        help="mint deterministic knowledge_unit_ids for records that lack one (content-fingerprint based)",
+    )
+    p.add_argument(
+        "--kus-schema",
+        default=str(REPO_ROOT / "schemas" / "knowledge-unit.schema.json"),
+        help="knowledge-unit JSON Schema path",
+    )
+    p.add_argument(
+        "--protected-root",
+        action="append",
+        default=None,
+        help="path the database must not be written under (repeatable); default: <repo>/source-vaults when present",
+    )
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- kureg-query ----
+    p = sub.add_parser(
+        "kureg-query",
+        help="query the registry and reconstruct schema-shaped KU records",
+    )
+    p.add_argument("--db", required=True, help="registry database path")
+    p.add_argument("--ku", help="exact knowledge_unit_id")
+    p.add_argument(
+        "--disposition",
+        choices=list(kuregistry_mod.DISPOSITIONS),
+        help="filter by disposition",
+    )
+    p.add_argument("--source-path", help="filter by exact source path")
+    p.add_argument("--source-id", help="filter by exact source id")
+    p.add_argument("--concept", help="filter by concept id")
+    p.add_argument("--finding", help="filter by linked finding id")
+    p.add_argument("--unit-type", help="filter by unit type")
+    p.add_argument(
+        "--format",
+        choices=["json", "jsonl"],
+        default="json",
+        help="json: summary with counts; jsonl: one reconstructed record per line",
+    )
+    p.add_argument("--report", help="optional JSON report path (full query result)")
+
+    # ---- kureg-validate ----
+    p = sub.add_parser(
+        "kureg-validate",
+        help="integrity + accounting-invariant report for a registry database",
+    )
+    p.add_argument("--db", required=True, help="registry database path")
     p.add_argument("--report", help="optional JSON report path")
 
     return parser
@@ -349,7 +424,7 @@ def cmd_validate_registry(args) -> int:
         payload["validations"]["tasks"] = result
         problems += len(result["errors"])
     if args.kus:
-        result = registry_mod.validate_records_against_schema(args.kus, args.kus_schema)
+        result = registry_mod.validate_ku_file(args.kus, args.kus_schema)
         payload["validations"]["knowledge_units"] = result
         problems += len(result["errors"])
     if not args.tasks and not args.kus:
@@ -442,6 +517,109 @@ def cmd_capabilities(args) -> int:
     return 0
 
 
+def _kureg_protected_roots(args) -> list[Path]:
+    """Protected roots for registry writes: explicit --protected-root or the
+    repository's source-vaults directory when it exists."""
+    explicit = getattr(args, "protected_root", None) or []
+    if explicit:
+        return [Path(p) for p in explicit]
+    default = REPO_ROOT / "source-vaults"
+    return [default] if default.is_dir() else []
+
+
+def _kureg_write_report(args, command: str, payload: dict, roots: list[Path]) -> Path | None:
+    """Write a kureg report after enforcing destination path safety."""
+    report_path = getattr(args, "report", None)
+    if not report_path:
+        return None
+    dest = ensure_dest_safe(report_path, roots)
+    write_json_report(dest, command, payload, args=vars(args) | {"report": str(dest)}, repo_root=REPO_ROOT)
+    return dest
+
+
+def cmd_kureg_init(args) -> int:
+    roots = _kureg_protected_roots(args)
+    db = ensure_dest_safe(args.db, roots)
+    result = kuregistry_mod.init_registry(db, force=args.force)
+    payload = {"command": "kureg-init", "result": result}
+    _kureg_write_report(args, "kureg-init", payload, roots)
+    _emit_summary(
+        {
+            "db_path": result["db_path"],
+            "registry_schema_version": result["registry_schema_version"],
+            "id_namespace": result["id_namespace"],
+            "force_used": result["force_used"],
+        }
+    )
+    return 0
+
+
+def cmd_kureg_load(args) -> int:
+    roots = _kureg_protected_roots(args)
+    db = ensure_dest_safe(args.db, roots)
+    result = kuregistry_mod.load_jsonl(
+        db, args.kus, schema_path=args.kus_schema, mint_ids=args.mint_ids
+    )
+    payload = {"command": "kureg-load", **result}
+    _kureg_write_report(args, "kureg-load", payload, roots)
+    _emit_summary(
+        {
+            "valid": result.get("valid"),
+            "records_file": result.get("records_file"),
+            "records_in_batch": result.get("records_in_batch"),
+            "inserted": result.get("inserted"),
+            "skipped_identical": result.get("skipped_identical"),
+            "errors_total": len(result.get("errors", [])),
+            "counts_after_load": result.get("counts_after_load"),
+        }
+    )
+    return 0 if result.get("valid") else 1
+
+
+def cmd_kureg_query(args) -> int:
+    result = kuregistry_mod.query_registry(
+        args.db,
+        ku_id=args.ku,
+        disposition=args.disposition,
+        source_path=args.source_path,
+        source_id=args.source_id,
+        concept=args.concept,
+        finding=args.finding,
+        unit_type=args.unit_type,
+    )
+    payload = {"command": "kureg-query", **result}
+    _kureg_write_report(args, "kureg-query", payload, [])
+    if args.format == "jsonl":
+        for record in result["records"]:
+            print(json.dumps(record, sort_keys=True))
+    else:
+        _emit_summary(
+            {
+                "filters": result["filters"],
+                "count": result["count"],
+                "total_kus": result["total_kus"],
+            }
+        )
+    return 0
+
+
+def cmd_kureg_validate(args) -> int:
+    result = kuregistry_mod.validate_registry_db(args.db)
+    payload = {"command": "kureg-validate", **result}
+    _kureg_write_report(args, "kureg-validate", payload, [])
+    _emit_summary(
+        {
+            "valid": result["valid"],
+            "errors_total": len(result["errors"]),
+            "warnings_total": len(result["warnings"]),
+            "counts": result["counts"],
+            "unaccounted_count": result["unaccounted_count"],
+            "needs_review_count": result["needs_review_count"],
+        }
+    )
+    return 0 if result["valid"] else 1
+
+
 HANDLERS = {
     "selftest": cmd_selftest,
     "check-paths": cmd_check_paths,
@@ -455,6 +633,10 @@ HANDLERS = {
     "validate-registry": cmd_validate_registry,
     "run-tests": cmd_run_tests,
     "capabilities": cmd_capabilities,
+    "kureg-init": cmd_kureg_init,
+    "kureg-load": cmd_kureg_load,
+    "kureg-query": cmd_kureg_query,
+    "kureg-validate": cmd_kureg_validate,
 }
 
 
@@ -467,7 +649,7 @@ def main(argv: list[str] | None = None) -> int:
     handler = HANDLERS[args.command]
     try:
         return handler(args)
-    except (PathSafetyError, NotADirectoryError, ValueError) as exc:
+    except (PathSafetyError, NotADirectoryError, ValueError, RegistryError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
     except FileNotFoundError as exc:
