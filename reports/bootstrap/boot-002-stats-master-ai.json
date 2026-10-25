@@ -1,0 +1,76 @@
+{
+  "command": "stats",
+  "root": "source-vaults/AI /Master AI",
+  "methods": {
+    "words_total": "whitespace-separated tokens over the full UTF-8 decoded file text (includes frontmatter, headings, code fences and math)",
+    "words_outside_fences": "whitespace tokens on lines outside code fences and outside display $$ math blocks; unclosed fences/math extend to end-of-file",
+    "tokens_estimate": "chars // 4 (rough BPE-style approximation; not an exact tokenizer count)",
+    "text_extensions": [
+      ".cfg",
+      ".csv",
+      ".ini",
+      ".js",
+      ".json",
+      ".markdown",
+      ".md",
+      ".py",
+      ".rst",
+      ".sh",
+      ".tex",
+      ".toml",
+      ".ts",
+      ".txt",
+      ".yaml",
+      ".yml"
+    ]
+  },
+  "totals": {
+    "files_discovered": 333,
+    "text_files_analyzed": 333,
+    "text_files_with_errors": 0,
+    "files_skipped_nontext": 0,
+    "files_unreadable_or_invalid": 0,
+    "size_bytes": 4601557,
+    "lines": 81862,
+    "chars": 4578423,
+    "words_total": 638004,
+    "words_outside_fences": 564868,
+    "tokens_estimate": 1144484,
+    "headings_total": 8610,
+    "headings_by_level": {
+      "h1": 333,
+      "h2": 4133,
+      "h3": 4081,
+      "h4": 63
+    },
+    "code_fences": 970,
+    "code_fences_unclosed": 0,
+    "math_blocks": 552,
+    "math_blocks_unclosed": 0,
+    "inline_math": 4225,
+    "wikilinks": 5220,
+    "embeds": 0,
+    "md_links": 1,
+    "tags": 1459,
+    "files_with_frontmatter": 333,
+    "empty_files": 0
+  },
+  "skipped_nontext": [],
+  "unreadable_files": [],
+  "files_with_warnings": [],
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.1.0",
+    "report_schema_version": "1.0",
+    "command": "stats",
+    "args": {
+      "command": "stats",
+      "root": "source-vaults/AI /Master AI",
+      "follow_symlinks": false,
+      "per_file": "reports/bootstrap/boot-002-stats-master-ai.jsonl",
+      "report": "/home/z/my-project/vault-repo/reports/bootstrap/boot-002-stats-master-ai.json"
+    },
+    "utc_timestamp": "2026-10-25T18:09:12+00:00",
+    "git_commit": "648c6c3"
+  }
+}

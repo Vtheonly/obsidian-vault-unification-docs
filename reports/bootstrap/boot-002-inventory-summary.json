@@ -1,0 +1,280 @@
+{
+  "purpose": "BOOT-002 canonical inventory: content statistics for both source vaults with documented counting methods, reproducibility re-runs for stats and inventory, and an explicit unsupported-asset statement. Sources were never written to (manifests identical).",
+  "corpus_totals": {
+    "files_total": 609,
+    "markdown_files_total": 609,
+    "words_total": 1157937,
+    "words_outside_fences": 991007,
+    "tokens_estimate": 2027347,
+    "headings_total": 12785
+  },
+  "counting_methods": {
+    "words_total": "whitespace-separated tokens over the full UTF-8 decoded file text (includes frontmatter, headings, code fences and math)",
+    "words_outside_fences": "whitespace tokens on lines outside code fences and outside display $$ math blocks; unclosed fences/math extend to end-of-file",
+    "tokens_estimate": "chars // 4 (rough BPE-style approximation; not an exact tokenizer count)",
+    "text_extensions": [
+      ".cfg",
+      ".csv",
+      ".ini",
+      ".js",
+      ".json",
+      ".markdown",
+      ".md",
+      ".py",
+      ".rst",
+      ".sh",
+      ".tex",
+      ".toml",
+      ".ts",
+      ".txt",
+      ".yaml",
+      ".yml"
+    ]
+  },
+  "vaults": [
+    {
+      "name": "Master AI",
+      "root_exact": "source-vaults/AI /Master AI",
+      "stats_report": "reports/bootstrap/boot-002-stats-master-ai.json",
+      "per_file_report": "reports/bootstrap/boot-002-stats-master-ai.jsonl",
+      "totals": {
+        "files_discovered": 333,
+        "text_files_analyzed": 333,
+        "text_files_with_errors": 0,
+        "files_skipped_nontext": 0,
+        "files_unreadable_or_invalid": 0,
+        "size_bytes": 4601557,
+        "lines": 81862,
+        "chars": 4578423,
+        "words_total": 638004,
+        "words_outside_fences": 564868,
+        "tokens_estimate": 1144484,
+        "headings_total": 8610,
+        "headings_by_level": {
+          "h1": 333,
+          "h2": 4133,
+          "h3": 4081,
+          "h4": 63
+        },
+        "code_fences": 970,
+        "code_fences_unclosed": 0,
+        "math_blocks": 552,
+        "math_blocks_unclosed": 0,
+        "inline_math": 4225,
+        "wikilinks": 5220,
+        "embeds": 0,
+        "md_links": 1,
+        "tags": 1459,
+        "files_with_frontmatter": 333,
+        "empty_files": 0
+      },
+      "methods": {
+        "words_total": "whitespace-separated tokens over the full UTF-8 decoded file text (includes frontmatter, headings, code fences and math)",
+        "words_outside_fences": "whitespace tokens on lines outside code fences and outside display $$ math blocks; unclosed fences/math extend to end-of-file",
+        "tokens_estimate": "chars // 4 (rough BPE-style approximation; not an exact tokenizer count)",
+        "text_extensions": [
+          ".cfg",
+          ".csv",
+          ".ini",
+          ".js",
+          ".json",
+          ".markdown",
+          ".md",
+          ".py",
+          ".rst",
+          ".sh",
+          ".tex",
+          ".toml",
+          ".ts",
+          ".txt",
+          ".yaml",
+          ".yml"
+        ]
+      },
+      "unreadable_files": [],
+      "files_with_warnings_count": 0,
+      "reproducibility": {
+        "stats_rerun_exit_code": 0,
+        "payload_fingerprint_first": "9bea83885717919a8c17b977312772e6bfc11c3f85f1f0b9e5d1a6d648af0d1a",
+        "payload_fingerprint_second": "9bea83885717919a8c17b977312772e6bfc11c3f85f1f0b9e5d1a6d648af0d1a",
+        "per_file_fingerprint_first": "852880947e96a28d6535d1c53c78501008b4825f5086192222110838940af21f",
+        "per_file_fingerprint_second": "852880947e96a28d6535d1c53c78501008b4825f5086192222110838940af21f",
+        "payload_identical": true,
+        "per_file_identical": true
+      },
+      "inventory_reproducibility": {
+        "rerun_exit_code": 0,
+        "baseline_manifest": "state/manifests/master-ai.jsonl",
+        "baseline_fingerprint": "2da67caf656073f89a6bdd6c9643cdee9e490d2ea4cd18279e4f45fa29fa3db7",
+        "fresh_fingerprint": "2da67caf656073f89a6bdd6c9643cdee9e490d2ea4cd18279e4f45fa29fa3db7",
+        "manifests_identical": true
+      }
+    },
+    {
+      "name": "AI Course",
+      "root_exact": "source-vaults/AI /AI Course",
+      "stats_report": "reports/bootstrap/boot-002-stats-ai-course.json",
+      "per_file_report": "reports/bootstrap/boot-002-stats-ai-course.jsonl",
+      "totals": {
+        "files_discovered": 276,
+        "text_files_analyzed": 262,
+        "text_files_with_errors": 14,
+        "files_skipped_nontext": 0,
+        "files_unreadable_or_invalid": 14,
+        "size_bytes": 3546362,
+        "lines": 65783,
+        "chars": 3531886,
+        "words_total": 519933,
+        "words_outside_fences": 426139,
+        "tokens_estimate": 882863,
+        "headings_total": 4175,
+        "headings_by_level": {
+          "h1": 268,
+          "h2": 1457,
+          "h3": 1993,
+          "h4": 415,
+          "h5": 42
+        },
+        "code_fences": 771,
+        "code_fences_unclosed": 14,
+        "math_blocks": 1485,
+        "math_blocks_unclosed": 0,
+        "inline_math": 7995,
+        "wikilinks": 921,
+        "embeds": 0,
+        "md_links": 18,
+        "tags": 22,
+        "files_with_frontmatter": 45,
+        "empty_files": 0
+      },
+      "methods": {
+        "words_total": "whitespace-separated tokens over the full UTF-8 decoded file text (includes frontmatter, headings, code fences and math)",
+        "words_outside_fences": "whitespace tokens on lines outside code fences and outside display $$ math blocks; unclosed fences/math extend to end-of-file",
+        "tokens_estimate": "chars // 4 (rough BPE-style approximation; not an exact tokenizer count)",
+        "text_extensions": [
+          ".cfg",
+          ".csv",
+          ".ini",
+          ".js",
+          ".json",
+          ".markdown",
+          ".md",
+          ".py",
+          ".rst",
+          ".sh",
+          ".tex",
+          ".toml",
+          ".ts",
+          ".txt",
+          ".yaml",
+          ".yml"
+        ]
+      },
+      "unreadable_files": [
+        {
+          "relpath": "01 - Foundations and Overview/01.3 - Data Science Foundations/03. The Four Pillars of Data Science.md",
+          "error": "unclosed code fence starting at line 30"
+        },
+        {
+          "relpath": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/04. Dictionaries and Key Value Management.md",
+          "error": "unclosed code fence starting at line 60"
+        },
+        {
+          "relpath": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/05. Functions and Lambda Expressions.md",
+          "error": "unclosed code fence starting at line 66"
+        },
+        {
+          "relpath": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/06. Object Oriented Programming (OOP) in Data Science.md",
+          "error": "unclosed code fence starting at line 62"
+        },
+        {
+          "relpath": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/08. Error Handling and Exception Management.md",
+          "error": "unclosed code fence starting at line 39"
+        },
+        {
+          "relpath": "02 - Python and Data Tooling/02.3 - Essential Python Libraries/04. Matplotlib - Static Data Visualization.md",
+          "error": "unclosed code fence starting at line 44"
+        },
+        {
+          "relpath": "02 - Python and Data Tooling/02.3 - Essential Python Libraries/06. Interactive Plotting with Plotly.md",
+          "error": "unclosed code fence starting at line 33"
+        },
+        {
+          "relpath": "02 - Python and Data Tooling/02.3 - Essential Python Libraries/07. Exercise 4 - Temperature and Grade Analysis.md",
+          "error": "unclosed code fence starting at line 54"
+        },
+        {
+          "relpath": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/01. Handling Missing Data and Imputation Strategies.md",
+          "error": "unclosed code fence starting at line 82"
+        },
+        {
+          "relpath": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/03. Outlier Detection and Treatment Methods.md",
+          "error": "unclosed code fence starting at line 59"
+        },
+        {
+          "relpath": "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/01. SVM - Course Overview.md",
+          "error": "unclosed code fence starting at line 179"
+        },
+        {
+          "relpath": "06 - Image Processing/02. Intensity Transformations and Histograms/2.2 Point Processing Operations.md",
+          "error": "unclosed code fence starting at line 38"
+        },
+        {
+          "relpath": "06 - Image Processing/03. Spatial Filtering and Neighborhood Processing/3.1 The Mechanics of Spatial Filtering.md",
+          "error": "unclosed code fence starting at line 35"
+        },
+        {
+          "relpath": "06 - Image Processing/06. Concepts (ML Perspective)/05. The Fourier Transform in Imaging.md",
+          "error": "unclosed code fence starting at line 42"
+        }
+      ],
+      "files_with_warnings_count": 0,
+      "reproducibility": {
+        "stats_rerun_exit_code": 1,
+        "payload_fingerprint_first": "634d574bef0de4520b45cc88ae8acd47e8cedee0ea72bda7f4285385682dfb55",
+        "payload_fingerprint_second": "634d574bef0de4520b45cc88ae8acd47e8cedee0ea72bda7f4285385682dfb55",
+        "per_file_fingerprint_first": "5634ad5552afc9579e2f77651d1cb83659a7c17bce1d48a539573e9e40213df7",
+        "per_file_fingerprint_second": "5634ad5552afc9579e2f77651d1cb83659a7c17bce1d48a539573e9e40213df7",
+        "payload_identical": true,
+        "per_file_identical": true
+      },
+      "inventory_reproducibility": {
+        "rerun_exit_code": 0,
+        "baseline_manifest": "state/manifests/ai-course.jsonl",
+        "baseline_fingerprint": "6bcd9d5251212b55c03d636b25b366372edc260d89d61d7055139a4dccb0f736",
+        "fresh_fingerprint": "6bcd9d5251212b55c03d636b25b366372edc260d89d61d7055139a4dccb0f736",
+        "manifests_identical": true
+      }
+    }
+  ],
+  "unsupported_asset_statement": {
+    "conclusion": "No non-markdown assets exist in either vault at file level: every discovered file has a .md extension and is counted as markdown. No images, PDFs, or other binary attachments are present (verified by extension classes in the inventory manifests and by stats files_discovered == markdown counts).",
+    "evidence": "state/manifests/*.jsonl (all records class=markdown); boot-002 stats reports: skipped_nontext == 0 for both vaults."
+  },
+  "f0002_cross_validation": {
+    "description": "The 14 AI Course files with unclosed-fence errors found by the new stats capability (file_stats path) exactly match the 14 parse-error files reported by the independent check-links smoke run (linkcheck path).",
+    "stats_error_files": 14,
+    "checklinks_parse_error_files": 14,
+    "exact_match": true
+  },
+  "limitations": [
+    "Word/heading/token counts are lexical measurements, never proof of semantic coverage or preservation.",
+    "tokens_estimate is chars//4, a rough BPE-style approximation, not an exact tokenizer count.",
+    "Per-file statistics measure full file content; knowledge-unit extraction has not started (BOOT-003+).",
+    "The 14 AI Course unclosed-fence files are counted in full (content treated as real, consistent with F-0002 policy)."
+  ],
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.1.0",
+    "report_schema_version": "1.0",
+    "command": "boot-002-summary",
+    "args": {
+      "vaults": [
+        "source-vaults/AI /Master AI",
+        "source-vaults/AI /AI Course"
+      ]
+    },
+    "utc_timestamp": "2026-10-25T18:10:53+00:00",
+    "git_commit": "648c6c3"
+  }
+}

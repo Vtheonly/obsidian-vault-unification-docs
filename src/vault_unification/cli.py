@@ -27,6 +27,7 @@ from . import mdextract as mdextract_mod
 from . import registry as registry_mod
 from . import search as search_mod
 from . import selftest as selftest_mod
+from . import vaultstats as vaultstats_mod
 from .pathsafety import PathSafetyError, ensure_dest_safe, validate_roots
 from .reporting import write_json_report
 
@@ -118,6 +119,16 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--root", required=True, help="directory to scan")
     p.add_argument("--terms-file", required=True, help="UTF-8 file, one term or 'term|alias|alias' per line")
     p.add_argument("--report", help="optional JSON report path")
+
+    # ---- stats ----
+    p = sub.add_parser("stats", help="content statistics: words, headings, tokens, structures")
+    p.add_argument("--root", required=True, help="vault root to analyze")
+    p.add_argument("--follow-symlinks", action="store_true", help="follow symlinks (off by default)")
+    p.add_argument(
+        "--per-file",
+        help="optional JSONL path for per-file statistics records (kept out of the aggregate report)",
+    )
+    p.add_argument("--report", help="optional JSON report path (aggregate statistics)")
 
     # ---- validate-registry ----
     p = sub.add_parser("validate-registry", help="validate task-queue/KU JSONL records against schemas")
@@ -297,6 +308,39 @@ def cmd_term_stats(args) -> int:
     return 0
 
 
+def cmd_stats(args) -> int:
+    result = vaultstats_mod.stats_root(args.root, follow_symlinks=args.follow_symlinks)
+    per_file = result.pop("per_file")
+    payload = {"command": "stats", **result}
+    _write_report_safe(args, "stats", payload)
+
+    per_file_path = getattr(args, "per_file", None)
+    if per_file_path:
+        dest = ensure_dest_safe(per_file_path, [Path(args.root)])
+        Path(dest).parent.mkdir(parents=True, exist_ok=True)
+        with open(dest, "w", encoding="utf-8") as handle:
+            for rec in per_file:
+                handle.write(json.dumps(rec, sort_keys=True) + "\n")
+
+    totals = result["totals"]
+    _emit_summary(
+        {
+            "root": result["root"],
+            "files_discovered": totals["files_discovered"],
+            "text_files_analyzed": totals["text_files_analyzed"],
+            "files_with_errors": totals["text_files_with_errors"],
+            "skipped_nontext": totals["files_skipped_nontext"],
+            "words_total": totals["words_total"],
+            "words_outside_fences": totals["words_outside_fences"],
+            "tokens_estimate": totals["tokens_estimate"],
+            "headings_total": totals["headings_total"],
+            "per_file_records": len(per_file),
+            "per_file_path": str(per_file_path) if per_file_path else None,
+        }
+    )
+    return 1 if totals["text_files_with_errors"] else 0
+
+
 def cmd_validate_registry(args) -> int:
     payload: dict = {"command": "validate-registry", "validations": {}}
     problems = 0
@@ -407,6 +451,7 @@ HANDLERS = {
     "check-links": cmd_check_links,
     "search": cmd_search,
     "term-stats": cmd_term_stats,
+    "stats": cmd_stats,
     "validate-registry": cmd_validate_registry,
     "run-tests": cmd_run_tests,
     "capabilities": cmd_capabilities,

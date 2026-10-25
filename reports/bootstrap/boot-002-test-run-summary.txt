@@ -1,0 +1,14 @@
+{
+  "command": "/home/z/.venv/bin/python3 -m pytest tests -v --json-report --json-report-file=reports/bootstrap/boot-002-pytest-report.json",
+  "returncode": 0,
+  "summary": {
+    "passed": 178,
+    "total": 178,
+    "collected": 178
+  },
+  "outcomes": {
+    "passed": 178
+  },
+  "json_report": "reports/bootstrap/boot-002-pytest-report.json",
+  "skipped_tests": []
+}

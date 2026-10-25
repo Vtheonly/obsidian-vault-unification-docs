@@ -1,0 +1,47 @@
+{
+  "checkpoint_id": "CHK-2026-10-26-BOOT-002",
+  "created_utc": "2026-10-25",
+  "stage": "framework_bootstrap",
+  "task_id": "BOOT-002",
+  "task_status": "completed",
+  "last_verified_state": {
+    "framework_version": "0.1.0 + CAP-015 (vaultstats)",
+    "test_result": "178 passed / 0 failed / 0 skipped",
+    "test_evidence": "reports/bootstrap/boot-002-pytest-report.json",
+    "capabilities_evidence": "reports/bootstrap/boot-002-capabilities.json (12 implemented-and-tested, 4 planned)",
+    "canonical_inventory": "reports/bootstrap/boot-002-inventory-summary.json",
+    "source_immutability": {
+      "master_ai": "reports/bootstrap/boot-002-immutable-master-ai.json (0 added/removed/changed)",
+      "ai_course": "reports/bootstrap/boot-002-immutable-ai-course.json (0 added/removed/changed)"
+    },
+    "reproducibility": "stats payloads + per-file JSONL byte-identical across two runs per vault; fresh manifests identical to baselines"
+  },
+  "changed_paths": [
+    "src/vault_unification/vaultstats.py",
+    "src/vault_unification/cli.py",
+    "src/vault_unification/capabilities.py",
+    "tests/test_vaultstats.py",
+    "tests/test_cli.py",
+    "docs/FRAMEWORK_SETUP.md",
+    "reports/bootstrap/boot-002-*",
+    "scripts/boot002_summary.py",
+    "state/task-queue.jsonl",
+    "state/current-state.json",
+    "state/findings.jsonl",
+    "state/checkpoints/checkpoint-2026-10-26-boot-002.json",
+    "docs/agent-handoff/next-agent.md"
+  ],
+  "open_findings": [
+    "F-0001",
+    "F-0002",
+    "F-0003"
+  ],
+  "resolved_findings": [
+    "F-0004"
+  ],
+  "git_state_note": "BOOT-002 work commit follows the BOOT-001 commit on main",
+  "safe_resume": {
+    "command": "PYTHONPATH=src python3 -m vault_unification selftest && PYTHONPATH=src python3 -m pytest tests -q",
+    "next_task": "BOOT-003"
+  }
+}

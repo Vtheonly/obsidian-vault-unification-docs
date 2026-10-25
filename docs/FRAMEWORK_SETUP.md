@@ -8,12 +8,13 @@ the implemented surface and evidence.
 
 ## Status
 
-- Version: 0.1.0 (BOOT-000 deliverable)
+- Version: 0.1.0 (BOOT-000 deliverable; `stats` command added in BOOT-002 as CAP-015)
 - Layout: `src/vault_unification/` package, `tests/` pytest suite,
   `reports/framework/` evidence reports, `state/manifests/` hash manifests.
-- Test evidence: 153 tests passed, 0 failed, 0 skipped — see
-  `reports/framework/boot-000-pytest-report.json` (pytest json report) and
-  `reports/framework/boot-000-test-run-summary.txt` (orchestrator output).
+- Test evidence: 153 tests passed at BOOT-000
+  (`reports/framework/boot-000-pytest-report.json`); 178 passed after the
+  BOOT-002 `stats` addition — see `reports/bootstrap/boot-002-test-run-summary.txt`
+  and the pytest json report referenced there.
 - Capability inventory (verified against test runs):
   `reports/framework/boot-000-capabilities.json`. 11 code-backed capabilities
   verified `implemented-and-tested`; 4 roadmap capabilities `planned`.
@@ -55,6 +56,7 @@ Runtime: Python >= 3.10. Optional dependencies (checked by `selftest`):
 | `check-links --root R [--report P]` | wikilink/embed/anchor/block/md-link integrity | no problems | any broken/ambiguous/missing-anchor/missing-block/parse problem |
 | `search --root R --term T [--mode M] [--json]` | exact / case-insensitive / normalized search | always (unless invalid args) | invalid term/mode/root |
 | `term-stats --root R --terms-file F` | term + alias frequency with denominators | always | missing terms file |
+| `stats --root R [--per-file F2]` | content statistics: words, headings, tokens, structures | no file errors | any unreadable/binary/non-UTF-8 or parse-error file (report still written) |
 | `validate-registry --tasks F [--kus F2]` | JSONL records vs JSON schemas + cross-checks | valid | any schema/cross-check error |
 | `run-tests --tests-dir D --json-report P` | pytest orchestration, machine-readable | suite passed | suite failed |
 | `capabilities [--verify]` | capability inventory | declared mode; verify mode with all referenced tests passing | verification failed |
@@ -112,6 +114,15 @@ per-class counts and an explicit `unreadable_files` list.
 - Normalized search collapses whitespace per line; multi-line phrase
   matching is not supported.
 - Binary detection is a null-byte sniff (first 8 KiB).
+- `stats` word counts are whitespace tokens over the full decoded text
+  (frontmatter, headings, code and math included); `words_outside_fences`
+  excludes code-fence and display-math block lines (unclosed constructs
+  extend to end-of-file). `tokens_estimate` is `chars // 4`, a rough
+  BPE-style approximation — not an exact tokenizer count. All are lexical
+  measurements, never semantic coverage claims.
+- `stats` exits 1 when any analyzed file has read/decode/parse errors
+  (e.g. unclosed fences — genuine source defects, see F-0002); the JSON
+  report and per-file JSONL are still written in full.
 - `check-links` reports links to vault folder names as broken; Obsidian
   treats folder wikilinks differently. Source vaults use such links (see
   finding F-0003); interpretation is deferred to synthesis-time review.

@@ -149,6 +149,20 @@ CAPABILITIES: list[dict] = [
         "tests": ["tests/test_cli.py"],
         "limitations": ["exit code 2 comes from argparse for usage errors"],
     },
+    {
+        "id": "CAP-015",
+        "name": "content statistics: words, headings, token estimates",
+        "module": "vault_unification.vaultstats",
+        "command": "vu stats",
+        "status_declared": "implemented-and-tested",
+        "tests": ["tests/test_vaultstats.py", "tests/test_cli.py"],
+        "limitations": [
+            "word/token counts are lexical measurements with documented methods, never proof of semantic coverage",
+            "tokens_estimate is chars//4, a rough BPE-style approximation, not an exact tokenizer count",
+            "words_outside_fences treats unclosed fences/math blocks as extending to end-of-file",
+            "non-markdown text files get lexical counts only (structure is Markdown-specific)",
+        ],
+    },
     # ---- planned capabilities (no code, no tests - not claimable) ----
     {
         "id": "CAP-011",

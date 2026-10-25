@@ -30,19 +30,44 @@
       "source_location_record": "reports/bootstrap/boot-001-source-location.json"
     }
   ],
-  "source_inventory_complete": false,
+  "source_inventory_complete": true,
   "knowledge_registry_initialized": false,
   "framework_foundation_built": true,
   "framework_foundation_tested": true,
   "framework_evidence": {
-    "test_run": "reports/framework/boot-000-pytest-report.json",
-    "test_summary": "153 passed, 0 failed, 0 skipped",
-    "capabilities": "reports/framework/boot-000-capabilities.json",
+    "test_run": "reports/bootstrap/boot-002-pytest-report.json",
+    "test_summary": "178 passed, 0 failed, 0 skipped",
+    "capabilities": "reports/bootstrap/boot-002-capabilities.json",
     "setup_doc": "docs/FRAMEWORK_SETUP.md"
   },
   "verification_pilot_passed": false,
   "output_synthesis_started": false,
-  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-25-boot-000.json",
-  "current_task_id": "BOOT-002",
-  "notes": "BOOT-000 and BOOT-001 completed. Framework v0.1.0 (11 capabilities implemented-and-tested, 153/153 tests). BOOT-001 formal source-location record written (reports/bootstrap/boot-001-source-location.json): Master AI 333 files / 4,601,557 bytes; AI Course 276 files / 3,546,362 bytes; both unchanged vs baseline manifests; sources committed in root commit b7f58fe and pushed to origin. README status discrepancy corrected (F-0004). Next: BOOT-002 canonical inventory (needs framework word/heading/token statistics capability), then BOOT-003 registry, BOOT-004 omission pilot. Large-scale synthesis remains gated on BOOT-004."
+  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-26-boot-002.json",
+  "current_task_id": "BOOT-003",
+  "notes": "BOOT-000, BOOT-001, BOOT-002 completed. Framework v0.1.0 + CAP-015 content statistics (12 capabilities implemented-and-tested, 178/178 tests). Canonical inventory complete: 609 markdown files (333 Master AI + 276 AI Course, 0 non-text assets), 1.16M words, ~2.03M tokens estimated (chars/4). All stats/inventory outputs reproducible byte-identically; sources unchanged throughout. Corpus is smaller than the >5M-token planning assumption - bounded batches still apply. Next: BOOT-003 persistent KU registry, then BOOT-004 omission pilot (hard gate for synthesis).",
+  "corpus_statistics": {
+    "files_total": 609,
+    "markdown_files": 609,
+    "words_total": 1157937,
+    "words_outside_fences": 990007,
+    "tokens_estimate_chars_div_4": 2027347,
+    "headings_total": 12785,
+    "per_vault": {
+      "Master AI": {
+        "files": 333,
+        "words_total": 638004,
+        "tokens_estimate": 1144484,
+        "headings": 8610,
+        "files_with_errors": 0
+      },
+      "AI Course": {
+        "files": 276,
+        "words_total": 519933,
+        "tokens_estimate": 882863,
+        "headings": 4175,
+        "files_with_errors": 14
+      }
+    },
+    "evidence": "reports/bootstrap/boot-002-inventory-summary.json"
+  }
 }

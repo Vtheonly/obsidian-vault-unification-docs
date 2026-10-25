@@ -48,6 +48,7 @@ def run_cli(*args: str, cwd: Path | None = None, timeout: int = 300) -> subproce
         "check-links",
         "search",
         "term-stats",
+        "stats",
         "validate-registry",
         "run-tests",
         "capabilities",
@@ -231,6 +232,67 @@ class TestSearchCLI:
             "--terms-file", str(tmp_path / "ghost.txt"),
         )
         assert proc.returncode == 1
+
+
+class TestStatsCLI:
+    def test_stats_on_fixture_vault(self, fixture_vault, tmp_path):
+        report = tmp_path / "stats.json"
+        per_file = tmp_path / "stats.jsonl"
+        proc = run_cli(
+            "stats",
+            "--root", str(fixture_vault["root"]),
+            "--report", str(report),
+            "--per-file", str(per_file),
+        )
+        # fixture has genuine parse errors (unclosed fence, bad frontmatter)
+        # -> actionable failure, exit 1, with full reports still written
+        assert proc.returncode == 1, proc.stdout + proc.stderr
+        data = json.loads(report.read_text(encoding="utf-8"))
+        totals = data["totals"]
+        assert totals["files_discovered"] == 10  # 8 md + png + pdf
+        assert totals["files_skipped_nontext"] == 2
+        assert totals["text_files_analyzed"] == 6
+        assert totals["text_files_with_errors"] == 2
+        assert totals["words_total"] > 0
+        assert "chars // 4" in data["methods"]["tokens_estimate"]
+        error_paths = {u["relpath"] for u in data["unreadable_files"]}
+        assert "broken-fence.md" in error_paths
+        assert "malformed-frontmatter.md" in error_paths
+        # per-file JSONL: one record per text-extension file (errors included)
+        lines = [l for l in per_file.read_text(encoding="utf-8").splitlines() if l]
+        assert len(lines) == 8
+        assert all(json.loads(l)["path"] for l in lines)
+
+    def test_stats_clean_vault_exits_zero(self, tmp_path):
+        vault = tmp_path / "clean"
+        vault.mkdir()
+        (vault / "ok.md").write_text("# Fine\n\nAll good.\n", encoding="utf-8")
+        proc = run_cli("stats", "--root", str(vault))
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        payload = json.loads(proc.stdout)
+        assert payload["files_with_errors"] == 0
+
+    def test_stats_binary_markdown_file_exits_nonzero(self, tmp_path):
+        vault = tmp_path / "v"
+        vault.mkdir()
+        (vault / "ok.md").write_text("# Fine\n", encoding="utf-8")
+        (vault / "bad.md").write_bytes(b"\x00\x01\x02not text")
+        proc = run_cli("stats", "--root", str(vault))
+        assert proc.returncode == 1
+        payload = json.loads(proc.stdout)
+        assert payload["files_with_errors"] == 1
+
+    def test_stats_missing_root_exits_nonzero(self, tmp_path):
+        proc = run_cli("stats", "--root", str(tmp_path / "missing"))
+        assert proc.returncode == 1
+
+    def test_stats_report_refuses_write_inside_source(self, fixture_vault, tmp_path):
+        inside = fixture_vault["root"] / "stats-report.json"
+        proc = run_cli(
+            "stats", "--root", str(fixture_vault["root"]), "--report", str(inside)
+        )
+        assert proc.returncode == 1
+        assert not inside.exists()
 
 
 class TestValidateRegistryCLI:

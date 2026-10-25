@@ -2,116 +2,129 @@
 
 ## Project state
 
-- Current milestone: Milestone 0 — repository and source discovery (COMPLETED
-  for BOOT-001); entering canonical inventory (BOOT-002)
-- Current task ID: BOOT-002 (status: ready)
-- Current Git commit: the BOOT-001 work commit on `main` (immediately after
-  `bbbad06`); verify with `git log --oneline -5`
+- Current milestone: Milestone 0 — repository and source discovery (DONE:
+  BOOT-001) + Milestone 3-level file inventory (DONE: BOOT-002); entering
+  Milestone 1 formalization (BOOT-003 persistent registry)
+- Current task ID: BOOT-003 (status: ready)
+- Current Git commit: the BOOT-002 work commit on `main` (after the BOOT-001
+  commit `648c6c3`); verify with `git log --oneline -5`
 - Working tree status: clean after commit/push (verify with `git status`)
-- Registry/checkpoint version: task-queue v2 (BOOT-000 and BOOT-001 completed
+- Registry/checkpoint version: task-queue v2 (BOOT-000/001/002 completed
   with tests_run evidence); checkpoint
-  `state/checkpoints/checkpoint-2026-10-26-boot-001.json`
+  `state/checkpoints/checkpoint-2026-10-26-boot-002.json`
 
 ## Verified completed work
 
-- BOOT-001 (continuation session, 2026-10-26):
-  - Resume verification of BOOT-000 passed first: `selftest` exit 0;
-    `pytest tests -q` 153/153 passed; `verify-manifest` on both vaults
-    exit 0 with 0 added/removed/changed.
-  - Exact paths changed: `reports/bootstrap/boot-001-source-location.json`
-    (new), `scripts/boot001_record.py` (new), `README.md` (repository-status
-    section corrected), `state/task-queue.jsonl`, `state/current-state.json`,
-    `state/findings.jsonl` (F-0004 appended),
-    `state/checkpoints/checkpoint-2026-10-26-boot-001.json` (new), this file.
-  - Source-location record evidence: Master AI = `source-vaults/AI /Master AI`,
-    333 markdown files, 4,601,557 bytes; AI Course = `source-vaults/AI /AI Course`,
-    276 markdown files, 3,546,362 bytes; both 100% markdown at file level,
-    0 unreadable, 0 symlinks, both unchanged vs. baseline manifests (fresh
-    in-report scan comparison). Git state, repository structure, and
-    backup/recovery note (root commit `b7f58fe` + origin remote + manifests)
-    all recorded in the report.
-  - F-0004: README claimed the repo did not contain the source vaults;
-    evidence contradicted this (both vaults committed in root commit).
-    Corrected; finding recorded as resolved.
+- BOOT-002 (continuation session, 2026-10-26), framework-first:
+  - New capability CAP-015 (content statistics): module
+    `src/vault_unification/vaultstats.py`, CLI `vu stats --root R
+    [--per-file F2]`, 19 unit tests (`tests/test_vaultstats.py`) + 6 CLI
+    tests; counting methods documented in code and reports (words =
+    whitespace tokens over full decoded text; words_outside_fences excludes
+    fence/math lines, unclosed constructs extend to EOF; tokens_estimate =
+    chars//4 heuristic).
+  - Canonical inventory evidence:
+    `reports/bootstrap/boot-002-inventory-summary.json` (aggregates,
+    reproducibility fingerprints, unsupported-asset statement, F-0002
+    cross-validation) plus per-vault stats reports + per-file JSONL.
+  - Corpus facts (code-computed): 609 files total, 100% markdown, 0
+    unreadable, 0 non-text assets; Master AI 333 files / 638,004 words /
+    8,610 headings / ~1,144,484 tokens est.; AI Course 276 files / 519,933
+    words / 4,175 headings / ~882,863 tokens est.; corpus totals: 1,157,937
+    words, ~2,027,347 tokens est. (chars/4). NOTE: actual corpus is smaller
+    than the >5M-token planning assumption in AGENTS.md §7 — planning
+    constraint relaxes but bounded batches still apply.
+  - Reproducibility: stats payloads + per-file JSONL byte-identical across
+    two runs per vault; fresh inventory manifests identical to baselines
+    (which also re-proves source immutability — exit 0, 0 changed).
+  - F-0002 cross-validation: the 14 AI Course unclosed-fence files reported
+    by `vu stats` exactly match the 14 parse-error files from the
+    independent `check-links` smoke run (two code paths, one defect set).
+- BOOT-001 (same session, earlier): formal source-location record
+  `reports/bootstrap/boot-001-source-location.json`; README status section
+  corrected (F-0004, resolved).
 
 ## Tests actually run
 
 | Command/test | Result | Evidence/report | Limitations |
 |---|---|---|---|
-| `PYTHONPATH=src python3 -m vault_unification selftest` | exit 0, ok=true | terminal (resume verification) | importability only |
-| `PYTHONPATH=src python3 -m pytest tests -q` | 153 passed | terminal (resume verification) | — |
-| `vu verify-manifest` both vaults | exit 0; unchanged | /tmp reports (session), re-verified in boot-001 record | — |
-| `python3 scripts/boot001_record.py` | exit 0 | reports/bootstrap/boot-001-source-location.json | file-level facts only |
+| `vu stats` Master AI | exit 0; 333 files, 0 errors | reports/bootstrap/boot-002-stats-master-ai.json + .jsonl | lexical counts only |
+| `vu stats` AI Course | exit 1 (14 genuine unclosed-fence defects = F-0002); reports still written | reports/bootstrap/boot-002-stats-ai-course.json + .jsonl | exit 1 is correct fail-visible behavior |
+| stats reproducibility (2 runs/vault) | payload + JSONL byte-identical | boot-002-inventory-summary.json reproducibility blocks | — |
+| `vu inventory` re-runs | exit 0; manifests identical to baselines | same summary, inventory_reproducibility blocks | — |
+| `vu run-tests --tests-dir tests` | exit 0; 178/178 passed | reports/bootstrap/boot-002-pytest-report.json, boot-002-test-run-summary.txt | — |
+| `vu capabilities --verify` | exit 0; 12 implemented-and-tested incl. CAP-015 | reports/bootstrap/boot-002-capabilities.json | runs only referenced test files (163 tests) |
+| `vu verify-manifest` both vaults (post-ops) | exit 0; unchanged | reports/bootstrap/boot-002-immutable-{master-ai,ai-course}.json | — |
 | `vu validate-registry --tasks state/task-queue.jsonl` | exit 0; valid | terminal after queue update | schema + cross-checks only |
 
 ## Findings and unresolved work
 
 - Open finding IDs: F-0001 (trailing-space dir `source-vaults/AI ` — always
-  quote; never rename), F-0002 (14 AI Course files with unclosed fences/math —
-  extraction must not silently drop that content), F-0003 (175 broken wikilinks
-  + 10 missing anchors in AI Course — synthesis-time dispositions needed).
-  F-0004 (README discrepancy) is resolved.
-- Blockers: none for BOOT-002.
-- Unverified claims: none made; all statuses in the queue are test-backed.
+  quote; never rename), F-0002 (14 AI Course unclosed-fence files —
+  cross-validated set; extraction must record content with parse warning,
+  never silently drop), F-0003 (175 broken wikilinks + 10 missing anchors
+  in AI Course — synthesis-time dispositions needed).
+- Blockers: none for BOOT-003.
+- Unverified claims: none made; capability statuses are test-backed.
 - Tool limitations: see docs/FRAMEWORK_SETUP.md "Known limitations"
-  (inline-math false positives, folder wikilinks reported broken, per-line
-  normalized search, no LaTeX validation, no concurrency control).
+  (tokens_estimate is a chars//4 approximation; inline-math false positives;
+  folder wikilinks reported broken by check-links; no LaTeX validation; no
+  concurrency control).
 
 ## Decisions and configuration
 
-- BOOT-001 record generated by a persisted script (`scripts/boot001_record.py`)
-  that reuses framework modules (`inventory`, `reporting`) — counts come from
-  code, not model attention. The script is retained for reproducibility.
-- README correction follows docs/SESSION_HANDOFF.md validation rule
-  (repository evidence takes precedence over documentation claims;
-  discrepancy recorded as F-0004).
+- CAP-015 stats semantics: unclosed fences/math extend to EOF for prose-word
+  counting (content is treated as real, consistent with F-0002 policy);
+  `vu stats` exits 1 when any analyzed file has errors (fail visibly) but
+  always writes full reports.
+- BOOT-002 summary generated by persisted `scripts/boot002_summary.py`
+  (recomputes all fingerprints itself; no pasted-in numbers).
+- Capability IDs: CAP-015 now used for content statistics; planned IDs
+  CAP-011 (KU registry), CAP-012 (omission pilot), CAP-013 (duplicates),
+  CAP-014 (coverage/frequency regression) unchanged.
 
 ## Next task
 
-- Task ID and title: BOOT-002 — Inventory source files and assets read-only
-  (canonical, content-aware inventory)
-- Why it is next: BOOT-001 is complete; BOOT-002 is the only unblocked
-  dependent and is a prerequisite for BOOT-003 and BOOT-004.
-- Dependencies: BOOT-001 (completed).
-- Exact inputs: verified source paths (`source-vaults/AI /Master AI`,
-  `source-vaults/AI /AI Course` — quote the trailing space),
-  `state/manifests/*.jsonl`.
-- Expected outputs: canonical per-vault inventory reports including
-  word/heading/token counts; reproducibility re-run (two runs, identical
-  results); explicit unsupported-asset statement; updated state files.
-- Acceptance criteria (from task queue): every discovered file and asset has
-  an inventory record; unreadable/unsupported items are explicit; the
-  inventory command is reproducible.
-- Framework gap to fill first: word/heading/token statistics. Build it
-  framework-first (new module + CLI subcommand + unit/integration/negative
-  tests + capability update + docs update), then run on both vaults.
-  Word-counting method must be documented (e.g., whitespace-separated tokens
-  over full file bytes vs. prose-only) and token counts must state their
-  estimation method and limitations.
-- Forbidden side effects: do not modify source vaults (re-run
-  `verify-manifest` before and after as evidence).
+- Task ID and title: BOOT-003 — Implement persistent registry, checkpoints,
+  and task validation
+- Why it is next: BOOT-002 complete; the knowledge-unit registry is required
+  before extraction (BOOT-002+ extraction work) and before the omission
+  pilot (BOOT-004).
+- Dependencies: BOOT-000, BOOT-001 (completed).
+- Exact inputs: `docs/KNOWLEDGE_AND_PROVENANCE.md` (record fields,
+  dispositions, overlap taxonomy, accounting invariants),
+  `schemas/knowledge-unit.schema.json` (existing draft),
+  `docs/TOOLING_AND_SETUP.md` (SQLite vs JSONL decision), corpus stats for
+  scale planning.
+- Expected outputs: persistent KU registry (choose and document format:
+  SQLite recommended by TOOLING_AND_SETUP.md at this scale; document the
+  ADR), schema validation, stable-ID generation rules, load/query/validate
+  CLI commands, tests (unit + negative + integration + CLI), docs update.
+- Acceptance criteria (from task queue): schema is documented and validated;
+  task state persists across fresh sessions; recovery behavior is tested.
+- Forbidden side effects: do not modify source vaults; do not start
+  extraction before the registry exists and validates.
 
 ## Resume procedure
 
-1. `git clone` / `git pull`; `git status` must be clean; confirm HEAD includes
-   the BOOT-001 commit.
+1. `git clone` / `git pull`; `git status` must be clean; confirm HEAD
+   includes the BOOT-002 commit.
 2. Read `AGENTS.md`, this file, `state/current-state.json`,
    `state/task-queue.jsonl`, `state/findings.jsonl`.
 3. Sanity-verify the framework: `PYTHONPATH=src python3 -m vault_unification
    selftest` (exit 0) and `PYTHONPATH=src python3 -m pytest tests -q`
-   (153/153 unless tests were legitimately added — update the count then).
+   (178/178 unless tests were legitimately added — update the count then).
 4. Verify source immutability: `vu verify-manifest` on both vaults (exit 0).
-5. Execute BOOT-002 per the acceptance criteria above; framework-first for
-   the statistics capability; record evidence with actual exit codes; update
-   task queue, current-state, checkpoint, findings; write this handoff file;
-   commit and push to main.
+5. Execute BOOT-003 per the acceptance criteria above; framework-first;
+   record evidence with actual exit codes; update task queue, current-state,
+   checkpoint, findings; write this handoff file; commit and push to main.
 
 ## Explicit non-claims
 
-- No knowledge units have been extracted, classified, or dispositioned.
+- No knowledge units have been extracted, classified, or dispositioned yet.
 - No semantic verification of any source content has occurred.
 - The omission-detection pilot (BOOT-004) has NOT been run; large-scale
-  synthesis remains blocked.
-- File counts and byte totals are inventory facts, not semantic coverage.
+  synthesis remains blocked (hard gate).
+- Word/heading/token counts are lexical facts, not semantic coverage.
 - Master AI has not yet been link-checked at all (only AI Course was, during
   the BOOT-000 smoke test).
