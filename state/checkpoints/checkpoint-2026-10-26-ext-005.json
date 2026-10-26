@@ -63,5 +63,6 @@
     "Full test suite 407/407; capabilities --verify passes (16+1)"
   ],
   "next_task": "EXT-006 (ready): concept-dossier scaffolding for the three classified domains",
-  "session_continuity": "Single session. Every claim has a committed evidence artifact; the classification file was regenerated once after review repairs (pre-commit, so append-only discipline starts from the committed 29-record version)."
+  "session_continuity": "Single session. Every claim has a committed evidence artifact; the classification file was regenerated once after review repairs (pre-commit, so append-only discipline starts from the committed 29-record version).",
+  "work_commit": "4d77dff"
 }
