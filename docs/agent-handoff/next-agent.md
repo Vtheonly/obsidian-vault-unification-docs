@@ -3,84 +3,109 @@
 ## Project state
 
 - Current milestone: Milestone 3 (extraction). Framework bootstrap DONE and
-  verified (BOOT-000..004). EXT-001..007 DONE and verified (batches 001-005:
-  775 KUs; 75 evidence-based overlap classifications across regression, tree
-  and evaluation domains — 71 from EXT-003..005 plus the 4-record EXT-007
-  addendum). EXT-006 (concept-dossier scaffolding) DONE: 3 dossiers, now 75
-  concepts over all 240 classified KUs after the EXT-007 evaluation-dossier
-  regeneration. EXT-007 (evaluation classification addendum) DONE and verified
-  2026-10-27: all four C1-C4 candidates ADOPTED into the new append-only file
-  `state/classifications/004-ext007-evaluation-addendum.jsonl` (OC-ext007-0001
-  ..0004: 2 Semantic Duplicate + 2 Partial Overlap, 14 byte-exact quotes, 11
-  participating KUs); independent review PASS-WITH-NOTES with all repairs
-  (R1-R3 wording + R4 process) and suggestions (S1-S5) applied before commit.
-- Current task ID: EXT-008 (status: ready — record already in the queue).
-  SVM/kernel-methods domain pair: extract AI Course 03.4 + Master AI SVM
-  content, classify cross-vault overlap, extend dossiers with svm-v1.
-- Current Git commit: the EXT-007 work/state commits on LOCAL `main`, on top
-  of the EXT-006 commits. PUSH BLOCKER (STILL OPEN): all three PATs from the
+  verified (BOOT-000..004). EXT-001..008 DONE and verified: batches 001-007
+  (889 KUs; 21 of 609 source files extracted), 102 evidence-based overlap
+  classifications across four domains (regression, tree-based, evaluation,
+  clustering/dimensionality-reduction), and four concept dossiers (102
+  concepts over all 304 classified KUs). EXT-008 completed 2026-10-27 with a
+  DOCUMENTED SCOPE CHANGE: the task title named SVM/kernel-methods, but a
+  full-vault search proved master-ai has NO dedicated SVM content (16
+  occurrences in 11 files, all passing mentions), so the task record's own
+  contingency clause was invoked and the clustering/dimensionality-reduction
+  pair was extracted instead (master-ai 'Unsupervised Learning/04' + ai-course
+  03.5 + 03.8).
+- Current task ID: EXT-009 (to be selected at session start — no record in
+  the queue yet; see Next task).
+- Current Git commit: the EXT-008 work/state commits on LOCAL `main`, on top
+  of the EXT-007 commits. PUSH BLOCKER (STILL OPEN): all three PATs from the
   brief were rejected on 2026-10-26 AND re-rejected 2026-10-27 (401 Bad
   credentials). The user has instructed the session to continue committing
   locally and deliver a ZIP (repo + git bundle) that the user will push
   personally. Do NOT re-clone while local-only commits exist.
-- Working tree status: clean after the EXT-007 commits (verify `git status`)
-- Registry/checkpoint version: task-queue v10 (BOOT-000..004 + EXT-001..007
-  completed with tests_run evidence; EXT-008 queued); KU schema v1.1
-  (ADR-0008); classification schema (ADR-0009); dossier schema
-  `schemas/concept-dossier.schema.json`; checkpoint
-  `state/checkpoints/checkpoint-2026-10-27-ext-007.json`.
-- Framework version: 0.5.0 (unchanged in EXT-007 — no framework code
+- Working tree status: clean after the EXT-008 commits (verify `git status`)
+- Registry/checkpoint version: task-queue v11 (BOOT-000..004 + EXT-001..008
+  completed with tests_run evidence); KU schema v1.1 (ADR-0008);
+  classification schema (ADR-0009); dossier schema with the domain enum
+  EXTENDED ADDITIVELY with 'clustering' (justification in the schema
+  description); checkpoint
+  `state/checkpoints/checkpoint-2026-10-27-ext-008.json`.
+- Framework version: 0.5.0 (unchanged in EXT-008 — no framework code
   changes); 415/415 tests; capabilities: 16 implemented-and-tested, 1 planned
   (CAP-014)
 
 ## Verified completed work
 
-- EXT-007 (2026-10-27), evaluation-domain classification addendum, same
-  session as EXT-006 (state updates finished by the follow-up session):
-  - All four unreviewed candidates C1-C4 (from
-    reports/extraction/ext005-independent-confirmation.md section 3) verified
-    against committed batches AND original source lines, then adjudicated:
-    ALL FOUR ADOPTED — OC-ext007-0001 (SD: report-multiple-metrics
-    discipline; distinct from OC-ext005-0026's which-metric business
-    decision), OC-ext007-0002 (PO: degenerate majority-prediction pattern
-    transferred to pixel accuracy; master-ai has zero segmentation content),
-    OC-ext007-0003 (PO: loss-vs-metric role distinction; extended with S1-S3
-    course evidence — both-roles sentence L139, gradient clause L30, Huber
-    KU L141), OC-ext007-0004 (SD: macro-averaged metrics for imbalanced data;
-    companion to OC-ext005-0015 which covers only the PR-AUC half).
-  - New append-only file; `003-ext005` byte-unchanged throughout
-    (sha256-verified before and after; matches git HEAD and the EXT-006
-    dossier provenance chain).
-  - Generator `scripts/ext007_classifications.py` (verification chain X1-X8):
-    every quote verified byte-exact INSIDE the referenced KU excerpt AND at
-    the stated original-source line before writing. Final: 4 records, 14
-    quotes, 11 participating KUs (6 first-time ai-course participants).
-  - Independent review `reports/extraction/ext007-review.md` (EXT-007-REVIEW,
-    read-only): PASS-WITH-NOTES — 12/12 quotes byte-exact in excerpts and at
-    exactly the stated source lines (0 off-by-one), 4/4 cross-vault, 4 AGREE +
-    0 BORDERLINE + 0 DISAGREE, coverage complete, append-only discipline
-    verified. Repairs R1-R3 (rationale participation/passage wording) and
-    suggestions S1-S5 applied after orchestrator re-verification of each
-    claim; no further independent re-review needed (changes are exactly the
-    review's own required fixes).
-  - R4 executed: registry apply-overlap for the addendum (4 inserted, 0
-    rejected; kureg-validate valid: 775 KUs, 75 classifications, 240
-    participating, all KUs Unaccounted) and evaluation dossier regenerated
-    (`state/dossiers/evaluation-v1.json`: 33 concepts / 97 KUs; double-run
-    byte-identical; `--check` exit 0 for all three dossiers) — the derived-view
-    property of dossiers demonstrated in-repo.
+- EXT-008 (2026-10-27), clustering/dimensionality-reduction domain pair,
+  scope-changed from SVM with recorded evidence:
+  - Batch 006 = master-ai '04 - Clustering and Dimensionality Reduction.md'
+    (27 KUs, 1/1 files, double-run byte-identical, sha256 090573e4...).
+    Batch 007 = ai-course 03.5 K-Means (41 KUs) + 03.8 Dimensionality
+    Reduction (46 KUs), TWO deterministic single-scope runs concatenated in
+    fixed order (each part and the full concat double-run byte-identical,
+    sha256 0a49a9fe...).
+  - scripts/ext008_fidelity.py: 27/27 + 87/87 byte-exact excerpts + hashes +
+    structural purity + 0 heading crossings + unique ids within/across the
+    new batches AND vs all 775 committed ids (check extended over the
+    EXT-005 pattern).
+  - state/term-maps/clustering-domain-v1.json (51 terms, 22 aliases, 32
+    cross-vault, 3 BRIDGED terms — 'choosing k'/'choose k'/'number of
+    clusters', 'nonlinear'/'non-linear', 'sklearn'/'scikit-learn'; French
+    alias 'regroupement' verified at 03.5 L4; every entry machine-verified
+    in-scope, zero invented entries).
+  - CAP-013 discovery: 934 pairs, 35 cross-vault topics, 0 truncated
+    (reports/extraction/ext008-overlap-candidates.json + -pairs.jsonl).
+  - state/classifications/005-ext008-clustering-dimreduction-overlap.jsonl:
+    27 records OC-ext008-0001..0027 (22 Semantic Duplicate + 4 Partial
+    Overlap + 1 Complementary Content), 64 participating KUs, 92 byte-exact
+    quotes; generator scripts/ext008_classifications.py chain X1-X9 (quotes
+    byte-exact in excerpts AND at original source lines; cross-vault;
+    schema-valid; sequential ids; no duplicate quotes anywhere; committed
+    classification files 001-004 byte-unchanged).
+  - Independent review reports/extraction/ext008-review.md (EXT-008-REVIEW,
+    read-only subagent): PASS-WITH-NOTES — 89/89 quotes byte-exact (0
+    off-by-one), 27/27 cross-vault, 26 AGREE + 1 AGREE-BORDERLINE + 0
+    DISAGREE, 0 coverage gaps, no duplication vs committed records.
+    ALL repairs R1-R3 (rationale wording) + suggestions S1-S5 (evidence
+    extensions, each new quote verified at its source line before adding)
+    applied; orchestrator addendum records the repairs. Final: 92 quotes /
+    64 KUs.
+  - R4: schemas/concept-dossier.schema.json domain enum extended additively
+    with 'clustering'; scripts/ext006_dossiers.py DOMAINS extended;
+    state/dossiers/clustering-v1.json generated (27 concepts / 64 KUs;
+    zero-evidence categories: interview_misconceptions_comparisons,
+    historical_deprecated); ALL FOUR dossiers regenerate byte-identically
+    (--check exit 0 x4); tests/test_concept_dossier.py updated (dossier
+    list + test rename; suite still 415/415).
+  - Registry rebuilt: init --force + load x7 (889 KUs) + apply-overlap x5
+    (102 classifications, 0 rejected); kureg-validate valid; 304
+    participating KUs; all 889 KUs remain Unaccounted.
+  - Sources unchanged before/after (verify-manifest exit 0 x4).
+  - Deliberate non-records (single-vault in scope, verified): silhouette
+    (master-ai only — the course's silhouette teaching lives in batch
+    005/03.6; cross-batch connection noted for synthesis), curse of
+    dimensionality (course only), K-Means++/n_init/K-Medians (course only),
+    mini-batch k-means + vector-DB ANN indexing (master-ai only),
+    SVD/eigendecomposition + Student-t/crowding + Riemannian/fuzzy-topology
+    mechanics (course only), VAE/denoising/contractive AE variants
+    (master-ai only).
 
 ## Tests actually run
 
 | Command/test | Result | Evidence/report |
 |---|---|---|
 | `vu selftest` (startup) | exit 0 | — |
-| `python3 -m pytest tests -q` (startup AND final) | 415/415 | reports/extraction/ext007-pytest-report.json |
-| `vu verify-manifest` both vaults (startup AND after) | exit 0 x4; 333 + 276 unchanged | reports/extraction/ext007-immutable-{master-ai,ai-course}.json |
-| registry apply-overlap 004-ext007 + `kureg-validate` | 4 inserted, 0 rejected; valid 0 err/warn; 775 KUs, 75 classifications, 240 participating | reports/extraction/ext007-kureg-apply-overlap.json + ext007-kureg-validate.json |
-| `python3 scripts/ext006_dossiers.py` (x2 + `--check`) | exit 0; evaluation-v1 regenerated (33 concepts); byte-identical | reports/extraction/ext006-dossier-coverage.json (updated) |
-| `vu validate-registry --tasks --classifications 004-ext007` | valid, 0 problems | reports/extraction/ext007-taskqueue-validate.json + ext007-classifications-validate.json |
-| `vu capabilities --verify` | 16 implemented-and-tested, 1 planned | reports/extraction/ext007-capabilities.json |
+| `python3 -m pytest tests -q` (startup AND final) | 415/415 | reports/extraction/ext008-pytest-report.json |
+| extraction batch 006 + 007 (double-run x2 per part + concat) | byte-identical | reports/extraction/ext008-determinism-{master-ai,ai-course}.txt |
+| `python3 scripts/ext008_fidelity.py` | 27/27 + 87/87 byte-exact; ids unique vs 775 committed | reports/extraction/ext008-fidelity-{master-ai,ai-course}.json |
+| `python3 scripts/ext008_term_map.py` | exit 0 first run; 51 terms / 22 aliases / 32 cross-vault / 3 bridged | reports/extraction/ext008-term-map-verification.json |
+| `vu overlap-candidates` (batches 006+007, clustering terms) | 934 pairs, 35 cross-vault topics, 0 truncated | reports/extraction/ext008-overlap-candidates.json |
+| `python3 scripts/ext008_classifications.py` | 27 records, 92 quotes, X1-X9 green (pre- and post-review) | state/classifications/005-ext008-clustering-dimreduction-overlap.jsonl |
+| EXT-008-REVIEW (read-only subagent) | PASS-WITH-NOTES; all repairs applied | reports/extraction/ext008-review.md |
+| `python3 scripts/ext006_dossiers.py` (x2 + `--check` x4) | clustering-v1 new (27 concepts / 64 KUs); all four byte-identical | reports/extraction/ext006-dossier-coverage.json |
+| registry rebuild: `kureg-init --force` + `kureg-load` x7 + `kureg-apply-overlap` x5 + `kureg-validate` | exit 0 x13; 889 KUs, 102 classifications, 304 participating, valid | reports/extraction/ext008-kureg-*.json |
+| `vu verify-manifest` both vaults (startup AND after) | exit 0 x4; 333 + 276 unchanged | reports/extraction/ext008-immutable-{master-ai,ai-course}.json |
+| `vu capabilities --verify` | 16 implemented-and-tested, 1 planned | reports/extraction/ext008-capabilities.json |
+| `vu validate-registry --tasks + --classifications 005-ext008` | valid, 0 problems | reports/extraction/ext008-taskqueue-validate.json |
 
 ## Findings and unresolved work
 
@@ -89,12 +114,17 @@
   (boosted-tree library dating), F-0008 (mAP name collision).
 - Blockers: PUSH BLOCKER (see Project state) — user pushes the delivered
   zip/bundle personally; local commits accumulate in `/home/z/my-project/repo`.
-- Known gaps (deliberate non-claims): 17 of 609 source files extracted (2.8%);
-  overlap classified for three domains only (EXT-008 adds the fourth); dossiers
-  cover ONLY the 240 classified KUs (535 extracted KUs have no classification
-  and therefore no dossier participation yet — by design); no
+- Known gaps (deliberate non-claims): 21 of 609 source files extracted
+  (3.4%); overlap classified for four domains only; dossiers cover ONLY the
+  304 classified KUs (585 extracted KUs have no classification and therefore
+  no dossier participation yet — by design); no
   dispositions/concepts-as-destinations; no synthesis output; CAP-014 still
   planned.
+- Cross-domain connections noted for synthesis (not actionable in
+  extraction): the course's silhouette metrics teaching (batch 005) vs
+  master-ai's silhouette mention (batch 006, OC-ext008-0006 rationale); the
+  course's chapter-10 autoencoder teaching vs batch 006's autoencoder
+  definition (OC-ext008-0027 rationale).
 
 ## Decisions and configuration
 
@@ -112,44 +142,45 @@
 - Dossiers never assign dispositions; overlap_type appears only as a
   pair-level reference carried from the source record (ADR-0009).
 - Addendum discipline (EXT-007 precedent): when new classifications for an
-  already-classified domain arise after its file is committed, they go into a
-  NEW append-only file with a fresh OC-extNNN-* id prefix; committed files
+  already-classified domain arise after its file is committed, they go into
+  a NEW append-only file with a fresh OC-extNNN-* id prefix; committed files
   are never edited. The dossier generator's DOMAINS config lists the
   classification files explicitly per domain.
+- Schema-change discipline (EXT-008 precedent): extending an enum
+  additively (domain enum + 'clustering') is acceptable when the
+  justification is recorded in the schema itself and existing artifacts
+  remain valid; anything non-additive requires an ADR.
+- Evidence discipline (EXT-008 precedent): a code-block KU can serve as
+  quote evidence for a Partial Overlap shared element when the framing is
+  transparent (OC-ext008-0021, perplexity named only in master-ai's worked
+  example) — the reviewer upheld this on the term-map code-match precedent.
 - Pinned vault-ids: `ai-course` and `master-ai`.
 
 ## Next task
 
-- Task ID and title: EXT-008 — Extract the SVM/kernel-methods domain pair
-  (AI Course 03.4 + Master AI SVM content) and classify its cross-vault
-  overlap. Full record (inputs / outputs / acceptance criteria / forbidden
-  side effects) is in `state/task-queue.jsonl` (status: ready).
-- Why it is next: the SVM/kernel domain is the largest remaining
-  cross-vault ML domain with rich content on both sides (ai-course 03.4 has a
-  dedicated 6-file folder; master-ai has SVM/kernel sections to locate at
-  session start). It follows the now-proven EXT-005 two-sided pattern
-  end-to-end: extract (double-run byte-identical) -> fidelity -> term map
-  (pre-probe, machine-verified, zero invented entries) -> CAP-013 discovery
-  -> evidence-based classifications (byte-exact quotes, generator-verified)
-  -> independent read-only review with repairs -> svm-v1 dossier (extend
-  scripts/ext006_dossiers.py DOMAINS + schema domain enum if needed, with
-  documented justification) -> registry rebuild -> state updates.
-- Check BEFORE extracting: whether EXT-002 batch 002 (master-ai supervised
-  learning) already contains the master-ai SVM KUs — if so reuse them in
-  discovery/classification instead of re-extracting, and extract only the
-  missing side.
-- After EXT-008: candidate directions (decide with evidence): CAP-014
-  source-to-output coverage reports (required before synthesis batches are
-  accepted), another domain pair from the unextracted Master AI files
-  (consult state/manifests and the registry coverage report), or
-  dossier-driven synthesis prep.
+- Task ID and title: EXT-009 — to be selected and queued at session start
+  with evidence. Two candidate directions:
+  1. Another domain pair from the unextracted Master AI files: the
+     Generalization pair (master-ai '01 - Bias Variance Tradeoff.md' 325
+     lines + '06 - Regularization Techniques.md' 199 lines vs ai-course
+     regularization content — NOTE: ai-course generalization vocabulary is
+     scattered across 84 files, mostly DL chapters, so scoping needs care),
+     or the Reinforcement Learning set (master-ai 4 files; ai-course has no
+     RL folder — likely ill-scoped like SVM, verify first).
+  2. CAP-014 source-to-output coverage reports (required before synthesis
+     batches are accepted, but no synthesis batch exists yet — check the
+     task-queue record for whether the dependency is now considered ripe).
+- Why not yet queued: the EXT-008 record's alternatives clause left the
+  choice to the next session with evidence; consult state/manifests and the
+  registry coverage report first, then append a full EXT-009 record to
+  state/task-queue.jsonl before executing (12/12 valid entries pattern).
 
 ## Resume procedure
 
 1. PUSH STATE: local main is ahead of origin/main (EXT-005 verification +
-   EXT-006 + EXT-007 commits, and EXT-008 if completed). The user pushes the
-   delivered zip/bundle personally. NEVER clone fresh while local-only
-   commits exist; work in `/home/z/my-project/repo`.
+   EXT-006 + EXT-007 + EXT-008 commits, and EXT-009 if completed). The user
+   pushes the delivered zip/bundle personally. NEVER clone fresh while
+   local-only commits exist; work in `/home/z/my-project/repo`.
 2. Read `AGENTS.md`, this file, `state/current-state.json`,
    `state/task-queue.jsonl`, `state/findings.jsonl`, and
    `/home/z/my-project/worklog.md`.
@@ -157,27 +188,28 @@
    (exit 0) and `PYTHONPATH=src python3 -m pytest tests -q` (415/415 unless
    tests were legitimately added — update the count then).
 4. Verify source immutability: `vu verify-manifest` on both vaults (exit 0).
-5. Verify the registry validates (775 KUs, 75 classifications, 240
+5. Verify the registry validates (889 KUs, 102 classifications, 304
    participating; kureg-validate --db state/registries/kuregistry.db).
-6. Execute EXT-008 per its task record; when the svm domain is classified,
-   extend scripts/ext006_dossiers.py DOMAINS, regenerate ALL dossiers
-   (byte-identical for the three existing ones), rebuild the registry, update
-   task queue, current-state, checkpoint, findings; rewrite this handoff;
-   commit (work + state).
+6. Select EXT-009 with evidence, append its full record to
+   state/task-queue.jsonl, execute per the EXT-005/EXT-008 pattern
+   (extract -> fidelity -> term map -> discovery -> classifications ->
+   independent review -> repairs -> dossier extension if a new domain ->
+   registry rebuild -> state updates); rewrite this handoff; commit (work +
+   state).
 
 ## Explicit non-claims
 
 - Dossiers are scaffolding: category assignments are deterministic rule
   outputs with recorded bases, NOT semantic judgments; several will be
-  re-examined at synthesis (especially the default assignments —
-  regression 15/61, tree 38/82, evaluation 45/97 KUs landed in
-  definitions_terminology by default).
-- Dossier participation is limited to the 240 classified KUs; the other 535
+  re-examined at synthesis (especially the default assignments).
+- Dossier participation is limited to the 304 classified KUs; the other 585
   extracted KUs appear in no dossier because they have no classification
   records yet.
-- All 775 KUs remain `Unaccounted`; no dispositions, concept destinations or
+- All 889 KUs remain `Unaccounted`; no dispositions, concept destinations or
   synthesis output exist; `output_synthesis_started` is false.
-- The EXT-007 addendum records are pair-level classifications like all
-  others; adopting them does NOT merge or resolve the mAP collision (F-0008
-  stays open for synthesis).
+- The EXT-008 scope change (SVM -> clustering) does NOT mark SVM as
+  "done": the ai-course 03.4 SVM folder (6 files, 436 lines) remains
+  unextracted; if master-ai ever gains SVM content, the pair can be
+  revisited. Master-ai's absence of SVM content is a vault-content fact,
+  not a project finding.
 - Master AI has not been link-checked at all.

@@ -23,8 +23,13 @@
     },
     "domain": {
       "type": "string",
-      "enum": ["regression", "tree-based", "evaluation"],
-      "description": "Knowledge domain covered by this dossier."
+      "enum": [
+        "regression",
+        "tree-based",
+        "evaluation",
+        "clustering"
+      ],
+      "description": "Knowledge domain covered by this dossier. Enum extended in EXT-008 (2026-10-27) with 'clustering' for the clustering/dimensionality-reduction domain pair (batches 006/007 + 005-ext008 classifications); additive change, existing dossiers unaffected."
     },
     "version": {
       "type": "string",
@@ -43,25 +48,34 @@
     },
     "provenance": {
       "type": "object",
-      "required": ["batches", "classification_files"],
+      "required": [
+        "batches",
+        "classification_files"
+      ],
       "additionalProperties": false,
       "properties": {
         "batches": {
           "type": "array",
           "minItems": 1,
-          "items": {"$ref": "#/$defs/provenance_file"}
+          "items": {
+            "$ref": "#/$defs/provenance_file"
+          }
         },
         "classification_files": {
           "type": "array",
           "minItems": 1,
-          "items": {"$ref": "#/$defs/provenance_file"}
+          "items": {
+            "$ref": "#/$defs/provenance_file"
+          }
         }
       }
     },
     "concepts": {
       "type": "array",
       "minItems": 1,
-      "items": {"$ref": "#/$defs/concept"}
+      "items": {
+        "$ref": "#/$defs/concept"
+      }
     },
     "accounting": {
       "type": "object",
@@ -92,7 +106,9 @@
         },
         "participating_ku_ids": {
           "type": "array",
-          "items": {"$ref": "#/$defs/ku_id"},
+          "items": {
+            "$ref": "#/$defs/ku_id"
+          },
           "uniqueItems": true
         },
         "category_assignment_counts": {
@@ -111,30 +127,71 @@
           ],
           "additionalProperties": false,
           "properties": {
-            "definitions_terminology": {"type": "integer", "minimum": 0},
-            "mathematical_foundations": {"type": "integer", "minimum": 0},
-            "computational_mechanics": {"type": "integer", "minimum": 0},
-            "alternative_explanations": {"type": "integer", "minimum": 0},
-            "worked_examples_failure_cases": {"type": "integer", "minimum": 0},
-            "code_implementation": {"type": "integer", "minimum": 0},
-            "applications_engineering": {"type": "integer", "minimum": 0},
-            "interview_misconceptions_comparisons": {"type": "integer", "minimum": 0},
-            "historical_deprecated": {"type": "integer", "minimum": 0},
-            "critical_distinctions": {"type": "integer", "minimum": 0}
+            "definitions_terminology": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "mathematical_foundations": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "computational_mechanics": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "alternative_explanations": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "worked_examples_failure_cases": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "code_implementation": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "applications_engineering": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "interview_misconceptions_comparisons": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "historical_deprecated": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "critical_distinctions": {
+              "type": "integer",
+              "minimum": 0
+            }
           }
         },
         "zero_evidence_categories": {
           "type": "array",
-          "items": {"$ref": "#/$defs/category_id"},
+          "items": {
+            "$ref": "#/$defs/category_id"
+          },
           "description": "Categories with zero KU assignments across every concept in this domain (explicit gap markers, invariant 7)."
         },
         "gap_census": {
           "type": "object",
-          "required": ["no_evidence", "single_vault"],
+          "required": [
+            "no_evidence",
+            "single_vault"
+          ],
           "additionalProperties": false,
           "properties": {
-            "no_evidence": {"type": "integer", "minimum": 0},
-            "single_vault": {"type": "integer", "minimum": 0}
+            "no_evidence": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "single_vault": {
+              "type": "integer",
+              "minimum": 0
+            }
           }
         },
         "bidirectional_check": {
@@ -145,8 +202,12 @@
           ],
           "additionalProperties": false,
           "properties": {
-            "every_participating_ku_covered": {"type": "boolean"},
-            "every_covered_ku_participates": {"type": "boolean"}
+            "every_participating_ku_covered": {
+              "type": "boolean"
+            },
+            "every_covered_ku_participates": {
+              "type": "boolean"
+            }
           }
         },
         "disposition_note": {
@@ -183,7 +244,11 @@
     },
     "provenance_file": {
       "type": "object",
-      "required": ["path", "sha256", "record_count"],
+      "required": [
+        "path",
+        "sha256",
+        "record_count"
+      ],
       "additionalProperties": false,
       "properties": {
         "path": {
@@ -203,37 +268,55 @@
     },
     "vault_ku_lists": {
       "type": "object",
-      "required": ["ai-course", "master-ai"],
+      "required": [
+        "ai-course",
+        "master-ai"
+      ],
       "additionalProperties": false,
       "properties": {
         "ai-course": {
           "type": "array",
-          "items": {"$ref": "#/$defs/ku_id"},
+          "items": {
+            "$ref": "#/$defs/ku_id"
+          },
           "uniqueItems": true
         },
         "master-ai": {
           "type": "array",
-          "items": {"$ref": "#/$defs/ku_id"},
+          "items": {
+            "$ref": "#/$defs/ku_id"
+          },
           "uniqueItems": true
         }
       }
     },
     "category_entry": {
       "type": "object",
-      "required": ["ku_ids", "by_vault", "assignment_bases"],
+      "required": [
+        "ku_ids",
+        "by_vault",
+        "assignment_bases"
+      ],
       "additionalProperties": false,
       "properties": {
         "ku_ids": {
           "type": "array",
-          "items": {"$ref": "#/$defs/ku_id"},
+          "items": {
+            "$ref": "#/$defs/ku_id"
+          },
           "uniqueItems": true
         },
-        "by_vault": {"$ref": "#/$defs/vault_ku_lists"},
+        "by_vault": {
+          "$ref": "#/$defs/vault_ku_lists"
+        },
         "assignment_bases": {
           "type": "object",
           "additionalProperties": {
             "type": "array",
-            "items": {"type": "string", "minLength": 1},
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
             "minItems": 1
           },
           "description": "Per-KU record of which deterministic rule(s) placed the KU in this category (rule_set identifier documents the rules; synthesis re-examines, never blindly trusts)."
@@ -242,21 +325,35 @@
     },
     "gap": {
       "type": "object",
-      "required": ["category", "kind"],
+      "required": [
+        "category",
+        "kind"
+      ],
       "additionalProperties": false,
       "properties": {
-        "category": {"$ref": "#/$defs/category_id"},
+        "category": {
+          "$ref": "#/$defs/category_id"
+        },
         "kind": {
           "type": "string",
-          "enum": ["no_evidence", "single_vault"]
+          "enum": [
+            "no_evidence",
+            "single_vault"
+          ]
         },
         "present_vault": {
           "type": "string",
-          "enum": ["ai-course", "master-ai"]
+          "enum": [
+            "ai-course",
+            "master-ai"
+          ]
         },
         "absent_vault": {
           "type": "string",
-          "enum": ["ai-course", "master-ai"]
+          "enum": [
+            "ai-course",
+            "master-ai"
+          ]
         }
       },
       "description": "Explicit gap marker: no_evidence = no KU from either vault in this category; single_vault = only one vault contributes (present_vault/absent_vault required for single_vault)."
@@ -286,7 +383,9 @@
           "minLength": 1,
           "description": "Human-readable concept label (the source classification record's topic)."
         },
-        "source_classification_id": {"$ref": "#/$defs/classification_ref"},
+        "source_classification_id": {
+          "$ref": "#/$defs/classification_ref"
+        },
         "overlap_type": {
           "type": "string",
           "enum": [
@@ -301,14 +400,18 @@
         "ku_ids": {
           "type": "array",
           "minItems": 2,
-          "items": {"$ref": "#/$defs/ku_id"},
+          "items": {
+            "$ref": "#/$defs/ku_id"
+          },
           "uniqueItems": true
         },
         "ku_count": {
           "type": "integer",
           "minimum": 2
         },
-        "by_vault": {"$ref": "#/$defs/vault_ku_lists"},
+        "by_vault": {
+          "$ref": "#/$defs/vault_ku_lists"
+        },
         "categories": {
           "type": "object",
           "required": [
@@ -369,7 +472,9 @@
         },
         "gaps": {
           "type": "array",
-          "items": {"$ref": "#/$defs/gap"}
+          "items": {
+            "$ref": "#/$defs/gap"
+          }
         }
       }
     }

@@ -1,0 +1,25 @@
+{
+  "command": "kureg-init",
+  "result": {
+    "db_path": "/home/z/my-project/repo/state/registries/kuregistry.db",
+    "registry_schema_version": 2,
+    "id_namespace": "vault_unification-ku-v1",
+    "created_utc": "2026-10-26T22:13:59+00:00",
+    "force_used": true
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "kureg-init",
+    "args": {
+      "command": "kureg-init",
+      "db": "state/registries/kuregistry.db",
+      "force": true,
+      "protected_root": null,
+      "report": "/home/z/my-project/repo/reports/extraction/ext008-kureg-init.json"
+    },
+    "utc_timestamp": "2026-10-26T22:13:59+00:00",
+    "git_commit": "de35e8c"
+  }
+}

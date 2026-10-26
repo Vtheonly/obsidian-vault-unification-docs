@@ -1,0 +1,93 @@
+{
+  "_comment": "Clustering/dimensionality-reduction domain term/alias map for EXT-008 cross-vault candidate discovery (CAP-013). Canonical term -> aliases. Built from the actual content of batch 006 (master-ai '04 - Clustering and Dimensionality Reduction.md', 27 KUs) and batch 007 (ai-course 03.5 K-Means Clustering 1 file + 03.8 Dimensionality Reduction 2 files, 87 KUs, two deterministic single-scope runs concatenated in fixed order); every term and alias is verified to occur inside at least one in-scope KU excerpt by scripts/ext008_term_map.py (reports/extraction/ext008-term-map-verification.json). French alias 'regroupement' verified at ai-course 03.5 line 4 (parenthetical gloss of 'Clustering'); no other French vocabulary in scope (probe: nuage / données / algorithme / méthode du coude / variance expliquée / seuil / étiquette all absent). BRIDGE aliases deliberately connect different surface forms of the same concept across vaults: 'choosing k' (master-ai) with 'choose k'/'number of clusters' (ai-course); 'nonlinear' (master-ai) with 'non-linear' (ai-course); 'sklearn' (master-ai) with 'scikit-learn' (ai-course); 'inertia' (both) with 'WCSS'/'within-cluster' (ai-course). Known spurious-match source, recorded here so classification dismisses it with evidence: 'scale' word-boundary matching also hits 'large-scale' (ai-course). Note: 'silhouette' occurs ONLY on the master-ai side in this scope — the ai-course clustering-METRICS file (batch 005, extracted in EXT-005) covers silhouette from the metrics angle and is NOT part of this domain's batches; cross-domain connections wait for synthesis. Keys starting with _ are documentation and ignored by the loader.",
+  "clustering": [
+    "regroupement"
+  ],
+  "cluster": [],
+  "K-means": [
+    "k-means++",
+    "KMeans"
+  ],
+  "centroid": [
+    "centroids"
+  ],
+  "inertia": [
+    "WCSS",
+    "within-cluster"
+  ],
+  "elbow method": [
+    "elbow"
+  ],
+  "DBSCAN": [],
+  "hierarchical": [
+    "agglomerative",
+    "divisive"
+  ],
+  "dendrogram": [],
+  "unsupervised": [],
+  "initialization": [
+    "random initialization"
+  ],
+  "labels": [],
+  "choosing k": [
+    "choose k",
+    "number of clusters"
+  ],
+  "dimensionality reduction": [],
+  "PCA": [
+    "principal component",
+    "principal components"
+  ],
+  "variance": [],
+  "explained variance": [],
+  "maximum variance": [],
+  "covariance matrix": [],
+  "SVD": [],
+  "eigendecomposition": [],
+  "t-SNE": [],
+  "perplexity": [],
+  "UMAP": [],
+  "manifold": [],
+  "embedding": [
+    "embeddings"
+  ],
+  "low-dimensional": [],
+  "visualization": [
+    "visualize"
+  ],
+  "feature space": [],
+  "Student-t": [],
+  "n_components": [],
+  "kernel PCA": [],
+  "autoencoder": [],
+  "curse of dimensionality": [],
+  "nonlinear": [
+    "non-linear"
+  ],
+  "projection": [],
+  "compression": [],
+  "information loss": [],
+  "silhouette": [
+    "silhouette score"
+  ],
+  "eps": [
+    "min_samples"
+  ],
+  "outlier": [
+    "anomaly"
+  ],
+  "noise": [],
+  "distance": [],
+  "Euclidean": [],
+  "preprocessing": [],
+  "scale": [],
+  "sklearn": [
+    "scikit-learn"
+  ],
+  "hyperparameters": [
+    "hyperparameter"
+  ],
+  "local structure": [],
+  "global structure": [],
+  "tradeoff": []
+}

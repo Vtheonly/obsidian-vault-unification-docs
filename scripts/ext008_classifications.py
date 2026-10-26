@@ -1,0 +1,1343 @@
+#!/usr/bin/env python3
+"""EXT-008: clustering / dimensionality-reduction domain classifications.
+
+Generates state/classifications/005-ext008-clustering-dimreduction-overlap.jsonl
+from batches 006 (master-ai '04 - Clustering and Dimensionality Reduction.md',
+27 KUs) and 007 (ai-course 03.5 K-Means Clustering + 03.8 Dimensionality
+Reduction, 3 files, 87 KUs), over the CAP-013 discovery output
+(reports/extraction/ext008-overlap-candidates.json: 934 pairs, 35 cross-vault
+topics).
+
+SCOPE NOTE (task-record deviation, decided with evidence per the EXT-008
+record's own contingency clause): the task title named the SVM/kernel-methods
+domain pair, but a full-vault search found master-ai has NO dedicated SVM
+content (16 occurrences in 11 files, all passing mentions: a roadmap checkbox
+'SVM, kNN', two history-timeline entries, 'support vector indexes' in the
+LlamaIndex note, and 'kernel' in the linear-attention sense). The record
+therefore instructed: 'Alternative next tasks if SVM proves ill-scoped at
+session start (decide with evidence): ... another domain pair from the
+unextracted Master AI files'. The clustering / dimensionality-reduction pair
+was selected: master-ai 'Unsupervised Learning/04' (K-Means, DBSCAN,
+hierarchical, PCA, t-SNE, UMAP, autoencoders) vs ai-course 03.5 + 03.8
+(K-Means deep dive, PCA, t-SNE/UMAP) — rich real content on both sides.
+
+Overlap judgments (27 records: 22 Semantic Duplicate, 4 Partial Overlap,
+1 Complementary Content), each with byte-exact quote evidence.
+
+Verification before writing (exit non-zero on ANY failure):
+  X1 every evidence quote is a byte-exact substring of the referenced KU's
+     excerpt in the new batch files;
+  X2 every evidence quote sits byte-exact at its computed lines in the
+     ORIGINAL source file (EXT-005-REVIEW precedent; 0 off-by-one tolerance);
+  X3 every record is cross-vault (both ai-course and master-ai in ku_ids);
+  X4 evidence ku_ids == record ku_ids exactly;
+  X5 every KU id exists in the new batches;
+  X6 the record set validates against schemas/overlap-classification.schema.json;
+  X7 classification ids are unique and sequential;
+  X8 no duplicate quote strings anywhere in the file;
+  X9 committed classification files 001-004 are byte-unchanged (append-only).
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parents[1]
+BATCHES = [
+    REPO / "state/knowledge-units/006-ext008-master-ai-unsupervised.jsonl",
+    REPO / "state/knowledge-units/007-ext008-ai-course-clustering-dimreduction.jsonl",
+]
+COMMITTED = [
+    REPO / "state/classifications/001-ext003-regression-overlap.jsonl",
+    REPO / "state/classifications/002-ext004-tree-based-overlap.jsonl",
+    REPO / "state/classifications/003-ext005-evaluation-overlap.jsonl",
+    REPO / "state/classifications/004-ext007-evaluation-addendum.jsonl",
+]
+OUT = REPO / "state/classifications/005-ext008-clustering-dimreduction-overlap.jsonl"
+SCHEMA = REPO / "schemas/overlap-classification.schema.json"
+
+CLASSIFIED_BY = "EXT-008 orchestrator (Z AI / GLM 5.3 session, 2026-10-27)"
+DATE = "2026-10-27"
+TASK_ID = "EXT-008"
+
+METHOD = (
+    "Evidence-based classification per EXT-003..007 pattern: CAP-013 "
+    "discovery over batches 006+007 (reports/extraction/"
+    "ext008-overlap-candidates.json, 934 pairs, 35 cross-vault topics) was "
+    "read in full against both batches' KU excerpts and the original source "
+    "lines; overlap clusters were judged per docs/KNOWLEDGE_AND_PROVENANCE.md "
+    "section 7 (pair-level relationship types, separate from disposition). "
+    "Every evidence quote is a byte-exact fragment verified inside the KU "
+    "excerpt AND at the original source lines before writing (chain X1-X9 in "
+    "this script). Single-vault elaborations (e.g. K-Means++ / n_init, "
+    "K-Medians, silhouette scoring, SVD/eigendecomposition mechanics, "
+    "Student-t crowding problem, UMAP Riemannian/fuzzy-topology mechanics, "
+    "mini-batch k-means, vector-DB ANN indexing) are recorded inside "
+    "rationales as vault-specific content, not as separate cross-vault "
+    "records. Independent review: EXT-008-REVIEW (read-only) must PASS "
+    "before commit."
+)
+
+CANDIDATE_REF = (
+    "reports/extraction/ext008-overlap-candidates.json + -pairs.jsonl "
+    "(CAP-013 over batches 006/007, terms clustering-domain-v1.json) + "
+    "committed batches 006/007"
+)
+
+RECORDS = [
+    {
+        "classification_id": "OC-ext008-0001",
+        "task_id": TASK_ID,
+        "topic": "K-Means is the default, most-used clustering algorithm",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-1980436208988bd5", "KU-40399111ae304338"],
+        "evidence": [
+            {"ku_id": "KU-1980436208988bd5",
+             "quote": "The simplest and most-used clustering algorithm.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [17]},
+            {"ku_id": "KU-40399111ae304338",
+             "quote": "While K-Means is the most popular, it is part of a broader family:",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [35]},
+        ],
+        "rationale": (
+            "Both vaults anchor K-Means as the reference clustering algorithm: "
+            "master-ai opens its K-Means section with 'The simplest and "
+            "most-used clustering algorithm.', and the course introduces its "
+            "types-of-clustering survey with 'While K-Means is the most "
+            "popular, it is part of a broader family'. The shared claim — "
+            "K-Means' standing as the most-used / most-popular clustering "
+            "algorithm — is duplicated; simplicity is a master-ai-only "
+            "characterization (the course never calls K-Means simple; its "
+            "limitations intro says 'fast and popular'). The course then "
+            "elaborates the broader family (partitioning, hierarchical, "
+            "density-based) while master-ai elaborates pros/cons — "
+            "elaboration, not divergence. Related records: OC-ext008-0002 "
+            "(the algorithm cycle) and OC-ext008-0007/0008 (the two other "
+            "family members with real cross-vault content)."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0002",
+        "task_id": TASK_ID,
+        "topic": "The K-Means algorithm cycle: iteratively assign points to the nearest centroid, recompute centroids as the mean of assigned points, repeat until assignments stop changing",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": [
+            "KU-b3f255e5a34297c8", "KU-d30928a738f2afec",
+            "KU-24af8fb8e50ca155", "KU-83f4608cccf59eb2",
+            "KU-95a6e0035d50a8d4",
+        ],
+        "evidence": [
+            {"ku_id": "KU-b3f255e5a34297c8",
+             "quote": "1. Pick $K$ random initial centroids.\n2. Assign each point to the nearest centroid.\n3. Recompute centroids as the mean of their assigned points.\n4. Repeat until assignments stop changing.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [19, 20, 21, 22]},
+            {"ku_id": "KU-d30928a738f2afec",
+             "quote": "The process loops through two main steps (Assignment and Update) until it converges.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [49]},
+            {"ku_id": "KU-24af8fb8e50ca155",
+             "quote": "*   The point is assigned to the cluster of the closest centroid.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [72]},
+            {"ku_id": "KU-83f4608cccf59eb2",
+             "quote": "*   We calculate the new position of centroid $\\mu_j$ by taking the **Average (Mean)** of all points $x$ currently assigned to cluster $j$.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [76]},
+            {"ku_id": "KU-95a6e0035d50a8d4",
+             "quote": "*   **Centroid ($\\mu$):** The center point of a cluster. It is the arithmetic mean of all data points belonging to that cluster.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [46]},
+        ],
+        "rationale": (
+            "Master-ai's four-step numbered list and the course's "
+            "Assignment/Update cycle describe the identical algorithm: "
+            "initialize K centroids, assign each point to its nearest "
+            "centroid, recompute each centroid as the arithmetic mean of its "
+            "assigned points, and repeat until nothing changes. The course "
+            "also states the centroid-as-arithmetic-mean definition that "
+            "master-ai expresses operationally in step 3. Course-only "
+            "elaboration (kept out of evidence, no master-ai counterpart): "
+            "the Euclidean-distance formula for assignment, the mermaid "
+            "flowchart, the 1D worked example, and the three explicit "
+            "stop conditions. Master-ai-only: the $O(NK)$ per-iteration cost "
+            "note. The core procedure is duplicated."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0003",
+        "task_id": TASK_ID,
+        "topic": "K-Means minimizes the within-cluster sum of squared distances to centroids (inertia / WCSS)",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": [
+            "KU-5a3b9265762714c3", "KU-f6dcefe10dfc20f5",
+            "KU-ef3d88807e5861ca", "KU-bbd6008d296e811d",
+        ],
+        "evidence": [
+            {"ku_id": "KU-5a3b9265762714c3",
+             "quote": "**Objective**: minimize the sum of squared distances from points to their cluster centroids (inertia).",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [24]},
+            {"ku_id": "KU-f6dcefe10dfc20f5",
+             "quote": "We use a metric called **WCSS (Within-Cluster Sum of Squares)**, also known as **Inertia**.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [111]},
+            {"ku_id": "KU-ef3d88807e5861ca",
+             "quote": "*   **Goal:** Lower WCSS is better (it means points are very close to their centroids).",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [117]},
+            {"ku_id": "KU-bbd6008d296e811d",
+             "quote": "The objective is to minimize the **Intra-Cluster Distance** (distance between points inside a group) and maximize the **Inter-Cluster Distance** (distance between the groups themselves).",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [9]},
+        ],
+        "rationale": (
+            "Both vaults define the same optimization objective under the "
+            "same two names: master-ai says 'minimize the sum of squared "
+            "distances from points to their cluster centroids (inertia)', and "
+            "the course says WCSS 'is also known as Inertia' with the goal "
+            "'Lower WCSS is better'. The course additionally opens with the "
+            "geometric intra-cluster-min / inter-cluster-max framing, which "
+            "restates the intra-cluster half of the objective and adds the "
+            "inter-cluster side (maximizing inter-cluster distance is a "
+            "broader geometric goal, not part of the WCSS/inertia objective "
+            "itself). Course-only "
+            "elaboration: the explicit WCSS formula and the $K=N$ "
+            "zero-WCSS trap. The core objective is duplicated."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0004",
+        "task_id": TASK_ID,
+        "topic": "K-Means is sensitive to centroid initialization (poor starts converge to suboptimal solutions)",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-b588378e33fd9f1b", "KU-cbe32ec1a0602c71", "KU-baec62c2a9725f45"],
+        "evidence": [
+            {"ku_id": "KU-b588378e33fd9f1b",
+             "quote": "sensitive to initialization",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [27]},
+            {"ku_id": "KU-cbe32ec1a0602c71",
+             "quote": "K-Means is sensitive to the starting position of the centroids.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [152]},
+            {"ku_id": "KU-baec62c2a9725f45",
+             "quote": "*   **Problem:** If you initialize centroids poorly (e.g., two centroids in the same data cloud), the algorithm might get stuck in a **Local Minimum**. It will converge, but the result will be suboptimal.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [153]},
+        ],
+        "rationale": (
+            "Master-ai lists 'sensitive to initialization' among K-Means' "
+            "cons; the course devotes a 'The Initialization Trap (Local "
+            "Minima)' subsection to the same weakness, including the "
+            "converges-but-suboptimal consequence master-ai implies. "
+            "Course-only remedies recorded here as elaboration: run multiple "
+            "restarts picking the lowest WCSS (n_init=10 in Scikit-Learn) and "
+            "K-Means++ smart initialization — master-ai names neither, though "
+            "its production section's MiniBatchKMeans tip is a different "
+            "(performance) concern. The weakness itself is duplicated. The "
+            "master-ai KU also participates in OC-ext008-0005 (a different "
+            "limitation from the same cons line) — multi-participation is "
+            "expected (ADR-0009)."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0005",
+        "task_id": TASK_ID,
+        "topic": "K-Means assumes roughly spherical clusters of similar size (Euclidean geometry limitation)",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-b588378e33fd9f1b", "KU-88c304eca36fac67", "KU-b143485bd87b797c"],
+        "evidence": [
+            {"ku_id": "KU-b588378e33fd9f1b",
+             "quote": "assumes spherical clusters of similar size",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [27]},
+            {"ku_id": "KU-88c304eca36fac67",
+             "quote": "K-Means assumes that clusters are:",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [167]},
+            {"ku_id": "KU-b143485bd87b797c",
+             "quote": "1.  **Spherical (Round):** It uses Euclidean distance, which radiates in a circle.\n2.  **Similar Size:** It struggles if one cluster is tiny and tight while another is huge and sparse.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [168, 169]},
+        ],
+        "rationale": (
+            "Master-ai's cons line 'assumes spherical clusters of similar "
+            "size' is expanded by the course into its 'Spherical Assumption' "
+            "subsection: spherical-because-Euclidean and "
+            "struggles-when-clusters-differ-in-size, plus the "
+            "linear-separability/complex-shapes point whose remedy feeds "
+            "OC-ext008-0007 (DBSCAN). The two named assumptions — spherical "
+            "and similar size — are stated by both vaults; the Euclidean "
+            "explanation is course-only elaboration. The shared limitation "
+            "profile is duplicated. The master-ai KU also participates in "
+            "OC-ext008-0004 (initialization sensitivity, the other cons "
+            "item) — multi-participation is expected (ADR-0009)."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0006",
+        "task_id": TASK_ID,
+        "topic": "Choosing K with the elbow method: plot inertia/WCSS against K and take the diminishing-returns bend as the optimal K",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": [
+            "KU-1b0e69bce3c11505", "KU-9f285870c07693ee",
+            "KU-3d2a7e2bc58c4560", "KU-c535d3c48bc89df9",
+            "KU-32e9305f6e0072c7",
+        ],
+        "evidence": [
+            {"ku_id": "KU-32e9305f6e0072c7",
+             "quote": "One of the biggest challenges in K-Means is answering the question: **\"How many clusters ($K$) should I choose?\"**",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [106]},
+            {"ku_id": "KU-1b0e69bce3c11505",
+             "quote": "**Choosing K**: elbow method (find the \"elbow\" in inertia vs. K), silhouette score, or domain knowledge.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [29]},
+            {"ku_id": "KU-9f285870c07693ee",
+             "quote": "1.  Run the K-Means algorithm for a range of $K$ values (e.g., $K=1$ to $K=10$).\n2.  For each $K$, calculate the final WCSS (Inertia).\n3.  Plot **$K$** on the X-axis and **WCSS** on the Y-axis.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [126, 127, 128]},
+            {"ku_id": "KU-3d2a7e2bc58c4560",
+             "quote": "*   **The Elbow Point:** The value of $K$ where the curve starts to flatten out. This is the optimal $K$.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [134]},
+            {"ku_id": "KU-c535d3c48bc89df9",
+             "quote": "**Choosing K wrong** — elbow method is heuristic; check silhouette scores too.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [138]},
+        ],
+        "rationale": (
+            "Both vaults prescribe the elbow method for choosing K and both "
+            "tie it to the inertia/WCSS curve: master-ai says 'find the "
+            "\"elbow\" in inertia vs. K' and the course gives the procedure "
+            "(run K=1..10, plot final WCSS per K) plus the definition of the "
+            "elbow point ('where the curve starts to flatten out'), opening "
+            "from the choosing-K challenge premise (the course poses the "
+            "question directly at its section head; master-ai's cons line "
+            "carries the 'need to choose $K$' item). Master-ai's pitfall "
+            "flags the method's heuristic character ('elbow method is "
+            "heuristic; check silhouette scores too'); the course's TIP "
+            "callout flags the no-clear-elbow failure mode, where K falls "
+            "back to business context. Master-ai-only "
+            "elaboration: silhouette score and domain knowledge as "
+            "alternatives (silhouette teaching lives in the course's 03.6 "
+            "metrics file, outside this domain's batches — cross-domain "
+            "connection waits for synthesis). The core method is duplicated."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0007",
+        "task_id": TASK_ID,
+        "topic": "DBSCAN: density-based clustering — clusters are high-density regions separated by low-density regions; handles arbitrary shapes and flags outliers as noise",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": [
+            "KU-1904f21cbb5ca465", "KU-966c8d2cd1ffc1d4",
+            "KU-4adf2802111c15f1", "KU-6c3d72305dca181a",
+            "KU-c293d6ae091274eb",
+        ],
+        "evidence": [
+            {"ku_id": "KU-1904f21cbb5ca465",
+             "quote": "Density-based clustering: a cluster is a region of high density separated from other clusters by low-density regions.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [33]},
+            {"ku_id": "KU-966c8d2cd1ffc1d4",
+             "quote": "- Handles non-spherical clusters.\n- Marks low-density points as noise (outliers).\n- Sensitive to `eps` (neighborhood radius) and `min_samples` parameters.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [36, 37, 38]},
+            {"ku_id": "KU-4adf2802111c15f1",
+             "quote": "- **DBSCAN**: arbitrary cluster shapes, want outlier detection.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [51]},
+            {"ku_id": "KU-6c3d72305dca181a",
+             "quote": "**Density-Based Methods (DBSCAN):** Find areas of high density and separate them from areas of low density (outliers).",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [38]},
+            {"ku_id": "KU-c293d6ae091274eb",
+             "quote": "For these complex shapes, use **DBSCAN** or **Spectral Clustering**.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [173]},
+        ],
+        "rationale": (
+            "The DBSCAN definition is near-verbatim across vaults: master-ai "
+            "'a cluster is a region of high density separated from other "
+            "clusters by low-density regions' and the course 'Find areas of "
+            "high density and separate them from areas of low density "
+            "(outliers)'. Both also pair DBSCAN with non-spherical/complex "
+            "cluster shapes (master-ai's when-to-use line and the course's "
+            "visual-trap warning, which recommends DBSCAN exactly where "
+            "K-Means' spherical assumption fails — the bridge to "
+            "OC-ext008-0005). Master-ai-only elaboration: the eps/min_samples "
+            "parameter sensitivity and the no-K-needed property. The core "
+            "definition and shape/outlier roles are duplicated."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0008",
+        "task_id": TASK_ID,
+        "topic": "Hierarchical clustering builds a tree of clusters (dendrogram)",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-839ed03edbe76535", "KU-6c3d72305dca181a"],
+        "evidence": [
+            {"ku_id": "KU-839ed03edbe76535",
+             "quote": "Builds a tree of clusters (dendrogram). Either agglomerative (bottom-up: merge closest clusters) or divisive (top-down: split).",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [42]},
+            {"ku_id": "KU-6c3d72305dca181a",
+             "quote": "**Hierarchical Methods:** Create a tree of clusters (Dendrogram), grouping small clusters into larger ones.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [37]},
+        ],
+        "rationale": (
+            "Both vaults define hierarchical clustering as building a tree of "
+            "clusters named a dendrogram — the course's 'grouping small "
+            "clusters into larger ones' is the agglomerative direction that "
+            "master-ai names explicitly. Master-ai-only elaboration (no "
+            "course counterpart in scope): the agglomerative/divisive split, "
+            "cutting the dendrogram instead of choosing K upfront, the "
+            "interpretable-hierarchy benefit, and the $O(N^2)$-or-worse "
+            "scalability caveat. The course's single-line mention inside the "
+            "types list carries the shared definition; the core claim is "
+            "duplicated."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0009",
+        "task_id": TASK_ID,
+        "topic": "Clustering is the unsupervised task of discovering groups in unlabeled data (vs. supervised classification with predefined classes)",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-938d8eb22894b647", "KU-bb5538b0bda3cea7", "KU-b010bad1fbdafef1"],
+        "evidence": [
+            {"ku_id": "KU-938d8eb22894b647",
+             "quote": "Unsupervised learning finds structure in unlabeled data. **Clustering** groups similar examples",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [11]},
+            {"ku_id": "KU-bb5538b0bda3cea7",
+             "quote": "**Clustering** (or *Regroupement*) is the task of dividing a population or data points into a number of groups such that data points in the same groups are more similar to other data points in the same group than those in other groups.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [4]},
+            {"ku_id": "KU-b010bad1fbdafef1",
+             "quote": "Unlike **Classification** (Supervised Learning), where the classes are predefined (e.g., \"Cat\" vs. \"Dog\"), in **Clustering** (Unsupervised Learning), the groups are **discovered** by the algorithm.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [6]},
+        ],
+        "rationale": (
+            "Master-ai's TL;DR and the course's definition section state the "
+            "same foundational claim: clustering is the unsupervised task "
+            "that groups similar data points in unlabeled data. The course "
+            "adds the explicit supervised/unsupervised contrast "
+            "(predefined classes vs. discovered groups) that master-ai "
+            "compresses into 'unlabeled data', plus course-only "
+            "elaborations: the library analogy callout, the medical-diagnosis "
+            "clouds example, and the intra/inter-cluster objective (the "
+            "latter participates in OC-ext008-0003). The French gloss "
+            "'Regroupement' is recorded in the term map. The core definition "
+            "is duplicated."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0010",
+        "task_id": TASK_ID,
+        "topic": "Outliers and clustering: K-Means' mean-based weakness to outliers (course) vs. clustering as an anomaly-detection tool (master-ai)",
+        "overlap_type": "Complementary Content",
+        "ku_ids": [
+            "KU-72dae179a58f5cf4", "KU-b0fa719c1431f62f",
+            "KU-d200c434e84b71fd", "KU-576a600612b905a7",
+        ],
+        "evidence": [
+            {"ku_id": "KU-72dae179a58f5cf4",
+             "quote": "Since K-Means relies on the **Mean** (Average), it is highly sensitive to outliers.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [160]},
+            {"ku_id": "KU-b0fa719c1431f62f",
+             "quote": "If you add one billionaire (\\$1B income), the \"Centroid\" (Average) will shift massively towards the billionaire, effectively destroying the cluster logic.",
+             "source_path": "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+             "lines": [161]},
+            {"ku_id": "KU-d200c434e84b71fd",
+             "quote": "- **Anomaly detection**: cluster outliers or low-density points flag anomalies.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [124]},
+            {"ku_id": "KU-576a600612b905a7",
+             "quote": "- **Anomaly detection with clustering**: compute distance to nearest cluster centroid; flag points with distance > threshold.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [132]},
+        ],
+        "rationale": (
+            "Same intersection — outliers x clustering — from opposite "
+            "directions, with no shared claim to deduplicate. The course "
+            "covers K-Means' weakness TO outliers: the mean is dragged by "
+            "extreme values (the billionaire example), with remove-outliers "
+            "or K-Medians as course-only fixes. Master-ai covers clustering "
+            "AS an anomaly-detection tool: low-density/outlier points flag "
+            "anomalies, operationalized as distance-to-nearest-centroid "
+            "thresholding. These are complementary facets, not duplicates: "
+            "one says 'outliers break the clusterer', the other says 'the "
+            "clusterer finds outliers'. Synthesis must keep both. Master-ai's "
+            "noise/outlier marking for DBSCAN is a separate claim recorded in "
+            "OC-ext008-0007."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+]
+RECORDS += [
+    {
+        "classification_id": "OC-ext008-0011",
+        "task_id": TASK_ID,
+        "topic": "Dimensionality reduction projects high-dimensional data to a lower-dimensional space while preserving structure; PCA is the linear approach, t-SNE/UMAP the non-linear ones",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-938d8eb22894b647", "KU-895262d05da320cb"],
+        "evidence": [
+            {"ku_id": "KU-938d8eb22894b647",
+             "quote": "**dimensionality reduction** projects high-dim data to a lower-dim space that preserves structure",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [11]},
+            {"ku_id": "KU-895262d05da320cb",
+             "quote": "**Dimensionality reduction** finds a low-dimensional representation that captures the important structure. PCA is the linear approach; t-SNE and UMAP (next note) are the non-linear approaches.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/01. Principal Component Analysis (PCA).md",
+             "lines": [18]},
+        ],
+        "rationale": (
+            "Both vaults define dimensionality reduction as finding a "
+            "lower-dimensional representation that preserves the data's "
+            "structure. The course adds the explicit linear (PCA) vs "
+            "non-linear (t-SNE, UMAP) taxonomy that master-ai expresses "
+            "through its section layout (a 'Linear projection' PCA section "
+            "followed by 'Nonlinear reduction' t-SNE/UMAP sections). "
+            "Course-only elaboration: the motivating high-dimensionality "
+            "examples and the curse-of-dimensionality list. The core "
+            "definition is duplicated; this record anchors the domain the "
+            "way OC-ext008-0009 anchors clustering."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0012",
+        "task_id": TASK_ID,
+        "topic": "PCA projects data onto the directions of maximum variance, preserving as much variance as possible",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-26400947f7c9531f", "KU-ac7a892a3f9b6732", "KU-1869778a5ea209cb"],
+        "evidence": [
+            {"ku_id": "KU-26400947f7c9531f",
+             "quote": "Linear projection to the directions of maximum variance.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [58]},
+            {"ku_id": "KU-ac7a892a3f9b6732",
+             "quote": "PCA finds the **directions in which the data varies the most** and projects the data onto those directions.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/01. Principal Component Analysis (PCA).md",
+             "lines": [24]},
+            {"ku_id": "KU-1869778a5ea209cb",
+             "quote": "It reduces high-dimensional data to a lower-dimensional representation while preserving as much variance as possible.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/01. Principal Component Analysis (PCA).md",
+             "lines": [6]},
+        ],
+        "rationale": (
+            "The PCA definition is effectively paraphrased across vaults: "
+            "master-ai's one-liner 'Linear projection to the directions of "
+            "maximum variance' and the course's 'PCA finds the directions in "
+            "which the data varies the most and projects the data onto those "
+            "directions' / 'preserving as much variance as possible'. "
+            "Master-ai defers the mathematics to its Matrix Decomposition "
+            "note (cross-vault link, outside this domain's batches); the "
+            "course works the algorithm out (center, covariance matrix, "
+            "eigendecomposition, project — course-only mechanics, as is the "
+            "SVD equivalence). The core definition is duplicated."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0013",
+        "task_id": TASK_ID,
+        "topic": "PCA captures only linear, global structure and misses non-linear and local structure (use t-SNE/UMAP/autoencoders for those)",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-a0e81bd4cdf20772", "KU-17a0070928f202f7", "KU-9f7ca5e9788a5186"],
+        "evidence": [
+            {"ku_id": "KU-a0e81bd4cdf20772",
+             "quote": "- Only captures linear structure.\n- Good baseline and preprocessing step.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [61, 62]},
+            {"ku_id": "KU-17a0070928f202f7",
+             "quote": "- **Linear structure:** the directions of maximum variance, assuming they are linear.\n- **Global structure:** the principal components are global — they describe the entire dataset.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/01. Principal Component Analysis (PCA).md",
+             "lines": [49, 50]},
+            {"ku_id": "KU-9f7ca5e9788a5186",
+             "quote": "- **Non-linear structure:** if the data lies on a curved manifold (e.g., the \"swiss roll\" dataset), PCA cannot unroll it — it finds the best linear projection, which mixes the roll's layers. Use t-SNE, UMAP, or an autoencoder for non-linear structure.\n- **Local structure:** PCA preserves global variance, not local neighborhoods.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/01. Principal Component Analysis (PCA).md",
+             "lines": [53, 54]},
+        ],
+        "rationale": (
+            "Both vaults state PCA's capability boundary the same way: it "
+            "captures linear structure only ('Only captures linear "
+            "structure' vs 'assuming they are linear' + the swiss-roll "
+            "counterexample), its components are global, and non-linear or "
+            "local structure needs t-SNE/UMAP (the course adds "
+            "autoencoders — see OC-ext008-0027). The course's "
+            "captures/misses lists are the expanded form of master-ai's "
+            "three-bullet PCA profile; its 'misses' list additionally covers "
+            "class structure with the LDA alternative (course-only "
+            "elaboration). The shared boundary claim is duplicated."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0014",
+        "task_id": TASK_ID,
+        "topic": "Standardize features before PCA (and before t-SNE/UMAP): large-scale features dominate otherwise",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-c535d3c48bc89df9", "KU-65a85f50a7d0e6e8", "KU-e43b275bbcdf4e0e"],
+        "evidence": [
+            {"ku_id": "KU-c535d3c48bc89df9",
+             "quote": "- **Not standardizing features before PCA** — features with large scale dominate.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [137]},
+            {"ku_id": "KU-65a85f50a7d0e6e8",
+             "quote": "**PCA is sensitive to scaling.** Features with large scale dominate the variance. **Always standardize** (subtract mean, divide by std) before PCA, or features with large numerical ranges will dominate.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/01. Principal Component Analysis (PCA).md",
+             "lines": [82]},
+            {"ku_id": "KU-e43b275bbcdf4e0e",
+             "quote": "1. **Not standardizing first.** Like PCA, t-SNE and UMAP are distance-based — standardize features first, or large-scale features dominate.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [105]},
+        ],
+        "rationale": (
+            "The pitfall is stated nearly verbatim: master-ai's 'Not "
+            "standardizing features before PCA — features with large scale "
+            "dominate' and the course's 'PCA is sensitive to scaling. "
+            "Features with large scale dominate the variance. Always "
+            "standardize'. The course specifies the procedure (subtract "
+            "mean, divide by std), repeats the rule in its walk-away list, "
+            "and extends it to t-SNE/UMAP because they are distance-based — "
+            "course-side extensions, no divergence on the core claim. The "
+            "rule is duplicated."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0015",
+        "task_id": TASK_ID,
+        "topic": "Dimensionality reduction's use-case portfolio: visualization, compression/denoising, and preprocessing for downstream models",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-938d8eb22894b647", "KU-d200c434e84b71fd", "KU-1869778a5ea209cb", "KU-26301bb59533cfb6", "KU-28ead0adb7538ca8"],
+        "evidence": [
+            {"ku_id": "KU-938d8eb22894b647",
+             "quote": "Both are essential for exploration, visualization, and as preprocessing for downstream models.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [11]},
+            {"ku_id": "KU-d200c434e84b71fd",
+             "quote": "- **Feature compression**: PCA / autoencoders reduce feature dim, speeding downstream training.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [125]},
+            {"ku_id": "KU-1869778a5ea209cb",
+             "quote": "It is used for visualization, compression, noise reduction, and as a preprocessing step for other algorithms.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/01. Principal Component Analysis (PCA).md",
+             "lines": [6]},
+            {"ku_id": "KU-26301bb59533cfb6",
+             "quote": "If the signal lies in the top $k$ principal components and the noise is spread across all dimensions, projecting to the top $k$ components removes the noise. This is the basis of \"PCA denoising\" in signal processing and genomics.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/01. Principal Component Analysis (PCA).md",
+             "lines": [75]},
+            {"ku_id": "KU-28ead0adb7538ca8",
+             "quote": "- **Exploratory data analysis:** get intuition for the structure of a new dataset.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [42]},
+        ],
+        "rationale": (
+            "Both vaults enumerate the same use-case portfolio for "
+            "dimensionality reduction: exploration, visualization, and "
+            "preprocessing in master-ai's TL;DR plus compression in its "
+            "'Feature compression' AI-relevance line; the course lists all "
+            "four including noise reduction and then substantiates "
+            "compression (JPEG-2000, course-only) and denoising "
+            "mechanics, with exploratory data analysis as the "
+            "exploration-side item. The "
+            "portfolio-level claim is duplicated; the speed-up mechanics "
+            "for preprocessing are recorded separately in OC-ext008-0016 "
+            "because both vaults state them as an operational claim with "
+            "their own evidence."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0016",
+        "task_id": TASK_ID,
+        "topic": "PCA as preprocessing speeds up downstream algorithms (e.g. clustering), at a cost",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-576a600612b905a7", "KU-199f7e80b56fa7f6"],
+        "evidence": [
+            {"ku_id": "KU-576a600612b905a7",
+             "quote": "- **PCA before K-means** can speed up clustering on high-dim data, but loses interpretability.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [131]},
+            {"ku_id": "KU-199f7e80b56fa7f6",
+             "quote": "Reduce dimensionality before applying another algorithm (KNN, SVM, clustering). This speeds up the downstream algorithm and can improve accuracy by removing noise dimensions. But it can also remove useful information — test with and without PCA.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/01. Principal Component Analysis (PCA).md",
+             "lines": [67]},
+        ],
+        "rationale": (
+            "Both vaults make the operational preprocessing claim: reducing "
+            "dimension first speeds up the downstream algorithm — master-ai "
+            "for K-means specifically ('PCA before K-means can speed up "
+            "clustering on high-dim data'), the course for KNN/SVM/clustering "
+            "generally, adding the accuracy effect of dropping noise "
+            "dimensions and the test-with-and-without caution. Master-ai "
+            "names the interpretability cost (the interpretability theme is "
+            "recorded separately in OC-ext008-0018 because the course "
+            "treats it as a component-level difficulty rather than a "
+            "preprocessing trade-off). The speed-up claim is duplicated."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0017",
+        "task_id": TASK_ID,
+        "topic": "Choosing the number of PCA components: acknowledged by master-ai as PCA's one knob, worked out by the course via explained variance",
+        "overlap_type": "Partial Overlap",
+        "ku_ids": ["KU-a0e81bd4cdf20772", "KU-756f86afba1e1263", "KU-65a85f50a7d0e6e8"],
+        "evidence": [
+            {"ku_id": "KU-a0e81bd4cdf20772",
+             "quote": "no hyperparameters (except # components)",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [60]},
+            {"ku_id": "KU-756f86afba1e1263",
+             "quote": "The eigenvalues tell you how much variance each component captures. The ratio $\\lambda_i / \\sum_j \\lambda_j$ is the **fraction of variance explained** by component $i$. Plotting the cumulative explained variance helps you choose $k$ — pick the smallest $k$ that explains, say, 95% of the variance.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/01. Principal Component Analysis (PCA).md",
+             "lines": [38]},
+            {"ku_id": "KU-65a85f50a7d0e6e8",
+             "quote": "5. **Choosing $k$ is heuristic.** The \"elbow\" in the explained variance plot or a threshold (95% variance) are common heuristics, but there is no principled answer.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/01. Principal Component Analysis (PCA).md",
+             "lines": [85]},
+        ],
+        "rationale": (
+            "Shared: both vaults acknowledge that the number of components "
+            "is the one choice PCA requires — master-ai parenthetically "
+            "('no hyperparameters (except # components)'), the course as a "
+            "full how-to. Course-only: the explained-variance mechanics "
+            "(eigenvalue ratios), the cumulative-variance plot, the 95% "
+            "threshold rule of thumb, and the no-principled-answer caveat; "
+            "master-ai never explains HOW to choose k in this file. "
+            "Master-ai-only: nothing beyond the acknowledgment. Partial "
+            "Overlap: the shared element is the existence of the choice; "
+            "the selection procedure exists only on the course side. The "
+            "master-ai KU also participates in OC-ext008-0013/0024 "
+            "(different fragments of the same three-bullet profile) — "
+            "multi-participation is expected (ADR-0009)."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0018",
+        "task_id": TASK_ID,
+        "topic": "PCA outputs are hard to interpret: components are mixtures of all features (course) and PCA preprocessing sacrifices interpretability (master-ai)",
+        "overlap_type": "Partial Overlap",
+        "ku_ids": ["KU-576a600612b905a7", "KU-65a85f50a7d0e6e8"],
+        "evidence": [
+            {"ku_id": "KU-576a600612b905a7",
+             "quote": "but loses interpretability",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [131]},
+            {"ku_id": "KU-65a85f50a7d0e6e8",
+             "quote": "4. **Interpreting components is hard.** Each principal component is a linear combination of all original features. You can inspect the coefficients (the \"loadings\") to see which features contribute, but the components rarely correspond to clean semantic concepts.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/01. Principal Component Analysis (PCA).md",
+             "lines": [84]},
+        ],
+        "rationale": (
+            "Shared: both vaults state that PCA representations sacrifice "
+            "interpretability. The instantiations differ: master-ai's is a "
+            "preprocessing trade-off ('PCA before K-means ... but loses "
+            "interpretability' — the clustering features stop being original "
+            "features), while the course's is the component-level "
+            "difficulty (each component is a linear combination of all "
+            "features; loadings inspection rarely yields clean semantics). "
+            "The course's claim explains WHY master-ai's trade-off exists, "
+            "so the pair is complementary-in-mechanism but shares the "
+            "interpretability-loss claim — Partial Overlap. The master-ai "
+            "KU also participates in OC-ext008-0016 (the full "
+            "speed-up-vs-interpretability line) — different fragment, "
+            "different claim (ADR-0009)."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0019",
+        "task_id": TASK_ID,
+        "topic": "t-SNE: non-linear reduction built for 2D/3D visualization that preserves local structure but not global structure",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-45b033468b51bd4d", "KU-be8b2fbc662cb136", "KU-6e94864c679c60e3", "KU-d589693bfd726874"],
+        "evidence": [
+            {"ku_id": "KU-45b033468b51bd4d",
+             "quote": "Nonlinear reduction optimized for **visualization** (2D or 3D).",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [66]},
+            {"ku_id": "KU-be8b2fbc662cb136",
+             "quote": "- Preserves local structure (nearby points stay nearby).\n- Does NOT preserve global structure (cluster distances are meaningless).",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [68, 69]},
+            {"ku_id": "KU-6e94864c679c60e3",
+             "quote": "**t-SNE** (van der Maaten and Hinton, 2008) reduces dimensionality by preserving **local neighborhoods**: points that are neighbors in high-dimensional space should be neighbors in the 2D embedding.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [12]},
+            {"ku_id": "KU-d589693bfd726874",
+             "quote": "does not preserve global structure (distances between clusters are not meaningful)",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [46]},
+        ],
+        "rationale": (
+            "The t-SNE character sketch is the same in both vaults: a "
+            "non-linear method optimized for 2D/3D visualization whose "
+            "embeddings preserve local neighborhoods while global distances "
+            "are meaningless — master-ai in its four-bullet profile, the "
+            "course in its opening definition and NOT-good-for list. "
+            "Course-only mechanics (recorded here as elaboration): the "
+            "Gaussian/Student-t similarity construction, the KL-divergence "
+            "objective, and the crowding-problem rationale. The "
+            "visualization-only and local-not-global claims are duplicated; "
+            "the misuse guidance built on them is recorded separately in "
+            "OC-ext008-0020."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+]
+RECORDS += [
+    {
+        "classification_id": "OC-ext008-0020",
+        "task_id": TASK_ID,
+        "topic": "t-SNE misuse guidance: use it only for visualization — not for downstream modeling, not for interpreting inter-cluster distances, not for choosing K or clustering",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-be8b2fbc662cb136", "KU-c535d3c48bc89df9", "KU-d589693bfd726874", "KU-e43b275bbcdf4e0e"],
+        "evidence": [
+            {"ku_id": "KU-be8b2fbc662cb136",
+             "quote": "- Slow on large data; use for visualization, not as model input.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [70]},
+            {"ku_id": "KU-c535d3c48bc89df9",
+             "quote": "- **Using t-SNE distances for analysis** — they're meaningless. Use it only for visualization.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [136]},
+            {"ku_id": "KU-d589693bfd726874",
+             "quote": "- **NOT for interpreting distances.** The distance between two clusters in a t-SNE plot is not meaningful — only within-cluster structure is preserved. Two clusters that appear far apart may actually be close in the original space.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [47]},
+            {"ku_id": "KU-d589693bfd726874",
+             "quote": "- **NOT for choosing the number of clusters.** t-SNE can create artificial clusters or merge real ones depending on the perplexity. Do not use t-SNE plots to decide $K$ for K-Means.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [48]},
+            {"ku_id": "KU-e43b275bbcdf4e0e",
+             "quote": "2. **Using t-SNE for clustering.** t-SNE can create or merge clusters based on perplexity. Use a real clustering algorithm (K-Means, DBSCAN, HDBSCAN) and visualize with t-SNE.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [106]},
+        ],
+        "rationale": (
+            "Both vaults turn the t-SNE character (OC-ext008-0019) into the "
+            "same usage rule: t-SNE output is for visualization only. "
+            "Master-ai states it twice ('use for visualization, not as model "
+            "input' and the pitfall 'Using t-SNE distances for analysis — "
+            "they're meaningless'); the course itemizes the forbidden uses — "
+            "interpreting inter-cluster distances, choosing K, using t-SNE "
+            "for clustering (with the perplexity-dependence reason and the "
+            "use-a-real-algorithm remedy) — plus NOT-for-downstream-modeling "
+            "(non-parametric, does not generalize to new data). The shared "
+            "visualization-only rule is duplicated; the course's itemization "
+            "and the UMAP/PCA alternatives are elaboration."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0021",
+        "task_id": TASK_ID,
+        "topic": "Perplexity as t-SNE's key hyperparameter: named in master-ai's worked example, explained (range, local/global effect, try-multiple advice) only by the course",
+        "overlap_type": "Partial Overlap",
+        "ku_ids": ["KU-82082c5ab71562d9", "KU-b91727a2fe8cc71d", "KU-af441766c86001d2"],
+        "evidence": [
+            {"ku_id": "KU-82082c5ab71562d9",
+             "quote": "X_tsne = TSNE(n_components=2, perplexity=30).fit_transform(X)",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [113]},
+            {"ku_id": "KU-b91727a2fe8cc71d",
+             "quote": "Perplexity (typically 5–50) controls the effective number of neighbors each point considers. Low perplexity emphasizes very local structure; high perplexity captures more global structure. **Always try multiple perplexities** — the plot can change dramatically.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [52]},
+            {"ku_id": "KU-af441766c86001d2",
+             "quote": "The bandwidth $\\sigma_i$ is chosen so that each point has the same \"perplexity\" (effective number of neighbors). Symmetrize: $p_{ij} = (p_{j|i} + p_{i|j}) / (2n)$.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [20]},
+        ],
+        "rationale": (
+            "Shared: both vaults identify perplexity as t-SNE's operative "
+            "knob — master-ai solely through its worked example "
+            "(perplexity=30 in code, never explained), the course through a "
+            "dedicated hyperparameter section (typical 5-50 range, "
+            "low=local/high=global effect, always-try-multiple advice) plus "
+            "the algorithmic definition (bandwidth chosen so each point has "
+            "the same effective number of neighbors). Master-ai's prose "
+            "never mentions perplexity, so the shared element is the "
+            "parameter's existence in the method's usage, not a duplicated "
+            "explanation. Partial Overlap: name-only on the master-ai side, "
+            "full treatment on the course side. Master-ai's pitfall 'UMAP "
+            "hyperparameters matter' covers the analogous UMAP knobs in "
+            "OC-ext008-0023."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0022",
+        "task_id": TASK_ID,
+        "topic": "UMAP's advantage profile over t-SNE: faster, preserves global structure better, and can embed new points for preprocessing/downstream use",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-b062b36ba92d9ff9", "KU-387f39df8809a036"],
+        "evidence": [
+            {"ku_id": "KU-b062b36ba92d9ff9",
+             "quote": "- Faster than t-SNE.\n- Better preserves global structure.\n- Can be used as a preprocessing step (unlike t-SNE) because it generalizes to new points.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [77, 78, 79]},
+            {"ku_id": "KU-387f39df8809a036",
+             "quote": "1. **Faster:** UMAP is much faster than t-SNE, especially on large datasets.\n2. **Preserves global structure better:** UMAP tends to keep both local and global structure, while t-SNE focuses on local.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [60, 61]},
+            {"ku_id": "KU-387f39df8809a036",
+             "quote": "4. **Can embed new data:** UMAP learns a parametric mapping that can be applied to new points. t-SNE cannot (without parametric variants).",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [63]},
+        ],
+        "rationale": (
+            "The UMAP-vs-t-SNE advantage list matches item for item: faster "
+            "(master-ai 'Faster than t-SNE', course 'much faster than t-SNE, "
+            "especially on large datasets'), better global-structure "
+            "preservation, and new-point embedding enabling preprocessing "
+            "use (master-ai 'generalizes to new points', course 'learns a "
+            "parametric mapping that can be applied to new points. t-SNE "
+            "cannot'). Course-only additions: the determinism/reproducibility "
+            "item (recorded in OC-ext008-0024, where the shared PCA/t-SNE "
+            "determinism contrast is stated by both vaults and UMAP's "
+            "determinism is course-only) "
+            "and the use-as-downstream-features consequence; master-ai-only: "
+            "the specific phrase 'Modern alternative to t-SNE' (the "
+            "comparative framing itself is shared — the course introduces "
+            "UMAP as 'a newer algorithm with similar goals to t-SNE'). The "
+            "three-item advantage profile is duplicated."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0023",
+        "task_id": TASK_ID,
+        "topic": "UMAP's two meaningful hyperparameters n_neighbors and min_dist — and that they matter (don't use defaults blindly)",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-b062b36ba92d9ff9", "KU-c535d3c48bc89df9", "KU-49c4486f27bbc597"],
+        "evidence": [
+            {"ku_id": "KU-b062b36ba92d9ff9",
+             "quote": "- Has meaningful hyperparameters (`n_neighbors`, `min_dist`).",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [80]},
+            {"ku_id": "KU-c535d3c48bc89df9",
+             "quote": "- **UMAP hyperparameters matter** — `n_neighbors` and `min_dist` dramatically affect results; don't use defaults blindly.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [140]},
+            {"ku_id": "KU-49c4486f27bbc597",
+             "quote": "- `n_neighbors` (5–50, default 15): similar to t-SNE's perplexity. Low values emphasize local structure; high values emphasize global.\n- `min_dist` (0.0–0.99, default 0.1): how tightly points can pack in the low-D space. Low values produce tighter clusters; high values produce more spread.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [78, 79]},
+        ],
+        "rationale": (
+            "Both vaults identify exactly n_neighbors and min_dist as the "
+            "UMAP knobs that matter: master-ai names the pair in the UMAP "
+            "profile and warns in its pitfalls that they 'dramatically "
+            "affect results; don't use defaults blindly'; the course gives "
+            "each parameter its range, default, and effect (n_neighbors "
+            "analogous to t-SNE perplexity — the bridge to OC-ext008-0021 — "
+            "and min_dist controlling point packing). The shared claim "
+            "(these two hyperparameters are the meaningful ones and they "
+            "matter) is duplicated; the ranges/defaults/effects are "
+            "course-side elaboration."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0024",
+        "task_id": TASK_ID,
+        "topic": "Determinism profile across the three methods: PCA deterministic, t-SNE stochastic (different runs give different plots), UMAP deterministic/reproducible",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-a0e81bd4cdf20772", "KU-be8b2fbc662cb136", "KU-387f39df8809a036", "KU-3a64957f3c1c4842"],
+        "evidence": [
+            {"ku_id": "KU-a0e81bd4cdf20772",
+             "quote": "Fast, deterministic",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [60]},
+            {"ku_id": "KU-be8b2fbc662cb136",
+             "quote": "- Stochastic — different runs give different plots.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [71]},
+            {"ku_id": "KU-387f39df8809a036",
+             "quote": "3. **Reproducible:** UMAP is deterministic; t-SNE (with random initialization) gives different plots each run.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [62]},
+            {"ku_id": "KU-3a64957f3c1c4842",
+             "quote": "| Deterministic | Yes | No | Yes |",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [92]},
+        ],
+        "rationale": (
+            "The determinism contrast is stated by both vaults for the "
+            "methods each addresses: master-ai calls PCA 'Fast, "
+            "deterministic' and t-SNE 'Stochastic — different runs give "
+            "different plots'; the course states 'UMAP is deterministic; "
+            "t-SNE (with random initialization) gives different plots each "
+            "run' and its comparison-table row '| Deterministic | Yes | No | "
+            "Yes |' extends the profile to all three methods. Shared: PCA "
+            "deterministic and t-SNE stochastic (stated by both). "
+            "Course-only: UMAP's determinism (and the table's PCA column "
+            "entry) — master-ai never states UMAP's determinism in this "
+            "file, so the three-method profile as a whole is course-side "
+            "and the duplicated core is the PCA-vs-t-SNE determinism "
+            "contrast. The random-initialization attribution is "
+            "course-side precision, not divergence."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0025",
+        "task_id": TASK_ID,
+        "topic": "Method-selection guidance across PCA / t-SNE / UMAP (and autoencoders): visualization vs preprocessing vs non-linear end-to-end",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-20068e7ee65ce44f", "KU-fd5ea2b0be9db1b7", "KU-3a64957f3c1c4842"],
+        "evidence": [
+            {"ku_id": "KU-20068e7ee65ce44f",
+             "quote": "- **Visualization**: UMAP or t-SNE.\n- **Preprocessing for downstream ML**: PCA or UMAP.\n- **Nonlinear structure, end-to-end training**: autoencoders.\n- **Generative modeling**: VAEs.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [92, 93, 94, 95]},
+            {"ku_id": "KU-fd5ea2b0be9db1b7",
+             "quote": "- Start with **PCA** for a quick look and as a baseline.\n- Use **t-SNE** for the highest-quality visualization of local structure (especially for embeddings).\n- Use **UMAP** when you need speed, global structure, or the ability to embed new data.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [97, 98, 99]},
+            {"ku_id": "KU-3a64957f3c1c4842",
+             "quote": "| Good for visualization | Sometimes | Yes (the standard) | Yes |",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [93]},
+        ],
+        "rationale": (
+            "Both vaults close their dimensionality-reduction coverage with "
+            "selection guidance over the same method set: master-ai's "
+            "use-case list (visualization -> UMAP/t-SNE; preprocessing -> "
+            "PCA/UMAP; non-linear end-to-end -> autoencoders; generative -> "
+            "VAEs) and the course's ordered recommendation (start with PCA, "
+            "t-SNE for high-quality local visualization, UMAP for "
+            "speed/global structure/new data) plus the comparison-table "
+            "visualization row. The overlapping assignments agree (t-SNE/UMAP "
+            "for visualization, PCA/UMAP for preprocessing/downstream). "
+            "Master-ai-only: the autoencoder/VAE rows (the course's "
+            "autoencoder teaching lives in chapter 10, outside this domain's "
+            "batches — recorded in OC-ext008-0027); course-only: the ordered "
+            "start-with-PCA recommendation (the baseline attribute itself is "
+            "shared — master-ai's 'Good baseline and preprocessing step' "
+            "participates in OC-ext008-0013). The shared selection table is "
+            "duplicated."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0026",
+        "task_id": TASK_ID,
+        "topic": "Visualizing embeddings from trained models (word2vec/BERT/ViT or text/image embeddings) with UMAP/t-SNE as the standard inspection practice",
+        "overlap_type": "Semantic Duplicate",
+        "ku_ids": ["KU-d200c434e84b71fd", "KU-576a600612b905a7", "KU-28ead0adb7538ca8", "KU-9d0490a96d5c297f"],
+        "evidence": [
+            {"ku_id": "KU-d200c434e84b71fd",
+             "quote": "- **Embedding visualization**: UMAP / t-SNE on text or image embeddings reveals clusters, outliers, structure. Essential for inspecting embedding models.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [121]},
+            {"ku_id": "KU-576a600612b905a7",
+             "quote": "- **Always visualize embeddings with UMAP** before deploying. If the visualization doesn't match your intuition about the data, something is wrong.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [129]},
+            {"ku_id": "KU-28ead0adb7538ca8",
+             "quote": "- **Checking embeddings:** visualize the embeddings from a trained model (word2vec, BERT, ViT) to see if semantically similar items cluster.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [41]},
+            {"ku_id": "KU-9d0490a96d5c297f",
+             "quote": "They are the standard tools for visualizing embeddings, clusters, and high-dimensional data.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [6]},
+        ],
+        "rationale": (
+            "Both vaults name embedding inspection as the flagship "
+            "modern use of these methods: master-ai's 'UMAP / t-SNE on text "
+            "or image embeddings reveals clusters, outliers, structure. "
+            "Essential for inspecting embedding models' plus its production "
+            "rule 'Always visualize embeddings with UMAP before deploying', "
+            "and the course's 'Checking embeddings: visualize the embeddings "
+            "from a trained model (word2vec, BERT, ViT)'. The shared claim "
+            "(visualize trained-model embeddings with these tools to check "
+            "semantic clustering) is duplicated; master-ai adds the "
+            "deployment-gate framing, the course the concrete model names."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+    {
+        "classification_id": "OC-ext008-0027",
+        "task_id": TASK_ID,
+        "topic": "Autoencoders as the neural / non-linear alternative to PCA for dimensionality reduction (defined by master-ai; pointed to by the course from both DR notes)",
+        "overlap_type": "Partial Overlap",
+        "ku_ids": ["KU-22cf2b488954cd32", "KU-9c69b1bbade970c8", "KU-9f7ca5e9788a5186", "KU-e4784cb31ef8ebe4"],
+        "evidence": [
+            {"ku_id": "KU-22cf2b488954cd32",
+             "quote": "Neural networks trained to reconstruct their input through a low-dimensional \"bottleneck\" layer. The bottleneck is the reduced representation.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [84]},
+            {"ku_id": "KU-9c69b1bbade970c8",
+             "quote": "- Can capture highly nonlinear structure.\n- Trainable end-to-end with the rest of a model.",
+             "source_path": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+             "lines": [86, 87]},
+            {"ku_id": "KU-9f7ca5e9788a5186",
+             "quote": "Use t-SNE, UMAP, or an autoencoder for non-linear structure.",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/01. Principal Component Analysis (PCA).md",
+             "lines": [53]},
+            {"ku_id": "KU-e4784cb31ef8ebe4",
+             "quote": "**Connections:** [[01. The Autoencoder - Compression as Learning]] (autoencoders as another non-linear dim reduction)",
+             "source_path": "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md",
+             "lines": [4]},
+        ],
+        "rationale": (
+            "Shared: both vaults position the autoencoder as the neural "
+            "non-linear dimensionality-reduction alternative to PCA — "
+            "master-ai with a full definition (reconstruct-through-"
+            "bottleneck; the bottleneck is the reduced representation) and "
+            "the course with pointers from both DR notes ('Use t-SNE, UMAP, "
+            "or an autoencoder for non-linear structure' and the "
+            "connections line 'autoencoders as another non-linear dim "
+            "reduction'). Master-ai-only: the non-linear-capture and "
+            "end-to-end-training properties plus the VAE/denoising/"
+            "contractive variants. Course-only: the actual autoencoder "
+            "teaching lives in chapter 10 ('The Autoencoder - Compression as "
+            "Learning', outside this domain's batches) — a cross-domain "
+            "connection for synthesis. Partial Overlap: shared positioning, "
+            "asymmetric depth."
+        ),
+        "candidate_ref": CANDIDATE_REF,
+        "classified_by": CLASSIFIED_BY,
+        "date": DATE,
+        "method": METHOD,
+    },
+]
+
+
+def load_kus() -> dict[str, dict]:
+    kus: dict[str, dict] = {}
+    for path in BATCHES:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                r = json.loads(line)
+                kus[r["knowledge_unit_id"]] = r
+    return kus
+
+
+def source_root(source_id: str) -> Path:
+    vault = source_id.split(":", 1)[0]
+    sub = "Master AI" if vault == "master-ai" else "AI Course"
+    return REPO / "source-vaults" / "AI " / sub
+
+
+def committed_hashes() -> dict[str, str]:
+    return {
+        str(p): hashlib.sha256(p.read_bytes()).hexdigest()
+        for p in COMMITTED
+    }
+
+
+def main() -> int:
+    failures: list[str] = []
+    kus = load_kus()
+    hashes_before = committed_hashes()
+
+    for rec in RECORDS:
+        cid = rec["classification_id"]
+        # X5: KU ids exist.
+        for kid in rec["ku_ids"]:
+            if kid not in kus:
+                failures.append(f"{cid}: unknown KU id {kid}")
+        # X4: evidence ku_ids == record ku_ids.
+        ev_ids = {e["ku_id"] for e in rec["evidence"]}
+        if ev_ids != set(rec["ku_ids"]):
+            failures.append(f"{cid}: evidence ku_ids != record ku_ids")
+        # X3: cross-vault.
+        vaults = {kus[k]["source_id"].split(":")[0]
+                  for k in rec["ku_ids"] if k in kus}
+        if vaults != {"ai-course", "master-ai"}:
+            failures.append(f"{cid}: not cross-vault ({vaults})")
+        for ev in rec["evidence"]:
+            ku = kus.get(ev["ku_id"])
+            if ku is None:
+                continue
+            # X1: byte-exact inside the KU excerpt.
+            if ev["quote"] not in ku["excerpt"]:
+                failures.append(f"{cid}: quote NOT byte-exact in excerpt of "
+                                f"{ev['ku_id']}: {ev['quote'][:80]!r}")
+            # X1b: evidence source_path must equal the KU's source_path.
+            if ev["source_path"] != ku["source_path"]:
+                failures.append(f"{cid}: source_path mismatch for {ev['ku_id']}")
+            # X2: byte-exact at the stated ORIGINAL source lines.
+            src = source_root(ku["source_id"]) / ku["source_path"]
+            lines = src.read_text(encoding="utf-8").splitlines()
+            lo, hi = min(ev["lines"]), max(ev["lines"])
+            if not (1 <= lo <= hi <= len(lines)):
+                failures.append(f"{cid}: line range {lo}-{hi} outside "
+                                f"{ku['source_path']} ({len(lines)} lines)")
+                continue
+            # every stated line must lie inside the KU's own span
+            if not (ku["line_start"] <= lo and hi <= ku["line_end"]):
+                failures.append(f"{cid}: stated lines {lo}-{hi} outside KU span "
+                                f"{ku['line_start']}-{ku['line_end']} for {ev['ku_id']}")
+            slice_text = "\n".join(lines[lo - 1: hi])
+            if ev["quote"] not in slice_text:
+                failures.append(f"{cid}: quote NOT at stated source lines "
+                                f"{ev['lines']} of {ku['source_path']}: {ev['quote'][:80]!r}")
+        # duplicate evidence entries within record
+        quotes = [e["quote"] for e in rec["evidence"]]
+        if len(quotes) != len(set(quotes)):
+            failures.append(f"{cid}: duplicate evidence quotes within record")
+
+    # X7: unique, sequential ids.
+    ids = [r["classification_id"] for r in RECORDS]
+    if len(ids) != len(set(ids)):
+        failures.append("duplicate classification ids")
+    for i, cid in enumerate(ids, start=1):
+        if not cid.endswith(f"-{i:04d}"):
+            failures.append(f"non-sequential id {cid}")
+
+    # X8: no duplicate quote strings anywhere in the file.
+    all_quotes = [e["quote"] for r in RECORDS for e in r["evidence"]]
+    if len(all_quotes) != len(set(all_quotes)):
+        seen: set[str] = set()
+        for q in all_quotes:
+            if q in seen:
+                failures.append(f"duplicate quote across file: {q[:80]!r}")
+            seen.add(q)
+
+    # X6: schema validation.
+    import jsonschema
+    schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
+    validator = jsonschema.Draft202012Validator(schema)
+    for rec in RECORDS:
+        for err in validator.iter_errors(rec):
+            failures.append(f"{rec['classification_id']}: schema: "
+                            f"{err.message} at {list(err.absolute_path)}")
+
+    if failures:
+        print("VERIFICATION FAILURES:")
+        for f in failures:
+            print("  -", f)
+        return 1
+
+    # X9: committed classification files byte-unchanged (we never touch them;
+    # assert the hashes recorded before the run still match after validation).
+    hashes_after = committed_hashes()
+    for p, h in hashes_before.items():
+        if hashes_after[p] != h:
+            print(f"X9 FAILURE: committed file changed during run: {p}")
+            return 1
+
+    OUT.write_text(
+        "".join(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n"
+                for r in RECORDS),
+        encoding="utf-8",
+    )
+    types: dict[str, int] = {}
+    for r in RECORDS:
+        types[r["overlap_type"]] = types.get(r["overlap_type"], 0) + 1
+    participating = sorted({k for r in RECORDS for k in r["ku_ids"]})
+    print(f"wrote {OUT.relative_to(REPO)}: {len(RECORDS)} records "
+          f"({', '.join(f'{v} {k}' for k, v in sorted(types.items()))}), "
+          f"{len(participating)} participating KUs, "
+          f"{sum(len(r['evidence']) for r in RECORDS)} byte-exact quotes "
+          f"(all verified in excerpts AND at original source lines)")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

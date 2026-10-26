@@ -1,0 +1,15 @@
+{
+  "command": "scripts/ext008_fidelity.py",
+  "batch": "state/knowledge-units/006-ext008-master-ai-unsupervised.jsonl",
+  "records_total": 27,
+  "excerpt_byte_exact": 27,
+  "excerpt_hash_valid": 27,
+  "structurally_pure": 27,
+  "unique_ids": 27,
+  "vault_id": "master-ai",
+  "files_covered": [
+    "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md"
+  ],
+  "errors": [],
+  "ok": true
+}

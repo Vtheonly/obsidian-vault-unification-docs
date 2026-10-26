@@ -1,0 +1,17 @@
+{
+  "command": "scripts/ext008_fidelity.py",
+  "batch": "state/knowledge-units/007-ext008-ai-course-clustering-dimreduction.jsonl",
+  "records_total": 87,
+  "excerpt_byte_exact": 87,
+  "excerpt_hash_valid": 87,
+  "structurally_pure": 87,
+  "unique_ids": 87,
+  "vault_id": "ai-course",
+  "files_covered": [
+    "03 - Machine Learning/03.5 - K-Means Clustering/01. K-Means Clustering.md",
+    "03 - Machine Learning/03.8 - Dimensionality Reduction/01. Principal Component Analysis (PCA).md",
+    "03 - Machine Learning/03.8 - Dimensionality Reduction/02. t-SNE and UMAP.md"
+  ],
+  "errors": [],
+  "ok": true
+}

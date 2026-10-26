@@ -90,6 +90,19 @@ DOMAINS = {
         ],
         "dossier_id": "evaluation-v1",
     },
+    # EXT-008: clustering / dimensionality-reduction domain pair.
+    # Schema domain enum extended additively with 'clustering'
+    # (documented in schemas/concept-dossier.schema.json).
+    "clustering": {
+        "batches": [
+            "state/knowledge-units/006-ext008-master-ai-unsupervised.jsonl",
+            "state/knowledge-units/007-ext008-ai-course-clustering-dimreduction.jsonl",
+        ],
+        "classifications": [
+            "state/classifications/005-ext008-clustering-dimreduction-overlap.jsonl",
+        ],
+        "dossier_id": "clustering-v1",
+    },
 }
 
 # EXT-007 addendum: included in the evaluation dossier once committed.

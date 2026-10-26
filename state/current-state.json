@@ -53,9 +53,9 @@
   "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)"
  },
  "output_synthesis_started": false,
- "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-27-ext-007.json",
- "current_task_id": "EXT-008",
- "notes": "EXT-007 completed 2026-10-27 (evaluation classification addendum: all four C1-C4 candidates adopted after verification — 2 SD + 2 PO, 14 byte-exact quotes, 11 KUs; independent review PASS-WITH-NOTES with all repairs applied; registry now 75 classifications / 240 participating KUs; evaluation dossier regenerated with 33 concepts). EXT-008 ready (SVM/kernel-methods domain pair). PUSH BLOCKER STILL OPEN: local main is 6+ commits ahead of origin/main; the session delivered a zip + git bundle for the user to push personally.",
+ "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-27-ext-008.json",
+ "current_task_id": "EXT-009",
+ "notes": "EXT-008 completed 2026-10-27 (clustering/dimensionality-reduction domain pair — SCOPE CHANGE from SVM with evidence: master-ai has no dedicated SVM content, contingency clause invoked; batches 006 (27 KUs) + 007 (87 KUs, two-scope concat) double-run byte-identical; term map 51 terms/22 aliases machine-verified; 27 evidence-based classifications (22 SD + 4 PO + 1 CC, 64 KUs, 92 byte-exact quotes); independent review PASS-WITH-NOTES with all repairs R1-R3 + suggestions S1-S5 applied; clustering-v1 dossier (27 concepts); registry 889 KUs / 102 classifications / 304 participating; suite 415/415; schema domain enum extended additively). EXT-009 ready (next unextracted domain or CAP-014 — decide at session start). PUSH BLOCKER STILL OPEN: local main is 8+ commits ahead of origin/main; the session delivered a zip + git bundle for the user to push personally.",
  "corpus_statistics": {
   "files_total": 609,
   "markdown_files": 609,
@@ -84,9 +84,9 @@
  "knowledge_registry": {
   "canonical_store": "state/knowledge-units/ (committed JSONL batches; ADR-0007)",
   "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load + kureg-apply-overlap)",
-  "records": 775,
+  "records": 889,
   "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)",
-  "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records) + state/classifications/002-ext004-tree-based-overlap.jsonl (28 records, ADR-0009 pair-level overlay) + state/classifications/003-ext005-evaluation-overlap.jsonl (29 records, EXT-005)",
+  "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records) + 002-ext004-tree-based-overlap.jsonl (28 records) + 003-ext005-evaluation-overlap.jsonl (29 records) + 004-ext007-evaluation-addendum.jsonl (4 records) + 005-ext008-clustering-dimreduction-overlap.jsonl (27 records, EXT-008; ADR-0009 pair-level overlay)",
   "commands": "vu kureg-init / kureg-load / kureg-apply-overlap / kureg-query / kureg-validate",
   "dossiers": {
    "store": "state/dossiers/ (derived view; regenerates via scripts/ext006_dossiers.py)",
@@ -94,10 +94,11 @@
    "files": {
     "regression-v1.json": "14 concepts / 61 KUs (from 001-ext003)",
     "tree-based-v1.json": "28 concepts / 82 KUs (from 002-ext004)",
-    "evaluation-v1.json": "33 concepts / 97 KUs (from 003-ext005 + 004-ext007)"
+    "evaluation-v1.json": "33 concepts / 97 KUs (from 003-ext005 + 004-ext007)",
+    "clustering-v1.json": "27 concepts / 64 KUs (from 005-ext008)"
    },
-   "concepts_total": 75,
-   "participating_kus_total": 240,
+   "concepts_total": 102,
+   "participating_kus_total": 304,
    "rule_set": "ext006-category-rules-v1 (documented in scripts/ext006_dossiers.py)",
    "dispositions_assigned": false
   }

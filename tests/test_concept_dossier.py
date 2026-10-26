@@ -22,6 +22,7 @@ DOSSIER_FILES = [
     DOSSIER_DIR / "regression-v1.json",
     DOSSIER_DIR / "tree-based-v1.json",
     DOSSIER_DIR / "evaluation-v1.json",
+    DOSSIER_DIR / "clustering-v1.json",
 ]
 CATEGORY_IDS = [
     "definitions_terminology",
@@ -72,7 +73,7 @@ class TestConceptDossierSchema:
 
 
 class TestCommittedDossiers:
-    def test_all_three_domain_dossiers_exist_and_validate(self):
+    def test_all_domain_dossiers_exist_and_validate(self):
         schema = _load(SCHEMA_PATH)
         validator = jsonschema.Draft202012Validator(schema)
         for path in DOSSIER_FILES:
