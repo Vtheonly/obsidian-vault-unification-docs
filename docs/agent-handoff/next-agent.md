@@ -12,9 +12,16 @@
   (evaluation-metrics domain pair, BOTH sides extracted, + 29 evidence-based
   classifications) DONE and verified.
 - Current task ID: EXT-006 (status: ready — record already in the queue)
-- Current Git commit: the EXT-005 state commit on `main` (after the EXT-005
-  work commit); verify with `git log --oneline -5`
-- Working tree status: clean after commit/push (verify with `git status`)
+- Current Git commit: the EXT-005 state commit on LOCAL `main` (765774c,
+  after the EXT-005 work commit 4d77dff); verify with `git log --oneline -5`.
+  PUSH BLOCKER: the push of these two commits to origin/main FAILED on
+  2026-10-26 — all three PATs from the project brief return 401 Bad
+  credentials (verified against the GitHub API with both `token` and
+  `Bearer` schemes and via `git push`); no SSH client and no gh CLI are
+  available in this environment. The commits exist ONLY locally. The next
+  session MUST obtain valid credentials and push (7d9e65f..765774c) BEFORE
+  doing any other work, then verify with `git fetch` + `git status`.
+- Working tree status: clean after commits (verify with `git status`)
 - Registry/checkpoint version: task-queue v7 (BOOT-000..004 + EXT-001..005
   completed with tests_run evidence; EXT-006 ready); KU schema v1.1
   (ADR-0008); classification schema
@@ -150,7 +157,11 @@
   synthesis-time reconciliation), F-0008 (mAP name collision ranking vs
   detection — synthesis-time disambiguation).
 - Resolved: F-0004, F-0005, F-0006.
-- Blockers: none for EXT-006.
+- Blockers: PUSH BLOCKER for the repository itself — the EXT-005 commits
+  (4d77dff work + 765774c state) are local-only because all three provided
+  PATs were rejected (401 Bad credentials, API-verified 2026-10-26). Obtain
+  a fresh PAT from the repository owner and push before starting EXT-006
+  work. No other blockers for EXT-006.
 - Known gaps (deliberate non-claims): only 17 of 609 source files extracted
   (2.8%); overlap classified for three domains only (regression, tree,
   evaluation: 71 pair-level classifications over 234 of 775 KUs); no
