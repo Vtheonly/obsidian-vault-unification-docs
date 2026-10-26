@@ -1,0 +1,67 @@
+{
+  "checkpoint_id": "CHK-2026-10-26-EXT-005",
+  "created_utc": "2026-10-26T16:30:00+00:00",
+  "stage": "extraction",
+  "task_id": "EXT-005",
+  "task_status": "completed",
+  "last_verified_state": {
+    "framework_version": "0.5.0 (unchanged in EXT-005; CAP-016 + CAP-013 consumed as-is)",
+    "test_result": "407 passed, 0 failed, 0 skipped",
+    "test_evidence": "reports/extraction/ext005-pytest-report.json",
+    "capabilities_evidence": "reports/extraction/ext005-capabilities.json (16 implemented-and-tested, 1 planned: CAP-014)",
+    "ku_schema_version": "1.1 (ADR-0008)",
+    "classification_schema": "schemas/overlap-classification.schema.json (ADR-0009 pair-level overlay)",
+    "registry_store": "state/knowledge-units/ (775 records in 5 committed batches, unedited)",
+    "derived_index": "state/registries/kuregistry.db (rebuilt: init --force + load x5 + apply-overlap x3; kureg-validate valid, 0 errors/warnings)",
+    "classifications": {
+      "paths": [
+        "state/classifications/001-ext003-regression-overlap.jsonl (14 records, EXT-003)",
+        "state/classifications/002-ext004-tree-based-overlap.jsonl (28 records, EXT-004)",
+        "state/classifications/003-ext005-evaluation-overlap.jsonl (29 records, EXT-005)"
+      ],
+      "ext005_by_overlap_type": {
+        "Semantic Duplicate": 23,
+        "Partial Overlap": 5,
+        "Complementary Content": 1
+      },
+      "ext005_participating_kus": 91,
+      "ext005_evidence_quotes": 105
+    },
+    "term_maps": [
+      "state/term-maps/regression-domain-v1.json (EXT-003)",
+      "state/term-maps/tree-domain-v1.json (EXT-004)",
+      "state/term-maps/evaluation-domain-v1.json (EXT-005: 98 terms, 33 aliases, 40 cross-vault)"
+    ],
+    "batches": {
+      "001-ext001-ai-course-03.1-regression": 298,
+      "002-ext002-master-ai-supervised-learning": 65,
+      "003-ext004-ai-course-03.7-tree-based-models": 94,
+      "004-ext005-master-ai-evaluation": 43,
+      "005-ext005-ai-course-03.6-model-evaluation": 275
+    },
+    "source_immutability": "verify-manifest exit 0 x4 (startup + after, both vaults); 333 + 276 unchanged",
+    "findings_open": [
+      "F-0001",
+      "F-0002",
+      "F-0003",
+      "F-0007",
+      "F-0008"
+    ],
+    "findings_resolved": [
+      "F-0004",
+      "F-0005",
+      "F-0006"
+    ],
+    "independent_review": "reports/extraction/ext005-review.md (EXT-005-REVIEW, PASS-WITH-NOTES; all repairs applied pre-commit)"
+  },
+  "acceptance_criteria_met": [
+    "Every scope file has a verified extraction outcome (1/1 + 5/5 extracted, 0 excluded, 0 failed; per-file coverage reports)",
+    "Both batches schema-valid, double-run byte-identical; registry rebuild (init + 5 loads + 3 apply-overlap) valid with 0 anomalies",
+    "Every classification carries byte-exact quote evidence from both vaults with rationale; none from term counts alone",
+    "Independent review (EXT-005-REVIEW, read-only) verdict recorded; all repairs applied before commit",
+    "Sources unchanged before/after; committed batches unedited",
+    "Full test suite 407/407; capabilities --verify passes (16+1)"
+  ],
+  "next_task": "EXT-006 (ready): concept-dossier scaffolding for the three classified domains",
+  "session_continuity": "Single session. Every claim has a committed evidence artifact; the classification file was regenerated once after review repairs (pre-commit, so append-only discipline starts from the committed 29-record version)."
+}

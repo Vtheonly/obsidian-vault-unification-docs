@@ -1,0 +1,19 @@
+{
+  "command": "scripts/ext005_fidelity.py",
+  "batch": "state/knowledge-units/005-ext005-ai-course-03.6-model-evaluation.jsonl",
+  "records_total": 275,
+  "excerpt_byte_exact": 275,
+  "excerpt_hash_valid": 275,
+  "structurally_pure": 275,
+  "unique_ids": 275,
+  "vault_id": "ai-course",
+  "files_covered": [
+    "03 - Machine Learning/03.6 - Model Evaluation/01. Model Evaluation and Metrics.md",
+    "03 - Machine Learning/03.6 - Model Evaluation/02. Model Evaluation Metrics Beyond Accuracy.md",
+    "03 - Machine Learning/03.6 - Model Evaluation/03. Regression Metrics - MAE, MSE, RMSE, R2, MAPE.md",
+    "03 - Machine Learning/03.6 - Model Evaluation/04. Clustering Metrics - Silhouette, Davies-Bouldin, ARI, NMI.md",
+    "03 - Machine Learning/03.6 - Model Evaluation/05. Computer Vision Metrics - IoU, mAP, Dice.md"
+  ],
+  "errors": [],
+  "ok": true
+}

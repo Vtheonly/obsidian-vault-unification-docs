@@ -1,0 +1,159 @@
+{
+  "_comment": "Evaluation-domain term/alias map for EXT-005 cross-vault candidate discovery (CAP-013). Canonical term -> aliases. Built from the actual content of batch 004 (master-ai '05 - ML Evaluation Metrics.md', 43 KUs) and batch 005 (ai-course 03.6 Model Evaluation, 5 files, 275 KUs); every term and alias is verified to occur inside at least one in-scope KU excerpt by scripts/ext005_term_map.py (reports/extraction/ext005-term-map-verification.json). No French aliases: the evaluation batches contain no French lab content (probe: précision/rappel/exactitude/métrique/seuil/étiquette all absent). NOTE on 'mAP': case-insensitive word-boundary matching deliberately lets ai-course 'mAP' (CV detection, mAP@0.5) collide with master-ai 'MAP' (ranking Mean Average Precision) AND with ai-course L495 'mAP' in the ranking sense — the shared-name cases are exactly what evidence-based classification must adjudicate (F-0006 rules remain mandatory; 'Color map' at ai-course L436 will produce a spurious candidate that classification must dismiss). Formula-level and description-level identities invisible to term matching (e.g. master-ai's unnamed Huber description vs ai-course's named Huber loss; master-ai's unnamed confusion-matrix table vs ai-course's named confusion matrix) are classified as judgments with byte-exact quote evidence, per the EXT-003 precedent. Keys starting with _ are documentation and ignored by the loader.",
+  "accuracy": [],
+  "precision": [],
+  "recall": [],
+  "F1": [
+    "F1 score"
+  ],
+  "F-beta": [],
+  "harmonic mean": [],
+  "confusion matrix": [],
+  "true positive": [],
+  "false positive": [],
+  "true negative": [],
+  "false negative": [],
+  "TP": [],
+  "FP": [],
+  "FN": [],
+  "TN": [],
+  "imbalanced": [
+    "class imbalance",
+    "imbalance"
+  ],
+  "binary classification": [],
+  "multi-class": [
+    "one-vs-rest"
+  ],
+  "ROC": [
+    "ROC curve",
+    "ROC-AUC"
+  ],
+  "AUC": [
+    "Area Under Curve"
+  ],
+  "PR-AUC": [
+    "precision-recall curve",
+    "PR curve"
+  ],
+  "true positive rate": [
+    "TPR"
+  ],
+  "false positive rate": [
+    "FPR"
+  ],
+  "specificity": [],
+  "sensitivity": [],
+  "threshold": [
+    "decision threshold"
+  ],
+  "macro": [
+    "macro F1",
+    "macro-average"
+  ],
+  "micro": [
+    "micro F1"
+  ],
+  "weighted average": [],
+  "majority class": [],
+  "prevalence": [],
+  "Type I error": [],
+  "Type II error": [],
+  "false alarm": [],
+  "log loss": [],
+  "cross-entropy": [],
+  "calibration": [
+    "calibrated"
+  ],
+  "reliability diagram": [],
+  "temperature scaling": [],
+  "Platt scaling": [],
+  "isotonic regression": [],
+  "overconfident": [],
+  "logits": [],
+  "perplexity": [],
+  "Guo": [],
+  "MSE": [],
+  "MAE": [],
+  "RMSE": [],
+  "R^2": [
+    "R2",
+    "R²"
+  ],
+  "MAPE": [],
+  "Huber": [],
+  "squared error": [],
+  "absolute error": [],
+  "outlier": [],
+  "variance explained": [],
+  "NDCG": [
+    "discounted cumulative gain"
+  ],
+  "MRR": [],
+  "mAP": [
+    "mean average precision",
+    "mAP@0.5"
+  ],
+  "hit rate": [],
+  "ranking": [],
+  "retrieval": [],
+  "training set": [],
+  "validation set": [],
+  "test set": [
+    "held-out"
+  ],
+  "cross-validation": [
+    "k-fold",
+    "stratified",
+    "nested"
+  ],
+  "overfitting": [
+    "generalize"
+  ],
+  "leakage": [],
+  "IoU": [
+    "mIoU"
+  ],
+  "Dice": [],
+  "bounding box": [],
+  "segmentation": [],
+  "pixel": [],
+  "mask": [],
+  "detection": [],
+  "ground truth": [],
+  "silhouette": [],
+  "Davies-Bouldin": [],
+  "ARI": [
+    "adjusted Rand index"
+  ],
+  "NMI": [
+    "normalized mutual information"
+  ],
+  "clustering": [],
+  "inertia": [
+    "WCSS"
+  ],
+  "intrinsic": [
+    "extrinsic"
+  ],
+  "unsupervised": [],
+  "spam": [],
+  "cancer": [],
+  "screening": [],
+  "medical": [],
+  "fraud": [],
+  "disease": [],
+  "diagnosis": [],
+  "healthy": [],
+  "credit card": [],
+  "intrusion": [],
+  "sklearn": [
+    "scikit-learn"
+  ],
+  "baseline": [],
+  "cost matrix": [],
+  "cost-sensitive": [],
+  "tradeoff": [
+    "trade-off"
+  ]
+}

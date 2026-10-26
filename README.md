@@ -18,7 +18,7 @@ The output must be newly synthesized and rewritten from combined source evidence
 
 ## Repository status
 
-This repository is the project documentation and operating specification, and it also contains the two immutable source vaults under `source-vaults/` (committed in the repository's first commit; see `reports/bootstrap/boot-001-source-location.json` for the verified location record, file counts, and hash manifests). Inventory at file level has been performed (BOOT-000/BOOT-001); knowledge-unit extraction and synthesis have not started. The task queue in `state/task-queue.jsonl` records verified progress claims.
+This repository is the project documentation and operating specification, and it also contains the two immutable source vaults under `source-vaults/` (committed in the repository's first commit; see `reports/bootstrap/boot-001-source-location.json` for the verified location record, file counts, and hash manifests). File-level inventory is complete (BOOT-000..004). Knowledge-unit extraction is in progress: 17 of 609 source files are extracted into 5 committed batches (775 KUs, all `Unaccounted` by design), and evidence-based cross-vault overlap classification is complete for three domains (regression, tree-based, evaluation: 71 pair-level records). Synthesis has not started; no dispositions or output vault content exist yet. The task queue in `state/task-queue.jsonl` records verified progress claims.
 
 ## Suggested top-level layout
 

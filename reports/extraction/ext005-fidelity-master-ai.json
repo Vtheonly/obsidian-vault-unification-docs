@@ -1,0 +1,15 @@
+{
+  "command": "scripts/ext005_fidelity.py",
+  "batch": "state/knowledge-units/004-ext005-master-ai-evaluation.jsonl",
+  "records_total": 43,
+  "excerpt_byte_exact": 43,
+  "excerpt_hash_valid": 43,
+  "structurally_pure": 43,
+  "unique_ids": 43,
+  "vault_id": "master-ai",
+  "files_covered": [
+    "03 - Machine Learning/Evaluation/05 - ML Evaluation Metrics.md"
+  ],
+  "errors": [],
+  "ok": true
+}

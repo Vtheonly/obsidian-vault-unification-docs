@@ -53,9 +53,9 @@
     "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)"
   },
   "output_synthesis_started": false,
-  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-26-ext-004.json",
-  "current_task_id": "EXT-005",
-  "notes": "EXT-004 completed: AI Course 03.7 Tree-Based Models batch (94 KUs, 3/3 files, byte-identical double run) + tree-domain term map (95 terms/96 aliases, every entry machine-verified in-scope) + CAP-013 discovery (124 KUs, 64 cross-vault topics, 1056 confirmed pairs) + 28 evidence-based overlap classifications (13 Semantic Duplicate, 13 Partial Overlap, 1 Complementary Content, 1 Conflict or Historical Difference — first uses of the latter two types; 80 participating KUs; 129 byte-exact quotes; independent review PASS-WITH-NOTES with all repairs applied, including the OC-0027 XGBoost-dating correction and the OC-0028 coverage-gap addition). F-0007 opened (library-year reconciliation for synthesis). Registry: 457 KUs in 3 batches, 42 classifications (14+28), 143 participating KUs, kureg-validate clean. Dispositions deliberately NOT assigned (no synthesis output exists). Framework v0.5.0 unchanged (no code changes); 407/407 tests; 16+1 capabilities. Sources unchanged (0 added/removed/changed both vaults).",
+  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-26-ext-005.json",
+  "current_task_id": "EXT-006",
+  "notes": "EXT-005 completed: evaluation-metrics domain pair — BOTH sides extracted in one task for the first time. Batch 004 master-ai '05 - ML Evaluation Metrics.md' (43 KUs, 1/1 files, byte-identical double run) + batch 005 ai-course '03.6 - Model Evaluation' (275 KUs, 5/5 files, byte-identical). Fidelity 43/43 + 275/275 byte-exact, unique ids within and across batches, 0 heading crossings. Evaluation-domain term map (98 terms / 33 aliases, 40 cross-vault, every entry machine-verified in-scope). CAP-013 discovery over both full batches: 318 KUs, 40 cross-vault topics, 1604 pairs (2 truncated topics at the 250-pair cap: precision, recall). 29 evidence-based classifications (23 Semantic Duplicate, 5 Partial Overlap, 1 Complementary Content; 105 byte-exact quotes) including the judgment cases: master-ai's unnamed-in-excerpt confusion-matrix table and Huber description (names live in headings), the mAP name collision (OC-0023 ranking SD + OC-0024 cross-sense PO), and calibration as Complementary Content. Independent review EXT-005-REVIEW PASS-WITH-NOTES (95/95 byte-exact incl. source-line verification, 26 AGREE + 2 BORDERLINE + 0 DISAGREE); ALL repairs applied pre-commit (2 rationale rewordings, 1 new record OC-0029 for the held-out/leakage cluster, 6 evidence extensions). F-0008 opened (mAP name collision; synthesis-time disambiguation). Registry: 775 KUs in 5 batches, 71 classifications (14+28+29), 234 participating KUs, kureg-validate clean. Dispositions deliberately NOT assigned (no synthesis output exists). Framework v0.5.0 unchanged (no code changes); 407/407 tests; 16+1 capabilities. Sources unchanged (0 added/removed/changed both vaults).",
   "corpus_statistics": {
     "files_total": 609,
     "markdown_files": 609,
@@ -84,9 +84,9 @@
   "knowledge_registry": {
     "canonical_store": "state/knowledge-units/ (committed JSONL batches; ADR-0007)",
     "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load + kureg-apply-overlap)",
-    "records": 457,
+    "records": 775,
     "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)",
-    "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records) + state/classifications/002-ext004-tree-based-overlap.jsonl (28 records, ADR-0009 pair-level overlay)",
+    "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records) + state/classifications/002-ext004-tree-based-overlap.jsonl (28 records) + state/classifications/003-ext005-evaluation-overlap.jsonl (29 records, ADR-0009 pair-level overlay)",
     "commands": "vu kureg-init / kureg-load / kureg-apply-overlap / kureg-query / kureg-validate"
   },
   "framework_foundation_evidence": {

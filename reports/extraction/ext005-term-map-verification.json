@@ -1,0 +1,789 @@
+{
+  "command": "scripts/ext005_term_map.py",
+  "scope_kus": 318,
+  "scope": {
+    "master-ai": "batch 004 (05 - ML Evaluation Metrics.md, 43 KUs)",
+    "ai-course": "batch 005 (03.6 Model Evaluation, 5 files, 275 KUs)"
+  },
+  "terms_count": 98,
+  "aliases_count": 33,
+  "cross_vault_terms": [
+    "AUC",
+    "F1",
+    "FN",
+    "FP",
+    "MAE",
+    "MSE",
+    "PR-AUC",
+    "RMSE",
+    "ROC",
+    "R^2",
+    "TN",
+    "TP",
+    "accuracy",
+    "binary classification",
+    "calibration",
+    "cancer",
+    "cross-validation",
+    "false negative",
+    "false positive",
+    "false positive rate",
+    "harmonic mean",
+    "imbalanced",
+    "logits",
+    "mAP",
+    "macro",
+    "micro",
+    "precision",
+    "ranking",
+    "recall",
+    "retrieval",
+    "screening",
+    "sklearn",
+    "spam",
+    "test set",
+    "threshold",
+    "tradeoff",
+    "true negative",
+    "true positive",
+    "true positive rate",
+    "variance explained"
+  ],
+  "cross_vault_terms_count": 40,
+  "french_probe": {
+    "probes": [
+      "pr\u00e9cision",
+      "rappel",
+      "exactitude",
+      "m\u00e9trique",
+      "seuil",
+      "\u00e9tiquette"
+    ],
+    "found": false,
+    "conclusion": "no French aliases included (no French lab content in scope)"
+  },
+  "per_term_coverage": {
+    "accuracy": {
+      "accuracy": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "precision": {
+      "precision": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "recall": {
+      "recall": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "F1": {
+      "F1": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "F1 score": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "F-beta": {
+      "F-beta": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "harmonic mean": {
+      "harmonic mean": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "confusion matrix": {
+      "confusion matrix": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "true positive": {
+      "true positive": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "false positive": {
+      "false positive": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "true negative": {
+      "true negative": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "false negative": {
+      "false negative": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "TP": {
+      "TP": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "FP": {
+      "FP": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "FN": {
+      "FN": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "TN": {
+      "TN": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "imbalanced": {
+      "imbalanced": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "class imbalance": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "imbalance": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "binary classification": {
+      "binary classification": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "multi-class": {
+      "multi-class": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "one-vs-rest": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "ROC": {
+      "ROC": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "ROC curve": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "ROC-AUC": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "AUC": {
+      "AUC": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "Area Under Curve": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "PR-AUC": {
+      "PR-AUC": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "precision-recall curve": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "PR curve": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "true positive rate": {
+      "true positive rate": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "TPR": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "false positive rate": {
+      "false positive rate": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "FPR": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "specificity": {
+      "specificity": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "sensitivity": {
+      "sensitivity": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "threshold": {
+      "threshold": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "decision threshold": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "macro": {
+      "macro": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "macro F1": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "macro-average": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "micro": {
+      "micro": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "micro F1": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "weighted average": {
+      "weighted average": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "majority class": {
+      "majority class": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "prevalence": {
+      "prevalence": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "Type I error": {
+      "Type I error": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "Type II error": {
+      "Type II error": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "false alarm": {
+      "false alarm": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "log loss": {
+      "log loss": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "cross-entropy": {
+      "cross-entropy": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "calibration": {
+      "calibration": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "calibrated": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "reliability diagram": {
+      "reliability diagram": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "temperature scaling": {
+      "temperature scaling": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "Platt scaling": {
+      "Platt scaling": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "isotonic regression": {
+      "isotonic regression": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "overconfident": {
+      "overconfident": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "logits": {
+      "logits": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "perplexity": {
+      "perplexity": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "Guo": {
+      "Guo": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "MSE": {
+      "MSE": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "MAE": {
+      "MAE": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "RMSE": {
+      "RMSE": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "R^2": {
+      "R^2": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "R2": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "R\u00b2": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "MAPE": {
+      "MAPE": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "Huber": {
+      "Huber": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "squared error": {
+      "squared error": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "absolute error": {
+      "absolute error": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "outlier": {
+      "outlier": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "variance explained": {
+      "variance explained": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "NDCG": {
+      "NDCG": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "discounted cumulative gain": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "MRR": {
+      "MRR": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "mAP": {
+      "mAP": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "mean average precision": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "mAP@0.5": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "hit rate": {
+      "hit rate": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "ranking": {
+      "ranking": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "retrieval": {
+      "retrieval": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "training set": {
+      "training set": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "validation set": {
+      "validation set": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "test set": {
+      "test set": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "held-out": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "cross-validation": {
+      "cross-validation": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "k-fold": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "stratified": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "nested": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "overfitting": {
+      "overfitting": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "generalize": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "leakage": {
+      "leakage": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "IoU": {
+      "IoU": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "mIoU": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "Dice": {
+      "Dice": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "bounding box": {
+      "bounding box": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "segmentation": {
+      "segmentation": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "pixel": {
+      "pixel": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "mask": {
+      "mask": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "detection": {
+      "detection": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "ground truth": {
+      "ground truth": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "silhouette": {
+      "silhouette": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "Davies-Bouldin": {
+      "Davies-Bouldin": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "ARI": {
+      "ARI": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "adjusted Rand index": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "NMI": {
+      "NMI": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "normalized mutual information": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "clustering": {
+      "clustering": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "inertia": {
+      "inertia": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "WCSS": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "intrinsic": {
+      "intrinsic": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "extrinsic": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "unsupervised": {
+      "unsupervised": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "spam": {
+      "spam": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "cancer": {
+      "cancer": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "screening": {
+      "screening": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "medical": {
+      "medical": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "fraud": {
+      "fraud": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "disease": {
+      "disease": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "diagnosis": {
+      "diagnosis": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "healthy": {
+      "healthy": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "credit card": {
+      "credit card": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "intrusion": {
+      "intrusion": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "sklearn": {
+      "sklearn": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "scikit-learn": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "baseline": {
+      "baseline": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "cost matrix": {
+      "cost matrix": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "cost-sensitive": {
+      "cost-sensitive": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "tradeoff": {
+      "tradeoff": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "trade-off": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    }
+  },
+  "errors": [],
+  "ok": true
+}

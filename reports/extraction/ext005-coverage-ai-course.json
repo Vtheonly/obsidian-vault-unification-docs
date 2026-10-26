@@ -1,0 +1,236 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "command": "extract-kus",
+    "framework_version": "0.5.0",
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "03 - Machine Learning/03.6 - Model Evaluation",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/home/z/my-project/repo/state/knowledge-units/005-ext005-ai-course-03.6-model-evaluation.jsonl",
+    "records_written": 275,
+    "denominators": {
+      "files_in_scope": 5,
+      "files_extracted": 5,
+      "files_excluded": 0,
+      "files_failed": 0,
+      "scope_note": "denominator = every file enumerated under the scope (all classes); each has exactly one outcome"
+    },
+    "units_by_type": {
+      "quote": 6,
+      "prose": 155,
+      "list": 57,
+      "table": 8,
+      "callout": 8,
+      "math_block": 37,
+      "code_block": 4
+    },
+    "file_outcomes": [
+      {
+        "relpath": "03 - Machine Learning/03.6 - Model Evaluation/01. Model Evaluation and Metrics.md",
+        "outcome": "extracted",
+        "sha256": "e3d9099c3d63c65362aa6e8667842ff5642421eec31e9df323104872c2045bf2",
+        "manifest_match": true,
+        "units": 32,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 14,
+          "list": 10,
+          "table": 1,
+          "callout": 1,
+          "math_block": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 56,
+          "frontmatter_lines": 0,
+          "heading_context": 14,
+          "excluded_blank": 28,
+          "excluded_horizontal_rule": 3,
+          "accounted": 101,
+          "lines_total": 101,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 28,
+          "horizontal_rule": 3
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.6 - Model Evaluation/02. Model Evaluation Metrics Beyond Accuracy.md",
+        "outcome": "extracted",
+        "sha256": "28527084898daae018c802a503ef392a59d705803148aa4885dc5a3ee4932944",
+        "manifest_match": true,
+        "units": 101,
+        "units_by_type": {
+          "prose": 63,
+          "math_block": 14,
+          "callout": 7,
+          "table": 4,
+          "list": 7,
+          "quote": 2,
+          "code_block": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 350,
+          "frontmatter_lines": 0,
+          "heading_context": 33,
+          "excluded_blank": 143,
+          "excluded_horizontal_rule": 12,
+          "accounted": 538,
+          "lines_total": 538,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 143,
+          "horizontal_rule": 12
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.6 - Model Evaluation/03. Regression Metrics - MAE, MSE, RMSE, R2, MAPE.md",
+        "outcome": "extracted",
+        "sha256": "15998a9c5b2ea167eebab7d8d8597f4e7acb39634b70d6027a0820822020b132",
+        "manifest_match": true,
+        "units": 52,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 28,
+          "math_block": 8,
+          "list": 14,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 86,
+          "frontmatter_lines": 0,
+          "heading_context": 13,
+          "excluded_blank": 58,
+          "excluded_horizontal_rule": 6,
+          "accounted": 163,
+          "lines_total": 163,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 58,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.6 - Model Evaluation/04. Clustering Metrics - Silhouette, Davies-Bouldin, ARI, NMI.md",
+        "outcome": "extracted",
+        "sha256": "08e20b647a4cf66e7ad068132dda48d83c77731e680f0719d972e8acbd4d3909",
+        "manifest_match": true,
+        "units": 54,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 27,
+          "list": 19,
+          "math_block": 6,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 88,
+          "frontmatter_lines": 0,
+          "heading_context": 13,
+          "excluded_blank": 59,
+          "excluded_horizontal_rule": 7,
+          "accounted": 167,
+          "lines_total": 167,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 59,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.6 - Model Evaluation/05. Computer Vision Metrics - IoU, mAP, Dice.md",
+        "outcome": "extracted",
+        "sha256": "ad7907ff06f53f30b796b78f21400721c08b38191c51911e0ac1c9c11715132b",
+        "manifest_match": true,
+        "units": 36,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 23,
+          "math_block": 4,
+          "list": 7,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 64,
+          "frontmatter_lines": 0,
+          "heading_context": 17,
+          "excluded_blank": 56,
+          "excluded_horizontal_rule": 7,
+          "accounted": 144,
+          "lines_total": 144,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 56,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      }
+    ],
+    "batch_validation": {
+      "file": "/home/z/my-project/repo/state/knowledge-units/005-ext005-ai-course-03.6-model-evaluation.jsonl",
+      "schema": "/home/z/my-project/repo/schemas/knowledge-unit.schema.json",
+      "valid": true,
+      "records_total": 275,
+      "records_valid": 275,
+      "errors": [],
+      "cross_checks": {
+        "status": "run",
+        "kus_total": 275,
+        "rules": [
+          "duplicate_id",
+          "self_parent",
+          "superseded_rationale_missing",
+          "self_support"
+        ],
+        "note": "cross-batch parent/support references are checked at registry load time"
+      }
+    },
+    "determinism_note": "records contain no timestamps and IDs are content-derived; re-extracting unchanged sources produces a byte-identical batch",
+    "limitations": [
+      "structural segmentation only: unit types describe Markdown block syntax, not meaning",
+      "no dispositions are assigned: every unit is 'Unaccounted' until evidence-based classification",
+      "excerpts normalize CR characters away (splitlines reconstruction); source bytes are untouched",
+      "construct detection inherits mdextract limitations (ATX headings, delimiter-based math)",
+      "extraction coverage is NOT semantic preservation; it is the accounting baseline for later audits"
+    ]
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "extract-kus",
+    "args": {
+      "command": "extract-kus",
+      "root": "source-vaults/AI /AI Course",
+      "scope": "03 - Machine Learning/03.6 - Model Evaluation",
+      "vault_id": "ai-course",
+      "manifest": "state/manifests/ai-course.jsonl",
+      "out": "state/knowledge-units/005-ext005-ai-course-03.6-model-evaluation.jsonl",
+      "kus_schema": "/home/z/my-project/repo/schemas/knowledge-unit.schema.json",
+      "unclosed_fence_finding": "F-0002",
+      "report": "/home/z/my-project/repo/reports/extraction/ext005-coverage-ai-course.json"
+    },
+    "utc_timestamp": "2026-10-26T14:11:00+00:00",
+    "git_commit": "7d9e65f"
+  }
+}
