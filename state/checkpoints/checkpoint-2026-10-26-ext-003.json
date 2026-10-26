@@ -38,7 +38,7 @@
     },
     "independent_review": "EXT-003-REVIEW subagent verdict PASS-WITH-NOTES (66/66 byte-exact quotes incl. original-source line verification, 14/14 cross-vault, 14/14 semantic agreements, rationale fixes identified and applied by orchestrator pre-commit, no coverage gaps); reports/extraction/ext003-review.md",
     "source_immutability": "reports/extraction/ext003-immutable-{master-ai,ai-course}.json (333 and 276 unchanged; 0 added/removed/changed)",
-    "work_commit": ""
+    "work_commit": "d9ec76c"
   },
   "changed_paths": [
     "src/vault_unification/overlap.py (new)",
