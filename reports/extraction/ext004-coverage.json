@@ -1,0 +1,170 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "command": "extract-kus",
+    "framework_version": "0.5.0",
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "03 - Machine Learning/03.7 - Tree-Based Models",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/home/z/my-project/repo/state/knowledge-units/003-ext004-ai-course-03.7-tree-based-models.jsonl",
+    "records_written": 94,
+    "denominators": {
+      "files_in_scope": 3,
+      "files_extracted": 3,
+      "files_excluded": 0,
+      "files_failed": 0,
+      "scope_note": "denominator = every file enumerated under the scope (all classes); each has exactly one outcome"
+    },
+    "units_by_type": {
+      "quote": 3,
+      "prose": 57,
+      "code_block": 1,
+      "list": 24,
+      "math_block": 7,
+      "callout": 1,
+      "table": 1
+    },
+    "file_outcomes": [
+      {
+        "relpath": "03 - Machine Learning/03.7 - Tree-Based Models/01. Decision Trees - Splitting Criteria and Tree Construction.md",
+        "outcome": "extracted",
+        "sha256": "639930236c9aa730d6457ec7b6e22d9fc0bbd9f925b14d19c4d93f91bfeddf63",
+        "manifest_match": true,
+        "units": 32,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 19,
+          "code_block": 1,
+          "list": 7,
+          "math_block": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 62,
+          "frontmatter_lines": 0,
+          "heading_context": 13,
+          "excluded_blank": 53,
+          "excluded_horizontal_rule": 9,
+          "accounted": 137,
+          "lines_total": 137,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 53,
+          "horizontal_rule": 9
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.7 - Tree-Based Models/02. Random Forests and Bagging.md",
+        "outcome": "extracted",
+        "sha256": "2308635f6944108ac8a0a79981aa62319a90f38811c9ce60c95216a7dc73513e",
+        "manifest_match": true,
+        "units": 20,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 13,
+          "list": 5,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 40,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 38,
+          "excluded_horizontal_rule": 9,
+          "accounted": 97,
+          "lines_total": 97,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 38,
+          "horizontal_rule": 9
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.7 - Tree-Based Models/03. Gradient Boosting and XGBoost.md",
+        "outcome": "extracted",
+        "sha256": "1a628b05fc2b247280fa1783a73e349259a497dae9d34e502a48137d0584d5b0",
+        "manifest_match": true,
+        "units": 42,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 25,
+          "list": 12,
+          "math_block": 3,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 74,
+          "frontmatter_lines": 0,
+          "heading_context": 11,
+          "excluded_blank": 50,
+          "excluded_horizontal_rule": 8,
+          "accounted": 143,
+          "lines_total": 143,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 50,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      }
+    ],
+    "batch_validation": {
+      "file": "/home/z/my-project/repo/state/knowledge-units/003-ext004-ai-course-03.7-tree-based-models.jsonl",
+      "schema": "/home/z/my-project/repo/schemas/knowledge-unit.schema.json",
+      "valid": true,
+      "records_total": 94,
+      "records_valid": 94,
+      "errors": [],
+      "cross_checks": {
+        "status": "run",
+        "kus_total": 94,
+        "rules": [
+          "duplicate_id",
+          "self_parent",
+          "superseded_rationale_missing",
+          "self_support"
+        ],
+        "note": "cross-batch parent/support references are checked at registry load time"
+      }
+    },
+    "determinism_note": "records contain no timestamps and IDs are content-derived; re-extracting unchanged sources produces a byte-identical batch",
+    "limitations": [
+      "structural segmentation only: unit types describe Markdown block syntax, not meaning",
+      "no dispositions are assigned: every unit is 'Unaccounted' until evidence-based classification",
+      "excerpts normalize CR characters away (splitlines reconstruction); source bytes are untouched",
+      "construct detection inherits mdextract limitations (ATX headings, delimiter-based math)",
+      "extraction coverage is NOT semantic preservation; it is the accounting baseline for later audits"
+    ]
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "extract-kus",
+    "args": {
+      "command": "extract-kus",
+      "root": "source-vaults/AI /AI Course",
+      "scope": "03 - Machine Learning/03.7 - Tree-Based Models",
+      "vault_id": "ai-course",
+      "manifest": "state/manifests/ai-course.jsonl",
+      "out": "state/knowledge-units/003-ext004-ai-course-03.7-tree-based-models.jsonl",
+      "kus_schema": "/home/z/my-project/repo/schemas/knowledge-unit.schema.json",
+      "unclosed_fence_finding": null,
+      "report": "/home/z/my-project/repo/reports/extraction/ext004-coverage.json"
+    },
+    "utc_timestamp": "2026-10-26T08:46:54+00:00",
+    "git_commit": "da00710"
+  }
+}

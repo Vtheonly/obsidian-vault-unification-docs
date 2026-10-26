@@ -53,9 +53,9 @@
     "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)"
   },
   "output_synthesis_started": false,
-  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-26-ext-003.json",
-  "current_task_id": "EXT-004",
-  "notes": "EXT-003 completed: CAP-013 cross-vault overlap candidate discovery (word-boundary + mermaid-safe, 59 new tests) + first 14 evidence-based overlap classifications for the regression domain (7 Semantic Duplicate, 7 Partial Overlap, 61 participating KUs of 363; 67 byte-exact evidence quotes; independent review PASS-WITH-NOTES with all repairs applied). Dispositions deliberately NOT assigned (no synthesis output exists yet). Framework v0.5.0; 407/407 tests; 16 capabilities implemented-and-tested, 1 planned (CAP-014). F-0006 resolved. Sources unchanged (0 added/removed/changed both vaults).",
+  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-26-ext-004.json",
+  "current_task_id": "EXT-005",
+  "notes": "EXT-004 completed: AI Course 03.7 Tree-Based Models batch (94 KUs, 3/3 files, byte-identical double run) + tree-domain term map (95 terms/96 aliases, every entry machine-verified in-scope) + CAP-013 discovery (124 KUs, 64 cross-vault topics, 1056 confirmed pairs) + 28 evidence-based overlap classifications (13 Semantic Duplicate, 13 Partial Overlap, 1 Complementary Content, 1 Conflict or Historical Difference — first uses of the latter two types; 80 participating KUs; 129 byte-exact quotes; independent review PASS-WITH-NOTES with all repairs applied, including the OC-0027 XGBoost-dating correction and the OC-0028 coverage-gap addition). F-0007 opened (library-year reconciliation for synthesis). Registry: 457 KUs in 3 batches, 42 classifications (14+28), 143 participating KUs, kureg-validate clean. Dispositions deliberately NOT assigned (no synthesis output exists). Framework v0.5.0 unchanged (no code changes); 407/407 tests; 16+1 capabilities. Sources unchanged (0 added/removed/changed both vaults).",
   "corpus_statistics": {
     "files_total": 609,
     "markdown_files": 609,
@@ -84,15 +84,15 @@
   "knowledge_registry": {
     "canonical_store": "state/knowledge-units/ (committed JSONL batches; ADR-0007)",
     "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load + kureg-apply-overlap)",
-    "records": 363,
+    "records": 457,
     "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)",
-    "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records, ADR-0009 pair-level overlay)",
+    "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records) + state/classifications/002-ext004-tree-based-overlap.jsonl (28 records, ADR-0009 pair-level overlay)",
     "commands": "vu kureg-init / kureg-load / kureg-apply-overlap / kureg-query / kureg-validate"
   },
   "framework_foundation_evidence": {
-    "test_run": "reports/extraction/ext003-pytest-report.json",
+    "test_run": "reports/extraction/ext004-pytest-report.json",
     "test_summary": "407 passed, 0 failed, 0 skipped",
-    "capabilities": "reports/extraction/ext003-capabilities.json",
+    "capabilities": "reports/extraction/ext004-capabilities.json",
     "setup_doc": "docs/FRAMEWORK_SETUP.md"
   }
 }

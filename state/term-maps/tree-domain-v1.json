@@ -1,0 +1,249 @@
+{
+  "_comment": "Tree-domain term/alias map for EXT-004 cross-vault candidate discovery (CAP-013). Canonical term -> aliases. Built from the actual content of batch 003 (ai-course 03.7 Tree-Based Models, 3 files, 94 KUs) and the 30 master-ai KUs of '03 - Decision Trees and Gradient Boosting.md' (batch 002 subset); every term and alias is verified to occur inside at least one in-scope KU excerpt by scripts/ext004_term_map.py (reports/extraction/ext004-term-map-verification.json). The AI Course 03.7 files contain no French lab content (probe: arbre/forêt/erreur/échantillon/coût/aléatoire all absent), so no French aliases are included. Word-boundary matching is applied by the tool; mermaid-suspect matches are flagged and never confirmed evidence (F-0006 rules remain mandatory). Formula-level identities (e.g. the boosting update F_m = F_{m-1} + nu * T_m) are invisible to term matching and are classified as judgments with byte-exact quote evidence, per the EXT-003 precedent. Keys starting with _ are documentation and ignored by the loader.",
+  "decision tree": [
+    "decision trees",
+    "DecisionTreeClassifier"
+  ],
+  "feature space": [],
+  "threshold": [],
+  "split": [
+    "splits",
+    "splitting",
+    "split criteria"
+  ],
+  "leaf": [
+    "leaves"
+  ],
+  "node": [
+    "nodes"
+  ],
+  "greedy": [
+    "greedily"
+  ],
+  "Gini impurity": [
+    "Gini",
+    "Gini decrease"
+  ],
+  "entropy": [],
+  "information gain": [],
+  "impurity reduction": [
+    "impurity",
+    "purity"
+  ],
+  "variance reduction": [],
+  "pure node": [
+    "pure"
+  ],
+  "stopping criterion": [
+    "stopping criteria"
+  ],
+  "max_depth": [
+    "max depth"
+  ],
+  "min_samples_split": [
+    "min_samples_leaf",
+    "min samples per leaf",
+    "min_child_weight"
+  ],
+  "pruning": [
+    "prune",
+    "pre-pruning",
+    "post-pruning",
+    "cost-complexity pruning"
+  ],
+  "CART": [],
+  "interpretability": [
+    "interpretable"
+  ],
+  "mixed data types": [
+    "categorical and numerical features",
+    "numerical and categorical features"
+  ],
+  "no feature scaling": [
+    "no scaling needed",
+    "scaling"
+  ],
+  "nonlinearities": [
+    "non-linearities"
+  ],
+  "interactions": [],
+  "high variance": [],
+  "overfit": [
+    "overfits",
+    "overfitting"
+  ],
+  "extrapolate": [],
+  "random forest": [
+    "Random Forests",
+    "random forests"
+  ],
+  "bagging": [
+    "Bootstrap Aggregating"
+  ],
+  "bootstrap sample": [
+    "bootstrap samples",
+    "bootstrap"
+  ],
+  "with replacement": [],
+  "majority vote": [
+    "majority-vote",
+    "majority class"
+  ],
+  "averaging": [
+    "average"
+  ],
+  "variance": [],
+  "bias": [],
+  "decorrelate": [
+    "decorrelating"
+  ],
+  "feature randomness": [
+    "random feature subsets",
+    "random subset"
+  ],
+  "bias-variance tradeoff": [
+    "bias variance tradeoff",
+    "bias-variance"
+  ],
+  "out-of-bag": [
+    "OOB",
+    "OOB error",
+    "out-of-bag error"
+  ],
+  "feature importance": [
+    "impurity-based importance",
+    "permutation importance"
+  ],
+  "Breiman": [],
+  "validation": [
+    "validation set",
+    "validation loss",
+    "validation performance"
+  ],
+  "gradient boosting": [
+    "boosting",
+    "Gradient Boosted Trees",
+    "GBT"
+  ],
+  "weak learner": [
+    "weak learners"
+  ],
+  "pseudo-residuals": [
+    "residuals",
+    "residual"
+  ],
+  "negative gradient": [],
+  "function space": [
+    "functional gradient descent"
+  ],
+  "learning rate": [],
+  "shrinkage": [
+    "shrinks"
+  ],
+  "shallow trees": [
+    "shallow"
+  ],
+  "n_estimators": [],
+  "subsample": [],
+  "colsample_bytree": [],
+  "stochastic gradient boosting": [],
+  "early stopping": [
+    "early_stopping_rounds"
+  ],
+  "differentiable loss": [],
+  "log-odds": [],
+  "gradient descent": [],
+  "XGBoost": [],
+  "LightGBM": [],
+  "CatBoost": [],
+  "histogram-based": [
+    "histogram-based splitting",
+    "histogram-based splits",
+    "histogram",
+    "histograms"
+  ],
+  "leaf-wise": [
+    "leaf-wise growth"
+  ],
+  "GOSS": [
+    "Gradient-based One-Side Sampling"
+  ],
+  "Exclusive Feature Bundling": [
+    "EFB"
+  ],
+  "ordered boosting": [],
+  "symmetric trees": [],
+  "categorical features": [
+    "categoricals",
+    "categorical"
+  ],
+  "missing values": [
+    "sparsity-aware",
+    "sparse features"
+  ],
+  "second-order gradients": [
+    "Hessian",
+    "second derivative"
+  ],
+  "one-hot encoding": [
+    "one-hot encoded",
+    "one-hot"
+  ],
+  "Chen & Guestrin": [],
+  "hyperparameters": [
+    "hyperparameter"
+  ],
+  "Kaggle": [],
+  "tabular data": [
+    "tabular",
+    "structured data"
+  ],
+  "state of the art": [
+    "SOTA"
+  ],
+  "neural networks": [
+    "neural network",
+    "NNs"
+  ],
+  "deep learning": [],
+  "unstructured data": [
+    "unstructured"
+  ],
+  "scikit-learn": [
+    "sklearn"
+  ],
+  "ensembling": [
+    "ensemble",
+    "ensembles",
+    "stacking"
+  ],
+  "benchmarks": [],
+  "noise": [],
+  "SHAP": [],
+  "target leakage": [
+    "leakage"
+  ],
+  "class imbalance": [
+    "scale_pos_weight"
+  ],
+  "Grinsztajn": [],
+  "Optuna": [
+    "Hyperopt"
+  ],
+  "feature engineering": [],
+  "enterprise": [],
+  "production": [],
+  "regularization": [
+    "L1",
+    "L2",
+    "reg_alpha",
+    "reg_lambda",
+    "gamma"
+  ],
+  "MSE": [],
+  "feature selection": [
+    "implicit feature selection"
+  ],
+  "cross-validation": [],
+  "feature distributions": []
+}

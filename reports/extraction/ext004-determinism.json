@@ -1,0 +1,17 @@
+{
+  "command": "vu extract-kus (double run) + cmp",
+  "run_1": {
+    "command": "PYTHONPATH=src python3 -m vault_unification extract-kus --root 'source-vaults/AI /AI Course' --scope '03 - Machine Learning/03.7 - Tree-Based Models' --vault-id ai-course --manifest state/manifests/ai-course.jsonl --out state/knowledge-units/003-ext004-ai-course-03.7-tree-based-models.jsonl --report reports/extraction/ext004-coverage.json",
+    "exit_code": 0,
+    "sha256": "d6121c00eea55c96c8c9c1cadff69f0b8bc639eb6decbe349bbbb38e03a39736"
+  },
+  "run_2": {
+    "command": "PYTHONPATH=src python3 -m vault_unification extract-kus (same arguments) --out /tmp/ext004-determinism-run2.jsonl --report /tmp/ext004-determinism-report2.json",
+    "exit_code": 0,
+    "sha256": "d6121c00eea55c96c8c9c1cadff69f0b8bc639eb6decbe349bbbb38e03a39736"
+  },
+  "cmp_exit_code": 0,
+  "byte_identical": true,
+  "ok": true,
+  "scope": "03 - Machine Learning/03.7 - Tree-Based Models (3 files, 94 KU records)"
+}

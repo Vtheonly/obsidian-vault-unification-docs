@@ -1,0 +1,17 @@
+{
+  "command": "scripts/ext004_fidelity.py",
+  "batch": "state/knowledge-units/003-ext004-ai-course-03.7-tree-based-models.jsonl",
+  "records_total": 94,
+  "excerpt_byte_exact": 94,
+  "excerpt_hash_valid": 94,
+  "structurally_pure": 94,
+  "unique_ids": 94,
+  "vault_id": "ai-course",
+  "files_covered": [
+    "03 - Machine Learning/03.7 - Tree-Based Models/01. Decision Trees - Splitting Criteria and Tree Construction.md",
+    "03 - Machine Learning/03.7 - Tree-Based Models/02. Random Forests and Bagging.md",
+    "03 - Machine Learning/03.7 - Tree-Based Models/03. Gradient Boosting and XGBoost.md"
+  ],
+  "errors": [],
+  "ok": true
+}
