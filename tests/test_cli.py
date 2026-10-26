@@ -59,6 +59,8 @@ def run_cli(*args: str, cwd: Path | None = None, timeout: int = 300) -> subproce
         "audit-output",
         "extract-kus",
         "omission-pilot",
+        "overlap-candidates",
+        "kureg-apply-overlap",
     ],
 )
 def test_help_works(command):
@@ -716,3 +718,285 @@ class TestOmissionCLI:
         )
         assert proc.returncode == 1
         assert "refusing to write" in proc.stderr
+
+
+class TestOverlapCandidatesCLI:
+    """CAP-013 CLI: discovery + classification application end to end."""
+
+    @staticmethod
+    def _ku(ku_id, source_id, excerpt, unit_type="prose", excerpt_hash=None):
+        return {
+            "knowledge_unit_id": ku_id,
+            "source_id": source_id,
+            "source_path": source_id.split(":", 1)[1],
+            "source_file_hash": "f" * 64,
+            "line_start": 1,
+            "line_end": len(excerpt.splitlines()),
+            "excerpt": excerpt,
+            "excerpt_hash": excerpt_hash or ("h" + ku_id),
+            "unit_type": unit_type,
+            "disposition": "Unaccounted",
+            "heading_path": [],
+            "verification_status": {},
+        }
+
+    def _setup(self, tmp_path):
+        b1 = tmp_path / "course.jsonl"
+        b1.write_text(
+            json.dumps(
+                self._ku(
+                    "KU-c1",
+                    "course:reg.md",
+                    "We minimize the MSE loss with gradient descent.",
+                )
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        b2 = tmp_path / "master.jsonl"
+        b2.write_text(
+            json.dumps(
+                self._ku(
+                    "KU-m1",
+                    "master:reg.md",
+                    "MSE is our loss; gradient descent optimizes it.",
+                )
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        terms = tmp_path / "terms.json"
+        terms.write_text(
+            json.dumps({"MSE": ["mean squared error"], "gradient descent": ["GD"]}),
+            encoding="utf-8",
+        )
+        return b1, b2, terms
+
+    def test_discovery_end_to_end(self, tmp_path):
+        b1, b2, terms = self._setup(tmp_path)
+        out = tmp_path / "pairs.jsonl"
+        report = tmp_path / "report.json"
+        proc = run_cli(
+            "overlap-candidates",
+            "--batch", str(b1),
+            "--batch", str(b2),
+            "--terms", str(terms),
+            "--out", str(out),
+            "--report", str(report),
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        payload = json.loads(proc.stdout)
+        assert payload["term_pairs"] >= 2
+        assert payload["confirmed_term_pairs"] >= 2
+        assert payload["note"].startswith("candidates only")
+        lines = [json.loads(l) for l in out.read_text().splitlines() if l.strip()]
+        assert len(lines) == payload["term_pairs"]
+        assert json.loads(report.read_text())["report_meta"]["command"] == "overlap-candidates"
+
+    def test_discovery_rejects_output_inside_protected_root(self, tmp_path):
+        b1, b2, terms = self._setup(tmp_path)
+        protected = tmp_path / "sources"
+        (protected / "vault").mkdir(parents=True)
+        out = protected / "vault" / "pairs.jsonl"
+        proc = run_cli(
+            "overlap-candidates",
+            "--batch", str(b1),
+            "--batch", str(b2),
+            "--terms", str(terms),
+            "--out", str(out),
+            "--protected-root", str(protected),
+        )
+        assert proc.returncode == 1
+        assert "protected" in proc.stderr
+
+    def test_discovery_rejects_missing_terms_file(self, tmp_path):
+        b1, b2, _ = self._setup(tmp_path)
+        proc = run_cli(
+            "overlap-candidates",
+            "--batch", str(b1),
+            "--batch", str(b2),
+            "--terms", str(tmp_path / "nope.json"),
+            "--out", str(tmp_path / "o.jsonl"),
+        )
+        assert proc.returncode == 1
+        assert "error" in proc.stderr
+
+    def test_discovery_requires_two_vaults(self, tmp_path):
+        b1, _, terms = self._setup(tmp_path)
+        proc = run_cli(
+            "overlap-candidates",
+            "--batch", str(b1),
+            "--terms", str(terms),
+            "--out", str(tmp_path / "o.jsonl"),
+        )
+        # argparse accepts a single --batch; the vault-span check rejects it
+        assert proc.returncode == 1
+        assert "two distinct vaults" in proc.stderr
+
+    def test_apply_overlap_and_validate(self, tmp_path):
+        b1, b2, terms = self._setup(tmp_path)
+        out = tmp_path / "pairs.jsonl"
+        assert (
+            run_cli(
+                "overlap-candidates",
+                "--batch", str(b1),
+                "--batch", str(b2),
+                "--terms", str(terms),
+                "--out", str(out),
+            ).returncode
+            == 0
+        )
+        db = tmp_path / "reg.sqlite"
+        assert run_cli("kureg-init", "--db", str(db)).returncode == 0
+        assert (
+            run_cli("kureg-load", "--db", str(db), "--kus", str(b1)).returncode == 0
+        )
+        assert (
+            run_cli("kureg-load", "--db", str(db), "--kus", str(b2)).returncode == 0
+        )
+        cls = tmp_path / "cls.jsonl"
+        cls.write_text(
+            json.dumps(
+                {
+                    "classification_id": "OC-cli-0001",
+                    "task_id": "EXT-003",
+                    "topic": "MSE",
+                    "overlap_type": "Semantic Duplicate",
+                    "ku_ids": ["KU-c1", "KU-m1"],
+                    "rationale": "Both units state MSE as the regression loss.",
+                    "evidence": [
+                        {
+                            "ku_id": "KU-c1",
+                            "quote": "minimize the MSE loss",
+                            "source_path": "reg.md",
+                            "lines": [1],
+                        },
+                        {
+                            "ku_id": "KU-m1",
+                            "quote": "MSE is our loss",
+                            "source_path": "reg.md",
+                            "lines": [1],
+                        },
+                    ],
+                    "classified_by": "EXT-003 CLI test",
+                    "date": "2026-10-26",
+                }
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        proc = run_cli(
+            "kureg-apply-overlap", "--db", str(db), "--classifications", str(cls)
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        assert json.loads(proc.stdout)["inserted"] == 1
+
+        proc = run_cli("kureg-validate", "--db", str(db))
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        payload = json.loads(proc.stdout)
+        assert payload["overlap_classification_counts"]["classifications_total"] == 1
+
+        # idempotent re-apply
+        proc = run_cli(
+            "kureg-apply-overlap", "--db", str(db), "--classifications", str(cls)
+        )
+        assert proc.returncode == 0
+        assert json.loads(proc.stdout)["inserted"] == 0
+        assert json.loads(proc.stdout)["idempotent_skipped"] == 1
+
+    def test_apply_overlap_rejects_unknown_ku(self, tmp_path):
+        b1, b2, terms = self._setup(tmp_path)
+        db = tmp_path / "reg.sqlite"
+        assert run_cli("kureg-init", "--db", str(db)).returncode == 0
+        assert (
+            run_cli("kureg-load", "--db", str(db), "--kus", str(b1)).returncode == 0
+        )
+        cls = tmp_path / "cls.jsonl"
+        cls.write_text(
+            json.dumps(
+                {
+                    "classification_id": "OC-cli-bad",
+                    "task_id": "EXT-003",
+                    "topic": "MSE",
+                    "overlap_type": "Semantic Duplicate",
+                    "ku_ids": ["KU-c1", "KU-missing"],
+                    "rationale": "references an unloaded KU",
+                    "evidence": [
+                        {
+                            "ku_id": "KU-c1",
+                            "quote": "minimize the MSE loss",
+                            "source_path": "reg.md",
+                            "lines": [1],
+                        }
+                    ],
+                    "classified_by": "EXT-003 CLI test",
+                    "date": "2026-10-26",
+                }
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        proc = run_cli(
+            "kureg-apply-overlap", "--db", str(db), "--classifications", str(cls)
+        )
+        assert proc.returncode == 1
+        assert "not present in the registry" in proc.stderr
+
+    def test_validate_registry_classifications_flag(self, tmp_path):
+        bad = tmp_path / "cls.jsonl"
+        bad.write_text(
+            json.dumps({"classification_id": "OC-bad", "overlap_type": "Nope"}) + "\n",
+            encoding="utf-8",
+        )
+        proc = run_cli("validate-registry", "--classifications", str(bad))
+        assert proc.returncode == 1
+        payload = json.loads(proc.stdout)
+        assert payload["valid"] is False
+
+        good = tmp_path / "cls-good.jsonl"
+        good.write_text(
+            json.dumps(
+                {
+                    "classification_id": "OC-ok",
+                    "task_id": "EXT-003",
+                    "topic": "MSE",
+                    "overlap_type": "Partial Overlap",
+                    "ku_ids": ["KU-a", "KU-b"],
+                    "rationale": "ok",
+                    "evidence": [
+                        {
+                            "ku_id": "KU-a",
+                            "quote": "q",
+                            "source_path": "a.md",
+                            "lines": [1],
+                        }
+                    ],
+                    "classified_by": "test",
+                    "date": "2026-10-26",
+                }
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        report = tmp_path / "validation-report.json"
+        proc = run_cli(
+            "validate-registry",
+            "--classifications", str(good),
+            "--report", str(report),
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        payload = json.loads(proc.stdout)
+        assert payload["valid"] is True
+        detail = json.loads(report.read_text(encoding="utf-8"))
+        assert detail["validations"]["overlap_classifications"]["valid"] is True
+        assert (
+            detail["validations"]["overlap_classifications"]["cross_checks"][
+                "classifications_total"
+            ]
+            == 1
+        )
+
+    def test_validate_registry_still_requires_an_argument(self):
+        proc = run_cli("validate-registry")
+        assert proc.returncode == 1
+        assert "--classifications" in proc.stderr

@@ -47,7 +47,7 @@ try:  # optional dependency, availability checked by selftest
 except ImportError:  # pragma: no cover - exercised only without jsonschema
     _HAS_JSONSCHEMA = False
 
-REGISTRY_SCHEMA_VERSION = 1
+REGISTRY_SCHEMA_VERSION = 2
 ID_NAMESPACE = "vault_unification-ku-v1"
 
 DISPOSITIONS = (
@@ -145,9 +145,35 @@ _DDL = (
         PRIMARY KEY (ku_id, supports_ku_id)
     )
     """,
+    """
+    CREATE TABLE overlap_classifications (
+        classification_id TEXT PRIMARY KEY,
+        task_id TEXT NOT NULL,
+        topic TEXT NOT NULL,
+        overlap_type TEXT NOT NULL CHECK (overlap_type IN (%s)),
+        rationale TEXT NOT NULL CHECK (TRIM(rationale) != ''),
+        candidate_ref TEXT,
+        classified_by TEXT NOT NULL,
+        method TEXT,
+        date TEXT NOT NULL,
+        supersedes_classification_id TEXT REFERENCES overlap_classifications(classification_id),
+        review TEXT,
+        record_fingerprint TEXT NOT NULL,
+        applied_utc TEXT NOT NULL
+    )
+    """
+    % (_OVERLAP_LIST,),
+    """
+    CREATE TABLE classification_kus (
+        classification_id TEXT NOT NULL REFERENCES overlap_classifications(classification_id) ON DELETE CASCADE,
+        ku_id TEXT NOT NULL REFERENCES knowledge_units(ku_id) ON DELETE CASCADE,
+        PRIMARY KEY (classification_id, ku_id)
+    )
+    """,
     "CREATE INDEX idx_ku_disposition ON knowledge_units(disposition)",
     "CREATE INDEX idx_ku_source_path ON knowledge_units(source_path)",
     "CREATE INDEX idx_ku_source_id ON knowledge_units(source_id)",
+    "CREATE INDEX idx_classification_ku ON classification_kus(ku_id)",
 )
 
 
@@ -952,10 +978,292 @@ def validate_registry_db(db_path: str | Path) -> dict:
             "errors": errors,
             "warnings": warnings,
             "counts": counts,
+            "overlap_classification_counts": _classification_counts(conn),
             "unaccounted_count": counts["by_disposition"].get("Unaccounted", 0),
             "needs_review_count": counts["by_disposition"].get("Needs review", 0),
             "note": "Unaccounted units block release (docs/KNOWLEDGE_AND_PROVENANCE.md invariant 2); "
             "counts are record accounting, never proof of semantic preservation",
+        }
+    finally:
+        conn.close()
+
+
+def _classification_counts(conn: sqlite3.Connection) -> dict:
+    """Counting summary for overlap classification overlays."""
+    total = conn.execute(
+        "SELECT COUNT(*) AS n FROM overlap_classifications"
+    ).fetchone()["n"]
+    by_type: dict[str, int] = {}
+    for row in conn.execute(
+        "SELECT overlap_type, COUNT(*) AS n FROM overlap_classifications "
+        "GROUP BY overlap_type ORDER BY overlap_type"
+    ):
+        by_type[row["overlap_type"]] = row["n"]
+    classified_kus = conn.execute(
+        "SELECT COUNT(DISTINCT ku_id) AS n FROM classification_kus"
+    ).fetchone()["n"]
+    return {
+        "classifications_total": total,
+        "by_overlap_type": by_type,
+        "kus_participating": classified_kus,
+        "note": "pair-level records (ADR-0009); per-KU overlap_type columns stay NULL "
+        "because one unit can participate in multiple differently-typed pairs",
+    }
+
+
+# ---------------------------------------------------------------------------
+# overlap classification application (CAP-013 / ADR-0009)
+# ---------------------------------------------------------------------------
+
+
+def _load_classification_records(
+    jsonl_path: str | Path,
+) -> list[dict]:
+    """Read an overlap-classification JSONL file with per-line errors."""
+    path = Path(jsonl_path)
+    if not path.is_file():
+        raise RegistryError(f"classification file not found: {path}")
+    records: list[dict] = []
+    try:
+        text = path.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise RegistryError(f"cannot read classification file {path}: {exc}") from exc
+    for lineno, line in enumerate(text.splitlines(), start=1):
+        if not line.strip():
+            continue
+        try:
+            rec = json.loads(line)
+        except json.JSONDecodeError as exc:
+            raise RegistryError(
+                f"{path}:{lineno}: invalid JSON: {exc}"
+            ) from exc
+        if not isinstance(rec, dict):
+            raise RegistryError(
+                f"{path}:{lineno}: classification record must be a JSON object"
+            )
+        rec["_line"] = lineno
+        records.append(rec)
+    if not records:
+        raise RegistryError(f"classification file {path} contains no records")
+    return records
+
+
+def _classification_schema_errors(
+    records: list[dict],
+    schema_path: str | Path,
+) -> list[dict]:
+    """Validate classification records against their JSON Schema."""
+    if not _HAS_JSONSCHEMA:
+        return [
+            {
+                "record_index": None,
+                "classification_id": None,
+                "error": "jsonschema package is not installed; applying requires schema validation",
+            }
+        ]
+    schema_file = Path(schema_path)
+    if not schema_file.is_file():
+        return [
+            {
+                "record_index": None,
+                "classification_id": None,
+                "error": f"schema file not found: {schema_file}",
+            }
+        ]
+    schema = json.loads(schema_file.read_text(encoding="utf-8"))
+    validator = jsonschema.validators.validator_for(schema)(schema)
+    errors: list[dict] = []
+    for index, record in enumerate(records):
+        candidate = {k: v for k, v in record.items() if not k.startswith("_")}
+        for err in sorted(validator.iter_errors(candidate), key=lambda e: list(e.path)):
+            location = ".".join(str(p) for p in err.absolute_path) or "<root>"
+            errors.append(
+                {
+                    "record_index": index,
+                    "classification_id": record.get("classification_id"),
+                    "location": location,
+                    "error": err.message,
+                }
+            )
+    return errors
+
+
+def _classification_cross_errors(
+    records: list[dict],
+    known_ku_ids: set[str],
+    ku_vault: dict[str, str],
+    known_classification_ids: set[str] | None = None,
+) -> list[dict]:
+    """Cross-checks beyond the schema: KU existence, cross-vault span."""
+    errors: list[dict] = []
+    known_classification_ids = known_classification_ids or set()
+    for index, record in enumerate(records):
+        cid = record.get("classification_id", "<missing>")
+        ku_ids = record.get("ku_ids") or []
+        for ku_id in ku_ids:
+            if ku_id not in known_ku_ids:
+                errors.append(
+                    {
+                        "record_index": index,
+                        "classification_id": cid,
+                        "error": f"ku_id {ku_id!r} is not present in the registry "
+                        "(load the KU batches first)",
+                    }
+                )
+        vaults = {ku_vault[ku_id] for ku_id in ku_ids if ku_id in ku_vault}
+        if len(vaults) < 2:
+            errors.append(
+                {
+                    "record_index": index,
+                    "classification_id": cid,
+                    "error": "classification must span at least two distinct vaults "
+                    "(source_id prefixes); pair-level relationship (ADR-0009)",
+                }
+            )
+        supersedes = record.get("supersedes_classification_id")
+        if supersedes is not None:
+            known = (
+                {r.get("classification_id") for r in records}
+                | known_classification_ids
+            )
+            if supersedes not in known:
+                errors.append(
+                    {
+                        "record_index": index,
+                        "classification_id": cid,
+                        "error": f"supersedes_classification_id {supersedes!r} "
+                        "does not exist (in this file or the database)",
+                    }
+                )
+    return errors
+
+
+def apply_overlap_classifications(
+    db_path: str | Path,
+    jsonl_path: str | Path,
+    *,
+    schema_path: str | Path,
+) -> dict:
+    """Apply append-only overlap classification records to the registry.
+
+    Validates every record against the classification JSON Schema and
+    cross-checks KU existence + cross-vault span before any write; the
+    insert is a single transaction (atomic on failure). Re-applying the
+    same classification_id with identical content is an idempotent no-op;
+    a conflicting re-apply is an error (append-only discipline: corrections
+    come as new records that supersede old ones, never edits).
+    """
+    records = _load_classification_records(jsonl_path)
+
+    schema_errors = _classification_schema_errors(records, schema_path)
+    if schema_errors:
+        raise RegistryError(
+            "classification schema violations: "
+            + "; ".join(
+                f"record {e['record_index']} ({e['classification_id']}) "
+                f"{e['location']}: {e['error']}" if "location" in e
+                else f"record {e['record_index']}: {e['error']}"
+                for e in schema_errors[:3]
+            )
+            + (f" (+{len(schema_errors) - 3} more)" if len(schema_errors) > 3 else "")
+        )
+
+    conn = _connect(db_path)
+    try:
+        _check_registry(conn)
+        known_rows = conn.execute(
+            "SELECT ku_id, source_id FROM knowledge_units"
+        ).fetchall()
+        known_ku_ids = {row["ku_id"] for row in known_rows}
+        ku_vault = {
+            row["ku_id"]: row["source_id"].split(":", 1)[0] for row in known_rows
+        }
+        existing = {
+            row["classification_id"]: row["record_fingerprint"]
+            for row in conn.execute(
+                "SELECT classification_id, record_fingerprint "
+                "FROM overlap_classifications"
+            )
+        }
+        cross_errors = _classification_cross_errors(
+            records, known_ku_ids, ku_vault, set(existing)
+        )
+        if cross_errors:
+            raise RegistryError(
+                "classification cross-check failures: "
+                + "; ".join(
+                    f"record {e['record_index']} ({e['classification_id']}): {e['error']}"
+                    for e in cross_errors[:3]
+                )
+                + (
+                    f" (+{len(cross_errors) - 3} more)"
+                    if len(cross_errors) > 3
+                    else ""
+                )
+            )
+
+        inserted = 0
+        idempotent_skipped = 0
+        with conn:  # single transaction
+            # defer FK enforcement to commit so a record may supersede a
+            # classification defined later in the same file
+            conn.execute("PRAGMA defer_foreign_keys = ON")
+            for record in records:
+                cid = record["classification_id"]
+                clean = {k: v for k, v in record.items() if not k.startswith("_")}
+                fingerprint = canonical_json(clean)
+                if cid in existing:
+                    if existing[cid] == fingerprint:
+                        idempotent_skipped += 1
+                        continue
+                    raise RegistryError(
+                        f"classification {cid!r} already exists with different content; "
+                        "append-only discipline: write a new record with "
+                        "supersedes_classification_id instead of editing"
+                    )
+                conn.execute(
+                    """
+                    INSERT INTO overlap_classifications (
+                        classification_id, task_id, topic, overlap_type, rationale,
+                        candidate_ref, classified_by, method, date,
+                        supersedes_classification_id, review, record_fingerprint,
+                        applied_utc
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        cid,
+                        clean.get("task_id"),
+                        clean.get("topic"),
+                        clean.get("overlap_type"),
+                        clean.get("rationale"),
+                        clean.get("candidate_ref"),
+                        clean.get("classified_by"),
+                        clean.get("method"),
+                        clean.get("date"),
+                        clean.get("supersedes_classification_id"),
+                        (
+                            json.dumps(clean["review"], sort_keys=True)
+                            if clean.get("review") is not None
+                            else None
+                        ),
+                        fingerprint,
+                        _utcnow(),
+                    ),
+                )
+                for ku_id in clean.get("ku_ids", []):
+                    conn.execute(
+                        "INSERT INTO classification_kus (classification_id, ku_id) "
+                        "VALUES (?, ?)",
+                        (cid, ku_id),
+                    )
+                inserted += 1
+        return {
+            "db_path": str(db_path),
+            "classification_file": str(jsonl_path),
+            "records_in_file": len(records),
+            "inserted": inserted,
+            "idempotent_skipped": idempotent_skipped,
+            "rejected": 0,
         }
     finally:
         conn.close()

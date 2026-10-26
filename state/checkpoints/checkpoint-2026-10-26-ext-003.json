@@ -1,0 +1,60 @@
+{
+  "checkpoint_id": "CHK-2026-10-26-EXT-003",
+  "created_utc": "2026-10-26T08:00:00+00:00",
+  "stage": "extraction",
+  "task_id": "EXT-003",
+  "task_status": "completed",
+  "last_verified_state": {
+    "framework_version": "0.5.0 (CAP-013 added: overlap.py + CLI overlap-candidates/kureg-apply-overlap + validate-registry --classifications)",
+    "test_result": "407 passed, 0 failed, 0 skipped",
+    "test_evidence": "reports/extraction/ext003-pytest-report.json",
+    "capabilities_evidence": "reports/extraction/ext003-capabilities.json (16 implemented-and-tested, 1 planned: CAP-014)",
+    "ku_schema_version": "1.1 (ADR-0008)",
+    "registry_store": "state/knowledge-units/ (363 records in 2 committed batches, unedited)",
+    "derived_index": "state/registries/kuregistry.db (rebuilt: init --force + load 001 + load 002 + apply-overlap; kureg-validate valid, 0 errors/warnings)",
+    "classifications": {
+      "path": "state/classifications/001-ext003-regression-overlap.jsonl",
+      "records": 14,
+      "by_overlap_type": {
+        "Semantic Duplicate": 7,
+        "Partial Overlap": 7
+      },
+      "kus_participating": 61,
+      "evidence_quotes": 67,
+      "generator": "scripts/ext003_classifications.py (byte-exact quote verification + schema + cross-checks before exit 0)",
+      "schema": "schemas/overlap-classification.schema.json",
+      "model": "pair-level overlay (ADR-0009); dispositions all remain Unaccounted by design"
+    },
+    "candidate_discovery": {
+      "report": "reports/extraction/ext003-overlap-candidates.json",
+      "pairs_jsonl": "reports/extraction/ext003-overlap-candidates-pairs.jsonl",
+      "term_pairs": 651,
+      "confirmed": 633,
+      "unconfirmed_only": 18,
+      "exact_hash_pairs": 0,
+      "normalized_hash_pairs": 0,
+      "terms_file": "state/term-maps/regression-domain-v1.json (45 terms, 111 aliases)",
+      "reproducibility": "re-run byte-identical (pairs cmp exit 0; result JSON identical)"
+    },
+    "independent_review": "EXT-003-REVIEW subagent verdict PASS-WITH-NOTES (66/66 byte-exact quotes incl. original-source line verification, 14/14 cross-vault, 14/14 semantic agreements, rationale fixes identified and applied by orchestrator pre-commit, no coverage gaps); reports/extraction/ext003-review.md",
+    "source_immutability": "reports/extraction/ext003-immutable-{master-ai,ai-course}.json (333 and 276 unchanged; 0 added/removed/changed)",
+    "work_commit": ""
+  },
+  "changed_paths": [
+    "src/vault_unification/overlap.py (new)",
+    "src/vault_unification/{__init__,capabilities,cli,kuregistry,registry}.py",
+    "tests/test_overlap.py (new)",
+    "tests/test_cli.py",
+    "tests/test_capabilities.py",
+    "schemas/overlap-classification.schema.json (new)",
+    "state/term-maps/regression-domain-v1.json (new)",
+    "state/classifications/001-ext003-regression-overlap.jsonl (new)",
+    "scripts/ext003_classifications.py (new)",
+    "reports/extraction/ext003-*.json|md (new evidence)",
+    "docs/FRAMEWORK_SETUP.md",
+    "state/{task-queue.jsonl,findings.jsonl,current-state.json}",
+    "docs/agent-handoff/next-agent.md"
+  ],
+  "next_task": "EXT-004 — decide from evidence: domain-paired extraction continues (AI Course 03.7 Tree-Based Models pairs with the already-extracted master-ai decision-trees file) OR concept-dossier scaffolding for the regression domain",
+  "resume_instructions": "See docs/agent-handoff/next-agent.md (EXT-003 section): startup protocol, verification steps (selftest, 407/407 pytest, manifests, registry rebuild incl. kureg-apply-overlap), and the EXT-004 task definition with inputs/outputs/acceptance criteria."
+}

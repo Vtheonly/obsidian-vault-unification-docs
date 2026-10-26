@@ -1,0 +1,27 @@
+{
+  "command": "kureg-apply-overlap",
+  "result": {
+    "db_path": "state/registries/kuregistry.db",
+    "classification_file": "state/classifications/001-ext003-regression-overlap.jsonl",
+    "records_in_file": 14,
+    "inserted": 14,
+    "idempotent_skipped": 0,
+    "rejected": 0
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "kureg-apply-overlap",
+    "args": {
+      "command": "kureg-apply-overlap",
+      "db": "state/registries/kuregistry.db",
+      "classifications": "state/classifications/001-ext003-regression-overlap.jsonl",
+      "classifications_schema": "/home/z/my-project/repo/schemas/overlap-classification.schema.json",
+      "protected_root": null,
+      "report": "reports/extraction/ext003-kureg-apply-overlap.json"
+    },
+    "utc_timestamp": "2026-10-26T07:41:27+00:00",
+    "git_commit": "5d14370"
+  }
+}

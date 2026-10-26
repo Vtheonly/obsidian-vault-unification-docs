@@ -1,4 +1,4 @@
-# Framework Setup and Usage (v0.4.0)
+# Framework Setup and Usage (v0.5.0)
 
 Implementation documentation for the Python tooling framework specified in
 [TOOLING_FRAMEWORK.md](TOOLING_FRAMEWORK.md). This document describes what
@@ -8,20 +8,24 @@ the implemented surface and evidence.
 
 ## Status
 
-- Version: 0.4.0 (BOOT-000 deliverable; `stats` added in BOOT-002 as CAP-015;
+- Version: 0.5.0 (BOOT-000 deliverable; `stats` added in BOOT-002 as CAP-015;
   KU registry commands added in BOOT-003 as CAP-011; omission-detection pilot
   and output auditor added in BOOT-004 as CAP-012; deterministic KU extraction
-  added in EXT-001 as CAP-016, plus the first real extraction batch)
+  added in EXT-001 as CAP-016, plus the first real extraction batch;
+  cross-vault overlap candidate discovery + classification application added
+  in EXT-003 as CAP-013)
 - Layout: `src/vault_unification/` package, `tests/` pytest suite,
   `reports/framework/` + `reports/bootstrap/` evidence reports,
   `state/manifests/` hash manifests, `state/knowledge-units/` canonical KU
   store, `state/registries/` derived registry databases (git-ignored).
 - Test evidence: 153 tests passed at BOOT-000; 178 after BOOT-002; 248 after
   the BOOT-003 registry addition; 285 after the BOOT-004 pilot; 338 after the
-  EXT-001 extractor — see `reports/extraction/ext001-pytest-report.json`.
+  EXT-001 extractor; 407 after the EXT-003 overlap addition — see
+  `reports/extraction/ext003-pytest-report.json`.
 - Capability inventory (verified against test runs):
-  `reports/extraction/ext001-capabilities.json`. 15 code-backed capabilities
-  verified `implemented-and-tested`; 2 roadmap capabilities `planned`.
+  `reports/extraction/ext003-capabilities.json`. 16 code-backed capabilities
+  verified `implemented-and-tested`; 1 roadmap capability `planned`
+  (CAP-014).
 - Source immutability evidence: per-task reports under
   `reports/bootstrap/boot-00N-immutable-*.json` (0 added/removed/changed
   before and after all session operations).
@@ -60,7 +64,7 @@ Runtime: Python >= 3.10. Optional dependencies (checked by `selftest`):
 | `search --root R --term T [--mode M] [--json]` | exact / case-insensitive / normalized search | always (unless invalid args) | invalid term/mode/root |
 | `term-stats --root R --terms-file F` | term + alias frequency with denominators | always | missing terms file |
 | `stats --root R [--per-file F2]` | content statistics: words, headings, tokens, structures | no file errors | any unreadable/binary/non-UTF-8 or parse-error file (report still written) |
-| `validate-registry --tasks F [--kus F2]` | JSONL records vs JSON schemas + cross-checks | valid | any schema/cross-check error |
+| `validate-registry --tasks F [--kus F2] [--classifications F3]` | JSONL records vs JSON schemas + cross-checks | valid | any schema/cross-check error |
 | `kureg-init --db D [--force]` | create empty KU registry database | created | existing db without `--force`; db inside a protected root |
 | `kureg-load --db D --kus F [--mint-ids]` | validate + atomically load a KU JSONL batch | batch valid and inserted (or identical re-load skipped) | any schema/cross-check/parse error or ID conflict (nothing written) |
 | `kureg-query --db D [filters]` | query registry, reconstruct schema-shaped records | always (unless invalid args/missing db) | missing/corrupt db, unknown disposition filter |
@@ -68,6 +72,8 @@ Runtime: Python >= 3.10. Optional dependencies (checked by `selftest`):
 | `audit-output --source-root S --output-root O --ku-batch F [--accepted-manifest M]` | full omission/corruption audit of a candidate output vault (KU batch validity, drift vs accepted manifest, disposition/destination accounting, rare-term + equation + code marker retention, link integrity, heading-convention and prose-quality lint) | audit valid (no critical/major findings) | any blocking finding or unusable input |
 | `extract-kus --root R --scope S --vault-id V --manifest M --out F [--unclosed-fence-finding ID]` | deterministic segmentation of source notes into schema-valid KU records with stable content-derived IDs, exact excerpts and a coverage report with per-file outcomes and line accounting | every scope file extracted or explicitly excluded; batch schema-valid | any failed file outcome (hash mismatch, encoding, internal inconsistency), scope/manifest problems, or batch validation failure |
 | `omission-pilot --dest D [--keep-mutations]` | build the synthetic paired-source fixture, plant 12 declared defects one at a time into mutated copies, re-run the audit pipeline and report detection + localization, false positives and the verdict (hard gate before large-scale synthesis) | verdict pass (all defects detected and localized, clean baseline, sources unchanged) | verdict fail (any missed/unlocalized defect, false positives on the clean baseline, or audit error) |
+| `overlap-candidates --batch B1 --batch B2 ... --terms T --out F [--max-pairs-per-topic N]` | cross-vault overlap candidate discovery: word-boundary term/alias evidence over committed KU batches (CAP-013; never assigns classifications) | candidates written | invalid batch/terms/schema, single-vault input, protected-root violation |
+| `kureg-apply-overlap --db D --classifications F` | validate + apply append-only overlap-classification records to the registry (pair-level, ADR-0009) | all records inserted or idempotently skipped | schema/cross-check violation, unknown KU id, single-vault group, self-supersede, db missing |
 | `run-tests --tests-dir D --json-report P` | pytest orchestration, machine-readable | suite passed | suite failed |
 | `capabilities [--verify]` | capability inventory | declared mode; verify mode with all referenced tests passing | verification failed |
 
@@ -246,7 +252,58 @@ First real batch (EXT-001): `state/knowledge-units/001-ext001-ai-course-03.1-reg
 — 6/6 files extracted, 298 records, all `Unaccounted`, evidence in
 `reports/extraction/ext001-*.json`.
 
-## Known limitations (v0.4.0)
+## Cross-vault overlap candidates and classifications (CAP-013)
+
+`vu overlap-candidates` discovers cross-vault overlap candidates over
+committed KU batches — deterministically and without ever assigning a
+classification:
+
+```bash
+PYTHONPATH=src python3 -m vault_unification overlap-candidates \
+  --batch state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl \
+  --batch state/knowledge-units/002-ext002-master-ai-supervised-learning.jsonl \
+  --terms state/term-maps/regression-domain-v1.json \
+  --out reports/extraction/ext003-overlap-candidates-pairs.jsonl \
+  --report reports/extraction/ext003-overlap-candidates.json
+```
+
+What it guarantees:
+
+- **Word-boundary matching only (F-0006).** Terms/aliases match via
+  `(?<!\w)term(?!\w)` lookarounds, so `bridge` never matches `ridge`.
+  There is no stemming: `ridges` does not match `ridge` unless declared as
+  an alias.
+- **Mermaid-node suspicion.** Every match inside a mermaid code block (node
+  labels like `L1[...]` AND edge references like `L1 --> L2`) plus any match
+  immediately followed by `[` is flagged `mermaid_node_suspect` and NEVER
+  counts toward a candidate's confirmed evidence. Flagged-only candidates
+  are still emitted but marked `unconfirmed_only: true`.
+- **Candidates, not classifications.** The output is a candidate-pair list
+  with per-side match positions, context snippets and excerpt references;
+  every overlap_type assignment requires human/agent excerpt review and is
+  recorded separately (append-only) in `state/classifications/`.
+- **Determinism.** Sorted outputs, no timestamps in the pairs JSONL;
+  re-running on unchanged batches is byte-identical.
+- **Pair capping.** Per-topic cross-products are capped
+  (`--max-pairs-per-topic`, default 250); excess topics are flagged in
+  `truncated_topics` and their per-KU evidence stays complete in the
+  `topics` section.
+
+Classification records (`schemas/overlap-classification.schema.json`) are
+validated by `vu validate-registry --classifications F` (file level) and
+applied to the registry by `vu kureg-apply-overlap` (which additionally
+resolves every ku_id against loaded KUs, enforces cross-vault groups and
+records the pair-level overlay per ADR-0009 — per-KU overlap columns stay
+NULL because one unit can join multiple differently-typed pairs).
+
+First real use (EXT-003): 363 KUs → 44 topics (20 cross-vault), 651 term
+pairs (633 confirmed, 18 unconfirmed-only), 0 exact/normalized hash
+duplicates; 14 evidence-based classifications (7 Semantic Duplicate, 7
+Partial Overlap) over 60 participating KUs — evidence in
+`reports/extraction/ext003-*.json` and
+`state/classifications/001-ext003-regression-overlap.jsonl`.
+
+## Known limitations (v0.5.0)
 
 - Inline `$...$` math detection is delimiter-based; currency-style dollar
   signs can produce false positives; no LaTeX syntax validation.
@@ -288,6 +345,15 @@ First real batch (EXT-001): `state/knowledge-units/001-ext001-ai-course-03.1-reg
   link findings attribute KU ownership by destination note plus wikilink
   presence in the excerpt; the pilot fixture is small by design and
   corpus-scale noise must be re-measured on real extraction batches.
+- CAP-013 limitations (full list in `vu capabilities` and in every
+  candidate-discovery report): candidate generation only — no overlap_type
+  is assigned or implied by the tool; no stemming/inflection (`ridges` is
+  not `ridge` unless aliased); mermaid detection covers mermaid code blocks
+  and the immediate-`[` heuristic, not other diagram syntaxes; term
+  coverage is exactly the provided terms/aliases map; hash duplicates
+  compare whole excerpts only; per-topic pair cross-products are capped;
+  classifications are pair-level overlays (per-KU overlap columns stay
+  NULL by design, ADR-0009).
 
 ## Recovery and troubleshooting
 

@@ -53,9 +53,9 @@
     "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)"
   },
   "output_synthesis_started": false,
-  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-26-ext-002.json",
-  "current_task_id": "EXT-003",
-  "notes": "EXT-002 completed: extracted the whole Master AI '03 - Machine Learning/Supervised Learning' folder (2/2 files, 65 KUs; regression pairing file '02 - Linear and Logistic Regression.md' = 35 KUs, decision-trees file = 30 KUs for a later AI-Course-03.7 pairing). Consumed existing CAP-016 (no framework changes; 338/338 tests). Byte-identical determinism; line accounting 167/167 per file; 65/65 byte-exact excerpts + manifest-hash agreement (scripts/ext002_fidelity.py); registry 363 KUs, 0 anomalies; sources unchanged before/after. Independent EXT-002-REVIEW verdict PASS (32/32 rare details, 40/40 headings, 0 boundary anomalies, 65/65 structurally pure, in-memory extractor re-run reproduces the batch exactly); orchestrator spot-checked the review evidence. New finding F-0006 (open): naive substring matching false-positives ('bridge'->'ridge', mermaid L1[/L2[ labels) \u2014 CAP-013 must use word-boundary matching + excerpt confirmation. Next: EXT-003 \u2014 build CAP-013 and classify overlap for the regression domain from the 7 evidenced topic-pair hypotheses in reports/extraction/ext002-review.md (hypotheses, not classifications).",
+  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-26-ext-003.json",
+  "current_task_id": "EXT-004",
+  "notes": "EXT-003 completed: CAP-013 cross-vault overlap candidate discovery (word-boundary + mermaid-safe, 59 new tests) + first 14 evidence-based overlap classifications for the regression domain (7 Semantic Duplicate, 7 Partial Overlap, 61 participating KUs of 363; 67 byte-exact evidence quotes; independent review PASS-WITH-NOTES with all repairs applied). Dispositions deliberately NOT assigned (no synthesis output exists yet). Framework v0.5.0; 407/407 tests; 16 capabilities implemented-and-tested, 1 planned (CAP-014). F-0006 resolved. Sources unchanged (0 added/removed/changed both vaults).",
   "corpus_statistics": {
     "files_total": 609,
     "markdown_files": 609,
@@ -83,17 +83,16 @@
   },
   "knowledge_registry": {
     "canonical_store": "state/knowledge-units/ (committed JSONL batches; ADR-0007)",
-    "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load)",
+    "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load + kureg-apply-overlap)",
     "records": 363,
     "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)",
-    "commands": "vu kureg-init / kureg-load / kureg-query / kureg-validate",
-    "capability": "CAP-011 implemented-and-tested (reports/bootstrap/boot-004-capabilities.json)",
-    "note": "EXT-001 + EXT-002 delivered 2 committed batches (363 structural KU records, all Unaccounted): 001-ext001-ai-course-03.1-regression.jsonl (298 KUs, 6 files) + 002-ext002-master-ai-supervised-learning.jsonl (65 KUs, 2 files incl. the regression pairing file). Derived index rebuilt at state/registries/kuregistry.db (kureg-validate clean, 0 warnings). Extraction claims no semantics; overlap/disposition classification (EXT-003) requires CAP-013 with word-boundary matching per F-0006."
+    "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records, ADR-0009 pair-level overlay)",
+    "commands": "vu kureg-init / kureg-load / kureg-apply-overlap / kureg-query / kureg-validate"
   },
   "framework_foundation_evidence": {
-    "test_run": "reports/extraction/ext001-pytest-report.json",
-    "test_summary": "338 passed, 0 failed, 0 skipped",
-    "capabilities": "reports/extraction/ext001-capabilities.json",
+    "test_run": "reports/extraction/ext003-pytest-report.json",
+    "test_summary": "407 passed, 0 failed, 0 skipped",
+    "capabilities": "reports/extraction/ext003-capabilities.json",
     "setup_doc": "docs/FRAMEWORK_SETUP.md"
   }
 }

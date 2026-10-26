@@ -320,3 +320,86 @@ def validate_state_file(path: str | Path) -> dict:
     report["valid"] = True
     report["state"] = state
     return report
+
+
+def validate_classification_file(path: str | Path, schema_path: str | Path) -> dict:
+    """Validate an overlap-classification JSONL file: schema + cross-checks.
+
+    File-level cross-checks (complementary to the registry's apply-time
+    checks against loaded KUs):
+    - classification_ids are unique within the file;
+    - every evidence ku_id also appears in the record's ku_ids;
+    - every evidence quote is attributable (has ku_id, quote, source_path,
+      lines);
+    - supersedes_classification_id references exist within the file (the
+      registry additionally resolves references to earlier files).
+
+    KU existence in a registry database is NOT checked here (this file-level
+    validation has no database context); the authoritative check runs at
+    ``kureg-apply-overlap`` time.
+    """
+    report = validate_records_against_schema(path, schema_path)
+    if report["errors"]:
+        report["cross_checks"] = {"status": "not_run", "reason": "per-record errors present"}
+        return report
+
+    entries, _ = load_jsonl_records(path)
+    records = [entry["record"] for entry in entries]
+
+    seen_ids: set[str] = set()
+    for record in records:
+        cid = record.get("classification_id")
+        if cid in seen_ids:
+            report["errors"].append(
+                {
+                    "line": None,
+                    "classification_id": cid,
+                    "rule": "duplicate_classification_id",
+                    "error": f"classification_id {cid!r} appears more than once",
+                }
+            )
+        seen_ids.add(cid)
+        ku_ids = set(record.get("ku_ids") or [])
+        for ev in record.get("evidence") or []:
+            ev_ku = ev.get("ku_id")
+            if ev_ku not in ku_ids:
+                report["errors"].append(
+                    {
+                        "line": None,
+                        "classification_id": cid,
+                        "rule": "evidence_ku_not_in_ku_ids",
+                        "error": f"evidence references ku_id {ev_ku!r} "
+                        "which is not in the record's ku_ids",
+                    }
+                )
+        supersedes = record.get("supersedes_classification_id")
+        if supersedes is not None:
+            file_ids = {r.get("classification_id") for r in records}
+            if supersedes == cid:
+                report["errors"].append(
+                    {
+                        "line": None,
+                        "classification_id": cid,
+                        "rule": "self_supersede",
+                        "error": "classification cannot supersede itself",
+                    }
+                )
+            elif supersedes not in file_ids:
+                # external reference: resolved at registry apply time
+                report.setdefault("external_supersedes_references", []).append(
+                    {"classification_id": cid, "supersedes": supersedes}
+                )
+
+    report["valid"] = not report["errors"]
+    report["cross_checks"] = {
+        "status": "run",
+        "classifications_total": len(records),
+        "rules": [
+            "duplicate_classification_id",
+            "evidence_ku_not_in_ku_ids",
+            "self_supersede",
+        ],
+        "note": "KU existence, cross-vault span and external supersedes "
+        "references are checked at registry apply time",
+    }
+    return report

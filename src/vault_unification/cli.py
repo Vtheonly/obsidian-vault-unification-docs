@@ -27,12 +27,14 @@ from . import kuextract as kuextract_mod
 from . import linkcheck as linkcheck_mod
 from . import mdextract as mdextract_mod
 from . import omission as omission_mod
+from . import overlap as overlap_mod
 from . import registry as registry_mod
 from . import search as search_mod
 from . import selftest as selftest_mod
 from . import vaultstats as vaultstats_mod
 from .kuregistry import RegistryError
 from .omission import AuditError
+from .overlap import OverlapError
 from .pathsafety import PathSafetyError, ensure_dest_safe, validate_roots
 from .reporting import write_json_report
 
@@ -136,11 +138,16 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--report", help="optional JSON report path (aggregate statistics)")
 
     # ---- validate-registry ----
-    p = sub.add_parser("validate-registry", help="validate task-queue/KU JSONL records against schemas")
+    p = sub.add_parser("validate-registry", help="validate task-queue/KU/classification JSONL records against schemas")
     p.add_argument("--tasks", help="task queue JSONL path")
     p.add_argument("--tasks-schema", default=str(REPO_ROOT / "schemas" / "task.schema.json"))
     p.add_argument("--kus", help="knowledge-unit JSONL path")
     p.add_argument("--kus-schema", default=str(REPO_ROOT / "schemas" / "knowledge-unit.schema.json"))
+    p.add_argument("--classifications", help="overlap-classification JSONL path")
+    p.add_argument(
+        "--classifications-schema",
+        default=str(REPO_ROOT / "schemas" / "overlap-classification.schema.json"),
+    )
     p.add_argument("--report", help="optional JSON report path")
 
     # ---- run-tests ----
@@ -301,6 +308,72 @@ def build_parser() -> argparse.ArgumentParser:
         "--ku-schema",
         default=str(REPO_ROOT / "schemas" / "knowledge-unit.schema.json"),
         help="knowledge-unit JSON Schema path",
+    )
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- overlap-candidates ----
+    p = sub.add_parser(
+        "overlap-candidates",
+        help="discover cross-vault overlap candidates (word-boundary term/alias evidence; CAP-013)",
+    )
+    p.add_argument(
+        "--batch",
+        required=True,
+        action="append",
+        dest="batches",
+        help="KU batch JSONL path (repeatable; >= 2 batches from distinct vaults)",
+    )
+    p.add_argument(
+        "--terms",
+        required=True,
+        help="terms JSON file: {term: [aliases]} or [term, ...]",
+    )
+    p.add_argument(
+        "--out",
+        required=True,
+        help="candidate-pairs JSONL destination (explicit; never under a protected root)",
+    )
+    p.add_argument(
+        "--kus-schema",
+        default=str(REPO_ROOT / "schemas" / "knowledge-unit.schema.json"),
+        help="knowledge-unit JSON Schema path",
+    )
+    p.add_argument(
+        "--max-pairs-per-topic",
+        type=int,
+        default=250,
+        help="cap on the cross-product pair count per topic (default 250; "
+        "excess topics are flagged and their per-KU evidence stays complete)",
+    )
+    p.add_argument(
+        "--protected-root",
+        action="append",
+        default=None,
+        help="path the outputs must not be written under (repeatable); default: <repo>/source-vaults when present",
+    )
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- kureg-apply-overlap ----
+    p = sub.add_parser(
+        "kureg-apply-overlap",
+        help="apply append-only overlap classification records to the registry (ADR-0009)",
+    )
+    p.add_argument("--db", required=True, help="registry database path (must exist; run kureg-init first)")
+    p.add_argument(
+        "--classifications",
+        required=True,
+        help="overlap-classification JSONL path (schema-validated before insert)",
+    )
+    p.add_argument(
+        "--classifications-schema",
+        default=str(REPO_ROOT / "schemas" / "overlap-classification.schema.json"),
+        help="overlap-classification JSON Schema path",
+    )
+    p.add_argument(
+        "--protected-root",
+        action="append",
+        default=None,
+        help="path the database must not be written under (repeatable); default: <repo>/source-vaults when present",
     )
     p.add_argument("--report", help="optional JSON report path")
 
@@ -507,8 +580,14 @@ def cmd_validate_registry(args) -> int:
         result = registry_mod.validate_ku_file(args.kus, args.kus_schema)
         payload["validations"]["knowledge_units"] = result
         problems += len(result["errors"])
-    if not args.tasks and not args.kus:
-        print("error: provide --tasks and/or --kus", file=sys.stderr)
+    if getattr(args, "classifications", None):
+        result = registry_mod.validate_classification_file(
+            args.classifications, args.classifications_schema
+        )
+        payload["validations"]["overlap_classifications"] = result
+        problems += len(result["errors"])
+    if not args.tasks and not args.kus and not getattr(args, "classifications", None):
+        print("error: provide --tasks and/or --kus and/or --classifications", file=sys.stderr)
         return 1
     payload["problems_total"] = problems
     payload["valid"] = problems == 0
@@ -693,6 +772,7 @@ def cmd_kureg_validate(args) -> int:
             "errors_total": len(result["errors"]),
             "warnings_total": len(result["warnings"]),
             "counts": result["counts"],
+            "overlap_classification_counts": result["overlap_classification_counts"],
             "unaccounted_count": result["unaccounted_count"],
             "needs_review_count": result["needs_review_count"],
         }
@@ -823,6 +903,105 @@ def cmd_omission_pilot(args) -> int:
     return 0 if report["verdict"]["pass"] else 1
 
 
+def _default_protected_roots(explicit: list[str] | None) -> list[Path]:
+    if explicit:
+        return [Path(p) for p in explicit]
+    default = REPO_ROOT / "source-vaults"
+    return [default] if default.is_dir() else []
+
+
+def cmd_overlap_candidates(args) -> int:
+    protected = _default_protected_roots(args.protected_root)
+    for dest_name in ("out", "report"):
+        dest = getattr(args, dest_name, None)
+        if not dest:
+            continue
+        try:
+            ensure_dest_safe(dest, protected)
+        except PathSafetyError as exc:
+            print(f"error: {dest_name} destination: {exc}", file=sys.stderr)
+            return 1
+    try:
+        result = overlap_mod.run_discovery(
+            args.batches,
+            args.terms,
+            args.out,
+            kus_schema=args.kus_schema,
+            max_pairs_per_topic=args.max_pairs_per_topic,
+        )
+    except OverlapError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    payload = {"command": "overlap-candidates", "result": result}
+    if args.report:
+        try:
+            ensure_dest_safe(args.report, protected)
+        except PathSafetyError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 1
+        write_json_report(
+            args.report,
+            "overlap-candidates",
+            payload,
+            args=vars(args) | {"report": str(args.report)},
+            repo_root=REPO_ROOT,
+        )
+    counts = result["counts"]
+    _emit_summary(
+        {
+            "ok": True,
+            "records_total": counts["records_total"],
+            "topics_cross_vault": counts["topics_cross_vault"],
+            "term_pairs": counts["term_pairs"],
+            "confirmed_term_pairs": counts["confirmed_term_pairs"],
+            "unconfirmed_only_term_pairs": counts["unconfirmed_only_term_pairs"],
+            "exact_hash_pairs": counts["exact_hash_pairs"],
+            "normalized_hash_pairs": counts["normalized_hash_pairs"],
+            "truncated_topics": len(result["truncated_topics"]),
+            "pairs_jsonl": result["pairs_jsonl"],
+            "note": "candidates only; no overlap classification is assigned by this command",
+        }
+    )
+    return 0
+
+
+def cmd_kureg_apply_overlap(args) -> int:
+    protected = _default_protected_roots(args.protected_root)
+    try:
+        result = kuregistry_mod.apply_overlap_classifications(
+            args.db,
+            args.classifications,
+            schema_path=args.classifications_schema,
+        )
+    except RegistryError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    payload = {"command": "kureg-apply-overlap", "result": result}
+    if args.report:
+        try:
+            ensure_dest_safe(args.report, protected)
+        except PathSafetyError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 1
+        write_json_report(
+            args.report,
+            "kureg-apply-overlap",
+            payload,
+            args=vars(args) | {"report": str(args.report)},
+            repo_root=REPO_ROOT,
+        )
+    _emit_summary(
+        {
+            "ok": True,
+            "db_path": result["db_path"],
+            "records_in_file": result["records_in_file"],
+            "inserted": result["inserted"],
+            "idempotent_skipped": result["idempotent_skipped"],
+        }
+    )
+    return 0
+
+
 HANDLERS = {
     "selftest": cmd_selftest,
     "check-paths": cmd_check_paths,
@@ -843,6 +1022,8 @@ HANDLERS = {
     "audit-output": cmd_audit_output,
     "extract-kus": cmd_extract_kus,
     "omission-pilot": cmd_omission_pilot,
+    "overlap-candidates": cmd_overlap_candidates,
+    "kureg-apply-overlap": cmd_kureg_apply_overlap,
 }
 
 
