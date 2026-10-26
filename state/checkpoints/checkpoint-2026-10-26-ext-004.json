@@ -44,7 +44,7 @@
     },
     "independent_review": "EXT-004-REVIEW subagent verdict PASS-WITH-NOTES (120/120 quotes byte-exact incl. original-source line verification, 27/27 cross-vault, 25 AGREE + 2 BORDERLINE + 0 DISAGREE, 1 rationale factual error + 1 coverage gap + 6 suggested repairs — ALL applied and the file regenerated at 28 records before commit; the arXiv dating correction was independently re-verified by the orchestrator against arXiv/Wikipedia); reports/extraction/ext004-review.md",
     "source_immutability": "reports/extraction/ext004-immutable-{before,after}-{master-ai,ai-course}.json (333 and 276 unchanged; 0 added/removed/changed)",
-    "work_commit": null
+    "work_commit": "f165fbf"
   },
   "changed_paths": [
     "state/knowledge-units/003-ext004-ai-course-03.7-tree-based-models.jsonl (new, 94 KUs)",
