@@ -53,9 +53,9 @@
   "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)"
  },
  "output_synthesis_started": false,
- "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-27-ext-006.json",
- "current_task_id": "EXT-007",
- "notes": "EXT-006 completed 2026-10-27 (concept-dossier scaffolding for the three classified domains: schema + deterministic generator + 3 dossiers with 71 concepts over all 234 classified KUs, explicit per-category gap markers, byte-identical regeneration; 8 new tests, suite 415/415; registry untouched, all KUs remain Unaccounted). EXT-007 ready: evaluation classification addendum (candidates C1-C4 from reports/extraction/ext005-independent-confirmation.md section 3) — adopt/reject with rationale, independent review, new append-only file 004-ext007-evaluation-addendum.jsonl, evaluation dossier regeneration. PUSH BLOCKER STILL OPEN: local main is 4+ commits ahead of origin/main (EXT-005 verification session commits); user will push a provided zip bundle.",
+ "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-27-ext-007.json",
+ "current_task_id": "EXT-008",
+ "notes": "EXT-007 completed 2026-10-27 (evaluation classification addendum: all four C1-C4 candidates adopted after verification — 2 SD + 2 PO, 14 byte-exact quotes, 11 KUs; independent review PASS-WITH-NOTES with all repairs applied; registry now 75 classifications / 240 participating KUs; evaluation dossier regenerated with 33 concepts). EXT-008 ready (SVM/kernel-methods domain pair). PUSH BLOCKER STILL OPEN: local main is 6+ commits ahead of origin/main; the session delivered a zip + git bundle for the user to push personally.",
  "corpus_statistics": {
   "files_total": 609,
   "markdown_files": 609,
@@ -94,10 +94,10 @@
    "files": {
     "regression-v1.json": "14 concepts / 61 KUs (from 001-ext003)",
     "tree-based-v1.json": "28 concepts / 82 KUs (from 002-ext004)",
-    "evaluation-v1.json": "29 concepts / 91 KUs (from 003-ext005; will re-generate with EXT-007 addendum records when committed)"
+    "evaluation-v1.json": "33 concepts / 97 KUs (from 003-ext005 + 004-ext007)"
    },
-   "concepts_total": 71,
-   "participating_kus_total": 234,
+   "concepts_total": 75,
+   "participating_kus_total": 240,
    "rule_set": "ext006-category-rules-v1 (documented in scripts/ext006_dossiers.py)",
    "dispositions_assigned": false
   }

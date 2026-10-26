@@ -1,0 +1,64 @@
+{
+ "checkpoint_id": "CHK-2026-10-27-EXT-007",
+ "created_utc": "2026-10-27T00:00:00+00:00",
+ "stage": "extraction",
+ "task_id": "EXT-007",
+ "task_status": "completed",
+ "last_verified_state": {
+  "framework_version": "0.5.0 (unchanged in EXT-007)",
+  "test_result": "415 passed, 0 failed, 0 skipped",
+  "test_evidence": "reports/extraction/ext007-pytest-report.json",
+  "capabilities_evidence": "reports/extraction/ext007-capabilities.json (16 implemented-and-tested, 1 planned: CAP-014)",
+  "registry_store": "state/knowledge-units/ (775 records in 5 committed batches, unedited)",
+  "derived_index": "state/registries/kuregistry.db (apply-overlap applied for the addendum on top of the EXT-006 rebuild; kureg-validate valid, 0 errors/warnings)",
+  "classifications": {
+   "paths": [
+    "state/classifications/001-ext003-regression-overlap.jsonl (14 records)",
+    "state/classifications/002-ext004-tree-based-overlap.jsonl (28 records)",
+    "state/classifications/003-ext005-evaluation-overlap.jsonl (29 records, byte-unchanged)",
+    "state/classifications/004-ext007-evaluation-addendum.jsonl (4 records, NEW)"
+   ],
+   "total": 75,
+   "by_overlap_type": {
+    "Semantic Duplicate": 45,
+    "Partial Overlap": 27,
+    "Complementary Content": 2,
+    "Conflict or Historical Difference": 1
+   },
+   "participating_kus_total": 240
+  },
+  "dossiers": {
+   "files": {
+    "state/dossiers/regression-v1.json": "14 concepts, 61 KUs",
+    "state/dossiers/tree-based-v1.json": "28 concepts, 82 KUs",
+    "state/dossiers/evaluation-v1.json": "33 concepts, 97 KUs (regenerated with addendum)"
+   },
+   "concepts_total": 75,
+   "determinism": "double-run byte-identical + --check exit 0 (all three)",
+   "dispositions_assigned": false
+  },
+  "source_immutability": "verify-manifest exit 0 x2 this task (startup checks under EXT-006 evidence); 333 + 276 unchanged",
+  "findings_open": [
+   "F-0001",
+   "F-0002",
+   "F-0003",
+   "F-0007",
+   "F-0008"
+  ],
+  "findings_resolved": [
+   "F-0004",
+   "F-0005",
+   "F-0006"
+  ],
+  "independent_review": "reports/extraction/ext007-review.md (EXT-007-REVIEW, PASS-WITH-NOTES; R1-R3 + S1-S5 applied post-review, each machine-verified; orchestrator addendum documents the delta)"
+ },
+ "acceptance_criteria_met": [
+  "Every candidate C1-C4 received an explicit adopt decision with recorded rationale (all four adopted; none rejected — each verified against committed batches and original source lines first)",
+  "Every adopted record carries byte-exact quote evidence from both vaults (generator verifies in excerpts AND at original source lines before writing; 14/14)",
+  "Adopted set passed independent read-only review (PASS-WITH-NOTES; all repairs applied before commit)",
+  "Committed 003-ext005 file byte-unchanged (sha256 verified before/after; addendum went to the new 004-ext007 file)",
+  "Sources unchanged; full suite 415/415; kureg-validate clean (775 KUs, 75 classifications, 240 participating)"
+ ],
+ "next_task": "EXT-008 (ready): SVM/kernel-methods domain pair — verify scope at session start (check whether master-ai SVM content overlaps batch 002's supervised-learning scope), extract both sides, build machine-verified term map, classify with byte-exact evidence, independent review, extend the dossier generator DOMAINS config",
+ "push_blocker": "STILL OPEN — local main ahead of origin/main by 6+ commits (EXT-005 verification + EXT-006 + EXT-007); user pushes the delivered zip/bundle personally; do NOT re-clone while local-only commits exist."
+}
