@@ -46,5 +46,7 @@
   "Full test suite passes (415/415); capabilities --verify passes (16+1)"
  ],
  "next_task": "EXT-009 (to be selected at next session start): remaining unextracted Master AI ML files (Generalization: Bias-Variance Tradeoff + Regularization Techniques; Reinforcement Learning x4 files) or CAP-014 source-to-output coverage reports; the standing rule applies: never work in a fresh clone while local-only commits exist",
- "push_blocker": "STILL OPEN — local main ahead of origin/main (EXT-005 verification + EXT-006 + EXT-007 + EXT-008 commits); all provided PATs were rejected 2026-10-26/27 (401). User pushes the delivered zip/bundle; do NOT re-clone while local-only commits exist."
+ "push_blocker": "STILL OPEN — local main ahead of origin/main (EXT-005 verification + EXT-006 + EXT-007 + EXT-008 commits); all provided PATs were rejected 2026-10-26/27 (401). User pushes the delivered zip/bundle; do NOT re-clone while local-only commits exist.",
+ "work_commit": "80f8540b5bf68a22c56032f7bb52c4444d6195ad",
+ "work_commit_subject": "feat(EXT-008): clustering/dimensionality-reduction domain pair — scope-changed from SVM with evidence (114 KUs, 27 evidence-based classifications, clustering-v1 dossier)"
 }
