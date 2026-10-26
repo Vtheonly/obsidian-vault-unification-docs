@@ -60,5 +60,7 @@
   "Sources unchanged; full suite 415/415; kureg-validate clean (775 KUs, 75 classifications, 240 participating)"
  ],
  "next_task": "EXT-008 (ready): SVM/kernel-methods domain pair — verify scope at session start (check whether master-ai SVM content overlaps batch 002's supervised-learning scope), extract both sides, build machine-verified term map, classify with byte-exact evidence, independent review, extend the dossier generator DOMAINS config",
- "push_blocker": "STILL OPEN — local main ahead of origin/main by 6+ commits (EXT-005 verification + EXT-006 + EXT-007); user pushes the delivered zip/bundle personally; do NOT re-clone while local-only commits exist."
+ "push_blocker": "STILL OPEN — local main ahead of origin/main by 6+ commits (EXT-005 verification + EXT-006 + EXT-007); user pushes the delivered zip/bundle personally; do NOT re-clone while local-only commits exist.",
+ "work_commit": "01e803856d0c9571f632f0466b65a84dc953f394",
+ "work_commit_subject": "feat(EXT-007): evaluation-domain classification addendum — all four C1-C4 candidates adopted (2 SD + 2 PO, 14 byte-exact quotes, 11 KUs)"
 }
