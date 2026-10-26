@@ -56,5 +56,7 @@
   "Full test suite passes (415/415); capabilities --verify passes (16+1)"
  ],
  "next_task": "EXT-007 (queued, ready): evaluation classification addendum — adjudicate candidates C1-C4 with recorded adopt/reject rationale; adopted records go to NEW append-only file state/classifications/004-ext007-evaluation-addendum.jsonl with byte-exact quote verification and independent review; regenerate evaluation dossier (config auto-includes the addendum once it exists)",
- "push_blocker": "STILL OPEN — local main ahead of origin/main (EXT-005 verification commits + EXT-006); all provided PATs were rejected 2026-10-26/27 (401). User will push a provided zip/bundle; do NOT re-clone while local-only commits exist."
+ "push_blocker": "STILL OPEN — local main ahead of origin/main (EXT-005 verification commits + EXT-006); all provided PATs were rejected 2026-10-26/27 (401). User will push a provided zip/bundle; do NOT re-clone while local-only commits exist.",
+ "work_commit": "9c8f26c63630589db4c5529c7680ad5912640349",
+ "work_commit_subject": "feat(EXT-006): concept-dossier scaffolding for the three classified domains (71 concepts, 234 KUs)"
 }
