@@ -1,0 +1,8 @@
+EXT-006 dossier determinism evidence (2026-10-27)
+command: python3 scripts/ext006_dossiers.py (run twice)
+result: byte-identical (diff of sha256 lists below is empty)
+DIFF: empty — DOUBLE-RUN BYTE-IDENTICAL
+
+ac9e0e0709670be2413fbdb6e424bc4f4c9ef33868705f3cddca4c31ed529114  state/dossiers/evaluation-v1.json
+2ddabb57c9f6982981f0ae6c2c290fa789061e7a2fd9b3415d891f7987e77d1f  state/dossiers/regression-v1.json
+e528856fc9b5c8c284420d334fb68f61d0d45c3248da4a791b888ca27ad98bdd  state/dossiers/tree-based-v1.json

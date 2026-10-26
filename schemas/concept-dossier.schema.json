@@ -1,0 +1,377 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Vtheonly/obsidian-vault-unification-docs/schemas/concept-dossier.schema.json",
+  "title": "Concept Dossier (Scaffolding)",
+  "description": "Derived, deterministic aggregation of classified knowledge-unit evidence for one domain, organized per concept and per the ten evidence categories of docs/KNOWLEDGE_AND_PROVENANCE.md section 7. A dossier references evidence only: it records overlap types of its source classification records as pair-level references and NEVER assigns dispositions (every KU stays Unaccounted until synthesis; invariant 2). Dossiers are a derived view: they must regenerate byte-identically from the committed batches and classification files listed in provenance.",
+  "type": "object",
+  "required": [
+    "dossier_id",
+    "domain",
+    "version",
+    "rule_set",
+    "generated_by",
+    "provenance",
+    "concepts",
+    "accounting"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "dossier_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*-v[0-9]+$",
+      "description": "Stable dossier identifier, e.g. regression-v1."
+    },
+    "domain": {
+      "type": "string",
+      "enum": ["regression", "tree-based", "evaluation"],
+      "description": "Knowledge domain covered by this dossier."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^v[0-9]+$",
+      "description": "Dossier version (bumped only when the record shape changes, not on regeneration)."
+    },
+    "rule_set": {
+      "type": "string",
+      "pattern": "^ext[0-9]{3}-category-rules-v[0-9]+$",
+      "description": "Identifier of the deterministic category-assignment rule set used by the generator (documented in the generator script)."
+    },
+    "generated_by": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Generator script path that produced this file."
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["batches", "classification_files"],
+      "additionalProperties": false,
+      "properties": {
+        "batches": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/provenance_file"}
+        },
+        "classification_files": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/provenance_file"}
+        }
+      }
+    },
+    "concepts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/concept"}
+    },
+    "accounting": {
+      "type": "object",
+      "required": [
+        "classification_record_count",
+        "concept_count",
+        "participating_ku_count",
+        "participating_ku_ids",
+        "category_assignment_counts",
+        "zero_evidence_categories",
+        "gap_census",
+        "bidirectional_check",
+        "disposition_note"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "classification_record_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "concept_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "participating_ku_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "participating_ku_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/ku_id"},
+          "uniqueItems": true
+        },
+        "category_assignment_counts": {
+          "type": "object",
+          "required": [
+            "definitions_terminology",
+            "mathematical_foundations",
+            "computational_mechanics",
+            "alternative_explanations",
+            "worked_examples_failure_cases",
+            "code_implementation",
+            "applications_engineering",
+            "interview_misconceptions_comparisons",
+            "historical_deprecated",
+            "critical_distinctions"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "definitions_terminology": {"type": "integer", "minimum": 0},
+            "mathematical_foundations": {"type": "integer", "minimum": 0},
+            "computational_mechanics": {"type": "integer", "minimum": 0},
+            "alternative_explanations": {"type": "integer", "minimum": 0},
+            "worked_examples_failure_cases": {"type": "integer", "minimum": 0},
+            "code_implementation": {"type": "integer", "minimum": 0},
+            "applications_engineering": {"type": "integer", "minimum": 0},
+            "interview_misconceptions_comparisons": {"type": "integer", "minimum": 0},
+            "historical_deprecated": {"type": "integer", "minimum": 0},
+            "critical_distinctions": {"type": "integer", "minimum": 0}
+          }
+        },
+        "zero_evidence_categories": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/category_id"},
+          "description": "Categories with zero KU assignments across every concept in this domain (explicit gap markers, invariant 7)."
+        },
+        "gap_census": {
+          "type": "object",
+          "required": ["no_evidence", "single_vault"],
+          "additionalProperties": false,
+          "properties": {
+            "no_evidence": {"type": "integer", "minimum": 0},
+            "single_vault": {"type": "integer", "minimum": 0}
+          }
+        },
+        "bidirectional_check": {
+          "type": "object",
+          "required": [
+            "every_participating_ku_covered",
+            "every_covered_ku_participates"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "every_participating_ku_covered": {"type": "boolean"},
+            "every_covered_ku_participates": {"type": "boolean"}
+          }
+        },
+        "disposition_note": {
+          "type": "string",
+          "const": "Dossiers reference evidence only: no dispositions are assigned here; every KU remains Unaccounted until synthesis (KNOWLEDGE_AND_PROVENANCE.md invariants 2 and 5; overlap types are pair-level references, never dispositions).",
+          "description": "Standing statement that dossier scaffolding never collapses overlap types into dispositions."
+        }
+      }
+    }
+  },
+  "$defs": {
+    "ku_id": {
+      "type": "string",
+      "pattern": "^KU-[0-9a-f]{16}$"
+    },
+    "classification_ref": {
+      "type": "string",
+      "pattern": "^OC-ext[0-9]{3}-[0-9]{4}$"
+    },
+    "category_id": {
+      "type": "string",
+      "enum": [
+        "definitions_terminology",
+        "mathematical_foundations",
+        "computational_mechanics",
+        "alternative_explanations",
+        "worked_examples_failure_cases",
+        "code_implementation",
+        "applications_engineering",
+        "interview_misconceptions_comparisons",
+        "historical_deprecated",
+        "critical_distinctions"
+      ]
+    },
+    "provenance_file": {
+      "type": "object",
+      "required": ["path", "sha256", "record_count"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Repository-relative path of a committed input file."
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "record_count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "vault_ku_lists": {
+      "type": "object",
+      "required": ["ai-course", "master-ai"],
+      "additionalProperties": false,
+      "properties": {
+        "ai-course": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/ku_id"},
+          "uniqueItems": true
+        },
+        "master-ai": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/ku_id"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "category_entry": {
+      "type": "object",
+      "required": ["ku_ids", "by_vault", "assignment_bases"],
+      "additionalProperties": false,
+      "properties": {
+        "ku_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/ku_id"},
+          "uniqueItems": true
+        },
+        "by_vault": {"$ref": "#/$defs/vault_ku_lists"},
+        "assignment_bases": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "minItems": 1
+          },
+          "description": "Per-KU record of which deterministic rule(s) placed the KU in this category (rule_set identifier documents the rules; synthesis re-examines, never blindly trusts)."
+        }
+      }
+    },
+    "gap": {
+      "type": "object",
+      "required": ["category", "kind"],
+      "additionalProperties": false,
+      "properties": {
+        "category": {"$ref": "#/$defs/category_id"},
+        "kind": {
+          "type": "string",
+          "enum": ["no_evidence", "single_vault"]
+        },
+        "present_vault": {
+          "type": "string",
+          "enum": ["ai-course", "master-ai"]
+        },
+        "absent_vault": {
+          "type": "string",
+          "enum": ["ai-course", "master-ai"]
+        }
+      },
+      "description": "Explicit gap marker: no_evidence = no KU from either vault in this category; single_vault = only one vault contributes (present_vault/absent_vault required for single_vault)."
+    },
+    "concept": {
+      "type": "object",
+      "required": [
+        "concept_id",
+        "label",
+        "source_classification_id",
+        "overlap_type",
+        "ku_ids",
+        "ku_count",
+        "by_vault",
+        "categories",
+        "gaps"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "concept_id": {
+          "type": "string",
+          "pattern": "^CD-[a-z0-9]+(-[a-z0-9]+)*-[0-9]{4}$",
+          "description": "Deterministic concept identifier derived from position in the domain's sorted classification ids."
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human-readable concept label (the source classification record's topic)."
+        },
+        "source_classification_id": {"$ref": "#/$defs/classification_ref"},
+        "overlap_type": {
+          "type": "string",
+          "enum": [
+            "Exact Duplicate",
+            "Semantic Duplicate",
+            "Partial Overlap",
+            "Complementary Content",
+            "Conflict or Historical Difference"
+          ],
+          "description": "Pair-level overlap type carried over from the source classification record (ADR-0009); a reference to evidence, never a disposition."
+        },
+        "ku_ids": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/ku_id"},
+          "uniqueItems": true
+        },
+        "ku_count": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "by_vault": {"$ref": "#/$defs/vault_ku_lists"},
+        "categories": {
+          "type": "object",
+          "required": [
+            "definitions_terminology",
+            "mathematical_foundations",
+            "computational_mechanics",
+            "alternative_explanations",
+            "worked_examples_failure_cases",
+            "code_implementation",
+            "applications_engineering",
+            "interview_misconceptions_comparisons",
+            "historical_deprecated",
+            "critical_distinctions"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "definitions_terminology": {
+              "$ref": "#/$defs/category_entry",
+              "description": "(1) Definitions and terminology."
+            },
+            "mathematical_foundations": {
+              "$ref": "#/$defs/category_entry",
+              "description": "(2) Mathematical foundations, notation, assumptions, derivations and proofs."
+            },
+            "computational_mechanics": {
+              "$ref": "#/$defs/category_entry",
+              "description": "(3) Computational mechanics, shapes and complexity."
+            },
+            "alternative_explanations": {
+              "$ref": "#/$defs/category_entry",
+              "description": "(4) Alternative explanations and interpretations."
+            },
+            "worked_examples_failure_cases": {
+              "$ref": "#/$defs/category_entry",
+              "description": "(5) Worked examples and boundary/failure cases."
+            },
+            "code_implementation": {
+              "$ref": "#/$defs/category_entry",
+              "description": "(6) Code and implementation details."
+            },
+            "applications_engineering": {
+              "$ref": "#/$defs/category_entry",
+              "description": "(7) Applications, project findings, debugging and engineering trade-offs."
+            },
+            "interview_misconceptions_comparisons": {
+              "$ref": "#/$defs/category_entry",
+              "description": "(8) Interview questions, misconceptions and comparisons."
+            },
+            "historical_deprecated": {
+              "$ref": "#/$defs/category_entry",
+              "description": "(9) Historical, version-specific and deprecated approaches."
+            },
+            "critical_distinctions": {
+              "$ref": "#/$defs/category_entry",
+              "description": "(10) Critical distinctions between neighboring concepts."
+            }
+          }
+        },
+        "gaps": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/gap"}
+        }
+      }
+    }
+  }
+}

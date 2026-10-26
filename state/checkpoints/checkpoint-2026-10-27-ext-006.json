@@ -1,0 +1,60 @@
+{
+ "checkpoint_id": "CHK-2026-10-27-EXT-006",
+ "created_utc": "2026-10-27T00:00:00+00:00",
+ "stage": "extraction",
+ "task_id": "EXT-006",
+ "task_status": "completed",
+ "last_verified_state": {
+  "framework_version": "0.5.0 (unchanged in EXT-006; no code changes)",
+  "test_result": "415 passed, 0 failed, 0 skipped (407 prior + 8 new)",
+  "test_evidence": "reports/extraction/ext006-pytest-report.json",
+  "capabilities_evidence": "reports/extraction/ext006-capabilities.json (16 implemented-and-tested, 1 planned: CAP-014)",
+  "registry_store": "state/knowledge-units/ (775 records in 5 committed batches, unedited)",
+  "derived_index": "state/registries/kuregistry.db (rebuilt and verified at startup: init --force + load x5 + apply-overlap x3; kureg-validate valid, 0 errors/warnings)",
+  "classifications": {
+   "paths": [
+    "state/classifications/001-ext003-regression-overlap.jsonl (14 records)",
+    "state/classifications/002-ext004-tree-based-overlap.jsonl (28 records)",
+    "state/classifications/003-ext005-evaluation-overlap.jsonl (29 records)"
+   ],
+   "total": 71,
+   "participating_kus_total": 234
+  },
+  "dossiers": {
+   "schema": "schemas/concept-dossier.schema.json (draft 2020-12)",
+   "generator": "scripts/ext006_dossiers.py (rule set ext006-category-rules-v1)",
+   "files": {
+    "state/dossiers/regression-v1.json": "14 concepts, 61 KUs",
+    "state/dossiers/tree-based-v1.json": "28 concepts, 82 KUs",
+    "state/dossiers/evaluation-v1.json": "29 concepts, 91 KUs"
+   },
+   "concepts_total": 71,
+   "determinism": "double-run byte-identical + --check byte-identical vs committed (reports/extraction/ext006-determinism.txt)",
+   "gap_markers": "per (concept, category): no_evidence or single_vault",
+   "dispositions_assigned": false
+  },
+  "source_immutability": "verify-manifest exit 0 x4 (startup + after, both vaults); 333 + 276 unchanged",
+  "findings_open": [
+   "F-0001",
+   "F-0002",
+   "F-0003",
+   "F-0007",
+   "F-0008"
+  ],
+  "findings_resolved": [
+   "F-0004",
+   "F-0005",
+   "F-0006"
+  ]
+ },
+ "acceptance_criteria_met": [
+  "Every dossier category lists KU ids that exist in committed batches (machine-verified V1) or an explicit empty-gap marker",
+  "Every participating KU from the domain's classification records appears in at least one dossier category (bidirectional coverage V4, both directions asserted)",
+  "Dossier schema valid (V5); dossiers regenerate byte-identically from committed stores (double-run cmp + --check + integration test)",
+  "Overlap types NOT collapsed into dispositions (no disposition fields; registry untouched; all 775 KUs remain Unaccounted)",
+  "Sources unchanged before/after; committed batches and classifications unedited (git status shows only new files)",
+  "Full test suite passes (415/415); capabilities --verify passes (16+1)"
+ ],
+ "next_task": "EXT-007 (queued, ready): evaluation classification addendum — adjudicate candidates C1-C4 with recorded adopt/reject rationale; adopted records go to NEW append-only file state/classifications/004-ext007-evaluation-addendum.jsonl with byte-exact quote verification and independent review; regenerate evaluation dossier (config auto-includes the addendum once it exists)",
+ "push_blocker": "STILL OPEN — local main ahead of origin/main (EXT-005 verification commits + EXT-006); all provided PATs were rejected 2026-10-26/27 (401). User will push a provided zip/bundle; do NOT re-clone while local-only commits exist."
+}

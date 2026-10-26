@@ -1,0 +1,33 @@
+{
+  "command": "kureg-load",
+  "db_path": "/home/z/my-project/repo/state/registries/kuregistry.db",
+  "records_in_batch": 65,
+  "inserted": 65,
+  "skipped_identical": 0,
+  "errors": [],
+  "counts_after_load": {
+    "total_kus": 363,
+    "by_disposition": {
+      "Unaccounted": 363
+    }
+  },
+  "valid": true,
+  "records_file": "state/knowledge-units/002-ext002-master-ai-supervised-learning.jsonl",
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "kureg-load",
+    "args": {
+      "command": "kureg-load",
+      "db": "state/registries/kuregistry.db",
+      "kus": "state/knowledge-units/002-ext002-master-ai-supervised-learning.jsonl",
+      "mint_ids": false,
+      "kus_schema": "/home/z/my-project/repo/schemas/knowledge-unit.schema.json",
+      "protected_root": null,
+      "report": "/home/z/my-project/repo/reports/extraction/ext006-kureg-load-002-ext002-master-ai-supervised-learning.json"
+    },
+    "utc_timestamp": "2026-10-26T19:16:03+00:00",
+    "git_commit": "a5e9d47"
+  }
+}

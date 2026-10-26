@@ -1,98 +1,111 @@
 {
-  "project": "Obsidian Vault Unification",
-  "execution_environment": "Z AI / GLM 5.3 with available subagents",
-  "stage": "extraction",
-  "status": "in_progress",
-  "source_vaults_located": true,
-  "source_vaults": [
-    {
-      "name": "Master AI",
-      "path": "source-vaults/AI /Master AI",
-      "note": "path contains a trailing space in parent directory 'AI ' (finding F-0001); always quote",
-      "files": 333,
-      "file_classes": {
-        "markdown": 333
-      },
-      "baseline_manifest": "state/manifests/master-ai.jsonl",
-      "bytes": 4601557,
-      "source_location_record": "reports/bootstrap/boot-001-source-location.json"
-    },
-    {
-      "name": "AI Course",
-      "path": "source-vaults/AI /AI Course",
-      "note": "path contains a trailing space in parent directory 'AI ' (finding F-0001); always quote",
-      "files": 276,
-      "file_classes": {
-        "markdown": 276
-      },
-      "baseline_manifest": "state/manifests/ai-course.jsonl",
-      "bytes": 3546362,
-      "source_location_record": "reports/bootstrap/boot-001-source-location.json"
-    }
-  ],
-  "source_inventory_complete": true,
-  "knowledge_registry_initialized": true,
-  "framework_foundation_built": true,
-  "framework_foundation_tested": true,
-  "framework_evidence": {
-    "test_run": "reports/bootstrap/boot-004-pytest-report.json",
-    "test_summary": "285 passed, 0 failed, 0 skipped",
-    "capabilities": "reports/bootstrap/boot-004-capabilities.json",
-    "setup_doc": "docs/FRAMEWORK_SETUP.md"
+ "project": "Obsidian Vault Unification",
+ "execution_environment": "Z AI / GLM 5.3 with available subagents",
+ "stage": "extraction",
+ "status": "in_progress",
+ "source_vaults_located": true,
+ "source_vaults": [
+  {
+   "name": "Master AI",
+   "path": "source-vaults/AI /Master AI",
+   "note": "path contains a trailing space in parent directory 'AI ' (finding F-0001); always quote",
+   "files": 333,
+   "file_classes": {
+    "markdown": 333
+   },
+   "baseline_manifest": "state/manifests/master-ai.jsonl",
+   "bytes": 4601557,
+   "source_location_record": "reports/bootstrap/boot-001-source-location.json"
   },
-  "verification_pilot_passed": true,
-  "verification_pilot_evidence": {
-    "pilot_report": "reports/bootstrap/boot-004-omission-pilot.json",
-    "run_summary": "reports/bootstrap/boot-004-run-summary.json",
-    "verdict": "pass",
-    "detection_rate": "12/12",
-    "localization_rate": "12/12",
-    "false_negatives": 0,
-    "false_positives_on_clean_baseline": 0,
-    "defect_classes": 12,
-    "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)"
-  },
-  "output_synthesis_started": false,
-  "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-26-ext-005.json",
-  "current_task_id": "EXT-006",
-  "notes": "EXT-005 completed 2026-10-26 (evaluation-metrics domain pair, both sides: batch 004 = 43 KUs + batch 005 = 275 KUs, byte-identical double runs; evaluation term map; CAP-013 discovery; 29 evidence-based classifications 23 SD + 5 PO + 1 CC; independent review PASS-WITH-NOTES with all repairs applied; registry 775 KUs / 71 classifications / 234 participating, kureg-validate clean; all KUs deliberately Unaccounted). PUSH BLOCKED: all three brief PATs invalid (401) on 2026-10-26 AND on the 2026-10-27 retry (API Bearer+token, git x-access-token) - EXT-005 commits are local-only in /home/z/my-project/repo on main (7d9e65f..HEAD ahead of origin/main); fresh credentials required. 2026-10-27 verification session: EXT-005 independently re-derived in a fresh clone - batches byte-identical, classifications convergent (evidence reports/extraction/ext005-independent-confirmation.md); 4 candidate additional clusters queued as EXT-007 (unreviewed, recorded in the same report section 3); task queue now 12 records (EXT-006 ready, EXT-007 queued). Framework v0.5.0 unchanged; 407/407 tests; 16+1 capabilities.",
-  "corpus_statistics": {
-    "files_total": 609,
-    "markdown_files": 609,
-    "words_total": 1157937,
-    "words_outside_fences": 990007,
-    "tokens_estimate_chars_div_4": 2027347,
-    "headings_total": 12785,
-    "per_vault": {
-      "Master AI": {
-        "files": 333,
-        "words_total": 638004,
-        "tokens_estimate": 1144484,
-        "headings": 8610,
-        "files_with_errors": 0
-      },
-      "AI Course": {
-        "files": 276,
-        "words_total": 519933,
-        "tokens_estimate": 882863,
-        "headings": 4175,
-        "files_with_errors": 14
-      }
-    },
-    "evidence": "reports/bootstrap/boot-002-inventory-summary.json"
-  },
-  "knowledge_registry": {
-    "canonical_store": "state/knowledge-units/ (committed JSONL batches; ADR-0007)",
-    "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load + kureg-apply-overlap)",
-    "records": 775,
-    "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)",
-    "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records) + state/classifications/002-ext004-tree-based-overlap.jsonl (28 records, ADR-0009 pair-level overlay) + state/classifications/003-ext005-evaluation-overlap.jsonl (29 records, EXT-005)",
-    "commands": "vu kureg-init / kureg-load / kureg-apply-overlap / kureg-query / kureg-validate"
-  },
-  "framework_foundation_evidence": {
-    "test_run": "reports/extraction/ext004-pytest-report.json",
-    "test_summary": "407 passed, 0 failed, 0 skipped",
-    "capabilities": "reports/extraction/ext004-capabilities.json",
-    "setup_doc": "docs/FRAMEWORK_SETUP.md"
+  {
+   "name": "AI Course",
+   "path": "source-vaults/AI /AI Course",
+   "note": "path contains a trailing space in parent directory 'AI ' (finding F-0001); always quote",
+   "files": 276,
+   "file_classes": {
+    "markdown": 276
+   },
+   "baseline_manifest": "state/manifests/ai-course.jsonl",
+   "bytes": 3546362,
+   "source_location_record": "reports/bootstrap/boot-001-source-location.json"
   }
+ ],
+ "source_inventory_complete": true,
+ "knowledge_registry_initialized": true,
+ "framework_foundation_built": true,
+ "framework_foundation_tested": true,
+ "framework_evidence": {
+  "test_run": "reports/bootstrap/boot-004-pytest-report.json",
+  "test_summary": "285 passed, 0 failed, 0 skipped",
+  "capabilities": "reports/bootstrap/boot-004-capabilities.json",
+  "setup_doc": "docs/FRAMEWORK_SETUP.md"
+ },
+ "verification_pilot_passed": true,
+ "verification_pilot_evidence": {
+  "pilot_report": "reports/bootstrap/boot-004-omission-pilot.json",
+  "run_summary": "reports/bootstrap/boot-004-run-summary.json",
+  "verdict": "pass",
+  "detection_rate": "12/12",
+  "localization_rate": "12/12",
+  "false_negatives": 0,
+  "false_positives_on_clean_baseline": 0,
+  "defect_classes": 12,
+  "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)"
+ },
+ "output_synthesis_started": false,
+ "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-27-ext-006.json",
+ "current_task_id": "EXT-007",
+ "notes": "EXT-006 completed 2026-10-27 (concept-dossier scaffolding for the three classified domains: schema + deterministic generator + 3 dossiers with 71 concepts over all 234 classified KUs, explicit per-category gap markers, byte-identical regeneration; 8 new tests, suite 415/415; registry untouched, all KUs remain Unaccounted). EXT-007 ready: evaluation classification addendum (candidates C1-C4 from reports/extraction/ext005-independent-confirmation.md section 3) — adopt/reject with rationale, independent review, new append-only file 004-ext007-evaluation-addendum.jsonl, evaluation dossier regeneration. PUSH BLOCKER STILL OPEN: local main is 4+ commits ahead of origin/main (EXT-005 verification session commits); user will push a provided zip bundle.",
+ "corpus_statistics": {
+  "files_total": 609,
+  "markdown_files": 609,
+  "words_total": 1157937,
+  "words_outside_fences": 990007,
+  "tokens_estimate_chars_div_4": 2027347,
+  "headings_total": 12785,
+  "per_vault": {
+   "Master AI": {
+    "files": 333,
+    "words_total": 638004,
+    "tokens_estimate": 1144484,
+    "headings": 8610,
+    "files_with_errors": 0
+   },
+   "AI Course": {
+    "files": 276,
+    "words_total": 519933,
+    "tokens_estimate": 882863,
+    "headings": 4175,
+    "files_with_errors": 14
+   }
+  },
+  "evidence": "reports/bootstrap/boot-002-inventory-summary.json"
+ },
+ "knowledge_registry": {
+  "canonical_store": "state/knowledge-units/ (committed JSONL batches; ADR-0007)",
+  "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load + kureg-apply-overlap)",
+  "records": 775,
+  "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)",
+  "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records) + state/classifications/002-ext004-tree-based-overlap.jsonl (28 records, ADR-0009 pair-level overlay) + state/classifications/003-ext005-evaluation-overlap.jsonl (29 records, EXT-005)",
+  "commands": "vu kureg-init / kureg-load / kureg-apply-overlap / kureg-query / kureg-validate",
+  "dossiers": {
+   "store": "state/dossiers/ (derived view; regenerates via scripts/ext006_dossiers.py)",
+   "schema": "schemas/concept-dossier.schema.json",
+   "files": {
+    "regression-v1.json": "14 concepts / 61 KUs (from 001-ext003)",
+    "tree-based-v1.json": "28 concepts / 82 KUs (from 002-ext004)",
+    "evaluation-v1.json": "29 concepts / 91 KUs (from 003-ext005; will re-generate with EXT-007 addendum records when committed)"
+   },
+   "concepts_total": 71,
+   "participating_kus_total": 234,
+   "rule_set": "ext006-category-rules-v1 (documented in scripts/ext006_dossiers.py)",
+   "dispositions_assigned": false
+  }
+ },
+ "framework_foundation_evidence": {
+  "test_run": "reports/extraction/ext004-pytest-report.json",
+  "test_summary": "407 passed, 0 failed, 0 skipped",
+  "capabilities": "reports/extraction/ext004-capabilities.json",
+  "setup_doc": "docs/FRAMEWORK_SETUP.md"
+ }
 }
