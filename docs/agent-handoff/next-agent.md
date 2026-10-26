@@ -11,27 +11,70 @@
   classifications, tree domain) DONE and verified. EXT-005
   (evaluation-metrics domain pair, BOTH sides extracted, + 29 evidence-based
   classifications) DONE and verified.
-- Current task ID: EXT-006 (status: ready — record already in the queue)
-- Current Git commit: the EXT-005 state commit on LOCAL `main` (765774c,
-  after the EXT-005 work commit 4d77dff); verify with `git log --oneline -5`.
-  PUSH BLOCKER: the push of these two commits to origin/main FAILED on
-  2026-10-26 — all three PATs from the project brief return 401 Bad
-  credentials (verified against the GitHub API with both `token` and
-  `Bearer` schemes and via `git push`); no SSH client and no gh CLI are
-  available in this environment. The commits exist ONLY locally. The next
-  session MUST obtain valid credentials and push (7d9e65f..765774c) BEFORE
-  doing any other work, then verify with `git fetch` + `git status`.
+- Current task ID: EXT-006 (status: ready — record already in the queue).
+  EXT-007 (evaluation classification addendum candidates, queued,
+  priority normal) was added 2026-10-27 — see
+  reports/extraction/ext005-independent-confirmation.md section 3.
+- Current Git commit: the EXT-005 verification/session commit on LOCAL
+  `main` (on top of 765774c state + 4f369bd push-blocker docs commits);
+  verify with `git log --oneline -5`.
+  PUSH BLOCKER (STILL OPEN, retried 2026-10-27): the push of the EXT-005
+  commits to origin/main FAILED on 2026-10-26 AND the retry on 2026-10-27
+  with the SAME three PATs (re-supplied by the user, "one of them should
+  work") also failed — each returns 401 Bad credentials on the GitHub API
+  (Bearer AND token schemes) and 'Invalid username or token' on git push
+  (x-access-token URL format). All three tokens are expired/revoked.
+  The commits exist ONLY locally. The next session MUST obtain FRESH
+  credentials (new PAT with repo scope for
+  Vtheonly/obsidian-vault-unification-docs) and push (7d9e65f..HEAD) to
+  origin/main BEFORE doing any other work, then verify with `git fetch` +
+  `git status`. Evidence: reports/extraction/ext005-independent-
+  confirmation.md section 2 (full retry matrix).
 - Working tree status: clean after commits (verify with `git status`)
-- Registry/checkpoint version: task-queue v7 (BOOT-000..004 + EXT-001..005
-  completed with tests_run evidence; EXT-006 ready); KU schema v1.1
+- Registry/checkpoint version: task-queue v8 (BOOT-000..004 + EXT-001..005
+  completed with tests_run evidence; EXT-006 ready; EXT-007 queued on
+  2026-10-27); KU schema v1.1
   (ADR-0008); classification schema
   `schemas/overlap-classification.schema.json` (ADR-0009 pair-level
   overlay); checkpoint `state/checkpoints/checkpoint-2026-10-26-ext-005.json`
+  (EXT-005) — the 2026-10-27 session was verification-only (no new
+  extraction): batch 004/005 re-extracted byte-identical in a separate
+  clone, classification set independently re-derived and convergent, all
+  recorded in reports/extraction/ext005-independent-confirmation.md
 - Framework version: 0.5.0 (unchanged in EXT-005 — no code changes);
   407/407 tests; capabilities: 16 implemented-and-tested, 1 planned
   (CAP-014)
 
 ## Verified completed work
+
+- 2026-10-27 verification session (no new extraction; this session):
+  - Independent re-derivation of EXT-005 in a fresh clone CONFIRMS the
+    committed work: batches 004 (43 KUs) and 005 (275 KUs) re-extracted
+    byte-identical (cmp); determinism double-runs byte-identical; a new
+    both-batch fidelity checker passed 43/43 + 275/275; an independently
+    built term map (123 terms / 90 aliases / 44 cross-vault, machine-
+    verified) and CAP-013 run (318 KUs, 45 cross-vault topics, 1927
+    pairs, 0 hash duplicates) reproduce the discovery conclusions; a
+    29-record classification set generated with byte-exact quotes
+    converges with the committed one on every major cluster. Evidence:
+    reports/extraction/ext005-independent-confirmation.md.
+  - Push retried with all three PATs (API Bearer, API token, git push
+    x-access-token): ALL rejected (401 / Invalid username or token).
+    Blocker persists; fresh credentials required. Evidence: same report,
+    section 2.
+  - Four candidate additional classification clusters (C1-C4) recorded
+    as UNREVIEWED candidates in the report section 3 and queued as
+    EXT-007 for adoption-or-rejection with independent review. The
+    duplicate unreviewed artifacts were deliberately NOT committed
+    (competing-records discipline, ADR-0009); nothing was silently
+    discarded — the candidates and their byte-exact quotes are in the
+    committed report.
+  - Tests re-run this session: pytest 407/407 in `/home/z/my-project/repo`;
+    registry rebuild kureg-validate valid (775 KUs, 71 classifications,
+    234 participating, 0 errors/warnings); both vaults immutable
+    (exit 0 x2); task queue + classification validation valid 12/12 +
+    29/29 after the EXT-007 append (report
+    reports/extraction/ext005-verification-taskqueue-validate.json).
 
 - EXT-005 (2026-10-26), evaluation-metrics domain pair — the first EXT task
   where BOTH sides needed extraction (two batches in one task). Single
@@ -218,10 +261,21 @@
 
 ## Resume procedure
 
-1. `git pull`; `git status` must be clean; confirm HEAD includes the
-   EXT-005 commits (work + state).
+1. PUSH FIRST (still blocked — see Project state): with FRESH credentials
+   (the three PATs from the brief are all dead — 401 on API and 'Invalid
+   username or token' on git push, retried 2026-10-27), push
+   `git push origin main` from `/home/z/my-project/repo` (range
+   7d9e65f..HEAD), then `git fetch` + `git status` to verify
+   origin/main == local main. If credentials are unavailable, CONTINUE
+   ANYWAY in `/home/z/my-project/repo` (it is the most-advanced working
+   copy; commits accumulate locally and push later) — but never work in a
+   fresh clone while local-only commits exist, or work will be duplicated
+   (this happened on 2026-10-27; see
+   reports/extraction/ext005-independent-confirmation.md).
 2. Read `AGENTS.md`, this file, `state/current-state.json`,
-   `state/task-queue.jsonl`, `state/findings.jsonl`.
+   `state/task-queue.jsonl`, `state/findings.jsonl`, and
+   `/home/z/my-project/worklog.md` (cross-session log; contains the
+   local-commits warning that a fresh clone CANNOT see).
 3. Sanity-verify the framework: `PYTHONPATH=src python3 -m vault_unification
    selftest` (exit 0) and `PYTHONPATH=src python3 -m pytest tests -q`
    (407/407 unless tests were legitimately added — update the count then).
@@ -237,7 +291,8 @@
    classification id before writing; double-run byte-identical); record
    evidence with actual exit codes; update task queue, current-state,
    checkpoint, findings; write this handoff file; commit (work + state)
-   and push to main.
+   and push to main. EXT-007 (queued) can follow or be folded into EXT-006
+   at the session's discretion, with evidence.
 
 ## Explicit non-claims
 

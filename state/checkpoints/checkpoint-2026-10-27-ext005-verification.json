@@ -1,0 +1,41 @@
+{
+  "checkpoint_id": "CHK-2026-10-27-EXT-005-VERIFICATION",
+  "created_utc": "2026-10-27T00:00:00+00:00",
+  "stage": "extraction",
+  "task_id": "EXT-005",
+  "task_status": "completed (verification-only session; no new extraction)",
+  "session_kind": "independent-confirmation + push retry",
+  "last_verified_state": {
+    "framework_version": "0.5.0 (unchanged)",
+    "test_result": "407 passed, 0 failed, 0 skipped (re-run this session in /home/z/my-project/repo)",
+    "registry_rebuild": "init --force + load x5 (775 KUs) + apply-overlap x3 (71 classifications); kureg-validate valid, 0 errors/warnings, 234 participating",
+    "immutability": "both vaults unchanged (verify-manifest exit 0 x2, re-run this session)",
+    "independent_confirmation": {
+      "report": "reports/extraction/ext005-independent-confirmation.md",
+      "batch_004": "re-extracted in a separate fresh clone: byte-identical to committed (cmp)",
+      "batch_005": "re-extracted in a separate fresh clone: byte-identical to committed (cmp)",
+      "fidelity": "new both-batch checker: 43/43 + 275/275 byte-exact, unique ids (incl. cross-batch), structurally pure, 0 heading crossings",
+      "term_map": "independently rebuilt variant: 123 terms / 90 aliases / 44 cross-vault, machine-verified in-scope",
+      "discovery": "CAP-013 re-run: 318 KUs, 123 topics, 45 cross-vault, 1927 pairs, 0 hash duplicates",
+      "classifications": "29-record variant generated with byte-exact quotes (21 SD + 7 PO + 1 CC); converges with the committed 29-record set on every major cluster; NOT committed (competing-records discipline)",
+      "unique_findings": "4 candidate additional clusters (C1-C4) recorded unreviewed in the report section 3; queued as EXT-007"
+    },
+    "push_status": "BLOCKED - retried 2026-10-27 with all three brief PATs: GitHub API 401 (Bearer and token schemes) and git push 'Invalid username or token' (x-access-token). Commits 4d77dff, 765774c, 4f369bd + this session's verification commit are LOCAL-ONLY on main in /home/z/my-project/repo (origin/main still 7d9e65f). Fresh credentials (PAT, repo scope) required; then push 7d9e65f..HEAD.",
+    "task_queue": "12 records valid (task.schema.json): BOOT-000..004 + EXT-001..005 completed, EXT-006 ready, EXT-007 queued; validation report reports/extraction/ext005-verification-taskqueue-validate.json (12/12 + 29/29 valid)"
+  },
+  "changed_paths_this_session": [
+    "reports/extraction/ext005-independent-confirmation.md (new)",
+    "reports/extraction/ext005-verification-taskqueue-validate.json (new)",
+    "state/task-queue.jsonl (EXT-007 appended)",
+    "state/current-state.json (notes + classifications summary refreshed)",
+    "state/checkpoints/checkpoint-2026-10-27-ext005-verification.json (new)",
+    "docs/agent-handoff/next-agent.md (push-blocker retry, verification session record, resume procedure)"
+  ],
+  "unresolved_findings": [
+    "F-0001 (trailing-space dir), F-0002 (unclosed fences), F-0003 (broken wikilinks), F-0007 (boosted-tree dating), F-0008 (mAP name collision) - all open, unchanged",
+    "PUSH BLOCKER: all three provided PATs invalid (401); fresh credentials required"
+  ],
+  "git_state": "main ahead of origin/main by 4 commits after this session's commit (verify with git log --oneline origin/main..HEAD); working tree clean after commit",
+  "next_task": "EXT-006 (ready): concept-dossier scaffolding for the three classified domains; EXT-007 (queued): evaluation classification addendum candidates C1-C4 - may follow or be folded into EXT-006",
+  "safe_resume": "See docs/agent-handoff/next-agent.md Resume procedure (push first with fresh credentials; work in /home/z/my-project/repo, never a fresh clone while local-only commits exist)"
+}
