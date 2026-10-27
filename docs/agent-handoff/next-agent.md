@@ -258,3 +258,25 @@ A documentation-only update on 2026-10-27 added `docs/EMERGENT_CONCEPT_DISCOVERY
 The system must discover concepts and instructional gaps that are not already named in source headings or a predefined taxonomy. Across multiple notes, it should recognize concepts repeatedly used but not adequately explained, assumed prerequisites, derivations fragmented across notes, and rare but essential ideas. It must check processed corpus coverage before calling a concept missing; propose a new canonical note or section only when justified; and persist candidate evidence, scope, source KU IDs/locators, dependencies, status, decision rationale, and verification criteria. It must guard against keyword-only false positives, ambiguous terms, duplicate concepts, and treating unprocessed source areas as confirmed gaps.
 
 Next implementation follow-up: inspect current capability inventory, task queue, schemas, and tests; create a bounded task for the first tested discovery workflow and synthetic fixtures. Do not claim this feature is implemented until executable code and tests demonstrate both expected discoveries and expected non-discoveries. Include fragmented derivations, hidden prerequisites, already-covered concepts, context-dependent homonyms, rare essential concepts, merge/split cases, and note-versus-section decisions. Keep the existing extraction state and next extraction task intact; this addition must not erase or silently reorder existing work.
+
+## User-authorized restart directive — 2026-10-27
+
+The user has explicitly authorized a controlled restart of the knowledge-processing pipeline from Phase 0, including a broader framework refactor and implementation of emergent-concept discovery. This directive takes precedence over the older “Next task: EXT-011” recommendation below. The EXT-010 evidence and prior task history remain preserved; they are not automatically accepted or invalidated.
+
+Read and follow:
+- `docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md`
+- revised `ENTRY_PROMPT.md`
+- updated Section 11 in `AGENTS.md`
+
+The current task queue now contains:
+- `REBASE-000` — in progress: establish a verified baseline and artifact disposition.
+- `AUDIT-011` — queued: audit framework capabilities, repeated defects, findings, and discrepancies.
+- `FRAME-001` — queued: refactor/harden the framework.
+- `DISC-001` — queued: implement integrated emergent-concept discovery with synthetic tests.
+- `REGEN-001` — queued: revalidate/regenerate full-corpus knowledge-unit evidence.
+- `DISC-002` — queued: run corpus-wide discovery and reconcile the concept graph/dossiers before synthesis.
+
+These are task definitions, not completed work. The latest known extraction is only 31 of 609 source files (1,728 KUs), so no complete corpus concept map exists yet. No canonical-note synthesis is authorized until the documented gates pass.
+
+The documentation and queue updates were committed, but **the Python framework has not yet been refactored and the discovery feature is not implemented or tested by these commits**. The next session must begin with REBASE-000, inspect actual Git/runtime state, run tests and capability verification, enumerate all findings/limitations, and persist a machine-backed baseline. Preserve both source vaults byte-for-byte. Do not blindly reuse or delete prior derived artifacts; classify each as reuse, recompute, migrate, quarantine, or retire with evidence.
+
