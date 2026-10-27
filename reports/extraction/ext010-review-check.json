@@ -1,0 +1,154 @@
+{
+  "command": "scripts/ext010_review_check.py",
+  "file": "state/classifications/007-ext010-training-stability-overlap.jsonl",
+  "records": 36,
+  "quotes": 159,
+  "participating_kus": 142,
+  "participating_by_vault": {
+    "ai-course": 91,
+    "master-ai": 51
+  },
+  "participating_by_file": {
+    "01. Weight Initialization.md": 43,
+    "02. Weight Initialization Techniques.md": 7,
+    "03. The Vanishing and Exploding Gradient Problems.md": 41,
+    "07 - Initialization Schemes.md": 24,
+    "08 - Vanishing and Exploding Gradients.md": 27
+  },
+  "uncovered_cross_vault_topics": [],
+  "uncovered_topic_count": 0,
+  "discovery_totals": {
+    "term_pairs": 7486,
+    "topics_cross_vault": 68,
+    "truncated_topics": [
+      {
+        "topic": "ReLU",
+        "pair_count": 1302,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "Xavier",
+        "pair_count": 561,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "backpropagation",
+        "pair_count": 260,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "deep network",
+        "pair_count": 608,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "exploding gradient",
+        "pair_count": 722,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "gradient",
+        "pair_count": 7696,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "gradient clipping",
+        "pair_count": 420,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "gradient norm",
+        "pair_count": 897,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "initialization",
+        "pair_count": 1744,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "layer",
+        "pair_count": 5040,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "loss",
+        "pair_count": 616,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "output",
+        "pair_count": 407,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "product",
+        "pair_count": 315,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "random",
+        "pair_count": 570,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "scale",
+        "pair_count": 572,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "sigmoid",
+        "pair_count": 270,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "skip connection",
+        "pair_count": 660,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "tanh",
+        "pair_count": 275,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "vanishing gradient",
+        "pair_count": 1092,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "variance",
+        "pair_count": 884,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      },
+      {
+        "topic": "width",
+        "pair_count": 1056,
+        "emitted": 250,
+        "note": "pair cross-product exceeded cap; per-KU evidence in topics section remains complete"
+      }
+    ]
+  },
+  "failures": [],
+  "ok": true
+}

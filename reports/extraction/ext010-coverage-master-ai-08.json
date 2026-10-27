@@ -1,0 +1,111 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "command": "extract-kus",
+    "framework_version": "0.5.0",
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "04 - Neural Networks/Training/08 - Vanishing and Exploding Gradients.md",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/home/z/my-project/ext010-parts/run1-08-vanishing-exploding.jsonl",
+    "records_written": 60,
+    "denominators": {
+      "files_in_scope": 1,
+      "files_extracted": 1,
+      "files_excluded": 0,
+      "files_failed": 0,
+      "scope_note": "denominator = every file enumerated under the scope (all classes); each has exactly one outcome"
+    },
+    "units_by_type": {
+      "frontmatter": 1,
+      "callout": 1,
+      "prose": 29,
+      "math_block": 4,
+      "list": 20,
+      "code_block": 2,
+      "table": 3
+    },
+    "file_outcomes": [
+      {
+        "relpath": "04 - Neural Networks/Training/08 - Vanishing and Exploding Gradients.md",
+        "outcome": "extracted",
+        "sha256": "4e1742fbf93861e400930438237a52d36f424f8b238982e82ca03f502cee7802",
+        "manifest_match": true,
+        "units": 60,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 29,
+          "math_block": 4,
+          "list": 20,
+          "code_block": 2,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 176,
+          "frontmatter_lines": 7,
+          "heading_context": 36,
+          "excluded_blank": 81,
+          "excluded_horizontal_rule": 0,
+          "accounted": 293,
+          "lines_total": 293,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 81,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ],
+    "batch_validation": {
+      "file": "/home/z/my-project/ext010-parts/run1-08-vanishing-exploding.jsonl",
+      "schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/knowledge-unit.schema.json",
+      "valid": true,
+      "records_total": 60,
+      "records_valid": 60,
+      "errors": [],
+      "cross_checks": {
+        "status": "run",
+        "kus_total": 60,
+        "rules": [
+          "duplicate_id",
+          "self_parent",
+          "superseded_rationale_missing",
+          "self_support"
+        ],
+        "note": "cross-batch parent/support references are checked at registry load time"
+      }
+    },
+    "determinism_note": "records contain no timestamps and IDs are content-derived; re-extracting unchanged sources produces a byte-identical batch",
+    "limitations": [
+      "structural segmentation only: unit types describe Markdown block syntax, not meaning",
+      "no dispositions are assigned: every unit is 'Unaccounted' until evidence-based classification",
+      "excerpts normalize CR characters away (splitlines reconstruction); source bytes are untouched",
+      "construct detection inherits mdextract limitations (ATX headings, delimiter-based math)",
+      "extraction coverage is NOT semantic preservation; it is the accounting baseline for later audits"
+    ]
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "extract-kus",
+    "args": {
+      "command": "extract-kus",
+      "root": "source-vaults/AI /Master AI",
+      "scope": "04 - Neural Networks/Training/08 - Vanishing and Exploding Gradients.md",
+      "vault_id": "master-ai",
+      "manifest": "state/manifests/master-ai.jsonl",
+      "out": "/home/z/my-project/ext010-parts/run1-08-vanishing-exploding.jsonl",
+      "kus_schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/knowledge-unit.schema.json",
+      "unclosed_fence_finding": null,
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/extraction/ext010-coverage-master-ai-08.json"
+    },
+    "utc_timestamp": "2026-10-27T11:17:13+00:00",
+    "git_commit": "6fb848f"
+  }
+}

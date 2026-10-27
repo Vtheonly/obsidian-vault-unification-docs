@@ -1,0 +1,109 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "command": "extract-kus",
+    "framework_version": "0.5.0",
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/01. Weight Initialization.md",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/home/z/my-project/ext010-parts/run1-01-weight-init.jsonl",
+    "records_written": 177,
+    "denominators": {
+      "files_in_scope": 1,
+      "files_extracted": 1,
+      "files_excluded": 0,
+      "files_failed": 0,
+      "scope_note": "denominator = every file enumerated under the scope (all classes); each has exactly one outcome"
+    },
+    "units_by_type": {
+      "callout": 12,
+      "prose": 90,
+      "math_block": 40,
+      "code_block": 8,
+      "list": 26,
+      "table": 1
+    },
+    "file_outcomes": [
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/01. Weight Initialization.md",
+        "outcome": "extracted",
+        "sha256": "0952c6588d85be9145265c21d9787affffdf536f1369d707a2355199431af3f0",
+        "manifest_match": true,
+        "units": 177,
+        "units_by_type": {
+          "callout": 12,
+          "prose": 90,
+          "math_block": 40,
+          "code_block": 8,
+          "list": 26,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 497,
+          "frontmatter_lines": 0,
+          "heading_context": 48,
+          "excluded_blank": 235,
+          "excluded_horizontal_rule": 12,
+          "accounted": 792,
+          "lines_total": 792,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 235,
+          "horizontal_rule": 12
+        },
+        "finding_ids": []
+      }
+    ],
+    "batch_validation": {
+      "file": "/home/z/my-project/ext010-parts/run1-01-weight-init.jsonl",
+      "schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/knowledge-unit.schema.json",
+      "valid": true,
+      "records_total": 177,
+      "records_valid": 177,
+      "errors": [],
+      "cross_checks": {
+        "status": "run",
+        "kus_total": 177,
+        "rules": [
+          "duplicate_id",
+          "self_parent",
+          "superseded_rationale_missing",
+          "self_support"
+        ],
+        "note": "cross-batch parent/support references are checked at registry load time"
+      }
+    },
+    "determinism_note": "records contain no timestamps and IDs are content-derived; re-extracting unchanged sources produces a byte-identical batch",
+    "limitations": [
+      "structural segmentation only: unit types describe Markdown block syntax, not meaning",
+      "no dispositions are assigned: every unit is 'Unaccounted' until evidence-based classification",
+      "excerpts normalize CR characters away (splitlines reconstruction); source bytes are untouched",
+      "construct detection inherits mdextract limitations (ATX headings, delimiter-based math)",
+      "extraction coverage is NOT semantic preservation; it is the accounting baseline for later audits"
+    ]
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "extract-kus",
+    "args": {
+      "command": "extract-kus",
+      "root": "source-vaults/AI /AI Course",
+      "scope": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/01. Weight Initialization.md",
+      "vault_id": "ai-course",
+      "manifest": "state/manifests/ai-course.jsonl",
+      "out": "/home/z/my-project/ext010-parts/run1-01-weight-init.jsonl",
+      "kus_schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/knowledge-unit.schema.json",
+      "unclosed_fence_finding": null,
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/extraction/ext010-coverage-ai-course-01.json"
+    },
+    "utc_timestamp": "2026-10-27T11:17:20+00:00",
+    "git_commit": "6fb848f"
+  }
+}

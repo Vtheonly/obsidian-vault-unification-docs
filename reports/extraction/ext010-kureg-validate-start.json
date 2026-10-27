@@ -1,0 +1,41 @@
+{
+  "command": "kureg-validate",
+  "db_path": "state/registries/kuregistry.db",
+  "registry_schema_version": 2,
+  "valid": true,
+  "errors": [],
+  "warnings": [],
+  "counts": {
+    "total_kus": 1229,
+    "by_disposition": {
+      "Unaccounted": 1229
+    }
+  },
+  "overlap_classification_counts": {
+    "classifications_total": 128,
+    "by_overlap_type": {
+      "Complementary Content": 5,
+      "Conflict or Historical Difference": 1,
+      "Partial Overlap": 34,
+      "Semantic Duplicate": 88
+    },
+    "kus_participating": 372,
+    "note": "pair-level records (ADR-0009); per-KU overlap_type columns stay NULL because one unit can participate in multiple differently-typed pairs"
+  },
+  "unaccounted_count": 1229,
+  "needs_review_count": 0,
+  "note": "Unaccounted units block release (docs/KNOWLEDGE_AND_PROVENANCE.md invariant 2); counts are record accounting, never proof of semantic preservation",
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "kureg-validate",
+    "args": {
+      "command": "kureg-validate",
+      "db": "state/registries/kuregistry.db",
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/extraction/ext010-kureg-validate-start.json"
+    },
+    "utc_timestamp": "2026-10-27T11:13:30+00:00",
+    "git_commit": "6fb848f"
+  }
+}

@@ -116,6 +116,20 @@ DOMAINS = {
         ],
         "dossier_id": "generalization-v1",
     },
+    # EXT-010: training-stability domain pair (weight initialization +
+    # vanishing/exploding gradients). Schema domain enum extended
+    # additively with 'training-stability' (documented in
+    # schemas/concept-dossier.schema.json).
+    "training-stability": {
+        "batches": [
+            "state/knowledge-units/010-ext010-master-ai-training-stability.jsonl",
+            "state/knowledge-units/011-ext010-ai-course-04.3-init-gradients.jsonl",
+        ],
+        "classifications": [
+            "state/classifications/007-ext010-training-stability-overlap.jsonl",
+        ],
+        "dossier_id": "training-stability-v1",
+    },
 }
 
 # EXT-007 addendum: included in the evaluation dossier once committed.

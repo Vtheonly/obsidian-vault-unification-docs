@@ -1,0 +1,17 @@
+{
+  "command": "scripts/ext010_fidelity.py",
+  "batch": "state/knowledge-units/011-ext010-ai-course-04.3-init-gradients.jsonl",
+  "records_total": 382,
+  "excerpt_byte_exact": 382,
+  "excerpt_hash_valid": 382,
+  "structurally_pure": 382,
+  "unique_ids": 382,
+  "vault_id": "ai-course",
+  "files_covered": [
+    "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/01. Weight Initialization.md",
+    "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/02. Weight Initialization Techniques.md",
+    "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/03. The Vanishing and Exploding Gradient Problems.md"
+  ],
+  "errors": [],
+  "ok": true
+}

@@ -1,0 +1,16 @@
+{
+  "command": "scripts/ext010_fidelity.py",
+  "batch": "state/knowledge-units/010-ext010-master-ai-training-stability.jsonl",
+  "records_total": 117,
+  "excerpt_byte_exact": 117,
+  "excerpt_hash_valid": 117,
+  "structurally_pure": 117,
+  "unique_ids": 117,
+  "vault_id": "master-ai",
+  "files_covered": [
+    "04 - Neural Networks/Training/07 - Initialization Schemes.md",
+    "04 - Neural Networks/Training/08 - Vanishing and Exploding Gradients.md"
+  ],
+  "errors": [],
+  "ok": true
+}

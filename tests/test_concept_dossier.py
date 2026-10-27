@@ -24,6 +24,7 @@ DOSSIER_FILES = [
     DOSSIER_DIR / "evaluation-v1.json",
     DOSSIER_DIR / "clustering-v1.json",
     DOSSIER_DIR / "generalization-v1.json",
+    DOSSIER_DIR / "training-stability-v1.json",
 ]
 CATEGORY_IDS = [
     "definitions_terminology",

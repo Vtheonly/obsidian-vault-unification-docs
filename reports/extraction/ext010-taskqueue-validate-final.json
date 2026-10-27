@@ -1,0 +1,39 @@
+{
+  "command": "validate-registry",
+  "validations": {
+    "tasks": {
+      "file": "state/task-queue.jsonl",
+      "schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/task.schema.json",
+      "valid": true,
+      "records_total": 15,
+      "records_valid": 15,
+      "errors": [],
+      "cross_checks": {
+        "status": "run",
+        "tasks_total": 15,
+        "unique_task_ids": 15,
+        "duplicate_task_ids": []
+      }
+    }
+  },
+  "problems_total": 0,
+  "valid": true,
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "validate-registry",
+    "args": {
+      "command": "validate-registry",
+      "tasks": "state/task-queue.jsonl",
+      "tasks_schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/task.schema.json",
+      "kus": null,
+      "kus_schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/knowledge-unit.schema.json",
+      "classifications": null,
+      "classifications_schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/overlap-classification.schema.json",
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/extraction/ext010-taskqueue-validate-final.json"
+    },
+    "utc_timestamp": "2026-10-27T12:09:33+00:00",
+    "git_commit": "6fb848f"
+  }
+}

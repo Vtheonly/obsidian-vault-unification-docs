@@ -1,0 +1,1350 @@
+{
+  "command": "scripts/ext010_term_map.py",
+  "scope_kus": 499,
+  "scope": {
+    "master-ai": "batch 010 (04 - Neural Networks/Training: 07 Initialization Schemes + 08 Vanishing and Exploding Gradients, 2 files, 117 KUs)",
+    "ai-course": "batch 011 (04.3 files 01 Weight Initialization + 02 Weight Initialization Techniques + 03 The Vanishing and Exploding Gradient Problems, 3 files, 382 KUs)"
+  },
+  "terms_count": 98,
+  "aliases_count": 165,
+  "cross_vault_terms": [
+    "He et al",
+    "He initialization",
+    "Jacobian",
+    "NaN",
+    "PyTorch",
+    "RNN",
+    "ReLU",
+    "ResNet",
+    "Xavier",
+    "attention",
+    "backpropagation",
+    "batch normalization",
+    "bias",
+    "chain rule",
+    "converge",
+    "deep network",
+    "default initialization",
+    "diagnose",
+    "diverge",
+    "dying ReLU",
+    "epoch",
+    "exploding gradient",
+    "exponential",
+    "fan_in",
+    "flat",
+    "forward pass",
+    "gradient",
+    "gradient clipping",
+    "gradient flow",
+    "gradient norm",
+    "hyperparameter",
+    "identity",
+    "initialization",
+    "initialization schemes",
+    "input",
+    "layer",
+    "leaky",
+    "learning rate",
+    "loss",
+    "monitor",
+    "neuron",
+    "noise",
+    "nonlinearity",
+    "normal distribution",
+    "numerical stability",
+    "output",
+    "plain network",
+    "product",
+    "random",
+    "saturation",
+    "scale",
+    "sequence",
+    "shrink",
+    "sigmoid",
+    "skip connection",
+    "spikes",
+    "symmetry problem",
+    "tanh",
+    "transformer",
+    "tuning",
+    "uniform",
+    "vanishing gradient",
+    "variance",
+    "weight matrix",
+    "width",
+    "zero initialization"
+  ],
+  "cross_vault_terms_count": 66,
+  "bridged_terms": [
+    "LayerNorm",
+    "derivation"
+  ],
+  "bridged_terms_count": 2,
+  "french_probe": {
+    "probes": [
+      "initialisation des poids",
+      "gradients \u00e9vanescents",
+      "disparition du gradient",
+      "explosion du gradient",
+      "r\u00e9tropropagation",
+      "fonction d'activation",
+      "apprentissage profond",
+      "r\u00e9seaux de neurones"
+    ],
+    "found": [],
+    "conclusion": "no French vocabulary in scope; no French aliases included"
+  },
+  "per_term_coverage": {
+    "initialization": {
+      "initialization": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "initialize": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "initialized": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "weight initialization": {
+      "weight initialization": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "initialization schemes": {
+      "initialization schemes": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "Xavier": {
+      "Xavier": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "Glorot": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "Xavier initialization": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "Glorot initialization": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "Xavier uniform": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "Xavier normal": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "xavier_uniform_": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "xavier_normal_": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "He initialization": {
+      "He initialization": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "Kaiming": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "Kaiming initialization": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "Kaiming uniform": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "Kaiming normal": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "kaiming_uniform_": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "kaiming_normal_": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "fan_in": {
+      "fan_in": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "fan_out": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "fan-in": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "fan-out": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "symmetry problem": {
+      "symmetry problem": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "symmetric": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "symmetry": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "zero initialization": {
+      "zero initialization": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "zero init": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "zeros": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "ones": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "normal distribution": {
+      "normal distribution": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "Gaussian": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "N(0, 1)": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "N(0, 0.01)": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "standard deviation": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "std": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "uniform": {
+      "uniform": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "orthogonal": {
+      "orthogonal": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "sparse": {
+      "sparse": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "sparsity": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "goldilocks": {
+      "goldilocks": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "bias": {
+      "bias": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "variance": {
+      "variance": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "sigma_w": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "gain": {
+      "gain": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "derivation": {
+      "derivation": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "derive": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "variance tracking": {
+      "variance tracking": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "default initialization": {
+      "default initialization": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "defaults": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "default": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "nonlinearity": {
+      "nonlinearity": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "non-linear": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "ReLU": {
+      "ReLU": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "rectified linear": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "sigmoid": {
+      "sigmoid": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "tanh": {
+      "tanh": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "leaky": {
+      "leaky": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "Leaky ReLU": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "PReLU": {
+      "PReLU": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "parametric ReLU": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "ELU": {
+      "ELU": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "dying ReLU": {
+      "dying ReLU": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "dead neurons": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "dead": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "saturation": {
+      "saturation": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "saturates": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "saturated": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "PyTorch": {
+      "PyTorch": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "torch": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "torch.nn": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "nn.init": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "nn.Linear": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "nn.Conv2d": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "vanishing gradient": {
+      "vanishing gradient": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "vanishing gradients": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "vanishing gradient problem": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "vanishing": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "exploding gradient": {
+      "exploding gradient": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "exploding gradients": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "exploding gradient problem": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "exploding": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "explosion": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "gradient": {
+      "gradient": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "gradients": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "Jacobian": {
+      "Jacobian": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "Jacobians": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "backpropagation": {
+      "backpropagation": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "backprop": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "backward pass": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "forward pass": {
+      "forward pass": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "forward": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "chain rule": {
+      "chain rule": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "product": {
+      "product": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "products": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "multiply": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "multiplication": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "exponential": {
+      "exponential": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "deep network": {
+      "deep network": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "deep networks": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "deep neural network": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "deep": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "layer": {
+      "layer": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "layers": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "early layers": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "early layer": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "output layer": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "last layer": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "linear layer": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "hidden layer": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "neuron": {
+      "neuron": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "neurons": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "RNN": {
+      "RNN": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "RNNs": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "recurrent": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "LSTM": {
+      "LSTM": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "GRU": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "sequence": {
+      "sequence": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "sequential": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "long sequences": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "NaN": {
+      "NaN": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "inf": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "infinity": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "skip connection": {
+      "skip connection": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "skip connections": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "residual connection": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "residual connections": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "residual": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "residuals": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "ResNet": {
+      "ResNet": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "residual network": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "residual networks": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "residual block": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "residual blocks": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "identity": {
+      "identity": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "plain network": {
+      "plain network": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "plain networks": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "plain": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "batch normalization": {
+      "batch normalization": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "BatchNorm": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "batch norm": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "BN": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "BatchNorm2d": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "Ioffe": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "Szegedy": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "LayerNorm": {
+      "LayerNorm": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "Layer Normalization": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "layer normalization": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "RMSNorm": {
+      "RMSNorm": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "pre-norm": {
+      "pre-norm": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "post-norm": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "gradient clipping": {
+      "gradient clipping": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "clip": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "clipped": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "clip_grad_norm_": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "clip by norm": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "clip by value": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "clip the gradient": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "threshold": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "gradient norm": {
+      "gradient norm": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "gradient norms": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "magnitude": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "magnitudes": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "norm": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "norms": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "monitor": {
+      "monitor": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "monitoring": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "diagnose": {
+      "diagnose": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "diagnostic": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "learning rate": {
+      "learning rate": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "learning rates": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "LR": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "warmup": {
+      "warmup": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "loss": {
+      "loss": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "loss curve": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "loss plot": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "loss landscape": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "non-convex": {
+      "non-convex": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "local minimum": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "local minima": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "saddle points": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "oscillations": {
+      "oscillations": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "oscillates": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "diverge": {
+      "diverge": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "divergence": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "diverging": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "diverges": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "converge": {
+      "converge": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "convergence": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "converges": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "epoch": {
+      "epoch": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "epochs": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "training loop": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "gradient flow": {
+      "gradient flow": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "signal": {
+      "signal": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "learning signal": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "spikes": {
+      "spikes": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "loss spikes": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "noise": {
+      "noise": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "numerical stability": {
+      "numerical stability": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "numerical instability": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "numerical": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "overflow": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "underflow": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "FP16": {
+      "FP16": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "BF16": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "scale": {
+      "scale": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "scaling": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "scaled": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "shrink": {
+      "shrink": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "attenuate": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "decay": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "compound": {
+      "compound": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "cycle": {
+      "cycle": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "self-reinforcing": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "catastrophic": {
+      "catastrophic": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "zero-centered": {
+      "zero-centered": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "flat": {
+      "flat": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "plateau": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "plateaus": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "attention": {
+      "attention": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "self-attention": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "transformer": {
+      "transformer": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "Transformer": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "Transformers": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "MLP": {
+      "MLP": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "embedding": {
+      "embedding": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "projection": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "residual stream": {
+      "residual stream": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "eigenvalue": {
+      "eigenvalue": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "eigenvalues": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "spectral": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "LoRA": {
+      "LoRA": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "MuP": {
+      "MuP": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "Tensor Programs": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "Fixup": {
+      "Fixup": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "GPT": {
+      "GPT": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "LLM": {
+      "LLM": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "Zhang": {
+      "Zhang": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "He et al": {
+      "He et al": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "Glorot and Bengio": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "hyperparameter": {
+      "hyperparameter": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "hyperparameters": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "tuning": {
+      "tuning": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "tune": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "tuned": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "weight matrix": {
+      "weight matrix": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "weight matrices": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "random": {
+      "random": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "seed": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "constant": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "input": {
+      "input": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "inputs": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "output": {
+      "output": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "outputs": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "width": {
+      "width": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "wide": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "wider": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "depth": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "deep": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "shallow": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "shallower": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    }
+  },
+  "errors": [],
+  "ok": true
+}

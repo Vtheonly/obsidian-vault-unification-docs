@@ -28,9 +28,10 @@
         "tree-based",
         "evaluation",
         "clustering",
-        "generalization"
+        "generalization",
+        "training-stability"
       ],
-      "description": "Knowledge domain covered by this dossier. Enum extended in EXT-008 (2026-10-27) with 'clustering' for the clustering/dimensionality-reduction domain pair (batches 006/007 + 005-ext008 classifications); extended in EXT-009 (2026-10-27) with 'generalization' for the generalization/regularization domain pair (batches 008/009 + 006-ext009 classifications); both additive changes, existing dossiers unaffected."
+      "description": "Knowledge domain covered by this dossier. Enum extended in EXT-008 (2026-10-27) with 'clustering' for the clustering/dimensionality-reduction domain pair (batches 006/007 + 005-ext008 classifications); extended in EXT-009 (2026-10-27) with 'generalization' for the generalization/regularization domain pair (batches 008/009 + 006-ext009 classifications); extended in EXT-010 (2026-10-27) with 'training-stability' for the training-stability domain pair (batches 010/011 + 007-ext010 classifications); all additive changes, existing dossiers unaffected."
     },
     "version": {
       "type": "string",

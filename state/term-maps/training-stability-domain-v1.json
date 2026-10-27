@@ -1,0 +1,336 @@
+{
+  "_comment": "Training-stability domain term/alias map for EXT-010 cross-vault candidate discovery (CAP-013). Canonical term -> aliases. Built from the actual content of batch 010 (master-ai '04 - Neural Networks/Training' files 07 Initialization Schemes + 08 Vanishing and Exploding Gradients, 2 files, 117 KUs — a deliberate 2-of-3 partial-folder scope; 06 Backpropagation is excluded as a distinct autodiff/BPTT domain) and batch 011 (ai-course '04.3 - Training Dynamics and Stability' files 01 Weight Initialization + 02 Weight Initialization Techniques + 03 The Vanishing and Exploding Gradient Problems, 3 files, 382 KUs; three deterministic single-file runs concatenated in fixed order; file 04 Hyperparameters remains reserved for a future optimization/tuning pair per the EXT-009 scope note). Every term and alias is verified to occur inside at least one in-scope KU excerpt by scripts/ext010_term_map.py after four probe rounds (scripts/ext010_term_probe{,2,3,4}.py; reports/extraction/ext010-term-map-verification.json). HEADING-ONLY and ABSENT vocabulary correctly EXCLUDED (EXT-004 rule; probe-verified missing from BOTH batches): 'BPTT', 'backpropagation through time', 'weight decay', 'weight tying', 'momentum', 'nesterov', 'gated', 'covariance', 'gradient checking', 'calculate_gain', 'reset_parameters', 'initialise', 'initialisation' (British spellings absent), 'co-adaptation', 'dropout', 'early stopping', 'regularization', 'data augmentation', 'label smoothing', 'covariate shift', 'Adam', 'AdamW', 'optimizer' (course-only word, excluded as anchor but present), 'dampen', 'die out', 'extinguish', 'wash out', 'embeddings' (plural), 'prenorm'/'postnorm' (hyphenless), 'interview'/'production' (heading-only in master-ai; headings are not KU-excerpt evidence), 'variance tracking' IS included (course-only, verified). BRIDGE aliases deliberately connect different surface forms of the same concept across vaults: 'dying ReLU' (ai-course) with 'dead neurons' (master-ai); 'LayerNorm' (master-ai) with 'layer normalization' (ai-course); 'zero initialization' (ai-course) with 'zero init' (master-ai); 'RNN' (master-ai) with 'RNNs'/'recurrent' (both); 'sequence' (ai-course) with 'sequential'/'long sequences'; 'batch normalization' (ai-course) with 'BatchNorm' (master-ai); 'He et al' (cross-vault) with 'Glorot and Bengio' (ai-course); 'hyperparameter' (ai-course) with 'hyperparameters' (cross-vault); 'derivation' (ai-course) with 'derive' (master-ai); 'diagnostic dashboard' (ai-course) with the diagnosis family; 'flat' (cross-vault) with 'plateau' (ai-course) and 'plateaus' (master-ai); 'shrink' (cross-vault) with 'attenuate' (ai-course) and 'decay' (master-ai). KNOWN SPURIOUS/SENSE-COLLISION SOURCES, recorded here so classification dismisses or adjudicates them with evidence: (1) 'attention' — master-ai uses it for the self-attention mechanism (the Transformer solution to vanishing through recurrence; attention saturation; QK scaling), while ai-course uses it ONCE as the English idiom 'careful attention to initialization' (KU-6320fbea895ec3cf) — the course idiom sense must NEVER count as mechanism evidence; (2) 'norm'/'norms' — gradient norm (both vaults, clipping/diagnosis), LayerNorm/RMSNorm/pre-norm (master-ai), batch norm (ai-course); the key is kept because the gradient-norm sense dominates both sides; (3) 'spikes' — both vaults use it for loss-curve spikes as an instability symptom (genuine cross-vault sense), while 'loss spikes' as an LLM-operations topic is master-ai-only and links out to '11 - Training/Optimization/05 - Loss Spikes and Stability'; (4) 'noise' — master-ai 'training noise' (pitfall: ignoring loss spikes) vs ai-course 'deafening noise (overflow)' analogy — both metaphorical, not the irreducible-noise or augmentation senses of EXT-009; (5) 'scale'/'scaling' — init scale (both), residual-stream scaling (master-ai), attention-score scaling (master-ai), gradient/update scale (both); (6) 'bias' — bias-parameter initialization (both), never the statistical-bias sense of the generalization domain; (7) 'decay' (master-ai alias of 'shrink') — gradient shrinkage through depth, NOT weight decay (which is absent from both batches); (8) 'zeros'/'ones' — constant-initialization tensors (both vaults), context distinguishes from zero-gradient statements. EXCLUDED weak/generic anchors (probe-verified present but deliberately not included because they generate noise without discriminating power, documented per the EXT-009 rule): 'mean', 'expected', 'E[' (math notation), 'information', 'input'/'output' ARE included but 'matrix' alone is folded into 'weight matrix', 'sqrt', 'mathbf', 'frac', 'partial', 'mathcal', 'cdot', 'sigma' (bare LaTeX fragments), 'critical', '2010', '2015' (dating anchors covered by Xavier/Kaiming/'He et al'/'Glorot and Bengio' keys), '6' (sqrt(6) appears only inside LaTeX \\sqrt{6} constructs). Keys starting with _ are documentation and ignored by the loader.",
+  "initialization": [
+    "initialize",
+    "initialized"
+  ],
+  "weight initialization": [],
+  "initialization schemes": [],
+  "Xavier": [
+    "Glorot",
+    "Xavier initialization",
+    "Glorot initialization",
+    "Xavier uniform",
+    "Xavier normal",
+    "xavier_uniform_",
+    "xavier_normal_"
+  ],
+  "He initialization": [
+    "Kaiming",
+    "Kaiming initialization",
+    "Kaiming uniform",
+    "Kaiming normal",
+    "kaiming_uniform_",
+    "kaiming_normal_"
+  ],
+  "fan_in": [
+    "fan_out",
+    "fan-in",
+    "fan-out"
+  ],
+  "symmetry problem": [
+    "symmetric",
+    "symmetry"
+  ],
+  "zero initialization": [
+    "zero init",
+    "zeros",
+    "ones"
+  ],
+  "normal distribution": [
+    "Gaussian",
+    "N(0, 1)",
+    "N(0, 0.01)",
+    "standard deviation",
+    "std"
+  ],
+  "uniform": [],
+  "orthogonal": [],
+  "sparse": [
+    "sparsity"
+  ],
+  "goldilocks": [],
+  "bias": [],
+  "variance": [
+    "sigma_w"
+  ],
+  "gain": [],
+  "derivation": [
+    "derive"
+  ],
+  "variance tracking": [],
+  "default initialization": [
+    "defaults",
+    "default"
+  ],
+  "nonlinearity": [
+    "non-linear"
+  ],
+  "ReLU": [
+    "rectified linear"
+  ],
+  "sigmoid": [],
+  "tanh": [],
+  "leaky": [
+    "Leaky ReLU"
+  ],
+  "PReLU": [
+    "parametric ReLU"
+  ],
+  "ELU": [],
+  "dying ReLU": [
+    "dead neurons",
+    "dead"
+  ],
+  "saturation": [
+    "saturates",
+    "saturated"
+  ],
+  "PyTorch": [
+    "torch",
+    "torch.nn",
+    "nn.init",
+    "nn.Linear",
+    "nn.Conv2d"
+  ],
+  "vanishing gradient": [
+    "vanishing gradients",
+    "vanishing gradient problem",
+    "vanishing"
+  ],
+  "exploding gradient": [
+    "exploding gradients",
+    "exploding gradient problem",
+    "exploding",
+    "explosion"
+  ],
+  "gradient": [
+    "gradients"
+  ],
+  "Jacobian": [
+    "Jacobians"
+  ],
+  "backpropagation": [
+    "backprop",
+    "backward pass"
+  ],
+  "forward pass": [
+    "forward"
+  ],
+  "chain rule": [],
+  "product": [
+    "products",
+    "multiply",
+    "multiplication"
+  ],
+  "exponential": [],
+  "deep network": [
+    "deep networks",
+    "deep neural network",
+    "deep"
+  ],
+  "layer": [
+    "layers",
+    "early layers",
+    "early layer",
+    "output layer",
+    "last layer",
+    "linear layer",
+    "hidden layer"
+  ],
+  "neuron": [
+    "neurons"
+  ],
+  "RNN": [
+    "RNNs",
+    "recurrent"
+  ],
+  "LSTM": [
+    "GRU"
+  ],
+  "sequence": [
+    "sequential",
+    "long sequences"
+  ],
+  "NaN": [
+    "inf",
+    "infinity"
+  ],
+  "skip connection": [
+    "skip connections",
+    "residual connection",
+    "residual connections",
+    "residual",
+    "residuals"
+  ],
+  "ResNet": [
+    "residual network",
+    "residual networks",
+    "residual block",
+    "residual blocks"
+  ],
+  "identity": [],
+  "plain network": [
+    "plain networks",
+    "plain"
+  ],
+  "batch normalization": [
+    "BatchNorm",
+    "batch norm",
+    "BN",
+    "BatchNorm2d",
+    "Ioffe",
+    "Szegedy"
+  ],
+  "LayerNorm": [
+    "Layer Normalization",
+    "layer normalization"
+  ],
+  "RMSNorm": [],
+  "pre-norm": [
+    "post-norm"
+  ],
+  "gradient clipping": [
+    "clip",
+    "clipped",
+    "clip_grad_norm_",
+    "clip by norm",
+    "clip by value",
+    "clip the gradient",
+    "threshold"
+  ],
+  "gradient norm": [
+    "gradient norms",
+    "magnitude",
+    "magnitudes",
+    "norm",
+    "norms"
+  ],
+  "monitor": [
+    "monitoring"
+  ],
+  "diagnose": [
+    "diagnostic"
+  ],
+  "learning rate": [
+    "learning rates",
+    "LR"
+  ],
+  "warmup": [],
+  "loss": [
+    "loss curve",
+    "loss plot",
+    "loss landscape"
+  ],
+  "non-convex": [
+    "local minimum",
+    "local minima",
+    "saddle points"
+  ],
+  "oscillations": [
+    "oscillates"
+  ],
+  "diverge": [
+    "divergence",
+    "diverging",
+    "diverges"
+  ],
+  "converge": [
+    "convergence",
+    "converges"
+  ],
+  "epoch": [
+    "epochs",
+    "training loop"
+  ],
+  "gradient flow": [],
+  "signal": [
+    "learning signal"
+  ],
+  "spikes": [
+    "loss spikes"
+  ],
+  "noise": [],
+  "numerical stability": [
+    "numerical instability",
+    "numerical",
+    "overflow",
+    "underflow"
+  ],
+  "FP16": [
+    "BF16"
+  ],
+  "scale": [
+    "scaling",
+    "scaled"
+  ],
+  "shrink": [
+    "attenuate",
+    "decay"
+  ],
+  "compound": [],
+  "cycle": [
+    "self-reinforcing"
+  ],
+  "catastrophic": [],
+  "zero-centered": [],
+  "flat": [
+    "plateau",
+    "plateaus"
+  ],
+  "attention": [
+    "self-attention"
+  ],
+  "transformer": [
+    "Transformer",
+    "Transformers"
+  ],
+  "MLP": [],
+  "embedding": [
+    "projection"
+  ],
+  "residual stream": [],
+  "eigenvalue": [
+    "eigenvalues",
+    "spectral"
+  ],
+  "LoRA": [],
+  "MuP": [
+    "Tensor Programs"
+  ],
+  "Fixup": [],
+  "GPT": [],
+  "LLM": [],
+  "Zhang": [],
+  "He et al": [
+    "Glorot and Bengio"
+  ],
+  "hyperparameter": [
+    "hyperparameters"
+  ],
+  "tuning": [
+    "tune",
+    "tuned"
+  ],
+  "weight matrix": [
+    "weight matrices"
+  ],
+  "random": [
+    "seed",
+    "constant"
+  ],
+  "input": [
+    "inputs"
+  ],
+  "output": [
+    "outputs"
+  ],
+  "width": [
+    "wide",
+    "wider",
+    "depth",
+    "deep",
+    "shallow",
+    "shallower"
+  ]
+}
