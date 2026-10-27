@@ -1,0 +1,624 @@
+{
+  "command": "scripts/ext009_term_map.py",
+  "scope_kus": 340,
+  "scope": {
+    "master-ai": "batch 008 (Generalization: 01 Bias Variance Tradeoff + 06 Regularization Techniques, 2 files, 106 KUs)",
+    "ai-course": "batch 009 (04.3 files 05 Batch Normalization + 06 Dropout and Regularization + 07 Data Augmentation, 3 files, 234 KUs)"
+  },
+  "terms_count": 65,
+  "aliases_count": 40,
+  "cross_vault_terms": [
+    "AdamW",
+    "L1",
+    "L2",
+    "PyTorch",
+    "SGD",
+    "batchnorm",
+    "bias",
+    "capacity",
+    "co-adaptation",
+    "color jitter",
+    "crop",
+    "cutmix",
+    "data augmentation",
+    "dropout",
+    "early stopping",
+    "ensemble",
+    "epoch",
+    "generalization",
+    "inference",
+    "inverted dropout",
+    "label smoothing",
+    "memorize",
+    "mixup",
+    "noise",
+    "normalization",
+    "overfitting",
+    "penalty",
+    "pipeline",
+    "regularization",
+    "rotation",
+    "scaling",
+    "sparse",
+    "training set",
+    "transformer",
+    "translation",
+    "validation",
+    "variance",
+    "weight decay"
+  ],
+  "cross_vault_terms_count": 38,
+  "bridged_terms": [
+    "hyperparameter",
+    "test set"
+  ],
+  "bridged_terms_count": 2,
+  "french_probe": {
+    "probes": [
+      "surapprentissage",
+      "r\u00e9gularisation",
+      "augmentation de donn\u00e9es",
+      "normalisation par lot",
+      "abandon",
+      "bruit",
+      "d\u00e9coupage",
+      "g\u00e9n\u00e9ralisation"
+    ],
+    "found": [],
+    "conclusion": "no French vocabulary in scope (unlike the 03.5 'regroupement' case in EXT-008); no French aliases included"
+  },
+  "per_term_coverage": {
+    "bias": {
+      "bias": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "variance": {
+      "variance": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "bias-variance": {
+      "bias-variance": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "bias variance": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "overfitting": {
+      "overfitting": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "overfit": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "underfitting": {
+      "underfitting": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "underfit": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "generalization": {
+      "generalization": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "generalize": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "generalizes": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "irreducible": {
+      "irreducible": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "decomposition": {
+      "decomposition": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "tradeoff": {
+      "tradeoff": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "trade-off": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "model complexity": {
+      "model complexity": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "learning curve": {
+      "learning curve": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "double descent": {
+      "double descent": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "ensemble": {
+      "ensemble": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "ensembling": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "memorize": {
+      "memorize": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "memorization": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "capacity": {
+      "capacity": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "validation": {
+      "validation": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "validation set": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "validation data": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "validation loss": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "test set": {
+      "test set": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "test data": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "training set": {
+      "training set": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "training data": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "regularization": {
+      "regularization": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "regularize": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "regularized": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "implicit regularization": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "L1": {
+      "L1": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "L2": {
+      "L2": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "ridge": {
+      "ridge": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "elastic net": {
+      "elastic net": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "weight decay": {
+      "weight decay": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "penalty": {
+      "penalty": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "penalties": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "dropout": {
+      "dropout": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "early stopping": {
+      "early stopping": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "data augmentation": {
+      "data augmentation": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "augmentation": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "label smoothing": {
+      "label smoothing": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "batchnorm": {
+      "batchnorm": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "BatchNorm": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "batch norm": {
+        "ai-course": false,
+        "master-ai": true
+      },
+      "BN": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "normalization": {
+      "normalization": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "normalize": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "normalizing": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "covariate shift": {
+      "covariate shift": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "internal covariate shift": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "gamma": {
+      "gamma": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "beta": {
+      "beta": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "moving average": {
+      "moving average": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "co-adaptation": {
+      "co-adaptation": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "inverted dropout": {
+      "inverted dropout": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "training mode": {
+      "training mode": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "evaluation mode": {
+      "evaluation mode": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "eval mode": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "dropout rate": {
+      "dropout rate": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "scaling": {
+      "scaling": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "inference": {
+      "inference": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "crop": {
+      "crop": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "cropping": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "random crop": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "rotation": {
+      "rotation": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "rotations": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "rotate": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "horizontal flip": {
+      "horizontal flip": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "flipping": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "flips": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "translation": {
+      "translation": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "shift": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "shifting": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "color jitter": {
+      "color jitter": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "jitter": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "mixup": {
+      "mixup": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "cutmix": {
+      "cutmix": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "cutout": {
+      "cutout": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "random erasing": {
+      "random erasing": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "erasing": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "grayscale": {
+      "grayscale": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "Gaussian noise": {
+      "Gaussian noise": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "noise": {
+      "noise": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "sparse": {
+      "sparse": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "sparsity": {
+        "ai-course": true,
+        "master-ai": false
+      }
+    },
+    "hyperparameter": {
+      "hyperparameter": {
+        "ai-course": true,
+        "master-ai": false
+      },
+      "hyperparameters": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "PyTorch": {
+      "PyTorch": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "torch": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "sklearn": {
+      "sklearn": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "epoch": {
+      "epoch": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "epochs": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "AdamW": {
+      "AdamW": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "SGD": {
+      "SGD": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "transformer": {
+      "transformer": {
+        "ai-course": true,
+        "master-ai": true
+      },
+      "transformers": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    },
+    "LLM": {
+      "LLM": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "fine-tuning": {
+      "fine-tuning": {
+        "ai-course": false,
+        "master-ai": true
+      }
+    },
+    "pipeline": {
+      "pipeline": {
+        "ai-course": true,
+        "master-ai": true
+      }
+    }
+  },
+  "errors": [],
+  "ok": true
+}

@@ -1,0 +1,143 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "command": "extract-kus",
+    "framework_version": "0.5.0",
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "03 - Machine Learning/Generalization",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/ext009-run1-master.jsonl",
+    "records_written": 106,
+    "denominators": {
+      "files_in_scope": 2,
+      "files_extracted": 2,
+      "files_excluded": 0,
+      "files_failed": 0,
+      "scope_note": "denominator = every file enumerated under the scope (all classes); each has exactly one outcome"
+    },
+    "units_by_type": {
+      "frontmatter": 2,
+      "callout": 2,
+      "prose": 47,
+      "math_block": 10,
+      "list": 34,
+      "table": 3,
+      "code_block": 8
+    },
+    "file_outcomes": [
+      {
+        "relpath": "03 - Machine Learning/Generalization/01 - Bias Variance Tradeoff.md",
+        "outcome": "extracted",
+        "sha256": "8122240ed48f9189bd645653a8ce6eea45b00332a7c4ecd8d1889c6d1436f57c",
+        "manifest_match": true,
+        "units": 68,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 30,
+          "math_block": 6,
+          "list": 22,
+          "table": 3,
+          "code_block": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 212,
+          "frontmatter_lines": 7,
+          "heading_context": 25,
+          "excluded_blank": 88,
+          "excluded_horizontal_rule": 0,
+          "accounted": 325,
+          "lines_total": 325,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 88,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/Generalization/06 - Regularization Techniques.md",
+        "outcome": "extracted",
+        "sha256": "f5aefac5eb7aaecf05113e049a3a95e5a35e4ae2c8565595580aec167cce8bfd",
+        "manifest_match": true,
+        "units": 38,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 17,
+          "list": 12,
+          "math_block": 4,
+          "code_block": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 124,
+          "frontmatter_lines": 6,
+          "heading_context": 22,
+          "excluded_blank": 53,
+          "excluded_horizontal_rule": 0,
+          "accounted": 199,
+          "lines_total": 199,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 53,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ],
+    "batch_validation": {
+      "file": "/tmp/ext009-run1-master.jsonl",
+      "schema": "/home/z/my-project/repo/schemas/knowledge-unit.schema.json",
+      "valid": true,
+      "records_total": 106,
+      "records_valid": 106,
+      "errors": [],
+      "cross_checks": {
+        "status": "run",
+        "kus_total": 106,
+        "rules": [
+          "duplicate_id",
+          "self_parent",
+          "superseded_rationale_missing",
+          "self_support"
+        ],
+        "note": "cross-batch parent/support references are checked at registry load time"
+      }
+    },
+    "determinism_note": "records contain no timestamps and IDs are content-derived; re-extracting unchanged sources produces a byte-identical batch",
+    "limitations": [
+      "structural segmentation only: unit types describe Markdown block syntax, not meaning",
+      "no dispositions are assigned: every unit is 'Unaccounted' until evidence-based classification",
+      "excerpts normalize CR characters away (splitlines reconstruction); source bytes are untouched",
+      "construct detection inherits mdextract limitations (ATX headings, delimiter-based math)",
+      "extraction coverage is NOT semantic preservation; it is the accounting baseline for later audits"
+    ]
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "extract-kus",
+    "args": {
+      "command": "extract-kus",
+      "root": "source-vaults/AI /Master AI",
+      "scope": "03 - Machine Learning/Generalization",
+      "vault_id": "master-ai",
+      "manifest": "state/manifests/master-ai.jsonl",
+      "out": "/tmp/ext009-run1-master.jsonl",
+      "kus_schema": "/home/z/my-project/repo/schemas/knowledge-unit.schema.json",
+      "unclosed_fence_finding": null,
+      "report": "/home/z/my-project/repo/reports/extraction/ext009-coverage-master-ai.json"
+    },
+    "utc_timestamp": "2026-10-27T08:57:48+00:00",
+    "git_commit": "7041d47"
+  }
+}

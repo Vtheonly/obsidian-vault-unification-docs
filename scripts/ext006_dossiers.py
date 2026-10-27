@@ -103,6 +103,19 @@ DOMAINS = {
         ],
         "dossier_id": "clustering-v1",
     },
+    # EXT-009: generalization / regularization domain pair.
+    # Schema domain enum extended additively with 'generalization'
+    # (documented in schemas/concept-dossier.schema.json).
+    "generalization": {
+        "batches": [
+            "state/knowledge-units/008-ext009-master-ai-generalization.jsonl",
+            "state/knowledge-units/009-ext009-ai-course-04.3-regularization.jsonl",
+        ],
+        "classifications": [
+            "state/classifications/006-ext009-generalization-overlap.jsonl",
+        ],
+        "dossier_id": "generalization-v1",
+    },
 }
 
 # EXT-007 addendum: included in the evaluation dossier once committed.

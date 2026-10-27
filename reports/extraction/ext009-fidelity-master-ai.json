@@ -1,0 +1,16 @@
+{
+  "command": "scripts/ext009_fidelity.py",
+  "batch": "state/knowledge-units/008-ext009-master-ai-generalization.jsonl",
+  "records_total": 106,
+  "excerpt_byte_exact": 106,
+  "excerpt_hash_valid": 106,
+  "structurally_pure": 106,
+  "unique_ids": 106,
+  "vault_id": "master-ai",
+  "files_covered": [
+    "03 - Machine Learning/Generalization/01 - Bias Variance Tradeoff.md",
+    "03 - Machine Learning/Generalization/06 - Regularization Techniques.md"
+  ],
+  "errors": [],
+  "ok": true
+}

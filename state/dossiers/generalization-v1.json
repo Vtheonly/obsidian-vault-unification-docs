@@ -1,0 +1,4507 @@
+{
+  "accounting": {
+    "bidirectional_check": {
+      "every_covered_ku_participates": true,
+      "every_participating_ku_covered": true
+    },
+    "category_assignment_counts": {
+      "alternative_explanations": 1,
+      "applications_engineering": 5,
+      "code_implementation": 3,
+      "computational_mechanics": 0,
+      "critical_distinctions": 12,
+      "definitions_terminology": 52,
+      "historical_deprecated": 4,
+      "interview_misconceptions_comparisons": 0,
+      "mathematical_foundations": 2,
+      "worked_examples_failure_cases": 5
+    },
+    "classification_record_count": 26,
+    "concept_count": 26,
+    "disposition_note": "Dossiers reference evidence only: no dispositions are assigned here; every KU remains Unaccounted until synthesis (KNOWLEDGE_AND_PROVENANCE.md invariants 2 and 5; overlap types are pair-level references, never dispositions).",
+    "gap_census": {
+      "no_evidence": 211,
+      "single_vault": 37
+    },
+    "participating_ku_count": 68,
+    "participating_ku_ids": [
+      "KU-02809b63c8feef72",
+      "KU-05daab826792e22c",
+      "KU-05e62c2d5014acd8",
+      "KU-05e7a613b0b6f785",
+      "KU-0ce2394b60e97e47",
+      "KU-1396f3ea49e151a4",
+      "KU-1846c2a3c8c577a1",
+      "KU-1b18784d8030bfc6",
+      "KU-35c47d029dfcff49",
+      "KU-3600ad4fde6afdfc",
+      "KU-36d3158c44730403",
+      "KU-37ae54e552881289",
+      "KU-3ef4ccdf82541f8b",
+      "KU-40510aab1d3530df",
+      "KU-4175c9f4f8f2a4c5",
+      "KU-4f6fcccc0aba49d9",
+      "KU-51e16f7ca33a80dc",
+      "KU-5465d83e21153c84",
+      "KU-55ae61981a802fde",
+      "KU-6013f98fb637f9a6",
+      "KU-62af384e5050dfdb",
+      "KU-69b30d0ea2dc08d1",
+      "KU-6aac08208c91a4b4",
+      "KU-6ae3e0a7a7570d68",
+      "KU-702618d2571d4302",
+      "KU-756e1177e18287d2",
+      "KU-78e888bebd79929f",
+      "KU-7b051b86c10d5da1",
+      "KU-882d3292c5bc7a61",
+      "KU-8aa83cca4a5990d0",
+      "KU-8b7b0cc57d97927c",
+      "KU-8d9a2c63ae27d1cc",
+      "KU-912b55f98ace322a",
+      "KU-92a81afc5b276bf8",
+      "KU-93065c9a5a291a96",
+      "KU-93c72dcb72560df5",
+      "KU-97ca84434b43aa8d",
+      "KU-9d3544c2dcde095a",
+      "KU-a2b55286da56e327",
+      "KU-a3d5d1f07d12fb4f",
+      "KU-a5f74256be30d4ef",
+      "KU-a5fab64b9d930285",
+      "KU-a787b4fbedd9be3d",
+      "KU-a815459bcd3d5df0",
+      "KU-a824c50137150b54",
+      "KU-a91968f779904bd7",
+      "KU-ac676c6254348c94",
+      "KU-b57933c8b5bce1f0",
+      "KU-b7f8fa23e460ebb9",
+      "KU-b8db22e905dfdfaa",
+      "KU-bbd3111786c76e44",
+      "KU-bdf957f03f050500",
+      "KU-bf545b7a84be1551",
+      "KU-c35e357516d553a7",
+      "KU-c551b121821ab609",
+      "KU-d003d59f52c01995",
+      "KU-d64c3f1ff258b05b",
+      "KU-ddfa45e76bc3f17f",
+      "KU-dffd060992d910a5",
+      "KU-e06059c050c4a443",
+      "KU-e0b8b7e81c307f9f",
+      "KU-e2fade691f1b99c8",
+      "KU-e505772836e129f9",
+      "KU-e872f67a8b4b97b5",
+      "KU-ee136aa501cf3e45",
+      "KU-ef3a7b46104d1929",
+      "KU-f454ef1318368321",
+      "KU-ff2b20e6eedcb3d7"
+    ],
+    "zero_evidence_categories": [
+      "computational_mechanics",
+      "interview_misconceptions_comparisons"
+    ]
+  },
+  "concepts": [
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-92a81afc5b276bf8"
+        ],
+        "master-ai": [
+          "KU-05e62c2d5014acd8",
+          "KU-a3d5d1f07d12fb4f"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {
+            "KU-05e62c2d5014acd8": [
+              "heading:versus-distinction"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-05e62c2d5014acd8"
+            ]
+          },
+          "ku_ids": [
+            "KU-05e62c2d5014acd8"
+          ]
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-92a81afc5b276bf8": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-a3d5d1f07d12fb4f": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-92a81afc5b276bf8"
+            ],
+            "master-ai": [
+              "KU-a3d5d1f07d12fb4f"
+            ]
+          },
+          "ku_ids": [
+            "KU-92a81afc5b276bf8",
+            "KU-a3d5d1f07d12fb4f"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0001",
+      "gaps": [
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "critical_distinctions",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        }
+      ],
+      "ku_count": 3,
+      "ku_ids": [
+        "KU-05e62c2d5014acd8",
+        "KU-92a81afc5b276bf8",
+        "KU-a3d5d1f07d12fb4f"
+      ],
+      "label": "Overfitting means fitting the training data well while failing on unseen data; the training-vs-validation/test gap is the diagnostic",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0001"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-6013f98fb637f9a6"
+        ],
+        "master-ai": [
+          "KU-5465d83e21153c84",
+          "KU-bdf957f03f050500"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {
+            "KU-bdf957f03f050500": [
+              "heading:engineering-guidance"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-bdf957f03f050500"
+            ]
+          },
+          "ku_ids": [
+            "KU-bdf957f03f050500"
+          ]
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {
+            "KU-5465d83e21153c84": [
+              "heading:versus-distinction"
+            ],
+            "KU-bdf957f03f050500": [
+              "heading:versus-distinction"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-5465d83e21153c84",
+              "KU-bdf957f03f050500"
+            ]
+          },
+          "ku_ids": [
+            "KU-5465d83e21153c84",
+            "KU-bdf957f03f050500"
+          ]
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-6013f98fb637f9a6": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-6013f98fb637f9a6"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-6013f98fb637f9a6"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0002",
+      "gaps": [
+        {
+          "absent_vault": "master-ai",
+          "category": "definitions_terminology",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "applications_engineering",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "critical_distinctions",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        }
+      ],
+      "ku_count": 3,
+      "ku_ids": [
+        "KU-5465d83e21153c84",
+        "KU-6013f98fb637f9a6",
+        "KU-bdf957f03f050500"
+      ],
+      "label": "Detect overfitting by monitoring training vs validation loss/accuracy on held-out data; the divergence point marks its onset",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0002"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-0ce2394b60e97e47"
+        ],
+        "master-ai": [
+          "KU-a2b55286da56e327",
+          "KU-ac676c6254348c94"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {
+            "KU-a2b55286da56e327": [
+              "heading:versus-distinction"
+            ],
+            "KU-ac676c6254348c94": [
+              "heading:versus-distinction"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-a2b55286da56e327",
+              "KU-ac676c6254348c94"
+            ]
+          },
+          "ku_ids": [
+            "KU-a2b55286da56e327",
+            "KU-ac676c6254348c94"
+          ]
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-0ce2394b60e97e47": [
+              "default:no-rule-fired(unit_type=list)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-0ce2394b60e97e47"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-0ce2394b60e97e47"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0003",
+      "gaps": [
+        {
+          "absent_vault": "master-ai",
+          "category": "definitions_terminology",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "critical_distinctions",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        }
+      ],
+      "ku_count": 3,
+      "ku_ids": [
+        "KU-0ce2394b60e97e47",
+        "KU-a2b55286da56e327",
+        "KU-ac676c6254348c94"
+      ],
+      "label": "Overfitting arises from excess model capacity relative to the training data: the model fits noise / memorizes instead of learning generalizable features",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0003"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-912b55f98ace322a",
+          "KU-a91968f779904bd7"
+        ],
+        "master-ai": [
+          "KU-8d9a2c63ae27d1cc"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-8d9a2c63ae27d1cc": [
+              "default:no-rule-fired(unit_type=callout)"
+            ],
+            "KU-912b55f98ace322a": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-a91968f779904bd7": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-912b55f98ace322a",
+              "KU-a91968f779904bd7"
+            ],
+            "master-ai": [
+              "KU-8d9a2c63ae27d1cc"
+            ]
+          },
+          "ku_ids": [
+            "KU-8d9a2c63ae27d1cc",
+            "KU-912b55f98ace322a",
+            "KU-a91968f779904bd7"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0004",
+      "gaps": [
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 3,
+      "ku_ids": [
+        "KU-8d9a2c63ae27d1cc",
+        "KU-912b55f98ace322a",
+        "KU-a91968f779904bd7"
+      ],
+      "label": "Regularization is the family of techniques that prevent overfitting by constraining the model; the canonical members are L1/L2 (weight decay), dropout, early stopping, data augmentation, and label smoothing",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0004"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-69b30d0ea2dc08d1",
+          "KU-a5fab64b9d930285"
+        ],
+        "master-ai": [
+          "KU-6aac08208c91a4b4",
+          "KU-8b7b0cc57d97927c"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-69b30d0ea2dc08d1": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-8b7b0cc57d97927c": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-a5fab64b9d930285": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-69b30d0ea2dc08d1",
+              "KU-a5fab64b9d930285"
+            ],
+            "master-ai": [
+              "KU-8b7b0cc57d97927c"
+            ]
+          },
+          "ku_ids": [
+            "KU-69b30d0ea2dc08d1",
+            "KU-8b7b0cc57d97927c",
+            "KU-a5fab64b9d930285"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {
+            "KU-6aac08208c91a4b4": [
+              "unit_type:math_block"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-6aac08208c91a4b4"
+            ]
+          },
+          "ku_ids": [
+            "KU-6aac08208c91a4b4"
+          ]
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0005",
+      "gaps": [
+        {
+          "absent_vault": "ai-course",
+          "category": "mathematical_foundations",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 4,
+      "ku_ids": [
+        "KU-69b30d0ea2dc08d1",
+        "KU-6aac08208c91a4b4",
+        "KU-8b7b0cc57d97927c",
+        "KU-a5fab64b9d930285"
+      ],
+      "label": "L2 regularization (weight decay) adds a squared-weight penalty to the loss, shrinking weights toward zero and yielding smoother decision boundaries that generalize better",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0005"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-36d3158c44730403"
+        ],
+        "master-ai": [
+          "KU-a824c50137150b54"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-36d3158c44730403": [
+              "default:no-rule-fired(unit_type=callout)"
+            ],
+            "KU-a824c50137150b54": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-36d3158c44730403"
+            ],
+            "master-ai": [
+              "KU-a824c50137150b54"
+            ]
+          },
+          "ku_ids": [
+            "KU-36d3158c44730403",
+            "KU-a824c50137150b54"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0006",
+      "gaps": [
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 2,
+      "ku_ids": [
+        "KU-36d3158c44730403",
+        "KU-a824c50137150b54"
+      ],
+      "label": "In adaptive optimizers, L2 must be implemented as decoupled weight decay (AdamW), applying the decay directly to the weights rather than through the gradient; prefer AdamW over Adam + weight_decay",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0006"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-1b18784d8030bfc6",
+          "KU-ddfa45e76bc3f17f"
+        ],
+        "master-ai": [
+          "KU-8aa83cca4a5990d0",
+          "KU-8b7b0cc57d97927c"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-1b18784d8030bfc6": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-8aa83cca4a5990d0": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-8b7b0cc57d97927c": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-ddfa45e76bc3f17f": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-1b18784d8030bfc6",
+              "KU-ddfa45e76bc3f17f"
+            ],
+            "master-ai": [
+              "KU-8aa83cca4a5990d0",
+              "KU-8b7b0cc57d97927c"
+            ]
+          },
+          "ku_ids": [
+            "KU-1b18784d8030bfc6",
+            "KU-8aa83cca4a5990d0",
+            "KU-8b7b0cc57d97927c",
+            "KU-ddfa45e76bc3f17f"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0007",
+      "gaps": [
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 4,
+      "ku_ids": [
+        "KU-1b18784d8030bfc6",
+        "KU-8aa83cca4a5990d0",
+        "KU-8b7b0cc57d97927c",
+        "KU-ddfa45e76bc3f17f"
+      ],
+      "label": "L1 regularization penalizes absolute weight values and drives exact zeros (sparsity, feature selection), unlike L2 which shrinks but rarely zeroes; L1 is consequently less used in deep learning than L2",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0007"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-69b30d0ea2dc08d1"
+        ],
+        "master-ai": [
+          "KU-b7f8fa23e460ebb9"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {
+            "KU-b7f8fa23e460ebb9": [
+              "heading:engineering-guidance"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-b7f8fa23e460ebb9"
+            ]
+          },
+          "ku_ids": [
+            "KU-b7f8fa23e460ebb9"
+          ]
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-69b30d0ea2dc08d1": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-69b30d0ea2dc08d1"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-69b30d0ea2dc08d1"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0008",
+      "gaps": [
+        {
+          "absent_vault": "master-ai",
+          "category": "definitions_terminology",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "applications_engineering",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 2,
+      "ku_ids": [
+        "KU-69b30d0ea2dc08d1",
+        "KU-b7f8fa23e460ebb9"
+      ],
+      "label": "Biases (and normalization parameters) are excluded from the L2/weight-decay penalty",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0008"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-a5f74256be30d4ef"
+        ],
+        "master-ai": [
+          "KU-b7f8fa23e460ebb9"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {
+            "KU-b7f8fa23e460ebb9": [
+              "heading:engineering-guidance"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-b7f8fa23e460ebb9"
+            ]
+          },
+          "ku_ids": [
+            "KU-b7f8fa23e460ebb9"
+          ]
+        },
+        "code_implementation": {
+          "assignment_bases": {
+            "KU-a5f74256be30d4ef": [
+              "unit_type:code_block"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-a5f74256be30d4ef"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-a5f74256be30d4ef"
+          ]
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0009",
+      "gaps": [
+        {
+          "category": "definitions_terminology",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "master-ai",
+          "category": "code_implementation",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "applications_engineering",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 2,
+      "ku_ids": [
+        "KU-a5f74256be30d4ef",
+        "KU-b7f8fa23e460ebb9"
+      ],
+      "label": "Typical weight-decay values and their tuning context (moderate defaults; stronger for AdamW than SGD-CNN training)",
+      "overlap_type": "Partial Overlap",
+      "source_classification_id": "OC-ext009-0009"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-1846c2a3c8c577a1"
+        ],
+        "master-ai": [
+          "KU-dffd060992d910a5"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-1846c2a3c8c577a1": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-1846c2a3c8c577a1"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-1846c2a3c8c577a1"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {
+            "KU-dffd060992d910a5": [
+              "heading:year-reference"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-dffd060992d910a5"
+            ]
+          },
+          "ku_ids": [
+            "KU-dffd060992d910a5"
+          ]
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0010",
+      "gaps": [
+        {
+          "absent_vault": "master-ai",
+          "category": "definitions_terminology",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "historical_deprecated",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 2,
+      "ku_ids": [
+        "KU-1846c2a3c8c577a1",
+        "KU-dffd060992d910a5"
+      ],
+      "label": "Dropout mechanism: during training randomly set a fraction p of neurons/activations to zero; at test time use the full network",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0010"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-1846c2a3c8c577a1",
+          "KU-d64c3f1ff258b05b"
+        ],
+        "master-ai": [
+          "KU-b57933c8b5bce1f0"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-1846c2a3c8c577a1": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-1846c2a3c8c577a1"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-1846c2a3c8c577a1"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {
+            "KU-d64c3f1ff258b05b": [
+              "heading:mathematical"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-d64c3f1ff258b05b"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-d64c3f1ff258b05b"
+          ]
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {
+            "KU-b57933c8b5bce1f0": [
+              "heading:failure-case"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-b57933c8b5bce1f0"
+            ]
+          },
+          "ku_ids": [
+            "KU-b57933c8b5bce1f0"
+          ]
+        }
+      },
+      "concept_id": "CD-generalization-0011",
+      "gaps": [
+        {
+          "absent_vault": "master-ai",
+          "category": "definitions_terminology",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "absent_vault": "master-ai",
+          "category": "mathematical_foundations",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "worked_examples_failure_cases",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 3,
+      "ku_ids": [
+        "KU-1846c2a3c8c577a1",
+        "KU-b57933c8b5bce1f0",
+        "KU-d64c3f1ff258b05b"
+      ],
+      "label": "Inverted dropout: survivors are scaled by 1/(1-p) during training so that expected outputs are preserved and no test-time adjustment is needed",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0011"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-e2fade691f1b99c8",
+          "KU-ee136aa501cf3e45"
+        ],
+        "master-ai": [
+          "KU-b57933c8b5bce1f0"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {
+            "KU-e2fade691f1b99c8": [
+              "heading:versus-distinction"
+            ],
+            "KU-ee136aa501cf3e45": [
+              "heading:versus-distinction"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-e2fade691f1b99c8",
+              "KU-ee136aa501cf3e45"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-e2fade691f1b99c8",
+            "KU-ee136aa501cf3e45"
+          ]
+        },
+        "definitions_terminology": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {
+            "KU-b57933c8b5bce1f0": [
+              "heading:failure-case"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-b57933c8b5bce1f0"
+            ]
+          },
+          "ku_ids": [
+            "KU-b57933c8b5bce1f0"
+          ]
+        }
+      },
+      "concept_id": "CD-generalization-0012",
+      "gaps": [
+        {
+          "category": "definitions_terminology",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "worked_examples_failure_cases",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "master-ai",
+          "category": "critical_distinctions",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        }
+      ],
+      "ku_count": 3,
+      "ku_ids": [
+        "KU-b57933c8b5bce1f0",
+        "KU-e2fade691f1b99c8",
+        "KU-ee136aa501cf3e45"
+      ],
+      "label": "Never apply dropout at inference; forgetting model.eval() before evaluation is a common silent bug — always switch modes explicitly",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0012"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-1396f3ea49e151a4",
+          "KU-35c47d029dfcff49",
+          "KU-4f6fcccc0aba49d9"
+        ],
+        "master-ai": [
+          "KU-51e16f7ca33a80dc"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {
+            "KU-51e16f7ca33a80dc": [
+              "heading:interpretation-intuition"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-51e16f7ca33a80dc"
+            ]
+          },
+          "ku_ids": [
+            "KU-51e16f7ca33a80dc"
+          ]
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-1396f3ea49e151a4": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-35c47d029dfcff49": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-4f6fcccc0aba49d9": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-1396f3ea49e151a4",
+              "KU-35c47d029dfcff49",
+              "KU-4f6fcccc0aba49d9"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-1396f3ea49e151a4",
+            "KU-35c47d029dfcff49",
+            "KU-4f6fcccc0aba49d9"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {
+            "KU-51e16f7ca33a80dc": [
+              "heading:year-reference"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-51e16f7ca33a80dc"
+            ]
+          },
+          "ku_ids": [
+            "KU-51e16f7ca33a80dc"
+          ]
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0013",
+      "gaps": [
+        {
+          "absent_vault": "master-ai",
+          "category": "definitions_terminology",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "alternative_explanations",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "historical_deprecated",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 4,
+      "ku_ids": [
+        "KU-1396f3ea49e151a4",
+        "KU-35c47d029dfcff49",
+        "KU-4f6fcccc0aba49d9",
+        "KU-51e16f7ca33a80dc"
+      ],
+      "label": "Why dropout works: it prevents neuron co-adaptation and behaves as ensemble/model averaging over sub-networks",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0013"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-a815459bcd3d5df0",
+          "KU-c551b121821ab609",
+          "KU-f454ef1318368321"
+        ],
+        "master-ai": [
+          "KU-05e7a613b0b6f785",
+          "KU-b8db22e905dfdfaa"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {
+            "KU-f454ef1318368321": [
+              "heading:engineering-guidance"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-f454ef1318368321"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-f454ef1318368321"
+          ]
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {
+            "KU-f454ef1318368321": [
+              "heading:versus-distinction"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-f454ef1318368321"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-f454ef1318368321"
+          ]
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-a815459bcd3d5df0": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-c551b121821ab609": [
+              "default:no-rule-fired(unit_type=list)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-a815459bcd3d5df0",
+              "KU-c551b121821ab609"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-a815459bcd3d5df0",
+            "KU-c551b121821ab609"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {
+            "KU-05e7a613b0b6f785": [
+              "heading:year-reference"
+            ],
+            "KU-b8db22e905dfdfaa": [
+              "heading:year-reference"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-05e7a613b0b6f785",
+              "KU-b8db22e905dfdfaa"
+            ]
+          },
+          "ku_ids": [
+            "KU-05e7a613b0b6f785",
+            "KU-b8db22e905dfdfaa"
+          ]
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0014",
+      "gaps": [
+        {
+          "absent_vault": "master-ai",
+          "category": "definitions_terminology",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "master-ai",
+          "category": "applications_engineering",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "historical_deprecated",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        },
+        {
+          "absent_vault": "master-ai",
+          "category": "critical_distinctions",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        }
+      ],
+      "ku_count": 5,
+      "ku_ids": [
+        "KU-05e7a613b0b6f785",
+        "KU-a815459bcd3d5df0",
+        "KU-b8db22e905dfdfaa",
+        "KU-c551b121821ab609",
+        "KU-f454ef1318368321"
+      ],
+      "label": "Standard dropout rates: strongest (~0.5) on large fully connected / hidden layers, weaker elsewhere; modern practice uses little or no dropout because other regularizers suffice",
+      "overlap_type": "Partial Overlap",
+      "source_classification_id": "OC-ext009-0014"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-62af384e5050dfdb",
+          "KU-93c72dcb72560df5"
+        ],
+        "master-ai": [
+          "KU-b57933c8b5bce1f0"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-62af384e5050dfdb": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-93c72dcb72560df5": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-62af384e5050dfdb",
+              "KU-93c72dcb72560df5"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-62af384e5050dfdb",
+            "KU-93c72dcb72560df5"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {
+            "KU-b57933c8b5bce1f0": [
+              "heading:failure-case"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-b57933c8b5bce1f0"
+            ]
+          },
+          "ku_ids": [
+            "KU-b57933c8b5bce1f0"
+          ]
+        }
+      },
+      "concept_id": "CD-generalization-0015",
+      "gaps": [
+        {
+          "absent_vault": "master-ai",
+          "category": "definitions_terminology",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "worked_examples_failure_cases",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 3,
+      "ku_ids": [
+        "KU-62af384e5050dfdb",
+        "KU-93c72dcb72560df5",
+        "KU-b57933c8b5bce1f0"
+      ],
+      "label": "Dropout/regularizer placement: never on the output layer; concentrate where parameter count and overfitting risk are highest (the large FC layers)",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0015"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-78e888bebd79929f",
+          "KU-e0b8b7e81c307f9f",
+          "KU-e872f67a8b4b97b5"
+        ],
+        "master-ai": [
+          "KU-756e1177e18287d2",
+          "KU-bf545b7a84be1551"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-756e1177e18287d2": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-78e888bebd79929f": [
+              "default:no-rule-fired(unit_type=callout)"
+            ],
+            "KU-bf545b7a84be1551": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-e0b8b7e81c307f9f": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-e872f67a8b4b97b5": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-78e888bebd79929f",
+              "KU-e0b8b7e81c307f9f",
+              "KU-e872f67a8b4b97b5"
+            ],
+            "master-ai": [
+              "KU-756e1177e18287d2",
+              "KU-bf545b7a84be1551"
+            ]
+          },
+          "ku_ids": [
+            "KU-756e1177e18287d2",
+            "KU-78e888bebd79929f",
+            "KU-bf545b7a84be1551",
+            "KU-e0b8b7e81c307f9f",
+            "KU-e872f67a8b4b97b5"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0016",
+      "gaps": [
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 5,
+      "ku_ids": [
+        "KU-756e1177e18287d2",
+        "KU-78e888bebd79929f",
+        "KU-bf545b7a84be1551",
+        "KU-e0b8b7e81c307f9f",
+        "KU-e872f67a8b4b97b5"
+      ],
+      "label": "Early stopping: halt training when validation loss stops improving (patience-based), and keep the checkpoint from the best-validation epoch",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0016"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-97ca84434b43aa8d",
+          "KU-d003d59f52c01995",
+          "KU-ff2b20e6eedcb3d7"
+        ],
+        "master-ai": [
+          "KU-6ae3e0a7a7570d68",
+          "KU-e06059c050c4a443"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-6ae3e0a7a7570d68": [
+              "default:no-rule-fired(unit_type=list)"
+            ],
+            "KU-97ca84434b43aa8d": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-d003d59f52c01995": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-e06059c050c4a443": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-ff2b20e6eedcb3d7": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-97ca84434b43aa8d",
+              "KU-d003d59f52c01995",
+              "KU-ff2b20e6eedcb3d7"
+            ],
+            "master-ai": [
+              "KU-6ae3e0a7a7570d68",
+              "KU-e06059c050c4a443"
+            ]
+          },
+          "ku_ids": [
+            "KU-6ae3e0a7a7570d68",
+            "KU-97ca84434b43aa8d",
+            "KU-d003d59f52c01995",
+            "KU-e06059c050c4a443",
+            "KU-ff2b20e6eedcb3d7"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0017",
+      "gaps": [
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 5,
+      "ku_ids": [
+        "KU-6ae3e0a7a7570d68",
+        "KU-97ca84434b43aa8d",
+        "KU-d003d59f52c01995",
+        "KU-e06059c050c4a443",
+        "KU-ff2b20e6eedcb3d7"
+      ],
+      "label": "Label smoothing: replace one-hot targets with soft targets (smoothing ~0.1) to prevent overconfidence",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0017"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-55ae61981a802fde",
+          "KU-702618d2571d4302"
+        ],
+        "master-ai": [
+          "KU-882d3292c5bc7a61"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-55ae61981a802fde": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-702618d2571d4302": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-882d3292c5bc7a61": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-55ae61981a802fde",
+              "KU-702618d2571d4302"
+            ],
+            "master-ai": [
+              "KU-882d3292c5bc7a61"
+            ]
+          },
+          "ku_ids": [
+            "KU-55ae61981a802fde",
+            "KU-702618d2571d4302",
+            "KU-882d3292c5bc7a61"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0018",
+      "gaps": [
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 3,
+      "ku_ids": [
+        "KU-55ae61981a802fde",
+        "KU-702618d2571d4302",
+        "KU-882d3292c5bc7a61"
+      ],
+      "label": "Batch normalization has a regularization side effect: the noise of mini-batch statistics acts like dropout-style noise and improves generalization (though weaker than dropout)",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0018"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-f454ef1318368321"
+        ],
+        "master-ai": [
+          "KU-b57933c8b5bce1f0"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {
+            "KU-f454ef1318368321": [
+              "heading:engineering-guidance"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-f454ef1318368321"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-f454ef1318368321"
+          ]
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {
+            "KU-f454ef1318368321": [
+              "heading:versus-distinction"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-f454ef1318368321"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-f454ef1318368321"
+          ]
+        },
+        "definitions_terminology": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {
+            "KU-b57933c8b5bce1f0": [
+              "heading:failure-case"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-b57933c8b5bce1f0"
+            ]
+          },
+          "ku_ids": [
+            "KU-b57933c8b5bce1f0"
+          ]
+        }
+      },
+      "concept_id": "CD-generalization-0019",
+      "gaps": [
+        {
+          "category": "definitions_terminology",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "worked_examples_failure_cases",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "master-ai",
+          "category": "applications_engineering",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "master-ai",
+          "category": "critical_distinctions",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        }
+      ],
+      "ku_count": 2,
+      "ku_ids": [
+        "KU-b57933c8b5bce1f0",
+        "KU-f454ef1318368321"
+      ],
+      "label": "Too much regularization causes underfitting: watch training loss and regularize less if it cannot decrease",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0019"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-05daab826792e22c"
+        ],
+        "master-ai": [
+          "KU-a3d5d1f07d12fb4f"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-05daab826792e22c": [
+              "default:no-rule-fired(unit_type=callout)"
+            ],
+            "KU-a3d5d1f07d12fb4f": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-05daab826792e22c"
+            ],
+            "master-ai": [
+              "KU-a3d5d1f07d12fb4f"
+            ]
+          },
+          "ku_ids": [
+            "KU-05daab826792e22c",
+            "KU-a3d5d1f07d12fb4f"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0020",
+      "gaps": [
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 2,
+      "ku_ids": [
+        "KU-05daab826792e22c",
+        "KU-a3d5d1f07d12fb4f"
+      ],
+      "label": "Regularization deliberately trades training performance for generalization: a regularized model can be better despite lower training accuracy",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0020"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-02809b63c8feef72",
+          "KU-37ae54e552881289",
+          "KU-9d3544c2dcde095a"
+        ],
+        "master-ai": [
+          "KU-40510aab1d3530df",
+          "KU-ef3a7b46104d1929"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-02809b63c8feef72": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-37ae54e552881289": [
+              "default:no-rule-fired(unit_type=list)"
+            ],
+            "KU-40510aab1d3530df": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-9d3544c2dcde095a": [
+              "default:no-rule-fired(unit_type=callout)"
+            ],
+            "KU-ef3a7b46104d1929": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-02809b63c8feef72",
+              "KU-37ae54e552881289",
+              "KU-9d3544c2dcde095a"
+            ],
+            "master-ai": [
+              "KU-40510aab1d3530df",
+              "KU-ef3a7b46104d1929"
+            ]
+          },
+          "ku_ids": [
+            "KU-02809b63c8feef72",
+            "KU-37ae54e552881289",
+            "KU-40510aab1d3530df",
+            "KU-9d3544c2dcde095a",
+            "KU-ef3a7b46104d1929"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0021",
+      "gaps": [
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 5,
+      "ku_ids": [
+        "KU-02809b63c8feef72",
+        "KU-37ae54e552881289",
+        "KU-40510aab1d3530df",
+        "KU-9d3544c2dcde095a",
+        "KU-ef3a7b46104d1929"
+      ],
+      "label": "Data augmentation: artificially expand the training set with label-preserving transformations; the practical remedy when data is limited, especially for vision",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0021"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-4175c9f4f8f2a4c5"
+        ],
+        "master-ai": [
+          "KU-a787b4fbedd9be3d"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-4175c9f4f8f2a4c5": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-a787b4fbedd9be3d": [
+              "default:no-rule-fired(unit_type=list)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-4175c9f4f8f2a4c5"
+            ],
+            "master-ai": [
+              "KU-a787b4fbedd9be3d"
+            ]
+          },
+          "ku_ids": [
+            "KU-4175c9f4f8f2a4c5",
+            "KU-a787b4fbedd9be3d"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0022",
+      "gaps": [
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 2,
+      "ku_ids": [
+        "KU-4175c9f4f8f2a4c5",
+        "KU-a787b4fbedd9be3d"
+      ],
+      "label": "The standard vision-augmentation inventory: flips, crops, rotation, color jitter (plus mixup/cutmix as advanced image techniques)",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0022"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-35c47d029dfcff49"
+        ],
+        "master-ai": [
+          "KU-3600ad4fde6afdfc"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {
+            "KU-3600ad4fde6afdfc": [
+              "heading:versus-distinction"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-3600ad4fde6afdfc"
+            ]
+          },
+          "ku_ids": [
+            "KU-3600ad4fde6afdfc"
+          ]
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-35c47d029dfcff49": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-35c47d029dfcff49"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-35c47d029dfcff49"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0023",
+      "gaps": [
+        {
+          "absent_vault": "master-ai",
+          "category": "definitions_terminology",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "critical_distinctions",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        }
+      ],
+      "ku_count": 2,
+      "ku_ids": [
+        "KU-35c47d029dfcff49",
+        "KU-3600ad4fde6afdfc"
+      ],
+      "label": "Averaging multiple models (ensembling/bagging) yields more accurate, more robust predictions than any single model",
+      "overlap_type": "Partial Overlap",
+      "source_classification_id": "OC-ext009-0023"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-92a81afc5b276bf8"
+        ],
+        "master-ai": [
+          "KU-93065c9a5a291a96"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {
+            "KU-93065c9a5a291a96": [
+              "heading:versus-distinction"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-93065c9a5a291a96"
+            ]
+          },
+          "ku_ids": [
+            "KU-93065c9a5a291a96"
+          ]
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-92a81afc5b276bf8": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-92a81afc5b276bf8"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-92a81afc5b276bf8"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0024",
+      "gaps": [
+        {
+          "absent_vault": "master-ai",
+          "category": "definitions_terminology",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "critical_distinctions",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        }
+      ],
+      "ku_count": 2,
+      "ku_ids": [
+        "KU-92a81afc5b276bf8",
+        "KU-93065c9a5a291a96"
+      ],
+      "label": "Complementary framings of the overfitting phenomenon: master-ai's bias-variance decomposition apparatus vs the course's memorization/train-gap framing",
+      "overlap_type": "Complementary Content",
+      "source_classification_id": "OC-ext009-0024"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-3ef4ccdf82541f8b",
+          "KU-e505772836e129f9"
+        ],
+        "master-ai": [
+          "KU-7b051b86c10d5da1"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {
+            "KU-3ef4ccdf82541f8b": [
+              "heading:implementation"
+            ],
+            "KU-e505772836e129f9": [
+              "heading:implementation"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-3ef4ccdf82541f8b",
+              "KU-e505772836e129f9"
+            ],
+            "master-ai": []
+          },
+          "ku_ids": [
+            "KU-3ef4ccdf82541f8b",
+            "KU-e505772836e129f9"
+          ]
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {
+            "KU-7b051b86c10d5da1": [
+              "heading:versus-distinction"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-7b051b86c10d5da1"
+            ]
+          },
+          "ku_ids": [
+            "KU-7b051b86c10d5da1"
+          ]
+        },
+        "definitions_terminology": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {
+            "KU-7b051b86c10d5da1": [
+              "heading:failure-case"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": [
+              "KU-7b051b86c10d5da1"
+            ]
+          },
+          "ku_ids": [
+            "KU-7b051b86c10d5da1"
+          ]
+        }
+      },
+      "concept_id": "CD-generalization-0025",
+      "gaps": [
+        {
+          "category": "definitions_terminology",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "worked_examples_failure_cases",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        },
+        {
+          "absent_vault": "master-ai",
+          "category": "code_implementation",
+          "kind": "single_vault",
+          "present_vault": "ai-course"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "absent_vault": "ai-course",
+          "category": "critical_distinctions",
+          "kind": "single_vault",
+          "present_vault": "master-ai"
+        }
+      ],
+      "ku_count": 3,
+      "ku_ids": [
+        "KU-3ef4ccdf82541f8b",
+        "KU-7b051b86c10d5da1",
+        "KU-e505772836e129f9"
+      ],
+      "label": "Complementary evaluation-data hygiene rules: master-ai's leakage discipline (tune on validation, evaluate once on test) vs the course's deterministic-transforms rule (never augment validation/test data)",
+      "overlap_type": "Complementary Content",
+      "source_classification_id": "OC-ext009-0025"
+    },
+    {
+      "by_vault": {
+        "ai-course": [
+          "KU-c35e357516d553a7"
+        ],
+        "master-ai": [
+          "KU-bbd3111786c76e44"
+        ]
+      },
+      "categories": {
+        "alternative_explanations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "applications_engineering": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "code_implementation": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "computational_mechanics": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "critical_distinctions": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "definitions_terminology": {
+          "assignment_bases": {
+            "KU-bbd3111786c76e44": [
+              "default:no-rule-fired(unit_type=prose)"
+            ],
+            "KU-c35e357516d553a7": [
+              "default:no-rule-fired(unit_type=prose)"
+            ]
+          },
+          "by_vault": {
+            "ai-course": [
+              "KU-c35e357516d553a7"
+            ],
+            "master-ai": [
+              "KU-bbd3111786c76e44"
+            ]
+          },
+          "ku_ids": [
+            "KU-bbd3111786c76e44",
+            "KU-c35e357516d553a7"
+          ]
+        },
+        "historical_deprecated": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "interview_misconceptions_comparisons": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "mathematical_foundations": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        },
+        "worked_examples_failure_cases": {
+          "assignment_bases": {},
+          "by_vault": {
+            "ai-course": [],
+            "master-ai": []
+          },
+          "ku_ids": []
+        }
+      },
+      "concept_id": "CD-generalization-0026",
+      "gaps": [
+        {
+          "category": "mathematical_foundations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "computational_mechanics",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "alternative_explanations",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "worked_examples_failure_cases",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "code_implementation",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "applications_engineering",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "interview_misconceptions_comparisons",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "historical_deprecated",
+          "kind": "no_evidence"
+        },
+        {
+          "category": "critical_distinctions",
+          "kind": "no_evidence"
+        }
+      ],
+      "ku_count": 2,
+      "ku_ids": [
+        "KU-bbd3111786c76e44",
+        "KU-c35e357516d553a7"
+      ],
+      "label": "LayerNorm (not BatchNorm) is the standard normalization for Transformer/sequence architectures, because sequence lengths and batch statistics vary",
+      "overlap_type": "Semantic Duplicate",
+      "source_classification_id": "OC-ext009-0026"
+    }
+  ],
+  "domain": "generalization",
+  "dossier_id": "generalization-v1",
+  "generated_by": "scripts/ext006_dossiers.py",
+  "provenance": {
+    "batches": [
+      {
+        "path": "state/knowledge-units/008-ext009-master-ai-generalization.jsonl",
+        "record_count": 106,
+        "sha256": "2e258f18016bcfa0052f1bcedbbfa3fb3e2969982471eec65a009c3a1641db3f"
+      },
+      {
+        "path": "state/knowledge-units/009-ext009-ai-course-04.3-regularization.jsonl",
+        "record_count": 234,
+        "sha256": "479e1eda83549ddbc290e8acb0216b8b9f0d77f4284a0350e6073f5d9050c6fb"
+      }
+    ],
+    "classification_files": [
+      {
+        "path": "state/classifications/006-ext009-generalization-overlap.jsonl",
+        "record_count": 26,
+        "sha256": "0a2fad92c2c995f82f27a87922d7ec50dceb7ff7c13a9bc23ce18ff11b5ba923"
+      }
+    ]
+  },
+  "rule_set": "ext006-category-rules-v1",
+  "version": "v1"
+}

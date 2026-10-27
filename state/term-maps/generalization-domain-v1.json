@@ -1,0 +1,136 @@
+{
+  "_comment": "Generalization/regularization domain term/alias map for EXT-009 cross-vault candidate discovery (CAP-013). Canonical term -> aliases. Built from the actual content of batch 008 (master-ai '03 - Machine Learning/Generalization' — 01 Bias Variance Tradeoff + 06 Regularization Techniques, 2 files, 106 KUs) and batch 009 (ai-course '04.3 - Training Dynamics and Stability' files 05 Batch Normalization + 06 Dropout and Regularization + 07 Data Augmentation — the regularization-relevant subset of that folder, 3 of 7 files, 234 KUs; three deterministic single-file runs concatenated in fixed order); every term and alias is verified to occur inside at least one in-scope KU excerpt by scripts/ext009_term_map.py after two probe rounds (scripts/ext009_term_probe{,2}.py; reports/extraction/ext009-term-map-verification.json). HEADING-ONLY vocabulary correctly EXCLUDED (EXT-004 rule: headings are not KU-excerpt evidence): 'lasso' and 'weight tying' exist only as master-ai section headings ('### L1 (Lasso)', '## Weight Tying') and never inside a KU excerpt; 'scikit-learn', 'smoothness', 'test-time augmentation', 'drop rate', 'drop probability', 'inference mode', 'coadaptation', 'augment', 'language model', 'fine-tune' are absent from both batches. BRIDGE aliases deliberately connect different surface forms of the same concept across vaults: 'batchnorm' (cross-vault compound) with 'batch norm' (master-ai) and 'BN' (ai-course); 'test set' (master-ai) with 'test data' (ai-course); 'hyperparameter' (ai-course) with 'hyperparameters' (master-ai); 'regularize' (master-ai) with 'regularized' (ai-course). KNOWN SPURIOUS/SENSE-COLLISION SOURCES, recorded here so classification dismisses or adjudicates them with evidence: (1) 'noise' — master-ai uses it for irreducible noise, noise injection, and batch-statistics noise; ai-course for Gaussian-noise augmentation; (2) 'translation'/'shift' — ai-course geometric transformations vs master-ai 'back-translation' (text augmentation) and 'pitch shift' (audio augmentation) — both sides ARE augmentation senses but of different operations; (3) 'scaling' — dropout/inverted-dropout scaling (both vaults) vs master-ai 'Scaling Laws' pretraining link; (4) 'L1'/'L2' — occur in one mermaid diagram (KU-8612af2c187e43bf) and in python code blocks; CAP-013 mermaid-node-suspect flagging and code-fence handling apply (F-0006); (5) 'bias'/'variance' — statistical senses (master-ai core) vs BN parameter names 'beta'/'gamma' and batch variance (ai-course); (6) 'inference' — dropout-at-inference (master-ai pitfall list) vs LLM inference contexts. Keys starting with _ are documentation and ignored by the loader.",
+  "bias": [],
+  "variance": [],
+  "bias-variance": [
+    "bias variance"
+  ],
+  "overfitting": [
+    "overfit"
+  ],
+  "underfitting": [
+    "underfit"
+  ],
+  "generalization": [
+    "generalize",
+    "generalizes"
+  ],
+  "irreducible": [],
+  "decomposition": [],
+  "tradeoff": [
+    "trade-off"
+  ],
+  "model complexity": [],
+  "learning curve": [],
+  "double descent": [],
+  "ensemble": [
+    "ensembling"
+  ],
+  "memorize": [
+    "memorization"
+  ],
+  "capacity": [],
+  "validation": [
+    "validation set",
+    "validation data",
+    "validation loss"
+  ],
+  "test set": [
+    "test data"
+  ],
+  "training set": [
+    "training data"
+  ],
+  "regularization": [
+    "regularize",
+    "regularized",
+    "implicit regularization"
+  ],
+  "L1": [],
+  "L2": [],
+  "ridge": [],
+  "elastic net": [],
+  "weight decay": [],
+  "penalty": [
+    "penalties"
+  ],
+  "dropout": [],
+  "early stopping": [],
+  "data augmentation": [
+    "augmentation"
+  ],
+  "label smoothing": [],
+  "batchnorm": [
+    "BatchNorm",
+    "batch norm",
+    "BN"
+  ],
+  "normalization": [
+    "normalize",
+    "normalizing"
+  ],
+  "covariate shift": [
+    "internal covariate shift"
+  ],
+  "gamma": [],
+  "beta": [],
+  "moving average": [],
+  "co-adaptation": [],
+  "inverted dropout": [],
+  "training mode": [],
+  "evaluation mode": [
+    "eval mode"
+  ],
+  "dropout rate": [],
+  "scaling": [],
+  "inference": [],
+  "crop": [
+    "cropping",
+    "random crop"
+  ],
+  "rotation": [
+    "rotations",
+    "rotate"
+  ],
+  "horizontal flip": [
+    "flipping",
+    "flips"
+  ],
+  "translation": [
+    "shift",
+    "shifting"
+  ],
+  "color jitter": [
+    "jitter"
+  ],
+  "mixup": [],
+  "cutmix": [],
+  "cutout": [],
+  "random erasing": [
+    "erasing"
+  ],
+  "grayscale": [],
+  "Gaussian noise": [],
+  "noise": [],
+  "sparse": [
+    "sparsity"
+  ],
+  "hyperparameter": [
+    "hyperparameters"
+  ],
+  "PyTorch": [
+    "torch"
+  ],
+  "sklearn": [],
+  "epoch": [
+    "epochs"
+  ],
+  "AdamW": [],
+  "SGD": [],
+  "transformer": [
+    "transformers"
+  ],
+  "LLM": [],
+  "fine-tuning": [],
+  "pipeline": []
+}

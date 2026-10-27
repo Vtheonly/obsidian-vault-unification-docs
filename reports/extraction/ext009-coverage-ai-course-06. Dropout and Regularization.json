@@ -1,0 +1,109 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "command": "extract-kus",
+    "framework_version": "0.5.0",
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/06. Dropout and Regularization.md",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/ext009-run1-06. Dropout and Regularization.jsonl",
+    "records_written": 73,
+    "denominators": {
+      "files_in_scope": 1,
+      "files_extracted": 1,
+      "files_excluded": 0,
+      "files_failed": 0,
+      "scope_note": "denominator = every file enumerated under the scope (all classes); each has exactly one outcome"
+    },
+    "units_by_type": {
+      "prose": 45,
+      "math_block": 8,
+      "list": 2,
+      "code_block": 10,
+      "callout": 5,
+      "table": 3
+    },
+    "file_outcomes": [
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/06. Dropout and Regularization.md",
+        "outcome": "extracted",
+        "sha256": "f39656138124b1db7c08c4fe7c18db6e29f8e9ee60358ec596ae29a955115e0d",
+        "manifest_match": true,
+        "units": 73,
+        "units_by_type": {
+          "prose": 45,
+          "math_block": 8,
+          "list": 2,
+          "code_block": 10,
+          "callout": 5,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 423,
+          "frontmatter_lines": 0,
+          "heading_context": 37,
+          "excluded_blank": 119,
+          "excluded_horizontal_rule": 10,
+          "accounted": 589,
+          "lines_total": 589,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 119,
+          "horizontal_rule": 10
+        },
+        "finding_ids": []
+      }
+    ],
+    "batch_validation": {
+      "file": "/tmp/ext009-run1-06. Dropout and Regularization.jsonl",
+      "schema": "/home/z/my-project/repo/schemas/knowledge-unit.schema.json",
+      "valid": true,
+      "records_total": 73,
+      "records_valid": 73,
+      "errors": [],
+      "cross_checks": {
+        "status": "run",
+        "kus_total": 73,
+        "rules": [
+          "duplicate_id",
+          "self_parent",
+          "superseded_rationale_missing",
+          "self_support"
+        ],
+        "note": "cross-batch parent/support references are checked at registry load time"
+      }
+    },
+    "determinism_note": "records contain no timestamps and IDs are content-derived; re-extracting unchanged sources produces a byte-identical batch",
+    "limitations": [
+      "structural segmentation only: unit types describe Markdown block syntax, not meaning",
+      "no dispositions are assigned: every unit is 'Unaccounted' until evidence-based classification",
+      "excerpts normalize CR characters away (splitlines reconstruction); source bytes are untouched",
+      "construct detection inherits mdextract limitations (ATX headings, delimiter-based math)",
+      "extraction coverage is NOT semantic preservation; it is the accounting baseline for later audits"
+    ]
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "extract-kus",
+    "args": {
+      "command": "extract-kus",
+      "root": "source-vaults/AI /AI Course",
+      "scope": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/06. Dropout and Regularization.md",
+      "vault_id": "ai-course",
+      "manifest": "state/manifests/ai-course.jsonl",
+      "out": "/tmp/ext009-run1-06. Dropout and Regularization.jsonl",
+      "kus_schema": "/home/z/my-project/repo/schemas/knowledge-unit.schema.json",
+      "unclosed_fence_finding": null,
+      "report": "/home/z/my-project/repo/reports/extraction/ext009-coverage-ai-course-06. Dropout and Regularization.json"
+    },
+    "utc_timestamp": "2026-10-27T08:58:00+00:00",
+    "git_commit": "7041d47"
+  }
+}

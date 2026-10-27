@@ -53,9 +53,9 @@
   "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)"
  },
  "output_synthesis_started": false,
- "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-27-ext-008.json",
- "current_task_id": "EXT-009",
- "notes": "EXT-008 completed 2026-10-27 (clustering/dimensionality-reduction domain pair — SCOPE CHANGE from SVM with evidence: master-ai has no dedicated SVM content, contingency clause invoked; batches 006 (27 KUs) + 007 (87 KUs, two-scope concat) double-run byte-identical; term map 51 terms/22 aliases machine-verified; 27 evidence-based classifications (22 SD + 4 PO + 1 CC, 64 KUs, 92 byte-exact quotes); independent review PASS-WITH-NOTES with all repairs R1-R3 + suggestions S1-S5 applied; clustering-v1 dossier (27 concepts); registry 889 KUs / 102 classifications / 304 participating; suite 415/415; schema domain enum extended additively). EXT-009 ready (next unextracted domain or CAP-014 — decide at session start). PUSH BLOCKER RESOLVED 2026-10-27: a fresh PAT (repo scope) supplied by the user pushed 7d9e65f..58ad0fa to origin/main; local and remote main are in sync at 58ad0fa (verified via git ls-remote). Standing rule remains: if local-only commits ever exist again, never clone fresh; work in /home/z/my-project/repo.",
+ "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-27-ext-009.json",
+ "current_task_id": "EXT-010",
+ "notes": "EXT-009 completed 2026-10-27 across TWO sessions (interrupted mid-repair by a tool-infrastructure failure; the completing session re-verified the review claims at source before applying the remaining repairs). Generalization/regularization domain pair — FIRST PARTIAL-FOLDER ai-course scope (04.3 files 05/06/07 of 7, per-file justification in the task record): batches 008 (106 KUs, master-ai Generalization 2 files) + 009 (234 KUs) double-run byte-identical; term map 65 terms / 40 aliases / 38 cross-vault / 2 bridged, machine-verified; 26 evidence-based classifications (21 SD + 3 PO + 2 CC, 68 KUs, 88 byte-exact quotes, OC-ext009-0026 added at review per CG-1); independent review PASS-WITH-NOTES with all repairs R1-R2 + suggestions S1-S5 applied; generalization-v1 dossier (26 concepts, schema enum extended additively, all five dossiers byte-identical); registry 1229 KUs / 128 classifications / 372 participating; suite 415/415. PUSH BLOCKER RESOLVED this session: 7d9e65f..58ad0fa (EXT-005..EXT-008) pushed to origin/main with a fresh PAT (docs commit 7041d47). EXT-010 ready to be selected at next session start (training-stability pair reserved by EXT-009's scope notes: master-ai '11 - Training/Optimization/05 - Loss Spikes and Stability.md' + ai-course 04.3 files 01-03; or CAP-014 — decide with evidence).",
  "corpus_statistics": {
   "files_total": 609,
   "markdown_files": 609,
@@ -84,9 +84,9 @@
  "knowledge_registry": {
   "canonical_store": "state/knowledge-units/ (committed JSONL batches; ADR-0007)",
   "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load + kureg-apply-overlap)",
-  "records": 889,
+  "records": 1229,
   "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)",
-  "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records) + 002-ext004-tree-based-overlap.jsonl (28 records) + 003-ext005-evaluation-overlap.jsonl (29 records) + 004-ext007-evaluation-addendum.jsonl (4 records) + 005-ext008-clustering-dimreduction-overlap.jsonl (27 records, EXT-008; ADR-0009 pair-level overlay)",
+  "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records) + 002-ext004-tree-based-overlap.jsonl (28 records) + 003-ext005-evaluation-overlap.jsonl (29 records) + 004-ext007-evaluation-addendum.jsonl (4 records) + 005-ext008-clustering-dimreduction-overlap.jsonl (27 records) + 006-ext009-generalization-overlap.jsonl (26 records, EXT-009; ADR-0009 pair-level overlay)",
   "commands": "vu kureg-init / kureg-load / kureg-apply-overlap / kureg-query / kureg-validate",
   "dossiers": {
    "store": "state/dossiers/ (derived view; regenerates via scripts/ext006_dossiers.py)",
@@ -95,10 +95,11 @@
     "regression-v1.json": "14 concepts / 61 KUs (from 001-ext003)",
     "tree-based-v1.json": "28 concepts / 82 KUs (from 002-ext004)",
     "evaluation-v1.json": "33 concepts / 97 KUs (from 003-ext005 + 004-ext007)",
-    "clustering-v1.json": "27 concepts / 64 KUs (from 005-ext008)"
+    "clustering-v1.json": "27 concepts / 64 KUs (from 005-ext008)",
+    "generalization-v1.json": "26 concepts / 68 KUs (from 006-ext009)"
    },
-   "concepts_total": 102,
-   "participating_kus_total": 304,
+   "concepts_total": 128,
+   "participating_kus_total": 372,
    "rule_set": "ext006-category-rules-v1 (documented in scripts/ext006_dossiers.py)",
    "dispositions_assigned": false
   }

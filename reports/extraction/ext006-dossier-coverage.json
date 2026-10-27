@@ -95,6 +95,51 @@
         "historical_deprecated"
       ]
     },
+    "generalization": {
+      "bidirectional_check": {
+        "every_covered_ku_participates": true,
+        "every_participating_ku_covered": true
+      },
+      "category_assignment_counts": {
+        "alternative_explanations": 1,
+        "applications_engineering": 5,
+        "code_implementation": 3,
+        "computational_mechanics": 0,
+        "critical_distinctions": 12,
+        "definitions_terminology": 52,
+        "historical_deprecated": 4,
+        "interview_misconceptions_comparisons": 0,
+        "mathematical_foundations": 2,
+        "worked_examples_failure_cases": 5
+      },
+      "classification_records": 26,
+      "concepts": 26,
+      "default_rule_ku_assignments": 52,
+      "dossier": "state/dossiers/generalization-v1.json",
+      "gap_census": {
+        "no_evidence": 211,
+        "single_vault": 37
+      },
+      "participating_kus": 68,
+      "rule_basis_census": {
+        "default:no-rule-fired(unit_type=callout)": 5,
+        "default:no-rule-fired(unit_type=list)": 5,
+        "default:no-rule-fired(unit_type=prose)": 42,
+        "heading:engineering-guidance": 5,
+        "heading:failure-case": 5,
+        "heading:implementation": 2,
+        "heading:interpretation-intuition": 1,
+        "heading:mathematical": 1,
+        "heading:versus-distinction": 12,
+        "heading:year-reference": 4,
+        "unit_type:code_block": 1,
+        "unit_type:math_block": 1
+      },
+      "zero_evidence_categories": [
+        "computational_mechanics",
+        "interview_misconceptions_comparisons"
+      ]
+    },
     "regression": {
       "bidirectional_check": {
         "every_covered_ku_participates": true,

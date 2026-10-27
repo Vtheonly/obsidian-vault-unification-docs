@@ -1,0 +1,51 @@
+{
+ "checkpoint_id": "CHK-2026-10-27-EXT-009",
+ "created_utc": "2026-10-27T00:00:00+00:00",
+ "stage": "extraction",
+ "task_id": "EXT-009",
+ "task_status": "completed",
+ "last_verified_state": {
+  "framework_version": "0.5.0 (unchanged in EXT-009 — no framework code changes)",
+  "test_result": "415 passed, 0 failed, 0 skipped",
+  "test_evidence": "reports/extraction/ext009-pytest-report.json",
+  "capabilities_evidence": "reports/extraction/ext009-capabilities.json (16 implemented-and-tested, 1 planned: CAP-014)",
+  "registry_store": "state/knowledge-units/ (1229 records in 9 committed batches, unedited)",
+  "derived_index": "state/registries/kuregistry.db (rebuilt: init --force + load x9 + apply-overlap x6; kureg-validate valid, 0 errors/warnings)",
+  "classifications": {
+   "paths": [
+    "state/classifications/001-ext003-regression-overlap.jsonl (14 records)",
+    "state/classifications/002-ext004-tree-based-overlap.jsonl (28 records)",
+    "state/classifications/003-ext005-evaluation-overlap.jsonl (29 records)",
+    "state/classifications/004-ext007-evaluation-addendum.jsonl (4 records)",
+    "state/classifications/005-ext008-clustering-dimreduction-overlap.jsonl (27 records)",
+    "state/classifications/006-ext009-generalization-overlap.jsonl (26 records)"
+   ],
+   "total": 128,
+   "participating_kus": 372
+  },
+  "dossiers": {
+   "paths": [
+    "state/dossiers/regression-v1.json (14 concepts / 61 KUs)",
+    "state/dossiers/tree-based-v1.json (28 concepts / 82 KUs)",
+    "state/dossiers/evaluation-v1.json (33 concepts / 97 KUs)",
+    "state/dossiers/clustering-v1.json (27 concepts / 64 KUs)",
+    "state/dossiers/generalization-v1.json (26 concepts / 68 KUs)"
+   ],
+   "regeneration": "all five byte-identical (scripts/ext006_dossiers.py --check exit 0 x5)",
+   "schema_change": "schemas/concept-dossier.schema.json domain enum extended additively with 'generalization' (justification in schema description)"
+  },
+  "source_immutability": "both vaults verified unchanged before and after (verify-manifest exit 0 x4)",
+  "push_state": "RESOLVED — 7d9e65f..58ad0fa pushed to origin/main (2026-10-27, fresh PAT); local main == origin/main before the EXT-009 commits"
+ },
+ "acceptance_evidence": [
+  "Batches 008/009 double-run byte-identical (per part and full concat)",
+  "Fidelity 106/106 + 234/234 byte-exact + unique ids vs 889 committed (reports/extraction/ext009-fidelity-{master-ai,ai-course}.json)",
+  "Term map machine-verified, zero invented entries (reports/extraction/ext009-term-map-verification.json)",
+  "Discovery 2961 pairs / 40 cross-vault topics / 5 truncated (reports/extraction/ext009-overlap-candidates.json)",
+  "26 classifications, 88 byte-exact quotes, X1-X9 chain green (state/classifications/006-ext009-generalization-overlap.jsonl)",
+  "Independent review PASS-WITH-NOTES, all repairs applied (reports/extraction/ext009-review.md + orchestrator addendum)",
+  "Registry rebuild valid: 1229 KUs / 128 classifications / 372 participating (reports/extraction/ext009-kureg-validate.json)",
+  "Full test suite passes (415/415); capabilities --verify passes (16+1)"
+ ],
+ "next_task": "EXT-010 (to be selected at next session start with evidence): training-stability pair (master-ai '11 - Training/Optimization/05 - Loss Spikes and Stability.md' + ai-course 04.3 files 01-03, reserved by the EXT-009 scope notes) or CAP-014 source-to-output coverage reports (required before synthesis batches are accepted; no synthesis batch exists yet)"
+}

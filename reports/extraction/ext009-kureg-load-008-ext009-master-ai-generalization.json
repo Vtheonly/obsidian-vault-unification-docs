@@ -1,0 +1,33 @@
+{
+  "command": "kureg-load",
+  "db_path": "/home/z/my-project/repo/state/registries/kuregistry.db",
+  "records_in_batch": 106,
+  "inserted": 106,
+  "skipped_identical": 0,
+  "errors": [],
+  "counts_after_load": {
+    "total_kus": 995,
+    "by_disposition": {
+      "Unaccounted": 995
+    }
+  },
+  "valid": true,
+  "records_file": "state/knowledge-units/008-ext009-master-ai-generalization.jsonl",
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "kureg-load",
+    "args": {
+      "command": "kureg-load",
+      "db": "state/registries/kuregistry.db",
+      "kus": "state/knowledge-units/008-ext009-master-ai-generalization.jsonl",
+      "mint_ids": false,
+      "kus_schema": "/home/z/my-project/repo/schemas/knowledge-unit.schema.json",
+      "protected_root": null,
+      "report": "/home/z/my-project/repo/reports/extraction/ext009-kureg-load-008-ext009-master-ai-generalization.json"
+    },
+    "utc_timestamp": "2026-10-27T10:54:26+00:00",
+    "git_commit": "7041d47"
+  }
+}
