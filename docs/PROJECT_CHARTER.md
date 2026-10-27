@@ -10,7 +10,7 @@ The two original vaults were produced through different workflows. One may be ri
 
 The final vault should feel as though it was designed and written as one integrated body of work from the beginning. Ordinary final notes should not narrate the fact that two vaults were merged or expose merge-session history. Legitimate references, citations, version distinctions, and useful historical context must remain.
 
-The final vault may have a new coherent folder and file structure. Multiple source notes may contribute to one canonical note; a single source note may contribute to several canonical notes.
+The final vault may have a new coherent folder and file structure. Multiple source notes may contribute to one canonical note; a single source note may contribute to several canonical notes. The final concept taxonomy must also emerge and evolve from corpus-wide analysis. The system must identify concepts that are not explicitly named in the source notes but are repeatedly used, assumed, fragmented, or necessary to understand other topics, then determine whether they deserve a dedicated note or section.
 
 ## Non-goals
 
@@ -39,7 +39,7 @@ Examples mentioned during planning—CNNs, VGG, attention, Transformers, deep ne
 7. Build exhaustive tests that actively detect omissions, corruption, drift, and regressions.
 8. Document architecture, procedures, decisions, tools, state, limitations, and handoffs for future agents.
 9. Operate in repeatable, persistent iterations across fresh GLM 5.3 sessions.
-10. Use the repository—not conversational memory—as the project's durable source of truth.
+10. Use the repository—not conversational memory—as the project's durable source of truth.\n11. Discover emergent concepts, hidden prerequisites, recurring unexplained ideas, and cross-note knowledge gaps; record evidence-backed decisions about new notes/sections in persistent state.
 
 
 ## Required self-built Python tooling subsystem
@@ -48,7 +48,7 @@ The AI agent—not the user—must implement and maintain a Python framework for
 
 The framework must support inventory and statistics, exact/normalized/fuzzy searching and matching, controlled extraction/chunking/splitting/output operations, duplicate detection, structural and Obsidian integrity checks, registry and provenance validation, automated test execution, omission/corruption detection, regression comparison, and machine-readable reports. This is an evolving capability set: the agent must add further tools whenever concrete work demonstrates a useful, safe, testable need.
 
-Automation does not remove the requirement for semantic reasoning. Scripts measure and validate defined properties; evidence-based semantic review determines whether knowledge and reasoning survived. Neither should impersonate the other.
+Automation does not remove the requirement for semantic reasoning. Scripts measure and validate defined properties; evidence-based semantic review determines whether knowledge and reasoning survived. Neither should impersonate the other. The framework and agent workflow must also support emergent concept discovery: candidate generation from cross-note patterns, evidence bundles, prerequisite/dependency links, reviewable accept/merge/split/reject decisions, and tests for both missed concepts and false discoveries. See [EMERGENT_CONCEPT_DISCOVERY.md](EMERGENT_CONCEPT_DISCOVERY.md).
 
 ## Expanded preservation contract
 
