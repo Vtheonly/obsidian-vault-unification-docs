@@ -250,3 +250,11 @@
   11-Training files; ai-course 04.3/04) do NOT mark those files done: they
   remain unextracted and eligible for future pairs (see Next task).
 - Master AI has not been link-checked at all.
+
+## Additional required capability — emergent concept discovery
+
+A documentation-only update on 2026-10-27 added `docs/EMERGENT_CONCEPT_DISCOVERY.md` and integrated this requirement into `README.md`, `ENTRY_PROMPT.md`, `docs/PROJECT_CHARTER.md`, `docs/KNOWLEDGE_AND_PROVENANCE.md`, and `docs/MILESTONES_AND_ACCEPTANCE.md`. The new requirement is not yet proof of implementation in the Python framework.
+
+The system must discover concepts and instructional gaps that are not already named in source headings or a predefined taxonomy. Across multiple notes, it should recognize concepts repeatedly used but not adequately explained, assumed prerequisites, derivations fragmented across notes, and rare but essential ideas. It must check processed corpus coverage before calling a concept missing; propose a new canonical note or section only when justified; and persist candidate evidence, scope, source KU IDs/locators, dependencies, status, decision rationale, and verification criteria. It must guard against keyword-only false positives, ambiguous terms, duplicate concepts, and treating unprocessed source areas as confirmed gaps.
+
+Next implementation follow-up: inspect current capability inventory, task queue, schemas, and tests; create a bounded task for the first tested discovery workflow and synthetic fixtures. Do not claim this feature is implemented until executable code and tests demonstrate both expected discoveries and expected non-discoveries. Include fragmented derivations, hidden prerequisites, already-covered concepts, context-dependent homonyms, rare essential concepts, merge/split cases, and note-versus-section decisions. Keep the existing extraction state and next extraction task intact; this addition must not erase or silently reorder existing work.
