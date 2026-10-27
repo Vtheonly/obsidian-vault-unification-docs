@@ -1,0 +1,174 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "<root files> (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-qm8g30ip/070-regen001-master-ai-root-files.jsonl.run1",
+    "records_written": 181,
+    "denominators": {
+      "files_in_scope": 5,
+      "files_extracted": 5,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "Index.md",
+        "outcome": "extracted",
+        "sha256": "2eb389279524dc1696ba9ddc660ccdee84d6df2a2837c234f774f9c4e8bcbfb3",
+        "manifest_match": true,
+        "units": 23,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 18,
+          "prose": 2,
+          "quote": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 60,
+          "frontmatter_lines": 5,
+          "heading_context": 20,
+          "excluded_blank": 43,
+          "excluded_horizontal_rule": 1,
+          "accounted": 124,
+          "lines_total": 124,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 43,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "Learning Roadmap.md",
+        "outcome": "extracted",
+        "sha256": "0b67884e6eaa3698a41deb3b189194df0425d67790b22e9332526c895b6b7009",
+        "manifest_match": true,
+        "units": 102,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 57,
+          "list": 43
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 237,
+          "frontmatter_lines": 5,
+          "heading_context": 17,
+          "excluded_blank": 91,
+          "excluded_horizontal_rule": 15,
+          "accounted": 360,
+          "lines_total": 360,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 91,
+          "horizontal_rule": 15
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "MOC.md",
+        "outcome": "extracted",
+        "sha256": "c76717f4666e91f0a2f8b1a03d3fee6ca17b947e0e0561ee06aa4e6622d69fd1",
+        "manifest_match": true,
+        "units": 21,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 4,
+          "code_block": 1,
+          "list": 14
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 92,
+          "frontmatter_lines": 5,
+          "heading_context": 19,
+          "excluded_blank": 40,
+          "excluded_horizontal_rule": 1,
+          "accounted": 152,
+          "lines_total": 152,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 40,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "README.md",
+        "outcome": "extracted",
+        "sha256": "12dddb9ac6aba332001d3fbdb489db4e1d4d2b55be797a5f2c87288df3a0b371",
+        "manifest_match": true,
+        "units": 17,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 2,
+          "prose": 8,
+          "table": 1,
+          "list": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 97,
+          "frontmatter_lines": 5,
+          "heading_context": 10,
+          "excluded_blank": 27,
+          "excluded_horizontal_rule": 1,
+          "accounted": 135,
+          "lines_total": 135,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 27,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "Reading Order.md",
+        "outcome": "extracted",
+        "sha256": "ef5e92772a3aec102efd5090d138c56da941b3abb537a14db700ed7cf86232b0",
+        "manifest_match": true,
+        "units": 18,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 10,
+          "code_block": 5,
+          "list": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 70,
+          "frontmatter_lines": 5,
+          "heading_context": 7,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 5,
+          "accounted": 111,
+          "lines_total": 111,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 5
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

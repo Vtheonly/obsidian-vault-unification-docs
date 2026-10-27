@@ -1,0 +1,381 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "10 - Generative Models (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/030-regen001-ai-course-10-generative-models.jsonl.run1",
+    "records_written": 315,
+    "denominators": {
+      "files_in_scope": 12,
+      "files_extracted": 12,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "10 - Generative Models/00. Chapter Overview.md",
+        "outcome": "extracted",
+        "sha256": "966f6ceedbd04aadb40d8a6f2b440c29c1d134595a1aa100cbde021edf50707d",
+        "manifest_match": true,
+        "units": 17,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 7,
+          "list": 9
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 30,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 24,
+          "excluded_horizontal_rule": 4,
+          "accounted": 66,
+          "lines_total": 66,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 24,
+          "horizontal_rule": 4
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Generative Models/10.1 - Autoencoders/01. The Autoencoder - Compression as Learning.md",
+        "outcome": "extracted",
+        "sha256": "0afe72e63af3d9aa44047f1c24614d27f55d770f48faf48aebd3ab92d8a36ff3",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 20,
+          "list": 3,
+          "math_block": 4,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 42,
+          "frontmatter_lines": 0,
+          "heading_context": 11,
+          "excluded_blank": 47,
+          "excluded_horizontal_rule": 8,
+          "accounted": 108,
+          "lines_total": 108,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 47,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Generative Models/10.1 - Autoencoders/02. Denoising Autoencoders and Sparse Autoencoders.md",
+        "outcome": "extracted",
+        "sha256": "2f5e0b2f79174fa8a5fbb6d761663cd95463944b46b6b1438f77f9b5a839c188",
+        "manifest_match": true,
+        "units": 25,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 16,
+          "math_block": 5,
+          "list": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 35,
+          "frontmatter_lines": 0,
+          "heading_context": 13,
+          "excluded_blank": 39,
+          "excluded_horizontal_rule": 6,
+          "accounted": 93,
+          "lines_total": 93,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 39,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Generative Models/10.2 - Variational Autoencoders/01. From Autoencoder to VAE - Learning a Distribution.md",
+        "outcome": "extracted",
+        "sha256": "d76f33c6d7f8d69d53ea9fa5f58f1a930cdcaa36ba49981fdd730b065d0781db",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 21,
+          "math_block": 7,
+          "list": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 37,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 47,
+          "excluded_horizontal_rule": 7,
+          "accounted": 101,
+          "lines_total": 101,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 47,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Generative Models/10.2 - Variational Autoencoders/02. The Reparameterization Trick.md",
+        "outcome": "extracted",
+        "sha256": "ee7c3c35382c7519ac83be67978d0a29e7a76a403f92e30e6a953cb576ee113f",
+        "manifest_match": true,
+        "units": 27,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 18,
+          "math_block": 3,
+          "list": 4,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 49,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 40,
+          "excluded_horizontal_rule": 7,
+          "accounted": 103,
+          "lines_total": 103,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 40,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Generative Models/10.2 - Variational Autoencoders/03. The KL Divergence Loss.md",
+        "outcome": "extracted",
+        "sha256": "b771bc53f7962c4fd1f0123021d2afeb04d0ce2daab249b86a760bfbf3eaaf7e",
+        "manifest_match": true,
+        "units": 26,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 18,
+          "math_block": 4,
+          "list": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 36,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 41,
+          "excluded_horizontal_rule": 7,
+          "accounted": 94,
+          "lines_total": 94,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 41,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Generative Models/10.3 - GANs/01. The Adversarial Game - Generator vs Discriminator.md",
+        "outcome": "extracted",
+        "sha256": "10955fe7dec64634ceae0ec5b264ca14ac9fc12ad62d4e67b5bc9bca0541b2cd",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 19,
+          "list": 8,
+          "math_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 47,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 42,
+          "excluded_horizontal_rule": 8,
+          "accounted": 105,
+          "lines_total": 105,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 42,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Generative Models/10.3 - GANs/02. Training Dynamics and Mode Collapse.md",
+        "outcome": "extracted",
+        "sha256": "2b128b77ae0f98f94492a79c753f6b288d298384e434162c355a0fcf6d866030",
+        "manifest_match": true,
+        "units": 21,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 16,
+          "list": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 31,
+          "frontmatter_lines": 0,
+          "heading_context": 11,
+          "excluded_blank": 37,
+          "excluded_horizontal_rule": 7,
+          "accounted": 86,
+          "lines_total": 86,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 37,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Generative Models/10.3 - GANs/03. Wasserstein GANs and Modern Variants.md",
+        "outcome": "extracted",
+        "sha256": "afa800741733983e697128d8c7a865b087062d01b812a56a8397d1062aa1c272",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 22,
+          "math_block": 3,
+          "list": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 38,
+          "frontmatter_lines": 0,
+          "heading_context": 14,
+          "excluded_blank": 49,
+          "excluded_horizontal_rule": 8,
+          "accounted": 109,
+          "lines_total": 109,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 49,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Generative Models/10.4 - Diffusion Models/01. The Forward Process - Adding Noise.md",
+        "outcome": "extracted",
+        "sha256": "4ce88e192bc2917b28362f5769115f6825857037a1e7959191ec5af3f1c83c45",
+        "manifest_match": true,
+        "units": 27,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 17,
+          "list": 4,
+          "math_block": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 39,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 38,
+          "excluded_horizontal_rule": 6,
+          "accounted": 91,
+          "lines_total": 91,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 38,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Generative Models/10.4 - Diffusion Models/02. The Reverse Process - Learning to Denoise.md",
+        "outcome": "extracted",
+        "sha256": "5caefedfffbab7032f2cfc54c8f0ba10330ed057378b9e4c0bd7823a4945c98e",
+        "manifest_match": true,
+        "units": 25,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 16,
+          "math_block": 2,
+          "list": 5,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 47,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 37,
+          "excluded_horizontal_rule": 7,
+          "accounted": 99,
+          "lines_total": 99,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 37,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Generative Models/10.4 - Diffusion Models/03. Score-Based and Latent Diffusion.md",
+        "outcome": "extracted",
+        "sha256": "f92678d8b4d158a1b9b683660ab53341f016112e4543e948476a1ab586584fa8",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 19,
+          "math_block": 2,
+          "list": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 49,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 42,
+          "excluded_horizontal_rule": 7,
+          "accounted": 107,
+          "lines_total": 107,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 42,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

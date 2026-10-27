@@ -1,0 +1,207 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "20 - AI Infrastructure (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/052-regen001-master-ai-20-ai-infrastructure.jsonl.run1",
+    "records_written": 269,
+    "denominators": {
+      "files_in_scope": 6,
+      "files_extracted": 6,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "20 - AI Infrastructure/Compute/04 - GPU Infrastructure and Sizing.md",
+        "outcome": "extracted",
+        "sha256": "7d61ceedbfacdf0394aa7f0702e5949fde201ce504d8bcada1f5ff94af337908",
+        "manifest_match": true,
+        "units": 47,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 2,
+          "list": 23,
+          "prose": 20
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 125,
+          "frontmatter_lines": 6,
+          "heading_context": 38,
+          "excluded_blank": 50,
+          "excluded_horizontal_rule": 0,
+          "accounted": 213,
+          "lines_total": 213,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 50,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "20 - AI Infrastructure/MOC.md",
+        "outcome": "extracted",
+        "sha256": "bc566e731b2e90bdddf4faee8cc5056f23c94fb61e5423ba35b9fa7f740ab5fd",
+        "manifest_match": true,
+        "units": 8,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 4,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 74,
+          "frontmatter_lines": 5,
+          "heading_context": 7,
+          "excluded_blank": 14,
+          "excluded_horizontal_rule": 0,
+          "accounted": 95,
+          "lines_total": 95,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 14,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "20 - AI Infrastructure/Messaging/03 - Messaging with Kafka and Celery.md",
+        "outcome": "extracted",
+        "sha256": "468b2ee6152951b9b396cbd9b1707f54230829a8abdb99ded491a7f21c468535",
+        "manifest_match": true,
+        "units": 45,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 25,
+          "list": 14,
+          "code_block": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 137,
+          "frontmatter_lines": 6,
+          "heading_context": 29,
+          "excluded_blank": 52,
+          "excluded_horizontal_rule": 0,
+          "accounted": 218,
+          "lines_total": 218,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 52,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "20 - AI Infrastructure/Observability/05 - Observability Stack.md",
+        "outcome": "extracted",
+        "sha256": "b17299f1b0098c7b9b2b99d55251d22517c79abb357af0b822552ae8cf77d150",
+        "manifest_match": true,
+        "units": 65,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 33,
+          "code_block": 4,
+          "list": 26
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 208,
+          "frontmatter_lines": 6,
+          "heading_context": 40,
+          "excluded_blank": 63,
+          "excluded_horizontal_rule": 0,
+          "accounted": 311,
+          "lines_total": 311,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 63,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "20 - AI Infrastructure/Serving/01 - Production AI Stack.md",
+        "outcome": "extracted",
+        "sha256": "1783574f59aba4310646daaaa3dba885b0197371293f210f2cc1b08a2d9ef826",
+        "manifest_match": true,
+        "units": 54,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "code_block": 5,
+          "list": 31,
+          "prose": 13,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 332,
+          "frontmatter_lines": 7,
+          "heading_context": 33,
+          "excluded_blank": 70,
+          "excluded_horizontal_rule": 0,
+          "accounted": 435,
+          "lines_total": 435,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 70,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "20 - AI Infrastructure/Storage/02 - Vector Storage with pgvector.md",
+        "outcome": "extracted",
+        "sha256": "909cb321616d90ed4467280f8b15022973034e600f2758ced1c6e4dd49e65e54",
+        "manifest_match": true,
+        "units": 50,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 31,
+          "list": 10,
+          "code_block": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 162,
+          "frontmatter_lines": 6,
+          "heading_context": 31,
+          "excluded_blank": 53,
+          "excluded_horizontal_rule": 0,
+          "accounted": 246,
+          "lines_total": 246,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 53,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

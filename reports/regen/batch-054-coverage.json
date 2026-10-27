@@ -1,0 +1,239 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "22 - Production AI (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/054-regen001-master-ai-22-production-ai.jsonl.run1",
+    "records_written": 353,
+    "denominators": {
+      "files_in_scope": 7,
+      "files_extracted": 7,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "22 - Production AI/Architecture/02 - Reference Production Architectures.md",
+        "outcome": "extracted",
+        "sha256": "7d42752a5ed79854efbf2286efac4ebb3ad9dd5804596bd2f559460d9c134bb1",
+        "manifest_match": true,
+        "units": 47,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 27,
+          "code_block": 4,
+          "list": 13,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 158,
+          "frontmatter_lines": 6,
+          "heading_context": 18,
+          "excluded_blank": 41,
+          "excluded_horizontal_rule": 0,
+          "accounted": 217,
+          "lines_total": 217,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 41,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "22 - Production AI/Architecture/03 - Gateway and Router Patterns.md",
+        "outcome": "extracted",
+        "sha256": "82aec8e8f2369b426018300ed247c7994e062f91f679bb792daec9e29e271737",
+        "manifest_match": true,
+        "units": 51,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 35,
+          "list": 6,
+          "code_block": 8
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 155,
+          "frontmatter_lines": 6,
+          "heading_context": 30,
+          "excluded_blank": 56,
+          "excluded_horizontal_rule": 0,
+          "accounted": 241,
+          "lines_total": 241,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 56,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "22 - Production AI/MOC.md",
+        "outcome": "extracted",
+        "sha256": "d19064aec915b236dc4355b5a3e6118522129d3f27fb3a2032087d6491ceb1f4",
+        "manifest_match": true,
+        "units": 8,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 4,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 40,
+          "frontmatter_lines": 5,
+          "heading_context": 7,
+          "excluded_blank": 14,
+          "excluded_horizontal_rule": 0,
+          "accounted": 61,
+          "lines_total": 61,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 14,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "22 - Production AI/Reliability/06 - Failure Modes and Graceful Degradation.md",
+        "outcome": "extracted",
+        "sha256": "1f9f7e5cb8f4ed8e3432754bb1ec44db5aaf0aea9ac66ff62993e02dd55cc87b",
+        "manifest_match": true,
+        "units": 65,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 44,
+          "list": 13,
+          "code_block": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 197,
+          "frontmatter_lines": 6,
+          "heading_context": 28,
+          "excluded_blank": 60,
+          "excluded_horizontal_rule": 0,
+          "accounted": 285,
+          "lines_total": 285,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 60,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "22 - Production AI/Security/01 - LLM Security and Prompt Injection.md",
+        "outcome": "extracted",
+        "sha256": "f5a018c54c9048000f5c4d363dd10b6f609a9cc61b68f8302fdf73d8a3e379fe",
+        "manifest_match": true,
+        "units": 79,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 40,
+          "code_block": 6,
+          "list": 29,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 338,
+          "frontmatter_lines": 7,
+          "heading_context": 40,
+          "excluded_blank": 87,
+          "excluded_horizontal_rule": 0,
+          "accounted": 465,
+          "lines_total": 465,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 87,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "22 - Production AI/Security/04 - Guardrails.md",
+        "outcome": "extracted",
+        "sha256": "6a50b77410237d6f5a56c90f746655cd215e9e92cea43cacb3f7eadb3f8f567f",
+        "manifest_match": true,
+        "units": 47,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 31,
+          "list": 10,
+          "code_block": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 132,
+          "frontmatter_lines": 6,
+          "heading_context": 24,
+          "excluded_blank": 46,
+          "excluded_horizontal_rule": 0,
+          "accounted": 202,
+          "lines_total": 202,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 46,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "22 - Production AI/Security/05 - PII and Data Leakage.md",
+        "outcome": "extracted",
+        "sha256": "afec02bf816427eba84c460c22000e48aa862d77b19b5c95137bd0786b7b3f8c",
+        "manifest_match": true,
+        "units": 56,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 36,
+          "list": 17,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 123,
+          "frontmatter_lines": 6,
+          "heading_context": 37,
+          "excluded_blank": 52,
+          "excluded_horizontal_rule": 0,
+          "accounted": 212,
+          "lines_total": 212,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 52,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

@@ -58,6 +58,7 @@ def run_cli(*args: str, cwd: Path | None = None, timeout: int = 300) -> subproce
         "kureg-validate",
         "audit-output",
         "extract-kus",
+        "ku-fidelity",
         "omission-pilot",
         "overlap-candidates",
         "kureg-apply-overlap",
@@ -643,6 +644,104 @@ class TestExtractKusCLI:
         )
         assert proc2.returncode == 0, proc2.stderr
         assert first.read_bytes() == out.read_bytes()
+
+
+class TestKuFidelityCLI:
+    """CLI wiring for vu ku-fidelity (CAP-022)."""
+
+    def _build_vault(self, tmp_path: Path) -> tuple[Path, Path, Path]:
+        import hashlib
+
+        root = tmp_path / "src-vault"
+        (root / "notes").mkdir(parents=True)
+        (root / "notes" / "a.md").write_text(
+            "# A\n\nParagraph one.\n\n## Section\n\n- one\n- two\n", encoding="utf-8"
+        )
+        lines = []
+        for rel in ["notes/a.md"]:
+            raw = (root / rel).read_bytes()
+            lines.append(
+                json.dumps({"relpath": rel, "sha256": hashlib.sha256(raw).hexdigest(), "size": len(raw)})
+            )
+        manifest = tmp_path / "manifest.jsonl"
+        manifest.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        batch = tmp_path / "state" / "001-batch.jsonl"
+        batch.parent.mkdir()
+        proc = run_cli(
+            "extract-kus",
+            "--root", str(root),
+            "--scope", "notes",
+            "--vault-id", "vault-x",
+            "--manifest", str(manifest),
+            "--out", str(batch),
+        )
+        assert proc.returncode == 0, proc.stderr
+        return root, manifest, batch
+
+    def test_missing_required_args_exits_2(self, tmp_path):
+        proc = run_cli("ku-fidelity", "--vault-id", "vault-x")
+        assert proc.returncode == 2
+        assert "usage:" in proc.stderr
+
+    def test_happy_path_exits_zero_with_report(self, tmp_path):
+        root, manifest, batch = self._build_vault(tmp_path)
+        report = tmp_path / "fidelity.json"
+        proc = run_cli(
+            "ku-fidelity",
+            "--batch", str(batch),
+            "--vault-id", "vault-x",
+            "--vault-root", str(root),
+            "--manifest", str(manifest),
+            "--report", str(report),
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        data = json.loads(report.read_text(encoding="utf-8"))
+        assert data["result"]["ok"] is True
+        assert data["result"]["records_total"] > 0
+        assert data["result"]["batches"][0]["excerpt_byte_exact"] == data["result"]["records_total"]
+
+    def test_tampered_batch_exits_one(self, tmp_path):
+        root, manifest, batch = self._build_vault(tmp_path)
+        records = [json.loads(line) for line in batch.read_text(encoding="utf-8").splitlines()]
+        records[0]["excerpt"] = records[0]["excerpt"] + " tampered"
+        batch.write_text(
+            "\n".join(json.dumps(r, sort_keys=True) for r in records) + "\n", encoding="utf-8"
+        )
+        proc = run_cli(
+            "ku-fidelity",
+            "--batch", str(batch),
+            "--vault-id", "vault-x",
+            "--vault-root", str(root),
+            "--manifest", str(manifest),
+        )
+        assert proc.returncode == 1
+        assert '"ok": false' in proc.stdout
+
+    def test_report_inside_source_root_rejected(self, tmp_path):
+        root, manifest, batch = self._build_vault(tmp_path)
+        proc = run_cli(
+            "ku-fidelity",
+            "--batch", str(batch),
+            "--vault-id", "vault-x",
+            "--vault-root", str(root),
+            "--manifest", str(manifest),
+            "--report", str(root / "notes" / "fidelity.json"),
+        )
+        assert proc.returncode == 1
+        assert "error" in proc.stderr
+        assert not (root / "notes" / "fidelity.json").exists()
+
+    def test_missing_batch_file_exits_one(self, tmp_path):
+        root, manifest, _ = self._build_vault(tmp_path)
+        proc = run_cli(
+            "ku-fidelity",
+            "--batch", str(tmp_path / "state" / "missing.jsonl"),
+            "--vault-id", "vault-x",
+            "--vault-root", str(root),
+            "--manifest", str(manifest),
+        )
+        assert proc.returncode == 1
+        assert "error" in proc.stderr
 
 
 class TestOmissionCLI:

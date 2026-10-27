@@ -1,0 +1,275 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "13 - Inference (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/045-regen001-master-ai-13-inference.jsonl.run1",
+    "records_written": 391,
+    "denominators": {
+      "files_in_scope": 8,
+      "files_extracted": 8,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "13 - Inference/Decoding/07 - Constrained Decoding and CFG.md",
+        "outcome": "extracted",
+        "sha256": "906d60b0fcc04e711b80763ecc6f63e6e25a05c64703db4a4e9ed14528d798fb",
+        "manifest_match": true,
+        "units": 67,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 40,
+          "list": 18,
+          "code_block": 6,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 173,
+          "frontmatter_lines": 7,
+          "heading_context": 33,
+          "excluded_blank": 100,
+          "excluded_horizontal_rule": 0,
+          "accounted": 306,
+          "lines_total": 306,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 100,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "13 - Inference/KV Cache/02 - PagedAttention.md",
+        "outcome": "extracted",
+        "sha256": "e359d5b15e9e0cf24c9b8670f1185a7aa56e0b67a640228088195a311abca03a",
+        "manifest_match": true,
+        "units": 39,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 18,
+          "list": 16,
+          "code_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 115,
+          "frontmatter_lines": 6,
+          "heading_context": 21,
+          "excluded_blank": 57,
+          "excluded_horizontal_rule": 0,
+          "accounted": 193,
+          "lines_total": 193,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 57,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "13 - Inference/MOC.md",
+        "outcome": "extracted",
+        "sha256": "dca1db366a36b9aef67d0b0a3bb8b74dffd04f38fb1d4441afa04a89ae06e349",
+        "manifest_match": true,
+        "units": 12,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 6,
+          "code_block": 1,
+          "prose": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 62,
+          "frontmatter_lines": 5,
+          "heading_context": 8,
+          "excluded_blank": 19,
+          "excluded_horizontal_rule": 0,
+          "accounted": 89,
+          "lines_total": 89,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 19,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "13 - Inference/Quantization/03 - Quantization.md",
+        "outcome": "extracted",
+        "sha256": "fc85e6920294d8bbd0425c4ba709fd486706357321c9cf59500133c2277630cc",
+        "manifest_match": true,
+        "units": 73,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 35,
+          "list": 28,
+          "table": 3,
+          "code_block": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 248,
+          "frontmatter_lines": 7,
+          "heading_context": 31,
+          "excluded_blank": 93,
+          "excluded_horizontal_rule": 0,
+          "accounted": 372,
+          "lines_total": 372,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 93,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "13 - Inference/Serving/04 - vLLM and Continuous Batching.md",
+        "outcome": "extracted",
+        "sha256": "9183599c2e6b13a2dda531f5a39d4f8e330a182bb2929c413dfa0f90ec56dcf0",
+        "manifest_match": true,
+        "units": 40,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 10,
+          "list": 22,
+          "code_block": 5,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 139,
+          "frontmatter_lines": 7,
+          "heading_context": 24,
+          "excluded_blank": 54,
+          "excluded_horizontal_rule": 0,
+          "accounted": 217,
+          "lines_total": 217,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 54,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "13 - Inference/Serving/06 - Continuous Batching Deep Dive.md",
+        "outcome": "extracted",
+        "sha256": "980116a81632e321f3ba2133a7548e2d26e11f5ade1381ff6cd0708d24b88b7f",
+        "manifest_match": true,
+        "units": 57,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 32,
+          "code_block": 4,
+          "list": 18,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 156,
+          "frontmatter_lines": 7,
+          "heading_context": 23,
+          "excluded_blank": 80,
+          "excluded_horizontal_rule": 0,
+          "accounted": 259,
+          "lines_total": 259,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 80,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "13 - Inference/Serving/08 - TensorRT-LLM.md",
+        "outcome": "extracted",
+        "sha256": "c177a109eb5a8871b87bf14770c10c7213fa90963172d1f247ca88db60c2eb3d",
+        "manifest_match": true,
+        "units": 68,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 39,
+          "list": 23,
+          "table": 2,
+          "code_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 149,
+          "frontmatter_lines": 7,
+          "heading_context": 39,
+          "excluded_blank": 103,
+          "excluded_horizontal_rule": 0,
+          "accounted": 291,
+          "lines_total": 291,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 103,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "13 - Inference/Speculative Decoding/05 - Speculative Decoding.md",
+        "outcome": "extracted",
+        "sha256": "5cb60df74b9d135a260e9c9a009143c3bfbe3b6b51161631560e5e6e487f3512",
+        "manifest_match": true,
+        "units": 35,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 10,
+          "list": 20,
+          "code_block": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 147,
+          "frontmatter_lines": 6,
+          "heading_context": 22,
+          "excluded_blank": 51,
+          "excluded_horizontal_rule": 0,
+          "accounted": 220,
+          "lines_total": 220,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 51,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

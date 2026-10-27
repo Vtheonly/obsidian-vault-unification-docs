@@ -1,0 +1,178 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "18 - Memory Systems (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/050-regen001-master-ai-18-memory-systems.jsonl.run1",
+    "records_written": 305,
+    "denominators": {
+      "files_in_scope": 5,
+      "files_extracted": 5,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "18 - Memory Systems/Architectures/02 - MemGPT and Letta.md",
+        "outcome": "extracted",
+        "sha256": "128218e0ff71f738b0786612ab1ceec837e09c072f5961e6318fc29e93a5217b",
+        "manifest_match": true,
+        "units": 67,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 39,
+          "list": 22,
+          "code_block": 3,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 197,
+          "frontmatter_lines": 7,
+          "heading_context": 41,
+          "excluded_blank": 75,
+          "excluded_horizontal_rule": 0,
+          "accounted": 313,
+          "lines_total": 313,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 75,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "18 - Memory Systems/MOC.md",
+        "outcome": "extracted",
+        "sha256": "697856a37fa76b131787eb8a23350c6187842ff732b648b5de13fc38498c393d",
+        "manifest_match": true,
+        "units": 7,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 28,
+          "frontmatter_lines": 5,
+          "heading_context": 6,
+          "excluded_blank": 12,
+          "excluded_horizontal_rule": 0,
+          "accounted": 46,
+          "lines_total": 46,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 12,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "18 - Memory Systems/Operations/03 - Memory Operations.md",
+        "outcome": "extracted",
+        "sha256": "0e499f5f938d2e9d4519e4f62d8c570fd14ab1792f409d4a73b8a7173c2f37f6",
+        "manifest_match": true,
+        "units": 61,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "code_block": 5,
+          "prose": 34,
+          "list": 19,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 236,
+          "frontmatter_lines": 7,
+          "heading_context": 33,
+          "excluded_blank": 68,
+          "excluded_horizontal_rule": 0,
+          "accounted": 337,
+          "lines_total": 337,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 68,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "18 - Memory Systems/Types/01 - Memory Types.md",
+        "outcome": "extracted",
+        "sha256": "7431e3253ff66e6388358fca966fb21be06d41fe6290321de95ea9834ac78ddd",
+        "manifest_match": true,
+        "units": 78,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 41,
+          "list": 27,
+          "table": 2,
+          "code_block": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 373,
+          "frontmatter_lines": 7,
+          "heading_context": 29,
+          "excluded_blank": 96,
+          "excluded_horizontal_rule": 0,
+          "accounted": 498,
+          "lines_total": 498,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 96,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "18 - Memory Systems/Vector Memory/04 - Vector Memory Backends.md",
+        "outcome": "extracted",
+        "sha256": "27a8f6d2031620474a6f5166a4e42d4a4e90da9eb5f52ffa40934708184c4e97",
+        "manifest_match": true,
+        "units": 92,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 53,
+          "list": 32,
+          "table": 3,
+          "code_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 292,
+          "frontmatter_lines": 7,
+          "heading_context": 42,
+          "excluded_blank": 96,
+          "excluded_horizontal_rule": 0,
+          "accounted": 430,
+          "lines_total": 430,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 96,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

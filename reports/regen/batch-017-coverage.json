@@ -1,0 +1,49 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "06 - Image Processing/00. Global Index.md (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-6t2lg8lr/017-regen001-ai-course-06-image-processing-00-global-index-md.jsonl.run1",
+    "records_written": 13,
+    "denominators": {
+      "files_in_scope": 1,
+      "files_extracted": 1,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "06 - Image Processing/00. Global Index.md",
+        "outcome": "extracted",
+        "sha256": "c518469032cd8b048f485209c416ebb9dee56655887ca2023c4978d28eab23ae",
+        "manifest_match": true,
+        "units": 13,
+        "units_by_type": {
+          "prose": 4,
+          "list": 8,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 67,
+          "frontmatter_lines": 0,
+          "heading_context": 11,
+          "excluded_blank": 21,
+          "excluded_horizontal_rule": 5,
+          "accounted": 104,
+          "lines_total": 104,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 21,
+          "horizontal_rule": 5
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,291 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "06 - Image Processing/05. Morphological Processing and Segmentation (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/022-regen001-ai-course-06-image-processing-05-morphological-processing-and-segmentation.jsonl.run1",
+    "records_written": 190,
+    "denominators": {
+      "files_in_scope": 9,
+      "files_extracted": 9,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "06 - Image Processing/05. Morphological Processing and Segmentation/5.1 Mathematical Morphology Basics.md",
+        "outcome": "extracted",
+        "sha256": "b24b542be7c22daed60d737863254303fd6fbb27d15bf94f3725e3a25338b407",
+        "manifest_match": true,
+        "units": 9,
+        "units_by_type": {
+          "prose": 5,
+          "list": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 15,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 7,
+          "excluded_horizontal_rule": 0,
+          "accounted": 29,
+          "lines_total": 29,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 7,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/05. Morphological Processing and Segmentation/5.2 Erosion and Dilation.md",
+        "outcome": "extracted",
+        "sha256": "bebdba22e59d34c9dd807ef9fedda5e75cceef57135fcd0f759edf48caf0b34c",
+        "manifest_match": true,
+        "units": 14,
+        "units_by_type": {
+          "prose": 7,
+          "math_block": 3,
+          "list": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 22,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 10,
+          "excluded_horizontal_rule": 0,
+          "accounted": 42,
+          "lines_total": 42,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 10,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/05. Morphological Processing and Segmentation/5.3 Opening and Closing.md",
+        "outcome": "extracted",
+        "sha256": "6148e6201ece27c31b68f2ab3279718e95386caae49d4fac5ea0b15aab05cb4b",
+        "manifest_match": true,
+        "units": 13,
+        "units_by_type": {
+          "prose": 7,
+          "math_block": 3,
+          "list": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 20,
+          "frontmatter_lines": 0,
+          "heading_context": 6,
+          "excluded_blank": 7,
+          "excluded_horizontal_rule": 0,
+          "accounted": 33,
+          "lines_total": 33,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 7,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/05. Morphological Processing and Segmentation/5.4 Morphological Algorithms.md",
+        "outcome": "extracted",
+        "sha256": "243c79405a4fd598b536bf97fecef7dafae4d36400e9590c6ea338de88c6a29e",
+        "manifest_match": true,
+        "units": 36,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 23,
+          "list": 10,
+          "math_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 61,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 44,
+          "excluded_horizontal_rule": 8,
+          "accounted": 121,
+          "lines_total": 121,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 44,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/05. Morphological Processing and Segmentation/5.5 Deep Learning for Imaging.md",
+        "outcome": "extracted",
+        "sha256": "e6bb6f30ae7ab54b47874f835f82994749abf06f965a2c777f6e5f27b13a60dc",
+        "manifest_match": true,
+        "units": 10,
+        "units_by_type": {
+          "prose": 6,
+          "list": 3,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 27,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 7,
+          "excluded_horizontal_rule": 0,
+          "accounted": 41,
+          "lines_total": 41,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 7,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/05. Morphological Processing and Segmentation/5.6 The Classical-to-Deep Bridge.md",
+        "outcome": "extracted",
+        "sha256": "56d12ec91439dd56cda30571e8246f21f08dfed87dfcc33272c54a6430ec2157",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 19,
+          "table": 1,
+          "list": 6,
+          "math_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 55,
+          "frontmatter_lines": 0,
+          "heading_context": 13,
+          "excluded_blank": 45,
+          "excluded_horizontal_rule": 7,
+          "accounted": 120,
+          "lines_total": 120,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 45,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/05. Morphological Processing and Segmentation/5.7 Thresholding and Otsu's Method.md",
+        "outcome": "extracted",
+        "sha256": "4b4994888c748bb9daad1eb6d154a9eeeb2ccc91abf635909690e9fb4fc1aa71",
+        "manifest_match": true,
+        "units": 32,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 19,
+          "code_block": 3,
+          "list": 6,
+          "math_block": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 62,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 46,
+          "excluded_horizontal_rule": 7,
+          "accounted": 125,
+          "lines_total": 125,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 46,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/05. Morphological Processing and Segmentation/5.8 Watershed Segmentation.md",
+        "outcome": "extracted",
+        "sha256": "41da2650c7de0f2049d6b94444a31debf86454431ae1edffa1d26e341eb44a4e",
+        "manifest_match": true,
+        "units": 21,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 15,
+          "list": 4,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 55,
+          "frontmatter_lines": 0,
+          "heading_context": 13,
+          "excluded_blank": 40,
+          "excluded_horizontal_rule": 8,
+          "accounted": 116,
+          "lines_total": 116,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 40,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/05. Morphological Processing and Segmentation/5.9 Connected Components and Region Properties.md",
+        "outcome": "extracted",
+        "sha256": "c3465a1936c3b2d7bc684d301a9f6d9351c3b09f05a2601609422c8912b4bf73",
+        "manifest_match": true,
+        "units": 26,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 13,
+          "code_block": 2,
+          "list": 5,
+          "callout": 1,
+          "table": 3,
+          "math_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 82,
+          "frontmatter_lines": 0,
+          "heading_context": 11,
+          "excluded_blank": 40,
+          "excluded_horizontal_rule": 5,
+          "accounted": 138,
+          "lines_total": 138,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 40,
+          "horizontal_rule": 5
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

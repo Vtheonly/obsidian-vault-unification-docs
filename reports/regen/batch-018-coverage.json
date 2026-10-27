@@ -1,0 +1,231 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "06 - Image Processing/01. Fundamentals of Digital Images (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-6t2lg8lr/018-regen001-ai-course-06-image-processing-01-fundamentals-of-digital-images.jsonl.run1",
+    "records_written": 153,
+    "denominators": {
+      "files_in_scope": 7,
+      "files_extracted": 7,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "06 - Image Processing/01. Fundamentals of Digital Images/1.1 What is a Digital Image.md",
+        "outcome": "extracted",
+        "sha256": "3c92847d6acf54eca6b5fd5277a2cdc1f178535dd8dbdf38b1d7642098af7777",
+        "manifest_match": true,
+        "units": 24,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 15,
+          "math_block": 1,
+          "list": 5,
+          "code_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 54,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 39,
+          "excluded_horizontal_rule": 7,
+          "accounted": 109,
+          "lines_total": 109,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 39,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/01. Fundamentals of Digital Images/1.2 Image Representation Types.md",
+        "outcome": "extracted",
+        "sha256": "6a65312d08bdd641456ba409cb135968fde4622d66ea8da1376c31906f0b8aa2",
+        "manifest_match": true,
+        "units": 12,
+        "units_by_type": {
+          "prose": 6,
+          "list": 4,
+          "table": 1,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 31,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 12,
+          "excluded_horizontal_rule": 0,
+          "accounted": 53,
+          "lines_total": 53,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 12,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/01. Fundamentals of Digital Images/1.3 Resolution and Bit Depth.md",
+        "outcome": "extracted",
+        "sha256": "f2072907545e29ef64ef3d0dd6eb7e3051fc1018322553f267880236151a1354",
+        "manifest_match": true,
+        "units": 19,
+        "units_by_type": {
+          "prose": 11,
+          "list": 5,
+          "math_block": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 41,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 14,
+          "excluded_horizontal_rule": 0,
+          "accounted": 63,
+          "lines_total": 63,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 14,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/01. Fundamentals of Digital Images/1.4 Color Spaces and Models.md",
+        "outcome": "extracted",
+        "sha256": "6c4ccff80f6935e6e5d562fc81b5a1beee978958bcd7f8de145792dd6383f9f3",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 17,
+          "list": 6,
+          "math_block": 4,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 63,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 43,
+          "excluded_horizontal_rule": 9,
+          "accounted": 124,
+          "lines_total": 124,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 43,
+          "horizontal_rule": 9
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/01. Fundamentals of Digital Images/1.5 Image File Formats.md",
+        "outcome": "extracted",
+        "sha256": "d9386178da6024bfe4e1d976b30da98d49b2e4fe820f75d54f336c2002436b73",
+        "manifest_match": true,
+        "units": 7,
+        "units_by_type": {
+          "prose": 3,
+          "list": 3,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 25,
+          "frontmatter_lines": 0,
+          "heading_context": 6,
+          "excluded_blank": 8,
+          "excluded_horizontal_rule": 0,
+          "accounted": 39,
+          "lines_total": 39,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 8,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/01. Fundamentals of Digital Images/1.6 Pixel Relationships and Distance Metrics.md",
+        "outcome": "extracted",
+        "sha256": "8156b9344490377fa3a8ff050d08a8bd000c060533ff63dfb061032726d2609c",
+        "manifest_match": true,
+        "units": 23,
+        "units_by_type": {
+          "prose": 13,
+          "list": 7,
+          "math_block": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 34,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 14,
+          "excluded_horizontal_rule": 0,
+          "accounted": 58,
+          "lines_total": 58,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 14,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/01. Fundamentals of Digital Images/1.7 The Color Image Processing Pipeline.md",
+        "outcome": "extracted",
+        "sha256": "8e1b9eac24e3ba64e0e78ccc94460c7f21d40fec311482f3c1b1ecaa1a3610c4",
+        "manifest_match": true,
+        "units": 39,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 25,
+          "code_block": 2,
+          "list": 9,
+          "math_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 63,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 55,
+          "excluded_horizontal_rule": 10,
+          "accounted": 138,
+          "lines_total": 138,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 55,
+          "horizontal_rule": 10
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

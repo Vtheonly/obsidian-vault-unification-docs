@@ -322,6 +322,20 @@ CAPABILITIES: list[dict] = [
             "ku_id resolvability requires the caller to pass the KU batches; without them the check is skipped and reported as such",
         ],
     },
+    {
+        "id": "CAP-022",
+        "name": "KU batch fidelity verification against immutable sources (excerpt byte-exactness, hashes, id uniqueness, manifest agreement)",
+        "module": "vault_unification.kufidelity",
+        "command": "vu ku-fidelity",
+        "status_declared": "implemented-and-tested",
+        "tests": ["tests/test_kufidelity.py", "tests/test_cli.py"],
+        "limitations": [
+            "byte-exact excerpt verification proves mechanical fidelity to source lines, not semantic completeness or correctness of the segmentation itself",
+            "heading-boundary authority is mdextract.extract_structure_text; setext headings remain unsupported (L-05)",
+            "cross-check batches are only preload-checked for id collisions, not fidelity",
+            "structural purity check assumes fresh batches by default; post-disposition verification requires --allow-processed",
+        ],
+    },
 ]
 
 

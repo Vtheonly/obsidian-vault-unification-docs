@@ -1,0 +1,243 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "08 - LLMs (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/040-regen001-master-ai-08-llms.jsonl.run1",
+    "records_written": 397,
+    "denominators": {
+      "files_in_scope": 7,
+      "files_extracted": 7,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "08 - LLMs/Architecture/01 - Decoder-Only Architecture.md",
+        "outcome": "extracted",
+        "sha256": "34efee8c04da8ebc68d6ed1512cb3f216b0e493fb25a9f963de7f04fbdfaa784",
+        "manifest_match": true,
+        "units": 69,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 29,
+          "code_block": 5,
+          "list": 26,
+          "math_block": 3,
+          "table": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 296,
+          "frontmatter_lines": 7,
+          "heading_context": 31,
+          "excluded_blank": 92,
+          "excluded_horizontal_rule": 0,
+          "accounted": 419,
+          "lines_total": 419,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 92,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - LLMs/Capabilities/04 - In-Context Learning.md",
+        "outcome": "extracted",
+        "sha256": "c1116808ab1107e2bf446c5fbec771f935860cfff3c136ed996751adffaef31c",
+        "manifest_match": true,
+        "units": 53,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 23,
+          "code_block": 8,
+          "table": 4,
+          "list": 16
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 192,
+          "frontmatter_lines": 7,
+          "heading_context": 24,
+          "excluded_blank": 64,
+          "excluded_horizontal_rule": 0,
+          "accounted": 280,
+          "lines_total": 280,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 64,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - LLMs/Context and KV Cache/02 - KV Cache Mechanics.md",
+        "outcome": "extracted",
+        "sha256": "0b3df1e25f37d7e057585f31ae1dffd2e35949a59ffda2b09ec284ed14611caf",
+        "manifest_match": true,
+        "units": 88,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 53,
+          "list": 28,
+          "math_block": 1,
+          "table": 1,
+          "code_block": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 258,
+          "frontmatter_lines": 7,
+          "heading_context": 31,
+          "excluded_blank": 108,
+          "excluded_horizontal_rule": 0,
+          "accounted": 397,
+          "lines_total": 397,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 108,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - LLMs/Evaluation/06 - LLM Benchmarks.md",
+        "outcome": "extracted",
+        "sha256": "446f3b6ddd600d3a88a79fe51359d2d672eeb8d5e8f897edaed06371d58a65df",
+        "manifest_match": true,
+        "units": 47,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 17,
+          "list": 23,
+          "table": 3,
+          "code_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 150,
+          "frontmatter_lines": 7,
+          "heading_context": 35,
+          "excluded_blank": 62,
+          "excluded_horizontal_rule": 0,
+          "accounted": 247,
+          "lines_total": 247,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 62,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - LLMs/Limitations/05 - Hallucination.md",
+        "outcome": "extracted",
+        "sha256": "a262d3a95d0ed83b929231c7c39313e4d8e61d035b60b14a5af2a8ddeba3484a",
+        "manifest_match": true,
+        "units": 68,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 32,
+          "list": 34
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 181,
+          "frontmatter_lines": 7,
+          "heading_context": 45,
+          "excluded_blank": 79,
+          "excluded_horizontal_rule": 0,
+          "accounted": 305,
+          "lines_total": 305,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 79,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - LLMs/MOC.md",
+        "outcome": "extracted",
+        "sha256": "162babeb451c2675e89f82b06b5a12722876612a471f9ae9d691c59d2a69f9a3",
+        "manifest_match": true,
+        "units": 5,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 24,
+          "frontmatter_lines": 5,
+          "heading_context": 4,
+          "excluded_blank": 8,
+          "excluded_horizontal_rule": 0,
+          "accounted": 36,
+          "lines_total": 36,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 8,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - LLMs/Sampling/03 - Sampling Strategies.md",
+        "outcome": "extracted",
+        "sha256": "a5914ede7cd1c9b37c1fe5c892c356557965e7ff4e0ebb8888f3f2c97c11cef5",
+        "manifest_match": true,
+        "units": 67,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 31,
+          "math_block": 7,
+          "list": 22,
+          "table": 3,
+          "code_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 220,
+          "frontmatter_lines": 7,
+          "heading_context": 30,
+          "excluded_blank": 87,
+          "excluded_horizontal_rule": 0,
+          "accounted": 337,
+          "lines_total": 337,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 87,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

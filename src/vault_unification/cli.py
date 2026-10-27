@@ -29,6 +29,7 @@ from . import repair as repair_mod
 from . import inventory as inventory_mod
 from . import kuregistry as kuregistry_mod
 from . import kuextract as kuextract_mod
+from . import kufidelity as kufidelity_mod
 from . import linkcheck as linkcheck_mod
 from . import mdextract as mdextract_mod
 from . import omission as omission_mod
@@ -38,6 +39,7 @@ from . import search as search_mod
 from . import selftest as selftest_mod
 from . import vaultstats as vaultstats_mod
 from .kuregistry import RegistryError
+from .kufidelity import FidelityError
 from .omission import AuditError
 from .overlap import OverlapError
 from .artifactlint import ArtifactLintError
@@ -310,6 +312,47 @@ def build_parser() -> argparse.ArgumentParser:
         help="finding id to attach to units from unclosed fences/math blocks (e.g. F-0002)",
     )
     p.add_argument("--report", help="optional JSON coverage report path")
+
+    # ---- ku-fidelity (CAP-022) ----
+    p = sub.add_parser(
+        "ku-fidelity",
+        help="verify KU batches are byte-faithful to their sources (excerpt slices, hashes, ids)",
+    )
+    p.add_argument(
+        "--batch",
+        required=True,
+        action="append",
+        dest="batches",
+        help="KU batch JSONL file to check (repeatable; all must belong to one vault)",
+    )
+    p.add_argument(
+        "--vault-id",
+        required=True,
+        help="stable vault identifier the batches were extracted with (e.g. ai-course)",
+    )
+    p.add_argument("--vault-root", required=True, help="source vault root (read-only)")
+    p.add_argument(
+        "--manifest",
+        required=True,
+        help="baseline manifest JSONL (root-relative relpaths + sha256) to verify against",
+    )
+    p.add_argument(
+        "--kus-schema",
+        default=str(REPO_ROOT / "schemas" / "knowledge-unit.schema.json"),
+        help="knowledge-unit JSON Schema path (schema validation included in the check)",
+    )
+    p.add_argument(
+        "--allow-processed",
+        action="store_true",
+        help="relax the fresh-batch structural-purity check (for post-disposition re-verification)",
+    )
+    p.add_argument(
+        "--cross-check-glob",
+        default=None,
+        help="glob of additional batches to preload for id-collision checks "
+        "(default: every sibling *.jsonl of the checked batches)",
+    )
+    p.add_argument("--report", help="optional JSON report path")
 
     # ---- omission-pilot ----
     p = sub.add_parser(
@@ -1131,6 +1174,61 @@ def cmd_extract_kus(args) -> int:
     return 0 if result["ok"] else 1
 
 
+def cmd_ku_fidelity(args) -> int:
+    root = Path(args.vault_root)
+    if not root.is_dir():
+        print(f"error: vault root is not a directory: {root}", file=sys.stderr)
+        return 1
+    cross_paths: list[str] | None = None
+    if args.cross_check_glob:
+        import glob as _glob
+
+        cross_paths = sorted(p for p in _glob.glob(args.cross_check_glob) if Path(p).is_file())
+    try:
+        result = kufidelity_mod.check_batches(
+            args.batches,
+            args.vault_id,
+            root,
+            args.manifest,
+            kus_schema=args.kus_schema,
+            cross_check_paths=cross_paths,
+            allow_processed=args.allow_processed,
+        )
+    except kufidelity_mod.FidelityError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    payload = {"command": "ku-fidelity", "result": result}
+    report_path = getattr(args, "report", None)
+    if report_path:
+        try:
+            dest = ensure_dest_safe(report_path, [root])
+        except PathSafetyError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 1
+        write_json_report(dest, "ku-fidelity", payload, args=vars(args) | {"report": str(dest)}, repo_root=REPO_ROOT)
+    _emit_summary(
+        {
+            "ok": result["ok"],
+            "vault_id": result["vault_id"],
+            "batches_checked": result["batches_checked"],
+            "records_total": result["records_total"],
+            "records_with_errors": result["records_with_errors"],
+            "cross_check_ids_preloaded": result["cross_check_ids_preloaded"],
+            "id_collisions": len(result["id_collisions"]),
+            "per_batch": [
+                {
+                    "batch": Path(b["batch"]).name,
+                    "records_total": b["records_total"],
+                    "excerpt_byte_exact": b["excerpt_byte_exact"],
+                    "ok": b["ok"],
+                }
+                for b in result["batches"]
+            ],
+        }
+    )
+    return 0 if result["ok"] else 1
+
+
 def cmd_omission_pilot(args) -> int:
     explicit = getattr(args, "protected_root", None) or []
     if explicit:
@@ -1702,6 +1800,7 @@ HANDLERS = {
     "kureg-validate": cmd_kureg_validate,
     "audit-output": cmd_audit_output,
     "extract-kus": cmd_extract_kus,
+    "ku-fidelity": cmd_ku_fidelity,
     "omission-pilot": cmd_omission_pilot,
     "overlap-candidates": cmd_overlap_candidates,
     "kureg-apply-overlap": cmd_kureg_apply_overlap,
@@ -1741,6 +1840,7 @@ def main(argv: list[str] | None = None) -> int:
         RepairError,
         PromptSpecError,
         DiscoveryError,
+        FidelityError,
     ) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1

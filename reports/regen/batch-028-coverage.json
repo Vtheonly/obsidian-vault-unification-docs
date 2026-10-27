@@ -1,0 +1,779 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN) (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/028-regen001-ai-course-09-quizzes-and-question-banks-02-deep-learning-chapter-2-cnn.jsonl.run1",
+    "records_written": 799,
+    "denominators": {
+      "files_in_scope": 27,
+      "files_extracted": 27,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q1 - Introduction and Foundations of CNNs.md",
+        "outcome": "extracted",
+        "sha256": "226d1c6715862c68dd13a074c304928e32542a7b7399aaa32abf52c4b16b138a",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 29
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 247,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 28,
+          "excluded_horizontal_rule": 0,
+          "accounted": 275,
+          "lines_total": 275,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 28,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q10 - Inception Architecture Deep Dive.md",
+        "outcome": "extracted",
+        "sha256": "8423d467901fc7377917504cabe6a3ddc486d6ac0e6d60faffdc45ab49b3a47e",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 29
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 237,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 28,
+          "excluded_horizontal_rule": 0,
+          "accounted": 265,
+          "lines_total": 265,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 28,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q11 - The Degradation Problem and Residual Connections.md",
+        "outcome": "extracted",
+        "sha256": "d3fccd76c6331794057f43f972626c9bf5b1f848528f3beef067a6365b640a23",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 28
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 259,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 27,
+          "excluded_horizontal_rule": 0,
+          "accounted": 286,
+          "lines_total": 286,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 27,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q12 - ResNet Bottleneck Blocks and Architectural Variants.md",
+        "outcome": "extracted",
+        "sha256": "b4da76d97470594e661124ca11923caf9ff6c5c57b4137684b279cdb171e5a7a",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 28
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 232,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 27,
+          "excluded_horizontal_rule": 0,
+          "accounted": 259,
+          "lines_total": 259,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 27,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q13 - Backpropagation and Gradient Flow in CNNs.md",
+        "outcome": "extracted",
+        "sha256": "b9b206802c50039b5c2b7d482a1c219619e49d745330b140e4317f99925fbc2f",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 244,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 273,
+          "lines_total": 273,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q14 - Weight Initialization.md",
+        "outcome": "extracted",
+        "sha256": "fd5ee7deba51bc16f74f9e812af6e71ca5f6ae46f8701065974f1de4de683bfa",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "frontmatter": 1,
+          "prose": 1,
+          "callout": 27
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 242,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 27,
+          "excluded_horizontal_rule": 0,
+          "accounted": 269,
+          "lines_total": 269,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 27,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q15 - The Vanishing and Exploding Gradient Problems.md",
+        "outcome": "extracted",
+        "sha256": "114eaa0e0c953c0b7f43daf602c2cf30390733197958e5e31e6aea770a643a24",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "prose": 1,
+          "callout": 29
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 245,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 274,
+          "lines_total": 274,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q16 - Batch Normalization.md",
+        "outcome": "extracted",
+        "sha256": "330cd46935a473397f57be6d1b13b38710e3d822b3b409f96e45a4cf17e7a9ed",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 29
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 237,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 28,
+          "excluded_horizontal_rule": 0,
+          "accounted": 265,
+          "lines_total": 265,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 28,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q17 - Dropout and Regularization.md",
+        "outcome": "extracted",
+        "sha256": "7b2d28d306a67e032a95a9a2ae8e772c32b0d13b4ddb866af3c18227967df15d",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 28
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 242,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 27,
+          "excluded_horizontal_rule": 0,
+          "accounted": 269,
+          "lines_total": 269,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 27,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q18 - Data Augmentation.md",
+        "outcome": "extracted",
+        "sha256": "f2493bccc2f95de39b786eaf25bd1c73c9daeae3778f93ffd9a4d72c80519ada",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 28
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 232,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 27,
+          "excluded_horizontal_rule": 0,
+          "accounted": 259,
+          "lines_total": 259,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 27,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q19 - Transfer Learning and Fine-Tuning.md",
+        "outcome": "extracted",
+        "sha256": "aa9d1c2fd448124813a47c40f42c23905b4cfb0faf31c3629e859a5dc303cdbc",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 244,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 273,
+          "lines_total": 273,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q2 - Core Architecture and Philosophy.md",
+        "outcome": "extracted",
+        "sha256": "7ebd345fc2aeb9126e7bc1bcba9a4a47a49fc9b21270c769b98739716f473037",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 28
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 259,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 27,
+          "excluded_horizontal_rule": 0,
+          "accounted": 286,
+          "lines_total": 286,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 27,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q20 - Loss Functions and Optimizers Deep Dive.md",
+        "outcome": "extracted",
+        "sha256": "232c98ae412862c17c1fa235cc41878566c0e41c050735530636cd28814e582a",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 28
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 223,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 27,
+          "excluded_horizontal_rule": 0,
+          "accounted": 250,
+          "lines_total": 250,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 27,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q21 - Model Evaluation Metrics Beyond Accuracy.md",
+        "outcome": "extracted",
+        "sha256": "7c91bd20f6a979e257a00c7ff29d924a66f918ad5b7315ce46eda9ff2e164548",
+        "manifest_match": true,
+        "units": 32,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 31
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 269,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 30,
+          "excluded_horizontal_rule": 0,
+          "accounted": 299,
+          "lines_total": 299,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 30,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q22 - PyTorch Implementation Basics.md",
+        "outcome": "extracted",
+        "sha256": "865957d68ddf2043f50c8d89248661b7b8b41f6bb7fa243132beac0015b28bad",
+        "manifest_match": true,
+        "units": 20,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 19
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 97,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 19,
+          "excluded_horizontal_rule": 0,
+          "accounted": 116,
+          "lines_total": 116,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 19,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q23 - PyTorch Advanced - VGG16 and Pre-trained Models.md",
+        "outcome": "extracted",
+        "sha256": "e29e891944ebc8e65165c4ee2ee3436f334ff7a26772e19826a667bfea33cb22",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 28
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 230,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 27,
+          "excluded_horizontal_rule": 0,
+          "accounted": 257,
+          "lines_total": 257,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 27,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q24 - The Full Training Pipeline End-to-End Checklist.md",
+        "outcome": "extracted",
+        "sha256": "f64402dfd82eb4fb6da9e1fa062513dd1a7a147b732c763670884887e54b8fff",
+        "manifest_match": true,
+        "units": 35,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 34
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 242,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 33,
+          "excluded_horizontal_rule": 0,
+          "accounted": 275,
+          "lines_total": 275,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 33,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q25 - Common Mistakes and How to Fix Them.md",
+        "outcome": "extracted",
+        "sha256": "6098433d8d2cd535d210df7c0a3922a2b660e68db1d87f43a68a41d597178966",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 29
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 247,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 28,
+          "excluded_horizontal_rule": 0,
+          "accounted": 275,
+          "lines_total": 275,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 28,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q26 - Demystifying the Black Box - CNN Interpretability.md",
+        "outcome": "extracted",
+        "sha256": "b8f1187307237bc3ee96a5b9f9fddc71b8dad234169088afd21b3e1d623c5ac0",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 29
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 262,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 28,
+          "excluded_horizontal_rule": 0,
+          "accounted": 290,
+          "lines_total": 290,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 28,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q27 - Exercises Solved and Explained.md",
+        "outcome": "extracted",
+        "sha256": "e612fda9f8ee1906ad94aaa478a61432a31da703010845f61212587ea7ff8540",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 29
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 247,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 28,
+          "excluded_horizontal_rule": 0,
+          "accounted": 275,
+          "lines_total": 275,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 28,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q3 - The Convolution Operation Deep Dive.md",
+        "outcome": "extracted",
+        "sha256": "b625084eccd1b52bb837f6361dbf1789635d3b8350a1f17e083627564f7623db",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 254,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 283,
+          "lines_total": 283,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q4 - The Mathematics of Receptive Fields and 1x1 Convolutions.md",
+        "outcome": "extracted",
+        "sha256": "a75733bc089f677d4a9cc01d3c14a29a629d302c2d9b2af93789595718767c55",
+        "manifest_match": true,
+        "units": 25,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 24
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 198,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 23,
+          "excluded_horizontal_rule": 0,
+          "accounted": 221,
+          "lines_total": 221,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 23,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q5 - Activation and Pooling Layers.md",
+        "outcome": "extracted",
+        "sha256": "2c8ae72b3bbbc2c7cad5233dc368471c870be458529c04fb01908cac18746fb8",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "frontmatter": 1,
+          "prose": 1,
+          "callout": 28
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 233,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 28,
+          "excluded_horizontal_rule": 0,
+          "accounted": 261,
+          "lines_total": 261,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 28,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q6 - Advanced Pooling Mechanisms and Global Average Pooling.md",
+        "outcome": "extracted",
+        "sha256": "b6613022967b6824996d973927de82f444560a8f3fcc43d5fef43cdef9b08e16",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 28
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 240,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 27,
+          "excluded_horizontal_rule": 0,
+          "accounted": 267,
+          "lines_total": 267,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 27,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q7 - Hyperparameters and Network Configuration.md",
+        "outcome": "extracted",
+        "sha256": "d0fa7e9030fbe106e05a4aff8ac7231ca3a42e719ec27ba5cc499e671b1f92a5",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 244,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 273,
+          "lines_total": 273,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q8 - Evolution of CNN Architectures.md",
+        "outcome": "extracted",
+        "sha256": "f725d4ac325efea3f55fa3eec79d6679e51545ccb14d9cee592d96abec57969c",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 300,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 329,
+          "lines_total": 329,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q9 - VGG16 Architecture Deep Dive.md",
+        "outcome": "extracted",
+        "sha256": "d5029d72ee3db0bfc6390fa73a6d87505c090f36b4ad41db0c29858733808d1d",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 29
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 266,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 28,
+          "excluded_horizontal_rule": 0,
+          "accounted": 294,
+          "lines_total": 294,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 28,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

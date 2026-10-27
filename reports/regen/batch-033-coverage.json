@@ -1,0 +1,239 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "01 - AI Foundations (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/033-regen001-master-ai-01-ai-foundations.jsonl.run1",
+    "records_written": 289,
+    "denominators": {
+      "files_in_scope": 7,
+      "files_extracted": 7,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "01 - AI Foundations/01 - What Is AI Engineering.md",
+        "outcome": "extracted",
+        "sha256": "9209fa9995054695a7eaddb6616881aeda9632bccb1f6307514961680f3cfcc9",
+        "manifest_match": true,
+        "units": 73,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 36,
+          "list": 34,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 182,
+          "frontmatter_lines": 7,
+          "heading_context": 38,
+          "excluded_blank": 79,
+          "excluded_horizontal_rule": 0,
+          "accounted": 299,
+          "lines_total": 299,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 79,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - AI Foundations/02 - AI vs ML vs DL vs GenAI vs Agentic AI.md",
+        "outcome": "extracted",
+        "sha256": "476259d8f59b3d9a3cffaf906b0f2b6a0a94563603bd4c58cb0eec6753593b3d",
+        "manifest_match": true,
+        "units": 72,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "code_block": 1,
+          "prose": 41,
+          "list": 27,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 185,
+          "frontmatter_lines": 7,
+          "heading_context": 31,
+          "excluded_blank": 78,
+          "excluded_horizontal_rule": 0,
+          "accounted": 294,
+          "lines_total": 294,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 78,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - AI Foundations/03 - A Brief History of AI.md",
+        "outcome": "extracted",
+        "sha256": "9c863bfad3e4575ee46cdeb7428aadf472bfc40571054fcd95ed20b0928df638",
+        "manifest_match": true,
+        "units": 46,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 28,
+          "list": 16
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 104,
+          "frontmatter_lines": 7,
+          "heading_context": 25,
+          "excluded_blank": 60,
+          "excluded_horizontal_rule": 0,
+          "accounted": 189,
+          "lines_total": 189,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 60,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - AI Foundations/04 - The Modern AI Stack.md",
+        "outcome": "extracted",
+        "sha256": "615623bf3001d5c34a1338048cfc90143c6157311ceb50c88b00607068f5b277",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "code_block": 1,
+          "prose": 16,
+          "list": 12
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 100,
+          "frontmatter_lines": 6,
+          "heading_context": 14,
+          "excluded_blank": 44,
+          "excluded_horizontal_rule": 0,
+          "accounted": 158,
+          "lines_total": 158,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 44,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - AI Foundations/05 - AI Engineer Roles.md",
+        "outcome": "extracted",
+        "sha256": "d51371b7d547a31738f95859c7562ae2a0d18db489540fde69ef725d8c9d0c57",
+        "manifest_match": true,
+        "units": 44,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "code_block": 1,
+          "prose": 34,
+          "table": 1,
+          "list": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 86,
+          "frontmatter_lines": 6,
+          "heading_context": 24,
+          "excluded_blank": 52,
+          "excluded_horizontal_rule": 0,
+          "accounted": 162,
+          "lines_total": 162,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 52,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - AI Foundations/06 - Map of the Field.md",
+        "outcome": "extracted",
+        "sha256": "66a09eef8a1f155e8ff12d3c5df500c81335abf7d202f43a5635ff0791d48150",
+        "manifest_match": true,
+        "units": 15,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "code_block": 1,
+          "prose": 2,
+          "list": 9,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 139,
+          "frontmatter_lines": 6,
+          "heading_context": 14,
+          "excluded_blank": 22,
+          "excluded_horizontal_rule": 0,
+          "accounted": 175,
+          "lines_total": 175,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 22,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - AI Foundations/MOC.md",
+        "outcome": "extracted",
+        "sha256": "93ec84d6de1eddd832c4d5378228eeff41ef48d6c7aefa3d3e178750f1c64f2a",
+        "manifest_match": true,
+        "units": 8,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "prose": 2,
+          "list": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 26,
+          "frontmatter_lines": 5,
+          "heading_context": 5,
+          "excluded_blank": 11,
+          "excluded_horizontal_rule": 0,
+          "accounted": 42,
+          "lines_total": 42,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 11,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

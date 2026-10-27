@@ -1,0 +1,208 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "26 - Papers/Alignment (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-qm8g30ip/060-regen001-master-ai-26-papers-alignment.jsonl.run1",
+    "records_written": 237,
+    "denominators": {
+      "files_in_scope": 6,
+      "files_extracted": 6,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "26 - Papers/Alignment/06 - LoRA 2021.md",
+        "outcome": "extracted",
+        "sha256": "70b0fc99be97b4e8dc56fc1d8ee95115c0ff842f01ab55e8c99479c5f9ef1231",
+        "manifest_match": true,
+        "units": 38,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 24,
+          "list": 9,
+          "code_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 85,
+          "frontmatter_lines": 6,
+          "heading_context": 18,
+          "excluded_blank": 45,
+          "excluded_horizontal_rule": 0,
+          "accounted": 148,
+          "lines_total": 148,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 45,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Alignment/07 - InstructGPT 2022.md",
+        "outcome": "extracted",
+        "sha256": "1a9165d8fdb9db1f35dde16142f3ac7330a122d942133a57967b75c438aafce7",
+        "manifest_match": true,
+        "units": 38,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 25,
+          "code_block": 3,
+          "list": 8
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 85,
+          "frontmatter_lines": 6,
+          "heading_context": 21,
+          "excluded_blank": 48,
+          "excluded_horizontal_rule": 0,
+          "accounted": 154,
+          "lines_total": 154,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 48,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Alignment/09 - DPO 2023.md",
+        "outcome": "extracted",
+        "sha256": "7af36304e56e9de8183e7b589e4bf89c586e76a390eaa6eb94ce64350bc7a367",
+        "manifest_match": true,
+        "units": 43,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 27,
+          "list": 7,
+          "code_block": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 120,
+          "frontmatter_lines": 6,
+          "heading_context": 20,
+          "excluded_blank": 53,
+          "excluded_horizontal_rule": 0,
+          "accounted": 193,
+          "lines_total": 193,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 53,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Alignment/31 - Constitutional AI 2022.md",
+        "outcome": "extracted",
+        "sha256": "6981c571e8743633f18f16a5a5670cc631b1309c1b59c0c6fe60048631b2c626",
+        "manifest_match": true,
+        "units": 43,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 25,
+          "list": 14,
+          "code_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 94,
+          "frontmatter_lines": 6,
+          "heading_context": 25,
+          "excluded_blank": 50,
+          "excluded_horizontal_rule": 0,
+          "accounted": 169,
+          "lines_total": 169,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 50,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Alignment/50 - Process Reward Models 2023.md",
+        "outcome": "extracted",
+        "sha256": "10aac74021f4d0697084b3f46f3e0ba4f8c4586600584dcffd48d45114f5bc09",
+        "manifest_match": true,
+        "units": 32,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 17,
+          "list": 12,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 79,
+          "frontmatter_lines": 7,
+          "heading_context": 25,
+          "excluded_blank": 41,
+          "excluded_horizontal_rule": 0,
+          "accounted": 145,
+          "lines_total": 145,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 41,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Alignment/53 - Verifiable Rewards vs PRMs.md",
+        "outcome": "extracted",
+        "sha256": "de33692259ad041e21cc6cf6a74f127f24cb686ff25a5fed8988bb6a7a5d8f65",
+        "manifest_match": true,
+        "units": 43,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 14,
+          "list": 25,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 122,
+          "frontmatter_lines": 7,
+          "heading_context": 34,
+          "excluded_blank": 53,
+          "excluded_horizontal_rule": 0,
+          "accounted": 209,
+          "lines_total": 209,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 53,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

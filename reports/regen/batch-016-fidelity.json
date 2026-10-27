@@ -1,0 +1,118 @@
+{
+  "command": "ku-fidelity",
+  "result": {
+    "command": "ku-fidelity",
+    "ok": true,
+    "vault_id": "ai-course",
+    "vault_root": "source-vaults/AI /AI Course",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "allow_processed": false,
+    "batches_checked": 1,
+    "records_total": 3899,
+    "records_with_errors": 0,
+    "batches": [
+      {
+        "batch": "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/016-regen001-ai-course-05-convolutional-neural-networks-cnn.jsonl",
+        "records_total": 3899,
+        "excerpt_byte_exact": 3899,
+        "excerpt_hash_valid": 3899,
+        "structurally_pure": 3899,
+        "manifest_agree": 3899,
+        "schema_valid": true,
+        "unique_ids_in_batch": 3899,
+        "files_covered": [
+          "05 - Convolutional Neural Networks (CNN)/00. CNN Mastery Roadmap.md",
+          "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+          "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/01. Introduction and Foundations of CNNs.md",
+          "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/02. Core Architecture and Philosophy.md",
+          "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/03. The Bridge - From Basic Convolution to Learned Weights.md",
+          "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/04. Demystifying Tensors - Volumes, Depth, and Data Formats.md",
+          "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/05. Processing 3D Volumes, Depth Summation, and Biases.md",
+          "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/01. The Convolution Operation Deep Dive.md",
+          "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/02. The Mathematics of Receptive Fields and 1x1 Convolutions.md",
+          "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/03. Activation and Pooling Layers.md",
+          "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/04. Advanced Pooling Mechanisms and Global Average Pooling.md",
+          "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/05. The Output Spatial Dimension Formula.md",
+          "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/06. Padding - Mathematics, Edge Effects, and Valid vs Same.md",
+          "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/07. Strides - Skipping Pixels and Downsampling.md",
+          "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/01. Local Connectivity and Parameter Sharing.md",
+          "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/02. Hierarchical Feature Extraction.md",
+          "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/04. The Fully Connected Layer and Flattening.md",
+          "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/05. Evolution of CNN Architectures.md",
+          "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/06. VGG16 Architecture Deep Dive.md",
+          "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/07. Inception Architecture Deep Dive.md",
+          "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/08. The Degradation Problem and Residual Connections.md",
+          "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/09. ResNet Bottleneck Blocks and Architectural Variants.md",
+          "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/01. Transfer Learning and Fine-Tuning.md",
+          "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/02. PyTorch Implementation Basics.md",
+          "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/03. PyTorch Advanced - VGG16 and Pre-trained Models.md",
+          "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/01. The Full Training Pipeline End-to-End Checklist.md",
+          "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/02. Common Mistakes and How to Fix Them.md",
+          "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/03. Demystifying the Black Box - CNN Interpretability.md",
+          "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/04. Exercises Solved and Explained.md",
+          "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/01. Foundations and Philosophy - Summary.md",
+          "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/02. Core Operators and Geometry - Summary.md",
+          "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/03. Hyperparameters and Basic PyTorch - Summary.md",
+          "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/04. VGG and Classic Architectures - Summary.md",
+          "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/05. Normalization, Regularization and Augmentation - Summary.md",
+          "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/06. Transfer Learning and ResNet - Summary.md",
+          "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/07. Scaling, Pipeline and Interpretability - Summary.md",
+          "05 - Convolutional Neural Networks (CNN)/07. Advanced Operators/01. Advanced Convolutional Operators - Depthwise, Dilated, Transposed, Grouped.md",
+          "05 - Convolutional Neural Networks (CNN)/08. Modern Computer Vision Tasks/01. Modern Computer Vision Tasks - Detection and Segmentation.md"
+        ],
+        "errors": [],
+        "ok": true
+      }
+    ],
+    "cross_check_batches": [
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/002-ext002-master-ai-supervised-learning.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/003-ext004-ai-course-03.7-tree-based-models.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/004-ext005-master-ai-evaluation.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/005-ext005-ai-course-03.6-model-evaluation.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/006-ext008-master-ai-unsupervised.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/007-ext008-ai-course-clustering-dimreduction.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/008-ext009-master-ai-generalization.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/009-ext009-ai-course-04.3-regularization.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/010-ext010-master-ai-training-stability.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/011-ext010-ai-course-04.3-init-gradients.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/012-regen001-ai-course-01-foundations-and-overview.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/013-regen001-ai-course-02-python-and-data-tooling.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/014-regen001-ai-course-03-machine-learning.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/015-regen001-ai-course-04-neural-networks-and-deep-learning-foundations.jsonl"
+    ],
+    "cross_check_ids_preloaded": 4706,
+    "ids_unique_across_checked": 3899,
+    "id_collisions": [],
+    "denominators": {
+      "records": "every record in every checked batch",
+      "checks": "schema (when supplied), id uniqueness (within + cross-batch), vault prefix, source_id/path agreement, source_file_hash vs disk and manifest, structural purity, excerpt byte-fidelity, excerpt hash, span bounds, heading-crossing",
+      "exclusions": "cross-check batches are only preload-checked for id collisions, not fidelity"
+    },
+    "limitations": [
+      "byte-exact excerpt verification proves mechanical fidelity to source lines, not semantic completeness or correctness of the segmentation itself",
+      "heading-boundary authority is mdextract.extract_structure_text; setext headings remain unsupported (L-05)"
+    ]
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.8.0",
+    "report_schema_version": "1.0",
+    "command": "ku-fidelity",
+    "args": {
+      "command": "ku-fidelity",
+      "batches": [
+        "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/016-regen001-ai-course-05-convolutional-neural-networks-cnn.jsonl"
+      ],
+      "vault_id": "ai-course",
+      "vault_root": "source-vaults/AI /AI Course",
+      "manifest": "state/manifests/ai-course.jsonl",
+      "kus_schema": "/home/z/my-project/workspace/obsidian-vault-unification-docs/schemas/knowledge-unit.schema.json",
+      "allow_processed": false,
+      "cross_check_glob": null,
+      "report": "/home/z/my-project/workspace/obsidian-vault-unification-docs/reports/regen/batch-016-fidelity.json"
+    },
+    "utc_timestamp": "2026-10-27T20:50:18+00:00",
+    "git_commit": "557a0f2"
+  }
+}

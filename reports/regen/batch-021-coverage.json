@@ -1,0 +1,172 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "06 - Image Processing/04. Frequency Domain and Restoration (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/021-regen001-ai-course-06-image-processing-04-frequency-domain-and-restoration.jsonl.run1",
+    "records_written": 140,
+    "denominators": {
+      "files_in_scope": 5,
+      "files_extracted": 5,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "06 - Image Processing/04. Frequency Domain and Restoration/4.1 Introduction to the Frequency Domain.md",
+        "outcome": "extracted",
+        "sha256": "f56c6e56714c69d443144262e68274e23d5ad7b54df2b79de70945d8ba597f4b",
+        "manifest_match": true,
+        "units": 17,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 7,
+          "list": 9
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 29,
+          "frontmatter_lines": 0,
+          "heading_context": 6,
+          "excluded_blank": 28,
+          "excluded_horizontal_rule": 6,
+          "accounted": 69,
+          "lines_total": 69,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 28,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/04. Frequency Domain and Restoration/4.2 The Fourier Transform.md",
+        "outcome": "extracted",
+        "sha256": "ee9c10e7966bb4a2981358e936695be5089adf73fc1b596cc9bb3824f82ec497",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 21,
+          "math_block": 4,
+          "code_block": 1,
+          "list": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 51,
+          "frontmatter_lines": 0,
+          "heading_context": 12,
+          "excluded_blank": 48,
+          "excluded_horizontal_rule": 8,
+          "accounted": 119,
+          "lines_total": 119,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 48,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/04. Frequency Domain and Restoration/4.3 Frequency Domain Filtering.md",
+        "outcome": "extracted",
+        "sha256": "72e581c19a94cfd5d6c9abc016f06c5b3abefe6ecff676ae61b81e266e739da8",
+        "manifest_match": true,
+        "units": 32,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 23,
+          "list": 3,
+          "math_block": 4,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 53,
+          "frontmatter_lines": 0,
+          "heading_context": 13,
+          "excluded_blank": 51,
+          "excluded_horizontal_rule": 8,
+          "accounted": 125,
+          "lines_total": 125,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 51,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/04. Frequency Domain and Restoration/4.4 Image Degradation and Noise Models.md",
+        "outcome": "extracted",
+        "sha256": "dcb7aeb887e72254dff56dc9ce27aba95951f63c16ecf59e04e36aa0d2d478f7",
+        "manifest_match": true,
+        "units": 32,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 18,
+          "math_block": 5,
+          "list": 8
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 52,
+          "frontmatter_lines": 0,
+          "heading_context": 18,
+          "excluded_blank": 56,
+          "excluded_horizontal_rule": 7,
+          "accounted": 133,
+          "lines_total": 133,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 56,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/04. Frequency Domain and Restoration/4.5 Image Quality Metrics.md",
+        "outcome": "extracted",
+        "sha256": "7152ce617bd804f0be87b2d3aa14935936c3172a8558f2e1a5be594515b5c887",
+        "manifest_match": true,
+        "units": 28,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 17,
+          "math_block": 3,
+          "list": 6,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 55,
+          "frontmatter_lines": 0,
+          "heading_context": 13,
+          "excluded_blank": 50,
+          "excluded_horizontal_rule": 10,
+          "accounted": 128,
+          "lines_total": 128,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 50,
+          "horizontal_rule": 10
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

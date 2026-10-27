@@ -1,0 +1,814 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "27 - Projects (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-qm8g30ip/067-regen001-master-ai-27-projects.jsonl.run1",
+    "records_written": 1004,
+    "denominators": {
+      "files_in_scope": 25,
+      "files_extracted": 25,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "27 - Projects/Capstones/06 - Build a Multi-Agent System.md",
+        "outcome": "extracted",
+        "sha256": "62da1b13a35331b8aff92b2619ebecfe2f7f9cbe1ab9999c9f89aa863a69c4b1",
+        "manifest_match": true,
+        "units": 44,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 21,
+          "list": 12,
+          "code_block": 9
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 389,
+          "frontmatter_lines": 7,
+          "heading_context": 30,
+          "excluded_blank": 59,
+          "excluded_horizontal_rule": 0,
+          "accounted": 478,
+          "lines_total": 478,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 59,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/07 - Build a Reasoning Model Fine-Tune.md",
+        "outcome": "extracted",
+        "sha256": "8a8bfd3706162d69cc58dab926af6508e36ec4c95f5a4b145831e53aa7521b42",
+        "manifest_match": true,
+        "units": 62,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 36,
+          "list": 11,
+          "code_block": 11,
+          "math_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 283,
+          "frontmatter_lines": 7,
+          "heading_context": 33,
+          "excluded_blank": 88,
+          "excluded_horizontal_rule": 0,
+          "accounted": 404,
+          "lines_total": 404,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 88,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/08 - Build an MCP Server.md",
+        "outcome": "extracted",
+        "sha256": "5b4834cb01a17c915948a2e2e6fe2ba6e960bf036d80ce750f819337bc858023",
+        "manifest_match": true,
+        "units": 54,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 32,
+          "list": 11,
+          "code_block": 9
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 304,
+          "frontmatter_lines": 7,
+          "heading_context": 32,
+          "excluded_blank": 79,
+          "excluded_horizontal_rule": 0,
+          "accounted": 415,
+          "lines_total": 415,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 79,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/10 - Build a Vision-Language Model.md",
+        "outcome": "extracted",
+        "sha256": "1b9c5e8fa8422bbb60b4fb404e8042d290480ae0c4685e627ed895c373178af6",
+        "manifest_match": true,
+        "units": 59,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 32,
+          "list": 14,
+          "code_block": 10,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 393,
+          "frontmatter_lines": 7,
+          "heading_context": 34,
+          "excluded_blank": 87,
+          "excluded_horizontal_rule": 0,
+          "accounted": 514,
+          "lines_total": 514,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 87,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/11 - Build a Distributed Training Pipeline.md",
+        "outcome": "extracted",
+        "sha256": "99bb2a20c7baf4dee72904e7d216544794c99cd926c37dddb75abf85c3bc2003",
+        "manifest_match": true,
+        "units": 55,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 26,
+          "list": 17,
+          "code_block": 9,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 322,
+          "frontmatter_lines": 7,
+          "heading_context": 27,
+          "excluded_blank": 76,
+          "excluded_horizontal_rule": 0,
+          "accounted": 425,
+          "lines_total": 425,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 76,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/12 - Build a Code Agent.md",
+        "outcome": "extracted",
+        "sha256": "55b064467d581874fc8115ce0c5f0ec415d0a418d985a846f8b30e40b461c036",
+        "manifest_match": true,
+        "units": 49,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 20,
+          "list": 19,
+          "code_block": 7,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 363,
+          "frontmatter_lines": 7,
+          "heading_context": 30,
+          "excluded_blank": 73,
+          "excluded_horizontal_rule": 0,
+          "accounted": 466,
+          "lines_total": 466,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 73,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/13 - Build a RAG Evaluation Harness.md",
+        "outcome": "extracted",
+        "sha256": "ada41b134ec826a3260b6f506d426a4650036fa61e846db40550d1b2282d6e4d",
+        "manifest_match": true,
+        "units": 54,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 22,
+          "list": 17,
+          "code_block": 12,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 449,
+          "frontmatter_lines": 7,
+          "heading_context": 31,
+          "excluded_blank": 79,
+          "excluded_horizontal_rule": 0,
+          "accounted": 559,
+          "lines_total": 559,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 79,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/14 - Build a Multimodal RAG Pipeline.md",
+        "outcome": "extracted",
+        "sha256": "18258d134aa4f17ecd8d3ab80d0e88d093b80fe57becb9594648185071260595",
+        "manifest_match": true,
+        "units": 57,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 27,
+          "list": 15,
+          "code_block": 12,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 396,
+          "frontmatter_lines": 7,
+          "heading_context": 35,
+          "excluded_blank": 86,
+          "excluded_horizontal_rule": 0,
+          "accounted": 517,
+          "lines_total": 517,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 86,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/15 - Build a Multimodal Agent.md",
+        "outcome": "extracted",
+        "sha256": "58043c05809d68b1499426fb6ac7b26ef0d7a19011368f2a51cb449449265f8d",
+        "manifest_match": true,
+        "units": 25,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 6,
+          "list": 10,
+          "code_block": 6,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 236,
+          "frontmatter_lines": 7,
+          "heading_context": 18,
+          "excluded_blank": 37,
+          "excluded_horizontal_rule": 0,
+          "accounted": 291,
+          "lines_total": 291,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 37,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/16 - Build a Speculative Decoding Server.md",
+        "outcome": "extracted",
+        "sha256": "44125cdc0e495e82d4b645b61e16cd55f700058b136af6235fe7cdba7b8487b5",
+        "manifest_match": true,
+        "units": 24,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 5,
+          "list": 10,
+          "code_block": 6,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 233,
+          "frontmatter_lines": 7,
+          "heading_context": 18,
+          "excluded_blank": 36,
+          "excluded_horizontal_rule": 0,
+          "accounted": 287,
+          "lines_total": 287,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 36,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/17 - Build a Quantization Toolkit.md",
+        "outcome": "extracted",
+        "sha256": "2c779cf1ed75b6784e27355f368d257235534b4fe64989ec98f75fe937717450",
+        "manifest_match": true,
+        "units": 24,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 5,
+          "list": 10,
+          "code_block": 6,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 270,
+          "frontmatter_lines": 7,
+          "heading_context": 18,
+          "excluded_blank": 36,
+          "excluded_horizontal_rule": 0,
+          "accounted": 324,
+          "lines_total": 324,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 36,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/18 - Build an MCP Marketplace.md",
+        "outcome": "extracted",
+        "sha256": "8c7a48a44f8ed5105f445616a844f7fd1205a8cfbe392b9e2c93d8926c3f8a29",
+        "manifest_match": true,
+        "units": 26,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 5,
+          "list": 11,
+          "code_block": 7,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 334,
+          "frontmatter_lines": 7,
+          "heading_context": 19,
+          "excluded_blank": 38,
+          "excluded_horizontal_rule": 0,
+          "accounted": 391,
+          "lines_total": 391,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 38,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/19 - Build a Fine-Tuning Pipeline with LoRA and DPO.md",
+        "outcome": "extracted",
+        "sha256": "d151b5d576bceb41b1293d07c69769d8465d52e37211ee9974471febb64bc9b4",
+        "manifest_match": true,
+        "units": 27,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 4,
+          "list": 12,
+          "code_block": 8,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 331,
+          "frontmatter_lines": 7,
+          "heading_context": 21,
+          "excluded_blank": 41,
+          "excluded_horizontal_rule": 0,
+          "accounted": 393,
+          "lines_total": 393,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 41,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/20 - Build an RLHF Pipeline with PPO.md",
+        "outcome": "extracted",
+        "sha256": "54cb9c1271d4b847abe0487411ce2aa6565c530e47a6c89efd4953deb5c5d5e4",
+        "manifest_match": true,
+        "units": 32,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 11,
+          "list": 12,
+          "code_block": 6,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 349,
+          "frontmatter_lines": 7,
+          "heading_context": 21,
+          "excluded_blank": 44,
+          "excluded_horizontal_rule": 0,
+          "accounted": 414,
+          "lines_total": 414,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 44,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/21 - Build a Knowledge-Graph Construction Pipeline.md",
+        "outcome": "extracted",
+        "sha256": "8ca045867bd06a0555a5d49acb32fdf2eff320547730da5a140639b5e29097ab",
+        "manifest_match": true,
+        "units": 28,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 8,
+          "list": 9,
+          "code_block": 8,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 394,
+          "frontmatter_lines": 7,
+          "heading_context": 21,
+          "excluded_blank": 42,
+          "excluded_horizontal_rule": 0,
+          "accounted": 457,
+          "lines_total": 457,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 42,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/22 - Build a Long-Context Evaluation Harness.md",
+        "outcome": "extracted",
+        "sha256": "9b6c03ac24714536af6dc98f2d0dd2309d47c0a596d94f7fa129323d03a69853",
+        "manifest_match": true,
+        "units": 35,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 12,
+          "list": 11,
+          "code_block": 9,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 312,
+          "frontmatter_lines": 7,
+          "heading_context": 23,
+          "excluded_blank": 49,
+          "excluded_horizontal_rule": 0,
+          "accounted": 384,
+          "lines_total": 384,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 49,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/23 - Build an Agent Observability Platform.md",
+        "outcome": "extracted",
+        "sha256": "66f5a5c6ffbba4a10b066ff3da7e0d14f01a333e44d716cd88b25b601807c17a",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 10,
+          "list": 10,
+          "code_block": 7,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 495,
+          "frontmatter_lines": 7,
+          "heading_context": 22,
+          "excluded_blank": 43,
+          "excluded_horizontal_rule": 0,
+          "accounted": 560,
+          "lines_total": 560,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 43,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Capstones/24 - Build a Model Distillation Pipeline.md",
+        "outcome": "extracted",
+        "sha256": "5ba3dd14a3f8818cb4aacc0beddfd93190839f9a3b952d3d61b73d6ddc6ee803",
+        "manifest_match": true,
+        "units": 33,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 12,
+          "list": 10,
+          "code_block": 8,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 482,
+          "frontmatter_lines": 7,
+          "heading_context": 23,
+          "excluded_blank": 47,
+          "excluded_horizontal_rule": 0,
+          "accounted": 552,
+          "lines_total": 552,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 47,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Implementations/01 - Build Attention and Transformer From Scratch.md",
+        "outcome": "extracted",
+        "sha256": "75ccba660a0fce9616514f25846fc80fc6eb5aa327ce91f2857fa0aacf53884b",
+        "manifest_match": true,
+        "units": 40,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 14,
+          "list": 18,
+          "code_block": 5,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 295,
+          "frontmatter_lines": 7,
+          "heading_context": 26,
+          "excluded_blank": 56,
+          "excluded_horizontal_rule": 0,
+          "accounted": 377,
+          "lines_total": 377,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 56,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Implementations/04 - Build a Mini MoE.md",
+        "outcome": "extracted",
+        "sha256": "d36156d378b21301398c89b2ff4cde44854220136e88a2ad705ee70a14ae8c78",
+        "manifest_match": true,
+        "units": 40,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 18,
+          "list": 13,
+          "code_block": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 337,
+          "frontmatter_lines": 7,
+          "heading_context": 26,
+          "excluded_blank": 52,
+          "excluded_horizontal_rule": 0,
+          "accounted": 415,
+          "lines_total": 415,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 52,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Implementations/05 - Build a Tiny LLM Trainer.md",
+        "outcome": "extracted",
+        "sha256": "ce607217bd2bda44d6a46f180c11997ae30b415427911b1ed6a2a0716f493a1f",
+        "manifest_match": true,
+        "units": 37,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 16,
+          "list": 12,
+          "code_block": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 365,
+          "frontmatter_lines": 7,
+          "heading_context": 28,
+          "excluded_blank": 50,
+          "excluded_horizontal_rule": 0,
+          "accounted": 443,
+          "lines_total": 443,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 50,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Implementations/09 - Build a Mini SSM.md",
+        "outcome": "extracted",
+        "sha256": "2fc96ad9c6ffbca305381738a834cd1b513f6efc8f830af944c922c9228e067c",
+        "manifest_match": true,
+        "units": 60,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 36,
+          "list": 12,
+          "code_block": 7,
+          "math_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 302,
+          "frontmatter_lines": 7,
+          "heading_context": 32,
+          "excluded_blank": 84,
+          "excluded_horizontal_rule": 0,
+          "accounted": 418,
+          "lines_total": 418,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 84,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/MOC.md",
+        "outcome": "extracted",
+        "sha256": "c43e39d4608ef9d4296896bc9ba473303547dfe252b44d9d720005681ddb0cd3",
+        "manifest_match": true,
+        "units": 9,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 69,
+          "frontmatter_lines": 6,
+          "heading_context": 8,
+          "excluded_blank": 16,
+          "excluded_horizontal_rule": 0,
+          "accounted": 93,
+          "lines_total": 93,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 16,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Mini-Projects/02 - Build a Mini RAG Pipeline.md",
+        "outcome": "extracted",
+        "sha256": "eeda7ba979749f401ddd50d19953dbcbb314bc1a5e0cb9254e02681c2ff33107",
+        "manifest_match": true,
+        "units": 55,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 27,
+          "list": 14,
+          "code_block": 12
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 394,
+          "frontmatter_lines": 7,
+          "heading_context": 33,
+          "excluded_blank": 70,
+          "excluded_horizontal_rule": 0,
+          "accounted": 497,
+          "lines_total": 497,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 70,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "27 - Projects/Mini-Projects/03 - Build a Mini Agent.md",
+        "outcome": "extracted",
+        "sha256": "9b6c4b073dfd9a2d3e20aeafb6221a5966ab440c987c3b85f756e93769669fc9",
+        "manifest_match": true,
+        "units": 45,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 22,
+          "list": 13,
+          "code_block": 8
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 458,
+          "frontmatter_lines": 7,
+          "heading_context": 30,
+          "excluded_blank": 57,
+          "excluded_horizontal_rule": 0,
+          "accounted": 545,
+          "lines_total": 545,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 57,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,608 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "02 - Mathematics (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/034-regen001-master-ai-02-mathematics.jsonl.run1",
+    "records_written": 1354,
+    "denominators": {
+      "files_in_scope": 18,
+      "files_extracted": 18,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "02 - Mathematics/Calculus/10 - Gradient and Chain Rule.md",
+        "outcome": "extracted",
+        "sha256": "cf7d45fb6538d7696911969f2a5e3c36f4a80c92a14cb69eac5c58281bf4d85a",
+        "manifest_match": true,
+        "units": 88,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 48,
+          "math_block": 9,
+          "code_block": 4,
+          "list": 24,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 214,
+          "frontmatter_lines": 7,
+          "heading_context": 37,
+          "excluded_blank": 106,
+          "excluded_horizontal_rule": 0,
+          "accounted": 357,
+          "lines_total": 357,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 106,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Calculus/11 - Jacobians and Hessians.md",
+        "outcome": "extracted",
+        "sha256": "b2b42cb1fd0c1ad40836e259e6ff05ad55c7ef0dc141911d87cfdf481bcf7aae",
+        "manifest_match": true,
+        "units": 78,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 41,
+          "math_block": 12,
+          "list": 21,
+          "code_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 196,
+          "frontmatter_lines": 7,
+          "heading_context": 33,
+          "excluded_blank": 98,
+          "excluded_horizontal_rule": 0,
+          "accounted": 327,
+          "lines_total": 327,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 98,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Information Theory/15 - Entropy Cross-Entropy KL.md",
+        "outcome": "extracted",
+        "sha256": "607424ad313f0071d81abed6bfdd7d7712bf50533f889bb882ea9ec0828993f0",
+        "manifest_match": true,
+        "units": 84,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 38,
+          "math_block": 17,
+          "list": 24,
+          "code_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 222,
+          "frontmatter_lines": 7,
+          "heading_context": 44,
+          "excluded_blank": 110,
+          "excluded_horizontal_rule": 0,
+          "accounted": 376,
+          "lines_total": 376,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 110,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Linear Algebra/01 - Vectors.md",
+        "outcome": "extracted",
+        "sha256": "04b27daada8f9ac5af8f6d364c2f5534a39e7d12ee9f4408bae5e15b7a38cf24",
+        "manifest_match": true,
+        "units": 92,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 47,
+          "math_block": 16,
+          "code_block": 7,
+          "list": 20
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 236,
+          "frontmatter_lines": 7,
+          "heading_context": 31,
+          "excluded_blank": 120,
+          "excluded_horizontal_rule": 0,
+          "accounted": 387,
+          "lines_total": 387,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 120,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Linear Algebra/02 - Dot Product.md",
+        "outcome": "extracted",
+        "sha256": "31b330edf11178142038fe8c282cfebb6496e521f97cc7bc282705b49e1784ed",
+        "manifest_match": true,
+        "units": 92,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 56,
+          "math_block": 14,
+          "code_block": 4,
+          "list": 16
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 210,
+          "frontmatter_lines": 7,
+          "heading_context": 35,
+          "excluded_blank": 124,
+          "excluded_horizontal_rule": 0,
+          "accounted": 369,
+          "lines_total": 369,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 124,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Linear Algebra/03 - Cosine Similarity.md",
+        "outcome": "extracted",
+        "sha256": "870863501807aee649cdd4ed48a61232855be4a4f3423bf9bdb41d822adc434c",
+        "manifest_match": true,
+        "units": 66,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 29,
+          "math_block": 9,
+          "list": 21,
+          "code_block": 3,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 196,
+          "frontmatter_lines": 7,
+          "heading_context": 28,
+          "excluded_blank": 91,
+          "excluded_horizontal_rule": 0,
+          "accounted": 315,
+          "lines_total": 315,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 91,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md",
+        "outcome": "extracted",
+        "sha256": "f41ace7ad6076ae66872de9d47b100a7b0a8ddc2fc52a4142206b0125d90f0d5",
+        "manifest_match": true,
+        "units": 75,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 38,
+          "math_block": 8,
+          "code_block": 3,
+          "list": 23,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 202,
+          "frontmatter_lines": 7,
+          "heading_context": 40,
+          "excluded_blank": 97,
+          "excluded_horizontal_rule": 0,
+          "accounted": 339,
+          "lines_total": 339,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 97,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Linear Algebra/05 - Matrix Decomposition.md",
+        "outcome": "extracted",
+        "sha256": "209d8f02c1302f50dfe102548875569a43add04891b9b0d7925484c5c2c08901",
+        "manifest_match": true,
+        "units": 73,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 35,
+          "list": 26,
+          "math_block": 6,
+          "code_block": 3,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 207,
+          "frontmatter_lines": 7,
+          "heading_context": 34,
+          "excluded_blank": 86,
+          "excluded_horizontal_rule": 0,
+          "accounted": 327,
+          "lines_total": 327,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 86,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Linear Algebra/06 - Tensors and Broadcasting.md",
+        "outcome": "extracted",
+        "sha256": "5bc4c9393ef35304a1be82c0c7b977bf2950479a696fb57c26f8dca790a842bd",
+        "manifest_match": true,
+        "units": 65,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 30,
+          "table": 5,
+          "list": 17,
+          "code_block": 11
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 285,
+          "frontmatter_lines": 7,
+          "heading_context": 31,
+          "excluded_blank": 90,
+          "excluded_horizontal_rule": 0,
+          "accounted": 406,
+          "lines_total": 406,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 90,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/MOC.md",
+        "outcome": "extracted",
+        "sha256": "559c1874f429abb65e5496631a2b7a9e001949f268fd62a31eb857ebfcfa1692",
+        "manifest_match": true,
+        "units": 8,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 3,
+          "prose": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 42,
+          "frontmatter_lines": 5,
+          "heading_context": 5,
+          "excluded_blank": 12,
+          "excluded_horizontal_rule": 0,
+          "accounted": 59,
+          "lines_total": 59,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 12,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Optimization/12 - Optimization Essentials.md",
+        "outcome": "extracted",
+        "sha256": "61468b7634181ce17de33bdd762090a91b1288532baae893d1234fe267e32560",
+        "manifest_match": true,
+        "units": 81,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 39,
+          "math_block": 14,
+          "list": 20,
+          "code_block": 3,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 313,
+          "frontmatter_lines": 7,
+          "heading_context": 32,
+          "excluded_blank": 111,
+          "excluded_horizontal_rule": 0,
+          "accounted": 456,
+          "lines_total": 456,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 111,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Optimization/13 - Adam Derivation.md",
+        "outcome": "extracted",
+        "sha256": "a90ba31c96a83e8f7a170a69588c517063a4372533e464b68dd4c388092a57f0",
+        "manifest_match": true,
+        "units": 66,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "math_block": 12,
+          "prose": 29,
+          "list": 19,
+          "code_block": 3,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 221,
+          "frontmatter_lines": 7,
+          "heading_context": 30,
+          "excluded_blank": 93,
+          "excluded_horizontal_rule": 0,
+          "accounted": 344,
+          "lines_total": 344,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 93,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Optimization/14 - Learning Rate Schedules.md",
+        "outcome": "extracted",
+        "sha256": "c16ef213df0bcb45233cca4efed984691d041d4ad93924e936b96b810148c672",
+        "manifest_match": true,
+        "units": 63,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 25,
+          "list": 26,
+          "code_block": 4,
+          "math_block": 4,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 217,
+          "frontmatter_lines": 7,
+          "heading_context": 38,
+          "excluded_blank": 89,
+          "excluded_horizontal_rule": 0,
+          "accounted": 344,
+          "lines_total": 344,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 89,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "outcome": "extracted",
+        "sha256": "7b3efed4896cad672c5294ea50c20dbc53f02b2a2c2f51c2b54e554e31f2ba2f",
+        "manifest_match": true,
+        "units": 99,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 51,
+          "list": 18,
+          "math_block": 24,
+          "table": 2,
+          "code_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 258,
+          "frontmatter_lines": 7,
+          "heading_context": 37,
+          "excluded_blank": 132,
+          "excluded_horizontal_rule": 0,
+          "accounted": 427,
+          "lines_total": 427,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 132,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Probability/08 - Bayes Theorem Deep Dive.md",
+        "outcome": "extracted",
+        "sha256": "22cef05f214aa9c17074eb5093063605c9d08e80ac192a9f206551caa78f6dcf",
+        "manifest_match": true,
+        "units": 88,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "math_block": 17,
+          "prose": 45,
+          "list": 21,
+          "table": 2,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 235,
+          "frontmatter_lines": 7,
+          "heading_context": 37,
+          "excluded_blank": 115,
+          "excluded_horizontal_rule": 0,
+          "accounted": 387,
+          "lines_total": 387,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 115,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Probability/09 - Gaussian Distribution.md",
+        "outcome": "extracted",
+        "sha256": "83f3aee46a88c2dd60d94a04ed5fab9491c7e6524306cf00e1919d018cf40801",
+        "manifest_match": true,
+        "units": 76,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 39,
+          "math_block": 8,
+          "list": 24,
+          "code_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 203,
+          "frontmatter_lines": 7,
+          "heading_context": 37,
+          "excluded_blank": 92,
+          "excluded_horizontal_rule": 0,
+          "accounted": 332,
+          "lines_total": 332,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 92,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Statistics/16 - Estimators and Bias.md",
+        "outcome": "extracted",
+        "sha256": "6b55a83d025eac81b7b82286d309fba0e9484b7719c286a2f5085a5269b4a8f6",
+        "manifest_match": true,
+        "units": 93,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 54,
+          "list": 17,
+          "code_block": 17,
+          "math_block": 1,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 211,
+          "frontmatter_lines": 7,
+          "heading_context": 49,
+          "excluded_blank": 102,
+          "excluded_horizontal_rule": 0,
+          "accounted": 362,
+          "lines_total": 362,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 102,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Mathematics/Statistics/17 - Hypothesis Testing.md",
+        "outcome": "extracted",
+        "sha256": "9a4c6698abeaeec51260cc4ac7740f9bc0ecc579912f070f906cba921aff648c",
+        "manifest_match": true,
+        "units": 67,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 40,
+          "list": 17,
+          "code_block": 6,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 192,
+          "frontmatter_lines": 7,
+          "heading_context": 45,
+          "excluded_blank": 76,
+          "excluded_horizontal_rule": 0,
+          "accounted": 313,
+          "lines_total": 313,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 76,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

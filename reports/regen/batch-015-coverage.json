@@ -1,0 +1,519 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "04 - Neural Networks and Deep Learning Foundations (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/015-regen001-ai-course-04-neural-networks-and-deep-learning-foundations.jsonl.run1",
+    "records_written": 1169,
+    "denominators": {
+      "files_in_scope": 16,
+      "files_extracted": 16,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/01. Fundamentals of Neural Networks.md",
+        "outcome": "extracted",
+        "sha256": "b893ce9c627a2c2768d23671b257d3ae7e20155fb71de82aec948e1018bd358c",
+        "manifest_match": true,
+        "units": 70,
+        "units_by_type": {
+          "prose": 27,
+          "list": 25,
+          "code_block": 2,
+          "callout": 6,
+          "math_block": 9,
+          "empty_section": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 182,
+          "frontmatter_lines": 0,
+          "heading_context": 34,
+          "excluded_blank": 83,
+          "excluded_horizontal_rule": 7,
+          "accounted": 306,
+          "lines_total": 306,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 83,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/02. Neural Network Architecture and Notation.md",
+        "outcome": "extracted",
+        "sha256": "427c758697502f7f1c44876ba5c8160a4c2d80842ecd3fb7bbe16a0777c30f0f",
+        "manifest_match": true,
+        "units": 70,
+        "units_by_type": {
+          "prose": 38,
+          "list": 16,
+          "code_block": 7,
+          "quote": 3,
+          "callout": 5,
+          "math_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 246,
+          "frontmatter_lines": 0,
+          "heading_context": 30,
+          "excluded_blank": 97,
+          "excluded_horizontal_rule": 7,
+          "accounted": 380,
+          "lines_total": 380,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 97,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/03. Artificial Neural Networks (ANN) - Comprehensive.md",
+        "outcome": "extracted",
+        "sha256": "caed50d17d2ab32a2feab0d5395ca1ef575d45a2c90f6bc7939ceddc982e2e6d",
+        "manifest_match": true,
+        "units": 212,
+        "units_by_type": {
+          "quote": 4,
+          "prose": 74,
+          "list": 55,
+          "math_block": 38,
+          "code_block": 26,
+          "table": 11,
+          "callout": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 835,
+          "frontmatter_lines": 0,
+          "heading_context": 122,
+          "excluded_blank": 272,
+          "excluded_horizontal_rule": 50,
+          "accounted": 1279,
+          "lines_total": 1279,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 272,
+          "horizontal_rule": 50
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/04. The Perceptron and the Chain Rule.md",
+        "outcome": "extracted",
+        "sha256": "0291d6f43aa9c124d6e78464a399afd29073eb2b5db8f4d622f4baa36d202188",
+        "manifest_match": true,
+        "units": 68,
+        "units_by_type": {
+          "prose": 42,
+          "code_block": 2,
+          "math_block": 17,
+          "list": 5,
+          "callout": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 98,
+          "frontmatter_lines": 0,
+          "heading_context": 11,
+          "excluded_blank": 73,
+          "excluded_horizontal_rule": 2,
+          "accounted": 184,
+          "lines_total": 184,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 73,
+          "horizontal_rule": 2
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/05. Forward Propagation and Activation Functions.md",
+        "outcome": "extracted",
+        "sha256": "538e26f79fd8ada102e098acc70d4fdbb3b2607a323d1627bf0736f2df718b8b",
+        "manifest_match": true,
+        "units": 91,
+        "units_by_type": {
+          "prose": 50,
+          "list": 11,
+          "quote": 3,
+          "code_block": 5,
+          "math_block": 19,
+          "callout": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 164,
+          "frontmatter_lines": 0,
+          "heading_context": 24,
+          "excluded_blank": 99,
+          "excluded_horizontal_rule": 6,
+          "accounted": 293,
+          "lines_total": 293,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 99,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/06. Activation Functions in Deep Learning.md",
+        "outcome": "extracted",
+        "sha256": "d5729e3a383bc64dffee881eb7efef87a42cdda66284e6e6643c6e470585f885",
+        "manifest_match": true,
+        "units": 20,
+        "units_by_type": {
+          "prose": 4,
+          "table": 1,
+          "math_block": 7,
+          "list": 7,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 68,
+          "frontmatter_lines": 0,
+          "heading_context": 12,
+          "excluded_blank": 16,
+          "excluded_horizontal_rule": 0,
+          "accounted": 96,
+          "lines_total": 96,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 16,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/07. Multi-Layer Perceptron and Backpropagation.md",
+        "outcome": "extracted",
+        "sha256": "8a512baba7ea895b376d8d242327fabf5e79ab611d52646846b42a79f3bd6cf1",
+        "manifest_match": true,
+        "units": 22,
+        "units_by_type": {
+          "prose": 13,
+          "list": 7,
+          "code_block": 1,
+          "math_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 78,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 27,
+          "excluded_horizontal_rule": 0,
+          "accounted": 112,
+          "lines_total": 112,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 27,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/08. Data Preparation and MLP Implementation.md",
+        "outcome": "extracted",
+        "sha256": "e2c5c74a7161bb12d0772d170c26ffcda5816e45386df006df84aedfca7bb782",
+        "manifest_match": true,
+        "units": 45,
+        "units_by_type": {
+          "prose": 20,
+          "list": 15,
+          "callout": 3,
+          "math_block": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 90,
+          "frontmatter_lines": 0,
+          "heading_context": 21,
+          "excluded_blank": 64,
+          "excluded_horizontal_rule": 1,
+          "accounted": 176,
+          "lines_total": 176,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 64,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/00. README - Backpropagation Module.md",
+        "outcome": "extracted",
+        "sha256": "fb1eab3ced40841b2f31d5a1a963f0cd6976e6cea89de9c071bed92cf5a73172",
+        "manifest_match": true,
+        "units": 5,
+        "units_by_type": {
+          "prose": 2,
+          "code_block": 1,
+          "table": 1,
+          "list": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 36,
+          "frontmatter_lines": 0,
+          "heading_context": 4,
+          "excluded_blank": 8,
+          "excluded_horizontal_rule": 0,
+          "accounted": 48,
+          "lines_total": 48,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 8,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/01. Backpropagating to the Output Layer.md",
+        "outcome": "extracted",
+        "sha256": "148506af58200b7beb94228a710592050e81e5572752c41ea6960eb002de6706",
+        "manifest_match": true,
+        "units": 61,
+        "units_by_type": {
+          "prose": 29,
+          "list": 6,
+          "callout": 8,
+          "code_block": 2,
+          "quote": 2,
+          "math_block": 14
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 100,
+          "frontmatter_lines": 0,
+          "heading_context": 23,
+          "excluded_blank": 84,
+          "excluded_horizontal_rule": 6,
+          "accounted": 213,
+          "lines_total": 213,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 84,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/02. Backpropagating to the Hidden Layer.md",
+        "outcome": "extracted",
+        "sha256": "bd86f7cf7b3b278265a7ccc7464f68cd9e6a01f4396b6b35a2525c6fbe4b806a",
+        "manifest_match": true,
+        "units": 91,
+        "units_by_type": {
+          "callout": 5,
+          "prose": 45,
+          "list": 12,
+          "math_block": 22,
+          "code_block": 4,
+          "quote": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 215,
+          "frontmatter_lines": 0,
+          "heading_context": 21,
+          "excluded_blank": 110,
+          "excluded_horizontal_rule": 6,
+          "accounted": 352,
+          "lines_total": 352,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 110,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/03. Matrix Implementation and the Delta Weight Formula.md",
+        "outcome": "extracted",
+        "sha256": "2b8d0c004c217d9a5d546c9ab9369072c740f76ed52b95d067e2c39d95ca8a18",
+        "manifest_match": true,
+        "units": 71,
+        "units_by_type": {
+          "prose": 39,
+          "math_block": 9,
+          "table": 1,
+          "code_block": 10,
+          "callout": 4,
+          "list": 8
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 214,
+          "frontmatter_lines": 0,
+          "heading_context": 26,
+          "excluded_blank": 100,
+          "excluded_horizontal_rule": 8,
+          "accounted": 348,
+          "lines_total": 348,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 100,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/04. Backpropagation and Gradient Flow in CNNs.md",
+        "outcome": "extracted",
+        "sha256": "344598d4c790749a81ad5b8e2186259cb90ea6a6b7dcb37e4bc01bcd6d8e8171",
+        "manifest_match": true,
+        "units": 169,
+        "units_by_type": {
+          "callout": 11,
+          "prose": 85,
+          "math_block": 27,
+          "list": 34,
+          "code_block": 11,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 353,
+          "frontmatter_lines": 0,
+          "heading_context": 42,
+          "excluded_blank": 218,
+          "excluded_horizontal_rule": 12,
+          "accounted": 625,
+          "lines_total": 625,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 218,
+          "horizontal_rule": 12
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/04. Hyperparameters and Network Configuration.md",
+        "outcome": "extracted",
+        "sha256": "d6f1821b931244f3fc0b78f3397238c619b7936db97eecb67e46fc907f0af68d",
+        "manifest_match": true,
+        "units": 125,
+        "units_by_type": {
+          "prose": 74,
+          "table": 6,
+          "callout": 13,
+          "math_block": 14,
+          "list": 13,
+          "code_block": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 413,
+          "frontmatter_lines": 0,
+          "heading_context": 46,
+          "excluded_blank": 168,
+          "excluded_horizontal_rule": 8,
+          "accounted": 635,
+          "lines_total": 635,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 168,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.4 - Labs/01. TP2.md",
+        "outcome": "extracted",
+        "sha256": "8c763e7d9aecc9f128b1352830c60372d75e5864b41fa08d69e00553838e5d27",
+        "manifest_match": true,
+        "units": 28,
+        "units_by_type": {
+          "prose": 14,
+          "code_block": 4,
+          "list": 10
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 157,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 42,
+          "excluded_horizontal_rule": 4,
+          "accounted": 213,
+          "lines_total": 213,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 42,
+          "horizontal_rule": 4
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks and Deep Learning Foundations/04.4 - Labs/02. TP3 - Data Cleaning, Normalization, and Encoding - Solution Guide.md",
+        "outcome": "extracted",
+        "sha256": "f69b4b1dd953fbcf2f69356c260eabad0ddef674e95ff3a28ae6b681d7838dfc",
+        "manifest_match": true,
+        "units": 21,
+        "units_by_type": {
+          "prose": 12,
+          "code_block": 3,
+          "list": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 197,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 25,
+          "excluded_horizontal_rule": 1,
+          "accounted": 232,
+          "lines_total": 232,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 25,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

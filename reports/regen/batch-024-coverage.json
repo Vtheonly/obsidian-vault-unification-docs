@@ -1,0 +1,188 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "06 - Image Processing/07. Quiz (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/024-regen001-ai-course-06-image-processing-07-quiz.jsonl.run1",
+    "records_written": 216,
+    "denominators": {
+      "files_in_scope": 6,
+      "files_extracted": 6,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "06 - Image Processing/07. Quiz/Q1.md",
+        "outcome": "extracted",
+        "sha256": "a04089b077701b5f669f7b59a9f53cfe21e042e8b4b0d786be1e81d28d20e9e4",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 237,
+          "frontmatter_lines": 5,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 266,
+          "lines_total": 266,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/07. Quiz/Q2.md",
+        "outcome": "extracted",
+        "sha256": "e98557a92f22efe644fdef2cc9fc227e6212fe22b62175d89a77b8a5de4a978d",
+        "manifest_match": true,
+        "units": 41,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 40
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 315,
+          "frontmatter_lines": 10,
+          "heading_context": 0,
+          "excluded_blank": 40,
+          "excluded_horizontal_rule": 0,
+          "accounted": 355,
+          "lines_total": 355,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 40,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/07. Quiz/Q3.md",
+        "outcome": "extracted",
+        "sha256": "df7751e9a5da1f0a2d720dfa692cf0b523090bd8105c2578f6ebdaad25942990",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 248,
+          "frontmatter_lines": 10,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 277,
+          "lines_total": 277,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/07. Quiz/Q4.md",
+        "outcome": "extracted",
+        "sha256": "43e960424371d0749b25e839405e5a2ab17f941e0d4e46841eaee429a5f8d1a0",
+        "manifest_match": true,
+        "units": 41,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 40
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 337,
+          "frontmatter_lines": 11,
+          "heading_context": 0,
+          "excluded_blank": 40,
+          "excluded_horizontal_rule": 0,
+          "accounted": 377,
+          "lines_total": 377,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 40,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/07. Quiz/Q5.md",
+        "outcome": "extracted",
+        "sha256": "b6db805a39480360748df6441d94837c3058fe0a58628b7481eb01a83c8497e7",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 248,
+          "frontmatter_lines": 10,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 277,
+          "lines_total": 277,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/07. Quiz/Q6.md",
+        "outcome": "extracted",
+        "sha256": "00b68ae220e554ee9fc438416f6e7d9ae8678cc3b85cf1a38d5076e877821186",
+        "manifest_match": true,
+        "units": 41,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 40
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 317,
+          "frontmatter_lines": 11,
+          "heading_context": 0,
+          "excluded_blank": 40,
+          "excluded_horizontal_rule": 0,
+          "accounted": 357,
+          "lines_total": 357,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 40,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

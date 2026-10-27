@@ -29,3 +29,6 @@ Thumbs.db
 
 # Derived registry indexes (rebuildable from state/knowledge-units/; ADR-0007)
 state/registries/
+
+# Editable-install build metadata (rebuildable)
+src/vault_unification.egg-info/

@@ -1,0 +1,327 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "00 - Vault Management (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/032-regen001-master-ai-00-vault-management.jsonl.run1",
+    "records_written": 463,
+    "denominators": {
+      "files_in_scope": 10,
+      "files_extracted": 10,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "00 - Vault Management/Architecture Decisions.md",
+        "outcome": "extracted",
+        "sha256": "64dc95e22caab6b2269abd34145c07e346a4674341f70011d9634eed8edece6e",
+        "manifest_match": true,
+        "units": 164,
+        "units_by_type": {
+          "frontmatter": 1,
+          "quote": 7,
+          "prose": 107,
+          "list": 48,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 480,
+          "frontmatter_lines": 5,
+          "heading_context": 34,
+          "excluded_blank": 183,
+          "excluded_horizontal_rule": 25,
+          "accounted": 722,
+          "lines_total": 722,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 183,
+          "horizontal_rule": 25
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "00 - Vault Management/Completed Work.md",
+        "outcome": "extracted",
+        "sha256": "fa1a1d40cea0ac5070d134966e21e19f0198b2681d757e9b6db58d8fb33a3eab",
+        "manifest_match": true,
+        "units": 25,
+        "units_by_type": {
+          "frontmatter": 1,
+          "list": 15,
+          "prose": 8,
+          "quote": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 61,
+          "frontmatter_lines": 5,
+          "heading_context": 18,
+          "excluded_blank": 32,
+          "excluded_horizontal_rule": 1,
+          "accounted": 112,
+          "lines_total": 112,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 32,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "00 - Vault Management/Coverage Audit.md",
+        "outcome": "extracted",
+        "sha256": "577cfc37b57f13b5e9b184743ab4b93b146179ac7149565c1e21784a53ab66a6",
+        "manifest_match": true,
+        "units": 16,
+        "units_by_type": {
+          "frontmatter": 1,
+          "quote": 1,
+          "prose": 7,
+          "list": 5,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 93,
+          "frontmatter_lines": 5,
+          "heading_context": 12,
+          "excluded_blank": 27,
+          "excluded_horizontal_rule": 1,
+          "accounted": 133,
+          "lines_total": 133,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 27,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "00 - Vault Management/Current Iteration.md",
+        "outcome": "extracted",
+        "sha256": "1fe5d783f0c1ecac632e97bbf8bd49e3dfb111eb136e411741a1abffd93305ea",
+        "manifest_match": true,
+        "units": 18,
+        "units_by_type": {
+          "frontmatter": 1,
+          "prose": 8,
+          "list": 9
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 51,
+          "frontmatter_lines": 5,
+          "heading_context": 14,
+          "excluded_blank": 30,
+          "excluded_horizontal_rule": 1,
+          "accounted": 96,
+          "lines_total": 96,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 30,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "00 - Vault Management/Master Roadmap.md",
+        "outcome": "extracted",
+        "sha256": "8c362d76eb26261d97b265cfdb856992006355c842ae16d1059078e27981884f",
+        "manifest_match": true,
+        "units": 151,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 2,
+          "list": 143,
+          "quote": 2,
+          "code_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 534,
+          "frontmatter_lines": 7,
+          "heading_context": 172,
+          "excluded_blank": 46,
+          "excluded_horizontal_rule": 3,
+          "accounted": 755,
+          "lines_total": 755,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 46,
+          "horizontal_rule": 3
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "00 - Vault Management/Next Iteration.md",
+        "outcome": "extracted",
+        "sha256": "4632ca83a1cb914d6aafa759663f3b5e6c5d3d449fab71d9afdc0179cfc58aab",
+        "manifest_match": true,
+        "units": 16,
+        "units_by_type": {
+          "frontmatter": 1,
+          "quote": 1,
+          "prose": 6,
+          "list": 8
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 61,
+          "frontmatter_lines": 6,
+          "heading_context": 10,
+          "excluded_blank": 23,
+          "excluded_horizontal_rule": 1,
+          "accounted": 95,
+          "lines_total": 95,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 23,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "00 - Vault Management/README.md",
+        "outcome": "extracted",
+        "sha256": "edc992c23a35a4e0814fee173d6a637b77f110efa1162a5c5880d87b8dde0a6f",
+        "manifest_match": true,
+        "units": 8,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 1,
+          "list": 4,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 43,
+          "frontmatter_lines": 4,
+          "heading_context": 6,
+          "excluded_blank": 13,
+          "excluded_horizontal_rule": 0,
+          "accounted": 62,
+          "lines_total": 62,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 13,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "00 - Vault Management/Remaining Work.md",
+        "outcome": "extracted",
+        "sha256": "b360de3fafce3736b4e08ab59649b0e739f35fb9453a26ac19a23003949d4aa8",
+        "manifest_match": true,
+        "units": 16,
+        "units_by_type": {
+          "frontmatter": 1,
+          "quote": 1,
+          "list": 7,
+          "prose": 6,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 48,
+          "frontmatter_lines": 5,
+          "heading_context": 10,
+          "excluded_blank": 20,
+          "excluded_horizontal_rule": 1,
+          "accounted": 79,
+          "lines_total": 79,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 20,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "00 - Vault Management/Research Queue.md",
+        "outcome": "extracted",
+        "sha256": "b9577a32183854075b526ac42afa142f002989aed150b9535d1bce1e4c4f5f04",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "quote": 3,
+          "list": 22,
+          "callout": 1,
+          "prose": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 126,
+          "frontmatter_lines": 5,
+          "heading_context": 26,
+          "excluded_blank": 56,
+          "excluded_horizontal_rule": 1,
+          "accounted": 209,
+          "lines_total": 209,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 56,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "00 - Vault Management/Vault Status.md",
+        "outcome": "extracted",
+        "sha256": "2e47e5266572429dd83355f722ee9915484c6da079e90eb9f735fa5134b8438d",
+        "manifest_match": true,
+        "units": 18,
+        "units_by_type": {
+          "frontmatter": 1,
+          "prose": 4,
+          "list": 12,
+          "quote": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 59,
+          "frontmatter_lines": 5,
+          "heading_context": 16,
+          "excluded_blank": 24,
+          "excluded_horizontal_rule": 1,
+          "accounted": 100,
+          "lines_total": 100,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 24,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

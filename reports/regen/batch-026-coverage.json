@@ -1,0 +1,572 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "08 - Attention and Transformers (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/026-regen001-ai-course-08-attention-and-transformers.jsonl.run1",
+    "records_written": 546,
+    "denominators": {
+      "files_in_scope": 18,
+      "files_extracted": 18,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "08 - Attention and Transformers/00. Chapter Overview.md",
+        "outcome": "extracted",
+        "sha256": "cffce7f1328c3de8bb037e1c1440e9fa868109a9c2c2f002d1c06b671dd207ff",
+        "manifest_match": true,
+        "units": 19,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 8,
+          "list": 10
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 45,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 30,
+          "excluded_horizontal_rule": 6,
+          "accounted": 91,
+          "lines_total": 91,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 30,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.1 - The Attention Mechanism/01. Attention as Soft Lookup - From Bahdanau to Dot-Product.md",
+        "outcome": "extracted",
+        "sha256": "9cbb06bad79c304a3750e351140e627a4b1fa5aae00b6d24841abb63ca2848b5",
+        "manifest_match": true,
+        "units": 37,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 25,
+          "math_block": 5,
+          "list": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 55,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 51,
+          "excluded_horizontal_rule": 8,
+          "accounted": 124,
+          "lines_total": 124,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 51,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.1 - The Attention Mechanism/02. Queries Keys and Values - The Database Analogy.md",
+        "outcome": "extracted",
+        "sha256": "a2c1eea6c89a73b6dd36ae5aeed31379394ec9bc04ac496f19bdebfa3083d521",
+        "manifest_match": true,
+        "units": 41,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 25,
+          "code_block": 1,
+          "list": 8,
+          "math_block": 5,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 72,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 54,
+          "excluded_horizontal_rule": 7,
+          "accounted": 140,
+          "lines_total": 140,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 54,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.1 - The Attention Mechanism/03. Scaled Dot-Product Attention - Why the Square Root.md",
+        "outcome": "extracted",
+        "sha256": "ec1eefca5b5c4523c620311dd61620bdb643eaaafeadd9918b2e83e5c463be2b",
+        "manifest_match": true,
+        "units": 25,
+        "units_by_type": {
+          "quote": 1,
+          "math_block": 3,
+          "prose": 17,
+          "list": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 35,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 42,
+          "excluded_horizontal_rule": 9,
+          "accounted": 95,
+          "lines_total": 95,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 42,
+          "horizontal_rule": 9
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.1 - The Attention Mechanism/04. Multi-Head Attention - Parallel Relationship Patterns.md",
+        "outcome": "extracted",
+        "sha256": "d396aecd8c09180bc3938946a364e22b80176ddd56c5da8bbf842c3c53cb3988",
+        "manifest_match": true,
+        "units": 27,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 19,
+          "list": 4,
+          "math_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 46,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 42,
+          "excluded_horizontal_rule": 8,
+          "accounted": 104,
+          "lines_total": 104,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 42,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.2 - The Transformer Architecture/01. Self-Attention - When the Sequence Attends to Itself.md",
+        "outcome": "extracted",
+        "sha256": "a324f4ddc603f05658bb0b247a6a5e5b98277dfd0417e0c6a4b8fef46055c8f6",
+        "manifest_match": true,
+        "units": 25,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 19,
+          "math_block": 2,
+          "list": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 38,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 41,
+          "excluded_horizontal_rule": 9,
+          "accounted": 97,
+          "lines_total": 97,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 41,
+          "horizontal_rule": 9
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.2 - The Transformer Architecture/02. Positional Encoding - Injecting Order Into a Set.md",
+        "outcome": "extracted",
+        "sha256": "166d92ee121d01a37504fd493996c8abd0321814c17747c2f69d0893543c596e",
+        "manifest_match": true,
+        "units": 28,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 19,
+          "math_block": 4,
+          "list": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 38,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 39,
+          "excluded_horizontal_rule": 6,
+          "accounted": 91,
+          "lines_total": 91,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 39,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.2 - The Transformer Architecture/03. The Transformer Encoder Block.md",
+        "outcome": "extracted",
+        "sha256": "f082560559d3f8ea4ee22758573c01cfafb74eae41b8f6d7c4ae701d30f72682",
+        "manifest_match": true,
+        "units": 35,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 25,
+          "code_block": 1,
+          "math_block": 6,
+          "list": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 70,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 50,
+          "excluded_horizontal_rule": 8,
+          "accounted": 137,
+          "lines_total": 137,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 50,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.2 - The Transformer Architecture/04. The Transformer Decoder Block - Masking and Cross-Attention.md",
+        "outcome": "extracted",
+        "sha256": "c3f918f1691782d77d3c36c758440c7785e514b24f1035f7f9f13d1ebc3ccffb",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 20,
+          "list": 4,
+          "code_block": 1,
+          "math_block": 3,
+          "callout": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 78,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 48,
+          "excluded_horizontal_rule": 9,
+          "accounted": 145,
+          "lines_total": 145,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 48,
+          "horizontal_rule": 9
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.2 - The Transformer Architecture/05. The Full Transformer - Assembling the Pieces.md",
+        "outcome": "extracted",
+        "sha256": "63fb12eadb137ae984f7d7cde1a73f8be00c610f66c4aff0ddd347fd1bf8731d",
+        "manifest_match": true,
+        "units": 24,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 11,
+          "code_block": 1,
+          "list": 10,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 77,
+          "frontmatter_lines": 0,
+          "heading_context": 13,
+          "excluded_blank": 43,
+          "excluded_horizontal_rule": 7,
+          "accounted": 140,
+          "lines_total": 140,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 43,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.3 - Vision Transformers/01. From Words to Patches - How ViT Tokenizes an Image.md",
+        "outcome": "extracted",
+        "sha256": "1b2829402e01436ddfe44c5a36c6ac26922702e77d1f01709b6694b6f98287a6",
+        "manifest_match": true,
+        "units": 35,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 24,
+          "math_block": 3,
+          "code_block": 3,
+          "callout": 1,
+          "list": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 62,
+          "frontmatter_lines": 0,
+          "heading_context": 12,
+          "excluded_blank": 53,
+          "excluded_horizontal_rule": 7,
+          "accounted": 134,
+          "lines_total": 134,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 53,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.3 - Vision Transformers/02. The CLS Token and Why It Works.md",
+        "outcome": "extracted",
+        "sha256": "96b2ce039185f2608752c58c58e727298878759f9009b1dba467879c3796a210",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 23,
+          "list": 4,
+          "math_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 37,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 46,
+          "excluded_horizontal_rule": 7,
+          "accounted": 100,
+          "lines_total": 100,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 46,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.3 - Vision Transformers/03. Inductive Bias - CNNs vs ViTs and Why ViTs Need More Data.md",
+        "outcome": "extracted",
+        "sha256": "6bef11bfa804f70eda03a5af3bbe1c2430baa102c29cdcdafe9121da1b5536c3",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 23,
+          "list": 5,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 48,
+          "frontmatter_lines": 0,
+          "heading_context": 12,
+          "excluded_blank": 49,
+          "excluded_horizontal_rule": 8,
+          "accounted": 117,
+          "lines_total": 117,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 49,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.3 - Vision Transformers/04. ViT Architecture and Design Decisions.md",
+        "outcome": "extracted",
+        "sha256": "55592f67a79b19b2bc15ebefa6a7ea9ba6976aaed3567747f89e9e3c9dd4a598",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 20,
+          "code_block": 1,
+          "table": 2,
+          "list": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 101,
+          "frontmatter_lines": 0,
+          "heading_context": 14,
+          "excluded_blank": 50,
+          "excluded_horizontal_rule": 8,
+          "accounted": 173,
+          "lines_total": 173,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 50,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.4 - Encoder Decoder and the Design Space/01. The Encoder-Decoder Design Space - BERT vs GPT vs T5.md",
+        "outcome": "extracted",
+        "sha256": "17f8134c9c34ccade0d42f871464fceb6b9852cc336c2195c181d5c0e95541d1",
+        "manifest_match": true,
+        "units": 41,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 32,
+          "list": 7,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 73,
+          "frontmatter_lines": 0,
+          "heading_context": 11,
+          "excluded_blank": 54,
+          "excluded_horizontal_rule": 6,
+          "accounted": 144,
+          "lines_total": 144,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 54,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.4 - Encoder Decoder and the Design Space/02. The Information Bottleneck and Latent Space.md",
+        "outcome": "extracted",
+        "sha256": "9c9f1fdf8360b387a74e7391246e5a6fd99d8a6c93410b1fab49ef923ccfd96b",
+        "manifest_match": true,
+        "units": 27,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 20,
+          "list": 5,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 48,
+          "frontmatter_lines": 0,
+          "heading_context": 12,
+          "excluded_blank": 45,
+          "excluded_horizontal_rule": 7,
+          "accounted": 112,
+          "lines_total": 112,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 45,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.4 - Encoder Decoder and the Design Space/03. Autoregressive vs Parallel Encoding.md",
+        "outcome": "extracted",
+        "sha256": "07ce7f54bdbb598dd63063ce24eacdeb20109920f249370e17fa2bbb825fc63f",
+        "manifest_match": true,
+        "units": 35,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 24,
+          "list": 7,
+          "code_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 61,
+          "frontmatter_lines": 0,
+          "heading_context": 11,
+          "excluded_blank": 49,
+          "excluded_horizontal_rule": 8,
+          "accounted": 129,
+          "lines_total": 129,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 49,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "08 - Attention and Transformers/08.4 - Encoder Decoder and the Design Space/04. Choosing the Right Architecture for the Task.md",
+        "outcome": "extracted",
+        "sha256": "81a9f3cb01bf695f675871e919a88a66c7fed165f74783414ccbfcca0b92cb57",
+        "manifest_match": true,
+        "units": 27,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 11,
+          "list": 10,
+          "code_block": 1,
+          "table": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 93,
+          "frontmatter_lines": 0,
+          "heading_context": 14,
+          "excluded_blank": 40,
+          "excluded_horizontal_rule": 7,
+          "accounted": 154,
+          "lines_total": 154,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 40,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "command": "ku-fidelity",
+  "result": {
+    "command": "ku-fidelity",
+    "ok": true,
+    "vault_id": "ai-course",
+    "vault_root": "source-vaults/AI /AI Course",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "allow_processed": false,
+    "batches_checked": 1,
+    "records_total": 769,
+    "records_with_errors": 0,
+    "batches": [
+      {
+        "batch": "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/012-regen001-ai-course-01-foundations-and-overview.jsonl",
+        "records_total": 769,
+        "excerpt_byte_exact": 769,
+        "excerpt_hash_valid": 769,
+        "structurally_pure": 769,
+        "manifest_agree": 769,
+        "schema_valid": true,
+        "unique_ids_in_batch": 769,
+        "files_covered": [
+          "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/01. Introduction to Machine Learning.md",
+          "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/02. Types of Learning.md",
+          "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/03. Deep Learning Definition and Context.md",
+          "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/04. Machine Learning vs Deep Learning.md",
+          "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/05. Evolution and History of Deep Learning.md",
+          "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/06. Applications of Deep Learning.md",
+          "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/07. Comparing Data Science, AI, ML, and BI.md",
+          "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/08. Foundations of Machine Learning (Summary).md",
+          "01 - Foundations and Overview/01.2 - Mathematical Foundations/00. Linear Algebra Fundamentals.md",
+          "01 - Foundations and Overview/01.2 - Mathematical Foundations/01. Mathematical Notation (ML Course).md",
+          "01 - Foundations and Overview/01.2 - Mathematical Foundations/02. Mathematical Notation and Symbols.md",
+          "01 - Foundations and Overview/01.2 - Mathematical Foundations/03. Understanding the Math Notation - Chain Rule and wrt.md",
+          "01 - Foundations and Overview/01.2 - Mathematical Foundations/04. Partial vs. Ordinary Derivatives.md",
+          "01 - Foundations and Overview/01.2 - Mathematical Foundations/05. Derivatives, Power Rule, and the Chain Rule.md",
+          "01 - Foundations and Overview/01.2 - Mathematical Foundations/06. Gradients and Gradient Descent.md",
+          "01 - Foundations and Overview/01.2 - Mathematical Foundations/07. Probability and Statistics for ML.md",
+          "01 - Foundations and Overview/01.2 - Mathematical Foundations/08. Multivariate Calculus - Jacobians and Hessians.md",
+          "01 - Foundations and Overview/01.3 - Data Science Foundations/01. Data Science Definition and Philosophy.md",
+          "01 - Foundations and Overview/01.3 - Data Science Foundations/02. The Importance of Data-Driven Decision Making.md",
+          "01 - Foundations and Overview/01.3 - Data Science Foundations/03. The Four Pillars of Data Science.md",
+          "01 - Foundations and Overview/01.3 - Data Science Foundations/04. The Complete Data Science Workflow.md",
+          "01 - Foundations and Overview/01.3 - Data Science Foundations/05. Careers and Roles in the Data Ecosystem.md",
+          "01 - Foundations and Overview/01.3 - Data Science Foundations/06. Essential Technical and Soft Skills.md",
+          "01 - Foundations and Overview/01.3 - Data Science Foundations/07. Exercise 1 - Identifying Applications and Roles.md"
+        ],
+        "errors": [],
+        "ok": true
+      }
+    ],
+    "cross_check_batches": [
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/002-ext002-master-ai-supervised-learning.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/003-ext004-ai-course-03.7-tree-based-models.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/004-ext005-master-ai-evaluation.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/005-ext005-ai-course-03.6-model-evaluation.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/006-ext008-master-ai-unsupervised.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/007-ext008-ai-course-clustering-dimreduction.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/008-ext009-master-ai-generalization.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/009-ext009-ai-course-04.3-regularization.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/010-ext010-master-ai-training-stability.jsonl",
+      "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/011-ext010-ai-course-04.3-init-gradients.jsonl"
+    ],
+    "cross_check_ids_preloaded": 1728,
+    "ids_unique_across_checked": 769,
+    "id_collisions": [],
+    "denominators": {
+      "records": "every record in every checked batch",
+      "checks": "schema (when supplied), id uniqueness (within + cross-batch), vault prefix, source_id/path agreement, source_file_hash vs disk and manifest, structural purity, excerpt byte-fidelity, excerpt hash, span bounds, heading-crossing",
+      "exclusions": "cross-check batches are only preload-checked for id collisions, not fidelity"
+    },
+    "limitations": [
+      "byte-exact excerpt verification proves mechanical fidelity to source lines, not semantic completeness or correctness of the segmentation itself",
+      "heading-boundary authority is mdextract.extract_structure_text; setext headings remain unsupported (L-05)"
+    ]
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.8.0",
+    "report_schema_version": "1.0",
+    "command": "ku-fidelity",
+    "args": {
+      "command": "ku-fidelity",
+      "batches": [
+        "/home/z/my-project/workspace/obsidian-vault-unification-docs/state/knowledge-units/012-regen001-ai-course-01-foundations-and-overview.jsonl"
+      ],
+      "vault_id": "ai-course",
+      "vault_root": "source-vaults/AI /AI Course",
+      "manifest": "state/manifests/ai-course.jsonl",
+      "kus_schema": "/home/z/my-project/workspace/obsidian-vault-unification-docs/schemas/knowledge-unit.schema.json",
+      "allow_processed": false,
+      "cross_check_glob": null,
+      "report": "/home/z/my-project/workspace/obsidian-vault-unification-docs/reports/regen/batch-012-fidelity.json"
+    },
+    "utc_timestamp": "2026-10-27T20:45:24+00:00",
+    "git_commit": "557a0f2"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "09 - Quizzes and Question Banks/03. Question Series (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/029-regen001-ai-course-09-quizzes-and-question-banks-03-question-series.jsonl.run1",
+    "records_written": 43,
+    "denominators": {
+      "files_in_scope": 3,
+      "files_extracted": 3,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "09 - Quizzes and Question Banks/03. Question Series/Qs1.md",
+        "outcome": "extracted",
+        "sha256": "9e714f14689a1e4447371e9b1e9f2af05d54075e4c9d0e3e0d3602eb93b35ac5",
+        "manifest_match": true,
+        "units": 2,
+        "units_by_type": {
+          "prose": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 4,
+          "frontmatter_lines": 0,
+          "heading_context": 1,
+          "excluded_blank": 2,
+          "excluded_horizontal_rule": 0,
+          "accounted": 7,
+          "lines_total": 7,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 2,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/03. Question Series/Qs3.md",
+        "outcome": "extracted",
+        "sha256": "8093d64ae04bba8957a2c7aec42b9791f2b76e3e20ecc1132c3e6bea7498afa5",
+        "manifest_match": true,
+        "units": 40,
+        "units_by_type": {
+          "prose": 26,
+          "callout": 4,
+          "list": 3,
+          "math_block": 5,
+          "code_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 73,
+          "frontmatter_lines": 0,
+          "heading_context": 17,
+          "excluded_blank": 47,
+          "excluded_horizontal_rule": 7,
+          "accounted": 144,
+          "lines_total": 144,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 47,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/03. Question Series/Qs4.md",
+        "outcome": "extracted",
+        "sha256": "43be8d55c57698df9c408d13283c3018daefd895cc65e84dbde1837dc9734875",
+        "manifest_match": true,
+        "units": 1,
+        "units_by_type": {
+          "prose": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 1,
+          "frontmatter_lines": 0,
+          "heading_context": 0,
+          "excluded_blank": 0,
+          "excluded_horizontal_rule": 0,
+          "accounted": 1,
+          "lines_total": 1,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 0,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

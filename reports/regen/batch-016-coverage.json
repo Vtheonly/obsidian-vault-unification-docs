@@ -1,0 +1,1215 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "05 - Convolutional Neural Networks (CNN) (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-6t2lg8lr/016-regen001-ai-course-05-convolutional-neural-networks-cnn.jsonl.run1",
+    "records_written": 3899,
+    "denominators": {
+      "files_in_scope": 38,
+      "files_extracted": 38,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/00. CNN Mastery Roadmap.md",
+        "outcome": "extracted",
+        "sha256": "87d1a22ddbf045865cf072ab70146ce57be9b155160518943428bf47892187d6",
+        "manifest_match": true,
+        "units": 22,
+        "units_by_type": {
+          "prose": 4,
+          "list": 16,
+          "code_block": 1,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 32,
+          "frontmatter_lines": 0,
+          "heading_context": 5,
+          "excluded_blank": 26,
+          "excluded_horizontal_rule": 0,
+          "accounted": 63,
+          "lines_total": 63,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 26,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "outcome": "extracted",
+        "sha256": "4121e0d68193a37b6fb4701c7a74efe4217b630efd86910ad620eb3ec31d25f0",
+        "manifest_match": true,
+        "units": 3,
+        "units_by_type": {
+          "list": 1,
+          "prose": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 28,
+          "frontmatter_lines": 0,
+          "heading_context": 4,
+          "excluded_blank": 3,
+          "excluded_horizontal_rule": 0,
+          "accounted": 35,
+          "lines_total": 35,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 3,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/01. Introduction and Foundations of CNNs.md",
+        "outcome": "extracted",
+        "sha256": "5ac3b660fa79f4b6c04cd6af41448980d1dadd243acef9ce65c0e5a9a34d4ab3",
+        "manifest_match": true,
+        "units": 73,
+        "units_by_type": {
+          "prose": 51,
+          "math_block": 6,
+          "code_block": 4,
+          "list": 4,
+          "callout": 6,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 165,
+          "frontmatter_lines": 0,
+          "heading_context": 30,
+          "excluded_blank": 107,
+          "excluded_horizontal_rule": 8,
+          "accounted": 310,
+          "lines_total": 310,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 107,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/02. Core Architecture and Philosophy.md",
+        "outcome": "extracted",
+        "sha256": "8654c54819e8d9b2d6af64fdeb5e04e511e72e7943726eb47c2d0289650f50c3",
+        "manifest_match": true,
+        "units": 70,
+        "units_by_type": {
+          "prose": 41,
+          "code_block": 5,
+          "list": 15,
+          "callout": 3,
+          "math_block": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 221,
+          "frontmatter_lines": 0,
+          "heading_context": 19,
+          "excluded_blank": 84,
+          "excluded_horizontal_rule": 5,
+          "accounted": 329,
+          "lines_total": 329,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 84,
+          "horizontal_rule": 5
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/03. The Bridge - From Basic Convolution to Learned Weights.md",
+        "outcome": "extracted",
+        "sha256": "6e2f6772ed0ae2f66e3be74bf0b2c2697fb3e3717b76ca084caeb250ad31c172",
+        "manifest_match": true,
+        "units": 36,
+        "units_by_type": {
+          "prose": 24,
+          "callout": 4,
+          "table": 1,
+          "list": 2,
+          "math_block": 3,
+          "code_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 67,
+          "frontmatter_lines": 0,
+          "heading_context": 13,
+          "excluded_blank": 54,
+          "excluded_horizontal_rule": 6,
+          "accounted": 140,
+          "lines_total": 140,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 54,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/04. Demystifying Tensors - Volumes, Depth, and Data Formats.md",
+        "outcome": "extracted",
+        "sha256": "1e97955ebc486c85f9a39d86f4bca44362667da622add163c5a18997414b2d5f",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "prose": 16,
+          "callout": 6,
+          "list": 2,
+          "table": 2,
+          "code_block": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 94,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 45,
+          "excluded_horizontal_rule": 8,
+          "accounted": 156,
+          "lines_total": 156,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 45,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/05. Processing 3D Volumes, Depth Summation, and Biases.md",
+        "outcome": "extracted",
+        "sha256": "b578db6ea8409331f725bde9adc2a2d0c764bd53de854c39398d792a0390905a",
+        "manifest_match": true,
+        "units": 44,
+        "units_by_type": {
+          "prose": 30,
+          "table": 1,
+          "math_block": 4,
+          "callout": 5,
+          "list": 3,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 86,
+          "frontmatter_lines": 0,
+          "heading_context": 13,
+          "excluded_blank": 61,
+          "excluded_horizontal_rule": 6,
+          "accounted": 166,
+          "lines_total": 166,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 61,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/01. The Convolution Operation Deep Dive.md",
+        "outcome": "extracted",
+        "sha256": "257d5b308b327eb5079f57d26b361763e2e02e9db9d828b1e20804d2dc18a735",
+        "manifest_match": true,
+        "units": 110,
+        "units_by_type": {
+          "prose": 65,
+          "math_block": 30,
+          "callout": 5,
+          "code_block": 4,
+          "list": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 240,
+          "frontmatter_lines": 0,
+          "heading_context": 29,
+          "excluded_blank": 136,
+          "excluded_horizontal_rule": 8,
+          "accounted": 413,
+          "lines_total": 413,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 136,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/02. The Mathematics of Receptive Fields and 1x1 Convolutions.md",
+        "outcome": "extracted",
+        "sha256": "efaf202f72591ab43867605715a37af7cc0090c6296c2a532f6f8ef58948a8e2",
+        "manifest_match": true,
+        "units": 96,
+        "units_by_type": {
+          "prose": 64,
+          "callout": 4,
+          "math_block": 13,
+          "table": 3,
+          "list": 8,
+          "code_block": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 248,
+          "frontmatter_lines": 0,
+          "heading_context": 21,
+          "excluded_blank": 107,
+          "excluded_horizontal_rule": 8,
+          "accounted": 384,
+          "lines_total": 384,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 107,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/03. Activation and Pooling Layers.md",
+        "outcome": "extracted",
+        "sha256": "1dc3bc63c7313f2df0ba36280bb36b0726d26d7bc7183f9f1f9c04614f05e3f1",
+        "manifest_match": true,
+        "units": 115,
+        "units_by_type": {
+          "prose": 68,
+          "math_block": 23,
+          "code_block": 6,
+          "list": 13,
+          "callout": 4,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 289,
+          "frontmatter_lines": 0,
+          "heading_context": 29,
+          "excluded_blank": 144,
+          "excluded_horizontal_rule": 7,
+          "accounted": 469,
+          "lines_total": 469,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 144,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/04. Advanced Pooling Mechanisms and Global Average Pooling.md",
+        "outcome": "extracted",
+        "sha256": "161a1e293ff20014cd7f938470258e15e4bff17932283ca925077bb0e17cb374",
+        "manifest_match": true,
+        "units": 74,
+        "units_by_type": {
+          "prose": 39,
+          "math_block": 12,
+          "table": 5,
+          "callout": 9,
+          "list": 3,
+          "code_block": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 437,
+          "frontmatter_lines": 0,
+          "heading_context": 33,
+          "excluded_blank": 115,
+          "excluded_horizontal_rule": 9,
+          "accounted": 594,
+          "lines_total": 594,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 115,
+          "horizontal_rule": 9
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/05. The Output Spatial Dimension Formula.md",
+        "outcome": "extracted",
+        "sha256": "810b54e707fe7c7d1653e0fed5b7fe20ae65b4b4b5bdc83784d70951b459d196",
+        "manifest_match": true,
+        "units": 40,
+        "units_by_type": {
+          "prose": 25,
+          "math_block": 3,
+          "list": 9,
+          "table": 1,
+          "callout": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 60,
+          "frontmatter_lines": 0,
+          "heading_context": 19,
+          "excluded_blank": 60,
+          "excluded_horizontal_rule": 7,
+          "accounted": 146,
+          "lines_total": 146,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 60,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/06. Padding - Mathematics, Edge Effects, and Valid vs Same.md",
+        "outcome": "extracted",
+        "sha256": "14ff4418c562642e1a886f357bf2c6c725ed3c5fae01b3e3ac9f2661ffc3f3f1",
+        "manifest_match": true,
+        "units": 53,
+        "units_by_type": {
+          "prose": 30,
+          "table": 2,
+          "list": 6,
+          "code_block": 2,
+          "callout": 3,
+          "math_block": 10
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 103,
+          "frontmatter_lines": 0,
+          "heading_context": 13,
+          "excluded_blank": 62,
+          "excluded_horizontal_rule": 9,
+          "accounted": 187,
+          "lines_total": 187,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 62,
+          "horizontal_rule": 9
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/07. Strides - Skipping Pixels and Downsampling.md",
+        "outcome": "extracted",
+        "sha256": "927f55ccd41f8d6fb0afbc88a299a95d81e8143db1410f32f7543d225ea18b22",
+        "manifest_match": true,
+        "units": 39,
+        "units_by_type": {
+          "prose": 27,
+          "code_block": 2,
+          "callout": 3,
+          "math_block": 3,
+          "list": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 74,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 52,
+          "excluded_horizontal_rule": 6,
+          "accounted": 142,
+          "lines_total": 142,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 52,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/01. Local Connectivity and Parameter Sharing.md",
+        "outcome": "extracted",
+        "sha256": "0e1f496a8b30b8867990af12a7c33acb6044c1206c70c7987f60d9183b3c718e",
+        "manifest_match": true,
+        "units": 22,
+        "units_by_type": {
+          "prose": 18,
+          "list": 1,
+          "table": 1,
+          "callout": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 28,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 28,
+          "excluded_horizontal_rule": 0,
+          "accounted": 63,
+          "lines_total": 63,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 28,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/02. Hierarchical Feature Extraction.md",
+        "outcome": "extracted",
+        "sha256": "30fa9f83605037b598ffc6a4cd71de3136328d7048e15dc458f93ca78499f03d",
+        "manifest_match": true,
+        "units": 14,
+        "units_by_type": {
+          "prose": 11,
+          "code_block": 1,
+          "list": 1,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 24,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 17,
+          "excluded_horizontal_rule": 0,
+          "accounted": 50,
+          "lines_total": 50,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 17,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/04. The Fully Connected Layer and Flattening.md",
+        "outcome": "extracted",
+        "sha256": "0c28330265df59628e78addf98ba62eef7be669a4d4c38eb8f728fad79f1c834",
+        "manifest_match": true,
+        "units": 18,
+        "units_by_type": {
+          "prose": 10,
+          "list": 4,
+          "math_block": 1,
+          "callout": 2,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 38,
+          "frontmatter_lines": 0,
+          "heading_context": 5,
+          "excluded_blank": 22,
+          "excluded_horizontal_rule": 0,
+          "accounted": 65,
+          "lines_total": 65,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 22,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/05. Evolution of CNN Architectures.md",
+        "outcome": "extracted",
+        "sha256": "87d008398f5f048e42872c412dcad69908b47d8bfec0e5a59a6a680b164ec6a3",
+        "manifest_match": true,
+        "units": 90,
+        "units_by_type": {
+          "prose": 59,
+          "table": 6,
+          "list": 8,
+          "callout": 8,
+          "code_block": 3,
+          "math_block": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 203,
+          "frontmatter_lines": 0,
+          "heading_context": 45,
+          "excluded_blank": 141,
+          "excluded_horizontal_rule": 12,
+          "accounted": 401,
+          "lines_total": 401,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 141,
+          "horizontal_rule": 12
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/06. VGG16 Architecture Deep Dive.md",
+        "outcome": "extracted",
+        "sha256": "be2310286139a4f3d455b5330132f79141e113e5a6e9f944b4a8f4552c5f52ed",
+        "manifest_match": true,
+        "units": 98,
+        "units_by_type": {
+          "prose": 51,
+          "table": 11,
+          "callout": 9,
+          "math_block": 7,
+          "list": 14,
+          "code_block": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 697,
+          "frontmatter_lines": 0,
+          "heading_context": 43,
+          "excluded_blank": 148,
+          "excluded_horizontal_rule": 10,
+          "accounted": 898,
+          "lines_total": 898,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 148,
+          "horizontal_rule": 10
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/07. Inception Architecture Deep Dive.md",
+        "outcome": "extracted",
+        "sha256": "1833676030fb8850516c3d5b9315bb3e21989eb4b96ee4444f1becf3d80ea4c0",
+        "manifest_match": true,
+        "units": 117,
+        "units_by_type": {
+          "callout": 9,
+          "prose": 52,
+          "list": 29,
+          "code_block": 3,
+          "math_block": 23,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 205,
+          "frontmatter_lines": 0,
+          "heading_context": 27,
+          "excluded_blank": 141,
+          "excluded_horizontal_rule": 10,
+          "accounted": 383,
+          "lines_total": 383,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 141,
+          "horizontal_rule": 10
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/08. The Degradation Problem and Residual Connections.md",
+        "outcome": "extracted",
+        "sha256": "b463e15ff74a2937598f347e4e709a318662a628dba43f473c63985bf09ca73e",
+        "manifest_match": true,
+        "units": 93,
+        "units_by_type": {
+          "callout": 9,
+          "prose": 49,
+          "list": 20,
+          "code_block": 5,
+          "math_block": 10
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 263,
+          "frontmatter_lines": 0,
+          "heading_context": 26,
+          "excluded_blank": 128,
+          "excluded_horizontal_rule": 10,
+          "accounted": 427,
+          "lines_total": 427,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 128,
+          "horizontal_rule": 10
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/09. ResNet Bottleneck Blocks and Architectural Variants.md",
+        "outcome": "extracted",
+        "sha256": "a078b9eed0825c4693b0b8dd78d3d998e949b029527c483afdcba0d6f5dd6165",
+        "manifest_match": true,
+        "units": 100,
+        "units_by_type": {
+          "callout": 9,
+          "prose": 49,
+          "list": 21,
+          "code_block": 10,
+          "math_block": 10,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 539,
+          "frontmatter_lines": 0,
+          "heading_context": 37,
+          "excluded_blank": 142,
+          "excluded_horizontal_rule": 10,
+          "accounted": 728,
+          "lines_total": 728,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 142,
+          "horizontal_rule": 10
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/01. Transfer Learning and Fine-Tuning.md",
+        "outcome": "extracted",
+        "sha256": "60cab0f0c34061929f816589f615091c11105684fda8ca668404280b591ccba1",
+        "manifest_match": true,
+        "units": 55,
+        "units_by_type": {
+          "prose": 25,
+          "callout": 10,
+          "table": 4,
+          "code_block": 8,
+          "list": 8
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 459,
+          "frontmatter_lines": 0,
+          "heading_context": 25,
+          "excluded_blank": 88,
+          "excluded_horizontal_rule": 11,
+          "accounted": 583,
+          "lines_total": 583,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 88,
+          "horizontal_rule": 11
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/02. PyTorch Implementation Basics.md",
+        "outcome": "extracted",
+        "sha256": "3e7f72d6fbdd31ac24b6a26309c12a8248e4c12bad3536d5c2da03342e36c9a7",
+        "manifest_match": true,
+        "units": 69,
+        "units_by_type": {
+          "callout": 10,
+          "prose": 27,
+          "code_block": 11,
+          "list": 11,
+          "table": 2,
+          "math_block": 8
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 696,
+          "frontmatter_lines": 0,
+          "heading_context": 26,
+          "excluded_blank": 105,
+          "excluded_horizontal_rule": 11,
+          "accounted": 838,
+          "lines_total": 838,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 105,
+          "horizontal_rule": 11
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/03. PyTorch Advanced - VGG16 and Pre-trained Models.md",
+        "outcome": "extracted",
+        "sha256": "3863a331e6257af2960c9011aba303ec6a436699fb50031e7d6f1680346c0192",
+        "manifest_match": true,
+        "units": 57,
+        "units_by_type": {
+          "callout": 8,
+          "prose": 24,
+          "code_block": 19,
+          "math_block": 1,
+          "list": 3,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 705,
+          "frontmatter_lines": 0,
+          "heading_context": 34,
+          "excluded_blank": 97,
+          "excluded_horizontal_rule": 9,
+          "accounted": 845,
+          "lines_total": 845,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 97,
+          "horizontal_rule": 9
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/01. The Full Training Pipeline End-to-End Checklist.md",
+        "outcome": "extracted",
+        "sha256": "d7758bab7ac21a9a103bf63089b7ec480430357d826c7e15be4fb518e4e717d0",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "callout": 7,
+          "prose": 5,
+          "code_block": 16,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 812,
+          "frontmatter_lines": 0,
+          "heading_context": 22,
+          "excluded_blank": 57,
+          "excluded_horizontal_rule": 7,
+          "accounted": 898,
+          "lines_total": 898,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 57,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/02. Common Mistakes and How to Fix Them.md",
+        "outcome": "extracted",
+        "sha256": "1ff3070c7a24c50b3cd33744ba11be8f235935badd3791bc722b939f45b12d12",
+        "manifest_match": true,
+        "units": 80,
+        "units_by_type": {
+          "callout": 9,
+          "prose": 36,
+          "list": 15,
+          "math_block": 6,
+          "code_block": 13,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 544,
+          "frontmatter_lines": 0,
+          "heading_context": 68,
+          "excluded_blank": 121,
+          "excluded_horizontal_rule": 14,
+          "accounted": 747,
+          "lines_total": 747,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 121,
+          "horizontal_rule": 14
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/03. Demystifying the Black Box - CNN Interpretability.md",
+        "outcome": "extracted",
+        "sha256": "30cd934f15310a3d6c175bb3b83fc245d2222716dbde4965202209197554d503",
+        "manifest_match": true,
+        "units": 62,
+        "units_by_type": {
+          "callout": 4,
+          "prose": 41,
+          "code_block": 4,
+          "math_block": 6,
+          "list": 4,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 474,
+          "frontmatter_lines": 0,
+          "heading_context": 27,
+          "excluded_blank": 95,
+          "excluded_horizontal_rule": 7,
+          "accounted": 603,
+          "lines_total": 603,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 95,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/04. Exercises Solved and Explained.md",
+        "outcome": "extracted",
+        "sha256": "c9d6e7088eced5efa31b4457513b181bdade3eb616d0e8c38f4c8607ce0275fb",
+        "manifest_match": true,
+        "units": 161,
+        "units_by_type": {
+          "callout": 18,
+          "prose": 66,
+          "list": 13,
+          "math_block": 37,
+          "code_block": 21,
+          "table": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 1430,
+          "frontmatter_lines": 0,
+          "heading_context": 57,
+          "excluded_blank": 216,
+          "excluded_horizontal_rule": 6,
+          "accounted": 1709,
+          "lines_total": 1709,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 216,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/01. Foundations and Philosophy - Summary.md",
+        "outcome": "extracted",
+        "sha256": "790e432a7e4fb2e785bfe01be5b93574526d99d32cdc6483b77b6a6ae511efa3",
+        "manifest_match": true,
+        "units": 187,
+        "units_by_type": {
+          "prose": 96,
+          "math_block": 28,
+          "code_block": 19,
+          "list": 41,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 654,
+          "frontmatter_lines": 0,
+          "heading_context": 69,
+          "excluded_blank": 241,
+          "excluded_horizontal_rule": 13,
+          "accounted": 977,
+          "lines_total": 977,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 241,
+          "horizontal_rule": 13
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/02. Core Operators and Geometry - Summary.md",
+        "outcome": "extracted",
+        "sha256": "5dc51cf8b3ca46746b22dd257431b7eb9096b07852564216509222c55bea3d37",
+        "manifest_match": true,
+        "units": 378,
+        "units_by_type": {
+          "prose": 163,
+          "list": 57,
+          "code_block": 26,
+          "callout": 4,
+          "math_block": 121,
+          "table": 6,
+          "quote": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 871,
+          "frontmatter_lines": 0,
+          "heading_context": 113,
+          "excluded_blank": 403,
+          "excluded_horizontal_rule": 50,
+          "accounted": 1437,
+          "lines_total": 1437,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 403,
+          "horizontal_rule": 50
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/03. Hyperparameters and Basic PyTorch - Summary.md",
+        "outcome": "extracted",
+        "sha256": "4733da2eb96697f9e4455db1687f0f17537984ed7d3ce109127169aeb010794f",
+        "manifest_match": true,
+        "units": 175,
+        "units_by_type": {
+          "prose": 86,
+          "code_block": 17,
+          "list": 27,
+          "table": 4,
+          "callout": 5,
+          "math_block": 36
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 644,
+          "frontmatter_lines": 0,
+          "heading_context": 69,
+          "excluded_blank": 256,
+          "excluded_horizontal_rule": 30,
+          "accounted": 999,
+          "lines_total": 999,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 256,
+          "horizontal_rule": 30
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/04. VGG and Classic Architectures - Summary.md",
+        "outcome": "extracted",
+        "sha256": "7eb7bd83b487bd61cdefdbea3191dbe9ded43213cd7983bb5aaa1a42eb92f4bc",
+        "manifest_match": true,
+        "units": 369,
+        "units_by_type": {
+          "prose": 148,
+          "code_block": 43,
+          "table": 4,
+          "list": 70,
+          "math_block": 100,
+          "callout": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 1178,
+          "frontmatter_lines": 0,
+          "heading_context": 109,
+          "excluded_blank": 284,
+          "excluded_horizontal_rule": 39,
+          "accounted": 1610,
+          "lines_total": 1610,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 284,
+          "horizontal_rule": 39
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/05. Normalization, Regularization and Augmentation - Summary.md",
+        "outcome": "extracted",
+        "sha256": "66f9fa59e5b42cacf9938b0192b3e9e6e150d492446c56e9d0986d4ded4addc0",
+        "manifest_match": true,
+        "units": 187,
+        "units_by_type": {
+          "prose": 100,
+          "math_block": 44,
+          "code_block": 30,
+          "list": 7,
+          "callout": 5,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 643,
+          "frontmatter_lines": 0,
+          "heading_context": 65,
+          "excluded_blank": 205,
+          "excluded_horizontal_rule": 7,
+          "accounted": 920,
+          "lines_total": 920,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 205,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/06. Transfer Learning and ResNet - Summary.md",
+        "outcome": "extracted",
+        "sha256": "12c4ffec4d616709a8de6e44677fc0d64b03c740a89ba0239e98ec2b4450ad37",
+        "manifest_match": true,
+        "units": 393,
+        "units_by_type": {
+          "callout": 2,
+          "prose": 194,
+          "code_block": 32,
+          "math_block": 110,
+          "list": 51,
+          "table": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 1036,
+          "frontmatter_lines": 0,
+          "heading_context": 125,
+          "excluded_blank": 464,
+          "excluded_horizontal_rule": 81,
+          "accounted": 1706,
+          "lines_total": 1706,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 464,
+          "horizontal_rule": 81
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/07. Scaling, Pipeline and Interpretability - Summary.md",
+        "outcome": "extracted",
+        "sha256": "860b024032f550cb45a4afac94caab75d6ce07bd88d7468addd9cb2e68f4c4f5",
+        "manifest_match": true,
+        "units": 256,
+        "units_by_type": {
+          "prose": 101,
+          "math_block": 50,
+          "code_block": 40,
+          "table": 12,
+          "callout": 4,
+          "list": 49
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 1524,
+          "frontmatter_lines": 0,
+          "heading_context": 127,
+          "excluded_blank": 313,
+          "excluded_horizontal_rule": 51,
+          "accounted": 2015,
+          "lines_total": 2015,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 313,
+          "horizontal_rule": 51
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/07. Advanced Operators/01. Advanced Convolutional Operators - Depthwise, Dilated, Transposed, Grouped.md",
+        "outcome": "extracted",
+        "sha256": "171a35ff5715ba0c10d48fa5eb3e08f058ede5bb0097453a6d3a0b8a953bee8e",
+        "manifest_match": true,
+        "units": 44,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 29,
+          "math_block": 3,
+          "list": 9,
+          "code_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 76,
+          "frontmatter_lines": 0,
+          "heading_context": 25,
+          "excluded_blank": 72,
+          "excluded_horizontal_rule": 7,
+          "accounted": 180,
+          "lines_total": 180,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 72,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - Convolutional Neural Networks (CNN)/08. Modern Computer Vision Tasks/01. Modern Computer Vision Tasks - Detection and Segmentation.md",
+        "outcome": "extracted",
+        "sha256": "1dea908c69bdacc7cf3e50a61b29f101412b69c84de0c46140c01d979c6301c5",
+        "manifest_match": true,
+        "units": 41,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 31,
+          "table": 3,
+          "list": 5,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 87,
+          "frontmatter_lines": 0,
+          "heading_context": 18,
+          "excluded_blank": 62,
+          "excluded_horizontal_rule": 6,
+          "accounted": 173,
+          "lines_total": 173,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 62,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

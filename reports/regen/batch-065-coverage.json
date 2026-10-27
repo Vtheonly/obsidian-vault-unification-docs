@@ -1,0 +1,181 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "26 - Papers/Multimodal (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-qm8g30ip/065-regen001-master-ai-26-papers-multimodal.jsonl.run1",
+    "records_written": 222,
+    "denominators": {
+      "files_in_scope": 5,
+      "files_extracted": 5,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "26 - Papers/Multimodal/36 - Perceiver 2022.md",
+        "outcome": "extracted",
+        "sha256": "25b8eccf47c30baa0773b6c0f1d12ca24e32eb3bf75aefa03e1d613a717c3d7d",
+        "manifest_match": true,
+        "units": 52,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 34,
+          "list": 9,
+          "math_block": 3,
+          "code_block": 1,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 99,
+          "frontmatter_lines": 6,
+          "heading_context": 28,
+          "excluded_blank": 77,
+          "excluded_horizontal_rule": 0,
+          "accounted": 204,
+          "lines_total": 204,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 77,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Multimodal/37 - Flamingo 2022.md",
+        "outcome": "extracted",
+        "sha256": "bfece055f31cf70fee1546919932c6124092a7e0bf42668163a4167678400894",
+        "manifest_match": true,
+        "units": 47,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 39,
+          "math_block": 2,
+          "code_block": 1,
+          "table": 2,
+          "list": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 88,
+          "frontmatter_lines": 6,
+          "heading_context": 33,
+          "excluded_blank": 79,
+          "excluded_horizontal_rule": 0,
+          "accounted": 200,
+          "lines_total": 200,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 79,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Multimodal/40 - BLIP-2 2023.md",
+        "outcome": "extracted",
+        "sha256": "cd7f9ea8cc3b1201525f8eea50714696c55bdab9cf1254a951eff82a594e1f18",
+        "manifest_match": true,
+        "units": 48,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 25,
+          "list": 18,
+          "code_block": 1,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 113,
+          "frontmatter_lines": 6,
+          "heading_context": 22,
+          "excluded_blank": 69,
+          "excluded_horizontal_rule": 0,
+          "accounted": 204,
+          "lines_total": 204,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 69,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Multimodal/48 - ColPali 2024.md",
+        "outcome": "extracted",
+        "sha256": "d425a63318e423e8e5c74f0f4a0e56bfdfe168fa8c0f6b8af50da305a57c925f",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 16,
+          "list": 10,
+          "math_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 77,
+          "frontmatter_lines": 7,
+          "heading_context": 22,
+          "excluded_blank": 39,
+          "excluded_horizontal_rule": 0,
+          "accounted": 138,
+          "lines_total": 138,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 39,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Multimodal/55 - SigLIP-2 2025.md",
+        "outcome": "extracted",
+        "sha256": "b9442c9a5d4e58055bb1bd020ea4ccdb59c01370cf759d6126050720d209774c",
+        "manifest_match": true,
+        "units": 45,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 23,
+          "list": 18,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 97,
+          "frontmatter_lines": 7,
+          "heading_context": 25,
+          "excluded_blank": 49,
+          "excluded_horizontal_rule": 0,
+          "accounted": 171,
+          "lines_total": 171,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 49,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

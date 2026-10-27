@@ -1,0 +1,146 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "17 - RAG (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/049-regen001-master-ai-17-rag.jsonl.run1",
+    "records_written": 177,
+    "denominators": {
+      "files_in_scope": 4,
+      "files_extracted": 4,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "17 - RAG/Advanced Patterns/03 - Advanced RAG Patterns.md",
+        "outcome": "extracted",
+        "sha256": "d859e5156c7932a69b4951198c619e1845099950c5450eb75b5dd4964d036ea0",
+        "manifest_match": true,
+        "units": 25,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 9,
+          "code_block": 2,
+          "list": 12
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 120,
+          "frontmatter_lines": 6,
+          "heading_context": 21,
+          "excluded_blank": 34,
+          "excluded_horizontal_rule": 0,
+          "accounted": 175,
+          "lines_total": 175,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 34,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "17 - RAG/Ingestion and Retrieval/01 - RAG Pipeline Overview.md",
+        "outcome": "extracted",
+        "sha256": "beb03a47394d092d1ca2b22011b123cacfb1c0e4dbf6a192c8a6ec151806e230",
+        "manifest_match": true,
+        "units": 74,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 30,
+          "list": 37,
+          "code_block": 4,
+          "math_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 363,
+          "frontmatter_lines": 7,
+          "heading_context": 44,
+          "excluded_blank": 85,
+          "excluded_horizontal_rule": 0,
+          "accounted": 492,
+          "lines_total": 492,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 85,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "17 - RAG/Ingestion and Retrieval/02 - Chunking Hybrid Search Reranking.md",
+        "outcome": "extracted",
+        "sha256": "599fed2785a9f4535e77305fb98570eb393c42cc45e9d066c7b55e991fe905a8",
+        "manifest_match": true,
+        "units": 73,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 39,
+          "list": 21,
+          "code_block": 8,
+          "math_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 282,
+          "frontmatter_lines": 7,
+          "heading_context": 33,
+          "excluded_blank": 100,
+          "excluded_horizontal_rule": 0,
+          "accounted": 415,
+          "lines_total": 415,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 100,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "17 - RAG/MOC.md",
+        "outcome": "extracted",
+        "sha256": "3b88d57520348190451b9fc2dd82d0aca210a5220174fa7b871d74a5820a6baf",
+        "manifest_match": true,
+        "units": 5,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 23,
+          "frontmatter_lines": 5,
+          "heading_context": 4,
+          "excluded_blank": 8,
+          "excluded_horizontal_rule": 0,
+          "accounted": 35,
+          "lines_total": 35,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 8,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

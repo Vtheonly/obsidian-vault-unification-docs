@@ -1,0 +1,756 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "01 - Foundations and Overview (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-6t2lg8lr/012-regen001-ai-course-01-foundations-and-overview.jsonl.run1",
+    "records_written": 769,
+    "denominators": {
+      "files_in_scope": 24,
+      "files_extracted": 24,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/01. Introduction to Machine Learning.md",
+        "outcome": "extracted",
+        "sha256": "430bc3beed7de4638c316fd81971823243374217cfe220dc24d5a18018813999",
+        "manifest_match": true,
+        "units": 11,
+        "units_by_type": {
+          "prose": 5,
+          "list": 3,
+          "callout": 2,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 26,
+          "frontmatter_lines": 0,
+          "heading_context": 6,
+          "excluded_blank": 13,
+          "excluded_horizontal_rule": 2,
+          "accounted": 47,
+          "lines_total": 47,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 13,
+          "horizontal_rule": 2
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/02. Types of Learning.md",
+        "outcome": "extracted",
+        "sha256": "5e88c00357a0b8fee92584dcdf395e1f483b00bf8e5627fe33d1feb1f800c4a9",
+        "manifest_match": true,
+        "units": 14,
+        "units_by_type": {
+          "prose": 5,
+          "code_block": 1,
+          "list": 6,
+          "table": 1,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 48,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 20,
+          "excluded_horizontal_rule": 2,
+          "accounted": 79,
+          "lines_total": 79,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 20,
+          "horizontal_rule": 2
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/03. Deep Learning Definition and Context.md",
+        "outcome": "extracted",
+        "sha256": "deba151f89bf68f356881e87f8b19c0f241b1b4a760af868347e8d881a21a92e",
+        "manifest_match": true,
+        "units": 13,
+        "units_by_type": {
+          "prose": 8,
+          "code_block": 2,
+          "table": 1,
+          "list": 1,
+          "quote": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 40,
+          "frontmatter_lines": 0,
+          "heading_context": 4,
+          "excluded_blank": 16,
+          "excluded_horizontal_rule": 0,
+          "accounted": 60,
+          "lines_total": 60,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 16,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/04. Machine Learning vs Deep Learning.md",
+        "outcome": "extracted",
+        "sha256": "b8d0f7d3131484ec678420fc5373d2104e70c44c85f619f5347aa743a25989c2",
+        "manifest_match": true,
+        "units": 15,
+        "units_by_type": {
+          "prose": 6,
+          "list": 5,
+          "code_block": 2,
+          "table": 1,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 57,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 21,
+          "excluded_horizontal_rule": 0,
+          "accounted": 85,
+          "lines_total": 85,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 21,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/05. Evolution and History of Deep Learning.md",
+        "outcome": "extracted",
+        "sha256": "da288dde7fd80e6000df1a96f45d40e2ba700041defe8d5c34ad710aed5c359d",
+        "manifest_match": true,
+        "units": 16,
+        "units_by_type": {
+          "prose": 12,
+          "code_block": 1,
+          "list": 2,
+          "quote": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 29,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 23,
+          "excluded_horizontal_rule": 0,
+          "accounted": 61,
+          "lines_total": 61,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 23,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/06. Applications of Deep Learning.md",
+        "outcome": "extracted",
+        "sha256": "997fef446b05c1b10a2d1f59c048d49b9532729d92e1b0953feeeff2b4ed8adc",
+        "manifest_match": true,
+        "units": 17,
+        "units_by_type": {
+          "prose": 4,
+          "list": 12,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 51,
+          "frontmatter_lines": 0,
+          "heading_context": 16,
+          "excluded_blank": 21,
+          "excluded_horizontal_rule": 0,
+          "accounted": 88,
+          "lines_total": 88,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 21,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/07. Comparing Data Science, AI, ML, and BI.md",
+        "outcome": "extracted",
+        "sha256": "a48b394f178cc09c8f28bd55f70a0d408431b04e3a0534d8a06df4cfd0e4d531",
+        "manifest_match": true,
+        "units": 8,
+        "units_by_type": {
+          "prose": 1,
+          "code_block": 1,
+          "list": 5,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 37,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 11,
+          "excluded_horizontal_rule": 0,
+          "accounted": 56,
+          "lines_total": 56,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 11,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/08. Foundations of Machine Learning (Summary).md",
+        "outcome": "extracted",
+        "sha256": "3a2562db407be2016b7272d6df46535cc94616d9f75928216c3f16353295fed4",
+        "manifest_match": true,
+        "units": 158,
+        "units_by_type": {
+          "prose": 62,
+          "list": 38,
+          "callout": 5,
+          "code_block": 32,
+          "table": 18,
+          "quote": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 787,
+          "frontmatter_lines": 0,
+          "heading_context": 90,
+          "excluded_blank": 248,
+          "excluded_horizontal_rule": 44,
+          "accounted": 1169,
+          "lines_total": 1169,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 248,
+          "horizontal_rule": 44
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.2 - Mathematical Foundations/00. Linear Algebra Fundamentals.md",
+        "outcome": "extracted",
+        "sha256": "99a194f9f5d061c7b734d82a552158379f3fc416a3f05d0921ab6b4ac2f6a62b",
+        "manifest_match": true,
+        "units": 34,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 20,
+          "math_block": 3,
+          "list": 10
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 75,
+          "frontmatter_lines": 0,
+          "heading_context": 13,
+          "excluded_blank": 49,
+          "excluded_horizontal_rule": 8,
+          "accounted": 145,
+          "lines_total": 145,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 49,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.2 - Mathematical Foundations/01. Mathematical Notation (ML Course).md",
+        "outcome": "extracted",
+        "sha256": "e43b693331847d2380e79255e78853e4b4889ab0d062ffa357a091dcb8f04931",
+        "manifest_match": true,
+        "units": 27,
+        "units_by_type": {
+          "math_block": 12,
+          "list": 14,
+          "prose": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 105,
+          "frontmatter_lines": 0,
+          "heading_context": 19,
+          "excluded_blank": 47,
+          "excluded_horizontal_rule": 12,
+          "accounted": 183,
+          "lines_total": 183,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 47,
+          "horizontal_rule": 12
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.2 - Mathematical Foundations/02. Mathematical Notation and Symbols.md",
+        "outcome": "extracted",
+        "sha256": "bd1d9896600ae9e16d0cefb79f51ce6982dfd72d900d5ac591fe465d4759f54b",
+        "manifest_match": true,
+        "units": 51,
+        "units_by_type": {
+          "prose": 26,
+          "list": 11,
+          "math_block": 12,
+          "callout": 1,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 90,
+          "frontmatter_lines": 0,
+          "heading_context": 19,
+          "excluded_blank": 51,
+          "excluded_horizontal_rule": 5,
+          "accounted": 165,
+          "lines_total": 165,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 51,
+          "horizontal_rule": 5
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.2 - Mathematical Foundations/03. Understanding the Math Notation - Chain Rule and wrt.md",
+        "outcome": "extracted",
+        "sha256": "6995c7f223f97a774c10737e40b23387a6962163f03f18d03c586da759f460fe",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "prose": 20,
+          "list": 6,
+          "math_block": 4,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 60,
+          "frontmatter_lines": 0,
+          "heading_context": 5,
+          "excluded_blank": 30,
+          "excluded_horizontal_rule": 4,
+          "accounted": 99,
+          "lines_total": 99,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 30,
+          "horizontal_rule": 4
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.2 - Mathematical Foundations/04. Partial vs. Ordinary Derivatives.md",
+        "outcome": "extracted",
+        "sha256": "7ec8144e7ef5aff35f97c291c3bef86f05b4b1fbf01f8a3e001a8a1251a49be1",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "prose": 15,
+          "list": 6,
+          "callout": 1,
+          "math_block": 7,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 68,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 28,
+          "excluded_horizontal_rule": 1,
+          "accounted": 104,
+          "lines_total": 104,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 28,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.2 - Mathematical Foundations/05. Derivatives, Power Rule, and the Chain Rule.md",
+        "outcome": "extracted",
+        "sha256": "8ffa34eccfb31c31cb96baa2d627a12432cb9ab34255ceb0ad5f6a91aaedc7a8",
+        "manifest_match": true,
+        "units": 97,
+        "units_by_type": {
+          "prose": 44,
+          "table": 1,
+          "list": 16,
+          "quote": 9,
+          "code_block": 6,
+          "math_block": 21
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 202,
+          "frontmatter_lines": 0,
+          "heading_context": 38,
+          "excluded_blank": 124,
+          "excluded_horizontal_rule": 8,
+          "accounted": 372,
+          "lines_total": 372,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 124,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.2 - Mathematical Foundations/06. Gradients and Gradient Descent.md",
+        "outcome": "extracted",
+        "sha256": "1ef7713cea781c10be416a1a2351f883353dd24d39069617e19de7f0cee7ab80",
+        "manifest_match": true,
+        "units": 67,
+        "units_by_type": {
+          "prose": 36,
+          "math_block": 13,
+          "table": 3,
+          "list": 7,
+          "quote": 7,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 115,
+          "frontmatter_lines": 0,
+          "heading_context": 22,
+          "excluded_blank": 93,
+          "excluded_horizontal_rule": 11,
+          "accounted": 241,
+          "lines_total": 241,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 93,
+          "horizontal_rule": 11
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.2 - Mathematical Foundations/07. Probability and Statistics for ML.md",
+        "outcome": "extracted",
+        "sha256": "7427103c17fcac6bf50a5f6cb9226542b1488561e72b835384db3224fd8b94dd",
+        "manifest_match": true,
+        "units": 61,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 37,
+          "list": 8,
+          "math_block": 14,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 81,
+          "frontmatter_lines": 0,
+          "heading_context": 17,
+          "excluded_blank": 82,
+          "excluded_horizontal_rule": 8,
+          "accounted": 188,
+          "lines_total": 188,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 82,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.2 - Mathematical Foundations/08. Multivariate Calculus - Jacobians and Hessians.md",
+        "outcome": "extracted",
+        "sha256": "c6850a403d2e167dbb7a0e5bad8eb18a398904187aae7684c5d0d61eebd1f1a6",
+        "manifest_match": true,
+        "units": 35,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 18,
+          "table": 1,
+          "math_block": 6,
+          "list": 9
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 56,
+          "frontmatter_lines": 0,
+          "heading_context": 11,
+          "excluded_blank": 50,
+          "excluded_horizontal_rule": 6,
+          "accounted": 123,
+          "lines_total": 123,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 50,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.3 - Data Science Foundations/01. Data Science Definition and Philosophy.md",
+        "outcome": "extracted",
+        "sha256": "8a201c7e2137b29d9a01f76b8ea65c05727d601338d2942c7955abd5fc43ca26",
+        "manifest_match": true,
+        "units": 10,
+        "units_by_type": {
+          "prose": 5,
+          "callout": 1,
+          "code_block": 1,
+          "list": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 38,
+          "frontmatter_lines": 0,
+          "heading_context": 5,
+          "excluded_blank": 14,
+          "excluded_horizontal_rule": 0,
+          "accounted": 57,
+          "lines_total": 57,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 14,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.3 - Data Science Foundations/02. The Importance of Data-Driven Decision Making.md",
+        "outcome": "extracted",
+        "sha256": "b7975a3b7ec07831bb564693844c55487d14085f6ec453f0a64007b772d22bce",
+        "manifest_match": true,
+        "units": 7,
+        "units_by_type": {
+          "prose": 3,
+          "list": 3,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 16,
+          "frontmatter_lines": 0,
+          "heading_context": 6,
+          "excluded_blank": 9,
+          "excluded_horizontal_rule": 0,
+          "accounted": 31,
+          "lines_total": 31,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 9,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.3 - Data Science Foundations/03. The Four Pillars of Data Science.md",
+        "outcome": "extracted",
+        "sha256": "37b0380b08d61ff0bdb2dabc80906661d89e9e5daa67facd0988e1526d89dc6f",
+        "manifest_match": true,
+        "units": 10,
+        "units_by_type": {
+          "prose": 5,
+          "list": 4,
+          "code_block": 1
+        },
+        "warnings": [
+          "unclosed code fence starting at line 30"
+        ],
+        "unclosed_spans": [
+          [
+            "code_block",
+            30,
+            36
+          ]
+        ],
+        "line_accounting": {
+          "unit_lines": 25,
+          "frontmatter_lines": 0,
+          "heading_context": 5,
+          "excluded_blank": 6,
+          "excluded_horizontal_rule": 0,
+          "accounted": 36,
+          "lines_total": 36,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 6,
+          "horizontal_rule": 0
+        },
+        "finding_ids": [
+          "F-0002"
+        ]
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.3 - Data Science Foundations/04. The Complete Data Science Workflow.md",
+        "outcome": "extracted",
+        "sha256": "2b8dbde3bef9972980103200e3e698b9f68d866663d076d519e9eb8c7e4417d3",
+        "manifest_match": true,
+        "units": 18,
+        "units_by_type": {
+          "prose": 9,
+          "code_block": 1,
+          "list": 8
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 39,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 11,
+          "excluded_horizontal_rule": 0,
+          "accounted": 60,
+          "lines_total": 60,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 11,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.3 - Data Science Foundations/05. Careers and Roles in the Data Ecosystem.md",
+        "outcome": "extracted",
+        "sha256": "c63aaffc92598d6a80f0373aff66ad499dc3be68d1ff738b23c4b797ddc956a8",
+        "manifest_match": true,
+        "units": 13,
+        "units_by_type": {
+          "prose": 6,
+          "table": 1,
+          "list": 5,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 25,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 10,
+          "excluded_horizontal_rule": 0,
+          "accounted": 43,
+          "lines_total": 43,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 10,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.3 - Data Science Foundations/06. Essential Technical and Soft Skills.md",
+        "outcome": "extracted",
+        "sha256": "8c3ca07799f2a63cdcee3fa71e8f2d02c2422ebd0339efd918a8036050fe99be",
+        "manifest_match": true,
+        "units": 10,
+        "units_by_type": {
+          "prose": 1,
+          "list": 8,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 17,
+          "frontmatter_lines": 0,
+          "heading_context": 11,
+          "excluded_blank": 12,
+          "excluded_horizontal_rule": 0,
+          "accounted": 40,
+          "lines_total": 40,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 12,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "01 - Foundations and Overview/01.3 - Data Science Foundations/07. Exercise 1 - Identifying Applications and Roles.md",
+        "outcome": "extracted",
+        "sha256": "753493619c0dd3bb66149ee5141fbfd220b016b16b4418ba63b6566720c68fec",
+        "manifest_match": true,
+        "units": 16,
+        "units_by_type": {
+          "prose": 5,
+          "list": 11
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 34,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 20,
+          "excluded_horizontal_rule": 2,
+          "accounted": 65,
+          "lines_total": 65,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 20,
+          "horizontal_rule": 2
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

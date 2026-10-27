@@ -1,0 +1,177 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "16 - Multi-Agent Systems (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/048-regen001-master-ai-16-multi-agent-systems.jsonl.run1",
+    "records_written": 265,
+    "denominators": {
+      "files_in_scope": 5,
+      "files_extracted": 5,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "16 - Multi-Agent Systems/Architectures/01 - Multi-Agent Architectures.md",
+        "outcome": "extracted",
+        "sha256": "03d44882008ce172dce98d0b921f42460a74d7540710e1faf147e8ebf4d28191",
+        "manifest_match": true,
+        "units": 61,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 23,
+          "list": 26,
+          "code_block": 8,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 294,
+          "frontmatter_lines": 7,
+          "heading_context": 29,
+          "excluded_blank": 71,
+          "excluded_horizontal_rule": 0,
+          "accounted": 394,
+          "lines_total": 394,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 71,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "16 - Multi-Agent Systems/Communication/02 - Communication Patterns.md",
+        "outcome": "extracted",
+        "sha256": "930cd2bfb0cd2a36f86607609298583c2f2c9179f0d80b219ea39ff7b876ee64",
+        "manifest_match": true,
+        "units": 65,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 40,
+          "list": 16,
+          "code_block": 6,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 192,
+          "frontmatter_lines": 6,
+          "heading_context": 28,
+          "excluded_blank": 62,
+          "excluded_horizontal_rule": 0,
+          "accounted": 282,
+          "lines_total": 282,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 62,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "16 - Multi-Agent Systems/Coordination/03 - Coordination and Consensus.md",
+        "outcome": "extracted",
+        "sha256": "15aab1344642bc3c72201a6b32ad8ee4b2b215e6dcdf4bf6cdebb173222e13bd",
+        "manifest_match": true,
+        "units": 74,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 54,
+          "list": 11,
+          "code_block": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 161,
+          "frontmatter_lines": 6,
+          "heading_context": 28,
+          "excluded_blank": 73,
+          "excluded_horizontal_rule": 0,
+          "accounted": 262,
+          "lines_total": 262,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 73,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "16 - Multi-Agent Systems/Enterprise/04 - Enterprise Multi-Agent Architectures.md",
+        "outcome": "extracted",
+        "sha256": "e999fe861ed33ed861a34ae7d87ef624686978c7d1e2ed15a56d42c3889ae017",
+        "manifest_match": true,
+        "units": 57,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 34,
+          "list": 20,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 153,
+          "frontmatter_lines": 6,
+          "heading_context": 35,
+          "excluded_blank": 52,
+          "excluded_horizontal_rule": 0,
+          "accounted": 240,
+          "lines_total": 240,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 52,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "16 - Multi-Agent Systems/MOC.md",
+        "outcome": "extracted",
+        "sha256": "3ded4e6be3ed05797971cc021aca3f47a946ee8b147d8909e412a66d9498773e",
+        "manifest_match": true,
+        "units": 8,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 4,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 38,
+          "frontmatter_lines": 5,
+          "heading_context": 7,
+          "excluded_blank": 14,
+          "excluded_horizontal_rule": 0,
+          "accounted": 59,
+          "lines_total": 59,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 14,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

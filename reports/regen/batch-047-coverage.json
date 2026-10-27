@@ -1,0 +1,337 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "15 - AI Agents (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/047-regen001-master-ai-15-ai-agents.jsonl.run1",
+    "records_written": 436,
+    "denominators": {
+      "files_in_scope": 10,
+      "files_extracted": 10,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "15 - AI Agents/Architecture/01 - Agent vs Workflow vs LLM Application.md",
+        "outcome": "extracted",
+        "sha256": "808825a65a0cbaf0a014c9efd40661e2527ea4f440512477995ae9bc3844ce50",
+        "manifest_match": true,
+        "units": 36,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "code_block": 5,
+          "prose": 18,
+          "list": 10,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 127,
+          "frontmatter_lines": 5,
+          "heading_context": 13,
+          "excluded_blank": 44,
+          "excluded_horizontal_rule": 0,
+          "accounted": 184,
+          "lines_total": 184,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 44,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "15 - AI Agents/Autonomy/08 - Autonomous Agent Lifecycles.md",
+        "outcome": "extracted",
+        "sha256": "8630c05dc09e272d0b0596185ae91fd0fd53fe048302c8cd21473d1de2518c29",
+        "manifest_match": true,
+        "units": 71,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 38,
+          "list": 26,
+          "code_block": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 202,
+          "frontmatter_lines": 7,
+          "heading_context": 30,
+          "excluded_blank": 101,
+          "excluded_horizontal_rule": 0,
+          "accounted": 333,
+          "lines_total": 333,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 101,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "15 - AI Agents/Autonomy/09 - Human-in-the-Loop Patterns.md",
+        "outcome": "extracted",
+        "sha256": "608bd392bb0fb22a4eb51f3d31e07c08aed199b33190fc43c56dd941b2905e14",
+        "manifest_match": true,
+        "units": 71,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 40,
+          "list": 24,
+          "code_block": 4,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 197,
+          "frontmatter_lines": 7,
+          "heading_context": 31,
+          "excluded_blank": 98,
+          "excluded_horizontal_rule": 0,
+          "accounted": 326,
+          "lines_total": 326,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 98,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "15 - AI Agents/MOC.md",
+        "outcome": "extracted",
+        "sha256": "62cd6f953fb5beae00a8837bb586063fd2234c6ab757edde9ea228a7e8d38186",
+        "manifest_match": true,
+        "units": 11,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 5,
+          "code_block": 1,
+          "prose": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 56,
+          "frontmatter_lines": 5,
+          "heading_context": 8,
+          "excluded_blank": 18,
+          "excluded_horizontal_rule": 0,
+          "accounted": 82,
+          "lines_total": 82,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 18,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "15 - AI Agents/Patterns/05 - Reflection.md",
+        "outcome": "extracted",
+        "sha256": "37648c239c8e6c0c4663be5661e78d7b66c858ca58a2c226675295e05edc4be6",
+        "manifest_match": true,
+        "units": 36,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 16,
+          "code_block": 4,
+          "list": 13,
+          "quote": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 124,
+          "frontmatter_lines": 6,
+          "heading_context": 18,
+          "excluded_blank": 46,
+          "excluded_horizontal_rule": 0,
+          "accounted": 188,
+          "lines_total": 188,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 46,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "15 - AI Agents/Planning/07 - Planner-Executor Pattern.md",
+        "outcome": "extracted",
+        "sha256": "153090b9d21d7508433921080ac36232f3cf520fb5b2f4fa1305623e79edaf50",
+        "manifest_match": true,
+        "units": 52,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 31,
+          "code_block": 6,
+          "table": 1,
+          "list": 12
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 163,
+          "frontmatter_lines": 7,
+          "heading_context": 35,
+          "excluded_blank": 85,
+          "excluded_horizontal_rule": 0,
+          "accounted": 283,
+          "lines_total": 283,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 85,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "15 - AI Agents/Reasoning/02 - Chain-of-Thought.md",
+        "outcome": "extracted",
+        "sha256": "410a456a8bba4d68dc58d0d92a3436e117bb37fe59e8833ae89f583c771256e3",
+        "manifest_match": true,
+        "units": 42,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 18,
+          "quote": 2,
+          "code_block": 4,
+          "list": 16
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 117,
+          "frontmatter_lines": 6,
+          "heading_context": 24,
+          "excluded_blank": 58,
+          "excluded_horizontal_rule": 0,
+          "accounted": 199,
+          "lines_total": 199,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 58,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "15 - AI Agents/Reasoning/03 - ReAct Pattern.md",
+        "outcome": "extracted",
+        "sha256": "889ec92d69744f47d8e33d0cb9bfe990aac5159ef7cc82e92466c6d03ef6af9e",
+        "manifest_match": true,
+        "units": 54,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 33,
+          "code_block": 5,
+          "list": 13,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 403,
+          "frontmatter_lines": 7,
+          "heading_context": 34,
+          "excluded_blank": 69,
+          "excluded_horizontal_rule": 0,
+          "accounted": 506,
+          "lines_total": 506,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 69,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "15 - AI Agents/Reasoning/06 - Tree of Thoughts and Self Consistency.md",
+        "outcome": "extracted",
+        "sha256": "2a6c8e3f0a88dc5d31d66876e6918d039a4579342745a79246c0d079bba85e71",
+        "manifest_match": true,
+        "units": 34,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 11,
+          "list": 16,
+          "code_block": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 116,
+          "frontmatter_lines": 7,
+          "heading_context": 19,
+          "excluded_blank": 45,
+          "excluded_horizontal_rule": 0,
+          "accounted": 180,
+          "lines_total": 180,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 45,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "15 - AI Agents/Tool Calling/04 - Function Calling.md",
+        "outcome": "extracted",
+        "sha256": "8b011fa9f81cd579f7ca2a3871a1992db13bdc7df6b86854ee288f2278f71bd3",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 13,
+          "code_block": 7,
+          "list": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 170,
+          "frontmatter_lines": 5,
+          "heading_context": 19,
+          "excluded_blank": 43,
+          "excluded_horizontal_rule": 0,
+          "accounted": 232,
+          "lines_total": 232,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 43,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "command": "scripts/regen001_revalidate.py",
+  "task_id": "REGEN-001",
+  "step": "revalidate committed batches 001-011",
+  "recipes_source": "reports/extraction/*coverage*.json report_meta.args (historical invocation records)",
+  "determinism_note": "each part extracted twice; run1 vs run2 byte-compared; concatenated parts byte-compared against the committed batch",
+  "batches": [
+    {
+      "batch": "state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl",
+      "vault_id": "ai-course",
+      "parts": [
+        {
+          "scope": "03 - Machine Learning/03.1 - Regression",
+          "extract_ok": true,
+          "records": 298,
+          "double_run_identical": true
+        }
+      ],
+      "double_run_identical": true,
+      "regenerates_committed_bytes": true,
+      "ok": true,
+      "committed_bytes": 302467,
+      "regenerated_bytes": 302467
+    },
+    {
+      "batch": "state/knowledge-units/002-ext002-master-ai-supervised-learning.jsonl",
+      "vault_id": "master-ai",
+      "parts": [
+        {
+          "scope": "03 - Machine Learning/Supervised Learning",
+          "extract_ok": true,
+          "records": 65,
+          "double_run_identical": true
+        }
+      ],
+      "double_run_identical": true,
+      "regenerates_committed_bytes": true,
+      "ok": true,
+      "committed_bytes": 66401,
+      "regenerated_bytes": 66401
+    },
+    {
+      "batch": "state/knowledge-units/003-ext004-ai-course-03.7-tree-based-models.jsonl",
+      "vault_id": "ai-course",
+      "parts": [
+        {
+          "scope": "03 - Machine Learning/03.7 - Tree-Based Models",
+          "extract_ok": true,
+          "records": 94,
+          "double_run_identical": true
+        }
+      ],
+      "double_run_identical": true,
+      "regenerates_committed_bytes": true,
+      "ok": true,
+      "committed_bytes": 99277,
+      "regenerated_bytes": 99277
+    },
+    {
+      "batch": "state/knowledge-units/004-ext005-master-ai-evaluation.jsonl",
+      "vault_id": "master-ai",
+      "parts": [
+        {
+          "scope": "03 - Machine Learning/Evaluation/05 - ML Evaluation Metrics.md",
+          "extract_ok": true,
+          "records": 43,
+          "double_run_identical": true
+        }
+      ],
+      "double_run_identical": true,
+      "regenerates_committed_bytes": true,
+      "ok": true,
+      "committed_bytes": 40284,
+      "regenerated_bytes": 40284
+    },
+    {
+      "batch": "state/knowledge-units/005-ext005-ai-course-03.6-model-evaluation.jsonl",
+      "vault_id": "ai-course",
+      "parts": [
+        {
+          "scope": "03 - Machine Learning/03.6 - Model Evaluation",
+          "extract_ok": true,
+          "records": 275,
+          "double_run_identical": true
+        }
+      ],
+      "double_run_identical": true,
+      "regenerates_committed_bytes": true,
+      "ok": true,
+      "committed_bytes": 314704,
+      "regenerated_bytes": 314704
+    },
+    {
+      "batch": "state/knowledge-units/006-ext008-master-ai-unsupervised.jsonl",
+      "vault_id": "master-ai",
+      "parts": [
+        {
+          "scope": "03 - Machine Learning/Unsupervised Learning/04 - Clustering and Dimensionality Reduction.md",
+          "extract_ok": true,
+          "records": 27,
+          "double_run_identical": true
+        }
+      ],
+      "double_run_identical": true,
+      "regenerates_committed_bytes": true,
+      "ok": true,
+      "committed_bytes": 27860,
+      "regenerated_bytes": 27860
+    },
+    {
+      "batch": "state/knowledge-units/007-ext008-ai-course-clustering-dimreduction.jsonl",
+      "vault_id": "ai-course",
+      "parts": [
+        {
+          "scope": "03 - Machine Learning/03.5 - K-Means Clustering",
+          "extract_ok": true,
+          "records": 41,
+          "double_run_identical": true
+        },
+        {
+          "scope": "03 - Machine Learning/03.8 - Dimensionality Reduction",
+          "extract_ok": true,
+          "records": 46,
+          "double_run_identical": true
+        }
+      ],
+      "double_run_identical": true,
+      "regenerates_committed_bytes": true,
+      "ok": true,
+      "committed_bytes": 92899,
+      "regenerated_bytes": 92899
+    },
+    {
+      "batch": "state/knowledge-units/008-ext009-master-ai-generalization.jsonl",
+      "vault_id": "master-ai",
+      "parts": [
+        {
+          "scope": "03 - Machine Learning/Generalization",
+          "extract_ok": true,
+          "records": 106,
+          "double_run_identical": true
+        }
+      ],
+      "double_run_identical": true,
+      "regenerates_committed_bytes": true,
+      "ok": true,
+      "committed_bytes": 108852,
+      "regenerated_bytes": 108852
+    },
+    {
+      "batch": "state/knowledge-units/009-ext009-ai-course-04.3-regularization.jsonl",
+      "vault_id": "ai-course",
+      "parts": [
+        {
+          "scope": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/05. Batch Normalization.md",
+          "extract_ok": true,
+          "records": 85,
+          "double_run_identical": true
+        },
+        {
+          "scope": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/06. Dropout and Regularization.md",
+          "extract_ok": true,
+          "records": 73,
+          "double_run_identical": true
+        },
+        {
+          "scope": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/07. Data Augmentation.md",
+          "extract_ok": true,
+          "records": 76,
+          "double_run_identical": true
+        }
+      ],
+      "double_run_identical": true,
+      "regenerates_committed_bytes": true,
+      "ok": true,
+      "committed_bytes": 335267,
+      "regenerated_bytes": 335267
+    },
+    {
+      "batch": "state/knowledge-units/010-ext010-master-ai-training-stability.jsonl",
+      "vault_id": "master-ai",
+      "parts": [
+        {
+          "scope": "04 - Neural Networks/Training/07 - Initialization Schemes.md",
+          "extract_ok": true,
+          "records": 57,
+          "double_run_identical": true
+        },
+        {
+          "scope": "04 - Neural Networks/Training/08 - Vanishing and Exploding Gradients.md",
+          "extract_ok": true,
+          "records": 60,
+          "double_run_identical": true
+        }
+      ],
+      "double_run_identical": true,
+      "regenerates_committed_bytes": true,
+      "ok": true,
+      "committed_bytes": 123872,
+      "regenerated_bytes": 123872
+    },
+    {
+      "batch": "state/knowledge-units/011-ext010-ai-course-04.3-init-gradients.jsonl",
+      "vault_id": "ai-course",
+      "parts": [
+        {
+          "scope": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/01. Weight Initialization.md",
+          "extract_ok": true,
+          "records": 177,
+          "double_run_identical": true
+        },
+        {
+          "scope": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/02. Weight Initialization Techniques.md",
+          "extract_ok": true,
+          "records": 25,
+          "double_run_identical": true
+        },
+        {
+          "scope": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/03. The Vanishing and Exploding Gradient Problems.md",
+          "extract_ok": true,
+          "records": 180,
+          "double_run_identical": true
+        }
+      ],
+      "double_run_identical": true,
+      "regenerates_committed_bytes": true,
+      "ok": true,
+      "committed_bytes": 499796,
+      "regenerated_bytes": 499796
+    }
+  ],
+  "fidelity": {
+    "ai-course": {
+      "ok": true,
+      "batches_checked": 6,
+      "records_total": 1370,
+      "excerpt_byte_exact": 1370,
+      "ids_unique_across_checked": 1370,
+      "records_with_errors": 0,
+      "errors": []
+    },
+    "master-ai": {
+      "ok": true,
+      "batches_checked": 5,
+      "records_total": 358,
+      "excerpt_byte_exact": 358,
+      "ids_unique_across_checked": 358,
+      "records_with_errors": 0,
+      "errors": []
+    }
+  },
+  "ok": true
+}

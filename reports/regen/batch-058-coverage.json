@@ -1,0 +1,402 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "26 - Papers/2024-2026 (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-qm8g30ip/058-regen001-master-ai-26-papers-2024-2026.jsonl.run1",
+    "records_written": 497,
+    "denominators": {
+      "files_in_scope": 12,
+      "files_extracted": 12,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "26 - Papers/2024-2026/11 - Mamba 2023.md",
+        "outcome": "extracted",
+        "sha256": "7962542ecf2090b18fc46a0763cb5dd8f3da3c24bf618b950b5e8a85dfd1b98c",
+        "manifest_match": true,
+        "units": 43,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 29,
+          "code_block": 5,
+          "list": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 107,
+          "frontmatter_lines": 6,
+          "heading_context": 20,
+          "excluded_blank": 54,
+          "excluded_horizontal_rule": 0,
+          "accounted": 181,
+          "lines_total": 181,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 54,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/2024-2026/12 - DeepSeek-R1 2025.md",
+        "outcome": "extracted",
+        "sha256": "f8a231f9fd2420245e58326d2815213a60451626b75c3bb723b740605ffeb668",
+        "manifest_match": true,
+        "units": 43,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 30,
+          "list": 8,
+          "code_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 90,
+          "frontmatter_lines": 6,
+          "heading_context": 17,
+          "excluded_blank": 50,
+          "excluded_horizontal_rule": 0,
+          "accounted": 157,
+          "lines_total": 157,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 50,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/2024-2026/24 - GPT-4 Technical Report 2023.md",
+        "outcome": "extracted",
+        "sha256": "7836d47488757b43270b3cfe4e5cb9f7e1537b3ea78925784fb1bc92b0147c1b",
+        "manifest_match": true,
+        "units": 43,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 26,
+          "list": 14,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 82,
+          "frontmatter_lines": 6,
+          "heading_context": 23,
+          "excluded_blank": 48,
+          "excluded_horizontal_rule": 0,
+          "accounted": 153,
+          "lines_total": 153,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 48,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/2024-2026/28 - DeepSeek-V2 and V3 2024.md",
+        "outcome": "extracted",
+        "sha256": "9308bc8d199dd2527fd320cef6c53358d737438bf25652987f5bf0973ca01dbe",
+        "manifest_match": true,
+        "units": 52,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 16,
+          "prose": 30,
+          "code_block": 3,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 105,
+          "frontmatter_lines": 6,
+          "heading_context": 29,
+          "excluded_blank": 59,
+          "excluded_horizontal_rule": 0,
+          "accounted": 193,
+          "lines_total": 193,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 59,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/2024-2026/30 - Kimi Linear 2025.md",
+        "outcome": "extracted",
+        "sha256": "884249508c07a91e8a4be3bcc00d7051e53980dab8b9f860c1209830ef9dcc6e",
+        "manifest_match": true,
+        "units": 51,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 2,
+          "prose": 29,
+          "list": 15,
+          "code_block": 2,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 101,
+          "frontmatter_lines": 6,
+          "heading_context": 26,
+          "excluded_blank": 56,
+          "excluded_horizontal_rule": 0,
+          "accounted": 183,
+          "lines_total": 183,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 56,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/2024-2026/41 - Jamba 2024.md",
+        "outcome": "extracted",
+        "sha256": "0359819f420fbcff32838f065d20785a899d45b80b11919b342886f371353783",
+        "manifest_match": true,
+        "units": 46,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 18,
+          "list": 21,
+          "code_block": 1,
+          "math_block": 1,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 130,
+          "frontmatter_lines": 6,
+          "heading_context": 22,
+          "excluded_blank": 66,
+          "excluded_horizontal_rule": 0,
+          "accounted": 218,
+          "lines_total": 218,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 66,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/2024-2026/42 - Scaling Laws (Kaplan and Chinchilla).md",
+        "outcome": "extracted",
+        "sha256": "63a8e960302c4414ea129fd7681c87c87041d4b1c632cf8cd1e0ad33003a84a8",
+        "manifest_match": true,
+        "units": 50,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 23,
+          "list": 18,
+          "math_block": 5,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 128,
+          "frontmatter_lines": 6,
+          "heading_context": 26,
+          "excluded_blank": 75,
+          "excluded_horizontal_rule": 0,
+          "accounted": 229,
+          "lines_total": 229,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 75,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/2024-2026/43 - MiniMax-01 2025.md",
+        "outcome": "extracted",
+        "sha256": "2fb32636ccb242235fa21487e2d3f839f5dfed8e4488a5f4b6568ae92b8077a6",
+        "manifest_match": true,
+        "units": 49,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 20,
+          "list": 22,
+          "math_block": 2,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 144,
+          "frontmatter_lines": 6,
+          "heading_context": 21,
+          "excluded_blank": 69,
+          "excluded_horizontal_rule": 0,
+          "accounted": 234,
+          "lines_total": 234,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 69,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/2024-2026/44 - H3 2022.md",
+        "outcome": "extracted",
+        "sha256": "e44539f1a2a5ac90b9f7fc205191f1a5c6dfc58f18c89dc5b8f9f25353fa54c9",
+        "manifest_match": true,
+        "units": 28,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 14,
+          "list": 11,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 67,
+          "frontmatter_lines": 7,
+          "heading_context": 16,
+          "excluded_blank": 36,
+          "excluded_horizontal_rule": 0,
+          "accounted": 119,
+          "lines_total": 119,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 36,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/2024-2026/45 - Mamba-2 2024.md",
+        "outcome": "extracted",
+        "sha256": "81924275f96d13a6023718bcc58d524140dc2f35190baf7beee15db7598e95d9",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 16,
+          "list": 11,
+          "math_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 73,
+          "frontmatter_lines": 7,
+          "heading_context": 21,
+          "excluded_blank": 40,
+          "excluded_horizontal_rule": 0,
+          "accounted": 134,
+          "lines_total": 134,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 40,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/2024-2026/46 - Titans 2024.md",
+        "outcome": "extracted",
+        "sha256": "3861a1e3fcdf5ac903b991ef963d227c98602f05b3d11093dc5a04724d96395a",
+        "manifest_match": true,
+        "units": 33,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 19,
+          "list": 10,
+          "math_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 73,
+          "frontmatter_lines": 7,
+          "heading_context": 23,
+          "excluded_blank": 41,
+          "excluded_horizontal_rule": 0,
+          "accounted": 137,
+          "lines_total": 137,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 41,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/2024-2026/47 - Based 2024.md",
+        "outcome": "extracted",
+        "sha256": "bbab337a3825f1979e49c79b15fa6ce60abd5ae0f0e11ca70499636b44bfe088",
+        "manifest_match": true,
+        "units": 28,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 15,
+          "list": 9,
+          "math_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 66,
+          "frontmatter_lines": 7,
+          "heading_context": 19,
+          "excluded_blank": 35,
+          "excluded_horizontal_rule": 0,
+          "accounted": 120,
+          "lines_total": 120,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 35,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

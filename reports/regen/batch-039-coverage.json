@@ -1,0 +1,405 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "07 - Transformers (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/039-regen001-master-ai-07-transformers.jsonl.run1",
+    "records_written": 383,
+    "denominators": {
+      "files_in_scope": 12,
+      "files_extracted": 12,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "outcome": "extracted",
+        "sha256": "1d41f00c3d93adce6717e675b672b2ec14545e30d0ac3c93c1cd6a56d2a567e0",
+        "manifest_match": true,
+        "units": 34,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 12,
+          "code_block": 2,
+          "math_block": 7,
+          "list": 10,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 138,
+          "frontmatter_lines": 5,
+          "heading_context": 19,
+          "excluded_blank": 52,
+          "excluded_horizontal_rule": 0,
+          "accounted": 209,
+          "lines_total": 209,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 52,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Transformers/Architecture/02 - Pre-Norm vs Post-Norm.md",
+        "outcome": "extracted",
+        "sha256": "4378b80fdee74c744102f226f65be2b965ca260e09966af62663b12c1a6f597e",
+        "manifest_match": true,
+        "units": 24,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "math_block": 3,
+          "prose": 10,
+          "list": 6,
+          "code_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 100,
+          "frontmatter_lines": 5,
+          "heading_context": 15,
+          "excluded_blank": 38,
+          "excluded_horizontal_rule": 0,
+          "accounted": 153,
+          "lines_total": 153,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 38,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Transformers/Architecture/03 - Residual Connections.md",
+        "outcome": "extracted",
+        "sha256": "a877bb784ad92d879e1b0f2ee6344ffb06e59b71a00f0afefa832754958a21d5",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 13,
+          "math_block": 6,
+          "code_block": 2,
+          "list": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 82,
+          "frontmatter_lines": 5,
+          "heading_context": 19,
+          "excluded_blank": 42,
+          "excluded_horizontal_rule": 0,
+          "accounted": 143,
+          "lines_total": 143,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 42,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Transformers/Components/04 - Normalization Layers.md",
+        "outcome": "extracted",
+        "sha256": "370725c10a4a1b9aa52989d1c202eb98fa846c00c3f54672658cbcf6351139dc",
+        "manifest_match": true,
+        "units": 35,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 16,
+          "math_block": 5,
+          "list": 10,
+          "code_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 109,
+          "frontmatter_lines": 5,
+          "heading_context": 17,
+          "excluded_blank": 48,
+          "excluded_horizontal_rule": 0,
+          "accounted": 174,
+          "lines_total": 174,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 48,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Transformers/Components/05 - Feed-Forward Network Deep.md",
+        "outcome": "extracted",
+        "sha256": "6189ebfaad21ac7f5a919e438873f680091c7e987991418e48440105325735a8",
+        "manifest_match": true,
+        "units": 33,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 16,
+          "math_block": 6,
+          "list": 8,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 97,
+          "frontmatter_lines": 6,
+          "heading_context": 19,
+          "excluded_blank": 39,
+          "excluded_horizontal_rule": 0,
+          "accounted": 155,
+          "lines_total": 155,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 39,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Transformers/Components/06 - Embedding Layer.md",
+        "outcome": "extracted",
+        "sha256": "b66ca003f8f0812ec5eb817e0f730ff53b835d1a100eb413494f8f516ece3f47",
+        "manifest_match": true,
+        "units": 33,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 16,
+          "math_block": 3,
+          "code_block": 2,
+          "list": 10
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 89,
+          "frontmatter_lines": 6,
+          "heading_context": 16,
+          "excluded_blank": 43,
+          "excluded_horizontal_rule": 0,
+          "accounted": 148,
+          "lines_total": 148,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 43,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Transformers/Decoder Models/09 - GPT Family Evolution.md",
+        "outcome": "extracted",
+        "sha256": "4f9033ee424089f21bdbae3ab408264565abf601db302664017074818f1d945c",
+        "manifest_match": true,
+        "units": 26,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 4,
+          "list": 18,
+          "table": 1,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 112,
+          "frontmatter_lines": 6,
+          "heading_context": 22,
+          "excluded_blank": 35,
+          "excluded_horizontal_rule": 0,
+          "accounted": 169,
+          "lines_total": 169,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 35,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Transformers/Encoder Models/07 - BERT.md",
+        "outcome": "extracted",
+        "sha256": "f3c02d5e0c1455f81a9574ec891780bfff6e1d85deb30494f680ad8521900831",
+        "manifest_match": true,
+        "units": 27,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 12,
+          "list": 10,
+          "code_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 86,
+          "frontmatter_lines": 6,
+          "heading_context": 15,
+          "excluded_blank": 36,
+          "excluded_horizontal_rule": 0,
+          "accounted": 137,
+          "lines_total": 137,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 36,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Transformers/Encoder-Decoder Models/12 - T5 and BART.md",
+        "outcome": "extracted",
+        "sha256": "44ff33b9e20e19d71b7f0e50d606a8da3574aad8b66be883bdb93e2c28f2d8eb",
+        "manifest_match": true,
+        "units": 62,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 4,
+          "prose": 25,
+          "list": 25,
+          "code_block": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 233,
+          "frontmatter_lines": 7,
+          "heading_context": 24,
+          "excluded_blank": 76,
+          "excluded_horizontal_rule": 0,
+          "accounted": 333,
+          "lines_total": 333,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 76,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Transformers/MOC.md",
+        "outcome": "extracted",
+        "sha256": "d365060f783f02073b7a98520221a132dfa1efc5992ebf0933f3007f133cf971",
+        "manifest_match": true,
+        "units": 5,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 29,
+          "frontmatter_lines": 5,
+          "heading_context": 4,
+          "excluded_blank": 8,
+          "excluded_horizontal_rule": 0,
+          "accounted": 41,
+          "lines_total": 41,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 8,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Transformers/Variants/13 - Vision Transformer ViT.md",
+        "outcome": "extracted",
+        "sha256": "c16525aa2b21c5d81eeabb5bd4792aa949ab579916b2cfacae9e6cfc5f64c95a",
+        "manifest_match": true,
+        "units": 48,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 18,
+          "code_block": 7,
+          "list": 19,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 188,
+          "frontmatter_lines": 7,
+          "heading_context": 20,
+          "excluded_blank": 58,
+          "excluded_horizontal_rule": 0,
+          "accounted": 266,
+          "lines_total": 266,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 58,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Transformers/Variants/15 - Mixture of Experts Transformer.md",
+        "outcome": "extracted",
+        "sha256": "449c39455bae335122d2516e6041d9de3a8c8de393973b8de6e14423574fa2dc",
+        "manifest_match": true,
+        "units": 27,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 13,
+          "math_block": 3,
+          "list": 7,
+          "code_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 97,
+          "frontmatter_lines": 6,
+          "heading_context": 14,
+          "excluded_blank": 38,
+          "excluded_horizontal_rule": 0,
+          "accounted": 149,
+          "lines_total": 149,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 38,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

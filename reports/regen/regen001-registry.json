@@ -1,0 +1,46 @@
+{
+  "command": "scripts/regen001_registry.py",
+  "task_id": "REGEN-001",
+  "db": "state/registries/kuregistry.db",
+  "steps": [
+    {
+      "step": "kureg-init --force",
+      "exit": 0
+    },
+    {
+      "step": "kureg-load (all batches, numeric order)",
+      "batches_total": 70,
+      "batches_loaded": 70,
+      "failures": []
+    },
+    {
+      "step": "kureg-apply-overlap (ADR-0009 overlay)",
+      "files_total": 7,
+      "files_applied": 7,
+      "failures": []
+    },
+    {
+      "step": "kureg-validate",
+      "exit": 0,
+      "valid": true,
+      "counts": {
+        "total_kus": 27536,
+        "by_disposition": {
+          "Unaccounted": 27536
+        }
+      },
+      "overlap_classification_counts": {
+        "classifications_total": 164,
+        "by_overlap_type": {
+          "Complementary Content": 6,
+          "Conflict or Historical Difference": 1,
+          "Partial Overlap": 37,
+          "Semantic Duplicate": 120
+        },
+        "kus_participating": 514,
+        "note": "pair-level records (ADR-0009); per-KU overlap_type columns stay NULL because one unit can participate in multiple differently-typed pairs"
+      }
+    }
+  ],
+  "ok": true
+}

@@ -1,0 +1,82 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "26 - Papers/Attention Origins (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-qm8g30ip/061-regen001-master-ai-26-papers-attention-origins.jsonl.run1",
+    "records_written": 84,
+    "denominators": {
+      "files_in_scope": 2,
+      "files_extracted": 2,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "26 - Papers/Attention Origins/01 - Bahdanau Attention 2014.md",
+        "outcome": "extracted",
+        "sha256": "90c3eb31a9c530f82d4ccd6d092ea39b924a467f9f5c4f3ac244dde9738722b8",
+        "manifest_match": true,
+        "units": 38,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 24,
+          "list": 5,
+          "code_block": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 90,
+          "frontmatter_lines": 6,
+          "heading_context": 16,
+          "excluded_blank": 47,
+          "excluded_horizontal_rule": 0,
+          "accounted": 153,
+          "lines_total": 153,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 47,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Attention Origins/13 - Luong Attention 2015.md",
+        "outcome": "extracted",
+        "sha256": "18ade940db34c0608aadc113411d310f7eeb5c34dea7e67ae37359a42d91fba5",
+        "manifest_match": true,
+        "units": 46,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 28,
+          "code_block": 10,
+          "list": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 96,
+          "frontmatter_lines": 6,
+          "heading_context": 22,
+          "excluded_blank": 51,
+          "excluded_horizontal_rule": 0,
+          "accounted": 169,
+          "lines_total": 169,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 51,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

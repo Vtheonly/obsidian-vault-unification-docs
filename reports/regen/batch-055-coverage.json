@@ -1,0 +1,243 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "23 - Multimodal AI (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/055-regen001-master-ai-23-multimodal-ai.jsonl.run1",
+    "records_written": 346,
+    "denominators": {
+      "files_in_scope": 7,
+      "files_extracted": 7,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "23 - Multimodal AI/Audio/04 - Whisper.md",
+        "outcome": "extracted",
+        "sha256": "c19fe7a5c8d1934d84672892b35985cfe9c11e49abed706a006b160da6d3afa6",
+        "manifest_match": true,
+        "units": 50,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 31,
+          "list": 14,
+          "table": 2,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 102,
+          "frontmatter_lines": 6,
+          "heading_context": 30,
+          "excluded_blank": 57,
+          "excluded_horizontal_rule": 0,
+          "accounted": 189,
+          "lines_total": 189,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 57,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "23 - Multimodal AI/Diffusion/05 - DiT and FLUX.md",
+        "outcome": "extracted",
+        "sha256": "43bfba0a1d071b111f761eb2f122968beaf57361ea551abf4496ae608c2c66d8",
+        "manifest_match": true,
+        "units": 75,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 43,
+          "list": 19,
+          "code_block": 3,
+          "table": 3,
+          "math_block": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 194,
+          "frontmatter_lines": 7,
+          "heading_context": 27,
+          "excluded_blank": 86,
+          "excluded_horizontal_rule": 0,
+          "accounted": 307,
+          "lines_total": 307,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 86,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "23 - Multimodal AI/Fusion Architectures/06 - Cross-Modal Attention.md",
+        "outcome": "extracted",
+        "sha256": "d3f77236e66bf6ba4e9fd8b6cb23e0a11a317a98723f822967e3e3bfe1f54617",
+        "manifest_match": true,
+        "units": 62,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 35,
+          "list": 19,
+          "code_block": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 159,
+          "frontmatter_lines": 6,
+          "heading_context": 27,
+          "excluded_blank": 52,
+          "excluded_horizontal_rule": 0,
+          "accounted": 238,
+          "lines_total": 238,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 52,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "23 - Multimodal AI/MOC.md",
+        "outcome": "extracted",
+        "sha256": "c75bab60c29ee1b41ed038da5657e9e4c5247d3b9121f320bf5e2d6b5178570c",
+        "manifest_match": true,
+        "units": 8,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 4,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 57,
+          "frontmatter_lines": 5,
+          "heading_context": 7,
+          "excluded_blank": 14,
+          "excluded_horizontal_rule": 0,
+          "accounted": 78,
+          "lines_total": 78,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 14,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "23 - Multimodal AI/Vision-Language/01 - Multimodal AI Overview.md",
+        "outcome": "extracted",
+        "sha256": "cf748ef22f966c339eba8f4d9e2f5d846b130e01e4e63204bf24265a22f67e55",
+        "manifest_match": true,
+        "units": 56,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 19,
+          "prose": 27,
+          "code_block": 6,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 188,
+          "frontmatter_lines": 7,
+          "heading_context": 36,
+          "excluded_blank": 68,
+          "excluded_horizontal_rule": 0,
+          "accounted": 292,
+          "lines_total": 292,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 68,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "23 - Multimodal AI/Vision-Language/02 - CLIP.md",
+        "outcome": "extracted",
+        "sha256": "11781e8a66c85193f54470fe715f677bb5e2d74c4c1c6ec72bed5834cd6e24d5",
+        "manifest_match": true,
+        "units": 48,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 33,
+          "list": 9,
+          "code_block": 3,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 105,
+          "frontmatter_lines": 6,
+          "heading_context": 30,
+          "excluded_blank": 60,
+          "excluded_horizontal_rule": 0,
+          "accounted": 195,
+          "lines_total": 195,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 60,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "23 - Multimodal AI/Vision-Language/03 - LLaVA.md",
+        "outcome": "extracted",
+        "sha256": "d800e1ebbf692b2487d1e87311da6bb6167e901829bf4c94c8ce724fea8c3426",
+        "manifest_match": true,
+        "units": 47,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 31,
+          "list": 10,
+          "code_block": 3,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 94,
+          "frontmatter_lines": 6,
+          "heading_context": 31,
+          "excluded_blank": 57,
+          "excluded_horizontal_rule": 0,
+          "accounted": 182,
+          "lines_total": 182,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 57,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

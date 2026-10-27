@@ -1,0 +1,180 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "19 - MCP (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/051-regen001-master-ai-19-mcp.jsonl.run1",
+    "records_written": 323,
+    "denominators": {
+      "files_in_scope": 5,
+      "files_extracted": 5,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "19 - MCP/Architecture/01 - MCP Overview.md",
+        "outcome": "extracted",
+        "sha256": "030be23550ec5839c63ef55fba7aa9a6488d3216bd0475b23dd08d496e7a91d3",
+        "manifest_match": true,
+        "units": 95,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 49,
+          "list": 34,
+          "code_block": 7,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 413,
+          "frontmatter_lines": 7,
+          "heading_context": 44,
+          "excluded_blank": 120,
+          "excluded_horizontal_rule": 0,
+          "accounted": 577,
+          "lines_total": 577,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 120,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "19 - MCP/Components/02 - MCP Components.md",
+        "outcome": "extracted",
+        "sha256": "0bdff759f295a4e0c71021031464836ff7f98437463efc9d947e627ec4ec4b32",
+        "manifest_match": true,
+        "units": 64,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 35,
+          "table": 3,
+          "list": 17,
+          "code_block": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 252,
+          "frontmatter_lines": 7,
+          "heading_context": 38,
+          "excluded_blank": 73,
+          "excluded_horizontal_rule": 0,
+          "accounted": 363,
+          "lines_total": 363,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 73,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "19 - MCP/Integration/04 - MCP Enterprise Integration.md",
+        "outcome": "extracted",
+        "sha256": "f44bad79690460105719de67da10cf9a125b79549a8a4196129faba99756387c",
+        "manifest_match": true,
+        "units": 86,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 44,
+          "list": 36,
+          "code_block": 3,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 336,
+          "frontmatter_lines": 7,
+          "heading_context": 49,
+          "excluded_blank": 80,
+          "excluded_horizontal_rule": 0,
+          "accounted": 465,
+          "lines_total": 465,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 80,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "19 - MCP/MOC.md",
+        "outcome": "extracted",
+        "sha256": "2bfaa4af1c421c25f9d9ea1727d1f2b46157e96f06e2c343a1fe371a69ed3ac0",
+        "manifest_match": true,
+        "units": 8,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 4,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 39,
+          "frontmatter_lines": 5,
+          "heading_context": 7,
+          "excluded_blank": 14,
+          "excluded_horizontal_rule": 0,
+          "accounted": 60,
+          "lines_total": 60,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 14,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "19 - MCP/Security/03 - MCP Security.md",
+        "outcome": "extracted",
+        "sha256": "06d706a05a573ca8de033550940a0a738d0876f312efa630553d41cf38555f65",
+        "manifest_match": true,
+        "units": 70,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 41,
+          "list": 21,
+          "quote": 1,
+          "code_block": 3,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 270,
+          "frontmatter_lines": 7,
+          "heading_context": 36,
+          "excluded_blank": 74,
+          "excluded_horizontal_rule": 0,
+          "accounted": 380,
+          "lines_total": 380,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 74,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

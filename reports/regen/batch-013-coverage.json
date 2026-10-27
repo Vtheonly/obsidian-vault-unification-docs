@@ -1,0 +1,970 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "02 - Python and Data Tooling (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-6t2lg8lr/013-regen001-ai-course-02-python-and-data-tooling.jsonl.run1",
+    "records_written": 398,
+    "denominators": {
+      "files_in_scope": 29,
+      "files_extracted": 29,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "02 - Python and Data Tooling/02.1 - Python Environment Setup/01. Python Language Overview.md",
+        "outcome": "extracted",
+        "sha256": "d834b8640db383b059971c5052079033fd82c964274a4ea041699405db1df851",
+        "manifest_match": true,
+        "units": 11,
+        "units_by_type": {
+          "prose": 5,
+          "callout": 1,
+          "list": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 21,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 12,
+          "excluded_horizontal_rule": 0,
+          "accounted": 41,
+          "lines_total": 41,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 12,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.1 - Python Environment Setup/02. Installation and Distributions.md",
+        "outcome": "extracted",
+        "sha256": "b442019f1c90874b1eafbe0bab0f7b0309009f8692e4a40234ed8dc35abc9edb",
+        "manifest_match": true,
+        "units": 14,
+        "units_by_type": {
+          "prose": 7,
+          "list": 4,
+          "callout": 1,
+          "code_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 28,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 14,
+          "excluded_horizontal_rule": 0,
+          "accounted": 50,
+          "lines_total": 50,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 14,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.1 - Python Environment Setup/03. IDEs and Development Environments.md",
+        "outcome": "extracted",
+        "sha256": "d25b063548ca5f7171512255d7648522f896907ff37626ef1f7109b1321b458d",
+        "manifest_match": true,
+        "units": 13,
+        "units_by_type": {
+          "prose": 5,
+          "list": 6,
+          "table": 1,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 30,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 16,
+          "excluded_horizontal_rule": 0,
+          "accounted": 56,
+          "lines_total": 56,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 16,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.1 - Python Environment Setup/04. Virtual Environments and Package Management.md",
+        "outcome": "extracted",
+        "sha256": "407d78ac6d282018224c424ca527b8ea39371bc07aad07591a3c72e7da5f7522",
+        "manifest_match": true,
+        "units": 14,
+        "units_by_type": {
+          "prose": 7,
+          "list": 4,
+          "code_block": 1,
+          "table": 1,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 44,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 16,
+          "excluded_horizontal_rule": 0,
+          "accounted": 67,
+          "lines_total": 67,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 16,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.1 - Python Environment Setup/05. Version Control with Git and GitHub.md",
+        "outcome": "extracted",
+        "sha256": "7f3725dad5275ef729a3d98cceec88e29d06252a6eef1b69c196a557b5970b57",
+        "manifest_match": true,
+        "units": 19,
+        "units_by_type": {
+          "prose": 4,
+          "list": 9,
+          "code_block": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 49,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 13,
+          "excluded_horizontal_rule": 0,
+          "accounted": 69,
+          "lines_total": 69,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 13,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.1 - Python Environment Setup/06. Project Structure and Best Practices.md",
+        "outcome": "extracted",
+        "sha256": "b108a78e98a776cbf2d612eb8a5b6715b98502fe5985c4f1e7b25eb522ff58f3",
+        "manifest_match": true,
+        "units": 9,
+        "units_by_type": {
+          "prose": 5,
+          "code_block": 1,
+          "list": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 38,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 9,
+          "excluded_horizontal_rule": 0,
+          "accounted": 54,
+          "lines_total": 54,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 9,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.1 - Python Environment Setup/07. Exercise 2 - Hospital Data Project Setup.md",
+        "outcome": "extracted",
+        "sha256": "f7700a6775b5cd035215d341f64f97ab5a0ed5643fbd87814b83e3f4f214b6af",
+        "manifest_match": true,
+        "units": 20,
+        "units_by_type": {
+          "prose": 11,
+          "code_block": 7,
+          "list": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 54,
+          "frontmatter_lines": 0,
+          "heading_context": 12,
+          "excluded_blank": 15,
+          "excluded_horizontal_rule": 0,
+          "accounted": 81,
+          "lines_total": 81,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 15,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/01. Variables, Operators, and Type Casting.md",
+        "outcome": "extracted",
+        "sha256": "562b4bb916cde7fe6fa7162295f457d9a8e18bf8bf6b6173d6a17e5120bb31e3",
+        "manifest_match": true,
+        "units": 18,
+        "units_by_type": {
+          "prose": 7,
+          "code_block": 3,
+          "list": 6,
+          "table": 1,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 48,
+          "frontmatter_lines": 0,
+          "heading_context": 12,
+          "excluded_blank": 17,
+          "excluded_horizontal_rule": 0,
+          "accounted": 77,
+          "lines_total": 77,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 17,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/02. Advanced Control Flow and Loops.md",
+        "outcome": "extracted",
+        "sha256": "56d0b6e18c89ba4874470075e63419f40304e3d17213ece98617e522db9f9fcb",
+        "manifest_match": true,
+        "units": 19,
+        "units_by_type": {
+          "prose": 9,
+          "code_block": 5,
+          "list": 4,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 50,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 20,
+          "excluded_horizontal_rule": 0,
+          "accounted": 77,
+          "lines_total": 77,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 20,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/03. Data Structures - Lists, Tuples, and Sets.md",
+        "outcome": "extracted",
+        "sha256": "9507cf099204da3218255c2e9fac9be58e8e713a09dcb6f1ff689c82bac0fe28",
+        "manifest_match": true,
+        "units": 17,
+        "units_by_type": {
+          "prose": 6,
+          "list": 8,
+          "code_block": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 38,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 13,
+          "excluded_horizontal_rule": 0,
+          "accounted": 60,
+          "lines_total": 60,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 13,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/04. Dictionaries and Key Value Management.md",
+        "outcome": "extracted",
+        "sha256": "00e2173897a35a2666cce44ab2688e9f5c5338c2bb0feb3d283ea50f9f48b048",
+        "manifest_match": true,
+        "units": 15,
+        "units_by_type": {
+          "prose": 4,
+          "list": 5,
+          "code_block": 6
+        },
+        "warnings": [
+          "unclosed code fence starting at line 60"
+        ],
+        "unclosed_spans": [
+          [
+            "code_block",
+            60,
+            66
+          ]
+        ],
+        "line_accounting": {
+          "unit_lines": 46,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 13,
+          "excluded_horizontal_rule": 0,
+          "accounted": 66,
+          "lines_total": 66,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 13,
+          "horizontal_rule": 0
+        },
+        "finding_ids": [
+          "F-0002"
+        ]
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/05. Functions and Lambda Expressions.md",
+        "outcome": "extracted",
+        "sha256": "6ef21bfa5ced047115933638a2f2f2c59cbc0ad477f1030fed16acdc9d06d5f5",
+        "manifest_match": true,
+        "units": 15,
+        "units_by_type": {
+          "prose": 5,
+          "code_block": 6,
+          "list": 3,
+          "callout": 1
+        },
+        "warnings": [
+          "unclosed code fence starting at line 66"
+        ],
+        "unclosed_spans": [
+          [
+            "code_block",
+            66,
+            73
+          ]
+        ],
+        "line_accounting": {
+          "unit_lines": 50,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 15,
+          "excluded_horizontal_rule": 0,
+          "accounted": 73,
+          "lines_total": 73,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 15,
+          "horizontal_rule": 0
+        },
+        "finding_ids": [
+          "F-0002"
+        ]
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/06. Object Oriented Programming (OOP) in Data Science.md",
+        "outcome": "extracted",
+        "sha256": "b579df51ab15e516fab9cb7cb74fdd18a75e1d8d2d0b7437159d57b140ad092d",
+        "manifest_match": true,
+        "units": 11,
+        "units_by_type": {
+          "prose": 5,
+          "list": 3,
+          "code_block": 3
+        },
+        "warnings": [
+          "unclosed code fence starting at line 62"
+        ],
+        "unclosed_spans": [
+          [
+            "code_block",
+            62,
+            64
+          ]
+        ],
+        "line_accounting": {
+          "unit_lines": 42,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 15,
+          "excluded_horizontal_rule": 0,
+          "accounted": 64,
+          "lines_total": 64,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 15,
+          "horizontal_rule": 0
+        },
+        "finding_ids": [
+          "F-0002"
+        ]
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/07. Iterators, Generators, and Memory Efficiency.md",
+        "outcome": "extracted",
+        "sha256": "d9fe4dcaefb744aa92e1e2428d3a2c93d3c2828caf7acd0bb05fa6d0723e6622",
+        "manifest_match": true,
+        "units": 10,
+        "units_by_type": {
+          "prose": 5,
+          "list": 2,
+          "code_block": 2,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 23,
+          "frontmatter_lines": 0,
+          "heading_context": 6,
+          "excluded_blank": 10,
+          "excluded_horizontal_rule": 0,
+          "accounted": 39,
+          "lines_total": 39,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 10,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/08. Error Handling and Exception Management.md",
+        "outcome": "extracted",
+        "sha256": "9bab28aeba60f349788b35ba2a099388387241f5b6e986e3f01772349752aa00",
+        "manifest_match": true,
+        "units": 5,
+        "units_by_type": {
+          "prose": 2,
+          "code_block": 2,
+          "list": 1
+        },
+        "warnings": [
+          "unclosed code fence starting at line 39"
+        ],
+        "unclosed_spans": [
+          [
+            "code_block",
+            39,
+            43
+          ]
+        ],
+        "line_accounting": {
+          "unit_lines": 31,
+          "frontmatter_lines": 0,
+          "heading_context": 4,
+          "excluded_blank": 8,
+          "excluded_horizontal_rule": 0,
+          "accounted": 43,
+          "lines_total": 43,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 8,
+          "horizontal_rule": 0
+        },
+        "finding_ids": [
+          "F-0002"
+        ]
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/09. Exercise 3 - Sales Project Logic and OOP.md",
+        "outcome": "extracted",
+        "sha256": "0a1b2e75831d3c608520d0919a33eace543630488bbe5463c8e81744447771b2",
+        "manifest_match": true,
+        "units": 11,
+        "units_by_type": {
+          "prose": 5,
+          "list": 2,
+          "code_block": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 94,
+          "frontmatter_lines": 0,
+          "heading_context": 6,
+          "excluded_blank": 13,
+          "excluded_horizontal_rule": 1,
+          "accounted": 114,
+          "lines_total": 114,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 13,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.3 - Essential Python Libraries/01. NumPy - Numerical Computation and Arrays.md",
+        "outcome": "extracted",
+        "sha256": "0298a8d75072a54713c85b8b209133df5759518d8e88db88dec6d3fe2d85ea9e",
+        "manifest_match": true,
+        "units": 18,
+        "units_by_type": {
+          "prose": 7,
+          "list": 5,
+          "callout": 1,
+          "code_block": 4,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 68,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 20,
+          "excluded_horizontal_rule": 0,
+          "accounted": 95,
+          "lines_total": 95,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 20,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.3 - Essential Python Libraries/02. Pandas - Data Manipulation and Series.md",
+        "outcome": "extracted",
+        "sha256": "58dc7ae5c0ca05da59be4bfe587c2e89110e011d7be4b2cabbad1e52b6f2bff8",
+        "manifest_match": true,
+        "units": 8,
+        "units_by_type": {
+          "prose": 3,
+          "list": 2,
+          "code_block": 2,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 33,
+          "frontmatter_lines": 0,
+          "heading_context": 6,
+          "excluded_blank": 13,
+          "excluded_horizontal_rule": 0,
+          "accounted": 52,
+          "lines_total": 52,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 13,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.3 - Essential Python Libraries/03. DataFrames - Deep Dive and Operations.md",
+        "outcome": "extracted",
+        "sha256": "9d073fbe079b42ed9d0cc8409815b90b4b9b886a61dafcef450a232dd96fbde8",
+        "manifest_match": true,
+        "units": 11,
+        "units_by_type": {
+          "prose": 4,
+          "code_block": 3,
+          "list": 3,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 48,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 18,
+          "excluded_horizontal_rule": 0,
+          "accounted": 74,
+          "lines_total": 74,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 18,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.3 - Essential Python Libraries/04. Matplotlib - Static Data Visualization.md",
+        "outcome": "extracted",
+        "sha256": "5f305c40d0148ae63a27b89d761c29f7574ae16542b5c64a828061dc3111c905",
+        "manifest_match": true,
+        "units": 9,
+        "units_by_type": {
+          "prose": 4,
+          "code_block": 3,
+          "list": 2
+        },
+        "warnings": [
+          "unclosed code fence starting at line 44"
+        ],
+        "unclosed_spans": [
+          [
+            "code_block",
+            44,
+            48
+          ]
+        ],
+        "line_accounting": {
+          "unit_lines": 30,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 11,
+          "excluded_horizontal_rule": 0,
+          "accounted": 48,
+          "lines_total": 48,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 11,
+          "horizontal_rule": 0
+        },
+        "finding_ids": [
+          "F-0002"
+        ]
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.3 - Essential Python Libraries/05. Seaborn - Statistical Data Visualization.md",
+        "outcome": "extracted",
+        "sha256": "0ca87c9be4e376ddb397b8b0b458ff70bbfbbfaab7b5199429206a094a3d7779",
+        "manifest_match": true,
+        "units": 11,
+        "units_by_type": {
+          "prose": 4,
+          "list": 4,
+          "code_block": 2,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 31,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 14,
+          "excluded_horizontal_rule": 0,
+          "accounted": 53,
+          "lines_total": 53,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 14,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.3 - Essential Python Libraries/06. Interactive Plotting with Plotly.md",
+        "outcome": "extracted",
+        "sha256": "5f0c48f23497d26a934c76c668e2ef628be750a9595849472660c3d9d90a5fd1",
+        "manifest_match": true,
+        "units": 6,
+        "units_by_type": {
+          "prose": 3,
+          "code_block": 2,
+          "list": 1
+        },
+        "warnings": [
+          "unclosed code fence starting at line 33"
+        ],
+        "unclosed_spans": [
+          [
+            "code_block",
+            33,
+            39
+          ]
+        ],
+        "line_accounting": {
+          "unit_lines": 26,
+          "frontmatter_lines": 0,
+          "heading_context": 4,
+          "excluded_blank": 9,
+          "excluded_horizontal_rule": 0,
+          "accounted": 39,
+          "lines_total": 39,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 9,
+          "horizontal_rule": 0
+        },
+        "finding_ids": [
+          "F-0002"
+        ]
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.3 - Essential Python Libraries/07. Exercise 4 - Temperature and Grade Analysis.md",
+        "outcome": "extracted",
+        "sha256": "251327465aae1494c279a0d71a86949bddb1d92f52847c490c0ef39a22054268",
+        "manifest_match": true,
+        "units": 5,
+        "units_by_type": {
+          "prose": 3,
+          "code_block": 2
+        },
+        "warnings": [
+          "unclosed code fence starting at line 54"
+        ],
+        "unclosed_spans": [
+          [
+            "code_block",
+            54,
+            84
+          ]
+        ],
+        "line_accounting": {
+          "unit_lines": 70,
+          "frontmatter_lines": 0,
+          "heading_context": 3,
+          "excluded_blank": 9,
+          "excluded_horizontal_rule": 2,
+          "accounted": 84,
+          "lines_total": 84,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 9,
+          "horizontal_rule": 2
+        },
+        "finding_ids": [
+          "F-0002"
+        ]
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/01. Handling Missing Data and Imputation Strategies.md",
+        "outcome": "extracted",
+        "sha256": "40c7c9acce46bfdb094f431be970bbe6b657069b4ab6b5a50431b57a83d1d9e0",
+        "manifest_match": true,
+        "units": 24,
+        "units_by_type": {
+          "prose": 6,
+          "list": 10,
+          "code_block": 8
+        },
+        "warnings": [
+          "unclosed code fence starting at line 82"
+        ],
+        "unclosed_spans": [
+          [
+            "code_block",
+            82,
+            83
+          ]
+        ],
+        "line_accounting": {
+          "unit_lines": 61,
+          "frontmatter_lines": 0,
+          "heading_context": 6,
+          "excluded_blank": 16,
+          "excluded_horizontal_rule": 0,
+          "accounted": 83,
+          "lines_total": 83,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 16,
+          "horizontal_rule": 0
+        },
+        "finding_ids": [
+          "F-0002"
+        ]
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/02. Duplicate Detection and Record Linkage.md",
+        "outcome": "extracted",
+        "sha256": "3e677257c60ead610e81959d740397fd239d375b72c347ac67f35332b6faaf75",
+        "manifest_match": true,
+        "units": 9,
+        "units_by_type": {
+          "prose": 4,
+          "code_block": 3,
+          "list": 1,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 36,
+          "frontmatter_lines": 0,
+          "heading_context": 4,
+          "excluded_blank": 12,
+          "excluded_horizontal_rule": 0,
+          "accounted": 52,
+          "lines_total": 52,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 12,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/03. Outlier Detection and Treatment Methods.md",
+        "outcome": "extracted",
+        "sha256": "7ce89d1336e87f526680c13460d78fdc5dd400799d691678be414088ebb5058e",
+        "manifest_match": true,
+        "units": 15,
+        "units_by_type": {
+          "prose": 3,
+          "list": 7,
+          "code_block": 5
+        },
+        "warnings": [
+          "unclosed code fence starting at line 59"
+        ],
+        "unclosed_spans": [
+          [
+            "code_block",
+            59,
+            60
+          ]
+        ],
+        "line_accounting": {
+          "unit_lines": 43,
+          "frontmatter_lines": 0,
+          "heading_context": 5,
+          "excluded_blank": 12,
+          "excluded_horizontal_rule": 0,
+          "accounted": 60,
+          "lines_total": 60,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 12,
+          "horizontal_rule": 0
+        },
+        "finding_ids": [
+          "F-0002"
+        ]
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/04. Feature Scaling and Normalization.md",
+        "outcome": "extracted",
+        "sha256": "735d1a25a5bb6216817a67c6cac0ad60312b5bdfec9507d52c392052148ceb33",
+        "manifest_match": true,
+        "units": 33,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 14,
+          "list": 8,
+          "code_block": 8,
+          "table": 1,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 93,
+          "frontmatter_lines": 0,
+          "heading_context": 11,
+          "excluded_blank": 47,
+          "excluded_horizontal_rule": 6,
+          "accounted": 157,
+          "lines_total": 157,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 47,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/05. Categorical Encoding and Text Normalization.md",
+        "outcome": "extracted",
+        "sha256": "5317ca282e7cbfd7820d58be368d190ac6cd3cd18168a88d06740ecc7e10bff7",
+        "manifest_match": true,
+        "units": 24,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 11,
+          "list": 6,
+          "code_block": 5,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 101,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 41,
+          "excluded_horizontal_rule": 9,
+          "accounted": 160,
+          "lines_total": 160,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 41,
+          "horizontal_rule": 9
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/06. Exercise 5 - Medical Dataset Pipeline.md",
+        "outcome": "extracted",
+        "sha256": "eb1e66aa806cdea55ee41266b11df34afa3432af1001f80b5361a47c85883052",
+        "manifest_match": true,
+        "units": 4,
+        "units_by_type": {
+          "prose": 2,
+          "list": 1,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 65,
+          "frontmatter_lines": 0,
+          "heading_context": 2,
+          "excluded_blank": 4,
+          "excluded_horizontal_rule": 0,
+          "accounted": 71,
+          "lines_total": 71,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 4,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

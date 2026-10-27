@@ -1,0 +1,211 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "12 - Fine-Tuning (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/044-regen001-master-ai-12-fine-tuning.jsonl.run1",
+    "records_written": 246,
+    "denominators": {
+      "files_in_scope": 6,
+      "files_extracted": 6,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "12 - Fine-Tuning/DPO/04 - DPO Derivation.md",
+        "outcome": "extracted",
+        "sha256": "b9bf119188e56f8eda916f1048091f6e6a2fa4927e7ec824924b49e5494b9fb2",
+        "manifest_match": true,
+        "units": 56,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 26,
+          "list": 16,
+          "math_block": 10,
+          "code_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 148,
+          "frontmatter_lines": 6,
+          "heading_context": 25,
+          "excluded_blank": 73,
+          "excluded_horizontal_rule": 0,
+          "accounted": 246,
+          "lines_total": 246,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 73,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "12 - Fine-Tuning/Instruction Tuning/03 - Instruction Tuning and Chat Templates.md",
+        "outcome": "extracted",
+        "sha256": "5cf863c9e13b49d9be16f7657737e4f8ad662335446e0013fe65ebf32e886993",
+        "manifest_match": true,
+        "units": 28,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 6,
+          "list": 16,
+          "code_block": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 109,
+          "frontmatter_lines": 7,
+          "heading_context": 18,
+          "excluded_blank": 41,
+          "excluded_horizontal_rule": 0,
+          "accounted": 168,
+          "lines_total": 168,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 41,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "12 - Fine-Tuning/MOC.md",
+        "outcome": "extracted",
+        "sha256": "a5e6c6a3c300491f2afd9897960de1692271b22738347e5059e8b2ef83b88d1b",
+        "manifest_match": true,
+        "units": 6,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 2,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 29,
+          "frontmatter_lines": 5,
+          "heading_context": 5,
+          "excluded_blank": 10,
+          "excluded_horizontal_rule": 0,
+          "accounted": 44,
+          "lines_total": 44,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 10,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "12 - Fine-Tuning/PEFT/01 - LoRA.md",
+        "outcome": "extracted",
+        "sha256": "0f136bd197dd47e81ac28853e98fe791f85900cd6d529974e8d52b59cbd5b3ac",
+        "manifest_match": true,
+        "units": 81,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 43,
+          "math_block": 4,
+          "list": 24,
+          "table": 2,
+          "code_block": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 325,
+          "frontmatter_lines": 7,
+          "heading_context": 38,
+          "excluded_blank": 109,
+          "excluded_horizontal_rule": 0,
+          "accounted": 472,
+          "lines_total": 472,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 109,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "12 - Fine-Tuning/PEFT/02 - QLoRA.md",
+        "outcome": "extracted",
+        "sha256": "49694fd23a2e79a16ce71152cad9d1a223e1c941b32a69cded7ec5c514f4bb26",
+        "manifest_match": true,
+        "units": 32,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 14,
+          "code_block": 2,
+          "list": 14
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 114,
+          "frontmatter_lines": 6,
+          "heading_context": 17,
+          "excluded_blank": 47,
+          "excluded_horizontal_rule": 0,
+          "accounted": 178,
+          "lines_total": 178,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 47,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "12 - Fine-Tuning/RLHF/05 - RLHF with PPO.md",
+        "outcome": "extracted",
+        "sha256": "e8702dc390717419e68f9d126e340c44b921680332125ceca18f9243da261d0a",
+        "manifest_match": true,
+        "units": 43,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "code_block": 1,
+          "prose": 16,
+          "math_block": 2,
+          "list": 22
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 119,
+          "frontmatter_lines": 7,
+          "heading_context": 22,
+          "excluded_blank": 50,
+          "excluded_horizontal_rule": 0,
+          "accounted": 191,
+          "lines_total": 191,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 50,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

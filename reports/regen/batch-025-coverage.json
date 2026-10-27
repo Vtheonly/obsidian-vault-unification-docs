@@ -1,0 +1,448 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "07 - Sequence Models and RNNs (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/025-regen001-ai-course-07-sequence-models-and-rnns.jsonl.run1",
+    "records_written": 370,
+    "denominators": {
+      "files_in_scope": 14,
+      "files_extracted": 14,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "07 - Sequence Models and RNNs/00. Chapter Overview.md",
+        "outcome": "extracted",
+        "sha256": "36d53623045f816abc759d54fac77d2e9f8661dbcc315a83bcf0761e6bc54129",
+        "manifest_match": true,
+        "units": 15,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 8,
+          "list": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 32,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 24,
+          "excluded_horizontal_rule": 5,
+          "accounted": 70,
+          "lines_total": 70,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 24,
+          "horizontal_rule": 5
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Sequence Models and RNNs/07.1 - Motivation and Recurrence/01. Why Sequence Models - The Limits of Feedforward Networks.md",
+        "outcome": "extracted",
+        "sha256": "15055109cb8d22cbfeb23eafffff98f2ca035654722d0571521b40dca3c9dc31",
+        "manifest_match": true,
+        "units": 24,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 18,
+          "list": 4,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 41,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 40,
+          "excluded_horizontal_rule": 7,
+          "accounted": 98,
+          "lines_total": 98,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 40,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Sequence Models and RNNs/07.1 - Motivation and Recurrence/02. The Recurrent Neuron - Unrolling Through Time.md",
+        "outcome": "extracted",
+        "sha256": "ec5a9f7406941a206a59717ef0a362227018cb57e19500042fc9f7a998f64e7d",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 17,
+          "math_block": 2,
+          "list": 3,
+          "code_block": 2,
+          "callout": 1,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 76,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 44,
+          "excluded_horizontal_rule": 8,
+          "accounted": 136,
+          "lines_total": 136,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 44,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Sequence Models and RNNs/07.1 - Motivation and Recurrence/03. Backpropagation Through Time (BPTT).md",
+        "outcome": "extracted",
+        "sha256": "920b248988ef545d5604a0861b25c6f15d175c60af84b8d7ab56b17ac321f38c",
+        "manifest_match": true,
+        "units": 40,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 23,
+          "math_block": 10,
+          "list": 4,
+          "code_block": 1,
+          "callout": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 54,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 52,
+          "excluded_horizontal_rule": 8,
+          "accounted": 122,
+          "lines_total": 122,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 52,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Sequence Models and RNNs/07.1 - Motivation and Recurrence/04. The Vanishing and Exploding Gradient Problem in RNNs.md",
+        "outcome": "extracted",
+        "sha256": "343a074c7ca08be98ced143c48f0bdc50a0e36911ef08ec01ac6907ed5c681ee",
+        "manifest_match": true,
+        "units": 26,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 20,
+          "math_block": 3,
+          "callout": 1,
+          "list": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 33,
+          "frontmatter_lines": 0,
+          "heading_context": 12,
+          "excluded_blank": 45,
+          "excluded_horizontal_rule": 8,
+          "accounted": 98,
+          "lines_total": 98,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 45,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Sequence Models and RNNs/07.2 - LSTM and GRU/01. LSTM - Gates as Learned Traffic Controllers.md",
+        "outcome": "extracted",
+        "sha256": "e9b661e76c4a3c09b2ad3410f072db5f4c7a29cefe9bcf93b8023b0eca611e09",
+        "manifest_match": true,
+        "units": 32,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 21,
+          "list": 4,
+          "math_block": 3,
+          "table": 2,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 74,
+          "frontmatter_lines": 0,
+          "heading_context": 12,
+          "excluded_blank": 52,
+          "excluded_horizontal_rule": 9,
+          "accounted": 147,
+          "lines_total": 147,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 52,
+          "horizontal_rule": 9
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Sequence Models and RNNs/07.2 - LSTM and GRU/02. GRU - Simplifying the LSTM.md",
+        "outcome": "extracted",
+        "sha256": "d8dd74d46ec8e4b6896f9853d7bbfe9a6f3ec7267f3b282e2525701d34015b05",
+        "manifest_match": true,
+        "units": 24,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 14,
+          "list": 4,
+          "math_block": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 34,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 33,
+          "excluded_horizontal_rule": 7,
+          "accounted": 82,
+          "lines_total": 82,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 33,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Sequence Models and RNNs/07.2 - LSTM and GRU/03. LSTM vs GRU - When to Use Which.md",
+        "outcome": "extracted",
+        "sha256": "405c3ccfcb52ab209f0b69d25e1f04d8351af67075caa034fe81a53b0b1c2ccc",
+        "manifest_match": true,
+        "units": 14,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 8,
+          "table": 1,
+          "list": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 34,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 30,
+          "excluded_horizontal_rule": 7,
+          "accounted": 81,
+          "lines_total": 81,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 30,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Sequence Models and RNNs/07.3 - Sequence to Sequence and Encoder-Decoder/01. The Encoder-Decoder Pattern - Conditional Generation.md",
+        "outcome": "extracted",
+        "sha256": "4727ffeb1cfebb5e02101abdd1f1d4f015d2241bc63610dd93e228041ca5d5bf",
+        "manifest_match": true,
+        "units": 30,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 22,
+          "list": 5,
+          "math_block": 1,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 58,
+          "frontmatter_lines": 0,
+          "heading_context": 10,
+          "excluded_blank": 46,
+          "excluded_horizontal_rule": 7,
+          "accounted": 121,
+          "lines_total": 121,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 46,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Sequence Models and RNNs/07.3 - Sequence to Sequence and Encoder-Decoder/02. Teacher Forcing and Exposure Bias.md",
+        "outcome": "extracted",
+        "sha256": "e2c31e2c67ed5088345b022689fc1126ca35554a713802565ca400d83d836749",
+        "manifest_match": true,
+        "units": 27,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 19,
+          "math_block": 4,
+          "list": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 35,
+          "frontmatter_lines": 0,
+          "heading_context": 12,
+          "excluded_blank": 45,
+          "excluded_horizontal_rule": 8,
+          "accounted": 100,
+          "lines_total": 100,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 45,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Sequence Models and RNNs/07.3 - Sequence to Sequence and Encoder-Decoder/03. Beam Search and Decoding Strategies.md",
+        "outcome": "extracted",
+        "sha256": "e4baf11ff73ba4fde4197ca6c6a571dda945bd259ace5c1d11b986072ebf1e57",
+        "manifest_match": true,
+        "units": 38,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 24,
+          "math_block": 7,
+          "list": 5,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 67,
+          "frontmatter_lines": 0,
+          "heading_context": 16,
+          "excluded_blank": 61,
+          "excluded_horizontal_rule": 8,
+          "accounted": 152,
+          "lines_total": 152,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 61,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Sequence Models and RNNs/07.4 - Sequence Modeling Pitfalls and Limits/01. The Bottleneck Problem - Why One Vector Is Not Enough.md",
+        "outcome": "extracted",
+        "sha256": "bf0e6b0116eb1fe4389f76cdc73ce5cf649d55f7b12cb0d126b23521f8d68f15",
+        "manifest_match": true,
+        "units": 24,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 19,
+          "math_block": 2,
+          "list": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 31,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 38,
+          "excluded_horizontal_rule": 6,
+          "accounted": 84,
+          "lines_total": 84,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 38,
+          "horizontal_rule": 6
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Sequence Models and RNNs/07.4 - Sequence Modeling Pitfalls and Limits/02. Long-Range Dependencies and Why RNNs Struggle.md",
+        "outcome": "extracted",
+        "sha256": "a68ae1ecf6a0d05cfe285404f809d8216bc0b36f9fe0038b8af4526ab3e7f8ee",
+        "manifest_match": true,
+        "units": 15,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 10,
+          "list": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 28,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 27,
+          "excluded_horizontal_rule": 5,
+          "accounted": 68,
+          "lines_total": 68,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 27,
+          "horizontal_rule": 5
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "07 - Sequence Models and RNNs/07.4 - Sequence Modeling Pitfalls and Limits/03. From RNNs to Attention - The Historical Bridge.md",
+        "outcome": "extracted",
+        "sha256": "840d3f0d624b0c0d943537aec7caf6ea7086a0cd10a5efad88d9ec9b32e970f1",
+        "manifest_match": true,
+        "units": 32,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 23,
+          "list": 7,
+          "math_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 47,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 47,
+          "excluded_horizontal_rule": 8,
+          "accounted": 110,
+          "lines_total": 110,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 47,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

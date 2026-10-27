@@ -1,0 +1,356 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL) (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/027-regen001-ai-course-09-quizzes-and-question-banks-01-deep-learning-chapter-1-introduction-to-dl.jsonl.run1",
+    "records_written": 372,
+    "denominators": {
+      "files_in_scope": 12,
+      "files_extracted": 12,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q1 - Deep Learning Definition and Context.md",
+        "outcome": "extracted",
+        "sha256": "e0af077986fe7620ea217e011da4867edfc35e1cadc84f0d6df444d9a56a0673",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 248,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 277,
+          "lines_total": 277,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q10 - Activation Functions in Deep Learning.md",
+        "outcome": "extracted",
+        "sha256": "7f22c441e76924bef704250214f1a4bfd2d08aba1af9ddd8002df3506be9c45e",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 254,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 283,
+          "lines_total": 283,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q11 - Multi-Layer Perceptron and Backpropagation.md",
+        "outcome": "extracted",
+        "sha256": "97d6b7b33e82aeaab1316ce014279814f4e15fc3c0e3c59a58e7964bbad34a7b",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 241,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 270,
+          "lines_total": 270,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q12 - Data Preparation and MLP Implementation.md",
+        "outcome": "extracted",
+        "sha256": "b5ce709f3aed2d4d1e7a00e9053ff3097b46f4fb36da24b6924a433455dde28d",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 245,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 274,
+          "lines_total": 274,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q2 - Machine Learning vs Deep Learning.md",
+        "outcome": "extracted",
+        "sha256": "5563b7a4ae26e1789f97be1059c8d7f4349091ddb2b4d9528135705808eb6bcd",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 228,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 257,
+          "lines_total": 257,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q3 - Evolution and History of Deep Learning.md",
+        "outcome": "extracted",
+        "sha256": "54f78099fe92805fc75a8d2a2e3557adf92a346669679b689887581e59b00371",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 254,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 283,
+          "lines_total": 283,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q4 - Applications of Deep Learning.md",
+        "outcome": "extracted",
+        "sha256": "81abe7a7ed3567311d26e64da5d75b70b37b88952f325789a51d05d16a1292c9",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 248,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 277,
+          "lines_total": 277,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q5 - Gradient Descent Optimization.md",
+        "outcome": "extracted",
+        "sha256": "e7c83dc72bda8ff820d44d141c8334ec4984126f13f1d7a1b2fbca8285954262",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 242,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 271,
+          "lines_total": 271,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q6 - Loss Functions and Cost Optimization.md",
+        "outcome": "extracted",
+        "sha256": "97c7d419038c713324be77a4b2c44433d81532b10fb6428c90c3fa09064cca9d",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 242,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 271,
+          "lines_total": 271,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q7 - Linear Regression.md",
+        "outcome": "extracted",
+        "sha256": "28a7ae3d97b86ffb1f03326b5bde59c2626b6d07e62bcb7ab53512d21be7a89b",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 233,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 262,
+          "lines_total": 262,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q8 - Logistic Regression.md",
+        "outcome": "extracted",
+        "sha256": "5887f38371f1cbb557252a0f2a778421444ade30b73cd933580c2926636f9510",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 239,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 268,
+          "lines_total": 268,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q9 - The Perceptron and the Chain Rule.md",
+        "outcome": "extracted",
+        "sha256": "acb2f143c8bc341bd3f9d393a108cb2160c22c4b75226d062fe0079da48bc2bd",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 30
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 253,
+          "frontmatter_lines": 4,
+          "heading_context": 0,
+          "excluded_blank": 29,
+          "excluded_horizontal_rule": 0,
+          "accounted": 282,
+          "lines_total": 282,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 29,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

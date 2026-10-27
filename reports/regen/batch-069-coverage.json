@@ -1,0 +1,265 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "29 - Interview Prep (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-qm8g30ip/069-regen001-master-ai-29-interview-prep.jsonl.run1",
+    "records_written": 373,
+    "denominators": {
+      "files_in_scope": 8,
+      "files_extracted": 8,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "29 - Interview Prep/Coding/03 - Coding Interview Questions.md",
+        "outcome": "extracted",
+        "sha256": "af803534c2bf416de2b24bcd3ce6c8000dd4be8ab43a95ca4dca40b7adad3948",
+        "manifest_match": true,
+        "units": 34,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 13,
+          "list": 9,
+          "code_block": 10
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 404,
+          "frontmatter_lines": 6,
+          "heading_context": 31,
+          "excluded_blank": 48,
+          "excluded_horizontal_rule": 0,
+          "accounted": 483,
+          "lines_total": 483,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 48,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "29 - Interview Prep/Coding/04 - Coding Interview Questions 2.md",
+        "outcome": "extracted",
+        "sha256": "f250ecb7e99bd43701300e1c4c0e7213c1d4d962f3ab429b93944970da987d1e",
+        "manifest_match": true,
+        "units": 48,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 14,
+          "list": 26,
+          "code_block": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 662,
+          "frontmatter_lines": 6,
+          "heading_context": 51,
+          "excluded_blank": 105,
+          "excluded_horizontal_rule": 7,
+          "accounted": 825,
+          "lines_total": 825,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 105,
+          "horizontal_rule": 7
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "29 - Interview Prep/Coding/05 - Coding Interview Questions 3.md",
+        "outcome": "extracted",
+        "sha256": "2d041118059d74d65001256bdf4ccf88acf54cab7271c595fb4d6a170604a369",
+        "manifest_match": true,
+        "units": 17,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "code_block": 6,
+          "prose": 7,
+          "list": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 537,
+          "frontmatter_lines": 7,
+          "heading_context": 15,
+          "excluded_blank": 30,
+          "excluded_horizontal_rule": 0,
+          "accounted": 582,
+          "lines_total": 582,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 30,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "29 - Interview Prep/Conceptual/01 - Conceptual Interview Questions.md",
+        "outcome": "extracted",
+        "sha256": "6b7a886a15f107b395fad8524d59976c2009416828f1f11bcae94afb2d4a7665",
+        "manifest_match": true,
+        "units": 82,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 61,
+          "list": 19
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 137,
+          "frontmatter_lines": 7,
+          "heading_context": 79,
+          "excluded_blank": 98,
+          "excluded_horizontal_rule": 0,
+          "accounted": 314,
+          "lines_total": 314,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 98,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "29 - Interview Prep/Conceptual/06 - Conceptual Interview Questions 2.md",
+        "outcome": "extracted",
+        "sha256": "b375ecfe9dfbdb7a35f739fa7efa876507bf5873f6fc9cd854a3ed9d811330e9",
+        "manifest_match": true,
+        "units": 52,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 44,
+          "list": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 78,
+          "frontmatter_lines": 7,
+          "heading_context": 58,
+          "excluded_blank": 65,
+          "excluded_horizontal_rule": 0,
+          "accounted": 201,
+          "lines_total": 201,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 65,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "29 - Interview Prep/MOC.md",
+        "outcome": "extracted",
+        "sha256": "ac15d5e590bc5a6b7161babb7d4ba04875137a3cf2f70b9d73ea72bb820c25fd",
+        "manifest_match": true,
+        "units": 9,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 2,
+          "list": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 57,
+          "frontmatter_lines": 6,
+          "heading_context": 8,
+          "excluded_blank": 16,
+          "excluded_horizontal_rule": 0,
+          "accounted": 81,
+          "lines_total": 81,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 16,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "29 - Interview Prep/System Design/02 - System Design Interview Questions.md",
+        "outcome": "extracted",
+        "sha256": "eba62e598da5bb0f5816505657cc755571c5f5014f6bb89c82522066fc6e7ba4",
+        "manifest_match": true,
+        "units": 52,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 27,
+          "list": 20,
+          "code_block": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 171,
+          "frontmatter_lines": 6,
+          "heading_context": 29,
+          "excluded_blank": 65,
+          "excluded_horizontal_rule": 0,
+          "accounted": 265,
+          "lines_total": 265,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 65,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "29 - Interview Prep/System Design/05 - System Design Interview Questions 2.md",
+        "outcome": "extracted",
+        "sha256": "c89e681ebe21d6a342103cbc7628b5e606e6d7b9cfb81d7139326321896ef799",
+        "manifest_match": true,
+        "units": 79,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 38,
+          "list": 34,
+          "code_block": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 301,
+          "frontmatter_lines": 6,
+          "heading_context": 39,
+          "excluded_blank": 114,
+          "excluded_horizontal_rule": 5,
+          "accounted": 459,
+          "lines_total": 459,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 114,
+          "horizontal_rule": 5
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

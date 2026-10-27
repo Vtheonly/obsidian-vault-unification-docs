@@ -1,0 +1,140 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "28 - Glossary (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-qm8g30ip/068-regen001-master-ai-28-glossary.jsonl.run1",
+    "records_written": 104,
+    "denominators": {
+      "files_in_scope": 4,
+      "files_extracted": 4,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "28 - Glossary/03 - Notation Conventions.md",
+        "outcome": "extracted",
+        "sha256": "ebc923f9166fce438ff4159c066cd326755f2d1fef6aa803274dcf20c99b9f9f",
+        "manifest_match": true,
+        "units": 37,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 9,
+          "list": 22,
+          "math_block": 2,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 140,
+          "frontmatter_lines": 6,
+          "heading_context": 28,
+          "excluded_blank": 64,
+          "excluded_horizontal_rule": 0,
+          "accounted": 232,
+          "lines_total": 232,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 64,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "28 - Glossary/Acronyms/Acronyms Index.md",
+        "outcome": "extracted",
+        "sha256": "a865c183dbb4d50662a1b87c0c87ab568da4f0a0b9512729e818b45b625dcee2",
+        "manifest_match": true,
+        "units": 29,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 27
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 143,
+          "frontmatter_lines": 6,
+          "heading_context": 28,
+          "excluded_blank": 56,
+          "excluded_horizontal_rule": 0,
+          "accounted": 227,
+          "lines_total": 227,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 56,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "28 - Glossary/MOC.md",
+        "outcome": "extracted",
+        "sha256": "4762d98af801f3715fd43e74a842e6b7f652ee0dc39aa1148ad5090fbc8cba55",
+        "manifest_match": true,
+        "units": 12,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 1,
+          "list": 9
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 24,
+          "frontmatter_lines": 6,
+          "heading_context": 11,
+          "excluded_blank": 15,
+          "excluded_horizontal_rule": 0,
+          "accounted": 50,
+          "lines_total": 50,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 15,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "28 - Glossary/Terms/A-Z Terms.md",
+        "outcome": "extracted",
+        "sha256": "635070925590863690282593ceadb688f087e7e68d76298b6e52798db875621e",
+        "manifest_match": true,
+        "units": 26,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 24
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 244,
+          "frontmatter_lines": 6,
+          "heading_context": 25,
+          "excluded_blank": 50,
+          "excluded_horizontal_rule": 0,
+          "accounted": 319,
+          "lines_total": 319,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 50,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

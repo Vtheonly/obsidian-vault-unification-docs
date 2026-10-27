@@ -1,0 +1,1191 @@
+{
+  "command": "scripts/regen001_extract.py",
+  "task_id": "REGEN-001",
+  "step": "full-corpus extraction plan for the remaining files",
+  "max_group_files": 40,
+  "ordering": "ai-course first (smaller vault completes coverage sooner), then master-ai; folders lexicographic; <root files> group last per vault; splits by subfolder when a group exceeds the cap",
+  "committed_batches_preloaded": [
+    "001-ext001-ai-course-03.1-regression.jsonl",
+    "002-ext002-master-ai-supervised-learning.jsonl",
+    "003-ext004-ai-course-03.7-tree-based-models.jsonl",
+    "004-ext005-master-ai-evaluation.jsonl",
+    "005-ext005-ai-course-03.6-model-evaluation.jsonl",
+    "006-ext008-master-ai-unsupervised.jsonl",
+    "007-ext008-ai-course-clustering-dimreduction.jsonl",
+    "008-ext009-master-ai-generalization.jsonl",
+    "009-ext009-ai-course-04.3-regularization.jsonl",
+    "010-ext010-master-ai-training-stability.jsonl",
+    "011-ext010-ai-course-04.3-init-gradients.jsonl"
+  ],
+  "batches": [
+    {
+      "batch_number": 12,
+      "batch_file": "state/knowledge-units/012-regen001-ai-course-01-foundations-and-overview.jsonl",
+      "vault_id": "ai-course",
+      "group": "01 - Foundations and Overview",
+      "file_count": 24,
+      "files": [
+        "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/01. Introduction to Machine Learning.md",
+        "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/02. Types of Learning.md",
+        "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/03. Deep Learning Definition and Context.md",
+        "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/04. Machine Learning vs Deep Learning.md",
+        "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/05. Evolution and History of Deep Learning.md",
+        "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/06. Applications of Deep Learning.md",
+        "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/07. Comparing Data Science, AI, ML, and BI.md",
+        "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/08. Foundations of Machine Learning (Summary).md",
+        "01 - Foundations and Overview/01.2 - Mathematical Foundations/00. Linear Algebra Fundamentals.md",
+        "01 - Foundations and Overview/01.2 - Mathematical Foundations/01. Mathematical Notation (ML Course).md",
+        "01 - Foundations and Overview/01.2 - Mathematical Foundations/02. Mathematical Notation and Symbols.md",
+        "01 - Foundations and Overview/01.2 - Mathematical Foundations/03. Understanding the Math Notation - Chain Rule and wrt.md",
+        "01 - Foundations and Overview/01.2 - Mathematical Foundations/04. Partial vs. Ordinary Derivatives.md",
+        "01 - Foundations and Overview/01.2 - Mathematical Foundations/05. Derivatives, Power Rule, and the Chain Rule.md",
+        "01 - Foundations and Overview/01.2 - Mathematical Foundations/06. Gradients and Gradient Descent.md",
+        "01 - Foundations and Overview/01.2 - Mathematical Foundations/07. Probability and Statistics for ML.md",
+        "01 - Foundations and Overview/01.2 - Mathematical Foundations/08. Multivariate Calculus - Jacobians and Hessians.md",
+        "01 - Foundations and Overview/01.3 - Data Science Foundations/01. Data Science Definition and Philosophy.md",
+        "01 - Foundations and Overview/01.3 - Data Science Foundations/02. The Importance of Data-Driven Decision Making.md",
+        "01 - Foundations and Overview/01.3 - Data Science Foundations/03. The Four Pillars of Data Science.md",
+        "01 - Foundations and Overview/01.3 - Data Science Foundations/04. The Complete Data Science Workflow.md",
+        "01 - Foundations and Overview/01.3 - Data Science Foundations/05. Careers and Roles in the Data Ecosystem.md",
+        "01 - Foundations and Overview/01.3 - Data Science Foundations/06. Essential Technical and Soft Skills.md",
+        "01 - Foundations and Overview/01.3 - Data Science Foundations/07. Exercise 1 - Identifying Applications and Roles.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 13,
+      "batch_file": "state/knowledge-units/013-regen001-ai-course-02-python-and-data-tooling.jsonl",
+      "vault_id": "ai-course",
+      "group": "02 - Python and Data Tooling",
+      "file_count": 29,
+      "files": [
+        "02 - Python and Data Tooling/02.1 - Python Environment Setup/01. Python Language Overview.md",
+        "02 - Python and Data Tooling/02.1 - Python Environment Setup/02. Installation and Distributions.md",
+        "02 - Python and Data Tooling/02.1 - Python Environment Setup/03. IDEs and Development Environments.md",
+        "02 - Python and Data Tooling/02.1 - Python Environment Setup/04. Virtual Environments and Package Management.md",
+        "02 - Python and Data Tooling/02.1 - Python Environment Setup/05. Version Control with Git and GitHub.md",
+        "02 - Python and Data Tooling/02.1 - Python Environment Setup/06. Project Structure and Best Practices.md",
+        "02 - Python and Data Tooling/02.1 - Python Environment Setup/07. Exercise 2 - Hospital Data Project Setup.md",
+        "02 - Python and Data Tooling/02.2 - Python Programming Essentials/01. Variables, Operators, and Type Casting.md",
+        "02 - Python and Data Tooling/02.2 - Python Programming Essentials/02. Advanced Control Flow and Loops.md",
+        "02 - Python and Data Tooling/02.2 - Python Programming Essentials/03. Data Structures - Lists, Tuples, and Sets.md",
+        "02 - Python and Data Tooling/02.2 - Python Programming Essentials/04. Dictionaries and Key Value Management.md",
+        "02 - Python and Data Tooling/02.2 - Python Programming Essentials/05. Functions and Lambda Expressions.md",
+        "02 - Python and Data Tooling/02.2 - Python Programming Essentials/06. Object Oriented Programming (OOP) in Data Science.md",
+        "02 - Python and Data Tooling/02.2 - Python Programming Essentials/07. Iterators, Generators, and Memory Efficiency.md",
+        "02 - Python and Data Tooling/02.2 - Python Programming Essentials/08. Error Handling and Exception Management.md",
+        "02 - Python and Data Tooling/02.2 - Python Programming Essentials/09. Exercise 3 - Sales Project Logic and OOP.md",
+        "02 - Python and Data Tooling/02.3 - Essential Python Libraries/01. NumPy - Numerical Computation and Arrays.md",
+        "02 - Python and Data Tooling/02.3 - Essential Python Libraries/02. Pandas - Data Manipulation and Series.md",
+        "02 - Python and Data Tooling/02.3 - Essential Python Libraries/03. DataFrames - Deep Dive and Operations.md",
+        "02 - Python and Data Tooling/02.3 - Essential Python Libraries/04. Matplotlib - Static Data Visualization.md",
+        "02 - Python and Data Tooling/02.3 - Essential Python Libraries/05. Seaborn - Statistical Data Visualization.md",
+        "02 - Python and Data Tooling/02.3 - Essential Python Libraries/06. Interactive Plotting with Plotly.md",
+        "02 - Python and Data Tooling/02.3 - Essential Python Libraries/07. Exercise 4 - Temperature and Grade Analysis.md",
+        "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/01. Handling Missing Data and Imputation Strategies.md",
+        "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/02. Duplicate Detection and Record Linkage.md",
+        "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/03. Outlier Detection and Treatment Methods.md",
+        "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/04. Feature Scaling and Normalization.md",
+        "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/05. Categorical Encoding and Text Normalization.md",
+        "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/06. Exercise 5 - Medical Dataset Pipeline.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 14,
+      "batch_file": "state/knowledge-units/014-regen001-ai-course-03-machine-learning.jsonl",
+      "vault_id": "ai-course",
+      "group": "03 - Machine Learning",
+      "file_count": 12,
+      "files": [
+        "03 - Machine Learning/03.2 - Optimization Algorithms/01. Gradient Descent Optimization (DL Course).md",
+        "03 - Machine Learning/03.2 - Optimization Algorithms/02. Loss Functions and Cost Optimization.md",
+        "03 - Machine Learning/03.2 - Optimization Algorithms/06. Loss Functions and Error Calculation.md",
+        "03 - Machine Learning/03.2 - Optimization Algorithms/07. Gradient Descent - The Update Rule and Convergence.md",
+        "03 - Machine Learning/03.2 - Optimization Algorithms/08. Loss Functions and Optimizers Deep Dive.md",
+        "03 - Machine Learning/03.3 - K-Nearest Neighbors (KNN)/01. K-Nearest Neighbors (KNN) - Comprehensive.md",
+        "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/01. SVM - Course Overview.md",
+        "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/02. Introduction and The Widest Street.md",
+        "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/03. The Mathematics of Separation.md",
+        "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/04. The Lagrangian Optimization.md",
+        "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/05. The Dual Representation and Dot Products.md",
+        "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/06. The Kernel Trick.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 15,
+      "batch_file": "state/knowledge-units/015-regen001-ai-course-04-neural-networks-and-deep-learning-foundations.jsonl",
+      "vault_id": "ai-course",
+      "group": "04 - Neural Networks and Deep Learning Foundations",
+      "file_count": 16,
+      "files": [
+        "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/01. Fundamentals of Neural Networks.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/02. Neural Network Architecture and Notation.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/03. Artificial Neural Networks (ANN) - Comprehensive.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/04. The Perceptron and the Chain Rule.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/05. Forward Propagation and Activation Functions.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/06. Activation Functions in Deep Learning.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/07. Multi-Layer Perceptron and Backpropagation.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/08. Data Preparation and MLP Implementation.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/00. README - Backpropagation Module.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/01. Backpropagating to the Output Layer.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/02. Backpropagating to the Hidden Layer.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/03. Matrix Implementation and the Delta Weight Formula.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/04. Backpropagation and Gradient Flow in CNNs.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/04. Hyperparameters and Network Configuration.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.4 - Labs/01. TP2.md",
+        "04 - Neural Networks and Deep Learning Foundations/04.4 - Labs/02. TP3 - Data Cleaning, Normalization, and Encoding - Solution Guide.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 16,
+      "batch_file": "state/knowledge-units/016-regen001-ai-course-05-convolutional-neural-networks-cnn.jsonl",
+      "vault_id": "ai-course",
+      "group": "05 - Convolutional Neural Networks (CNN)",
+      "file_count": 38,
+      "files": [
+        "05 - Convolutional Neural Networks (CNN)/00. CNN Mastery Roadmap.md",
+        "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/01. Introduction and Foundations of CNNs.md",
+        "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/02. Core Architecture and Philosophy.md",
+        "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/03. The Bridge - From Basic Convolution to Learned Weights.md",
+        "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/04. Demystifying Tensors - Volumes, Depth, and Data Formats.md",
+        "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/05. Processing 3D Volumes, Depth Summation, and Biases.md",
+        "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/01. The Convolution Operation Deep Dive.md",
+        "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/02. The Mathematics of Receptive Fields and 1x1 Convolutions.md",
+        "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/03. Activation and Pooling Layers.md",
+        "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/04. Advanced Pooling Mechanisms and Global Average Pooling.md",
+        "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/05. The Output Spatial Dimension Formula.md",
+        "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/06. Padding - Mathematics, Edge Effects, and Valid vs Same.md",
+        "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/07. Strides - Skipping Pixels and Downsampling.md",
+        "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/01. Local Connectivity and Parameter Sharing.md",
+        "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/02. Hierarchical Feature Extraction.md",
+        "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/04. The Fully Connected Layer and Flattening.md",
+        "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/05. Evolution of CNN Architectures.md",
+        "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/06. VGG16 Architecture Deep Dive.md",
+        "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/07. Inception Architecture Deep Dive.md",
+        "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/08. The Degradation Problem and Residual Connections.md",
+        "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/09. ResNet Bottleneck Blocks and Architectural Variants.md",
+        "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/01. Transfer Learning and Fine-Tuning.md",
+        "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/02. PyTorch Implementation Basics.md",
+        "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/03. PyTorch Advanced - VGG16 and Pre-trained Models.md",
+        "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/01. The Full Training Pipeline End-to-End Checklist.md",
+        "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/02. Common Mistakes and How to Fix Them.md",
+        "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/03. Demystifying the Black Box - CNN Interpretability.md",
+        "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/04. Exercises Solved and Explained.md",
+        "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/01. Foundations and Philosophy - Summary.md",
+        "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/02. Core Operators and Geometry - Summary.md",
+        "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/03. Hyperparameters and Basic PyTorch - Summary.md",
+        "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/04. VGG and Classic Architectures - Summary.md",
+        "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/05. Normalization, Regularization and Augmentation - Summary.md",
+        "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/06. Transfer Learning and ResNet - Summary.md",
+        "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/07. Scaling, Pipeline and Interpretability - Summary.md",
+        "05 - Convolutional Neural Networks (CNN)/07. Advanced Operators/01. Advanced Convolutional Operators - Depthwise, Dilated, Transposed, Grouped.md",
+        "05 - Convolutional Neural Networks (CNN)/08. Modern Computer Vision Tasks/01. Modern Computer Vision Tasks - Detection and Segmentation.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 17,
+      "batch_file": "state/knowledge-units/017-regen001-ai-course-06-image-processing-00-global-index-md.jsonl",
+      "vault_id": "ai-course",
+      "group": "06 - Image Processing/00. Global Index.md",
+      "file_count": 1,
+      "files": [
+        "06 - Image Processing/00. Global Index.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 18,
+      "batch_file": "state/knowledge-units/018-regen001-ai-course-06-image-processing-01-fundamentals-of-digital-images.jsonl",
+      "vault_id": "ai-course",
+      "group": "06 - Image Processing/01. Fundamentals of Digital Images",
+      "file_count": 7,
+      "files": [
+        "06 - Image Processing/01. Fundamentals of Digital Images/1.1 What is a Digital Image.md",
+        "06 - Image Processing/01. Fundamentals of Digital Images/1.2 Image Representation Types.md",
+        "06 - Image Processing/01. Fundamentals of Digital Images/1.3 Resolution and Bit Depth.md",
+        "06 - Image Processing/01. Fundamentals of Digital Images/1.4 Color Spaces and Models.md",
+        "06 - Image Processing/01. Fundamentals of Digital Images/1.5 Image File Formats.md",
+        "06 - Image Processing/01. Fundamentals of Digital Images/1.6 Pixel Relationships and Distance Metrics.md",
+        "06 - Image Processing/01. Fundamentals of Digital Images/1.7 The Color Image Processing Pipeline.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 19,
+      "batch_file": "state/knowledge-units/019-regen001-ai-course-06-image-processing-02-intensity-transformations-and-histograms.jsonl",
+      "vault_id": "ai-course",
+      "group": "06 - Image Processing/02. Intensity Transformations and Histograms",
+      "file_count": 5,
+      "files": [
+        "06 - Image Processing/02. Intensity Transformations and Histograms/2.1 The Image Histogram.md",
+        "06 - Image Processing/02. Intensity Transformations and Histograms/2.2 Point Processing Operations.md",
+        "06 - Image Processing/02. Intensity Transformations and Histograms/2.3 Contrast Stretching.md",
+        "06 - Image Processing/02. Intensity Transformations and Histograms/2.4 Histogram Equalization (HE).md",
+        "06 - Image Processing/02. Intensity Transformations and Histograms/2.5 Advanced Histogram Techniques.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 20,
+      "batch_file": "state/knowledge-units/020-regen001-ai-course-06-image-processing-03-spatial-filtering-and-neighborhood-processing.jsonl",
+      "vault_id": "ai-course",
+      "group": "06 - Image Processing/03. Spatial Filtering and Neighborhood Processing",
+      "file_count": 10,
+      "files": [
+        "06 - Image Processing/03. Spatial Filtering and Neighborhood Processing/3.1 The Mechanics of Spatial Filtering.md",
+        "06 - Image Processing/03. Spatial Filtering and Neighborhood Processing/3.10 The Hough Transform.md",
+        "06 - Image Processing/03. Spatial Filtering and Neighborhood Processing/3.2 Linear Smoothing Filters.md",
+        "06 - Image Processing/03. Spatial Filtering and Neighborhood Processing/3.3 Non-Linear Smoothing Filters.md",
+        "06 - Image Processing/03. Spatial Filtering and Neighborhood Processing/3.4 Edge Preserving Filters.md",
+        "06 - Image Processing/03. Spatial Filtering and Neighborhood Processing/3.5 Sharpening and Edge Detection.md",
+        "06 - Image Processing/03. Spatial Filtering and Neighborhood Processing/3.6 Canny and LoG - Advanced Edge Detection.md",
+        "06 - Image Processing/03. Spatial Filtering and Neighborhood Processing/3.7 Geometric Transformations and Interpolation.md",
+        "06 - Image Processing/03. Spatial Filtering and Neighborhood Processing/3.8 Feature Descriptors - SIFT, SURF, ORB, HOG.md",
+        "06 - Image Processing/03. Spatial Filtering and Neighborhood Processing/3.9 Image Pyramids and Multi-Scale Representation.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 21,
+      "batch_file": "state/knowledge-units/021-regen001-ai-course-06-image-processing-04-frequency-domain-and-restoration.jsonl",
+      "vault_id": "ai-course",
+      "group": "06 - Image Processing/04. Frequency Domain and Restoration",
+      "file_count": 5,
+      "files": [
+        "06 - Image Processing/04. Frequency Domain and Restoration/4.1 Introduction to the Frequency Domain.md",
+        "06 - Image Processing/04. Frequency Domain and Restoration/4.2 The Fourier Transform.md",
+        "06 - Image Processing/04. Frequency Domain and Restoration/4.3 Frequency Domain Filtering.md",
+        "06 - Image Processing/04. Frequency Domain and Restoration/4.4 Image Degradation and Noise Models.md",
+        "06 - Image Processing/04. Frequency Domain and Restoration/4.5 Image Quality Metrics.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 22,
+      "batch_file": "state/knowledge-units/022-regen001-ai-course-06-image-processing-05-morphological-processing-and-segmentation.jsonl",
+      "vault_id": "ai-course",
+      "group": "06 - Image Processing/05. Morphological Processing and Segmentation",
+      "file_count": 9,
+      "files": [
+        "06 - Image Processing/05. Morphological Processing and Segmentation/5.1 Mathematical Morphology Basics.md",
+        "06 - Image Processing/05. Morphological Processing and Segmentation/5.2 Erosion and Dilation.md",
+        "06 - Image Processing/05. Morphological Processing and Segmentation/5.3 Opening and Closing.md",
+        "06 - Image Processing/05. Morphological Processing and Segmentation/5.4 Morphological Algorithms.md",
+        "06 - Image Processing/05. Morphological Processing and Segmentation/5.5 Deep Learning for Imaging.md",
+        "06 - Image Processing/05. Morphological Processing and Segmentation/5.6 The Classical-to-Deep Bridge.md",
+        "06 - Image Processing/05. Morphological Processing and Segmentation/5.7 Thresholding and Otsu's Method.md",
+        "06 - Image Processing/05. Morphological Processing and Segmentation/5.8 Watershed Segmentation.md",
+        "06 - Image Processing/05. Morphological Processing and Segmentation/5.9 Connected Components and Region Properties.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 23,
+      "batch_file": "state/knowledge-units/023-regen001-ai-course-06-image-processing-06-concepts-ml-perspective.jsonl",
+      "vault_id": "ai-course",
+      "group": "06 - Image Processing/06. Concepts (ML Perspective)",
+      "file_count": 3,
+      "files": [
+        "06 - Image Processing/06. Concepts (ML Perspective)/01. Convolution.md",
+        "06 - Image Processing/06. Concepts (ML Perspective)/02. Gabor Filters.md",
+        "06 - Image Processing/06. Concepts (ML Perspective)/05. The Fourier Transform in Imaging.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 24,
+      "batch_file": "state/knowledge-units/024-regen001-ai-course-06-image-processing-07-quiz.jsonl",
+      "vault_id": "ai-course",
+      "group": "06 - Image Processing/07. Quiz",
+      "file_count": 6,
+      "files": [
+        "06 - Image Processing/07. Quiz/Q1.md",
+        "06 - Image Processing/07. Quiz/Q2.md",
+        "06 - Image Processing/07. Quiz/Q3.md",
+        "06 - Image Processing/07. Quiz/Q4.md",
+        "06 - Image Processing/07. Quiz/Q5.md",
+        "06 - Image Processing/07. Quiz/Q6.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 25,
+      "batch_file": "state/knowledge-units/025-regen001-ai-course-07-sequence-models-and-rnns.jsonl",
+      "vault_id": "ai-course",
+      "group": "07 - Sequence Models and RNNs",
+      "file_count": 14,
+      "files": [
+        "07 - Sequence Models and RNNs/00. Chapter Overview.md",
+        "07 - Sequence Models and RNNs/07.1 - Motivation and Recurrence/01. Why Sequence Models - The Limits of Feedforward Networks.md",
+        "07 - Sequence Models and RNNs/07.1 - Motivation and Recurrence/02. The Recurrent Neuron - Unrolling Through Time.md",
+        "07 - Sequence Models and RNNs/07.1 - Motivation and Recurrence/03. Backpropagation Through Time (BPTT).md",
+        "07 - Sequence Models and RNNs/07.1 - Motivation and Recurrence/04. The Vanishing and Exploding Gradient Problem in RNNs.md",
+        "07 - Sequence Models and RNNs/07.2 - LSTM and GRU/01. LSTM - Gates as Learned Traffic Controllers.md",
+        "07 - Sequence Models and RNNs/07.2 - LSTM and GRU/02. GRU - Simplifying the LSTM.md",
+        "07 - Sequence Models and RNNs/07.2 - LSTM and GRU/03. LSTM vs GRU - When to Use Which.md",
+        "07 - Sequence Models and RNNs/07.3 - Sequence to Sequence and Encoder-Decoder/01. The Encoder-Decoder Pattern - Conditional Generation.md",
+        "07 - Sequence Models and RNNs/07.3 - Sequence to Sequence and Encoder-Decoder/02. Teacher Forcing and Exposure Bias.md",
+        "07 - Sequence Models and RNNs/07.3 - Sequence to Sequence and Encoder-Decoder/03. Beam Search and Decoding Strategies.md",
+        "07 - Sequence Models and RNNs/07.4 - Sequence Modeling Pitfalls and Limits/01. The Bottleneck Problem - Why One Vector Is Not Enough.md",
+        "07 - Sequence Models and RNNs/07.4 - Sequence Modeling Pitfalls and Limits/02. Long-Range Dependencies and Why RNNs Struggle.md",
+        "07 - Sequence Models and RNNs/07.4 - Sequence Modeling Pitfalls and Limits/03. From RNNs to Attention - The Historical Bridge.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 26,
+      "batch_file": "state/knowledge-units/026-regen001-ai-course-08-attention-and-transformers.jsonl",
+      "vault_id": "ai-course",
+      "group": "08 - Attention and Transformers",
+      "file_count": 18,
+      "files": [
+        "08 - Attention and Transformers/00. Chapter Overview.md",
+        "08 - Attention and Transformers/08.1 - The Attention Mechanism/01. Attention as Soft Lookup - From Bahdanau to Dot-Product.md",
+        "08 - Attention and Transformers/08.1 - The Attention Mechanism/02. Queries Keys and Values - The Database Analogy.md",
+        "08 - Attention and Transformers/08.1 - The Attention Mechanism/03. Scaled Dot-Product Attention - Why the Square Root.md",
+        "08 - Attention and Transformers/08.1 - The Attention Mechanism/04. Multi-Head Attention - Parallel Relationship Patterns.md",
+        "08 - Attention and Transformers/08.2 - The Transformer Architecture/01. Self-Attention - When the Sequence Attends to Itself.md",
+        "08 - Attention and Transformers/08.2 - The Transformer Architecture/02. Positional Encoding - Injecting Order Into a Set.md",
+        "08 - Attention and Transformers/08.2 - The Transformer Architecture/03. The Transformer Encoder Block.md",
+        "08 - Attention and Transformers/08.2 - The Transformer Architecture/04. The Transformer Decoder Block - Masking and Cross-Attention.md",
+        "08 - Attention and Transformers/08.2 - The Transformer Architecture/05. The Full Transformer - Assembling the Pieces.md",
+        "08 - Attention and Transformers/08.3 - Vision Transformers/01. From Words to Patches - How ViT Tokenizes an Image.md",
+        "08 - Attention and Transformers/08.3 - Vision Transformers/02. The CLS Token and Why It Works.md",
+        "08 - Attention and Transformers/08.3 - Vision Transformers/03. Inductive Bias - CNNs vs ViTs and Why ViTs Need More Data.md",
+        "08 - Attention and Transformers/08.3 - Vision Transformers/04. ViT Architecture and Design Decisions.md",
+        "08 - Attention and Transformers/08.4 - Encoder Decoder and the Design Space/01. The Encoder-Decoder Design Space - BERT vs GPT vs T5.md",
+        "08 - Attention and Transformers/08.4 - Encoder Decoder and the Design Space/02. The Information Bottleneck and Latent Space.md",
+        "08 - Attention and Transformers/08.4 - Encoder Decoder and the Design Space/03. Autoregressive vs Parallel Encoding.md",
+        "08 - Attention and Transformers/08.4 - Encoder Decoder and the Design Space/04. Choosing the Right Architecture for the Task.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 27,
+      "batch_file": "state/knowledge-units/027-regen001-ai-course-09-quizzes-and-question-banks-01-deep-learning-chapter-1-introduction-to-dl.jsonl",
+      "vault_id": "ai-course",
+      "group": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)",
+      "file_count": 12,
+      "files": [
+        "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q1 - Deep Learning Definition and Context.md",
+        "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q10 - Activation Functions in Deep Learning.md",
+        "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q11 - Multi-Layer Perceptron and Backpropagation.md",
+        "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q12 - Data Preparation and MLP Implementation.md",
+        "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q2 - Machine Learning vs Deep Learning.md",
+        "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q3 - Evolution and History of Deep Learning.md",
+        "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q4 - Applications of Deep Learning.md",
+        "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q5 - Gradient Descent Optimization.md",
+        "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q6 - Loss Functions and Cost Optimization.md",
+        "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q7 - Linear Regression.md",
+        "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q8 - Logistic Regression.md",
+        "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q9 - The Perceptron and the Chain Rule.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 28,
+      "batch_file": "state/knowledge-units/028-regen001-ai-course-09-quizzes-and-question-banks-02-deep-learning-chapter-2-cnn.jsonl",
+      "vault_id": "ai-course",
+      "group": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)",
+      "file_count": 27,
+      "files": [
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q1 - Introduction and Foundations of CNNs.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q10 - Inception Architecture Deep Dive.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q11 - The Degradation Problem and Residual Connections.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q12 - ResNet Bottleneck Blocks and Architectural Variants.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q13 - Backpropagation and Gradient Flow in CNNs.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q14 - Weight Initialization.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q15 - The Vanishing and Exploding Gradient Problems.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q16 - Batch Normalization.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q17 - Dropout and Regularization.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q18 - Data Augmentation.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q19 - Transfer Learning and Fine-Tuning.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q2 - Core Architecture and Philosophy.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q20 - Loss Functions and Optimizers Deep Dive.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q21 - Model Evaluation Metrics Beyond Accuracy.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q22 - PyTorch Implementation Basics.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q23 - PyTorch Advanced - VGG16 and Pre-trained Models.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q24 - The Full Training Pipeline End-to-End Checklist.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q25 - Common Mistakes and How to Fix Them.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q26 - Demystifying the Black Box - CNN Interpretability.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q27 - Exercises Solved and Explained.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q3 - The Convolution Operation Deep Dive.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q4 - The Mathematics of Receptive Fields and 1x1 Convolutions.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q5 - Activation and Pooling Layers.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q6 - Advanced Pooling Mechanisms and Global Average Pooling.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q7 - Hyperparameters and Network Configuration.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q8 - Evolution of CNN Architectures.md",
+        "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q9 - VGG16 Architecture Deep Dive.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 29,
+      "batch_file": "state/knowledge-units/029-regen001-ai-course-09-quizzes-and-question-banks-03-question-series.jsonl",
+      "vault_id": "ai-course",
+      "group": "09 - Quizzes and Question Banks/03. Question Series",
+      "file_count": 3,
+      "files": [
+        "09 - Quizzes and Question Banks/03. Question Series/Qs1.md",
+        "09 - Quizzes and Question Banks/03. Question Series/Qs3.md",
+        "09 - Quizzes and Question Banks/03. Question Series/Qs4.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 30,
+      "batch_file": "state/knowledge-units/030-regen001-ai-course-10-generative-models.jsonl",
+      "vault_id": "ai-course",
+      "group": "10 - Generative Models",
+      "file_count": 12,
+      "files": [
+        "10 - Generative Models/00. Chapter Overview.md",
+        "10 - Generative Models/10.1 - Autoencoders/01. The Autoencoder - Compression as Learning.md",
+        "10 - Generative Models/10.1 - Autoencoders/02. Denoising Autoencoders and Sparse Autoencoders.md",
+        "10 - Generative Models/10.2 - Variational Autoencoders/01. From Autoencoder to VAE - Learning a Distribution.md",
+        "10 - Generative Models/10.2 - Variational Autoencoders/02. The Reparameterization Trick.md",
+        "10 - Generative Models/10.2 - Variational Autoencoders/03. The KL Divergence Loss.md",
+        "10 - Generative Models/10.3 - GANs/01. The Adversarial Game - Generator vs Discriminator.md",
+        "10 - Generative Models/10.3 - GANs/02. Training Dynamics and Mode Collapse.md",
+        "10 - Generative Models/10.3 - GANs/03. Wasserstein GANs and Modern Variants.md",
+        "10 - Generative Models/10.4 - Diffusion Models/01. The Forward Process - Adding Noise.md",
+        "10 - Generative Models/10.4 - Diffusion Models/02. The Reverse Process - Learning to Denoise.md",
+        "10 - Generative Models/10.4 - Diffusion Models/03. Score-Based and Latent Diffusion.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 31,
+      "batch_file": "state/knowledge-units/031-regen001-ai-course-root-files.jsonl",
+      "vault_id": "ai-course",
+      "group": "<root files>",
+      "file_count": 2,
+      "files": [
+        "00 - Master Index.md",
+        "README.md"
+      ],
+      "unclosed_fence_finding": "F-0002"
+    },
+    {
+      "batch_number": 32,
+      "batch_file": "state/knowledge-units/032-regen001-master-ai-00-vault-management.jsonl",
+      "vault_id": "master-ai",
+      "group": "00 - Vault Management",
+      "file_count": 10,
+      "files": [
+        "00 - Vault Management/Architecture Decisions.md",
+        "00 - Vault Management/Completed Work.md",
+        "00 - Vault Management/Coverage Audit.md",
+        "00 - Vault Management/Current Iteration.md",
+        "00 - Vault Management/Master Roadmap.md",
+        "00 - Vault Management/Next Iteration.md",
+        "00 - Vault Management/README.md",
+        "00 - Vault Management/Remaining Work.md",
+        "00 - Vault Management/Research Queue.md",
+        "00 - Vault Management/Vault Status.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 33,
+      "batch_file": "state/knowledge-units/033-regen001-master-ai-01-ai-foundations.jsonl",
+      "vault_id": "master-ai",
+      "group": "01 - AI Foundations",
+      "file_count": 7,
+      "files": [
+        "01 - AI Foundations/01 - What Is AI Engineering.md",
+        "01 - AI Foundations/02 - AI vs ML vs DL vs GenAI vs Agentic AI.md",
+        "01 - AI Foundations/03 - A Brief History of AI.md",
+        "01 - AI Foundations/04 - The Modern AI Stack.md",
+        "01 - AI Foundations/05 - AI Engineer Roles.md",
+        "01 - AI Foundations/06 - Map of the Field.md",
+        "01 - AI Foundations/MOC.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 34,
+      "batch_file": "state/knowledge-units/034-regen001-master-ai-02-mathematics.jsonl",
+      "vault_id": "master-ai",
+      "group": "02 - Mathematics",
+      "file_count": 18,
+      "files": [
+        "02 - Mathematics/Calculus/10 - Gradient and Chain Rule.md",
+        "02 - Mathematics/Calculus/11 - Jacobians and Hessians.md",
+        "02 - Mathematics/Information Theory/15 - Entropy Cross-Entropy KL.md",
+        "02 - Mathematics/Linear Algebra/01 - Vectors.md",
+        "02 - Mathematics/Linear Algebra/02 - Dot Product.md",
+        "02 - Mathematics/Linear Algebra/03 - Cosine Similarity.md",
+        "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md",
+        "02 - Mathematics/Linear Algebra/05 - Matrix Decomposition.md",
+        "02 - Mathematics/Linear Algebra/06 - Tensors and Broadcasting.md",
+        "02 - Mathematics/MOC.md",
+        "02 - Mathematics/Optimization/12 - Optimization Essentials.md",
+        "02 - Mathematics/Optimization/13 - Adam Derivation.md",
+        "02 - Mathematics/Optimization/14 - Learning Rate Schedules.md",
+        "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "02 - Mathematics/Probability/08 - Bayes Theorem Deep Dive.md",
+        "02 - Mathematics/Probability/09 - Gaussian Distribution.md",
+        "02 - Mathematics/Statistics/16 - Estimators and Bias.md",
+        "02 - Mathematics/Statistics/17 - Hypothesis Testing.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 35,
+      "batch_file": "state/knowledge-units/035-regen001-master-ai-03-machine-learning.jsonl",
+      "vault_id": "master-ai",
+      "group": "03 - Machine Learning",
+      "file_count": 5,
+      "files": [
+        "03 - Machine Learning/MOC.md",
+        "03 - Machine Learning/Reinforcement Learning/07 - MDPs and Bellman Equations.md",
+        "03 - Machine Learning/Reinforcement Learning/08 - Q-Learning and DQN.md",
+        "03 - Machine Learning/Reinforcement Learning/09 - Policy Gradients and Actor Critic.md",
+        "03 - Machine Learning/Reinforcement Learning/10 - PPO Deep Treatment.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 36,
+      "batch_file": "state/knowledge-units/036-regen001-master-ai-04-neural-networks.jsonl",
+      "vault_id": "master-ai",
+      "group": "04 - Neural Networks",
+      "file_count": 7,
+      "files": [
+        "04 - Neural Networks/Architectures/03 - CNNs.md",
+        "04 - Neural Networks/Architectures/04 - RNN LSTM GRU.md",
+        "04 - Neural Networks/Architectures/05 - Seq2Seq and the Information Bottleneck.md",
+        "04 - Neural Networks/Foundations/01 - Perceptrons and MLPs.md",
+        "04 - Neural Networks/Foundations/02 - Activation Functions.md",
+        "04 - Neural Networks/MOC.md",
+        "04 - Neural Networks/Training/06 - Backpropagation.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 37,
+      "batch_file": "state/knowledge-units/037-regen001-master-ai-05-nlp-fundamentals.jsonl",
+      "vault_id": "master-ai",
+      "group": "05 - NLP Fundamentals",
+      "file_count": 11,
+      "files": [
+        "05 - NLP Fundamentals/Embeddings/05 - Word2Vec GloVe FastText.md",
+        "05 - NLP Fundamentals/Embeddings/06 - Contextual Embeddings ELMo to BERT.md",
+        "05 - NLP Fundamentals/Language Modeling/07 - N-gram Language Models.md",
+        "05 - NLP Fundamentals/Language Modeling/08 - Perplexity.md",
+        "05 - NLP Fundamentals/MOC.md",
+        "05 - NLP Fundamentals/Pre-Transformer NLP/09 - TF-IDF.md",
+        "05 - NLP Fundamentals/Pre-Transformer NLP/10 - BM25.md",
+        "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "05 - NLP Fundamentals/Tokenization/02 - BPE.md",
+        "05 - NLP Fundamentals/Tokenization/03 - WordPiece.md",
+        "05 - NLP Fundamentals/Tokenization/04 - SentencePiece.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 38,
+      "batch_file": "state/knowledge-units/038-regen001-master-ai-06-attention-mechanisms.jsonl",
+      "vault_id": "master-ai",
+      "group": "06 - Attention Mechanisms",
+      "file_count": 16,
+      "files": [
+        "06 - Attention Mechanisms/Efficient Attention/11 - FlashAttention.md",
+        "06 - Attention Mechanisms/Efficient Attention/12 - Sparse Attention.md",
+        "06 - Attention Mechanisms/Efficient Attention/13 - Linear Attention.md",
+        "06 - Attention Mechanisms/MOC.md",
+        "06 - Attention Mechanisms/Modern Attention/14 - GQA MQA MLA.md",
+        "06 - Attention Mechanisms/Modern Attention/15 - Sliding Window Attention.md",
+        "06 - Attention Mechanisms/Multi-Head Attention/05 - Multi-Head Attention.md",
+        "06 - Attention Mechanisms/Origins/01 - Origins of Attention.md",
+        "06 - Attention Mechanisms/Origins/02 - Bahdanau Attention.md",
+        "06 - Attention Mechanisms/Origins/03 - Luong Attention.md",
+        "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "06 - Attention Mechanisms/Positional Information/07 - Sinusoidal and Learned Positional.md",
+        "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "06 - Attention Mechanisms/Positional Information/09 - ALiBi.md",
+        "06 - Attention Mechanisms/Positional Information/10 - YaRN and NTK-aware Scaling.md",
+        "06 - Attention Mechanisms/Self-Attention/04 - Self-Attention.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 39,
+      "batch_file": "state/knowledge-units/039-regen001-master-ai-07-transformers.jsonl",
+      "vault_id": "master-ai",
+      "group": "07 - Transformers",
+      "file_count": 12,
+      "files": [
+        "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "07 - Transformers/Architecture/02 - Pre-Norm vs Post-Norm.md",
+        "07 - Transformers/Architecture/03 - Residual Connections.md",
+        "07 - Transformers/Components/04 - Normalization Layers.md",
+        "07 - Transformers/Components/05 - Feed-Forward Network Deep.md",
+        "07 - Transformers/Components/06 - Embedding Layer.md",
+        "07 - Transformers/Decoder Models/09 - GPT Family Evolution.md",
+        "07 - Transformers/Encoder Models/07 - BERT.md",
+        "07 - Transformers/Encoder-Decoder Models/12 - T5 and BART.md",
+        "07 - Transformers/MOC.md",
+        "07 - Transformers/Variants/13 - Vision Transformer ViT.md",
+        "07 - Transformers/Variants/15 - Mixture of Experts Transformer.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 40,
+      "batch_file": "state/knowledge-units/040-regen001-master-ai-08-llms.jsonl",
+      "vault_id": "master-ai",
+      "group": "08 - LLMs",
+      "file_count": 7,
+      "files": [
+        "08 - LLMs/Architecture/01 - Decoder-Only Architecture.md",
+        "08 - LLMs/Capabilities/04 - In-Context Learning.md",
+        "08 - LLMs/Context and KV Cache/02 - KV Cache Mechanics.md",
+        "08 - LLMs/Evaluation/06 - LLM Benchmarks.md",
+        "08 - LLMs/Limitations/05 - Hallucination.md",
+        "08 - LLMs/MOC.md",
+        "08 - LLMs/Sampling/03 - Sampling Strategies.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 41,
+      "batch_file": "state/knowledge-units/041-regen001-master-ai-09-foundation-models.jsonl",
+      "vault_id": "master-ai",
+      "group": "09 - Foundation Models",
+      "file_count": 7,
+      "files": [
+        "09 - Foundation Models/Code Models/04 - Code Models.md",
+        "09 - Foundation Models/Embedding Models/02 - Embedding Models for Retrieval.md",
+        "09 - Foundation Models/Embedding Models/06 - Embedding Model Training.md",
+        "09 - Foundation Models/MOC.md",
+        "09 - Foundation Models/Multimodal/05 - Multimodal Foundation Models.md",
+        "09 - Foundation Models/Reasoning Models/03 - Reasoning Models.md",
+        "09 - Foundation Models/Vision/01 - Vision Foundation Models.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 42,
+      "batch_file": "state/knowledge-units/042-regen001-master-ai-10-model-architecture-research.jsonl",
+      "vault_id": "master-ai",
+      "group": "10 - Model Architecture Research",
+      "file_count": 18,
+      "files": [
+        "10 - Model Architecture Research/2026 Frontier Model Synthesis.md",
+        "10 - Model Architecture Research/Closed Source/07 - GPT-4 Inferred Architecture.md",
+        "10 - Model Architecture Research/Closed Source/08 - Claude Architecture.md",
+        "10 - Model Architecture Research/Closed Source/09 - Gemini Architecture.md",
+        "10 - Model Architecture Research/Closed Source/10 - Fable 5 Architecture.md",
+        "10 - Model Architecture Research/Closed Source/11 - Kimi K3 Architecture.md",
+        "10 - Model Architecture Research/Closed Source/12 - Opus 5 Architecture.md",
+        "10 - Model Architecture Research/Closed Source/13 - Mythos Architecture.md",
+        "10 - Model Architecture Research/MOC.md",
+        "10 - Model Architecture Research/Open Source/01 - DeepSeek Architecture.md",
+        "10 - Model Architecture Research/Open Source/02 - Llama Mistral Qwen Comparison.md",
+        "10 - Model Architecture Research/Open Source/03 - Llama Family Architecture.md",
+        "10 - Model Architecture Research/Open Source/04 - Mistral and Mixtral Architecture.md",
+        "10 - Model Architecture Research/Open Source/05 - Qwen Family Architecture.md",
+        "10 - Model Architecture Research/Open Source/06 - Gemma Architecture.md",
+        "10 - Model Architecture Research/Open Source/07 - GLM 5.2 Architecture.md",
+        "10 - Model Architecture Research/Open Source/08 - Qwen 3.8 Architecture.md",
+        "10 - Model Architecture Research/Open Source/09 - MiniMax 3 Architecture.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 43,
+      "batch_file": "state/knowledge-units/043-regen001-master-ai-11-training.jsonl",
+      "vault_id": "master-ai",
+      "group": "11 - Training",
+      "file_count": 6,
+      "files": [
+        "11 - Training/Data/03 - Data Pipelines and Deduplication.md",
+        "11 - Training/Distributed Training/02 - Distributed Training.md",
+        "11 - Training/MOC.md",
+        "11 - Training/Optimization/04 - Mixed Precision Training.md",
+        "11 - Training/Optimization/05 - Loss Spikes and Stability.md",
+        "11 - Training/Pretraining/01 - Pretraining Objectives and Scaling Laws.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 44,
+      "batch_file": "state/knowledge-units/044-regen001-master-ai-12-fine-tuning.jsonl",
+      "vault_id": "master-ai",
+      "group": "12 - Fine-Tuning",
+      "file_count": 6,
+      "files": [
+        "12 - Fine-Tuning/DPO/04 - DPO Derivation.md",
+        "12 - Fine-Tuning/Instruction Tuning/03 - Instruction Tuning and Chat Templates.md",
+        "12 - Fine-Tuning/MOC.md",
+        "12 - Fine-Tuning/PEFT/01 - LoRA.md",
+        "12 - Fine-Tuning/PEFT/02 - QLoRA.md",
+        "12 - Fine-Tuning/RLHF/05 - RLHF with PPO.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 45,
+      "batch_file": "state/knowledge-units/045-regen001-master-ai-13-inference.jsonl",
+      "vault_id": "master-ai",
+      "group": "13 - Inference",
+      "file_count": 8,
+      "files": [
+        "13 - Inference/Decoding/07 - Constrained Decoding and CFG.md",
+        "13 - Inference/KV Cache/02 - PagedAttention.md",
+        "13 - Inference/MOC.md",
+        "13 - Inference/Quantization/03 - Quantization.md",
+        "13 - Inference/Serving/04 - vLLM and Continuous Batching.md",
+        "13 - Inference/Serving/06 - Continuous Batching Deep Dive.md",
+        "13 - Inference/Serving/08 - TensorRT-LLM.md",
+        "13 - Inference/Speculative Decoding/05 - Speculative Decoding.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 46,
+      "batch_file": "state/knowledge-units/046-regen001-master-ai-14-interpretability.jsonl",
+      "vault_id": "master-ai",
+      "group": "14 - Interpretability",
+      "file_count": 6,
+      "files": [
+        "14 - Interpretability/MOC.md",
+        "14 - Interpretability/Mechanistic/01 - Mechanistic Interpretability.md",
+        "14 - Interpretability/Mechanistic/02 - Logit Lens and Tuned Lens.md",
+        "14 - Interpretability/Mechanistic/04 - Activation Patching and Causal Tracing.md",
+        "14 - Interpretability/Probing/05 - Probing.md",
+        "14 - Interpretability/Sparse Autoencoders/03 - Sparse Autoencoders Deep Dive.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 47,
+      "batch_file": "state/knowledge-units/047-regen001-master-ai-15-ai-agents.jsonl",
+      "vault_id": "master-ai",
+      "group": "15 - AI Agents",
+      "file_count": 10,
+      "files": [
+        "15 - AI Agents/Architecture/01 - Agent vs Workflow vs LLM Application.md",
+        "15 - AI Agents/Autonomy/08 - Autonomous Agent Lifecycles.md",
+        "15 - AI Agents/Autonomy/09 - Human-in-the-Loop Patterns.md",
+        "15 - AI Agents/MOC.md",
+        "15 - AI Agents/Patterns/05 - Reflection.md",
+        "15 - AI Agents/Planning/07 - Planner-Executor Pattern.md",
+        "15 - AI Agents/Reasoning/02 - Chain-of-Thought.md",
+        "15 - AI Agents/Reasoning/03 - ReAct Pattern.md",
+        "15 - AI Agents/Reasoning/06 - Tree of Thoughts and Self Consistency.md",
+        "15 - AI Agents/Tool Calling/04 - Function Calling.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 48,
+      "batch_file": "state/knowledge-units/048-regen001-master-ai-16-multi-agent-systems.jsonl",
+      "vault_id": "master-ai",
+      "group": "16 - Multi-Agent Systems",
+      "file_count": 5,
+      "files": [
+        "16 - Multi-Agent Systems/Architectures/01 - Multi-Agent Architectures.md",
+        "16 - Multi-Agent Systems/Communication/02 - Communication Patterns.md",
+        "16 - Multi-Agent Systems/Coordination/03 - Coordination and Consensus.md",
+        "16 - Multi-Agent Systems/Enterprise/04 - Enterprise Multi-Agent Architectures.md",
+        "16 - Multi-Agent Systems/MOC.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 49,
+      "batch_file": "state/knowledge-units/049-regen001-master-ai-17-rag.jsonl",
+      "vault_id": "master-ai",
+      "group": "17 - RAG",
+      "file_count": 4,
+      "files": [
+        "17 - RAG/Advanced Patterns/03 - Advanced RAG Patterns.md",
+        "17 - RAG/Ingestion and Retrieval/01 - RAG Pipeline Overview.md",
+        "17 - RAG/Ingestion and Retrieval/02 - Chunking Hybrid Search Reranking.md",
+        "17 - RAG/MOC.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 50,
+      "batch_file": "state/knowledge-units/050-regen001-master-ai-18-memory-systems.jsonl",
+      "vault_id": "master-ai",
+      "group": "18 - Memory Systems",
+      "file_count": 5,
+      "files": [
+        "18 - Memory Systems/Architectures/02 - MemGPT and Letta.md",
+        "18 - Memory Systems/MOC.md",
+        "18 - Memory Systems/Operations/03 - Memory Operations.md",
+        "18 - Memory Systems/Types/01 - Memory Types.md",
+        "18 - Memory Systems/Vector Memory/04 - Vector Memory Backends.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 51,
+      "batch_file": "state/knowledge-units/051-regen001-master-ai-19-mcp.jsonl",
+      "vault_id": "master-ai",
+      "group": "19 - MCP",
+      "file_count": 5,
+      "files": [
+        "19 - MCP/Architecture/01 - MCP Overview.md",
+        "19 - MCP/Components/02 - MCP Components.md",
+        "19 - MCP/Integration/04 - MCP Enterprise Integration.md",
+        "19 - MCP/MOC.md",
+        "19 - MCP/Security/03 - MCP Security.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 52,
+      "batch_file": "state/knowledge-units/052-regen001-master-ai-20-ai-infrastructure.jsonl",
+      "vault_id": "master-ai",
+      "group": "20 - AI Infrastructure",
+      "file_count": 6,
+      "files": [
+        "20 - AI Infrastructure/Compute/04 - GPU Infrastructure and Sizing.md",
+        "20 - AI Infrastructure/MOC.md",
+        "20 - AI Infrastructure/Messaging/03 - Messaging with Kafka and Celery.md",
+        "20 - AI Infrastructure/Observability/05 - Observability Stack.md",
+        "20 - AI Infrastructure/Serving/01 - Production AI Stack.md",
+        "20 - AI Infrastructure/Storage/02 - Vector Storage with pgvector.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 53,
+      "batch_file": "state/knowledge-units/053-regen001-master-ai-21-llmops-and-mlops.jsonl",
+      "vault_id": "master-ai",
+      "group": "21 - LLMOps and MLOps",
+      "file_count": 8,
+      "files": [
+        "21 - LLMOps and MLOps/Cost/06 - Cost Optimization.md",
+        "21 - LLMOps and MLOps/Deployment/07 - A-B Testing and Shadow Deployment.md",
+        "21 - LLMOps and MLOps/Evaluation/04 - LLM-as-Judge Evaluation.md",
+        "21 - LLMOps and MLOps/MOC.md",
+        "21 - LLMOps and MLOps/Monitoring/05 - Production Monitoring.md",
+        "21 - LLMOps and MLOps/Pipelines/01 - LLMOps vs MLOps.md",
+        "21 - LLMOps and MLOps/Pipelines/02 - Prompt Management.md",
+        "21 - LLMOps and MLOps/Pipelines/03 - Model Registry and Versioning.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 54,
+      "batch_file": "state/knowledge-units/054-regen001-master-ai-22-production-ai.jsonl",
+      "vault_id": "master-ai",
+      "group": "22 - Production AI",
+      "file_count": 7,
+      "files": [
+        "22 - Production AI/Architecture/02 - Reference Production Architectures.md",
+        "22 - Production AI/Architecture/03 - Gateway and Router Patterns.md",
+        "22 - Production AI/MOC.md",
+        "22 - Production AI/Reliability/06 - Failure Modes and Graceful Degradation.md",
+        "22 - Production AI/Security/01 - LLM Security and Prompt Injection.md",
+        "22 - Production AI/Security/04 - Guardrails.md",
+        "22 - Production AI/Security/05 - PII and Data Leakage.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 55,
+      "batch_file": "state/knowledge-units/055-regen001-master-ai-23-multimodal-ai.jsonl",
+      "vault_id": "master-ai",
+      "group": "23 - Multimodal AI",
+      "file_count": 7,
+      "files": [
+        "23 - Multimodal AI/Audio/04 - Whisper.md",
+        "23 - Multimodal AI/Diffusion/05 - DiT and FLUX.md",
+        "23 - Multimodal AI/Fusion Architectures/06 - Cross-Modal Attention.md",
+        "23 - Multimodal AI/MOC.md",
+        "23 - Multimodal AI/Vision-Language/01 - Multimodal AI Overview.md",
+        "23 - Multimodal AI/Vision-Language/02 - CLIP.md",
+        "23 - Multimodal AI/Vision-Language/03 - LLaVA.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 56,
+      "batch_file": "state/knowledge-units/056-regen001-master-ai-24-research-frontiers.jsonl",
+      "vault_id": "master-ai",
+      "group": "24 - Research Frontiers",
+      "file_count": 9,
+      "files": [
+        "24 - Research Frontiers/08 - 2026 Research Frontier Update.md",
+        "24 - Research Frontiers/Hybrid Architectures/03 - RWKV and RetNet.md",
+        "24 - Research Frontiers/Hybrid Architectures/04 - Hyena and Long Convolutions.md",
+        "24 - Research Frontiers/Long-Context/07 - Long-Context Architectures.md",
+        "24 - Research Frontiers/MOC.md",
+        "24 - Research Frontiers/Reasoning/06 - Test-Time Compute Scaling.md",
+        "24 - Research Frontiers/State Space Models/01 - SSMs Mamba and Frontiers.md",
+        "24 - Research Frontiers/State Space Models/02 - Mamba-2 and Structured Attention.md",
+        "24 - Research Frontiers/State Space Models/05 - DeltaNet and Titans.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 57,
+      "batch_file": "state/knowledge-units/057-regen001-master-ai-25-frameworks-and-tools.jsonl",
+      "vault_id": "master-ai",
+      "group": "25 - Frameworks and Tools",
+      "file_count": 17,
+      "files": [
+        "25 - Frameworks and Tools/Agent Frameworks/01 - Framework Selection Guide.md",
+        "25 - Frameworks and Tools/Agent Frameworks/03 - LangGraph.md",
+        "25 - Frameworks and Tools/Agent Frameworks/09 - AutoGen.md",
+        "25 - Frameworks and Tools/Agent Frameworks/10 - CrewAI.md",
+        "25 - Frameworks and Tools/Agent Frameworks/11 - PydanticAI.md",
+        "25 - Frameworks and Tools/Agent Frameworks/15 - Semantic Kernel.md",
+        "25 - Frameworks and Tools/LLM Frameworks/02 - LangChain.md",
+        "25 - Frameworks and Tools/LLM Frameworks/04 - DSPy.md",
+        "25 - Frameworks and Tools/LLM Frameworks/05 - LlamaIndex.md",
+        "25 - Frameworks and Tools/LLM Frameworks/06 - OpenAI SDK and Agents SDK.md",
+        "25 - Frameworks and Tools/LLM Frameworks/16 - Haystack.md",
+        "25 - Frameworks and Tools/MOC.md",
+        "25 - Frameworks and Tools/Serving/07 - vLLM.md",
+        "25 - Frameworks and Tools/Serving/08 - Ollama and llama.cpp.md",
+        "25 - Frameworks and Tools/Serving/12 - TGI.md",
+        "25 - Frameworks and Tools/Serving/13 - TensorRT-LLM.md",
+        "25 - Frameworks and Tools/Serving/14 - SGLang.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 58,
+      "batch_file": "state/knowledge-units/058-regen001-master-ai-26-papers-2024-2026.jsonl",
+      "vault_id": "master-ai",
+      "group": "26 - Papers/2024-2026",
+      "file_count": 12,
+      "files": [
+        "26 - Papers/2024-2026/11 - Mamba 2023.md",
+        "26 - Papers/2024-2026/12 - DeepSeek-R1 2025.md",
+        "26 - Papers/2024-2026/24 - GPT-4 Technical Report 2023.md",
+        "26 - Papers/2024-2026/28 - DeepSeek-V2 and V3 2024.md",
+        "26 - Papers/2024-2026/30 - Kimi Linear 2025.md",
+        "26 - Papers/2024-2026/41 - Jamba 2024.md",
+        "26 - Papers/2024-2026/42 - Scaling Laws (Kaplan and Chinchilla).md",
+        "26 - Papers/2024-2026/43 - MiniMax-01 2025.md",
+        "26 - Papers/2024-2026/44 - H3 2022.md",
+        "26 - Papers/2024-2026/45 - Mamba-2 2024.md",
+        "26 - Papers/2024-2026/46 - Titans 2024.md",
+        "26 - Papers/2024-2026/47 - Based 2024.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 59,
+      "batch_file": "state/knowledge-units/059-regen001-master-ai-26-papers-agents-and-rag.jsonl",
+      "vault_id": "master-ai",
+      "group": "26 - Papers/Agents and RAG",
+      "file_count": 6,
+      "files": [
+        "26 - Papers/Agents and RAG/32 - Reflexion 2023.md",
+        "26 - Papers/Agents and RAG/33 - Self-Refine 2023.md",
+        "26 - Papers/Agents and RAG/34 - Tree of Thoughts 2023.md",
+        "26 - Papers/Agents and RAG/35 - RAG 2020.md",
+        "26 - Papers/Agents and RAG/38 - Self-Consistency 2022.md",
+        "26 - Papers/Agents and RAG/39 - Graph of Thoughts 2023.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 60,
+      "batch_file": "state/knowledge-units/060-regen001-master-ai-26-papers-alignment.jsonl",
+      "vault_id": "master-ai",
+      "group": "26 - Papers/Alignment",
+      "file_count": 6,
+      "files": [
+        "26 - Papers/Alignment/06 - LoRA 2021.md",
+        "26 - Papers/Alignment/07 - InstructGPT 2022.md",
+        "26 - Papers/Alignment/09 - DPO 2023.md",
+        "26 - Papers/Alignment/31 - Constitutional AI 2022.md",
+        "26 - Papers/Alignment/50 - Process Reward Models 2023.md",
+        "26 - Papers/Alignment/53 - Verifiable Rewards vs PRMs.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 61,
+      "batch_file": "state/knowledge-units/061-regen001-master-ai-26-papers-attention-origins.jsonl",
+      "vault_id": "master-ai",
+      "group": "26 - Papers/Attention Origins",
+      "file_count": 2,
+      "files": [
+        "26 - Papers/Attention Origins/01 - Bahdanau Attention 2014.md",
+        "26 - Papers/Attention Origins/13 - Luong Attention 2015.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 62,
+      "batch_file": "state/knowledge-units/062-regen001-master-ai-26-papers-efficient-attention.jsonl",
+      "vault_id": "master-ai",
+      "group": "26 - Papers/Efficient Attention",
+      "file_count": 13,
+      "files": [
+        "26 - Papers/Efficient Attention/08 - FlashAttention 2022.md",
+        "26 - Papers/Efficient Attention/10 - PagedAttention vLLM 2023.md",
+        "26 - Papers/Efficient Attention/16 - Transformer-XL 2019.md",
+        "26 - Papers/Efficient Attention/17 - Reformer 2020.md",
+        "26 - Papers/Efficient Attention/18 - Longformer 2020.md",
+        "26 - Papers/Efficient Attention/19 - Linformer 2020.md",
+        "26 - Papers/Efficient Attention/20 - BigBird 2020.md",
+        "26 - Papers/Efficient Attention/22 - Performer 2021.md",
+        "26 - Papers/Efficient Attention/27 - FlashAttention-2 and FlashAttention-3.md",
+        "26 - Papers/Efficient Attention/29 - GQA 2024.md",
+        "26 - Papers/Efficient Attention/49 - Medusa and EAGLE 2024.md",
+        "26 - Papers/Efficient Attention/51 - EAGLE-3 2025.md",
+        "26 - Papers/Efficient Attention/52 - MTP Multi-Token Prediction.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 63,
+      "batch_file": "state/knowledge-units/063-regen001-master-ai-26-papers-llms.jsonl",
+      "vault_id": "master-ai",
+      "group": "26 - Papers/LLMs",
+      "file_count": 4,
+      "files": [
+        "26 - Papers/LLMs/04 - GPT-3 2020.md",
+        "26 - Papers/LLMs/15 - GPT-2 2019.md",
+        "26 - Papers/LLMs/25 - LLaMA 2023.md",
+        "26 - Papers/LLMs/26 - Mistral 7B 2023.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 64,
+      "batch_file": "state/knowledge-units/064-regen001-master-ai-26-papers-moc-md.jsonl",
+      "vault_id": "master-ai",
+      "group": "26 - Papers/MOC.md",
+      "file_count": 1,
+      "files": [
+        "26 - Papers/MOC.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 65,
+      "batch_file": "state/knowledge-units/065-regen001-master-ai-26-papers-multimodal.jsonl",
+      "vault_id": "master-ai",
+      "group": "26 - Papers/Multimodal",
+      "file_count": 5,
+      "files": [
+        "26 - Papers/Multimodal/36 - Perceiver 2022.md",
+        "26 - Papers/Multimodal/37 - Flamingo 2022.md",
+        "26 - Papers/Multimodal/40 - BLIP-2 2023.md",
+        "26 - Papers/Multimodal/48 - ColPali 2024.md",
+        "26 - Papers/Multimodal/55 - SigLIP-2 2025.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 66,
+      "batch_file": "state/knowledge-units/066-regen001-master-ai-26-papers-transformers.jsonl",
+      "vault_id": "master-ai",
+      "group": "26 - Papers/Transformers",
+      "file_count": 7,
+      "files": [
+        "26 - Papers/Transformers/02 - Vaswani Attention Is All You Need 2017.md",
+        "26 - Papers/Transformers/03 - BERT 2018.md",
+        "26 - Papers/Transformers/05 - T5 2019.md",
+        "26 - Papers/Transformers/14 - GPT-1 2018.md",
+        "26 - Papers/Transformers/21 - Vision Transformer ViT 2020.md",
+        "26 - Papers/Transformers/23 - Swin Transformer 2021.md",
+        "26 - Papers/Transformers/54 - DeiT v2 2024.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 67,
+      "batch_file": "state/knowledge-units/067-regen001-master-ai-27-projects.jsonl",
+      "vault_id": "master-ai",
+      "group": "27 - Projects",
+      "file_count": 25,
+      "files": [
+        "27 - Projects/Capstones/06 - Build a Multi-Agent System.md",
+        "27 - Projects/Capstones/07 - Build a Reasoning Model Fine-Tune.md",
+        "27 - Projects/Capstones/08 - Build an MCP Server.md",
+        "27 - Projects/Capstones/10 - Build a Vision-Language Model.md",
+        "27 - Projects/Capstones/11 - Build a Distributed Training Pipeline.md",
+        "27 - Projects/Capstones/12 - Build a Code Agent.md",
+        "27 - Projects/Capstones/13 - Build a RAG Evaluation Harness.md",
+        "27 - Projects/Capstones/14 - Build a Multimodal RAG Pipeline.md",
+        "27 - Projects/Capstones/15 - Build a Multimodal Agent.md",
+        "27 - Projects/Capstones/16 - Build a Speculative Decoding Server.md",
+        "27 - Projects/Capstones/17 - Build a Quantization Toolkit.md",
+        "27 - Projects/Capstones/18 - Build an MCP Marketplace.md",
+        "27 - Projects/Capstones/19 - Build a Fine-Tuning Pipeline with LoRA and DPO.md",
+        "27 - Projects/Capstones/20 - Build an RLHF Pipeline with PPO.md",
+        "27 - Projects/Capstones/21 - Build a Knowledge-Graph Construction Pipeline.md",
+        "27 - Projects/Capstones/22 - Build a Long-Context Evaluation Harness.md",
+        "27 - Projects/Capstones/23 - Build an Agent Observability Platform.md",
+        "27 - Projects/Capstones/24 - Build a Model Distillation Pipeline.md",
+        "27 - Projects/Implementations/01 - Build Attention and Transformer From Scratch.md",
+        "27 - Projects/Implementations/04 - Build a Mini MoE.md",
+        "27 - Projects/Implementations/05 - Build a Tiny LLM Trainer.md",
+        "27 - Projects/Implementations/09 - Build a Mini SSM.md",
+        "27 - Projects/MOC.md",
+        "27 - Projects/Mini-Projects/02 - Build a Mini RAG Pipeline.md",
+        "27 - Projects/Mini-Projects/03 - Build a Mini Agent.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 68,
+      "batch_file": "state/knowledge-units/068-regen001-master-ai-28-glossary.jsonl",
+      "vault_id": "master-ai",
+      "group": "28 - Glossary",
+      "file_count": 4,
+      "files": [
+        "28 - Glossary/03 - Notation Conventions.md",
+        "28 - Glossary/Acronyms/Acronyms Index.md",
+        "28 - Glossary/MOC.md",
+        "28 - Glossary/Terms/A-Z Terms.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 69,
+      "batch_file": "state/knowledge-units/069-regen001-master-ai-29-interview-prep.jsonl",
+      "vault_id": "master-ai",
+      "group": "29 - Interview Prep",
+      "file_count": 8,
+      "files": [
+        "29 - Interview Prep/Coding/03 - Coding Interview Questions.md",
+        "29 - Interview Prep/Coding/04 - Coding Interview Questions 2.md",
+        "29 - Interview Prep/Coding/05 - Coding Interview Questions 3.md",
+        "29 - Interview Prep/Conceptual/01 - Conceptual Interview Questions.md",
+        "29 - Interview Prep/Conceptual/06 - Conceptual Interview Questions 2.md",
+        "29 - Interview Prep/MOC.md",
+        "29 - Interview Prep/System Design/02 - System Design Interview Questions.md",
+        "29 - Interview Prep/System Design/05 - System Design Interview Questions 2.md"
+      ],
+      "unclosed_fence_finding": null
+    },
+    {
+      "batch_number": 70,
+      "batch_file": "state/knowledge-units/070-regen001-master-ai-root-files.jsonl",
+      "vault_id": "master-ai",
+      "group": "<root files>",
+      "file_count": 5,
+      "files": [
+        "Index.md",
+        "Learning Roadmap.md",
+        "MOC.md",
+        "README.md",
+        "Reading Order.md"
+      ],
+      "unclosed_fence_finding": null
+    }
+  ],
+  "total_files": 578
+}

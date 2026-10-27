@@ -1,0 +1,250 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "04 - Neural Networks (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/036-regen001-master-ai-04-neural-networks.jsonl.run1",
+    "records_written": 509,
+    "denominators": {
+      "files_in_scope": 7,
+      "files_extracted": 7,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "04 - Neural Networks/Architectures/03 - CNNs.md",
+        "outcome": "extracted",
+        "sha256": "3ae643458ce996e8c7a95f0742027ee12012c671e4696e8f371a402eef827482",
+        "manifest_match": true,
+        "units": 61,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 30,
+          "code_block": 3,
+          "list": 20,
+          "math_block": 3,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 205,
+          "frontmatter_lines": 7,
+          "heading_context": 30,
+          "excluded_blank": 72,
+          "excluded_horizontal_rule": 0,
+          "accounted": 307,
+          "lines_total": 307,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 72,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks/Architectures/04 - RNN LSTM GRU.md",
+        "outcome": "extracted",
+        "sha256": "95a159aff497f9f6b9dd1224c57b81f70c52b19609c0e7cd8a8c3130996ea1a8",
+        "manifest_match": true,
+        "units": 183,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 99,
+          "math_block": 55,
+          "code_block": 4,
+          "quote": 1,
+          "list": 18,
+          "table": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 461,
+          "frontmatter_lines": 7,
+          "heading_context": 41,
+          "excluded_blank": 205,
+          "excluded_horizontal_rule": 0,
+          "accounted": 707,
+          "lines_total": 707,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 205,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks/Architectures/05 - Seq2Seq and the Information Bottleneck.md",
+        "outcome": "extracted",
+        "sha256": "066dc80c7c4a64a24f8cc86d76cc980446cb3f520784b8d402df4f1fe93d5dff",
+        "manifest_match": true,
+        "units": 61,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 30,
+          "code_block": 5,
+          "math_block": 5,
+          "list": 18,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 208,
+          "frontmatter_lines": 7,
+          "heading_context": 22,
+          "excluded_blank": 78,
+          "excluded_horizontal_rule": 0,
+          "accounted": 308,
+          "lines_total": 308,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 78,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks/Foundations/01 - Perceptrons and MLPs.md",
+        "outcome": "extracted",
+        "sha256": "03a188aeb8904f2d449a2883ab09bef23eadb2a3667f602600b521f381eb3419",
+        "manifest_match": true,
+        "units": 84,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 45,
+          "math_block": 14,
+          "list": 18,
+          "code_block": 4,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 249,
+          "frontmatter_lines": 7,
+          "heading_context": 30,
+          "excluded_blank": 106,
+          "excluded_horizontal_rule": 0,
+          "accounted": 385,
+          "lines_total": 385,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 106,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks/Foundations/02 - Activation Functions.md",
+        "outcome": "extracted",
+        "sha256": "dec34964391314f75b213cdba898913a20061bfb12bb3b58f1b5950c4d86ac96",
+        "manifest_match": true,
+        "units": 54,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 16,
+          "math_block": 10,
+          "list": 21,
+          "code_block": 2,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 214,
+          "frontmatter_lines": 7,
+          "heading_context": 30,
+          "excluded_blank": 83,
+          "excluded_horizontal_rule": 0,
+          "accounted": 327,
+          "lines_total": 327,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 83,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks/MOC.md",
+        "outcome": "extracted",
+        "sha256": "4ff99d3f011861a36c39a8455c56caae78e0a80dc33ee13c34620e24354fdde1",
+        "manifest_match": true,
+        "units": 6,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "prose": 1,
+          "list": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 26,
+          "frontmatter_lines": 5,
+          "heading_context": 4,
+          "excluded_blank": 9,
+          "excluded_horizontal_rule": 0,
+          "accounted": 39,
+          "lines_total": 39,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 9,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "04 - Neural Networks/Training/06 - Backpropagation.md",
+        "outcome": "extracted",
+        "sha256": "d66d302576b7018761b0a34e2f122626a69fbf8e090fdb5558879b902d99d966",
+        "manifest_match": true,
+        "units": 60,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 27,
+          "math_block": 8,
+          "list": 18,
+          "code_block": 3,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 196,
+          "frontmatter_lines": 7,
+          "heading_context": 30,
+          "excluded_blank": 89,
+          "excluded_horizontal_rule": 0,
+          "accounted": 315,
+          "lines_total": 315,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 89,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

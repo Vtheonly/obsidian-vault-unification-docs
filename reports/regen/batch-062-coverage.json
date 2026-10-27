@@ -1,0 +1,431 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "26 - Papers/Efficient Attention (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-qm8g30ip/062-regen001-master-ai-26-papers-efficient-attention.jsonl.run1",
+    "records_written": 490,
+    "denominators": {
+      "files_in_scope": 13,
+      "files_extracted": 13,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "26 - Papers/Efficient Attention/08 - FlashAttention 2022.md",
+        "outcome": "extracted",
+        "sha256": "fbddca213966135a1e136d77ba29a9480917d3c5ca56ef92dd1b77d3465863a5",
+        "manifest_match": true,
+        "units": 39,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 25,
+          "code_block": 4,
+          "table": 1,
+          "list": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 122,
+          "frontmatter_lines": 6,
+          "heading_context": 22,
+          "excluded_blank": 47,
+          "excluded_horizontal_rule": 0,
+          "accounted": 191,
+          "lines_total": 191,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 47,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Efficient Attention/10 - PagedAttention vLLM 2023.md",
+        "outcome": "extracted",
+        "sha256": "ac2960b2d9e41f2d968ab7006ffd519d6aa2f1d471cc5a5bb55aca896484cf47",
+        "manifest_match": true,
+        "units": 39,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 26,
+          "list": 8,
+          "code_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 98,
+          "frontmatter_lines": 6,
+          "heading_context": 23,
+          "excluded_blank": 48,
+          "excluded_horizontal_rule": 0,
+          "accounted": 169,
+          "lines_total": 169,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 48,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Efficient Attention/16 - Transformer-XL 2019.md",
+        "outcome": "extracted",
+        "sha256": "dc31d3aa2cb4d2ca703d4c092db0a0f0f824bdd8f47cc51d26e9eafee3759285",
+        "manifest_match": true,
+        "units": 36,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 20,
+          "list": 10,
+          "code_block": 3,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 91,
+          "frontmatter_lines": 6,
+          "heading_context": 15,
+          "excluded_blank": 45,
+          "excluded_horizontal_rule": 0,
+          "accounted": 151,
+          "lines_total": 151,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 45,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Efficient Attention/17 - Reformer 2020.md",
+        "outcome": "extracted",
+        "sha256": "b426d5142622500d0ac5c0543eed8f7bec55803e72481217404c13b3dacdd062",
+        "manifest_match": true,
+        "units": 38,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 23,
+          "list": 10,
+          "code_block": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 80,
+          "frontmatter_lines": 6,
+          "heading_context": 15,
+          "excluded_blank": 44,
+          "excluded_horizontal_rule": 0,
+          "accounted": 139,
+          "lines_total": 139,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 44,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Efficient Attention/18 - Longformer 2020.md",
+        "outcome": "extracted",
+        "sha256": "0e6b1d2eab0feef2691d6277ea39c1440dd31dc5b63b6f7b6e07aff93dd69696",
+        "manifest_match": true,
+        "units": 35,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 24,
+          "list": 7,
+          "code_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 68,
+          "frontmatter_lines": 6,
+          "heading_context": 21,
+          "excluded_blank": 43,
+          "excluded_horizontal_rule": 0,
+          "accounted": 132,
+          "lines_total": 132,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 43,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Efficient Attention/19 - Linformer 2020.md",
+        "outcome": "extracted",
+        "sha256": "50b691bffec790ef47223e136791b48c6ea680833713c49888e2b4859dd3a25b",
+        "manifest_match": true,
+        "units": 36,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 24,
+          "code_block": 3,
+          "table": 1,
+          "list": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 85,
+          "frontmatter_lines": 6,
+          "heading_context": 22,
+          "excluded_blank": 44,
+          "excluded_horizontal_rule": 0,
+          "accounted": 151,
+          "lines_total": 151,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 44,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Efficient Attention/20 - BigBird 2020.md",
+        "outcome": "extracted",
+        "sha256": "7f95af65e399acf86d6fb5dade9485872dbb33358fc401ed98ca36f5a531c68f",
+        "manifest_match": true,
+        "units": 38,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 24,
+          "list": 10,
+          "code_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 72,
+          "frontmatter_lines": 6,
+          "heading_context": 22,
+          "excluded_blank": 47,
+          "excluded_horizontal_rule": 0,
+          "accounted": 141,
+          "lines_total": 141,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 47,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Efficient Attention/22 - Performer 2021.md",
+        "outcome": "extracted",
+        "sha256": "dee515f988f1232ac364f03cdebc85488e5f26076b845bf03c4c2dda3b8b4979",
+        "manifest_match": true,
+        "units": 38,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 25,
+          "code_block": 3,
+          "list": 7,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 81,
+          "frontmatter_lines": 6,
+          "heading_context": 22,
+          "excluded_blank": 47,
+          "excluded_horizontal_rule": 0,
+          "accounted": 150,
+          "lines_total": 150,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 47,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Efficient Attention/27 - FlashAttention-2 and FlashAttention-3.md",
+        "outcome": "extracted",
+        "sha256": "7e5a9f9594fd46b18366f5b9ca67edbcf952b9a3684f0cb46b909610b8b7a5f2",
+        "manifest_match": true,
+        "units": 42,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 11,
+          "prose": 27,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 74,
+          "frontmatter_lines": 6,
+          "heading_context": 31,
+          "excluded_blank": 52,
+          "excluded_horizontal_rule": 0,
+          "accounted": 157,
+          "lines_total": 157,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 52,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Efficient Attention/29 - GQA 2024.md",
+        "outcome": "extracted",
+        "sha256": "c30040aac362c6d6c8b9bb66da3d2163685e7c366c6912396a9a9cb627ba64cf",
+        "manifest_match": true,
+        "units": 42,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 25,
+          "list": 11,
+          "code_block": 2,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 98,
+          "frontmatter_lines": 6,
+          "heading_context": 21,
+          "excluded_blank": 51,
+          "excluded_horizontal_rule": 0,
+          "accounted": 170,
+          "lines_total": 170,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 51,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Efficient Attention/49 - Medusa and EAGLE 2024.md",
+        "outcome": "extracted",
+        "sha256": "917a625c44027790890ddc95a2cec0870cf6f49d1740ebbf4f03c08ea6d1845e",
+        "manifest_match": true,
+        "units": 34,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 18,
+          "list": 13,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 90,
+          "frontmatter_lines": 7,
+          "heading_context": 26,
+          "excluded_blank": 43,
+          "excluded_horizontal_rule": 0,
+          "accounted": 159,
+          "lines_total": 159,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 43,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Efficient Attention/51 - EAGLE-3 2025.md",
+        "outcome": "extracted",
+        "sha256": "743a699601701be0a13090f2f29ac2a692ddfe655bd0ee6675eaf96d61b5dc1f",
+        "manifest_match": true,
+        "units": 35,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 16,
+          "list": 15,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 91,
+          "frontmatter_lines": 7,
+          "heading_context": 22,
+          "excluded_blank": 55,
+          "excluded_horizontal_rule": 0,
+          "accounted": 168,
+          "lines_total": 168,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 55,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Efficient Attention/52 - MTP Multi-Token Prediction.md",
+        "outcome": "extracted",
+        "sha256": "210d3ece0bdaf82e308d81c60faf3f11c643aa0518c96be72c7061160a18e36d",
+        "manifest_match": true,
+        "units": 38,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 16,
+          "list": 19,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 86,
+          "frontmatter_lines": 7,
+          "heading_context": 23,
+          "excluded_blank": 56,
+          "excluded_horizontal_rule": 0,
+          "accounted": 165,
+          "lines_total": 165,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 56,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

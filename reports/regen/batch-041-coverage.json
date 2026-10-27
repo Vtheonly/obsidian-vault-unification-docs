@@ -1,0 +1,240 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "09 - Foundation Models (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/041-regen001-master-ai-09-foundation-models.jsonl.run1",
+    "records_written": 286,
+    "denominators": {
+      "files_in_scope": 7,
+      "files_extracted": 7,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "09 - Foundation Models/Code Models/04 - Code Models.md",
+        "outcome": "extracted",
+        "sha256": "52f3c4de0fc3095fa5780c820a62f68dfbcabe9c8f49cf1b5195878841a86ae4",
+        "manifest_match": true,
+        "units": 34,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 23,
+          "list": 9
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 72,
+          "frontmatter_lines": 6,
+          "heading_context": 23,
+          "excluded_blank": 56,
+          "excluded_horizontal_rule": 0,
+          "accounted": 151,
+          "lines_total": 151,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 56,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Foundation Models/Embedding Models/02 - Embedding Models for Retrieval.md",
+        "outcome": "extracted",
+        "sha256": "190bff8a0f677372b87516dbb386b2ca9c65a476fc36cdfe370ca1d43a6873ac",
+        "manifest_match": true,
+        "units": 37,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 12,
+          "list": 19,
+          "code_block": 2,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 169,
+          "frontmatter_lines": 7,
+          "heading_context": 29,
+          "excluded_blank": 48,
+          "excluded_horizontal_rule": 0,
+          "accounted": 246,
+          "lines_total": 246,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 48,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Foundation Models/Embedding Models/06 - Embedding Model Training.md",
+        "outcome": "extracted",
+        "sha256": "4680da05cb567a419a5bfd2ca1855bef5ba50087409dbe687a06d42dd677e422",
+        "manifest_match": true,
+        "units": 57,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 43,
+          "list": 11,
+          "math_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 98,
+          "frontmatter_lines": 6,
+          "heading_context": 28,
+          "excluded_blank": 84,
+          "excluded_horizontal_rule": 0,
+          "accounted": 210,
+          "lines_total": 210,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 84,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Foundation Models/MOC.md",
+        "outcome": "extracted",
+        "sha256": "122e70a0bc6c4abd656eaa30e87c7c998fa34672913c0f42b0d3859c9b5cbb68",
+        "manifest_match": true,
+        "units": 10,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 5,
+          "prose": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 39,
+          "frontmatter_lines": 5,
+          "heading_context": 7,
+          "excluded_blank": 16,
+          "excluded_horizontal_rule": 0,
+          "accounted": 62,
+          "lines_total": 62,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 16,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Foundation Models/Multimodal/05 - Multimodal Foundation Models.md",
+        "outcome": "extracted",
+        "sha256": "d4cd192953a08e6bec0f1c41b7545fa4c1551a5c84903279a387c37493e295a5",
+        "manifest_match": true,
+        "units": 38,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 23,
+          "list": 13
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 93,
+          "frontmatter_lines": 6,
+          "heading_context": 28,
+          "excluded_blank": 65,
+          "excluded_horizontal_rule": 0,
+          "accounted": 186,
+          "lines_total": 186,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 65,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Foundation Models/Reasoning Models/03 - Reasoning Models.md",
+        "outcome": "extracted",
+        "sha256": "6b5aa1b3f74dcaedfdaa26437928cb5bc1f39714c150010bfa04c385a8465637",
+        "manifest_match": true,
+        "units": 62,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 32,
+          "list": 24,
+          "code_block": 2,
+          "math_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 158,
+          "frontmatter_lines": 7,
+          "heading_context": 30,
+          "excluded_blank": 81,
+          "excluded_horizontal_rule": 0,
+          "accounted": 269,
+          "lines_total": 269,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 81,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "09 - Foundation Models/Vision/01 - Vision Foundation Models.md",
+        "outcome": "extracted",
+        "sha256": "a67b2cc92e8d2901095e1129cf6b0c1e709ff708ccb2e506f5eb501cc28cf65a",
+        "manifest_match": true,
+        "units": 48,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 23,
+          "list": 17,
+          "code_block": 4,
+          "table": 1,
+          "math_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 174,
+          "frontmatter_lines": 7,
+          "heading_context": 22,
+          "excluded_blank": 56,
+          "excluded_horizontal_rule": 0,
+          "accounted": 252,
+          "lines_total": 252,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 56,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

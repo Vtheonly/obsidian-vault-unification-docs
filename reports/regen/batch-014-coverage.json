@@ -1,0 +1,402 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "03 - Machine Learning (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/014-regen001-ai-course-03-machine-learning.jsonl.run1",
+    "records_written": 642,
+    "denominators": {
+      "files_in_scope": 12,
+      "files_extracted": 12,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "03 - Machine Learning/03.2 - Optimization Algorithms/01. Gradient Descent Optimization (DL Course).md",
+        "outcome": "extracted",
+        "sha256": "8bf44ac8c1e58f5fdd5dbcafbb2988daecd54bd1fd56b9fe49499c21c286eaca",
+        "manifest_match": true,
+        "units": 69,
+        "units_by_type": {
+          "prose": 40,
+          "list": 17,
+          "math_block": 3,
+          "callout": 4,
+          "code_block": 4,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 168,
+          "frontmatter_lines": 0,
+          "heading_context": 25,
+          "excluded_blank": 87,
+          "excluded_horizontal_rule": 1,
+          "accounted": 281,
+          "lines_total": 281,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 87,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.2 - Optimization Algorithms/02. Loss Functions and Cost Optimization.md",
+        "outcome": "extracted",
+        "sha256": "7d8c85de1beea7550c6aca13e9fc3d72eecbaeb18f9f382b8fe671c4a86117cf",
+        "manifest_match": true,
+        "units": 55,
+        "units_by_type": {
+          "prose": 33,
+          "math_block": 10,
+          "list": 10,
+          "callout": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 79,
+          "frontmatter_lines": 0,
+          "heading_context": 18,
+          "excluded_blank": 68,
+          "excluded_horizontal_rule": 1,
+          "accounted": 166,
+          "lines_total": 166,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 68,
+          "horizontal_rule": 1
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.2 - Optimization Algorithms/06. Loss Functions and Error Calculation.md",
+        "outcome": "extracted",
+        "sha256": "68f932776c03c520fb1bb1be47373a1d73aca3d191fc9ea5053b1ec870c3048b",
+        "manifest_match": true,
+        "units": 55,
+        "units_by_type": {
+          "prose": 28,
+          "list": 8,
+          "math_block": 8,
+          "quote": 1,
+          "callout": 5,
+          "code_block": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 140,
+          "frontmatter_lines": 0,
+          "heading_context": 21,
+          "excluded_blank": 78,
+          "excluded_horizontal_rule": 8,
+          "accounted": 247,
+          "lines_total": 247,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 78,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.2 - Optimization Algorithms/07. Gradient Descent - The Update Rule and Convergence.md",
+        "outcome": "extracted",
+        "sha256": "8449251bdc470928a531a07b7711aa89c515d35c654dd99d8df7df7ac4391b93",
+        "manifest_match": true,
+        "units": 68,
+        "units_by_type": {
+          "prose": 34,
+          "math_block": 12,
+          "list": 11,
+          "callout": 6,
+          "code_block": 3,
+          "quote": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 134,
+          "frontmatter_lines": 0,
+          "heading_context": 15,
+          "excluded_blank": 80,
+          "excluded_horizontal_rule": 5,
+          "accounted": 234,
+          "lines_total": 234,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 80,
+          "horizontal_rule": 5
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.2 - Optimization Algorithms/08. Loss Functions and Optimizers Deep Dive.md",
+        "outcome": "extracted",
+        "sha256": "e4e240b7eee7cc85845a621b1b55fa2a41b0c89e5d8b06307d91fbe51a48e951",
+        "manifest_match": true,
+        "units": 112,
+        "units_by_type": {
+          "prose": 52,
+          "callout": 8,
+          "list": 16,
+          "math_block": 22,
+          "code_block": 9,
+          "table": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 434,
+          "frontmatter_lines": 0,
+          "heading_context": 28,
+          "excluded_blank": 142,
+          "excluded_horizontal_rule": 8,
+          "accounted": 612,
+          "lines_total": 612,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 142,
+          "horizontal_rule": 8
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.3 - K-Nearest Neighbors (KNN)/01. K-Nearest Neighbors (KNN) - Comprehensive.md",
+        "outcome": "extracted",
+        "sha256": "89c7d137cf4b875fe3cccc9919a9ae1b05ae72b04691546b1d98b3c592552b5b",
+        "manifest_match": true,
+        "units": 163,
+        "units_by_type": {
+          "prose": 74,
+          "list": 48,
+          "callout": 10,
+          "code_block": 7,
+          "table": 5,
+          "math_block": 17,
+          "quote": 1,
+          "empty_section": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 605,
+          "frontmatter_lines": 0,
+          "heading_context": 70,
+          "excluded_blank": 182,
+          "excluded_horizontal_rule": 26,
+          "accounted": 883,
+          "lines_total": 883,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 182,
+          "horizontal_rule": 26
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/01. SVM - Course Overview.md",
+        "outcome": "extracted",
+        "sha256": "9f95f03ba881baa2f3c90fad0613196284266656a26f1698087476739437d1b0",
+        "manifest_match": true,
+        "units": 23,
+        "units_by_type": {
+          "quote": 2,
+          "prose": 9,
+          "list": 5,
+          "code_block": 4,
+          "callout": 2,
+          "math_block": 1
+        },
+        "warnings": [
+          "unclosed code fence starting at line 179"
+        ],
+        "unclosed_spans": [
+          [
+            "code_block",
+            179,
+            179
+          ]
+        ],
+        "line_accounting": {
+          "unit_lines": 139,
+          "frontmatter_lines": 0,
+          "heading_context": 9,
+          "excluded_blank": 25,
+          "excluded_horizontal_rule": 6,
+          "accounted": 179,
+          "lines_total": 179,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 25,
+          "horizontal_rule": 6
+        },
+        "finding_ids": [
+          "F-0002"
+        ]
+      },
+      {
+        "relpath": "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/02. Introduction and The Widest Street.md",
+        "outcome": "extracted",
+        "sha256": "eb45a4ef5b4bd246e861957dbbd5480b1c914075663de4ab4b34de333fe6b74a",
+        "manifest_match": true,
+        "units": 16,
+        "units_by_type": {
+          "prose": 9,
+          "table": 1,
+          "list": 4,
+          "code_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 49,
+          "frontmatter_lines": 0,
+          "heading_context": 7,
+          "excluded_blank": 13,
+          "excluded_horizontal_rule": 0,
+          "accounted": 69,
+          "lines_total": 69,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 13,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/03. The Mathematics of Separation.md",
+        "outcome": "extracted",
+        "sha256": "0fd065c636073a737f34ac4507ef38003b7dff50c15cec21d338cfa7859c26d3",
+        "manifest_match": true,
+        "units": 31,
+        "units_by_type": {
+          "prose": 16,
+          "math_block": 8,
+          "list": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 39,
+          "frontmatter_lines": 0,
+          "heading_context": 5,
+          "excluded_blank": 23,
+          "excluded_horizontal_rule": 2,
+          "accounted": 69,
+          "lines_total": 69,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 23,
+          "horizontal_rule": 2
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/04. The Lagrangian Optimization.md",
+        "outcome": "extracted",
+        "sha256": "4bfb6837a5b1aaef882026415a46cac960881ea8f9804659427de265410c3715",
+        "manifest_match": true,
+        "units": 19,
+        "units_by_type": {
+          "prose": 9,
+          "list": 3,
+          "math_block": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 22,
+          "frontmatter_lines": 0,
+          "heading_context": 6,
+          "excluded_blank": 17,
+          "excluded_horizontal_rule": 2,
+          "accounted": 47,
+          "lines_total": 47,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 17,
+          "horizontal_rule": 2
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/05. The Dual Representation and Dot Products.md",
+        "outcome": "extracted",
+        "sha256": "fff01d11c3e0a98d9fb2ecf82c97f3283442319554e99a0687bdb894f98947bc",
+        "manifest_match": true,
+        "units": 12,
+        "units_by_type": {
+          "prose": 6,
+          "math_block": 4,
+          "list": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 15,
+          "frontmatter_lines": 0,
+          "heading_context": 2,
+          "excluded_blank": 8,
+          "excluded_horizontal_rule": 0,
+          "accounted": 25,
+          "lines_total": 25,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 8,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/06. The Kernel Trick.md",
+        "outcome": "extracted",
+        "sha256": "1c63f3eb26fe58760110ec7b9367b281f240e18a4bde4a1639b319925b527ac1",
+        "manifest_match": true,
+        "units": 19,
+        "units_by_type": {
+          "prose": 10,
+          "list": 5,
+          "code_block": 1,
+          "math_block": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 29,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 16,
+          "excluded_horizontal_rule": 0,
+          "accounted": 53,
+          "lines_total": 53,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 16,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

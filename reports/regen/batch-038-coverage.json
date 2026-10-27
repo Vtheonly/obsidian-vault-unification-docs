@@ -1,0 +1,542 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "06 - Attention Mechanisms (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/038-regen001-master-ai-06-attention-mechanisms.jsonl.run1",
+    "records_written": 842,
+    "denominators": {
+      "files_in_scope": 16,
+      "files_extracted": 16,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "06 - Attention Mechanisms/Efficient Attention/11 - FlashAttention.md",
+        "outcome": "extracted",
+        "sha256": "eeaf18eda28f543d1c2a44029348a7a3ce035e6b88e031f2473a88a58f7d4b84",
+        "manifest_match": true,
+        "units": 53,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 22,
+          "math_block": 3,
+          "list": 19,
+          "code_block": 5,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 192,
+          "frontmatter_lines": 7,
+          "heading_context": 25,
+          "excluded_blank": 72,
+          "excluded_horizontal_rule": 0,
+          "accounted": 289,
+          "lines_total": 289,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 72,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/Efficient Attention/12 - Sparse Attention.md",
+        "outcome": "extracted",
+        "sha256": "c082ece26b59af6d4f034d40554a43fa37f3ee1c1b0fed74c2d8fc8b71d4942b",
+        "manifest_match": true,
+        "units": 46,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 22,
+          "code_block": 3,
+          "list": 18,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 122,
+          "frontmatter_lines": 7,
+          "heading_context": 23,
+          "excluded_blank": 67,
+          "excluded_horizontal_rule": 0,
+          "accounted": 212,
+          "lines_total": 212,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 67,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/Efficient Attention/13 - Linear Attention.md",
+        "outcome": "extracted",
+        "sha256": "6fa92565d2d0a430398fedbf232d01bcec559fff8c0e29c3cd78d4657702eee1",
+        "manifest_match": true,
+        "units": 51,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 22,
+          "math_block": 8,
+          "list": 17,
+          "code_block": 1,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 124,
+          "frontmatter_lines": 7,
+          "heading_context": 26,
+          "excluded_blank": 71,
+          "excluded_horizontal_rule": 0,
+          "accounted": 221,
+          "lines_total": 221,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 71,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/MOC.md",
+        "outcome": "extracted",
+        "sha256": "46112db6d8ca2a8be33ed4a3bdeaa065d977b21aee8d569aa432e902729388e2",
+        "manifest_match": true,
+        "units": 6,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 2,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 52,
+          "frontmatter_lines": 5,
+          "heading_context": 5,
+          "excluded_blank": 10,
+          "excluded_horizontal_rule": 0,
+          "accounted": 67,
+          "lines_total": 67,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 10,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/Modern Attention/14 - GQA MQA MLA.md",
+        "outcome": "extracted",
+        "sha256": "90faf455feb692a955362932355e8e401ee28c74032a30d75aff152097add2ff",
+        "manifest_match": true,
+        "units": 56,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 23,
+          "math_block": 8,
+          "list": 18,
+          "table": 4,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 174,
+          "frontmatter_lines": 7,
+          "heading_context": 22,
+          "excluded_blank": 70,
+          "excluded_horizontal_rule": 0,
+          "accounted": 266,
+          "lines_total": 266,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 70,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/Modern Attention/15 - Sliding Window Attention.md",
+        "outcome": "extracted",
+        "sha256": "2c1ee57071923ab9f115fa894d63409481ab5cd6fcc54cf93c6b4f951d8250d3",
+        "manifest_match": true,
+        "units": 50,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 22,
+          "code_block": 5,
+          "list": 19,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 198,
+          "frontmatter_lines": 7,
+          "heading_context": 29,
+          "excluded_blank": 67,
+          "excluded_horizontal_rule": 0,
+          "accounted": 294,
+          "lines_total": 294,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 67,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/Multi-Head Attention/05 - Multi-Head Attention.md",
+        "outcome": "extracted",
+        "sha256": "e76fab76322a483152199dc8ccc56db75a00eca19a779b047217435b725dcea2",
+        "manifest_match": true,
+        "units": 50,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 20,
+          "math_block": 3,
+          "list": 20,
+          "code_block": 2,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 211,
+          "frontmatter_lines": 7,
+          "heading_context": 25,
+          "excluded_blank": 73,
+          "excluded_horizontal_rule": 0,
+          "accounted": 309,
+          "lines_total": 309,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 73,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/Origins/01 - Origins of Attention.md",
+        "outcome": "extracted",
+        "sha256": "1b984f14dae1e35ae55523f66c7bfaa5ad32cec82eeb865c9cf27df89e5b167a",
+        "manifest_match": true,
+        "units": 54,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 21,
+          "list": 23,
+          "math_block": 7,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 145,
+          "frontmatter_lines": 7,
+          "heading_context": 28,
+          "excluded_blank": 70,
+          "excluded_horizontal_rule": 0,
+          "accounted": 243,
+          "lines_total": 243,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 70,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/Origins/02 - Bahdanau Attention.md",
+        "outcome": "extracted",
+        "sha256": "2b2079630096ee3c231b261ab1ce43660c3a420a5ddc52c7ec453a45e6acded4",
+        "manifest_match": true,
+        "units": 54,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 25,
+          "list": 18,
+          "math_block": 6,
+          "code_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 190,
+          "frontmatter_lines": 7,
+          "heading_context": 26,
+          "excluded_blank": 76,
+          "excluded_horizontal_rule": 0,
+          "accounted": 292,
+          "lines_total": 292,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 76,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/Origins/03 - Luong Attention.md",
+        "outcome": "extracted",
+        "sha256": "3b52d2a69afd29fa4fcccea7381424b72222df59df8cd5cf59c276bd8a0fb8ef",
+        "manifest_match": true,
+        "units": 63,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 33,
+          "math_block": 7,
+          "list": 17,
+          "code_block": 2,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 209,
+          "frontmatter_lines": 7,
+          "heading_context": 29,
+          "excluded_blank": 79,
+          "excluded_horizontal_rule": 0,
+          "accounted": 317,
+          "lines_total": 317,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 79,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "outcome": "extracted",
+        "sha256": "e6d17f04dce333bbc56f1ad1a03d040f9578cd75397f7555c5bb15806d937c57",
+        "manifest_match": true,
+        "units": 61,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 32,
+          "math_block": 8,
+          "list": 16,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 154,
+          "frontmatter_lines": 7,
+          "heading_context": 27,
+          "excluded_blank": 87,
+          "excluded_horizontal_rule": 0,
+          "accounted": 268,
+          "lines_total": 268,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 87,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/Positional Information/07 - Sinusoidal and Learned Positional.md",
+        "outcome": "extracted",
+        "sha256": "8e94adca5ee9e3223212071d447e202b1eae83fde8bf6be28c2a66a44ad41288",
+        "manifest_match": true,
+        "units": 43,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 15,
+          "math_block": 5,
+          "list": 18,
+          "code_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 129,
+          "frontmatter_lines": 7,
+          "heading_context": 24,
+          "excluded_blank": 61,
+          "excluded_horizontal_rule": 0,
+          "accounted": 214,
+          "lines_total": 214,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 61,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "outcome": "extracted",
+        "sha256": "c6780420e4ebbef264acd464549fc93bbd9576b6142ee4fa6b091fefded3838c",
+        "manifest_match": true,
+        "units": 57,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 26,
+          "math_block": 5,
+          "code_block": 3,
+          "list": 18,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 201,
+          "frontmatter_lines": 7,
+          "heading_context": 23,
+          "excluded_blank": 77,
+          "excluded_horizontal_rule": 0,
+          "accounted": 301,
+          "lines_total": 301,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 77,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/Positional Information/09 - ALiBi.md",
+        "outcome": "extracted",
+        "sha256": "e84c7f38ba9e55c50550bf7f7af49efc1a600369ddca527f474b4faf9c7b524f",
+        "manifest_match": true,
+        "units": 46,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 20,
+          "math_block": 2,
+          "list": 18,
+          "code_block": 2,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 172,
+          "frontmatter_lines": 7,
+          "heading_context": 25,
+          "excluded_blank": 61,
+          "excluded_horizontal_rule": 0,
+          "accounted": 258,
+          "lines_total": 258,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 61,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/Positional Information/10 - YaRN and NTK-aware Scaling.md",
+        "outcome": "extracted",
+        "sha256": "a1e31a0a62c194c30caceb264d91b30033d1e0e27d004a4780a69d2543d9beac",
+        "manifest_match": true,
+        "units": 51,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 20,
+          "math_block": 3,
+          "list": 20,
+          "code_block": 3,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 169,
+          "frontmatter_lines": 7,
+          "heading_context": 23,
+          "excluded_blank": 69,
+          "excluded_horizontal_rule": 0,
+          "accounted": 261,
+          "lines_total": 261,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 69,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Attention Mechanisms/Self-Attention/04 - Self-Attention.md",
+        "outcome": "extracted",
+        "sha256": "36209a34fb7928fb88cf18fb25982555fd4190aa1a7c613ae48af43abeadf080",
+        "manifest_match": true,
+        "units": 101,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 58,
+          "math_block": 9,
+          "list": 23,
+          "table": 2,
+          "code_block": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 309,
+          "frontmatter_lines": 7,
+          "heading_context": 37,
+          "excluded_blank": 134,
+          "excluded_horizontal_rule": 0,
+          "accounted": 480,
+          "lines_total": 480,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 134,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

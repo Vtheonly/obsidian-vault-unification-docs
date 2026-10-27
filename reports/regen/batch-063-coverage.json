@@ -1,0 +1,145 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "26 - Papers/LLMs (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-qm8g30ip/063-regen001-master-ai-26-papers-llms.jsonl.run1",
+    "records_written": 155,
+    "denominators": {
+      "files_in_scope": 4,
+      "files_extracted": 4,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "26 - Papers/LLMs/04 - GPT-3 2020.md",
+        "outcome": "extracted",
+        "sha256": "784ed9e3a07bf20c0602e0b9c832ca52acd0f827a0427fe46ae93212ce077b17",
+        "manifest_match": true,
+        "units": 32,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 21,
+          "table": 2,
+          "list": 7
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 79,
+          "frontmatter_lines": 6,
+          "heading_context": 22,
+          "excluded_blank": 43,
+          "excluded_horizontal_rule": 0,
+          "accounted": 144,
+          "lines_total": 144,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 43,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/LLMs/15 - GPT-2 2019.md",
+        "outcome": "extracted",
+        "sha256": "b23fff3c00b59a92eea7d3e7ceed61b2f609ad94190fab1b95e9d04116895f93",
+        "manifest_match": true,
+        "units": 43,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 26,
+          "table": 2,
+          "list": 10,
+          "code_block": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 82,
+          "frontmatter_lines": 6,
+          "heading_context": 20,
+          "excluded_blank": 50,
+          "excluded_horizontal_rule": 0,
+          "accounted": 152,
+          "lines_total": 152,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 50,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/LLMs/25 - LLaMA 2023.md",
+        "outcome": "extracted",
+        "sha256": "83398363343e81d6cdb29820682dffe599f6b6ecfd0baeeb8f6243c5e80b4fcb",
+        "manifest_match": true,
+        "units": 40,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 23,
+          "table": 3,
+          "list": 12
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 92,
+          "frontmatter_lines": 6,
+          "heading_context": 25,
+          "excluded_blank": 51,
+          "excluded_horizontal_rule": 0,
+          "accounted": 168,
+          "lines_total": 168,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 51,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/LLMs/26 - Mistral 7B 2023.md",
+        "outcome": "extracted",
+        "sha256": "2c5389003ea15bd330f956eb8bf1d4531bab71751f0997decb4086764f4982eb",
+        "manifest_match": true,
+        "units": 40,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 23,
+          "table": 2,
+          "list": 13
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 83,
+          "frontmatter_lines": 6,
+          "heading_context": 29,
+          "excluded_blank": 50,
+          "excluded_horizontal_rule": 0,
+          "accounted": 162,
+          "lines_total": 162,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 50,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

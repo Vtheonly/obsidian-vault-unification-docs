@@ -1,0 +1,50 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "26 - Papers/MOC.md (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-qm8g30ip/064-regen001-master-ai-26-papers-moc-md.jsonl.run1",
+    "records_written": 25,
+    "denominators": {
+      "files_in_scope": 1,
+      "files_extracted": 1,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "26 - Papers/MOC.md",
+        "outcome": "extracted",
+        "sha256": "3c4e96cb5f82efa6debbcfc1fc1f10839aa2feda47e15d40c32de47c886705f0",
+        "manifest_match": true,
+        "units": 25,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 22
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 101,
+          "frontmatter_lines": 6,
+          "heading_context": 26,
+          "excluded_blank": 32,
+          "excluded_horizontal_rule": 0,
+          "accounted": 159,
+          "lines_total": 159,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 32,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

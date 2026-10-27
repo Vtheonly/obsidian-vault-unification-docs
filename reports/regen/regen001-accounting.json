@@ -1,0 +1,46 @@
+{
+  "command": "scripts/regen001_registry.py",
+  "task_id": "REGEN-001",
+  "step": "full-corpus accounting: every source file has exactly one outcome",
+  "denominators": {
+    "files": "every relpath in both baseline manifests (609)",
+    "units": "every record in every committed batch (001-070)"
+  },
+  "vaults": [
+    {
+      "vault_id": "ai-course",
+      "manifest_files": 276,
+      "files_with_units": 276,
+      "files_missing_units": [],
+      "files_not_in_manifest": [],
+      "files_covered_by_multiple_batches": {},
+      "kus_total": 12081,
+      "units_per_file_min": 1,
+      "units_per_file_max": 393,
+      "units_per_file_mean": 43.77,
+      "source_hash_mismatches": []
+    },
+    {
+      "vault_id": "master-ai",
+      "manifest_files": 333,
+      "files_with_units": 333,
+      "files_missing_units": [],
+      "files_not_in_manifest": [],
+      "files_covered_by_multiple_batches": {},
+      "kus_total": 15455,
+      "units_per_file_min": 5,
+      "units_per_file_max": 183,
+      "units_per_file_mean": 46.41,
+      "source_hash_mismatches": []
+    }
+  ],
+  "total_kus": 27536,
+  "global_unique_ku_ids": 27536,
+  "duplicate_ku_ids": [],
+  "duplicate_ku_ids_count": 0,
+  "ok": true,
+  "limitations": [
+    "accounting proves every file produced units and every unit is byte-faithful (see regen001-revalidation.json + per-batch fidelity reports); it is NOT proof of semantic completeness or correctness of segmentation",
+    "dispositions remain 'Unaccounted' by design; assignment is later work and Unaccounted blocks release"
+  ]
+}

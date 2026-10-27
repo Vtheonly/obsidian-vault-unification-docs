@@ -1,0 +1,269 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "21 - LLMOps and MLOps (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/053-regen001-master-ai-21-llmops-and-mlops.jsonl.run1",
+    "records_written": 343,
+    "denominators": {
+      "files_in_scope": 8,
+      "files_extracted": 8,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "21 - LLMOps and MLOps/Cost/06 - Cost Optimization.md",
+        "outcome": "extracted",
+        "sha256": "efa8126e2487604b537c1d851d3ed96d2644561411c054b9a688a45cabecb062",
+        "manifest_match": true,
+        "units": 46,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 30,
+          "list": 13,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 101,
+          "frontmatter_lines": 6,
+          "heading_context": 19,
+          "excluded_blank": 47,
+          "excluded_horizontal_rule": 0,
+          "accounted": 167,
+          "lines_total": 167,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 47,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "21 - LLMOps and MLOps/Deployment/07 - A-B Testing and Shadow Deployment.md",
+        "outcome": "extracted",
+        "sha256": "c51edbd5db9bd1b3254c8378936345ae7204eaa0252ed6d5b7468d9478e7b6e6",
+        "manifest_match": true,
+        "units": 49,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 33,
+          "code_block": 2,
+          "list": 12
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 106,
+          "frontmatter_lines": 6,
+          "heading_context": 31,
+          "excluded_blank": 49,
+          "excluded_horizontal_rule": 0,
+          "accounted": 186,
+          "lines_total": 186,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 49,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "21 - LLMOps and MLOps/Evaluation/04 - LLM-as-Judge Evaluation.md",
+        "outcome": "extracted",
+        "sha256": "106eb73552db800ea40746e6de8a087a39a2ac965611a8859017672617553d6f",
+        "manifest_match": true,
+        "units": 47,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 32,
+          "list": 7,
+          "code_block": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 138,
+          "frontmatter_lines": 6,
+          "heading_context": 26,
+          "excluded_blank": 52,
+          "excluded_horizontal_rule": 0,
+          "accounted": 216,
+          "lines_total": 216,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 52,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "21 - LLMOps and MLOps/MOC.md",
+        "outcome": "extracted",
+        "sha256": "cfd1128b4d343a82c4333798170077d8ab66528020c220dee909fd02ee0a352f",
+        "manifest_match": true,
+        "units": 9,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 2,
+          "list": 4,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 54,
+          "frontmatter_lines": 6,
+          "heading_context": 8,
+          "excluded_blank": 16,
+          "excluded_horizontal_rule": 0,
+          "accounted": 78,
+          "lines_total": 78,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 16,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "21 - LLMOps and MLOps/Monitoring/05 - Production Monitoring.md",
+        "outcome": "extracted",
+        "sha256": "cda7bd52cad6b8b13938c33293c387874de73a216d317dd94907e630923a7639",
+        "manifest_match": true,
+        "units": 53,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 17,
+          "prose": 33,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 120,
+          "frontmatter_lines": 6,
+          "heading_context": 33,
+          "excluded_blank": 53,
+          "excluded_horizontal_rule": 0,
+          "accounted": 206,
+          "lines_total": 206,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 53,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "21 - LLMOps and MLOps/Pipelines/01 - LLMOps vs MLOps.md",
+        "outcome": "extracted",
+        "sha256": "3abdacdde24c1b4d260ab082087c7fe5ed295d899b620a155adcad5ec643f279",
+        "manifest_match": true,
+        "units": 67,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 37,
+          "list": 22,
+          "table": 3,
+          "code_block": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 188,
+          "frontmatter_lines": 7,
+          "heading_context": 30,
+          "excluded_blank": 81,
+          "excluded_horizontal_rule": 0,
+          "accounted": 299,
+          "lines_total": 299,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 81,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "21 - LLMOps and MLOps/Pipelines/02 - Prompt Management.md",
+        "outcome": "extracted",
+        "sha256": "f79ed69a49fb004c84f9bc7706af8255a1ed6d505d226d4c6508136c41b4c7d1",
+        "manifest_match": true,
+        "units": 33,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 20,
+          "list": 9,
+          "code_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 98,
+          "frontmatter_lines": 6,
+          "heading_context": 21,
+          "excluded_blank": 37,
+          "excluded_horizontal_rule": 0,
+          "accounted": 156,
+          "lines_total": 156,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 37,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "21 - LLMOps and MLOps/Pipelines/03 - Model Registry and Versioning.md",
+        "outcome": "extracted",
+        "sha256": "a88e3d5e0558a34b50d730ee0f2615dce5c4a6f86989a66b8d4cc9dad865eae4",
+        "manifest_match": true,
+        "units": 39,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 23,
+          "list": 13,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 102,
+          "frontmatter_lines": 6,
+          "heading_context": 23,
+          "excluded_blank": 46,
+          "excluded_horizontal_rule": 0,
+          "accounted": 171,
+          "lines_total": 171,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 46,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

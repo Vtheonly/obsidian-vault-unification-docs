@@ -1,0 +1,584 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "10 - Model Architecture Research (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/042-regen001-master-ai-10-model-architecture-research.jsonl.run1",
+    "records_written": 594,
+    "denominators": {
+      "files_in_scope": 18,
+      "files_extracted": 18,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "10 - Model Architecture Research/2026 Frontier Model Synthesis.md",
+        "outcome": "extracted",
+        "sha256": "11a60e05b5262e860a934d8b8fecc2e8e6dfcc3b8e0dd96ab0e82780a9c9442c",
+        "manifest_match": true,
+        "units": 35,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 20,
+          "table": 2,
+          "list": 10,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 112,
+          "frontmatter_lines": 7,
+          "heading_context": 19,
+          "excluded_blank": 41,
+          "excluded_horizontal_rule": 0,
+          "accounted": 172,
+          "lines_total": 172,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 41,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Closed Source/07 - GPT-4 Inferred Architecture.md",
+        "outcome": "extracted",
+        "sha256": "04d4e2b351f9c668321e9e046fd15cd351c0feb86581677c1fe2e28b9486372b",
+        "manifest_match": true,
+        "units": 69,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 2,
+          "prose": 41,
+          "list": 23,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 142,
+          "frontmatter_lines": 7,
+          "heading_context": 33,
+          "excluded_blank": 73,
+          "excluded_horizontal_rule": 0,
+          "accounted": 248,
+          "lines_total": 248,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 73,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Closed Source/08 - Claude Architecture.md",
+        "outcome": "extracted",
+        "sha256": "85d12459e7865fb5ad1f0711f2166ffd76d8606fb0934e5399094c8024581629",
+        "manifest_match": true,
+        "units": 47,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 2,
+          "prose": 26,
+          "list": 17,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 99,
+          "frontmatter_lines": 6,
+          "heading_context": 29,
+          "excluded_blank": 46,
+          "excluded_horizontal_rule": 0,
+          "accounted": 174,
+          "lines_total": 174,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 46,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Closed Source/09 - Gemini Architecture.md",
+        "outcome": "extracted",
+        "sha256": "f1d36e93fb02dd2b60d95cf00cfdac308479c22b2b7a502819bb36beaa46accd",
+        "manifest_match": true,
+        "units": 39,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 2,
+          "prose": 27,
+          "list": 8,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 75,
+          "frontmatter_lines": 6,
+          "heading_context": 30,
+          "excluded_blank": 45,
+          "excluded_horizontal_rule": 0,
+          "accounted": 150,
+          "lines_total": 150,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 45,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Closed Source/10 - Fable 5 Architecture.md",
+        "outcome": "extracted",
+        "sha256": "8c51b6ace4939f85ad3e42b74a32869f7b0558c4620a8789c4f443e7e5987cc4",
+        "manifest_match": true,
+        "units": 19,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 2,
+          "prose": 9,
+          "list": 6,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 57,
+          "frontmatter_lines": 7,
+          "heading_context": 8,
+          "excluded_blank": 24,
+          "excluded_horizontal_rule": 0,
+          "accounted": 89,
+          "lines_total": 89,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 24,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Closed Source/11 - Kimi K3 Architecture.md",
+        "outcome": "extracted",
+        "sha256": "cbd1ea84d6db1661395ece312e2a7ce009b2ddf38f6c68f2863d596d649892dc",
+        "manifest_match": true,
+        "units": 21,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 3,
+          "table": 1,
+          "prose": 8,
+          "list": 8
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 55,
+          "frontmatter_lines": 7,
+          "heading_context": 13,
+          "excluded_blank": 28,
+          "excluded_horizontal_rule": 0,
+          "accounted": 96,
+          "lines_total": 96,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 28,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Closed Source/12 - Opus 5 Architecture.md",
+        "outcome": "extracted",
+        "sha256": "db23e9ffb6d8a5d6140ae38c9ba96816d577956fbf88f7e123c0d120d2845d03",
+        "manifest_match": true,
+        "units": 28,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 2,
+          "table": 1,
+          "prose": 15,
+          "list": 9
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 69,
+          "frontmatter_lines": 7,
+          "heading_context": 19,
+          "excluded_blank": 38,
+          "excluded_horizontal_rule": 0,
+          "accounted": 126,
+          "lines_total": 126,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 38,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Closed Source/13 - Mythos Architecture.md",
+        "outcome": "extracted",
+        "sha256": "01583cdfda14f0e6c1701e03e1edab733152d9ba0bd66af9dc889caacd895d20",
+        "manifest_match": true,
+        "units": 24,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 2,
+          "prose": 11,
+          "list": 10
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 60,
+          "frontmatter_lines": 7,
+          "heading_context": 12,
+          "excluded_blank": 30,
+          "excluded_horizontal_rule": 0,
+          "accounted": 102,
+          "lines_total": 102,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 30,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/MOC.md",
+        "outcome": "extracted",
+        "sha256": "152b6427ec598955d874a20aa17992b1aea88b109e7ad01a892a989277c80ddb",
+        "manifest_match": true,
+        "units": 12,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 5,
+          "prose": 3,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 72,
+          "frontmatter_lines": 6,
+          "heading_context": 8,
+          "excluded_blank": 17,
+          "excluded_horizontal_rule": 0,
+          "accounted": 97,
+          "lines_total": 97,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 17,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Open Source/01 - DeepSeek Architecture.md",
+        "outcome": "extracted",
+        "sha256": "748d8d9a5f3e99b52c1ea069179682565316b4c1df575e83e317253e909029b2",
+        "manifest_match": true,
+        "units": 32,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 15,
+          "math_block": 5,
+          "list": 8,
+          "table": 1,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 96,
+          "frontmatter_lines": 6,
+          "heading_context": 17,
+          "excluded_blank": 44,
+          "excluded_horizontal_rule": 0,
+          "accounted": 157,
+          "lines_total": 157,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 44,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Open Source/02 - Llama Mistral Qwen Comparison.md",
+        "outcome": "extracted",
+        "sha256": "6afc30e9ba0a033b050894d48783afc5b7ea4e47c83687a175f15acb34f4058b",
+        "manifest_match": true,
+        "units": 23,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 3,
+          "list": 16,
+          "table": 1,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 100,
+          "frontmatter_lines": 6,
+          "heading_context": 22,
+          "excluded_blank": 33,
+          "excluded_horizontal_rule": 0,
+          "accounted": 155,
+          "lines_total": 155,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 33,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Open Source/03 - Llama Family Architecture.md",
+        "outcome": "extracted",
+        "sha256": "700cfe1285e67cdf9623ee3d7715436fe60cb47193910c84801731ecee168e18",
+        "manifest_match": true,
+        "units": 37,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 3,
+          "prose": 14,
+          "list": 15,
+          "table": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 112,
+          "frontmatter_lines": 6,
+          "heading_context": 26,
+          "excluded_blank": 45,
+          "excluded_horizontal_rule": 0,
+          "accounted": 183,
+          "lines_total": 183,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 45,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Open Source/04 - Mistral and Mixtral Architecture.md",
+        "outcome": "extracted",
+        "sha256": "4f71b890c1d20d7ed6e84e113c57de4c331ccfe62d6740215abe2981a844e12d",
+        "manifest_match": true,
+        "units": 43,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 2,
+          "prose": 24,
+          "table": 6,
+          "code_block": 1,
+          "list": 9
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 114,
+          "frontmatter_lines": 6,
+          "heading_context": 34,
+          "excluded_blank": 55,
+          "excluded_horizontal_rule": 0,
+          "accounted": 203,
+          "lines_total": 203,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 55,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Open Source/05 - Qwen Family Architecture.md",
+        "outcome": "extracted",
+        "sha256": "a36f51cd822f5e02246df9260d61f2f7998ae2a24c4de21b3e224c595c45a60f",
+        "manifest_match": true,
+        "units": 37,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 3,
+          "table": 4,
+          "prose": 16,
+          "list": 13
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 97,
+          "frontmatter_lines": 6,
+          "heading_context": 29,
+          "excluded_blank": 49,
+          "excluded_horizontal_rule": 0,
+          "accounted": 175,
+          "lines_total": 175,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 49,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Open Source/06 - Gemma Architecture.md",
+        "outcome": "extracted",
+        "sha256": "9a71a487110add9af22f167125e69e025df58b85aae4e915b7e80f2c21e551b3",
+        "manifest_match": true,
+        "units": 49,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 3,
+          "table": 4,
+          "prose": 26,
+          "list": 14,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 113,
+          "frontmatter_lines": 6,
+          "heading_context": 33,
+          "excluded_blank": 56,
+          "excluded_horizontal_rule": 0,
+          "accounted": 202,
+          "lines_total": 202,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 56,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Open Source/07 - GLM 5.2 Architecture.md",
+        "outcome": "extracted",
+        "sha256": "4e3bf86e60eb1dfacde1f56b4245d0b8c069049c54dda40e45a7d6d89624680f",
+        "manifest_match": true,
+        "units": 27,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 3,
+          "table": 1,
+          "prose": 12,
+          "list": 10
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 66,
+          "frontmatter_lines": 7,
+          "heading_context": 19,
+          "excluded_blank": 35,
+          "excluded_horizontal_rule": 0,
+          "accounted": 120,
+          "lines_total": 120,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 35,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Open Source/08 - Qwen 3.8 Architecture.md",
+        "outcome": "extracted",
+        "sha256": "6177bb14ec7b54b03edcd684d6f1a9ff192d677f88549a645e415d3b45e5ad90",
+        "manifest_match": true,
+        "units": 26,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 3,
+          "table": 2,
+          "prose": 10,
+          "list": 10
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 73,
+          "frontmatter_lines": 7,
+          "heading_context": 21,
+          "excluded_blank": 36,
+          "excluded_horizontal_rule": 0,
+          "accounted": 130,
+          "lines_total": 130,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 36,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "10 - Model Architecture Research/Open Source/09 - MiniMax 3 Architecture.md",
+        "outcome": "extracted",
+        "sha256": "289e4d2a7858f8c59aff9d847af40cef031d0a80c0e4474ca49da8cf5ef96c52",
+        "manifest_match": true,
+        "units": 26,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 3,
+          "table": 2,
+          "prose": 9,
+          "list": 11
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 76,
+          "frontmatter_lines": 7,
+          "heading_context": 21,
+          "excluded_blank": 36,
+          "excluded_horizontal_rule": 0,
+          "accounted": 133,
+          "lines_total": 133,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 36,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "14 - Interpretability (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/046-regen001-master-ai-14-interpretability.jsonl.run1",
+    "records_written": 264,
+    "denominators": {
+      "files_in_scope": 6,
+      "files_extracted": 6,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "14 - Interpretability/MOC.md",
+        "outcome": "extracted",
+        "sha256": "c8f390a67fa5909fe0eded8cf64420935d13c2bfe9a6de75f9287043bd6b5d5c",
+        "manifest_match": true,
+        "units": 8,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 4,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 39,
+          "frontmatter_lines": 5,
+          "heading_context": 7,
+          "excluded_blank": 14,
+          "excluded_horizontal_rule": 0,
+          "accounted": 60,
+          "lines_total": 60,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 14,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "14 - Interpretability/Mechanistic/01 - Mechanistic Interpretability.md",
+        "outcome": "extracted",
+        "sha256": "e7195b72e739ed10e836c580ad81e617a7dafbcfa2d123e598e787d0dd5462cf",
+        "manifest_match": true,
+        "units": 73,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 41,
+          "list": 23,
+          "math_block": 5,
+          "code_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 169,
+          "frontmatter_lines": 7,
+          "heading_context": 28,
+          "excluded_blank": 88,
+          "excluded_horizontal_rule": 0,
+          "accounted": 285,
+          "lines_total": 285,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 88,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "14 - Interpretability/Mechanistic/02 - Logit Lens and Tuned Lens.md",
+        "outcome": "extracted",
+        "sha256": "7a887af6fee21fe6bbc27e7cef2f8df4219038dc38f6c2cb6e907900b501e30d",
+        "manifest_match": true,
+        "units": 44,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 32,
+          "list": 6,
+          "code_block": 2,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 89,
+          "frontmatter_lines": 6,
+          "heading_context": 25,
+          "excluded_blank": 48,
+          "excluded_horizontal_rule": 0,
+          "accounted": 162,
+          "lines_total": 162,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 48,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "14 - Interpretability/Mechanistic/04 - Activation Patching and Causal Tracing.md",
+        "outcome": "extracted",
+        "sha256": "704caff1eb24e3ece273948a48d320e5c1daccaca76d1ecef87e028f9721aab8",
+        "manifest_match": true,
+        "units": 40,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 30,
+          "list": 7,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 70,
+          "frontmatter_lines": 6,
+          "heading_context": 29,
+          "excluded_blank": 51,
+          "excluded_horizontal_rule": 0,
+          "accounted": 150,
+          "lines_total": 150,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 51,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "14 - Interpretability/Probing/05 - Probing.md",
+        "outcome": "extracted",
+        "sha256": "e15fbe330a3a2523e6920582a65a3f21b9c7662da1a6d27579991775ea439772",
+        "manifest_match": true,
+        "units": 57,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 33,
+          "list": 18,
+          "table": 3,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 159,
+          "frontmatter_lines": 7,
+          "heading_context": 29,
+          "excluded_blank": 69,
+          "excluded_horizontal_rule": 0,
+          "accounted": 257,
+          "lines_total": 257,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 69,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "14 - Interpretability/Sparse Autoencoders/03 - Sparse Autoencoders Deep Dive.md",
+        "outcome": "extracted",
+        "sha256": "85f9579da2700cc209156ff1240a9ec64fed5acb9003829fa88b22f7f7447c95",
+        "manifest_match": true,
+        "units": 42,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 25,
+          "code_block": 4,
+          "list": 11
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 98,
+          "frontmatter_lines": 6,
+          "heading_context": 27,
+          "excluded_blank": 48,
+          "excluded_horizontal_rule": 0,
+          "accounted": 173,
+          "lines_total": 173,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 48,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

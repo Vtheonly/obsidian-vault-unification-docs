@@ -1,0 +1,116 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "06 - Image Processing/06. Concepts (ML Perspective) (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/023-regen001-ai-course-06-image-processing-06-concepts-ml-perspective.jsonl.run1",
+    "records_written": 36,
+    "denominators": {
+      "files_in_scope": 3,
+      "files_extracted": 3,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "06 - Image Processing/06. Concepts (ML Perspective)/01. Convolution.md",
+        "outcome": "extracted",
+        "sha256": "f55b6f2ce8fb58d6ea43974a68d200b1c91beccd7981f3ccbfcd1cae38ed2e8e",
+        "manifest_match": true,
+        "units": 15,
+        "units_by_type": {
+          "prose": 11,
+          "list": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 31,
+          "frontmatter_lines": 0,
+          "heading_context": 8,
+          "excluded_blank": 21,
+          "excluded_horizontal_rule": 0,
+          "accounted": 60,
+          "lines_total": 60,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 21,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/06. Concepts (ML Perspective)/02. Gabor Filters.md",
+        "outcome": "extracted",
+        "sha256": "4f2d09ced9326c01f94c1504e5cd28f42fad8197e3928662d317dc768d8b146c",
+        "manifest_match": true,
+        "units": 10,
+        "units_by_type": {
+          "prose": 7,
+          "list": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 14,
+          "frontmatter_lines": 0,
+          "heading_context": 6,
+          "excluded_blank": 11,
+          "excluded_horizontal_rule": 0,
+          "accounted": 31,
+          "lines_total": 31,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 11,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "06 - Image Processing/06. Concepts (ML Perspective)/05. The Fourier Transform in Imaging.md",
+        "outcome": "extracted",
+        "sha256": "e49ca4a2762f21614486c7ac4e96fde03fb387d8161bbfc9c27f2135f6d60c38",
+        "manifest_match": true,
+        "units": 11,
+        "units_by_type": {
+          "prose": 5,
+          "list": 4,
+          "quote": 1,
+          "code_block": 1
+        },
+        "warnings": [
+          "unclosed code fence starting at line 42"
+        ],
+        "unclosed_spans": [
+          [
+            "code_block",
+            42,
+            61
+          ]
+        ],
+        "line_accounting": {
+          "unit_lines": 40,
+          "frontmatter_lines": 0,
+          "heading_context": 5,
+          "excluded_blank": 16,
+          "excluded_horizontal_rule": 0,
+          "accounted": 61,
+          "lines_total": 61,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 16,
+          "horizontal_rule": 0
+        },
+        "finding_ids": [
+          "F-0002"
+        ]
+      }
+    ]
+  }
+}

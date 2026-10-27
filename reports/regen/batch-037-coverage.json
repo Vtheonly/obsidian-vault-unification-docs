@@ -1,0 +1,378 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "05 - NLP Fundamentals (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/037-regen001-master-ai-05-nlp-fundamentals.jsonl.run1",
+    "records_written": 551,
+    "denominators": {
+      "files_in_scope": 11,
+      "files_extracted": 11,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "05 - NLP Fundamentals/Embeddings/05 - Word2Vec GloVe FastText.md",
+        "outcome": "extracted",
+        "sha256": "b116a869bd3daaa038eb49fe0bdfdbf4bd2a006eb93496a3e9fa3cb2d98c1f31",
+        "manifest_match": true,
+        "units": 63,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 29,
+          "list": 21,
+          "math_block": 6,
+          "table": 3,
+          "code_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 214,
+          "frontmatter_lines": 7,
+          "heading_context": 28,
+          "excluded_blank": 88,
+          "excluded_horizontal_rule": 0,
+          "accounted": 330,
+          "lines_total": 330,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 88,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - NLP Fundamentals/Embeddings/06 - Contextual Embeddings ELMo to BERT.md",
+        "outcome": "extracted",
+        "sha256": "91a02e2edeeb31335cfb31400a3b3c54fec639a6d4ecb7e89cb5f7e09d60e2fe",
+        "manifest_match": true,
+        "units": 53,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 19,
+          "list": 24,
+          "math_block": 1,
+          "code_block": 3,
+          "table": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 193,
+          "frontmatter_lines": 7,
+          "heading_context": 35,
+          "excluded_blank": 71,
+          "excluded_horizontal_rule": 0,
+          "accounted": 299,
+          "lines_total": 299,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 71,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - NLP Fundamentals/Language Modeling/07 - N-gram Language Models.md",
+        "outcome": "extracted",
+        "sha256": "2e40477b842d4c91b8cb44e45cd3be48509a6d0947991781fc89b77de992729d",
+        "manifest_match": true,
+        "units": 52,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 23,
+          "math_block": 7,
+          "code_block": 3,
+          "list": 16,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 203,
+          "frontmatter_lines": 7,
+          "heading_context": 32,
+          "excluded_blank": 77,
+          "excluded_horizontal_rule": 0,
+          "accounted": 312,
+          "lines_total": 312,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 77,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - NLP Fundamentals/Language Modeling/08 - Perplexity.md",
+        "outcome": "extracted",
+        "sha256": "dbe3a0dade4bbd8684bb735688fcb72525244624e3f261481840d5e02bcec2ef",
+        "manifest_match": true,
+        "units": 55,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 24,
+          "math_block": 6,
+          "list": 20,
+          "code_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 170,
+          "frontmatter_lines": 7,
+          "heading_context": 33,
+          "excluded_blank": 71,
+          "excluded_horizontal_rule": 0,
+          "accounted": 274,
+          "lines_total": 274,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 71,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - NLP Fundamentals/MOC.md",
+        "outcome": "extracted",
+        "sha256": "c1124a7926967ef839b36c7899747859de0821038eb9d2706ad4290be469b452",
+        "manifest_match": true,
+        "units": 6,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 2,
+          "prose": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 28,
+          "frontmatter_lines": 5,
+          "heading_context": 5,
+          "excluded_blank": 10,
+          "excluded_horizontal_rule": 0,
+          "accounted": 43,
+          "lines_total": 43,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 10,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - NLP Fundamentals/Pre-Transformer NLP/09 - TF-IDF.md",
+        "outcome": "extracted",
+        "sha256": "caa710e1508287494c23fc315f548556e53c8a44646ef1dd06bc92be753e64b5",
+        "manifest_match": true,
+        "units": 71,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 33,
+          "math_block": 5,
+          "list": 27,
+          "code_block": 3,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 232,
+          "frontmatter_lines": 7,
+          "heading_context": 26,
+          "excluded_blank": 88,
+          "excluded_horizontal_rule": 0,
+          "accounted": 346,
+          "lines_total": 346,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 88,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - NLP Fundamentals/Pre-Transformer NLP/10 - BM25.md",
+        "outcome": "extracted",
+        "sha256": "1569519544a5685ec01e5179ecea5330ac431fd7a5a08fb29bd8d88045aca263",
+        "manifest_match": true,
+        "units": 52,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 21,
+          "math_block": 3,
+          "list": 21,
+          "table": 2,
+          "code_block": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 226,
+          "frontmatter_lines": 7,
+          "heading_context": 33,
+          "excluded_blank": 71,
+          "excluded_horizontal_rule": 0,
+          "accounted": 330,
+          "lines_total": 330,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 71,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "outcome": "extracted",
+        "sha256": "46f117d3be4aa50810085abd349abe05e38ed72da30c11d2da1edce91d117345",
+        "manifest_match": true,
+        "units": 49,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 18,
+          "math_block": 1,
+          "list": 21,
+          "table": 6,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 194,
+          "frontmatter_lines": 7,
+          "heading_context": 24,
+          "excluded_blank": 70,
+          "excluded_horizontal_rule": 0,
+          "accounted": 288,
+          "lines_total": 288,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 70,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - NLP Fundamentals/Tokenization/02 - BPE.md",
+        "outcome": "extracted",
+        "sha256": "d469675a9bbcc34dbc206b8999e8416c78cab24d39d7d7a0fe81605cef2977d1",
+        "manifest_match": true,
+        "units": 53,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 24,
+          "list": 20,
+          "code_block": 5,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 189,
+          "frontmatter_lines": 7,
+          "heading_context": 22,
+          "excluded_blank": 72,
+          "excluded_horizontal_rule": 0,
+          "accounted": 283,
+          "lines_total": 283,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 72,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - NLP Fundamentals/Tokenization/03 - WordPiece.md",
+        "outcome": "extracted",
+        "sha256": "b4c1e4a80f1037a8356c8c6f1d63bb5103d9847037bfa7b7e3fef7a932cbec02",
+        "manifest_match": true,
+        "units": 50,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 19,
+          "list": 22,
+          "code_block": 4,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 176,
+          "frontmatter_lines": 7,
+          "heading_context": 26,
+          "excluded_blank": 63,
+          "excluded_horizontal_rule": 0,
+          "accounted": 265,
+          "lines_total": 265,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 63,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "05 - NLP Fundamentals/Tokenization/04 - SentencePiece.md",
+        "outcome": "extracted",
+        "sha256": "b115291fb1da9703d7f53195913637abaf937f3a088cb06531249ca5a47d9b23",
+        "manifest_match": true,
+        "units": 47,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 18,
+          "list": 22,
+          "code_block": 3,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 180,
+          "frontmatter_lines": 7,
+          "heading_context": 25,
+          "excluded_blank": 70,
+          "excluded_horizontal_rule": 0,
+          "accounted": 275,
+          "lines_total": 275,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 70,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

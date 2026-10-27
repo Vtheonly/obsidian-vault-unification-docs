@@ -1,0 +1,563 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "25 - Frameworks and Tools (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-qm8g30ip/057-regen001-master-ai-25-frameworks-and-tools.jsonl.run1",
+    "records_written": 836,
+    "denominators": {
+      "files_in_scope": 17,
+      "files_extracted": 17,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "25 - Frameworks and Tools/Agent Frameworks/01 - Framework Selection Guide.md",
+        "outcome": "extracted",
+        "sha256": "af5aca13189889ff7f18fd8e72fbdeaee6be6d879160f508eb78a48459860e4b",
+        "manifest_match": true,
+        "units": 38,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 8,
+          "list": 27,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 126,
+          "frontmatter_lines": 6,
+          "heading_context": 25,
+          "excluded_blank": 39,
+          "excluded_horizontal_rule": 0,
+          "accounted": 190,
+          "lines_total": 190,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 39,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/Agent Frameworks/03 - LangGraph.md",
+        "outcome": "extracted",
+        "sha256": "144e16557d4b83b3e78641a253707311def6670b2c85af197582603c450876d0",
+        "manifest_match": true,
+        "units": 56,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 13,
+          "prose": 35,
+          "code_block": 5,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 155,
+          "frontmatter_lines": 6,
+          "heading_context": 41,
+          "excluded_blank": 58,
+          "excluded_horizontal_rule": 0,
+          "accounted": 254,
+          "lines_total": 254,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 58,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/Agent Frameworks/09 - AutoGen.md",
+        "outcome": "extracted",
+        "sha256": "051350b1869279567d1740e160dfed735d6dbcd95960b2e8065241726a3d7de1",
+        "manifest_match": true,
+        "units": 42,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 7,
+          "prose": 27,
+          "code_block": 5,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 123,
+          "frontmatter_lines": 6,
+          "heading_context": 35,
+          "excluded_blank": 74,
+          "excluded_horizontal_rule": 0,
+          "accounted": 232,
+          "lines_total": 232,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 74,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/Agent Frameworks/10 - CrewAI.md",
+        "outcome": "extracted",
+        "sha256": "0a8d493c5f5eb014a6db3ea06cb447e3583c711b0a921cd8eacd24f758ae1cde",
+        "manifest_match": true,
+        "units": 48,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 7,
+          "prose": 32,
+          "code_block": 6,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 142,
+          "frontmatter_lines": 6,
+          "heading_context": 38,
+          "excluded_blank": 83,
+          "excluded_horizontal_rule": 0,
+          "accounted": 263,
+          "lines_total": 263,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 83,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/Agent Frameworks/11 - PydanticAI.md",
+        "outcome": "extracted",
+        "sha256": "5556e1bdbdf3337e3d67b36f46c00009ec9920b03fab95b8c64d1cb2a0c18b13",
+        "manifest_match": true,
+        "units": 59,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 6,
+          "prose": 38,
+          "code_block": 12,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 177,
+          "frontmatter_lines": 6,
+          "heading_context": 38,
+          "excluded_blank": 94,
+          "excluded_horizontal_rule": 0,
+          "accounted": 309,
+          "lines_total": 309,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 94,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/Agent Frameworks/15 - Semantic Kernel.md",
+        "outcome": "extracted",
+        "sha256": "bd5c5c0d3d128b666111dc54ba48e4c88c0bc3b0fb9283d457ba174d53f04d41",
+        "manifest_match": true,
+        "units": 38,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 15,
+          "prose": 16,
+          "code_block": 4,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 163,
+          "frontmatter_lines": 6,
+          "heading_context": 23,
+          "excluded_blank": 60,
+          "excluded_horizontal_rule": 0,
+          "accounted": 246,
+          "lines_total": 246,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 60,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/LLM Frameworks/02 - LangChain.md",
+        "outcome": "extracted",
+        "sha256": "393b579cfc1c5fa00b34b274870ef878e2614bbe2e814acf532dd215a92b233f",
+        "manifest_match": true,
+        "units": 69,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 17,
+          "prose": 35,
+          "code_block": 12,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 247,
+          "frontmatter_lines": 7,
+          "heading_context": 45,
+          "excluded_blank": 73,
+          "excluded_horizontal_rule": 0,
+          "accounted": 365,
+          "lines_total": 365,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 73,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/LLM Frameworks/04 - DSPy.md",
+        "outcome": "extracted",
+        "sha256": "635b766c189b2348e6c0e91bf1f5407665f6be450ba93d42354a53fc405e6acb",
+        "manifest_match": true,
+        "units": 51,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 11,
+          "prose": 33,
+          "code_block": 4,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 139,
+          "frontmatter_lines": 6,
+          "heading_context": 40,
+          "excluded_blank": 57,
+          "excluded_horizontal_rule": 0,
+          "accounted": 236,
+          "lines_total": 236,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 57,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/LLM Frameworks/05 - LlamaIndex.md",
+        "outcome": "extracted",
+        "sha256": "2c4d3f47a2833ccf70f60b3576b474c6baded93989d879fec9854cc1b9d3744f",
+        "manifest_match": true,
+        "units": 57,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 15,
+          "prose": 32,
+          "code_block": 7,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 151,
+          "frontmatter_lines": 6,
+          "heading_context": 39,
+          "excluded_blank": 57,
+          "excluded_horizontal_rule": 0,
+          "accounted": 247,
+          "lines_total": 247,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 57,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/LLM Frameworks/06 - OpenAI SDK and Agents SDK.md",
+        "outcome": "extracted",
+        "sha256": "40adac792acd295fa23a11e0a68c1b935900f3972d0e141f97bb86f8e6664e0a",
+        "manifest_match": true,
+        "units": 51,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 6,
+          "prose": 34,
+          "code_block": 8,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 198,
+          "frontmatter_lines": 6,
+          "heading_context": 31,
+          "excluded_blank": 62,
+          "excluded_horizontal_rule": 0,
+          "accounted": 291,
+          "lines_total": 291,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 62,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/LLM Frameworks/16 - Haystack.md",
+        "outcome": "extracted",
+        "sha256": "cdb881c3e9c5b81513f47a85ae614a60efbda8081c4deb073d09eae6652fb806",
+        "manifest_match": true,
+        "units": 37,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 16,
+          "prose": 15,
+          "code_block": 3,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 181,
+          "frontmatter_lines": 6,
+          "heading_context": 22,
+          "excluded_blank": 58,
+          "excluded_horizontal_rule": 0,
+          "accounted": 261,
+          "lines_total": 261,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 58,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/MOC.md",
+        "outcome": "extracted",
+        "sha256": "d2584bb7cfa3270d8be2be25509c043144d055864e4c85f1748bc89acff53146",
+        "manifest_match": true,
+        "units": 11,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 5,
+          "prose": 2,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 70,
+          "frontmatter_lines": 6,
+          "heading_context": 8,
+          "excluded_blank": 16,
+          "excluded_horizontal_rule": 0,
+          "accounted": 94,
+          "lines_total": 94,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 16,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/Serving/07 - vLLM.md",
+        "outcome": "extracted",
+        "sha256": "f1d1bc3dbe43f92a0d0f700a0525bb5b561bd79d853916f29e7eaa6ccf2d114b",
+        "manifest_match": true,
+        "units": 59,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 10,
+          "prose": 38,
+          "code_block": 7,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 154,
+          "frontmatter_lines": 6,
+          "heading_context": 40,
+          "excluded_blank": 60,
+          "excluded_horizontal_rule": 0,
+          "accounted": 254,
+          "lines_total": 254,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 60,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/Serving/08 - Ollama and llama.cpp.md",
+        "outcome": "extracted",
+        "sha256": "77a9f37117a5e6e57a80aaeb0d21640439dd6388c4d4d8fd646e5ae6326f053c",
+        "manifest_match": true,
+        "units": 61,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 9,
+          "prose": 42,
+          "code_block": 5,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 165,
+          "frontmatter_lines": 6,
+          "heading_context": 45,
+          "excluded_blank": 64,
+          "excluded_horizontal_rule": 0,
+          "accounted": 274,
+          "lines_total": 274,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 64,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/Serving/12 - TGI.md",
+        "outcome": "extracted",
+        "sha256": "ea42ce0aeaa2546a0b7c9b07b4d43c51c20a14249b32881c8e05010ea7ed9830",
+        "manifest_match": true,
+        "units": 52,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 8,
+          "prose": 36,
+          "code_block": 5,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 122,
+          "frontmatter_lines": 6,
+          "heading_context": 41,
+          "excluded_blank": 90,
+          "excluded_horizontal_rule": 0,
+          "accounted": 253,
+          "lines_total": 253,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 90,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/Serving/13 - TensorRT-LLM.md",
+        "outcome": "extracted",
+        "sha256": "6b3ca3af66488bceeca6eb57cfc6711050a46115a6a424ba1094c611723551aa",
+        "manifest_match": true,
+        "units": 49,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 7,
+          "prose": 37,
+          "code_block": 2,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 111,
+          "frontmatter_lines": 6,
+          "heading_context": 40,
+          "excluded_blank": 86,
+          "excluded_horizontal_rule": 0,
+          "accounted": 237,
+          "lines_total": 237,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 86,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "25 - Frameworks and Tools/Serving/14 - SGLang.md",
+        "outcome": "extracted",
+        "sha256": "347755fa1d31996b86a80cee6236ca81243b0275492457b74a5eb702a922fbab",
+        "manifest_match": true,
+        "units": 58,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "list": 8,
+          "prose": 41,
+          "code_block": 6,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 157,
+          "frontmatter_lines": 6,
+          "heading_context": 42,
+          "excluded_blank": 97,
+          "excluded_horizontal_rule": 0,
+          "accounted": 296,
+          "lines_total": 296,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 97,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

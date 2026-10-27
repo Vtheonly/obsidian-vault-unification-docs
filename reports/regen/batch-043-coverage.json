@@ -1,0 +1,209 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "11 - Training (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-8proqacg/043-regen001-master-ai-11-training.jsonl.run1",
+    "records_written": 306,
+    "denominators": {
+      "files_in_scope": 6,
+      "files_extracted": 6,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "11 - Training/Data/03 - Data Pipelines and Deduplication.md",
+        "outcome": "extracted",
+        "sha256": "ea5347cd0d49c33498b879177224893570364401836acf80bafd229b76f918a3",
+        "manifest_match": true,
+        "units": 58,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 32,
+          "list": 23,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 131,
+          "frontmatter_lines": 7,
+          "heading_context": 28,
+          "excluded_blank": 86,
+          "excluded_horizontal_rule": 0,
+          "accounted": 245,
+          "lines_total": 245,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 86,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "11 - Training/Distributed Training/02 - Distributed Training.md",
+        "outcome": "extracted",
+        "sha256": "1168629ec7112b2c3104eb5029e34fc97b823af96ac06c4c0f3f60b2373b42cf",
+        "manifest_match": true,
+        "units": 38,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 14,
+          "code_block": 3,
+          "list": 19
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 110,
+          "frontmatter_lines": 7,
+          "heading_context": 17,
+          "excluded_blank": 54,
+          "excluded_horizontal_rule": 0,
+          "accounted": 181,
+          "lines_total": 181,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 54,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "11 - Training/MOC.md",
+        "outcome": "extracted",
+        "sha256": "88163e50080745a7509b0eeb99486da47450d1bc0a4da0f82674962ccd67dd0e",
+        "manifest_match": true,
+        "units": 12,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "table": 1,
+          "list": 6,
+          "prose": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 44,
+          "frontmatter_lines": 5,
+          "heading_context": 8,
+          "excluded_blank": 19,
+          "excluded_horizontal_rule": 0,
+          "accounted": 71,
+          "lines_total": 71,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 19,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "11 - Training/Optimization/04 - Mixed Precision Training.md",
+        "outcome": "extracted",
+        "sha256": "a891bdf51c4b3d72505f1da394143cf5f59284f53777fc13b1d65009c2970ecf",
+        "manifest_match": true,
+        "units": 49,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 26,
+          "list": 16,
+          "code_block": 4,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 148,
+          "frontmatter_lines": 7,
+          "heading_context": 24,
+          "excluded_blank": 73,
+          "excluded_horizontal_rule": 0,
+          "accounted": 245,
+          "lines_total": 245,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 73,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "11 - Training/Optimization/05 - Loss Spikes and Stability.md",
+        "outcome": "extracted",
+        "sha256": "f42ba85ec6aacc4e76d4006bec4b747bd6bbe76f84ef3dadb592137d9f4dc835",
+        "manifest_match": true,
+        "units": 64,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 37,
+          "list": 19,
+          "code_block": 6
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 159,
+          "frontmatter_lines": 7,
+          "heading_context": 33,
+          "excluded_blank": 97,
+          "excluded_horizontal_rule": 0,
+          "accounted": 289,
+          "lines_total": 289,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 97,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "11 - Training/Pretraining/01 - Pretraining Objectives and Scaling Laws.md",
+        "outcome": "extracted",
+        "sha256": "6d65b9a33c5decefa7a36a3b2a903fb0ed128a4a30a3d4d866e311bcfb49ac68",
+        "manifest_match": true,
+        "units": 85,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 49,
+          "math_block": 5,
+          "list": 23,
+          "code_block": 1,
+          "table": 5
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 212,
+          "frontmatter_lines": 7,
+          "heading_context": 31,
+          "excluded_blank": 105,
+          "excluded_horizontal_rule": 0,
+          "accounted": 348,
+          "lines_total": 348,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 105,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

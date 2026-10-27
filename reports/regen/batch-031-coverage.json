@@ -1,0 +1,82 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "ai-course",
+    "root": "source-vaults/AI /AI Course",
+    "scope": "<root files> (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/ai-course.jsonl",
+    "batch_path": "/tmp/regen001-extract-p22k359a/031-regen001-ai-course-root-files.jsonl.run1",
+    "records_written": 305,
+    "denominators": {
+      "files_in_scope": 2,
+      "files_extracted": 2,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "00 - Master Index.md",
+        "outcome": "extracted",
+        "sha256": "1ae274c427bc46045cf9c63ea914368cc60b0cee0b34fbd18358fde35a879eeb",
+        "manifest_match": true,
+        "units": 62,
+        "units_by_type": {
+          "quote": 1,
+          "prose": 6,
+          "list": 52,
+          "table": 2,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 161,
+          "frontmatter_lines": 0,
+          "heading_context": 68,
+          "excluded_blank": 94,
+          "excluded_horizontal_rule": 15,
+          "accounted": 338,
+          "lines_total": 338,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 94,
+          "horizontal_rule": 15
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "README.md",
+        "outcome": "extracted",
+        "sha256": "36cfcb4238abec5a632ad6878a42410ab47dbfed3378c256a569eaebdd504824",
+        "manifest_match": true,
+        "units": 243,
+        "units_by_type": {
+          "quote": 1,
+          "list": 71,
+          "prose": 164,
+          "table": 6,
+          "code_block": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 548,
+          "frontmatter_lines": 0,
+          "heading_context": 117,
+          "excluded_blank": 312,
+          "excluded_horizontal_rule": 18,
+          "accounted": 995,
+          "lines_total": 995,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 312,
+          "horizontal_rule": 18
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}

@@ -7,6 +7,6 @@ layer for reproducible mechanical operations; it does not replace semantic
 review.
 """
 
-__version__ = "0.7.0"
+__version__ = "0.8.0"
 
 FRAMEWORK_NAME = "vault_unification"

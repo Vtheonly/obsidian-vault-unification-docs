@@ -1,0 +1,214 @@
+{
+  "command": "extract-kus",
+  "result": {
+    "ok": true,
+    "vault_id": "master-ai",
+    "root": "source-vaults/AI /Master AI",
+    "scope": "26 - Papers/Agents and RAG (per-file runs, concatenated sorted)",
+    "manifest": "state/manifests/master-ai.jsonl",
+    "batch_path": "/tmp/regen001-extract-qm8g30ip/059-regen001-master-ai-26-papers-agents-and-rag.jsonl.run1",
+    "records_written": 289,
+    "denominators": {
+      "files_in_scope": 6,
+      "files_extracted": 6,
+      "files_excluded": 0,
+      "files_failed": 0
+    },
+    "file_outcomes": [
+      {
+        "relpath": "26 - Papers/Agents and RAG/32 - Reflexion 2023.md",
+        "outcome": "extracted",
+        "sha256": "9791b7f49b924c6567f70c90eaa20e86dc916bf8eaf4a139c84033c83320e205",
+        "manifest_match": true,
+        "units": 50,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 33,
+          "list": 13,
+          "code_block": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 95,
+          "frontmatter_lines": 6,
+          "heading_context": 32,
+          "excluded_blank": 57,
+          "excluded_horizontal_rule": 0,
+          "accounted": 184,
+          "lines_total": 184,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 57,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Agents and RAG/33 - Self-Refine 2023.md",
+        "outcome": "extracted",
+        "sha256": "e3d49c77be4e864a82129b58e7ded57cb308db93fe7c1b0de7dccf0ad219fa84",
+        "manifest_match": true,
+        "units": 49,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 33,
+          "list": 7,
+          "code_block": 6,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 116,
+          "frontmatter_lines": 6,
+          "heading_context": 23,
+          "excluded_blank": 66,
+          "excluded_horizontal_rule": 0,
+          "accounted": 205,
+          "lines_total": 205,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 66,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Agents and RAG/34 - Tree of Thoughts 2023.md",
+        "outcome": "extracted",
+        "sha256": "c781d44076f471cafa6d002fc90dae12f94143b501ab4083d5014a15307d948d",
+        "manifest_match": true,
+        "units": 51,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 36,
+          "list": 9,
+          "code_block": 3,
+          "table": 1
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 111,
+          "frontmatter_lines": 6,
+          "heading_context": 28,
+          "excluded_blank": 78,
+          "excluded_horizontal_rule": 0,
+          "accounted": 217,
+          "lines_total": 217,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 78,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Agents and RAG/35 - RAG 2020.md",
+        "outcome": "extracted",
+        "sha256": "9158e86273bd195027e09429a4461e567342da798c6589173a585b279b9fc48d",
+        "manifest_match": true,
+        "units": 49,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 35,
+          "list": 7,
+          "code_block": 1,
+          "math_block": 2,
+          "table": 2
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 99,
+          "frontmatter_lines": 6,
+          "heading_context": 27,
+          "excluded_blank": 75,
+          "excluded_horizontal_rule": 0,
+          "accounted": 201,
+          "lines_total": 201,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 75,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Agents and RAG/38 - Self-Consistency 2022.md",
+        "outcome": "extracted",
+        "sha256": "0f72bcafb19437f1d6198d50491edfa7967d92823f0e03089dd1d0f5db8de86f",
+        "manifest_match": true,
+        "units": 39,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 15,
+          "math_block": 2,
+          "list": 16,
+          "code_block": 1,
+          "table": 3
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 130,
+          "frontmatter_lines": 6,
+          "heading_context": 19,
+          "excluded_blank": 57,
+          "excluded_horizontal_rule": 0,
+          "accounted": 206,
+          "lines_total": 206,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 57,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      },
+      {
+        "relpath": "26 - Papers/Agents and RAG/39 - Graph of Thoughts 2023.md",
+        "outcome": "extracted",
+        "sha256": "2067acfe54740c18da0ad89dde0283bf710c78d2098455b48e484438bf3c4bda",
+        "manifest_match": true,
+        "units": 51,
+        "units_by_type": {
+          "frontmatter": 1,
+          "callout": 1,
+          "prose": 23,
+          "list": 17,
+          "math_block": 4,
+          "code_block": 1,
+          "table": 4
+        },
+        "warnings": [],
+        "unclosed_spans": [],
+        "line_accounting": {
+          "unit_lines": 137,
+          "frontmatter_lines": 6,
+          "heading_context": 23,
+          "excluded_blank": 73,
+          "excluded_horizontal_rule": 0,
+          "accounted": 233,
+          "lines_total": 233,
+          "consistent": true
+        },
+        "excluded_lines": {
+          "blank": 73,
+          "horizontal_rule": 0
+        },
+        "finding_ids": []
+      }
+    ]
+  }
+}
