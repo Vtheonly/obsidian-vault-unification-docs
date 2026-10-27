@@ -13,6 +13,8 @@ import os
 from pathlib import Path
 from typing import Any, Iterable
 
+from .pathsafety import atomic_write_text
+
 _EXTENSION_CLASSES: dict[str, str] = {
     ".md": "markdown",
     ".markdown": "markdown",
@@ -140,15 +142,12 @@ def manifest_records(scan: dict) -> list[dict]:
 
 
 def write_manifest(path: str | os.PathLike, records: Iterable[dict]) -> int:
-    """Write manifest records as JSONL. Returns the number of records written."""
+    """Write manifest records as JSONL atomically (L-08). Returns count."""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    count = 0
-    with open(path, "w", encoding="utf-8") as handle:
-        for rec in records:
-            handle.write(json.dumps(rec, sort_keys=True) + "\n")
-            count += 1
-    return count
+    payload = "".join(json.dumps(rec, sort_keys=True) + "\n" for rec in records)
+    atomic_write_text(path, payload)
+    return payload.count("\n")
 
 
 def load_manifest(path: str | os.PathLike) -> list[dict]:

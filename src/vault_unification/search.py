@@ -1,8 +1,19 @@
-"""Exact, case-insensitive and normalized search with term statistics.
+"""Exact, case-insensitive, normalized and multi-line phrase search with term statistics.
 
 All results carry explicit locations (file, 1-based line numbers) and the
 report always states the scope, the number of scanned/skipped files, and the
 matching mode so counts are reproducible.
+
+L-01 fix: the ``phrase`` mode matches a normalized phrase against the whole
+file text, so phrases that span line breaks are found; matches carry a
+(line_start, line_end) span locator derived from a per-line offset map.
+
+L-07 fix: :func:`term_stats` accepts ``match_mode='word-boundary'`` using the
+SAME word-boundary pattern authority as CAP-013 overlap discovery
+(:func:`boundary_pattern`), closing the F-0006 false-positive class for
+term statistics ('ridge' no longer counts inside 'bridge' when the
+word-boundary mode is selected; substring mode remains the default for
+backward compatibility).
 """
 
 from __future__ import annotations
@@ -29,6 +40,19 @@ def normalize_text(text: str) -> str:
     normalized = unicodedata.normalize("NFKC", text)
     normalized = re.sub(r"\s+", " ", normalized)
     return normalized.casefold()
+
+
+def boundary_pattern(term: str) -> re.Pattern:
+    """Case-insensitive word-boundary pattern for *term* (shared authority).
+
+    Boundaries: no ``[a-zA-Z0-9_]`` (word character) immediately before or
+    after the match. This is what rejects 'ridge' inside 'bridge' while still
+    matching 'ridge' at 'ridge:' or '(ridge)'. CAP-013 overlap discovery and
+    word-boundary term statistics use this ONE implementation so their
+    semantics can never drift apart (L-07).
+    """
+    escaped = re.escape(term.casefold())
+    return re.compile(rf"(?<!\w){escaped}(?!\w)", re.IGNORECASE)
 
 
 def _read_text(path: Path) -> tuple[str | None, str | None]:
@@ -136,28 +160,163 @@ def search_term(
     }
 
 
+def search_phrase(
+    root: str | os.PathLike,
+    phrase: str,
+    *,
+    skip_dirs: tuple[str, ...] = (".git", ".obsidian"),
+) -> dict:
+    """Search for a normalized *phrase* that may span line breaks (L-01).
+
+    The phrase and each file's text are normalized with :func:`normalize_text`
+    (NFKC + whitespace collapse + casefold); matching runs over the whole-file
+    normalized text so a phrase broken across lines, with arbitrary
+    indentation and blank lines between its words, is found. Every match
+    carries a precise ``(line_start, line_end)`` span derived from a per-line
+    offset map built during normalization, so evidence locators stay
+    line-accurate even though matching is whole-text.
+
+    An empty or whitespace-only phrase is rejected (ValueError); a phrase
+    that normalizes to nothing (e.g. only combining marks stripped by NFKC)
+    is likewise rejected.
+    """
+    if not phrase or not phrase.strip():
+        raise ValueError("search phrase must be non-empty")
+    needle = normalize_text(phrase).strip()
+    if not needle:
+        raise ValueError("search phrase normalizes to an empty string")
+    root_path = Path(root)
+    if not root_path.is_dir():
+        raise NotADirectoryError(f"search root is not a directory: {root_path}")
+
+    matches: list[dict] = []
+    scanned = 0
+    skipped_binary = 0
+    skipped_unreadable = 0
+    skipped_nontext = 0
+
+    for rel, abs_path in _iter_text_files(root, skip_dirs):
+        if abs_path.suffix.lower() not in _TEXT_EXTENSIONS:
+            skipped_nontext += 1
+            continue
+        text, error = _read_text(abs_path)
+        if text is None:
+            if error and error.startswith("skipped: binary"):
+                skipped_binary += 1
+            else:
+                skipped_unreadable += 1
+            continue
+        scanned += 1
+
+        # Build the whole-file normalized text with a per-segment offset map.
+        # Blank lines normalize away entirely (whitespace collapses into the
+        # single separator space), exactly like normalize_text(whole_text).
+        segments: list[tuple[int, int, str]] = []  # (start_offset, line_no, norm)
+        joined_parts: list[str] = []
+        offset = 0
+        for lineno, line in enumerate(text.splitlines(), start=1):
+            norm = normalize_text(line).strip()
+            if not norm:
+                continue
+            if joined_parts:
+                joined_parts.append(" ")
+                offset += 1
+            segments.append((offset, lineno, norm))
+            joined_parts.append(norm)
+            offset += len(norm)
+        haystack = "".join(joined_parts)
+
+        start_at = 0
+        while True:
+            idx = haystack.find(needle, start_at)
+            if idx == -1:
+                break
+            end_idx = idx + len(needle)
+            # map char offsets back to line numbers via the segment table
+            line_start = None
+            line_end = None
+            for seg_off, seg_line, seg_norm in segments:
+                seg_end = seg_off + len(seg_norm)
+                if line_start is None and seg_end > idx:
+                    line_start = seg_line
+                if seg_off < end_idx:
+                    line_end = seg_line
+            if line_start is None:  # cannot happen when idx is within haystack
+                line_start = segments[0][1] if segments else 1
+            matches.append(
+                {
+                    "file": rel,
+                    "line_start": line_start,
+                    "line_end": line_end,
+                    "text": needle[:300],
+                }
+            )
+            start_at = idx + 1  # overlapping matches allowed (deterministic)
+
+    files_with_matches = sorted({m["file"] for m in matches})
+    return {
+        "root": str(root),
+        "term": phrase,
+        "mode": "phrase",
+        "match_count": len(matches),
+        "files_with_matches": files_with_matches,
+        "files_with_matches_count": len(files_with_matches),
+        "matches": matches,
+        "method": (
+            "whole-file normalized (NFKC + whitespace-collapse + casefold) "
+            "substring search; matches carry (line_start, line_end) span locators"
+        ),
+        "scope": {
+            "files_scanned": scanned,
+            "files_skipped_nontext": skipped_nontext,
+            "files_skipped_binary": skipped_binary,
+            "files_skipped_unreadable": skipped_unreadable,
+            "skip_dirs": list(skip_dirs),
+            "text_extensions": sorted(_TEXT_EXTENSIONS),
+        },
+    }
+
+
 def term_stats(
     root: str | os.PathLike,
     terms: list[str],
     *,
     aliases: dict[str, list[str]] | None = None,
+    match_mode: str = "substring",
     skip_dirs: tuple[str, ...] = (".git", ".obsidian"),
 ) -> dict:
     """Count occurrences of each term (plus aliases) per file.
 
     Terms file lines are ``term`` or ``term|alias1|alias2``. Counting is
-    case-insensitive whole-word-ish substring counting (substring match on
-    casefolded text); the method is stated in the report.
+    case-insensitive on casefolded text with the method stated in the report.
+
+    ``match_mode`` (L-07 fix):
+    - ``substring`` (default, backward compatible): casefolded substring
+      counting; 'ridge' counts inside 'bridge'.
+    - ``word-boundary``: same word-boundary semantics as CAP-013 overlap
+      discovery (:func:`boundary_pattern`); substring false positives are
+      rejected. Use this mode when counts feed overlap/classification work.
     """
+    if match_mode not in ("substring", "word-boundary"):
+        raise ValueError(f"unknown match mode: {match_mode}")
     root_path = Path(root)
     if not root_path.is_dir():
         raise NotADirectoryError(f"term-stats root is not a directory: {root_path}")
     aliases = aliases or {}
-    per_term: dict[str, dict] = {}
     scanned = 0
     skipped_binary = 0
     skipped_unreadable = 0
     skipped_nontext = 0
+
+    # precompile patterns per variant once (performance on large vaults)
+    variant_patterns: dict[str, list[tuple[str, re.Pattern]]] = {}
+    for term in terms:
+        patterns = [(term, None)]  # substring mode marker: None pattern
+        if match_mode == "word-boundary":
+            patterns = [(term, boundary_pattern(term))]
+            for alias in aliases.get(term, []):
+                patterns.append((alias, boundary_pattern(alias)))
+        variant_patterns[term] = patterns
 
     file_terms: dict[str, dict[str, int]] = {}
 
@@ -176,12 +335,18 @@ def term_stats(
         casefolded = text.casefold()
         file_terms[rel] = {}
         for term in terms:
-            count = casefolded.count(term.casefold())
-            for alias in aliases.get(term, []):
-                count += casefolded.count(alias.casefold())
+            if match_mode == "substring":
+                count = casefolded.count(term.casefold())
+                for alias in aliases.get(term, []):
+                    count += casefolded.count(alias.casefold())
+            else:
+                count = 0
+                for _variant, pattern in variant_patterns[term]:
+                    count += len(pattern.findall(text))
             if count:
                 file_terms[rel][term] = count
 
+    per_term: dict[str, dict] = {}
     for term in terms:
         variant_counts = {
             rel: counts[term] for rel, counts in file_terms.items() if term in counts
@@ -193,9 +358,15 @@ def term_stats(
             "aliases": aliases.get(term, []),
         }
 
+    method = (
+        "case-insensitive substring counting of term plus declared aliases"
+        if match_mode == "substring"
+        else "word-boundary (CAP-013 semantics) counting of term plus declared aliases"
+    )
     return {
         "root": str(root),
-        "method": "case-insensitive substring counting of term plus declared aliases",
+        "method": method,
+        "match_mode": match_mode,
         "terms": list(terms),
         "denominator": {"files_scanned": scanned},
         "exclusions": {

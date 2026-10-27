@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from . import FRAMEWORK_NAME, __version__
+from .pathsafety import atomic_write_text
 
 REPORT_SCHEMA_VERSION = "1.0"
 
@@ -60,24 +61,23 @@ def write_json_report(
     """Write *payload* plus standard metadata to *path* as JSON.
 
     Returns the full report dict that was written. The parent directory is
-    created when missing. File writes are explicit destinations; callers are
-    responsible for passing paths already validated by pathsafety.
+    created when missing. Writes are ATOMIC (temp + fsync + rename, L-08):
+    a crash can never leave a truncated report at *path*. File writes are
+    explicit destinations; callers are responsible for passing paths
+    already validated by pathsafety.
     """
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     report = dict(payload)
     report["report_meta"] = report_metadata(command, args, repo_root)
-    with open(path, "w", encoding="utf-8") as handle:
-        json.dump(report, handle, indent=2, sort_keys=False)
-        handle.write("\n")
+    atomic_write_text(path, json.dumps(report, indent=2, sort_keys=False) + "\n")
     return report
 
 
 def write_jsonl(path: str | Path, records: list[dict]) -> int:
-    """Write JSONL records; returns count written."""
+    """Write JSONL records atomically (L-08); returns count written."""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as handle:
-        for rec in records:
-            handle.write(json.dumps(rec, sort_keys=True) + "\n")
+    payload = "".join(json.dumps(rec, sort_keys=True) + "\n" for rec in records)
+    atomic_write_text(path, payload)
     return len(records)

@@ -1,0 +1,163 @@
+{
+  "task_id": "AUDIT-011",
+  "limitations": [
+    {
+      "id": "L-01",
+      "severity": "medium",
+      "category": "framework-defect",
+      "component": "search.py",
+      "summary": "No multi-line phrase search: all modes match per line; normalized mode normalizes per line",
+      "evidence": "src/vault_unification/search.py:101-117 (per-line loop); docs/TOOLING_FRAMEWORK.md documented limitation",
+      "fix": "FRAME-001: add phrase mode over whole-text normalized matching with (start_line,end_line) span locators",
+      "status": "fix-scheduled-FRAME-001"
+    },
+    {
+      "id": "L-02",
+      "severity": "high",
+      "category": "framework-defect",
+      "component": "linkcheck.py",
+      "summary": "Folders are not indexed; intentional Obsidian folder links are classified 'broken' (false-positive class behind F-0003's 175 broken links)",
+      "evidence": "src/vault_unification/linkcheck.py:30-42 (build_vault_index indexes files only), :78-88 (broken resolution)",
+      "fix": "FRAME-001: index directories, resolve folder targets as 'folder' kind, keep genuinely-missing targets broken",
+      "status": "fix-scheduled-FRAME-001"
+    },
+    {
+      "id": "L-03",
+      "severity": "medium",
+      "category": "framework-defect",
+      "component": "linkcheck.py",
+      "summary": "Anchor checks re-parse the target file on every link (_heading_exists -> extract_structure per check); O(links x file parses) makes vault-wide checks needlessly slow; Master AI has never been link-checked",
+      "evidence": "src/vault_unification/linkcheck.py:91-97 (_heading_exists), :100-105 (_block_exists re-reads file)",
+      "fix": "FRAME-001: per-run structure/text cache keyed by resolved path",
+      "status": "fix-scheduled-FRAME-001"
+    },
+    {
+      "id": "L-04",
+      "severity": "low",
+      "category": "framework-defect",
+      "component": "mdextract.py",
+      "summary": "inline_math_count recount uses a second, naive fence-skip that disagrees with the authoritative fence/math state machine in unclosed-fence files (the 14 F-0002 files) and does not skip math-block lines",
+      "evidence": "src/vault_unification/mdextract.py:263-279 (naive visible_lines re-derivation) vs :142-209 (authoritative state machine)",
+      "fix": "FRAME-001: compute inline math from the authoritative machine's line classification (safe: inline_math_count is NOT used by kuextract segmentation, so committed batches regenerate identically)",
+      "status": "fix-scheduled-FRAME-001"
+    },
+    {
+      "id": "L-05",
+      "severity": "low",
+      "category": "framework-limitation",
+      "component": "mdextract.py",
+      "summary": "Setext headings (===/--- underlines) are not detected; kuextract classifies the underline as excluded horizontal rule and setext text as prose",
+      "evidence": "src/vault_unification/mdextract.py:28 (_HEADING_RE is ATX-only); kuextract.py docstring documents the limitation",
+      "fix": "deferred: changing heading detection would shift committed batch segmentation; re-assess at REGEN-001 with a corpus scan for setext usage first",
+      "status": "accepted-documented (defer with evidence)"
+    },
+    {
+      "id": "L-06",
+      "severity": "low",
+      "category": "framework-limitation",
+      "component": "linkcheck.py",
+      "summary": "Percent-encoded internal Markdown link URLs are matched literally; block references checked by substring '^{id}' which can false-positive in prose/code",
+      "evidence": "src/vault_unification/linkcheck.py:30 docstring; :100-105 (_block_exists substring check)",
+      "fix": "FRAME-001: strict block-id regex (line-anchored ^[id] in block position) \u2014 percent-decoding deferred pending evidence of real encoded links in the corpus",
+      "status": "partial-fix-scheduled-FRAME-001"
+    },
+    {
+      "id": "L-07",
+      "severity": "medium",
+      "category": "framework-defect",
+      "component": "search.py",
+      "summary": "term_stats counts substrings (casefolded), not word-boundary matches: 'ridge' counts inside 'bridge'; inconsistent with overlap.py word-boundary semantics that exist precisely because of F-0006",
+      "evidence": "src/vault_unification/search.py:176-183 (casefolded.count) vs overlap.py:134-142 (_boundary_pattern)",
+      "fix": "FRAME-001: add word-boundary match mode to term_stats (default unchanged for backward compatibility)",
+      "status": "fix-scheduled-FRAME-001"
+    },
+    {
+      "id": "L-08",
+      "severity": "high",
+      "category": "framework-defect",
+      "component": "reporting.py, inventory.py, kuextract.py",
+      "summary": "No atomic writes anywhere: reports, manifests and KU batches are written with plain open(...,'w'); a crash mid-write leaves a truncated file that can be mistaken for a real artifact",
+      "evidence": "src/vault_unification/reporting.py:66-72, :76-83; inventory.py:142-151; kuextract.py:593-597",
+      "fix": "FRAME-001: atomic_write_text helper (temp file in same dir + fsync + os.replace) routed through all writers",
+      "status": "fix-scheduled-FRAME-001"
+    },
+    {
+      "id": "L-09",
+      "severity": "low",
+      "category": "framework-limitation",
+      "component": "pathsafety.py",
+      "summary": "TOCTOU window: paths are resolved at check time; a symlink appearing between check and write would be followed. Low practical risk in this single-writer environment",
+      "evidence": "src/vault_unification/pathsafety.py:108-127 (ensure_dest_safe resolves once)",
+      "fix": "documented + mitigated by atomic-write temp files created inside the (already checked) parent dir; full O_NOFOLLOW hardening deferred as not worth the portability cost now",
+      "status": "accepted-documented"
+    },
+    {
+      "id": "L-10",
+      "severity": "low",
+      "category": "framework-limitation",
+      "component": "framework-wide",
+      "summary": "No concurrent-run lock: two simultaneous extract/kureg-load/report runs on the same outputs can interleave",
+      "evidence": "no lock implementation exists in src/",
+      "fix": "accepted for the current single-agent operating model (AGENTS.md orchestrator owns integration); revisit if parallel subagents ever write shared state",
+      "status": "accepted-documented"
+    },
+    {
+      "id": "L-11",
+      "severity": "low",
+      "category": "framework-limitation",
+      "component": "search.py",
+      "summary": "Binary detection is a NUL-byte-in-first-8KB heuristic; a text file with an early NUL would be skipped, a binary file with no NUL in the first 8KB would be scanned",
+      "evidence": "src/vault_unification/search.py:21-24",
+      "fix": "accepted-documented (vaults are 100% markdown; no binary files exist in either manifest)",
+      "status": "accepted-documented"
+    },
+    {
+      "id": "L-12",
+      "severity": "critical",
+      "category": "missing-capability",
+      "component": "framework-wide",
+      "summary": "NO emergent-concept / knowledge-gap discovery capability exists: CAP-013 finds cross-vault PAIRS from a given term map; it cannot propose concepts, detect unexplained prerequisites, fragmented derivations, rare essentials, homonyms, or contradictions; no candidate schema, no statuses, no fixtures",
+      "evidence": "src/vault_unification/overlap.py (pair evidence only); no discovery module; schemas/ has no candidate schema",
+      "fix": "DISC-001: new discovery module + concept-candidate schema + CLI + synthetic fixtures with precision/recall measurement",
+      "status": "implementation-scheduled-DISC-001"
+    },
+    {
+      "id": "L-13",
+      "severity": "medium",
+      "category": "process-debt",
+      "component": "scripts/",
+      "summary": "55 task-local scripts accumulate repeated ad-hoc logic (X2 machine-locator in ext010, fidelity checkers, term-map verifiers) that should live in the framework instead of being re-implemented per task",
+      "evidence": "scripts/ directory listing; EXT-009 R2 and EXT-010 X2 improvements were per-task code",
+      "fix": "FRAME-001 migrates the machine-locator utility into the framework; DISC-001 reuses it for evidence locators; remaining scripts stay as one-time migration tooling per disposition",
+      "status": "migrate-scheduled-FRAME-001"
+    }
+  ],
+  "summary": {
+    "total": 13,
+    "by_category": {
+      "framework-defect": 6,
+      "framework-limitation": 5,
+      "missing-capability": 1,
+      "process-debt": 1
+    },
+    "scheduled_for_FRAME-001": [
+      "L-01",
+      "L-02",
+      "L-03",
+      "L-04",
+      "L-06",
+      "L-07",
+      "L-08",
+      "L-13"
+    ],
+    "scheduled_for_DISC-001": [
+      "L-12"
+    ],
+    "accepted_documented": [
+      "L-05",
+      "L-09",
+      "L-10",
+      "L-11"
+    ]
+  }
+}

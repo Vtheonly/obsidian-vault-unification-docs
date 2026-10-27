@@ -145,6 +145,10 @@ def _scan_text(result: dict[str, Any], text: str) -> dict:
     fence_marker = "```"
     fence_start_line = None
     fence_buffer: list[str] = []
+    # L-04 fix: visible lines are classified by THIS authoritative state
+    # machine (fences + math blocks), replacing the second naive fence-scan
+    # that disagreed with it in unclosed-fence files (the F-0002 class).
+    visible_lines: list[str] = []
 
     def _flush_fence(end_line: int | None) -> None:
         nonlocal in_fence, fence_buffer
@@ -208,6 +212,10 @@ def _scan_text(result: dict[str, Any], text: str) -> dict:
                 in_math_block = False
             continue
 
+        # everything past this point is visible text (outside fences and
+        # math blocks by the authoritative state machine)
+        visible_lines.append(line)
+
         # headings
         heading_match = _HEADING_RE.match(line)
         if heading_match:
@@ -260,19 +268,7 @@ def _scan_text(result: dict[str, Any], text: str) -> dict:
             {"start_line": math_start, "end_line": None, "closed": False}
         )
 
-    # inline math $...$ (outside code fences): recompute on visible text
-    visible_lines: list[str] = []
-    skip = False
-    for line in lines[start:]:
-        stripped2 = line.strip()
-        if not skip and (stripped2.startswith("```") or stripped2.startswith("~~~")):
-            skip = True
-            continue
-        if skip:
-            if stripped2.startswith("```") or stripped2.startswith("~~~"):
-                skip = False
-            continue
-        visible_lines.append(line)
+    # inline math $...$ on visible text (single authoritative pass, L-04)
     visible_text = "\n".join(visible_lines)
     result["inline_math_count"] = len(
         re.findall(r"(?<!\$)\$(?!\$)[^$\n]+?(?<!\$)\$(?!\$)", visible_text)

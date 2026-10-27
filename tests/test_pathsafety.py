@@ -144,3 +144,87 @@ class TestSourceImmutability:
         assert report["added"] == ["new.md"]
         assert report["removed"] == ["sub/note-c.md"]
         assert not report["source_unchanged"]
+
+
+class TestAtomicWrites:
+    """L-08 fix: atomic temp+fsync+rename writes for every framework artifact."""
+
+    def test_atomic_write_text_roundtrip(self, tmp_path):
+        from vault_unification.pathsafety import atomic_write_text
+
+        dest = tmp_path / "nested" / "out.json"
+        atomic_write_text(dest, '{"a": 1}\n')
+        assert dest.read_text(encoding="utf-8") == '{"a": 1}\n'
+
+    def test_atomic_write_replaces_existing_content(self, tmp_path):
+        from vault_unification.pathsafety import atomic_write_text
+
+        dest = tmp_path / "out.txt"
+        dest.write_text("OLD", encoding="utf-8")
+        atomic_write_text(dest, "NEW")
+        assert dest.read_text(encoding="utf-8") == "NEW"
+
+    def test_atomic_write_leaves_no_temp_files(self, tmp_path):
+        from vault_unification.pathsafety import atomic_write_text
+
+        dest = tmp_path / "out.jsonl"
+        atomic_write_text(dest, "line\n")
+        leftovers = [p for p in tmp_path.iterdir() if p.name.startswith(".")]
+        assert leftovers == []
+
+    def test_atomic_write_failure_cleans_temp_and_keeps_old(self, tmp_path):
+        # unwritable directory forces the write to fail AFTER mkstemp;
+        # the old file must remain intact and no temp file may survive
+        import os
+        from vault_unification.pathsafety import atomic_write_bytes
+
+        dest = tmp_path / "out.bin"
+        atomic_write_bytes(dest, b"OLD")
+        real_replace = os.replace
+
+        def failing_replace(src, dst):
+            raise OSError("simulated crash before rename")
+
+        os.replace = failing_replace
+        try:
+            with pytest.raises(OSError):
+                atomic_write_bytes(dest, b"NEW-TRUNCATED")
+        finally:
+            os.replace = real_replace
+        assert dest.read_bytes() == b"OLD"
+        leftovers = [p for p in tmp_path.iterdir() if p.name.startswith(".")]
+        assert leftovers == []
+
+    def test_atomic_write_replaces_symlink_rather_than_following(self, tmp_path):
+        # L-09 mitigation: a symlink at the destination must be REPLACED,
+        # not followed, so writes cannot be redirected through it
+        from vault_unification.pathsafety import atomic_write_text
+
+        target = tmp_path / "evil-target.txt"
+        target.write_text("VICTIM", encoding="utf-8")
+        dest = tmp_path / "out.txt"
+        dest.write_text("OLD", encoding="utf-8")
+        dest.unlink()
+        dest.symlink_to(target)
+        atomic_write_text(dest, "REPLACED")
+        assert not dest.is_symlink()
+        assert dest.read_text(encoding="utf-8") == "REPLACED"
+        assert target.read_text(encoding="utf-8") == "VICTIM"
+
+    def test_reporting_uses_atomic_writes(self, tmp_path):
+        # write_json_report must go through the atomic helper
+        import vault_unification.reporting as reporting
+
+        called = {}
+        original = reporting.atomic_write_text
+
+        def spy(dest, text):
+            called["dest"] = str(dest)
+            return original(dest, text)
+
+        reporting.atomic_write_text = spy
+        try:
+            reporting.write_json_report(tmp_path / "r" / "report.json", "cmd", {"ok": True})
+        finally:
+            reporting.atomic_write_text = original
+        assert "report.json" in called["dest"]

@@ -1,0 +1,68 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Artifact Defect Record (artifactlint)",
+ "$id": "https://github.com/Vtheonly/obsidian-vault-unification-docs/schemas/artifact-defect.schema.json",
+ "version": "1.0",
+ "type": "object",
+ "required": [
+  "file",
+  "defects",
+  "defect_count",
+  "error_count",
+  "warning_count",
+  "info_count",
+  "counts_by_check"
+ ],
+ "properties": {
+  "file": {
+   "type": "string",
+   "description": "Path of the linted note (relative to the lint root or absolute)."
+  },
+  "defects": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["check", "severity", "line", "message"],
+    "properties": {
+     "check": {
+      "type": "string",
+      "description": "Stable check id (FENCE_UNCLOSED, MATH_BLOCK_UNCLOSED, MERMAID_PARSE, ...). Machine-referenced by the repair loop.",
+      "pattern": "^[A-Z][A-Z0-9_]+$"
+     },
+     "severity": {
+      "type": "string",
+      "enum": ["error", "warning", "info"],
+      "description": "error: cannot render as written; warning: suspicious, review decides; info: convention note."
+     },
+     "line": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "1-based line number, or 0 for whole-document defects."
+     },
+     "message": {
+      "type": "string",
+      "minLength": 1
+     },
+     "excerpt": {
+      "type": "string",
+      "description": "Bounded source excerpt evidencing the defect."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  "defect_count": {"type": "integer", "minimum": 0},
+  "error_count": {"type": "integer", "minimum": 0},
+  "warning_count": {"type": "integer", "minimum": 0},
+  "info_count": {"type": "integer", "minimum": 0},
+  "counts_by_check": {
+   "type": "object",
+   "description": "Counts keyed 'severity:CHECK'."
+  },
+  "caveat": {
+   "type": "string",
+   "description": "Standing caveat: syntax validation is necessary, never sufficient."
+  }
+ },
+ "additionalProperties": true
+}

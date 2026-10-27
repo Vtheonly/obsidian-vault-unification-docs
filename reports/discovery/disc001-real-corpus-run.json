@@ -1,0 +1,78 @@
+{
+  "result": {
+    "command": "discover-gaps",
+    "ok": true,
+    "errors": [],
+    "denominators": {
+      "ku_records_loaded": 1728,
+      "terms_analyzed": 43768,
+      "candidates_emitted": 6340,
+      "terms_not_emitted": {
+        "no_locatable_occurrence": 24653,
+        "weak_single_usage": 12575,
+        "defined_low_usage": 200
+      }
+    },
+    "candidates_by_kind": {
+      "unexplained_prerequisite": 4116,
+      "rare_essential": 1111,
+      "fragmented_derivation": 294,
+      "concept_sighting": 819
+    },
+    "candidates_by_status": {
+      "provisional_candidate": 5521,
+      "already_covered": 819
+    },
+    "coverage": {
+      "vaults": [
+        {
+          "vault": "ai-course",
+          "processed_files": 23,
+          "total_files": 276
+        },
+        {
+          "vault": "master-ai",
+          "processed_files": 8,
+          "total_files": 333
+        }
+      ],
+      "coverage_complete": false
+    },
+    "coverage_gate_note": "gap candidates carry status provisional_candidate; confirmed_gap is reachable ONLY through reviewed decisions AND complete coverage (enforced by discovery-decide and discovery-validate)",
+    "determinism_note": "candidate ids are content-derived; records sorted; no timestamps in candidate records; identical inputs regenerate byte-identical output",
+    "candidates_path": "state/concept-candidates/001-disc001-partial-corpus.jsonl"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "discover-gaps",
+    "args": {
+      "command": "discover-gaps",
+      "batches": [
+        "state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl",
+        "state/knowledge-units/002-ext002-master-ai-supervised-learning.jsonl",
+        "state/knowledge-units/003-ext004-ai-course-03.7-tree-based-models.jsonl",
+        "state/knowledge-units/004-ext005-master-ai-evaluation.jsonl",
+        "state/knowledge-units/005-ext005-ai-course-03.6-model-evaluation.jsonl",
+        "state/knowledge-units/006-ext008-master-ai-unsupervised.jsonl",
+        "state/knowledge-units/007-ext008-ai-course-clustering-dimreduction.jsonl",
+        "state/knowledge-units/008-ext009-master-ai-generalization.jsonl",
+        "state/knowledge-units/009-ext009-ai-course-04.3-regularization.jsonl",
+        "state/knowledge-units/010-ext010-master-ai-training-stability.jsonl",
+        "state/knowledge-units/011-ext010-ai-course-04.3-init-gradients.jsonl"
+      ],
+      "manifests": [
+        "master-ai=state/manifests/master-ai.jsonl",
+        "ai-course=state/manifests/ai-course.jsonl"
+      ],
+      "out": "state/concept-candidates/001-disc001-partial-corpus.jsonl",
+      "kus_schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/knowledge-unit.schema.json",
+      "max_evidence": 12,
+      "protected_root": null,
+      "report": "reports/discovery/disc001-real-corpus-run.json"
+    },
+    "utc_timestamp": "2026-10-27T13:32:36+00:00",
+    "git_commit": "460d7d5"
+  }
+}

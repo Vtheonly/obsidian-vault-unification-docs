@@ -93,3 +93,112 @@ class TestTermStats:
     def test_method_is_stated(self, tmp_path):
         result = se.term_stats(tmp_path, ["x"])
         assert "case-insensitive" in result["method"]
+
+
+class TestPhraseSearch:
+    """L-01 fix: multi-line phrase search with span locators."""
+
+    def test_phrase_spanning_lines_found(self, tmp_path):
+        (tmp_path / "note.md").write_text(
+            "# Title\n\nThe gradient\nflows through\nthe network.\n", encoding="utf-8"
+        )
+        result = se.search_phrase(tmp_path, "gradient flows through the network")
+        assert result["mode"] == "phrase"
+        assert result["match_count"] == 1
+        m = result["matches"][0]
+        assert m["file"] == "note.md"
+        assert m["line_start"] == 3
+        assert m["line_end"] == 5
+
+    def test_phrase_across_blank_lines_and_indentation(self, tmp_path):
+        (tmp_path / "note.md").write_text(
+            "start of\n\n   the sentence\n\tcontinues here\n", encoding="utf-8"
+        )
+        result = se.search_phrase(tmp_path, "start of the sentence continues here")
+        assert result["match_count"] == 1
+        m = result["matches"][0]
+        assert (m["line_start"], m["line_end"]) == (1, 4)
+
+    def test_phrase_normalization_case_and_unicode(self, tmp_path):
+        (tmp_path / "note.md").write_text(
+            "The CHAIN\u00a0Rule applies\n", encoding="utf-8"  # NBSP collapses
+        )
+        result = se.search_phrase(tmp_path, "chain rule applies")
+        assert result["match_count"] == 1
+
+    def test_phrase_missing_returns_zero(self, tmp_path):
+        (tmp_path / "note.md").write_text("nothing relevant\n", encoding="utf-8")
+        result = se.search_phrase(tmp_path, "totally absent phrase")
+        assert result["match_count"] == 0
+        assert result["files_with_matches"] == []
+
+    def test_phrase_empty_rejected(self, tmp_path):
+        import pytest as _pytest
+        with _pytest.raises(ValueError):
+            se.search_phrase(tmp_path, "   ")
+
+    def test_phrase_missing_root_raises(self, tmp_path):
+        import pytest as _pytest
+        with _pytest.raises(NotADirectoryError):
+            se.search_phrase(tmp_path / "nope", "x y")
+
+    def test_phrase_scope_denominators(self, tmp_path):
+        (tmp_path / "a.md").write_text("alpha beta\n", encoding="utf-8")
+        # a text-extension file with binary content is skipped as binary
+        (tmp_path / "b.md").write_bytes(b"\x00\x01alpha beta\x00")
+        result = se.search_phrase(tmp_path, "alpha beta")
+        assert result["scope"]["files_scanned"] == 1
+        assert result["scope"]["files_skipped_binary"] == 1
+        assert result["match_count"] == 1
+
+
+class TestWordBoundaryTermStats:
+    """L-07 fix: word-boundary counting aligned with CAP-013 semantics."""
+
+    def test_word_boundary_rejects_substring_false_positives(self, tmp_path):
+        (tmp_path / "n.md").write_text(
+            "bridge ridge\nridge: the ridge model\n", encoding="utf-8"
+        )
+        substring = se.term_stats(tmp_path, ["ridge"], match_mode="substring")
+        wb = se.term_stats(tmp_path, ["ridge"], match_mode="word-boundary")
+        # substring mode counts 'ridge' inside 'bridge' too: 4 total
+        assert substring["stats"]["ridge"]["total_count"] == 4
+        # word-boundary mode rejects the 'bridge' occurrence: 3 total
+        assert wb["stats"]["ridge"]["total_count"] == 3
+
+    def test_word_boundary_mode_stated_in_method(self, tmp_path):
+        (tmp_path / "n.md").write_text("ridge\n", encoding="utf-8")
+        wb = se.term_stats(tmp_path, ["ridge"], match_mode="word-boundary")
+        assert wb["match_mode"] == "word-boundary"
+        assert "word-boundary" in wb["method"]
+
+    def test_word_boundary_matches_punctuation_adjacent(self, tmp_path):
+        (tmp_path / "n.md").write_text("(ridge) ridge: ridge,\n", encoding="utf-8")
+        wb = se.term_stats(tmp_path, ["ridge"], match_mode="word-boundary")
+        assert wb["stats"]["ridge"]["total_count"] == 3
+
+    def test_word_boundary_aliases_counted(self, tmp_path):
+        (tmp_path / "n.md").write_text(
+            "gradient descent and GD both appear\n", encoding="utf-8"
+        )
+        wb = se.term_stats(
+            tmp_path, ["gradient descent"], aliases={"gradient descent": ["GD"]},
+            match_mode="word-boundary",
+        )
+        assert wb["stats"]["gradient descent"]["total_count"] == 2
+
+    def test_default_mode_backward_compatible(self, tmp_path):
+        (tmp_path / "n.md").write_text("bridge ridge\n", encoding="utf-8")
+        default = se.term_stats(tmp_path, ["ridge"])
+        assert default["method"].startswith("case-insensitive substring")
+        assert default["stats"]["ridge"]["total_count"] == 2
+
+    def test_unknown_match_mode_rejected(self, tmp_path):
+        import pytest as _pytest
+        with _pytest.raises(ValueError):
+            se.term_stats(tmp_path, ["x"], match_mode="regex")
+
+    def test_boundary_pattern_shared_with_overlap(self):
+        # L-07: one shared authority - overlap must delegate to search
+        from vault_unification import overlap as overlap_mod
+        assert overlap_mod._boundary_pattern("x").pattern == se.boundary_pattern("x").pattern

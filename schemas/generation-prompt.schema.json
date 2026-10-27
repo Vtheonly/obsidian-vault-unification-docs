@@ -1,0 +1,94 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Generation Prompt Spec (iterative generation workflow)",
+ "$id": "https://github.com/Vtheonly/obsidian-vault-unification-docs/schemas/generation-prompt.schema.json",
+ "version": "1.0",
+ "type": "object",
+ "required": [
+  "objective",
+  "target_note",
+  "source_evidence",
+  "requirements",
+  "constraints",
+  "acceptance_criteria",
+  "output_contract"
+ ],
+ "properties": {
+  "objective": {
+   "type": "string",
+   "minLength": 1,
+   "description": "One bounded task, one note. Precision is checked by check_prompt."
+  },
+  "target_note": {
+   "type": "object",
+   "required": ["path"],
+   "properties": {
+    "path": {"type": "string", "description": "Note file to produce (or repair in place)."},
+    "type": {
+     "type": "string",
+     "enum": ["concept", "reference", "tutorial", "derivation", "overview", "example", "generic", "repair"],
+     "description": "Drives the note-type quality standard and gate."
+    },
+    "title": {"type": "string"}
+   },
+   "additionalProperties": true
+  },
+  "source_evidence": {
+   "type": "object",
+   "description": "The evidence the note must be grounded in: ku_ids, files, dossier reference, or (for repairs) the defect record.",
+   "properties": {
+    "ku_ids": {"type": "array", "items": {"type": "string"}},
+    "files": {"type": "array", "items": {"type": "string"}},
+    "dossier": {"type": "string"},
+    "excerpts": {"type": "array", "items": {}},
+    "defect": {"type": "object"}
+   },
+   "additionalProperties": true
+  },
+  "requirements": {
+   "type": "array",
+   "items": {"type": "string"},
+   "description": "Bounded count (cap checked); each requirement should be operationalized."
+  },
+  "constraints": {
+   "type": "array",
+   "items": {"type": "string"},
+   "description": "Standing constraints: no invention, preserve unrelated content, provenance. Checked by pattern."
+  },
+  "acceptance_criteria": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["criterion", "check"],
+    "properties": {
+     "criterion": {"type": "string"},
+     "check": {
+      "type": "string",
+      "description": "Machine reference: 'lint:CHECK_ID', 'quality:DIMENSION', 'registry:ku_accounted', 'gate:batch_gate', or 'manual_review'."
+     }
+    },
+    "additionalProperties": false
+   },
+   "description": "Every criterion must be testable or explicitly manual_review."
+  },
+  "output_contract": {
+   "type": "object",
+   "required": ["path", "format"],
+   "properties": {
+    "path": {"type": "string"},
+    "format": {"type": "string"},
+    "max_words": {"type": "integer"}
+   },
+   "additionalProperties": true
+  },
+  "context_budget": {
+   "type": "object",
+   "properties": {
+    "max_words": {"type": "integer"},
+    "max_source_excerpts": {"type": "integer"}
+   },
+   "additionalProperties": true
+  }
+ },
+ "additionalProperties": true
+}

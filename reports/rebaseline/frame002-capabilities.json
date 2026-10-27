@@ -1,0 +1,403 @@
+{
+  "framework_version": "0.7.0",
+  "verified": true,
+  "pytest_command": "/home/z/.venv/bin/python3 -m pytest -q --json-report --json-report-file=/tmp/vu-pytest-7mfir4vq.json tests/test_artifactlint.py tests/test_cli.py tests/test_discovery.py tests/test_inventory.py tests/test_kuextract.py tests/test_kuregistry.py tests/test_linkcheck.py tests/test_locators.py tests/test_mdextract.py tests/test_notequality.py tests/test_omission.py tests/test_overlap.py tests/test_pathsafety.py tests/test_promptspec.py tests/test_registry.py tests/test_repair.py tests/test_reporting.py tests/test_search.py tests/test_selftest.py tests/test_vaultstats.py",
+  "pytest_returncode": 0,
+  "tests_total": 553,
+  "tests_passed": 553,
+  "capabilities": [
+    {
+      "id": "CAP-000",
+      "name": "environment self-test",
+      "module": "vault_unification.selftest",
+      "command": "vu selftest",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_selftest.py"
+      ],
+      "limitations": [
+        "checks importability only; does not validate corpus data"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-001",
+      "name": "path safety and source immutability",
+      "module": "vault_unification.pathsafety",
+      "command": "vu check-paths",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_pathsafety.py"
+      ],
+      "limitations": [
+        "trailing-space directory names are legal but hazardous; validation reports them as-is",
+        "race conditions between check and write are not prevented (no locking)"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-002",
+      "name": "recursive inventory and SHA-256 manifests",
+      "module": "vault_unification.inventory",
+      "command": "vu inventory / vu verify-manifest",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_inventory.py"
+      ],
+      "limitations": [
+        "symlinks are recorded, not followed, unless --follow-symlinks is passed",
+        "counts measure files, never semantic coverage"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-003",
+      "name": "markdown structure extraction",
+      "module": "vault_unification.mdextract",
+      "command": "vu structure",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_mdextract.py"
+      ],
+      "limitations": [
+        "inline $...$ math detection is delimiter-based; currency symbols can yield false positives",
+        "no LaTeX syntax validation",
+        "nested fences inside fences are treated as fence content"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-004",
+      "name": "obsidian link/embed/anchor integrity (folder-link aware, cached)",
+      "module": "vault_unification.linkcheck",
+      "command": "vu check-links",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_linkcheck.py"
+      ],
+      "limitations": [
+        "heading anchor matching is normalized text equality; exotic anchors may be flagged",
+        "percent-encoded markdown links are matched literally (deferred pending corpus evidence)",
+        "links inside code fences are excluded by design",
+        "FRAME-001: folders are indexed; folder-target links resolve as folder_link evidence (never broken); files still take precedence over same-named folders",
+        "FRAME-001: per-run caches parse each file at most once (O(files) parses)",
+        "FRAME-001: block ids checked strictly (^id at end-of-line), rejecting mid-prose caret false positives"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-005",
+      "name": "exact/case-insensitive/normalized/phrase search and term stats",
+      "module": "vault_unification.search",
+      "command": "vu search / vu term-stats",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_search.py"
+      ],
+      "limitations": [
+        "normalized mode collapses whitespace per line; use the phrase mode (FRAME-001, L-01) for whole-file normalized matching across line breaks with (line_start, line_end) span locators",
+        "binary detection is heuristic (null-byte sniff)",
+        "term-stats substring mode (default) counts 'ridge' inside 'bridge'; select --match-mode word-boundary for CAP-013-consistent semantics (FRAME-001, L-07; shared boundary_pattern authority)",
+        "counts are lexical evidence only, never proof of semantic preservation"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-006",
+      "name": "registry and task-queue schema validation",
+      "module": "vault_unification.registry",
+      "command": "vu validate-registry",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_registry.py"
+      ],
+      "limitations": [
+        "cross-checks only task dependency references and id uniqueness",
+        "requires jsonschema package"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-007",
+      "name": "machine-readable report generation",
+      "module": "vault_unification.reporting",
+      "command": "(library; used by all commands)",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_reporting.py"
+      ],
+      "limitations": [
+        "reports include timestamps; not byte-stable across runs (by design)"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-008",
+      "name": "test orchestration with machine-readable results",
+      "module": "vault_unification.cli (run-tests)",
+      "command": "vu run-tests",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "depends on pytest and pytest-json-report; missing plugins are reported, not hidden"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-009",
+      "name": "capability inventory with test verification",
+      "module": "vault_unification.capabilities",
+      "command": "vu capabilities [--verify]",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "verification runs the referenced test files; runtime is proportional to suite size",
+        "tests/test_capabilities.py verifies the verification logic itself using bounded subsets and is therefore not referenced here (avoids recursive test execution)"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-010",
+      "name": "stable CLI entry point with help and exit codes",
+      "module": "vault_unification.cli",
+      "command": "vu --help (python -m vault_unification)",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "exit code 2 comes from argparse for usage errors"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-011",
+      "name": "knowledge-unit registry persistence (derived SQLite index over canonical JSONL)",
+      "module": "vault_unification.kuregistry",
+      "command": "vu kureg-init / kureg-load / kureg-query / kureg-validate",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_kuregistry.py",
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "the SQLite database is a derived index; the committed JSONL batches under state/knowledge-units/ are the canonical record (ADR-0007) - rebuild the DB instead of repairing it",
+        "all writes flow through kureg-load; no direct-to-database record creation in v1",
+        "the conditional Superseded-rationale rule and overlap/disposition separation are enforced by cross-checks, not by JSON Schema",
+        "mint_ku_id requires an excerpt, excerpt hash or line range; records without any locator must carry an explicit id",
+        "single-writer assumption: no concurrency control on the database file",
+        "query reconstruction issues O(n) grouped queries; acceptable at project scale, not benchmarked for millions of rows"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-015",
+      "name": "content statistics: words, headings, token estimates",
+      "module": "vault_unification.vaultstats",
+      "command": "vu stats",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_vaultstats.py",
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "word/token counts are lexical measurements with documented methods, never proof of semantic coverage",
+        "tokens_estimate is chars//4, a rough BPE-style approximation, not an exact tokenizer count",
+        "words_outside_fences treats unclosed fences/math blocks as extending to end-of-file",
+        "non-markdown text files get lexical counts only (structure is Markdown-specific)"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-012",
+      "name": "omission-detection pilot and reusable output auditor",
+      "module": "vault_unification.omission",
+      "command": "vu omission-pilot / vu audit-output",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_omission.py",
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "term markers are frequency-based (rare in the source corpus): claims carried only by common vocabulary are not covered by term markers",
+        "no stemming or grammar-level matching: reworded claims are caught only through shared distinctive vocabulary; semantic verification remains a separate evidence class",
+        "equation/code matching compares normalized source strings; equivalent reformatting counts as different markers",
+        "heading-convention check detects mixed schemes per note, not numbering sequences or cross-note ordering",
+        "prose-quality is a word-count heuristic for bullet-only degradation, not an argument-quality judge",
+        "drift detection requires an accepted manifest; pre-acceptance changes rely on content checks",
+        "link findings attribute KU ownership by destination note plus wikilink presence in the excerpt",
+        "the pilot fixture is small by design; corpus-scale noise must be re-measured on real extraction batches (CAP-014)"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-016",
+      "name": "deterministic KU extraction from source notes",
+      "module": "vault_unification.kuextract",
+      "command": "vu extract-kus",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_kuextract.py",
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "structural segmentation only: unit types describe Markdown block syntax (prose/list/table/code_block/math_block/callout/quote/frontmatter/empty_section), never meaning",
+        "assigns no dispositions (every unit is 'Unaccounted'), no overlap_type, no concept_ids, no destinations; semantic classification is later evidence-based work",
+        "extraction coverage is the accounting baseline, NOT proof of semantic preservation",
+        "excerpts reconstruct lines with splitlines: CR characters from CRLF files are normalized inside excerpts (source bytes untouched)",
+        "construct detection delegates to mdextract (CAP-003) and inherits its limitations: ATX headings only (setext underlines may be classified as excluded horizontal rules), delimiter-based math without LaTeX validation",
+        "an unclosed fence/math block absorbs all remaining lines into one unit (content preserved verbatim, parse warning recorded, finding linkable via --unclosed-fence-finding)",
+        "a blank line splits a list into separate units (no loose-list merging) - granularity, not loss",
+        "markdown files only; non-markdown files get an explicit excluded_non_markdown outcome"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-013",
+      "name": "duplicate/near-duplicate candidate discovery",
+      "module": "vault_unification.overlap",
+      "command": "vu overlap-candidates / vu kureg-apply-overlap",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_overlap.py",
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "candidate generation only: no overlap_type is assigned or implied by the tool; every classification requires excerpt review",
+        "word-boundary matching does not stem or inflect: 'ridges' does not match 'ridge' unless declared as an alias",
+        "mermaid_node_suspect flags matches inside mermaid code blocks (node labels AND edge references like 'L1 --> L2') plus the immediate-'[' heuristic; other diagram syntaxes are not detected",
+        "term coverage is exactly the provided terms/aliases map; topics outside it are invisible to a given run",
+        "hash duplicates compare whole KU excerpts only, not fragments inside units",
+        "pair cross-products are capped per topic (max_pairs_per_topic); excess topics are flagged and per-KU evidence stays complete",
+        "classifications are pair-level overlay records (ADR-0009); per-KU overlap_type columns stay NULL because one unit can join multiple differently-typed pairs"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-014",
+      "name": "source-to-output coverage and frequency regression reports",
+      "module": null,
+      "command": null,
+      "status_declared": "planned",
+      "tests": [],
+      "limitations": [
+        "planned; required before synthesis batches are accepted"
+      ],
+      "status_verified": "planned"
+    },
+    {
+      "id": "CAP-017",
+      "name": "emergent concept discovery and knowledge-gap detection (DISC-001)",
+      "module": "vault_unification.discovery",
+      "command": "vu discover-gaps / vu discovery-decide / vu discovery-validate",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_discovery.py",
+        "tests/test_locators.py",
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "deterministic evidence collection and ranking ONLY: recurrence is a signal, never proof; semantic identity/boundaries/adequacy are review decisions applied via discovery-decide",
+        "gap candidates are provisional_candidate until reviewed; confirmed_gap requires BOTH a reviewed decision AND complete corpus coverage (hard gate, enforced in apply_decisions and discovery-validate)",
+        "term mining is statistical n-gram extraction with definition/assumption/derivation pattern classification; it is heading-agnostic (no fixed topic whitelist) but pattern-based relationship detection can miss paraphrases",
+        "definition detection is lexical (definition patterns + heading declarations): a paraphrased definition without pattern markers is classified as usage; review can apply the cover action",
+        "contradiction suspicion is a numeric-adjacent heuristic near definition contexts; surfaced with pairs, never resolved",
+        "homonym clustering is co-occurrence-signature based; disjoint signatures flag the candidate but review decides whether senses truly differ",
+        "registry loading of accepted candidates is deferred to DISC-002 (candidates persist as schema-validated JSONL, consistent with the classification overlay pattern before kureg-apply-overlap exists for candidates)"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-018",
+      "name": "artifact integrity validation (fences, math, tables, headings, lists, links, mermaid, code, truncation, placeholders)",
+      "module": "vault_unification.artifactlint",
+      "command": "vu lint-artifacts",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_artifactlint.py",
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "syntax/reference validation ONLY: a passing lint is necessary, never sufficient \u2014 semantic correctness requires review",
+        "mermaid validation is a structural line-grammar heuristic for the common diagram kinds (flowchart, sequence, state, class, pie, gantt), NOT a full mermaid AST; unknown kinds fall back to block-balance checks",
+        "python code blocks are AST-parsed (never executed); other languages are label-level checks only",
+        "inline-math dollar parity is a warning-level heuristic (a lone $ in prose triggers it deliberately)",
+        "percent-encoded markdown links remain matched literally (L-06 deferral inherited from linkcheck)",
+        "rendering validation (actual render + visual inspection) is NOT implemented \u2014 this is syntax/reference validation; the distinction is recorded in every report"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-019",
+      "name": "note quality assessment, quality-drift detection, and batch quality gates",
+      "module": "vault_unification.notequality",
+      "command": "vu assess-quality / vu quality-drift / vu quality-gate",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_notequality.py",
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "deterministic measurement only (counts, patterns, coverage ratios): there is deliberately NO subjective AI-judge score; semantic adequacy is a review decision the tool prepares evidence for",
+        "source_coverage requires a provenance mapping (note -> ku_ids); without one the dimension is reported 'unmeasured', never guessed",
+        "drift detection compares first-third vs last-third means per note type; it detects systematic decline with evidence, it does not prove causation",
+        "note types are inferred from frontmatter 'type' with a 'generic' fallback; wrong frontmatter yields the wrong standard (garbage in, garbage out)",
+        "depth bands are intentionally permissive; the tool targets RELATIVE drift between comparable notes rather than absolute length policing"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-020",
+      "name": "evidence-based targeted repair loop (bounded retries, verification, escalation)",
+      "module": "vault_unification.repair",
+      "command": "vu repair-create / vu repair-record / vu repair-verify / vu repair-list / vu repair-prompt",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_repair.py",
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "repairs are performed by an agent (or human) against a repair prompt; the toolkit creates tasks, records attempts, verifies outcomes and enforces bounds \u2014 it does not edit files itself",
+        "verification re-runs the originating check + whole-file lint + (with the original file) diff-scope discipline; semantic correctness of the fix remains a review decision",
+        "repair-scope discipline uses an 8-line locality window around the defect line; a justified wider edit is flagged, not blocked (review decides)",
+        "a defect that returns after a verified fix re-opens its task with a recorded regression attempt"
+      ],
+      "status_verified": "implemented-and-tested"
+    },
+    {
+      "id": "CAP-021",
+      "name": "generation-prompt specification and validation (testable criteria, boundedness, evidence resolvability)",
+      "module": "vault_unification.promptspec",
+      "command": "vu check-prompt / vu repair-prompt",
+      "status_declared": "implemented-and-tested",
+      "tests": [
+        "tests/test_promptspec.py",
+        "tests/test_cli.py"
+      ],
+      "limitations": [
+        "prompt checks are deterministic structural/quality checks (presence, resolvability, testability, budget); they cannot judge whether the instructions are pedagogically ideal",
+        "vague-language detection is a fixed term list; it catches common unoperationalized criteria, not all of them",
+        "context estimation counts words of criteria/requirements/constraints/excerpts \u2014 a proxy, not an actual token count",
+        "ku_id resolvability requires the caller to pass the KU batches; without them the check is skipped and reported as such"
+      ],
+      "status_verified": "implemented-and-tested"
+    }
+  ],
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.7.0",
+    "report_schema_version": "1.0",
+    "command": "capabilities",
+    "args": {
+      "command": "capabilities",
+      "verify": true,
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/rebaseline/frame002-capabilities.json"
+    },
+    "utc_timestamp": "2026-10-27T15:17:38+00:00",
+    "git_commit": "460d7d5"
+  }
+}

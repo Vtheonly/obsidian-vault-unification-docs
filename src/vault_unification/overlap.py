@@ -43,6 +43,8 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from . import search as search_mod
+
 
 class OverlapError(Exception):
     """Raised for actionable candidate-discovery failures."""
@@ -134,12 +136,13 @@ def load_ku_batches(
 def _boundary_pattern(term: str) -> re.Pattern:
     """Case-insensitive word-boundary pattern for *term*.
 
-    Boundaries: no ``[a-zA-Z0-9_]`` (word character) immediately before or
-    after the match. This is what rejects 'ridge' inside 'bridge' while
-    still matching 'ridge' at 'ridge:' or '(ridge)'.
+    Delegates to the ONE shared authority ``search.boundary_pattern`` (L-07
+    consolidation) so overlap discovery and term statistics can never drift
+    apart semantically. Boundaries: no ``[a-zA-Z0-9_]`` (word character)
+    immediately before or after the match; this rejects 'ridge' inside
+    'bridge' while still matching 'ridge' at 'ridge:' or '(ridge)'.
     """
-    escaped = re.escape(term.casefold())
-    return re.compile(rf"(?<!\w){escaped}(?!\w)", re.IGNORECASE)
+    return search_mod.boundary_pattern(term)
 
 
 def build_term_patterns(terms: dict[str, list[str]] | list[str]) -> dict[str, list[tuple[str, re.Pattern]]]:

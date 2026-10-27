@@ -1,0 +1,3800 @@
+{
+  "command": "check-links",
+  "result": {
+    "root": "source-vaults/AI /Master AI",
+    "markdown_files_checked": 333,
+    "links_checked": 5221,
+    "problems": [
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Architecture Decisions.md",
+        "line": 76,
+        "target": "Note Name"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Architecture Decisions.md",
+        "line": 76,
+        "target": "Note Name"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Architecture Decisions.md",
+        "line": 76,
+        "target": "folder/path/Note Name"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Architecture Decisions.md",
+        "line": 167,
+        "target": "Vectors"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Completed Work.md",
+        "line": 81,
+        "target": "Note Name"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Completed Work.md",
+        "line": 81,
+        "target": "folder/path/Note Name"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Master Roadmap.md",
+        "line": 729,
+        "target": "05 - NLP Fundamentals/Language Modeling/Perplexity"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Master Roadmap.md",
+        "line": 729,
+        "target": "11 - Training/Pretraining/Training Objectives"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Master Roadmap.md",
+        "line": 730,
+        "target": "07 - Transformers/Architecture/Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Master Roadmap.md",
+        "line": 730,
+        "target": "13 - Inference/KV Cache/KV Cache Mechanics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Master Roadmap.md",
+        "line": 731,
+        "target": "15 - AI Agents/Tool Calling/Function Calling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Master Roadmap.md",
+        "line": 733,
+        "target": "06 - Attention Mechanisms/Positional Information/RoPE"
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/README.md",
+        "line": 60,
+        "target": "README",
+        "candidates": [
+          "source-vaults/AI /Master AI/README.md",
+          "source-vaults/AI /Master AI/00 - Vault Management/README.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/README.md",
+        "line": 61,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Remaining Work.md",
+        "line": 62,
+        "target": "Note Name"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Remaining Work.md",
+        "line": 62,
+        "target": "folder/path/Note Name"
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "01 - AI Foundations/04 - The Modern AI Stack.md",
+        "line": 157,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "01 - AI Foundations/06 - Map of the Field.md",
+        "line": 172,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "01 - AI Foundations/MOC.md",
+        "line": 40,
+        "target": "README",
+        "candidates": [
+          "source-vaults/AI /Master AI/README.md",
+          "source-vaults/AI /Master AI/00 - Vault Management/README.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "01 - AI Foundations/MOC.md",
+        "line": 41,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Calculus/10 - Gradient and Chain Rule.md",
+        "line": 86,
+        "target": "Backpropagation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Calculus/10 - Gradient and Chain Rule.md",
+        "line": 353,
+        "target": "Optimization Essentials"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Calculus/10 - Gradient and Chain Rule.md",
+        "line": 354,
+        "target": "Probability Essentials"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Calculus/10 - Gradient and Chain Rule.md",
+        "line": 355,
+        "target": "Backpropagation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Calculus/11 - Jacobians and Hessians.md",
+        "line": 62,
+        "target": "04 - Neural Networks/Training/Backpropagation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Calculus/11 - Jacobians and Hessians.md",
+        "line": 326,
+        "target": "04 - Neural Networks/Training/Backpropagation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Information Theory/15 - Entropy Cross-Entropy KL.md",
+        "line": 141,
+        "target": "05 - NLP Fundamentals/Language Modeling/Perplexity"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Information Theory/15 - Entropy Cross-Entropy KL.md",
+        "line": 150,
+        "target": "DPO Derivation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Information Theory/15 - Entropy Cross-Entropy KL.md",
+        "line": 159,
+        "target": "Perplexity"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Information Theory/15 - Entropy Cross-Entropy KL.md",
+        "line": 371,
+        "target": "Probability Essentials"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Information Theory/15 - Entropy Cross-Entropy KL.md",
+        "line": 372,
+        "target": "Gradient and Chain Rule"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Information Theory/15 - Entropy Cross-Entropy KL.md",
+        "line": 373,
+        "target": "Optimization Essentials"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Information Theory/15 - Entropy Cross-Entropy KL.md",
+        "line": 375,
+        "target": "Perplexity"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Information Theory/15 - Entropy Cross-Entropy KL.md",
+        "line": 376,
+        "target": "DPO Derivation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/03 - Cosine Similarity.md",
+        "line": 71,
+        "target": "17 - RAG/Retrieval"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/03 - Cosine Similarity.md",
+        "line": 81,
+        "target": "Word2Vec GloVe FastText"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/03 - Cosine Similarity.md",
+        "line": 134,
+        "target": "17 - RAG/Retrieval"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/03 - Cosine Similarity.md",
+        "line": 311,
+        "target": "Vectors"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/03 - Cosine Similarity.md",
+        "line": 312,
+        "target": "Dot Product"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/03 - Cosine Similarity.md",
+        "line": 313,
+        "target": "Matrix Multiplication"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md",
+        "line": 61,
+        "target": "LoRA"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md",
+        "line": 84,
+        "target": "Perceptrons and MLPs"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md",
+        "line": 112,
+        "target": "LoRA"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md",
+        "line": 116,
+        "target": "FlashAttention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md",
+        "line": 165,
+        "target": "13 - Inference/Optimization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md",
+        "line": 334,
+        "target": "Vectors"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md",
+        "line": 335,
+        "target": "Dot Product"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md",
+        "line": 336,
+        "target": "Cosine Similarity"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md",
+        "line": 338,
+        "target": "Perceptrons and MLPs"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md",
+        "line": 339,
+        "target": "LoRA"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Optimization/12 - Optimization Essentials.md",
+        "line": 192,
+        "target": "LoRA"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Optimization/12 - Optimization Essentials.md",
+        "line": 219,
+        "target": "Gradient and Chain Rule"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Optimization/12 - Optimization Essentials.md",
+        "line": 220,
+        "target": "Probability Essentials"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Optimization/12 - Optimization Essentials.md",
+        "line": 221,
+        "target": "Entropy Cross-Entropy KL"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Optimization/12 - Optimization Essentials.md",
+        "line": 450,
+        "target": "Gradient and Chain Rule"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Optimization/12 - Optimization Essentials.md",
+        "line": 451,
+        "target": "Probability Essentials"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Optimization/12 - Optimization Essentials.md",
+        "line": 452,
+        "target": "Entropy Cross-Entropy KL"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Optimization/12 - Optimization Essentials.md",
+        "line": 453,
+        "target": "Adam Derivation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Optimization/12 - Optimization Essentials.md",
+        "line": 454,
+        "target": "Learning Rate Schedules"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "line": 161,
+        "target": "Entropy Cross-Entropy KL"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "line": 211,
+        "target": "Entropy Cross-Entropy KL"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "line": 212,
+        "target": "Gradient and Chain Rule"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "line": 213,
+        "target": "Optimization Essentials"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "line": 215,
+        "target": "05 - NLP Fundamentals/Language Modeling/Perplexity"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "line": 414,
+        "target": "Entropy Cross-Entropy KL"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "line": 415,
+        "target": "Gradient and Chain Rule"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "line": 416,
+        "target": "Optimization Essentials"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "line": 417,
+        "target": "Estimators and Bias"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "line": 418,
+        "target": "Hypothesis Testing"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "line": 419,
+        "target": "Gaussian Distribution"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "line": 420,
+        "target": "Bayes Theorem Deep Dive"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+        "line": 422,
+        "target": "05 - NLP Fundamentals/Language Modeling/Perplexity"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Probability/09 - Gaussian Distribution.md",
+        "line": 53,
+        "target": "04 - Neural Networks/Training/Initialization Schemes"
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/Evaluation/05 - ML Evaluation Metrics.md",
+        "line": 167,
+        "target": "08 - LLMs/Evaluation/MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/Generalization/06 - Regularization Techniques.md",
+        "line": 123,
+        "target": "07 - Transformers/Components/Normalization Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/Generalization/06 - Regularization Techniques.md",
+        "line": 139,
+        "target": "12 - Fine-Tuning/RLHF/RLHF with PPO"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/Generalization/06 - Regularization Techniques.md",
+        "line": 197,
+        "target": "07 - Transformers/Components/Normalization Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/Reinforcement Learning/07 - MDPs and Bellman Equations.md",
+        "line": 174,
+        "target": "12 - Fine-Tuning/RLHF/RLHF with PPO"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/Reinforcement Learning/08 - Q-Learning and DQN.md",
+        "line": 127,
+        "target": "12 - Fine-Tuning/RLHF/RLHF with PPO"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/Reinforcement Learning/09 - Policy Gradients and Actor Critic.md",
+        "line": 175,
+        "target": "12 - Fine-Tuning/RLHF/RLHF with PPO"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/Reinforcement Learning/09 - Policy Gradients and Actor Critic.md",
+        "line": 198,
+        "target": "12 - Fine-Tuning/RLHF/RLHF with PPO"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/Reinforcement Learning/10 - PPO Deep Treatment.md",
+        "line": 131,
+        "target": "12 - Fine-Tuning/RLHF/RLHF with PPO"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/Reinforcement Learning/10 - PPO Deep Treatment.md",
+        "line": 166,
+        "target": "12 - Fine-Tuning/DPO/DPO Derivation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/Reinforcement Learning/10 - PPO Deep Treatment.md",
+        "line": 174,
+        "target": "12 - Fine-Tuning/DPO/DPO Derivation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/Reinforcement Learning/10 - PPO Deep Treatment.md",
+        "line": 199,
+        "target": "12 - Fine-Tuning/RLHF/RLHF with PPO"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/Reinforcement Learning/10 - PPO Deep Treatment.md",
+        "line": 200,
+        "target": "12 - Fine-Tuning/DPO/DPO Derivation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Architectures/03 - CNNs.md",
+        "line": 81,
+        "target": "07 - Transformers/Architecture/Residual Connections"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Architectures/03 - CNNs.md",
+        "line": 305,
+        "target": "07 - Transformers/Architecture/Residual Connections"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Architectures/03 - CNNs.md",
+        "line": 306,
+        "target": "07 - Transformers/Encoder Models/Vision Transformer ViT"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Architectures/04 - RNN LSTM GRU.md",
+        "line": 529,
+        "target": "24 - Research Frontiers/State Space Models/Mamba"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Architectures/04 - RNN LSTM GRU.md",
+        "line": 563,
+        "target": "24 - Research Frontiers/State Space Models/Mamba"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Architectures/04 - RNN LSTM GRU.md",
+        "line": 706,
+        "target": "24 - Research Frontiers/State Space Models/Mamba"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Architectures/05 - Seq2Seq and the Information Bottleneck.md",
+        "line": 12,
+        "target": "06 - Attention Mechanisms/Origins/Bahdanau Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Architectures/05 - Seq2Seq and the Information Bottleneck.md",
+        "line": 63,
+        "target": "06 - Attention Mechanisms/Origins/Bahdanau Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Architectures/05 - Seq2Seq and the Information Bottleneck.md",
+        "line": 120,
+        "target": "24 - Research Frontiers/State Space Models/Mamba"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Architectures/05 - Seq2Seq and the Information Bottleneck.md",
+        "line": 306,
+        "target": "06 - Attention Mechanisms/Origins/Origins of Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Architectures/05 - Seq2Seq and the Information Bottleneck.md",
+        "line": 307,
+        "target": "06 - Attention Mechanisms/Origins/Bahdanau Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Foundations/02 - Activation Functions.md",
+        "line": 22,
+        "target": "Perceptrons and MLPs"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Foundations/02 - Activation Functions.md",
+        "line": 178,
+        "target": "Perceptrons and MLPs"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Foundations/02 - Activation Functions.md",
+        "line": 179,
+        "target": "Backpropagation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Foundations/02 - Activation Functions.md",
+        "line": 180,
+        "target": "Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Foundations/02 - Activation Functions.md",
+        "line": 181,
+        "target": "Normalization Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Foundations/02 - Activation Functions.md",
+        "line": 323,
+        "target": "Perceptrons and MLPs"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Foundations/02 - Activation Functions.md",
+        "line": 324,
+        "target": "Backpropagation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Foundations/02 - Activation Functions.md",
+        "line": 325,
+        "target": "Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Foundations/02 - Activation Functions.md",
+        "line": 326,
+        "target": "Normalization Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/06 - Backpropagation.md",
+        "line": 22,
+        "target": "Optimization Essentials"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/06 - Backpropagation.md",
+        "line": 65,
+        "target": "Gradient and Chain Rule"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/06 - Backpropagation.md",
+        "line": 102,
+        "target": "Residual Connections"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/06 - Backpropagation.md",
+        "line": 146,
+        "target": "Gradient and Chain Rule"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/06 - Backpropagation.md",
+        "line": 147,
+        "target": "Optimization Essentials"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/06 - Backpropagation.md",
+        "line": 148,
+        "target": "Perceptrons and MLPs"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/06 - Backpropagation.md",
+        "line": 149,
+        "target": "Activation Functions"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/06 - Backpropagation.md",
+        "line": 150,
+        "target": "Residual Connections"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/06 - Backpropagation.md",
+        "line": 309,
+        "target": "Gradient and Chain Rule"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/06 - Backpropagation.md",
+        "line": 310,
+        "target": "Optimization Essentials"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/06 - Backpropagation.md",
+        "line": 311,
+        "target": "Perceptrons and MLPs"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/06 - Backpropagation.md",
+        "line": 312,
+        "target": "Activation Functions"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/06 - Backpropagation.md",
+        "line": 313,
+        "target": "Residual Connections"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/08 - Vanishing and Exploding Gradients.md",
+        "line": 64,
+        "target": "07 - Transformers/Architecture/Residual Connections"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/08 - Vanishing and Exploding Gradients.md",
+        "line": 68,
+        "target": "07 - Transformers/Components/Normalization Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/08 - Vanishing and Exploding Gradients.md",
+        "line": 291,
+        "target": "07 - Transformers/Architecture/Residual Connections"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks/Training/08 - Vanishing and Exploding Gradients.md",
+        "line": 292,
+        "target": "07 - Transformers/Components/Normalization Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Embeddings/05 - Word2Vec GloVe FastText.md",
+        "line": 172,
+        "target": "Tokenization Overview"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Embeddings/05 - Word2Vec GloVe FastText.md",
+        "line": 173,
+        "target": "Vectors"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Embeddings/05 - Word2Vec GloVe FastText.md",
+        "line": 174,
+        "target": "Cosine Similarity"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Embeddings/05 - Word2Vec GloVe FastText.md",
+        "line": 326,
+        "target": "Tokenization Overview"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Embeddings/05 - Word2Vec GloVe FastText.md",
+        "line": 327,
+        "target": "Vectors"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Embeddings/05 - Word2Vec GloVe FastText.md",
+        "line": 328,
+        "target": "Cosine Similarity"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Embeddings/06 - Contextual Embeddings ELMo to BERT.md",
+        "line": 297,
+        "target": "07 - Transformers/Encoder Models/BERT"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Language Modeling/08 - Perplexity.md",
+        "line": 270,
+        "target": "Entropy Cross-Entropy KL"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Language Modeling/08 - Perplexity.md",
+        "line": 271,
+        "target": "Probability Essentials"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Language Modeling/08 - Perplexity.md",
+        "line": 272,
+        "target": "Tokenization Overview"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Pre-Transformer NLP/10 - BM25.md",
+        "line": 329,
+        "target": "17 - RAG/Retrieval/Hybrid Search"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "line": 12,
+        "target": "BPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "line": 12,
+        "target": "WordPiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "line": 12,
+        "target": "SentencePiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "line": 58,
+        "target": "BPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "line": 59,
+        "target": "WordPiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "line": 62,
+        "target": "SentencePiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "line": 134,
+        "target": "BPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "line": 135,
+        "target": "WordPiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "line": 136,
+        "target": "SentencePiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "line": 137,
+        "target": "Word2Vec GloVe FastText"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "line": 283,
+        "target": "BPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "line": 284,
+        "target": "WordPiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "line": 285,
+        "target": "SentencePiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/01 - Tokenization Overview.md",
+        "line": 286,
+        "target": "Word2Vec GloVe FastText"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/02 - BPE.md",
+        "line": 158,
+        "target": "Tokenization Overview"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/02 - BPE.md",
+        "line": 159,
+        "target": "WordPiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/02 - BPE.md",
+        "line": 160,
+        "target": "SentencePiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/02 - BPE.md",
+        "line": 280,
+        "target": "Tokenization Overview"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/02 - BPE.md",
+        "line": 281,
+        "target": "WordPiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/02 - BPE.md",
+        "line": 282,
+        "target": "SentencePiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/03 - WordPiece.md",
+        "line": 262,
+        "target": "Tokenization Overview"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/03 - WordPiece.md",
+        "line": 263,
+        "target": "BPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/03 - WordPiece.md",
+        "line": 264,
+        "target": "SentencePiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/04 - SentencePiece.md",
+        "line": 37,
+        "target": "BPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/04 - SentencePiece.md",
+        "line": 141,
+        "target": "Tokenization Overview"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/04 - SentencePiece.md",
+        "line": 142,
+        "target": "BPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/04 - SentencePiece.md",
+        "line": 143,
+        "target": "WordPiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/04 - SentencePiece.md",
+        "line": 272,
+        "target": "Tokenization Overview"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/04 - SentencePiece.md",
+        "line": 273,
+        "target": "BPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Tokenization/04 - SentencePiece.md",
+        "line": 274,
+        "target": "WordPiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Efficient Attention/11 - FlashAttention.md",
+        "line": 159,
+        "target": "13 - Inference/KV Cache/PagedAttention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Efficient Attention/11 - FlashAttention.md",
+        "line": 287,
+        "target": "13 - Inference/KV Cache/PagedAttention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Efficient Attention/13 - Linear Attention.md",
+        "line": 89,
+        "target": "24 - Research Frontiers/State Space Models/Mamba"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Efficient Attention/13 - Linear Attention.md",
+        "line": 141,
+        "target": "24 - Research Frontiers/State Space Models/Mamba"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Efficient Attention/13 - Linear Attention.md",
+        "line": 220,
+        "target": "24 - Research Frontiers/State Space Models/Mamba"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Modern Attention/14 - GQA MQA MLA.md",
+        "line": 264,
+        "target": "13 - Inference/KV Cache/KV Cache Mechanics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Modern Attention/14 - GQA MQA MLA.md",
+        "line": 265,
+        "target": "10 - Model Architecture Research/Open Source/DeepSeek"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Modern Attention/15 - Sliding Window Attention.md",
+        "line": 293,
+        "target": "13 - Inference/KV Cache/KV Cache Mechanics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Multi-Head Attention/05 - Multi-Head Attention.md",
+        "line": 117,
+        "target": "10 - Model Architecture Research/Open Source/DeepSeek"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Multi-Head Attention/05 - Multi-Head Attention.md",
+        "line": 162,
+        "target": "Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Multi-Head Attention/05 - Multi-Head Attention.md",
+        "line": 163,
+        "target": "KV Cache Mechanics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Multi-Head Attention/05 - Multi-Head Attention.md",
+        "line": 306,
+        "target": "Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Multi-Head Attention/05 - Multi-Head Attention.md",
+        "line": 307,
+        "target": "KV Cache Mechanics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/01 - Origins of Attention.md",
+        "line": 85,
+        "target": "Bahdanau Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/01 - Origins of Attention.md",
+        "line": 85,
+        "target": "Luong Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/01 - Origins of Attention.md",
+        "line": 238,
+        "target": "Bahdanau Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/01 - Origins of Attention.md",
+        "line": 239,
+        "target": "Luong Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/02 - Bahdanau Attention.md",
+        "line": 16,
+        "target": "Origins of Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/02 - Bahdanau Attention.md",
+        "line": 97,
+        "target": "Luong Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/02 - Bahdanau Attention.md",
+        "line": 156,
+        "target": "Origins of Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/02 - Bahdanau Attention.md",
+        "line": 157,
+        "target": "Luong Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/02 - Bahdanau Attention.md",
+        "line": 288,
+        "target": "Origins of Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/02 - Bahdanau Attention.md",
+        "line": 289,
+        "target": "Luong Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/03 - Luong Attention.md",
+        "line": 154,
+        "target": "Cosine Similarity"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/03 - Luong Attention.md",
+        "line": 163,
+        "target": "Origins of Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/03 - Luong Attention.md",
+        "line": 164,
+        "target": "Bahdanau Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/03 - Luong Attention.md",
+        "line": 313,
+        "target": "Origins of Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/03 - Luong Attention.md",
+        "line": 314,
+        "target": "Bahdanau Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "line": 12,
+        "target": "RoPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "line": 109,
+        "target": "RoPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "line": 132,
+        "target": "YaRN"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "line": 179,
+        "target": "RoPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "line": 181,
+        "target": "Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "line": 183,
+        "target": "ALiBi"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "line": 184,
+        "target": "YaRN"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "line": 263,
+        "target": "RoPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "line": 265,
+        "target": "Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "line": 267,
+        "target": "ALiBi"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "line": 268,
+        "target": "YaRN"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "line": 124,
+        "target": "YaRN"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "line": 173,
+        "target": "Positional Encoding Overview"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "line": 176,
+        "target": "Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "line": 178,
+        "target": "YaRN"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "line": 178,
+        "target": "ALiBi"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "line": 296,
+        "target": "Positional Encoding Overview"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "line": 299,
+        "target": "Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "line": 301,
+        "target": "YaRN"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "line": 301,
+        "target": "ALiBi"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/10 - YaRN and NTK-aware Scaling.md",
+        "line": 148,
+        "target": "08 - LLMs/Context and KV Cache/KV Cache Mechanics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/10 - YaRN and NTK-aware Scaling.md",
+        "line": 261,
+        "target": "08 - LLMs/Context and KV Cache/KV Cache Mechanics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 68,
+        "target": "Activation Functions"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 92,
+        "target": "Residual Connections"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 96,
+        "target": "Normalization Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 96,
+        "target": "Pre-Norm vs Post-Norm"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 158,
+        "target": "BERT"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 158,
+        "target": "GPT Family"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 158,
+        "target": "T5"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 187,
+        "target": "KV Cache Mechanics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 207,
+        "target": "Residual Connections"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 207,
+        "target": "Pre-Norm vs Post-Norm"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 207,
+        "target": "Normalization Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/02 - Pre-Norm vs Post-Norm.md",
+        "line": 150,
+        "target": "Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/02 - Pre-Norm vs Post-Norm.md",
+        "line": 151,
+        "target": "Normalization Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/02 - Pre-Norm vs Post-Norm.md",
+        "line": 152,
+        "target": "Residual Connections"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/03 - Residual Connections.md",
+        "line": 30,
+        "target": "Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/03 - Residual Connections.md",
+        "line": 139,
+        "target": "Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/03 - Residual Connections.md",
+        "line": 140,
+        "target": "Pre-Norm vs Post-Norm"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/03 - Residual Connections.md",
+        "line": 141,
+        "target": "Normalization Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/03 - Residual Connections.md",
+        "line": 143,
+        "target": "Backpropagation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Components/04 - Normalization Layers.md",
+        "line": 94,
+        "target": "Pre-Norm vs Post-Norm"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Components/04 - Normalization Layers.md",
+        "line": 170,
+        "target": "Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Components/04 - Normalization Layers.md",
+        "line": 171,
+        "target": "Pre-Norm vs Post-Norm"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Components/04 - Normalization Layers.md",
+        "line": 172,
+        "target": "Residual Connections"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "07 - Transformers/Components/04 - Normalization Layers.md",
+        "line": 173,
+        "target": "Activation Functions"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "08 - LLMs/Capabilities/04 - In-Context Learning.md",
+        "line": 142,
+        "target": "15 - AI Agents/Reasoning/Chain-of-Thought"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "08 - LLMs/Capabilities/04 - In-Context Learning.md",
+        "line": 143,
+        "target": "15 - AI Agents/Architecture/Agent vs Workflow vs LLM Application"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "08 - LLMs/Sampling/03 - Sampling Strategies.md",
+        "line": 216,
+        "target": "KV Cache Mechanics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "08 - LLMs/Sampling/03 - Sampling Strategies.md",
+        "line": 219,
+        "target": "Entropy Cross-Entropy KL"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "09 - Foundation Models/Reasoning Models/03 - Reasoning Models.md",
+        "line": 102,
+        "target": "15 - AI Agents/Reasoning/Chain-of-Thought"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "09 - Foundation Models/Reasoning Models/03 - Reasoning Models.md",
+        "line": 265,
+        "target": "15 - AI Agents/Reasoning/Chain-of-Thought"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "09 - Foundation Models/Reasoning Models/03 - Reasoning Models.md",
+        "line": 266,
+        "target": "12 - Fine-Tuning/DPO/DPO Derivation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "12 - Fine-Tuning/DPO/04 - DPO Derivation.md",
+        "line": 212,
+        "target": "LoRA"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "12 - Fine-Tuning/DPO/04 - DPO Derivation.md",
+        "line": 214,
+        "target": "Entropy Cross-Entropy KL"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "12 - Fine-Tuning/DPO/04 - DPO Derivation.md",
+        "line": 215,
+        "target": "Probability Essentials"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "12 - Fine-Tuning/PEFT/02 - QLoRA.md",
+        "line": 146,
+        "target": "LoRA"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "12 - Fine-Tuning/PEFT/02 - QLoRA.md",
+        "line": 147,
+        "target": "DPO Derivation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "13 - Inference/KV Cache/02 - PagedAttention.md",
+        "line": 160,
+        "target": "KV Cache Mechanics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "13 - Inference/MOC.md",
+        "line": 15,
+        "target": "08 - LLMs/Context and KV Cache/02 - KV Cache Mechanics\\"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "13 - Inference/MOC.md",
+        "line": 31,
+        "target": "13 - Inference/Optimization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "13 - Inference/Speculative Decoding/05 - Speculative Decoding.md",
+        "line": 188,
+        "target": "KV Cache Mechanics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "13 - Inference/Speculative Decoding/05 - Speculative Decoding.md",
+        "line": 189,
+        "target": "PagedAttention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "13 - Inference/Speculative Decoding/05 - Speculative Decoding.md",
+        "line": 190,
+        "target": "Sampling Strategies"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/Architecture/01 - Agent vs Workflow vs LLM Application.md",
+        "line": 179,
+        "target": "ReAct Pattern"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/Architecture/01 - Agent vs Workflow vs LLM Application.md",
+        "line": 180,
+        "target": "Chain-of-Thought"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/Architecture/01 - Agent vs Workflow vs LLM Application.md",
+        "line": 181,
+        "target": "Function Calling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/Architecture/01 - Agent vs Workflow vs LLM Application.md",
+        "line": 182,
+        "target": "Reflection"
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/MOC.md",
+        "line": 67,
+        "target": "26 - Papers/Agents and RAG/MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/Patterns/05 - Reflection.md",
+        "line": 152,
+        "target": "ReAct Pattern"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/Patterns/05 - Reflection.md",
+        "line": 153,
+        "target": "Chain-of-Thought"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/Patterns/05 - Reflection.md",
+        "line": 154,
+        "target": "Function Calling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/Reasoning/02 - Chain-of-Thought.md",
+        "line": 118,
+        "target": "ReAct Pattern"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/Reasoning/02 - Chain-of-Thought.md",
+        "line": 163,
+        "target": "ReAct Pattern"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/Reasoning/02 - Chain-of-Thought.md",
+        "line": 164,
+        "target": "Reflection"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/Reasoning/02 - Chain-of-Thought.md",
+        "line": 166,
+        "target": "Agent vs Workflow vs LLM Application"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/Tool Calling/04 - Function Calling.md",
+        "line": 189,
+        "target": "ReAct Pattern"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/Tool Calling/04 - Function Calling.md",
+        "line": 228,
+        "target": "ReAct Pattern"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "15 - AI Agents/Tool Calling/04 - Function Calling.md",
+        "line": 229,
+        "target": "Agent vs Workflow vs LLM Application"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "16 - Multi-Agent Systems/Coordination/03 - Coordination and Consensus.md",
+        "line": 125,
+        "target": "Self-Consistency"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "17 - RAG/MOC.md",
+        "line": 23,
+        "target": "17 - RAG/Chunking"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "17 - RAG/MOC.md",
+        "line": 25,
+        "target": "17 - RAG/Retrieval"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "17 - RAG/MOC.md",
+        "line": 26,
+        "target": "17 - RAG/Reranking"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "17 - RAG/MOC.md",
+        "line": 27,
+        "target": "17 - RAG/Evaluation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "21 - LLMOps and MLOps/Cost/06 - Cost Optimization.md",
+        "line": 165,
+        "target": "07 - A/B Testing and Shadow Deployment"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "21 - LLMOps and MLOps/Pipelines/02 - Prompt Management.md",
+        "line": 154,
+        "target": "07 - A/B Testing and Shadow Deployment"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "21 - LLMOps and MLOps/Pipelines/03 - Model Registry and Versioning.md",
+        "line": 170,
+        "target": "07 - A/B Testing and Shadow Deployment"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "22 - Production AI/MOC.md",
+        "line": 27,
+        "target": "22 - Production AI/Scaling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "24 - Research Frontiers/MOC.md",
+        "line": 32,
+        "target": "24 - Research Frontiers/Memory"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "26 - Papers/Attention Origins/01 - Bahdanau Attention 2014.md",
+        "line": 139,
+        "target": "03 - Luong Attention 2015"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "26 - Papers/Attention Origins/01 - Bahdanau Attention 2014.md",
+        "line": 144,
+        "target": "03 - Luong Attention 2015"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "26 - Papers/LLMs/04 - GPT-3 2020.md",
+        "line": 120,
+        "target": "InstructGPT"
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "26 - Papers/MOC.md",
+        "line": 74,
+        "target": "26 - Papers/Attention Origins/MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "26 - Papers/MOC.md",
+        "line": 75,
+        "target": "26 - Papers/Transformers/MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "26 - Papers/MOC.md",
+        "line": 76,
+        "target": "26 - Papers/LLMs/MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "26 - Papers/MOC.md",
+        "line": 77,
+        "target": "26 - Papers/Efficient Attention/MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "26 - Papers/MOC.md",
+        "line": 78,
+        "target": "26 - Papers/Alignment/MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "26 - Papers/MOC.md",
+        "line": 79,
+        "target": "26 - Papers/Agents and RAG/MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "26 - Papers/MOC.md",
+        "line": 80,
+        "target": "26 - Papers/Multimodal/MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "26 - Papers/MOC.md",
+        "line": 81,
+        "target": "26 - Papers/2024-2026/MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "26 - Papers/Transformers/02 - Vaswani Attention Is All You Need 2017.md",
+        "line": 19,
+        "target": "03 - Luong Attention 2015"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "26 - Papers/Transformers/02 - Vaswani Attention Is All You Need 2017.md",
+        "line": 142,
+        "target": "DiT"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "28 - Glossary/MOC.md",
+        "line": 28,
+        "target": "08 - FlashAttention"
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "28 - Glossary/MOC.md",
+        "line": 49,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "28 - Glossary/Terms/A-Z Terms.md",
+        "line": 319,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "29 - Interview Prep/Conceptual/01 - Conceptual Interview Questions.md",
+        "line": 314,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "29 - Interview Prep/Conceptual/06 - Conceptual Interview Questions 2.md",
+        "line": 201,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 10,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 14,
+        "target": "Agent vs Workflow vs LLM Application"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 15,
+        "target": "ALiBi"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 19,
+        "target": "Backpropagation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 20,
+        "target": "Bahdanau Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 21,
+        "target": "BPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 22,
+        "target": "BM25"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 26,
+        "target": "Chain-of-Thought"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 27,
+        "target": "Cosine Similarity"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 28,
+        "target": "Cross-Entropy"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 33,
+        "target": "DPO Derivation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 34,
+        "target": "Dot Product"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 42,
+        "target": "FlashAttention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 43,
+        "target": "Function Calling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 47,
+        "target": "GQA"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 52,
+        "target": "KV Cache Mechanics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 58,
+        "target": "LoRA"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 59,
+        "target": "Luong Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 63,
+        "target": "Matrix Multiplication"
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 65,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 69,
+        "target": "Normalization Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 73,
+        "target": "PagedAttention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 74,
+        "target": "Perceptrons and MLPs"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 75,
+        "target": "Perplexity"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 76,
+        "target": "Positional Encoding Overview"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 77,
+        "target": "Pre-Norm vs Post-Norm"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 78,
+        "target": "QLoRA"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 82,
+        "target": "QLoRA"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 87,
+        "target": "ReAct Pattern"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 88,
+        "target": "Reflection"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 89,
+        "target": "Residual Connections"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 90,
+        "target": "RoPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 94,
+        "target": "Sampling Strategies"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 97,
+        "target": "SentencePiece"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 103,
+        "target": "Tokenization Overview"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 104,
+        "target": "Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 108,
+        "target": "Vectors"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 109,
+        "target": "Word2Vec GloVe FastText"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 113,
+        "target": "Word2Vec GloVe FastText"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 114,
+        "target": "WordPiece"
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 124,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 79,
+        "target": "Bahdanau Attention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 100,
+        "target": "Positional Encoding Overview"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 100,
+        "target": "RoPE"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 101,
+        "target": "Transformer Block"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 102,
+        "target": "Pre-Norm vs Post-Norm"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 103,
+        "target": "Normalization Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 125,
+        "target": "KV Cache Mechanics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 126,
+        "target": "Sampling Strategies"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 154,
+        "target": "LoRA"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 155,
+        "target": "QLoRA"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 157,
+        "target": "DPO Derivation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 177,
+        "target": "PagedAttention"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 201,
+        "target": "Agent vs Workflow vs LLM Application"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 202,
+        "target": "ReAct Pattern"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 203,
+        "target": "Chain-of-Thought"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 204,
+        "target": "Function Calling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 205,
+        "target": "Reflection"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 226,
+        "target": "RAG Pipeline Overview"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 350,
+        "target": "Mini RAG Pipeline"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 351,
+        "target": "Mini Agent"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 352,
+        "target": "Mini MoE"
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 360,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "MOC.md",
+        "line": 152,
+        "target": "README",
+        "candidates": [
+          "source-vaults/AI /Master AI/README.md",
+          "source-vaults/AI /Master AI/00 - Vault Management/README.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "README.md",
+        "line": 13,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "README.md",
+        "line": 30,
+        "target": "00 - Vault Management/MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "README.md",
+        "line": 135,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      },
+      {
+        "type": "ambiguous",
+        "kind": "wikilink",
+        "file": "Reading Order.md",
+        "line": 110,
+        "target": "MOC",
+        "candidates": [
+          "source-vaults/AI /Master AI/MOC.md",
+          "source-vaults/AI /Master AI/01 - AI Foundations/MOC.md",
+          "source-vaults/AI /Master AI/02 - Mathematics/MOC.md",
+          "source-vaults/AI /Master AI/03 - Machine Learning/MOC.md",
+          "source-vaults/AI /Master AI/04 - Neural Networks/MOC.md",
+          "source-vaults/AI /Master AI/05 - NLP Fundamentals/MOC.md",
+          "source-vaults/AI /Master AI/06 - Attention Mechanisms/MOC.md",
+          "source-vaults/AI /Master AI/07 - Transformers/MOC.md",
+          "source-vaults/AI /Master AI/08 - LLMs/MOC.md",
+          "source-vaults/AI /Master AI/09 - Foundation Models/MOC.md",
+          "source-vaults/AI /Master AI/10 - Model Architecture Research/MOC.md",
+          "source-vaults/AI /Master AI/11 - Training/MOC.md",
+          "source-vaults/AI /Master AI/12 - Fine-Tuning/MOC.md",
+          "source-vaults/AI /Master AI/13 - Inference/MOC.md",
+          "source-vaults/AI /Master AI/14 - Interpretability/MOC.md",
+          "source-vaults/AI /Master AI/15 - AI Agents/MOC.md",
+          "source-vaults/AI /Master AI/16 - Multi-Agent Systems/MOC.md",
+          "source-vaults/AI /Master AI/17 - RAG/MOC.md",
+          "source-vaults/AI /Master AI/18 - Memory Systems/MOC.md",
+          "source-vaults/AI /Master AI/19 - MCP/MOC.md",
+          "source-vaults/AI /Master AI/20 - AI Infrastructure/MOC.md",
+          "source-vaults/AI /Master AI/21 - LLMOps and MLOps/MOC.md",
+          "source-vaults/AI /Master AI/22 - Production AI/MOC.md",
+          "source-vaults/AI /Master AI/23 - Multimodal AI/MOC.md",
+          "source-vaults/AI /Master AI/24 - Research Frontiers/MOC.md",
+          "source-vaults/AI /Master AI/25 - Frameworks and Tools/MOC.md",
+          "source-vaults/AI /Master AI/26 - Papers/MOC.md",
+          "source-vaults/AI /Master AI/27 - Projects/MOC.md",
+          "source-vaults/AI /Master AI/28 - Glossary/MOC.md",
+          "source-vaults/AI /Master AI/29 - Interview Prep/MOC.md"
+        ]
+      }
+    ],
+    "external_links": [
+      {
+        "file": "README.md",
+        "line": 131,
+        "url": "https://github.com/Vtheonly/ObsidainAgentGithubUplaod"
+      }
+    ],
+    "folder_links": [
+      {
+        "kind": "wikilink",
+        "file": "00 - Vault Management/Master Roadmap.md",
+        "line": 732,
+        "target": "17 - RAG/Embeddings/Embedding Models",
+        "resolved_folder": "source-vaults/AI /Master AI/09 - Foundation Models/Embedding Models"
+      },
+      {
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Calculus/10 - Gradient and Chain Rule.md",
+        "line": 140,
+        "target": "04 - Neural Networks/Training",
+        "resolved_folder": "source-vaults/AI /Master AI/04 - Neural Networks/Training"
+      },
+      {
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Calculus/10 - Gradient and Chain Rule.md",
+        "line": 141,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Calculus/10 - Gradient and Chain Rule.md",
+        "line": 357,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md",
+        "line": 88,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "02 - Mathematics/Linear Algebra/04 - Matrix Multiplication.md",
+        "line": 337,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "02 - Mathematics/MOC.md",
+        "line": 36,
+        "target": "02 - Mathematics/Probability",
+        "resolved_folder": "source-vaults/AI /Master AI/02 - Mathematics/Probability"
+      },
+      {
+        "kind": "wikilink",
+        "file": "02 - Mathematics/MOC.md",
+        "line": 52,
+        "target": "06 - Attention Mechanisms/Self-Attention/Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/Supervised Learning/02 - Linear and Logistic Regression.md",
+        "line": 93,
+        "target": "06 - Attention Mechanisms/Self-Attention/Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Embeddings/05 - Word2Vec GloVe FastText.md",
+        "line": 147,
+        "target": "17 - RAG/Embeddings",
+        "resolved_folder": "source-vaults/AI /Master AI/05 - NLP Fundamentals/Embeddings"
+      },
+      {
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Embeddings/06 - Contextual Embeddings ELMo to BERT.md",
+        "line": 298,
+        "target": "17 - RAG/Embeddings/Embedding Models",
+        "resolved_folder": "source-vaults/AI /Master AI/09 - Foundation Models/Embedding Models"
+      },
+      {
+        "kind": "wikilink",
+        "file": "05 - NLP Fundamentals/Language Modeling/07 - N-gram Language Models.md",
+        "line": 90,
+        "target": "13 - Inference/Speculative Decoding/Speculative Decoding",
+        "resolved_folder": "source-vaults/AI /Master AI/13 - Inference/Speculative Decoding"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Multi-Head Attention/05 - Multi-Head Attention.md",
+        "line": 161,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Multi-Head Attention/05 - Multi-Head Attention.md",
+        "line": 305,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/01 - Origins of Attention.md",
+        "line": 81,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/01 - Origins of Attention.md",
+        "line": 240,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/01 - Origins of Attention.md",
+        "line": 241,
+        "target": "Multi-Head Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Multi-Head Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/02 - Bahdanau Attention.md",
+        "line": 158,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/02 - Bahdanau Attention.md",
+        "line": 159,
+        "target": "Multi-Head Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Multi-Head Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/02 - Bahdanau Attention.md",
+        "line": 290,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/02 - Bahdanau Attention.md",
+        "line": 291,
+        "target": "Multi-Head Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Multi-Head Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/03 - Luong Attention.md",
+        "line": 48,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/03 - Luong Attention.md",
+        "line": 152,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/03 - Luong Attention.md",
+        "line": 165,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/03 - Luong Attention.md",
+        "line": 166,
+        "target": "Multi-Head Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Multi-Head Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/03 - Luong Attention.md",
+        "line": 315,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Origins/03 - Luong Attention.md",
+        "line": 316,
+        "target": "Multi-Head Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Multi-Head Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "line": 180,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/06 - Positional Encoding Overview.md",
+        "line": 264,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "line": 174,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "line": 175,
+        "target": "Multi-Head Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Multi-Head Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "line": 297,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Attention Mechanisms/Positional Information/08 - RoPE.md",
+        "line": 298,
+        "target": "Multi-Head Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Multi-Head Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 58,
+        "target": "Multi-Head Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Multi-Head Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 58,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 206,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Transformers/Architecture/01 - Transformer Block.md",
+        "line": 206,
+        "target": "Multi-Head Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Multi-Head Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "13 - Inference/KV Cache/02 - PagedAttention.md",
+        "line": 161,
+        "target": "Speculative Decoding",
+        "resolved_folder": "source-vaults/AI /Master AI/13 - Inference/Speculative Decoding"
+      },
+      {
+        "kind": "wikilink",
+        "file": "17 - RAG/MOC.md",
+        "line": 24,
+        "target": "17 - RAG/Embeddings",
+        "resolved_folder": "source-vaults/AI /Master AI/05 - NLP Fundamentals/Embeddings"
+      },
+      {
+        "kind": "wikilink",
+        "file": "22 - Production AI/MOC.md",
+        "line": 28,
+        "target": "22 - Production AI/Patterns",
+        "resolved_folder": "source-vaults/AI /Master AI/15 - AI Agents/Patterns"
+      },
+      {
+        "kind": "wikilink",
+        "file": "26 - Papers/Attention Origins/01 - Bahdanau Attention 2014.md",
+        "line": 128,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "28 - Glossary/MOC.md",
+        "line": 21,
+        "target": "28 - Glossary/Terms",
+        "resolved_folder": "source-vaults/AI /Master AI/28 - Glossary/Terms"
+      },
+      {
+        "kind": "wikilink",
+        "file": "28 - Glossary/MOC.md",
+        "line": 22,
+        "target": "28 - Glossary/Acronyms",
+        "resolved_folder": "source-vaults/AI /Master AI/28 - Glossary/Acronyms"
+      },
+      {
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 64,
+        "target": "Multi-Head Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Multi-Head Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 95,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 96,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "Index.md",
+        "line": 98,
+        "target": "Speculative Decoding",
+        "resolved_folder": "source-vaults/AI /Master AI/13 - Inference/Speculative Decoding"
+      },
+      {
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 98,
+        "target": "Self-Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Self-Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 99,
+        "target": "Multi-Head Attention",
+        "resolved_folder": "source-vaults/AI /Master AI/06 - Attention Mechanisms/Multi-Head Attention"
+      },
+      {
+        "kind": "wikilink",
+        "file": "Learning Roadmap.md",
+        "line": 180,
+        "target": "Speculative Decoding",
+        "resolved_folder": "source-vaults/AI /Master AI/13 - Inference/Speculative Decoding"
+      }
+    ],
+    "folder_link_count": 50,
+    "problem_counts": {
+      "broken": 338,
+      "ambiguous": 29
+    }
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "check-links",
+    "args": {
+      "command": "check-links",
+      "root": "source-vaults/AI /Master AI",
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/rebaseline/frame001-master-ai-linkcheck.json"
+    },
+    "utc_timestamp": "2026-10-27T13:35:05+00:00",
+    "git_commit": "460d7d5"
+  }
+}

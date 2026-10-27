@@ -1000,3 +1000,176 @@ class TestOverlapCandidatesCLI:
         proc = run_cli("validate-registry")
         assert proc.returncode == 1
         assert "--classifications" in proc.stderr
+
+
+class TestFrame002CLI:
+    """FRAME-002 end-to-end: lint-artifacts, assess-quality, drift, gate,
+    repair loop, prompt checking (CAP-018..CAP-021)."""
+
+    def _vault(self, tmp_path: Path) -> Path:
+        vault = tmp_path / "vault"
+        vault.mkdir()
+        (vault / "good.md").write_text(
+            "---\ntype: concept\n---\n\n"
+            "Regression is a supervised learning task. It is defined as mapping "
+            "inputs to continuous outputs. For example, predicting house prices "
+            "from size. In practice we minimize a loss $L(\\theta)$ over data.\n\n"
+            "$$\n\\theta^* = \\arg\\min_\\theta L(\\theta)\n$$\n",
+            encoding="utf-8",
+        )
+        (vault / "bad.md").write_text(
+            "---\ntype: concept\n---\n\nShort stub with a broken fence:\n\n"
+            "```python\ndef f(:\n```\n",
+            encoding="utf-8",
+        )
+        return vault
+
+    def test_lint_artifacts_tree_exits_1_on_errors_and_writes_report(self, tmp_path: Path):
+        vault = self._vault(tmp_path)
+        report = tmp_path / "lint.json"
+        proc = run_cli("lint-artifacts", str(vault), "--report", str(report))
+        assert proc.returncode == 1  # bad.md has a python syntax error
+        payload = json.loads(proc.stdout)
+        assert payload["errors"] >= 1
+        detail = json.loads(report.read_text(encoding="utf-8"))
+        assert detail["result"]["summary"]["files"] == 2
+        assert any("necessary" in detail["result"]["caveat"] for _ in [0])
+
+    def test_lint_artifacts_single_file_clean_exit_0(self, tmp_path: Path):
+        vault = self._vault(tmp_path)
+        proc = run_cli("lint-artifacts", str(vault / "good.md"), "--no-links")
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        payload = json.loads(proc.stdout)
+        assert payload["errors"] == 0
+
+    def test_assess_quality_writes_assessments_jsonl(self, tmp_path: Path):
+        vault = self._vault(tmp_path)
+        out = tmp_path / "assessments.jsonl"
+        report = tmp_path / "assess.json"
+        proc = run_cli(
+            "assess-quality", str(vault), "--out", str(out), "--report", str(report)
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        payload = json.loads(proc.stdout)
+        assert payload["notes_assessed"] == 2
+        assert payload["by_type"]["concept"] == 2
+        records = [json.loads(l) for l in out.read_text(encoding="utf-8").splitlines() if l.strip()]
+        assert len(records) == 2
+        assert records[0]["standards_version"].startswith("1.")
+
+    def test_quality_drift_on_assessments(self, tmp_path: Path):
+        vault = self._vault(tmp_path)
+        out = tmp_path / "assessments.jsonl"
+        run_cli("assess-quality", str(vault), "--out", str(out))
+        proc = run_cli("quality-drift", "--assessments", str(out))
+        assert proc.returncode == 0
+        payload = json.loads(proc.stdout)
+        assert payload["verdict"] in ("drift_detected", "no_systematic_drift")
+
+    def test_quality_gate_fails_on_lint_errors(self, tmp_path: Path):
+        vault = self._vault(tmp_path)
+        out = tmp_path / "assessments.jsonl"
+        run_cli("assess-quality", str(vault), "--out", str(out))
+        expected = tmp_path / "expected.txt"
+        expected.write_text("good.md\nbad.md\n", encoding="utf-8")
+        proc = run_cli("quality-gate", "--assessments", str(out), "--expected", str(expected))
+        assert proc.returncode == 1  # bad.md has lint errors -> gate fails
+        payload = json.loads(proc.stdout)
+        assert payload["verdict"] == "fail"
+        assert payload["failures"] >= 1
+
+    def test_repair_loop_end_to_end(self, tmp_path: Path):
+        vault = self._vault(tmp_path)
+        lint_report = tmp_path / "lint.json"
+        run_cli("lint-artifacts", str(vault), "--report", str(lint_report))
+        store = tmp_path / "repairs.jsonl"
+        proc = run_cli(
+            "repair-create", "--lint-report", str(lint_report), "--store", str(store)
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        payload = json.loads(proc.stdout)
+        assert payload["tasks_total"] >= 1
+        assert payload["by_status"]["open"] >= 1
+
+        listing = json.loads(
+            run_cli("repair-list", "--store", str(store)).stdout
+        )
+        task_id = None
+        # find the task id from the store file directly
+        tasks = [json.loads(l) for l in store.read_text(encoding="utf-8").splitlines() if l.strip()]
+        task_id = tasks[0]["repair_id"]
+
+        # record a fixed attempt after actually repairing the file
+        bad = vault / "bad.md"
+        bad.write_text(
+            "---\ntype: concept\n---\n\nShort stub with a fixed fence:\n\n"
+            "```python\ndef f():\n    pass\n```\n",
+            encoding="utf-8",
+        )
+        proc = run_cli(
+            "repair-record", "--store", str(store), "--id", task_id, "--outcome", "fixed"
+        )
+        assert proc.returncode == 0
+        assert json.loads(proc.stdout)["status"] == "awaiting_verification"
+
+        # build the targeted repair prompt for the recorded task
+        prompt_path = tmp_path / "repair-prompt.json"
+        proc = run_cli(
+            "repair-prompt", "--store", str(store), "--id", task_id, "--out", str(prompt_path)
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        assert prompt_path.is_file()
+
+        # verify the repair against the fixed note
+        proc = run_cli(
+            "repair-verify", "--store", str(store), "--id", task_id,
+            "--note-file", str(bad),
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        assert json.loads(proc.stdout)["verified"] is True
+
+        # status now verified
+        proc = run_cli("repair-list", "--store", str(store), "--status", "verified_fixed")
+        assert json.loads(proc.stdout)["total"] == 1
+
+    def test_check_prompt_rejects_vague_spec(self, tmp_path: Path):
+        spec = {
+            "objective": "write a nice note",
+            "target_note": {"path": "n.md", "type": "concept"},
+            "source_evidence": {"ku_ids": []},
+            "requirements": ["be good"],
+            "constraints": [],
+            "acceptance_criteria": [{"criterion": "must be polished", "check": "vibes"}],
+            "output_contract": {},
+        }
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        proc = run_cli("check-prompt", str(spec_path))
+        assert proc.returncode == 1
+        payload = json.loads(proc.stdout)
+        assert payload["ok"] is False
+        assert payload["failures"] >= 3
+
+    def test_check_prompt_accepts_good_spec(self, tmp_path: Path):
+        source = tmp_path / "source-note.md"
+        source.write_text("# Chain Rule\n\nSource material.\n", encoding="utf-8")
+        spec = {
+            "objective": "Write the unified concept note for the chain rule",
+            "target_note": {"path": "unified/Chain Rule.md", "type": "concept"},
+            "source_evidence": {"ku_ids": [], "files": [str(source)]},
+            "requirements": ["define with the standard formula"],
+            "constraints": [
+                "do not invent content; trace every claim to the evidence",
+                "preserve unrelated content; cite sources (provenance)",
+            ],
+            "acceptance_criteria": [
+                {"criterion": "math blocks closed", "check": "lint:MATH_BLOCK_UNCLOSED"},
+                {"criterion": "correctness", "check": "manual_review"},
+            ],
+            "output_contract": {"path": "unified/Chain Rule.md", "format": "markdown"},
+        }
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        proc = run_cli("check-prompt", str(spec_path))
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        assert json.loads(proc.stdout)["ok"] is True

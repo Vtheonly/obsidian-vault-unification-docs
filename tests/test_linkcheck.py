@@ -100,3 +100,76 @@ class TestLinkResolution:
         report = lc.check_links(vault)
         assert any(p["type"] == "missing_anchor" and p["anchor"] == "Missing" for p in report["problems"])
         assert not any(p["type"] == "missing_anchor" and p["anchor"] == "Deep" for p in report["problems"])
+
+
+class TestFolderLinksAndCaches:
+    """L-02 (folder links), L-03 (parse caches), L-06 (strict block ids)."""
+
+    def test_folder_link_resolves_not_broken(self, tmp_path):
+        (tmp_path / "Topic Folder").mkdir()
+        (tmp_path / "Topic Folder" / "index.md").write_text("# Index\n", encoding="utf-8")
+        (tmp_path / "a.md").write_text("See [[Topic Folder]] for details.\n", encoding="utf-8")
+        report = lc.check_links(tmp_path)
+        assert report["folder_link_count"] == 1
+        assert report["folder_links"][0]["target"] == "Topic Folder"
+        assert not any(p["type"] == "broken" for p in report["problems"])
+
+    def test_folder_path_link_with_subpath(self, tmp_path):
+        (tmp_path / "chapters").mkdir()
+        (tmp_path / "chapters" / "one.md").write_text("# One\n", encoding="utf-8")
+        (tmp_path / "a.md").write_text("Go to [[chapters/]].\n", encoding="utf-8")
+        report = lc.check_links(tmp_path)
+        assert report["folder_link_count"] == 1
+        assert "broken" not in report["problem_counts"]
+
+    def test_genuinely_missing_target_still_broken(self, tmp_path):
+        (tmp_path / "a.md").write_text("Bad [[no-such-thing]].\n", encoding="utf-8")
+        report = lc.check_links(tmp_path)
+        assert any(p["type"] == "broken" and p["target"] == "no-such-thing" for p in report["problems"])
+        assert report["folder_link_count"] == 0
+
+    def test_same_named_file_takes_precedence_over_folder(self, tmp_path):
+        # Obsidian resolves a name collision to the FILE; folder must not win
+        (tmp_path / "alpha").mkdir()
+        (tmp_path / "alpha.md").write_text("# Alpha note\n", encoding="utf-8")
+        (tmp_path / "b.md").write_text("Link [[alpha]]\n", encoding="utf-8")
+        report = lc.check_links(tmp_path)
+        assert report["folder_link_count"] == 0
+        assert not any(p["type"] == "broken" for p in report["problems"])
+
+    def test_strict_block_id_rejects_mid_prose_caret(self, tmp_path):
+        # '^block1' appearing mid-prose must NOT validate a block reference
+        (tmp_path / "target.md").write_text(
+            "Some text mentions ^block1 inline in prose.\n", encoding="utf-8"
+        )
+        (tmp_path / "a.md").write_text("Ref [[target#^block1]]\n", encoding="utf-8")
+        report = lc.check_links(tmp_path)
+        assert any(p["type"] == "missing_block" for p in report["problems"])
+
+    def test_strict_block_id_accepts_end_of_line(self, tmp_path):
+        (tmp_path / "target.md").write_text(
+            "A real block. ^block1\nAnother line\n", encoding="utf-8"
+        )
+        (tmp_path / "a.md").write_text("Ref [[target#^block1]]\n", encoding="utf-8")
+        report = lc.check_links(tmp_path)
+        assert not any(p["type"] == "missing_block" for p in report["problems"])
+
+    def test_caches_parse_each_file_once(self, tmp_path, monkeypatch):
+        # L-03: anchor checks must not re-parse target files per link
+        from vault_unification import linkcheck as lc
+        (tmp_path / "target.md").write_text("# T\n\ncontent\n", encoding="utf-8")
+        (tmp_path / "a.md").write_text(
+            "[[target#T]] [[target#T]] [[target#T]]\n", encoding="utf-8"
+        )
+        calls = {"n": 0}
+        original = lc.extract_structure
+
+        def counting_extract(path):
+            calls["n"] += 1
+            return original(path)
+
+        monkeypatch.setattr(lc, "extract_structure", counting_extract)
+        report = lc.check_links(tmp_path)
+        # 2 files -> 2 source parses; cached anchor lookups add none
+        assert calls["n"] == 2
+        assert report["links_checked"] == 3

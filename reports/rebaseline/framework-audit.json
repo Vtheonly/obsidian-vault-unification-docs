@@ -1,0 +1,247 @@
+{
+  "task_id": "AUDIT-011",
+  "method": "full source read of all 17 src/vault_unification modules + CLI help + capability inventory cross-check against the verified battery",
+  "capability_map": [
+    {
+      "id": "CAP-000",
+      "name": "environment self-test",
+      "module": "vault_unification.selftest",
+      "command": "vu selftest",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "selftest.py checks mandatory deps; no defects found"
+    },
+    {
+      "id": "CAP-001",
+      "name": "path safety and source immutability",
+      "module": "vault_unification.pathsafety",
+      "command": "vu check-paths",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "solid symlink + overlap checks; GAPS: no atomic-write helper, no TOCTOU re-check after resolve, no concurrent-run lock (see limitations L-08..L-10)"
+    },
+    {
+      "id": "CAP-002",
+      "name": "recursive inventory and SHA-256 manifests",
+      "module": "vault_unification.inventory",
+      "command": "vu inventory / vu verify-manifest",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "content-based SHA-256 manifests; mtime informational only; symlinks recorded explicitly; no defects found"
+    },
+    {
+      "id": "CAP-003",
+      "name": "markdown structure extraction",
+      "module": "vault_unification.mdextract",
+      "command": "vu structure",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "single construct-detection authority shared with kuextract; LIMITATION: inline-math recount uses a second naive fence-scan that disagrees with the authoritative state machine in unclosed-fence files (see L-04); setext headings unsupported (L-05)"
+    },
+    {
+      "id": "CAP-004",
+      "name": "obsidian link/embed/anchor integrity",
+      "module": "vault_unification.linkcheck",
+      "command": "vu check-links",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "GAPS: folders are not indexed -> intentional folder links reported 'broken' (F-0003 class, see L-02); _heading_exists re-parses the target file per anchor check -> O(links x re-parse), Master AI (333 files) never link-checked (L-03); percent-encoded URLs matched literally (L-06)"
+    },
+    {
+      "id": "CAP-005",
+      "name": "exact/case-insensitive/normalized search and term stats",
+      "module": "vault_unification.search",
+      "command": "vu search / vu term-stats",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "GAP: all matching is per-line; no multi-line phrase search (L-01); term_stats is substring-count only, no word-boundary mode -> inconsistent with overlap.py semantics (L-07)"
+    },
+    {
+      "id": "CAP-006",
+      "name": "registry and task-queue schema validation",
+      "module": "vault_unification.registry",
+      "command": "vu validate-registry",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "per-record schema validation + cross-checks; no defects found"
+    },
+    {
+      "id": "CAP-007",
+      "name": "machine-readable report generation",
+      "module": "vault_unification.reporting",
+      "command": "(library; used by all commands)",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "writes reports non-atomically (L-08); timestamps make reports non-byte-reproducible by design (documented; determinism checks must exclude report_meta)"
+    },
+    {
+      "id": "CAP-008",
+      "name": "test orchestration with machine-readable results",
+      "module": "vault_unification.cli (run-tests)",
+      "command": "vu run-tests",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "pytest orchestration with JSON reports; no defects found"
+    },
+    {
+      "id": "CAP-009",
+      "name": "capability inventory with test verification",
+      "module": "vault_unification.capabilities",
+      "command": "vu capabilities [--verify]",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "inventory tied to real tests via --verify; must be updated in lockstep with FRAME-001/DISC-001 additions"
+    },
+    {
+      "id": "CAP-010",
+      "name": "stable CLI entry point with help and exit codes",
+      "module": "vault_unification.cli",
+      "command": "vu --help (python -m vault_unification)",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "stable exit codes (0 ok / 1 validation failure / 2 usage error) verified across commands during battery"
+    },
+    {
+      "id": "CAP-011",
+      "name": "knowledge-unit registry persistence (derived SQLite index over canonical JSONL)",
+      "module": "vault_unification.kuregistry",
+      "command": "vu kureg-init / kureg-load / kureg-query / kureg-validate",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "derived SQLite registry over canonical JSONL; kureg-load documented atomic; registry rebuild deterministic (init --force + load + apply); no defects found"
+    },
+    {
+      "id": "CAP-015",
+      "name": "content statistics: words, headings, token estimates",
+      "module": "vault_unification.vaultstats",
+      "command": "vu stats",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "word/heading/token statistics; inherits search binary-detection heuristic (L-11)"
+    },
+    {
+      "id": "CAP-012",
+      "name": "omission-detection pilot and reusable output auditor",
+      "module": "vault_unification.omission",
+      "command": "vu omission-pilot / vu audit-output",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "omission pilot 12/12 detection + localization; reusable auditor; no defects found"
+    },
+    {
+      "id": "CAP-016",
+      "name": "deterministic KU extraction from source notes",
+      "module": "vault_unification.kuextract",
+      "command": "vu extract-kus",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "line-accounting invariant guarantees zero silent line loss; unclosed constructs preserved verbatim with warnings (F-0002 handling verified); excerpts normalize CR (documented); SEGMENTATION MUST STAY BYTE-STABLE for committed-batch regeneration (constraint on FRAME-001)"
+    },
+    {
+      "id": "CAP-013",
+      "name": "duplicate/near-duplicate candidate discovery",
+      "module": "vault_unification.overlap",
+      "command": "vu overlap-candidates / vu kureg-apply-overlap",
+      "status_verified": "implemented-and-tested",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "word-boundary term/alias evidence with mermaid + code-block flags (F-0006 regression cases baked in); NO concept-gap discovery exists (this is the DISC-001 target)"
+    },
+    {
+      "id": "CAP-014",
+      "name": "source-to-output coverage and frequency regression reports",
+      "module": null,
+      "command": null,
+      "status_verified": "planned",
+      "verified_by": "vu capabilities --verify (REBASE-000 battery, exit 0; referenced tests 392/392 passed)",
+      "audit_note": "planned; NOT implemented; no code, no tests - honest status"
+    }
+  ],
+  "constraints_discovered": [
+    "CRITICAL: mdextract construct-detection semantics (fence/math/heading spans) and kuextract segmentation MUST remain byte-stable: REGEN-001 must re-extract the 31 committed files byte-identically; FRAME-001 fixes therefore avoid any change that shifts spans (L-04 fix touches only inline_math_count, which segmentation does not use)",
+    "linkcheck report changes (L-02/L-03 fixes) alter future reports vs committed bootstrap reports; committed reports remain historical evidence and are regenerated deliberately, not silently"
+  ],
+  "source_defects_revisited": [
+    {
+      "id": "F-0001",
+      "summary": "trailing-space source parent dir 'AI ' \u2014 handled: all commands quote literal paths; pathsafety does not normalize",
+      "action": "keep quoting rule"
+    },
+    {
+      "id": "F-0002",
+      "summary": "14 AI Course unclosed fences/math \u2014 extractor preserves content verbatim + warns (kuextract unclosed_finding); inline-math recount disagreement is L-04",
+      "action": "L-04 fix in FRAME-001"
+    },
+    {
+      "id": "F-0003",
+      "summary": "175 broken wikilinks + 10 missing anchors include intentional folder links \u2014 linkcheck cannot distinguish (L-02)",
+      "action": "L-02 fix in FRAME-001; re-classify after"
+    },
+    {
+      "id": "F-0007",
+      "summary": "boosted-tree library dating differs across/within vaults",
+      "action": "synthesis-time reconciliation (unchanged)"
+    },
+    {
+      "id": "F-0008",
+      "summary": "mAP name collision (ranking vs detection sense)",
+      "action": "homonym handling exercised by DISC-001 fixtures"
+    },
+    {
+      "id": "F-0009",
+      "summary": "course internally inconsistent on PyTorch Conv2d default bias init",
+      "action": "synthesis-time reconciliation (unchanged); contradiction detection lands with DISC-001"
+    }
+  ],
+  "documentation_discrepancies": [
+    "None found in REBASE-000 claims check (8/8 CONFIRMED): README, handoff, checkpoint, capability inventory and registry counts all match repository evidence",
+    "docs/TOOLING_FRAMEWORK.md capability table must be updated after FRAME-001/DISC-001 land (tracked in FRAME-001 acceptance)"
+  ],
+  "repair_priorities": [
+    {
+      "priority": 1,
+      "limitation": "L-08 atomic writes",
+      "reason": "corruption class affects every artifact the pipeline writes"
+    },
+    {
+      "priority": 2,
+      "limitation": "L-02 + L-03 linkcheck folder links + cache",
+      "reason": "false-positive link class (F-0003) + enables first-ever Master AI link check"
+    },
+    {
+      "priority": 3,
+      "limitation": "L-01 multi-line phrase search",
+      "reason": "documented gap needed for locator-based verification workflows"
+    },
+    {
+      "priority": 4,
+      "limitation": "L-07 word-boundary term stats",
+      "reason": "closes the F-0006 false-positive class in statistics"
+    },
+    {
+      "priority": 5,
+      "limitation": "L-04 inline-math recount",
+      "reason": "report correctness on the 14 unclosed-fence files"
+    },
+    {
+      "priority": 6,
+      "limitation": "L-06 strict block-id check",
+      "reason": "cheap strictness improvement"
+    },
+    {
+      "priority": 7,
+      "limitation": "L-13 locator migration",
+      "reason": "reusable evidence locator for FRAME/DISC work"
+    },
+    {
+      "priority": 8,
+      "limitation": "L-12 discovery capability",
+      "reason": "DISC-001 (separate task, depends on this audit)"
+    }
+  ],
+  "accepted_limitations": [
+    "L-05 (deferred with evidence)",
+    "L-09",
+    "L-10",
+    "L-11"
+  ]
+}

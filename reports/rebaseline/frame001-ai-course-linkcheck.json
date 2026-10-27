@@ -1,0 +1,1418 @@
+{
+  "command": "check-links",
+  "result": {
+    "root": "source-vaults/AI /AI Course",
+    "markdown_files_checked": 276,
+    "links_checked": 939,
+    "problems": [
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 33,
+        "target": "wikilinks"
+      },
+      {
+        "type": "missing_anchor",
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 41,
+        "target": "(self)",
+        "anchor": "01 - Foundations and Overview\\"
+      },
+      {
+        "type": "missing_anchor",
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 42,
+        "target": "(self)",
+        "anchor": "02 - Python and Data Tooling\\"
+      },
+      {
+        "type": "missing_anchor",
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 43,
+        "target": "(self)",
+        "anchor": "03 - Machine Learning\\"
+      },
+      {
+        "type": "missing_anchor",
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 44,
+        "target": "(self)",
+        "anchor": "04 - Neural Networks and Deep Learning Foundations\\"
+      },
+      {
+        "type": "missing_anchor",
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 45,
+        "target": "(self)",
+        "anchor": "05 - Convolutional Neural Networks (CNN)\\"
+      },
+      {
+        "type": "missing_anchor",
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 46,
+        "target": "(self)",
+        "anchor": "06 - Image Processing\\"
+      },
+      {
+        "type": "missing_anchor",
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 47,
+        "target": "(self)",
+        "anchor": "07 - Sequence Models and RNNs\\"
+      },
+      {
+        "type": "missing_anchor",
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 48,
+        "target": "(self)",
+        "anchor": "08 - Attention and Transformers\\"
+      },
+      {
+        "type": "missing_anchor",
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 49,
+        "target": "(self)",
+        "anchor": "10 - Generative Models\\"
+      },
+      {
+        "type": "missing_anchor",
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 50,
+        "target": "(self)",
+        "anchor": "09 - Quizzes and Question Banks\\"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/08. Foundations of Machine Learning (Summary).md",
+        "line": 167,
+        "target": "Hyperparameter Tuning"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/08. Foundations of Machine Learning (Summary).md",
+        "line": 1146,
+        "target": "Cross-Validation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "01 - Foundations and Overview/01.2 - Mathematical Foundations/00. Linear Algebra Fundamentals.md",
+        "line": 75,
+        "target": "Dimensionality Reduction"
+      },
+      {
+        "type": "parse_error",
+        "file": "01 - Foundations and Overview/01.3 - Data Science Foundations/03. The Four Pillars of Data Science.md",
+        "detail": "unclosed code fence starting at line 30"
+      },
+      {
+        "type": "parse_error",
+        "file": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/04. Dictionaries and Key Value Management.md",
+        "detail": "unclosed code fence starting at line 60"
+      },
+      {
+        "type": "parse_error",
+        "file": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/05. Functions and Lambda Expressions.md",
+        "detail": "unclosed code fence starting at line 66"
+      },
+      {
+        "type": "parse_error",
+        "file": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/06. Object Oriented Programming (OOP) in Data Science.md",
+        "detail": "unclosed code fence starting at line 62"
+      },
+      {
+        "type": "parse_error",
+        "file": "02 - Python and Data Tooling/02.2 - Python Programming Essentials/08. Error Handling and Exception Management.md",
+        "detail": "unclosed code fence starting at line 39"
+      },
+      {
+        "type": "parse_error",
+        "file": "02 - Python and Data Tooling/02.3 - Essential Python Libraries/04. Matplotlib - Static Data Visualization.md",
+        "detail": "unclosed code fence starting at line 44"
+      },
+      {
+        "type": "parse_error",
+        "file": "02 - Python and Data Tooling/02.3 - Essential Python Libraries/06. Interactive Plotting with Plotly.md",
+        "detail": "unclosed code fence starting at line 33"
+      },
+      {
+        "type": "parse_error",
+        "file": "02 - Python and Data Tooling/02.3 - Essential Python Libraries/07. Exercise 4 - Temperature and Grade Analysis.md",
+        "detail": "unclosed code fence starting at line 54"
+      },
+      {
+        "type": "parse_error",
+        "file": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/01. Handling Missing Data and Imputation Strategies.md",
+        "detail": "unclosed code fence starting at line 82"
+      },
+      {
+        "type": "parse_error",
+        "file": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/03. Outlier Detection and Treatment Methods.md",
+        "detail": "unclosed code fence starting at line 59"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/04. Feature Scaling and Normalization.md",
+        "line": 131,
+        "target": "07. Preprocessing Pipelines and Train-Test Hygiene"
+      },
+      {
+        "type": "parse_error",
+        "file": "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/01. SVM - Course Overview.md",
+        "detail": "unclosed code fence starting at line 179"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/03.6 - Model Evaluation/03. Regression Metrics - MAE, MSE, RMSE, R2, MAPE.md",
+        "line": 4,
+        "target": "04. Clustering Metrics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/03.6 - Model Evaluation/03. Regression Metrics - MAE, MSE, RMSE, R2, MAPE.md",
+        "line": 40,
+        "target": "Probability and Statistics for ML"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/03.6 - Model Evaluation/03. Regression Metrics - MAE, MSE, RMSE, R2, MAPE.md",
+        "line": 162,
+        "target": "04. Clustering Metrics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/03.6 - Model Evaluation/04. Clustering Metrics - Silhouette, Davies-Bouldin, ARI, NMI.md",
+        "line": 4,
+        "target": "03. Regression Metrics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/03.6 - Model Evaluation/05. Computer Vision Metrics - IoU, mAP, Dice.md",
+        "line": 4,
+        "target": "Modern Computer Vision Tasks - Detection and Segmentation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/03.6 - Model Evaluation/05. Computer Vision Metrics - IoU, mAP, Dice.md",
+        "line": 144,
+        "target": "03. Regression Metrics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/03.6 - Model Evaluation/05. Computer Vision Metrics - IoU, mAP, Dice.md",
+        "line": 144,
+        "target": "04. Clustering Metrics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "03 - Machine Learning/03.6 - Model Evaluation/05. Computer Vision Metrics - IoU, mAP, Dice.md",
+        "line": 144,
+        "target": "05. Computer Vision Metrics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/04. Backpropagation and Gradient Flow in CNNs.md",
+        "line": 5,
+        "target": "9. The Convolution Operation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/04. Backpropagation and Gradient Flow in CNNs.md",
+        "line": 6,
+        "target": "10. Pooling Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/04. Backpropagation and Gradient Flow in CNNs.md",
+        "line": 7,
+        "target": "11. Activation Functions"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/04. Backpropagation and Gradient Flow in CNNs.md",
+        "line": 56,
+        "target": "15. The Vanishing and Exploding Gradient Problems"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/04. Backpropagation and Gradient Flow in CNNs.md",
+        "line": 575,
+        "target": "14. Weight Initialization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/04. Backpropagation and Gradient Flow in CNNs.md",
+        "line": 625,
+        "target": "14. Weight Initialization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/01. Weight Initialization.md",
+        "line": 5,
+        "target": "13. Backpropagation and Gradient Flow in CNNs"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/01. Weight Initialization.md",
+        "line": 6,
+        "target": "5. Activation and Pooling Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/01. Weight Initialization.md",
+        "line": 716,
+        "target": "16. Batch Normalization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/03. The Vanishing and Exploding Gradient Problems.md",
+        "line": 5,
+        "target": "13. Backpropagation and Gradient Flow in CNNs"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/03. The Vanishing and Exploding Gradient Problems.md",
+        "line": 6,
+        "target": "14. Weight Initialization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/03. The Vanishing and Exploding Gradient Problems.md",
+        "line": 7,
+        "target": "5. Activation and Pooling Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/03. The Vanishing and Exploding Gradient Problems.md",
+        "line": 65,
+        "target": "14. Weight Initialization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/03. The Vanishing and Exploding Gradient Problems.md",
+        "line": 222,
+        "target": "14. Weight Initialization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/03. The Vanishing and Exploding Gradient Problems.md",
+        "line": 429,
+        "target": "16. Batch Normalization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/03. The Vanishing and Exploding Gradient Problems.md",
+        "line": 655,
+        "target": "11. The Degradation Problem and Residual Connections"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/04. Hyperparameters and Network Configuration.md",
+        "line": 635,
+        "target": "6. Advanced Pooling Mechanisms and Global Average Pooling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/04. Hyperparameters and Network Configuration.md",
+        "line": 635,
+        "target": "8. Evolution of CNN Architectures"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/04. Hyperparameters and Network Configuration.md",
+        "line": 635,
+        "target": "16. Batch Normalization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/04. Hyperparameters and Network Configuration.md",
+        "line": 635,
+        "target": "17. Dropout and Regularization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/04. Hyperparameters and Network Configuration.md",
+        "line": 635,
+        "target": "20. Loss Functions and Optimizers Deep Dive"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.4 - Labs/02. TP3 - Data Cleaning, Normalization, and Encoding - Solution Guide.md",
+        "line": 60,
+        "target": "'Age'"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.4 - Labs/02. TP3 - Data Cleaning, Normalization, and Encoding - Solution Guide.md",
+        "line": 60,
+        "target": "'Age'"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 5,
+        "target": "1.1 The Bridge - From Basic Convolution to Learned Weights"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 6,
+        "target": "1.2 Demystifying Tensors - Volumes, Depth, and Data Formats"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 7,
+        "target": "1.3 Processing 3D Volumes, Depth Summation, and Biases"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 9,
+        "target": "2.1 The Output Spatial Dimension Formula"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 10,
+        "target": "2.2 Padding - Mathematics, Edge Effects, and Valid vs Same"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 11,
+        "target": "2.3 Strides - Skipping Pixels and Downsampling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 13,
+        "target": "3.1 Pooling Concepts and Spatial Backpropagation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 14,
+        "target": "3.2 Types of Pooling - Max, Mean, Min"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 16,
+        "target": "4.1 Local Connectivity and Parameter Sharing"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 17,
+        "target": "4.2 Hierarchical Feature Extraction"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 18,
+        "target": "4.3 The Mathematics of the Receptive Field"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 19,
+        "target": "4.4 The Fully Connected Layer and Flattening"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 21,
+        "target": "5.1 1x1 Convolutions"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 22,
+        "target": "5.2 Global Average Pooling (GAP)"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 23,
+        "target": "5.3 The Modern Debate - Strides vs Max Pooling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 25,
+        "target": "6.1 Backpropagation Part 1 - Gradients of Weights"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 26,
+        "target": "6.2 Backpropagation Part 2 - Error Routing"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 27,
+        "target": "6.3 Weight Initialization Techniques"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/00. Course Overview.md",
+        "line": 29,
+        "target": "7.1 CNN Mastery Roadmap"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/03. The Bridge - From Basic Convolution to Learned Weights.md",
+        "line": 117,
+        "target": "1.3 Processing 3D Volumes, Depth Summation, and Biases"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/04. Demystifying Tensors - Volumes, Depth, and Data Formats.md",
+        "line": 78,
+        "target": "2.3 Strides - Skipping Pixels and Downsampling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/01. Foundations and Philosophy/04. Demystifying Tensors - Volumes, Depth, and Data Formats.md",
+        "line": 89,
+        "target": "1.1 The Bridge - From Basic Convolution to Learned Weights"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/04. Advanced Pooling Mechanisms and Global Average Pooling.md",
+        "line": 594,
+        "target": "5. Activation and Pooling Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/04. Advanced Pooling Mechanisms and Global Average Pooling.md",
+        "line": 594,
+        "target": "7. Hyperparameters and Network Configuration"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/04. Advanced Pooling Mechanisms and Global Average Pooling.md",
+        "line": 594,
+        "target": "8. Evolution of CNN Architectures"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/04. Advanced Pooling Mechanisms and Global Average Pooling.md",
+        "line": 594,
+        "target": "9. VGG16 Architecture Deep Dive"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/05. The Output Spatial Dimension Formula.md",
+        "line": 33,
+        "target": "1.3 Processing 3D Volumes, Depth Summation, and Biases"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/05. The Output Spatial Dimension Formula.md",
+        "line": 82,
+        "target": "2.2 Padding - Mathematics, Edge Effects, and Valid vs Same"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/05. The Output Spatial Dimension Formula.md",
+        "line": 88,
+        "target": "2.3 Strides - Skipping Pixels and Downsampling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/07. Strides - Skipping Pixels and Downsampling.md",
+        "line": 44,
+        "target": "2.1 The Output Spatial Dimension Formula"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/04. The Fully Connected Layer and Flattening.md",
+        "line": 41,
+        "target": "5.2 Global Average Pooling (GAP)"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/05. Evolution of CNN Architectures.md",
+        "line": 96,
+        "target": "9. VGG16 Architecture Deep Dive"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/05. Evolution of CNN Architectures.md",
+        "line": 401,
+        "target": "6. Advanced Pooling Mechanisms and Global Average Pooling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/05. Evolution of CNN Architectures.md",
+        "line": 401,
+        "target": "7. Hyperparameters and Network Configuration"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/05. Evolution of CNN Architectures.md",
+        "line": 401,
+        "target": "9. VGG16 Architecture Deep Dive"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/05. Evolution of CNN Architectures.md",
+        "line": 401,
+        "target": "10. Inception Architecture Deep Dive"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/05. Evolution of CNN Architectures.md",
+        "line": 401,
+        "target": "11. The Degradation Problem and Residual Connections"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/05. Evolution of CNN Architectures.md",
+        "line": 401,
+        "target": "12. ResNet Bottleneck Blocks and Architectural Variants"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/06. VGG16 Architecture Deep Dive.md",
+        "line": 307,
+        "target": "6. Advanced Pooling Mechanisms and Global Average Pooling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/06. VGG16 Architecture Deep Dive.md",
+        "line": 898,
+        "target": "6. Advanced Pooling Mechanisms and Global Average Pooling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/06. VGG16 Architecture Deep Dive.md",
+        "line": 898,
+        "target": "7. Hyperparameters and Network Configuration"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/06. VGG16 Architecture Deep Dive.md",
+        "line": 898,
+        "target": "8. Evolution of CNN Architectures"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/06. VGG16 Architecture Deep Dive.md",
+        "line": 898,
+        "target": "10. Inception Architecture Deep Dive"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/06. VGG16 Architecture Deep Dive.md",
+        "line": 898,
+        "target": "23. PyTorch Advanced - VGG16 and Pre-trained Models"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/02. PyTorch Implementation Basics.md",
+        "line": 4,
+        "target": "20. Pooling Layers and Stride"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/02. PyTorch Implementation Basics.md",
+        "line": 4,
+        "target": "21. The Complete CNN Architecture"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/02. PyTorch Implementation Basics.md",
+        "line": 126,
+        "target": "23. PyTorch Advanced - VGG16 and Pre-trained Models"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/02. PyTorch Implementation Basics.md",
+        "line": 382,
+        "target": "25. Common Mistakes and How to Fix Them"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/02. PyTorch Implementation Basics.md",
+        "line": 838,
+        "target": "23. PyTorch Advanced - VGG16 and Pre-trained Models"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/03. PyTorch Advanced - VGG16 and Pre-trained Models.md",
+        "line": 4,
+        "target": "22. PyTorch Implementation Basics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/03. PyTorch Advanced - VGG16 and Pre-trained Models.md",
+        "line": 845,
+        "target": "24. The Full Training Pipeline End-to-End Checklist"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/01. The Full Training Pipeline End-to-End Checklist.md",
+        "line": 4,
+        "target": "22. PyTorch Implementation Basics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/01. The Full Training Pipeline End-to-End Checklist.md",
+        "line": 4,
+        "target": "23. PyTorch Advanced - VGG16 and Pre-trained Models"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/01. The Full Training Pipeline End-to-End Checklist.md",
+        "line": 898,
+        "target": "25. Common Mistakes and How to Fix Them"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/02. Common Mistakes and How to Fix Them.md",
+        "line": 67,
+        "target": "23. PyTorch Advanced - VGG16 and Pre-trained Models"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/02. Common Mistakes and How to Fix Them.md",
+        "line": 747,
+        "target": "26. Demystifying the Black Box - CNN Interpretability"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/03. Demystifying the Black Box - CNN Interpretability.md",
+        "line": 4,
+        "target": "21. The Complete CNN Architecture"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/03. Demystifying the Black Box - CNN Interpretability.md",
+        "line": 4,
+        "target": "22. PyTorch Implementation Basics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/03. Demystifying the Black Box - CNN Interpretability.md",
+        "line": 603,
+        "target": "27. Exercises Solved and Explained"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/04. Exercises Solved and Explained.md",
+        "line": 6,
+        "target": "2. Core Architecture and Philosophy"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/04. Exercises Solved and Explained.md",
+        "line": 6,
+        "target": "3. The Convolution Operation Deep Dive"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/04. Exercises Solved and Explained.md",
+        "line": 6,
+        "target": "5. Activation and Pooling Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/04. Exercises Solved and Explained.md",
+        "line": 6,
+        "target": "16. Batch Normalization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/04. Exercises Solved and Explained.md",
+        "line": 6,
+        "target": "17. Dropout and Regularization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/04. Exercises Solved and Explained.md",
+        "line": 6,
+        "target": "19. Transfer Learning and Fine-Tuning"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/04. Exercises Solved and Explained.md",
+        "line": 6,
+        "target": "22. PyTorch Implementation Basics"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/04. Exercises Solved and Explained.md",
+        "line": 6,
+        "target": "25. Common Mistakes and How to Fix Them"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/03. Hyperparameters and Basic PyTorch - Summary.md",
+        "line": 999,
+        "target": "6. Advanced Pooling Mechanisms and Global Average Pooling"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/03. Hyperparameters and Basic PyTorch - Summary.md",
+        "line": 999,
+        "target": "8. Evolution of CNN Architectures"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/03. Hyperparameters and Basic PyTorch - Summary.md",
+        "line": 999,
+        "target": "16. Batch Normalization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/03. Hyperparameters and Basic PyTorch - Summary.md",
+        "line": 999,
+        "target": "17. Dropout and Regularization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/07. Advanced Operators/01. Advanced Convolutional Operators - Depthwise, Dilated, Transposed, Grouped.md",
+        "line": 4,
+        "target": "03. Evolution of CNN Architectures"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/07. Advanced Operators/01. Advanced Convolutional Operators - Depthwise, Dilated, Transposed, Grouped.md",
+        "line": 180,
+        "target": "Modern Computer Vision Tasks - Detection and Segmentation"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/08. Modern Computer Vision Tasks/01. Modern Computer Vision Tasks - Detection and Segmentation.md",
+        "line": 4,
+        "target": "03. Evolution of CNN Architectures"
+      },
+      {
+        "type": "parse_error",
+        "file": "06 - Image Processing/02. Intensity Transformations and Histograms/2.2 Point Processing Operations.md",
+        "detail": "unclosed code fence starting at line 38"
+      },
+      {
+        "type": "parse_error",
+        "file": "06 - Image Processing/03. Spatial Filtering and Neighborhood Processing/3.1 The Mechanics of Spatial Filtering.md",
+        "detail": "unclosed code fence starting at line 35"
+      },
+      {
+        "type": "parse_error",
+        "file": "06 - Image Processing/06. Concepts (ML Perspective)/05. The Fourier Transform in Imaging.md",
+        "detail": "unclosed code fence starting at line 42"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/08.2 - The Transformer Architecture/05. The Full Transformer - Assembling the Pieces.md",
+        "line": 124,
+        "target": "08.4 - Encoder, Decoder, and the Design Space"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/08.3 - Vision Transformers/02. The CLS Token and Why It Works.md",
+        "line": 4,
+        "target": "11. Global Average Pooling (GAP)"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/08.3 - Vision Transformers/02. The CLS Token and Why It Works.md",
+        "line": 14,
+        "target": "11. Global Average Pooling (GAP)"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/08.3 - Vision Transformers/04. ViT Architecture and Design Decisions.md",
+        "line": 4,
+        "target": "03. Evolution of CNN Architectures"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q14 - Weight Initialization.md",
+        "line": 5,
+        "target": "14. Weight Initialization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q15 - The Vanishing and Exploding Gradient Problems.md",
+        "line": 5,
+        "target": "15. The Vanishing and Exploding Gradient Problems"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q17 - Dropout and Regularization.md",
+        "line": 5,
+        "target": "17. Dropout and Regularization"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q5 - Activation and Pooling Layers.md",
+        "line": 5,
+        "target": "5. Activation and Pooling Layers"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "10 - Generative Models/10.3 - GANs/01. The Adversarial Game - Generator vs Discriminator.md",
+        "line": 70,
+        "target": "advanced CNN operators"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "10 - Generative Models/10.3 - GANs/03. Wasserstein GANs and Modern Variants.md",
+        "line": 81,
+        "target": "05.5 Deep Learning for Imaging"
+      },
+      {
+        "type": "broken",
+        "kind": "wikilink",
+        "file": "README.md",
+        "line": 926,
+        "target": "wikilink"
+      }
+    ],
+    "external_links": [
+      {
+        "file": "02 - Python and Data Tooling/02.1 - Python Environment Setup/02. Installation and Distributions.md",
+        "line": 10,
+        "url": "https://www.python.org/downloads"
+      },
+      {
+        "file": "02 - Python and Data Tooling/02.1 - Python Environment Setup/02. Installation and Distributions.md",
+        "line": 30,
+        "url": "https://www.anaconda.com/download"
+      }
+    ],
+    "folder_links": [
+      {
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 21,
+        "target": "08 - Attention and Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 21,
+        "target": "07 - Sequence Models and RNNs",
+        "resolved_folder": "source-vaults/AI /AI Course/07 - Sequence Models and RNNs"
+      },
+      {
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 22,
+        "target": "08.3 - Vision Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers/08.3 - Vision Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 22,
+        "target": "08.2 - The Transformer Architecture",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers/08.2 - The Transformer Architecture"
+      },
+      {
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 23,
+        "target": "03.6 - Model Evaluation",
+        "resolved_folder": "source-vaults/AI /AI Course/03 - Machine Learning/03.6 - Model Evaluation"
+      },
+      {
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 24,
+        "target": "10 - Generative Models",
+        "resolved_folder": "source-vaults/AI /AI Course/10 - Generative Models"
+      },
+      {
+        "kind": "wikilink",
+        "file": "00 - Master Index.md",
+        "line": 26,
+        "target": "03.7 - Tree-Based Models",
+        "resolved_folder": "source-vaults/AI /AI Course/03 - Machine Learning/03.7 - Tree-Based Models"
+      },
+      {
+        "kind": "wikilink",
+        "file": "01 - Foundations and Overview/01.2 - Mathematical Foundations/07. Probability and Statistics for ML.md",
+        "line": 149,
+        "target": "10.2 - Variational Autoencoders",
+        "resolved_folder": "source-vaults/AI /AI Course/10 - Generative Models/10.2 - Variational Autoencoders"
+      },
+      {
+        "kind": "wikilink",
+        "file": "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/03. Artificial Neural Networks (ANN) - Comprehensive.md",
+        "line": 4,
+        "target": "04.2 - Backpropagation Deep Dive",
+        "resolved_folder": "source-vaults/AI /AI Course/04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive"
+      },
+      {
+        "kind": "wikilink",
+        "file": "05 - Convolutional Neural Networks (CNN)/08. Modern Computer Vision Tasks/01. Modern Computer Vision Tasks - Detection and Segmentation.md",
+        "line": 173,
+        "target": "08.3 - Vision Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers/08.3 - Vision Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "06 - Image Processing/05. Morphological Processing and Segmentation/5.9 Connected Components and Region Properties.md",
+        "line": 138,
+        "target": "06. Concepts (ML Perspective)",
+        "resolved_folder": "source-vaults/AI /AI Course/06 - Image Processing/06. Concepts (ML Perspective)"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/00. Chapter Overview.md",
+        "line": 4,
+        "target": "04.1 - Neural Network Basics",
+        "resolved_folder": "source-vaults/AI /AI Course/04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/00. Chapter Overview.md",
+        "line": 4,
+        "target": "03.2 - Optimization Algorithms",
+        "resolved_folder": "source-vaults/AI /AI Course/03 - Machine Learning/03.2 - Optimization Algorithms"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/00. Chapter Overview.md",
+        "line": 4,
+        "target": "01.2 - Mathematical Foundations",
+        "resolved_folder": "source-vaults/AI /AI Course/01 - Foundations and Overview/01.2 - Mathematical Foundations"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/00. Chapter Overview.md",
+        "line": 5,
+        "target": "08 - Attention and Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/00. Chapter Overview.md",
+        "line": 58,
+        "target": "08 - Attention and Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/00. Chapter Overview.md",
+        "line": 70,
+        "target": "04 - Neural Networks and Deep Learning Foundations",
+        "resolved_folder": "source-vaults/AI /AI Course/04 - Neural Networks and Deep Learning Foundations"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/00. Chapter Overview.md",
+        "line": 70,
+        "target": "05 - Convolutional Neural Networks (CNN)",
+        "resolved_folder": "source-vaults/AI /AI Course/05 - Convolutional Neural Networks (CNN)"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/00. Chapter Overview.md",
+        "line": 70,
+        "target": "08 - Attention and Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/07.1 - Motivation and Recurrence/02. The Recurrent Neuron - Unrolling Through Time.md",
+        "line": 136,
+        "target": "04.2 - Backpropagation Deep Dive",
+        "resolved_folder": "source-vaults/AI /AI Course/04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/07.1 - Motivation and Recurrence/03. Backpropagation Through Time (BPTT).md",
+        "line": 3,
+        "target": "04.2 - Backpropagation Deep Dive",
+        "resolved_folder": "source-vaults/AI /AI Course/04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/07.3 - Sequence to Sequence and Encoder-Decoder/01. The Encoder-Decoder Pattern - Conditional Generation.md",
+        "line": 4,
+        "target": "08 - Attention and Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/07.3 - Sequence to Sequence and Encoder-Decoder/01. The Encoder-Decoder Pattern - Conditional Generation.md",
+        "line": 88,
+        "target": "08 - Attention and Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/07.3 - Sequence to Sequence and Encoder-Decoder/01. The Encoder-Decoder Pattern - Conditional Generation.md",
+        "line": 103,
+        "target": "08 - Attention and Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/07.4 - Sequence Modeling Pitfalls and Limits/01. The Bottleneck Problem - Why One Vector Is Not Enough.md",
+        "line": 56,
+        "target": "08 - Attention and Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/07.4 - Sequence Modeling Pitfalls and Limits/03. From RNNs to Attention - The Historical Bridge.md",
+        "line": 4,
+        "target": "08 - Attention and Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "07 - Sequence Models and RNNs/07.4 - Sequence Modeling Pitfalls and Limits/03. From RNNs to Attention - The Historical Bridge.md",
+        "line": 110,
+        "target": "08 - Attention and Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/00. Chapter Overview.md",
+        "line": 4,
+        "target": "07 - Sequence Models and RNNs",
+        "resolved_folder": "source-vaults/AI /AI Course/07 - Sequence Models and RNNs"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/00. Chapter Overview.md",
+        "line": 4,
+        "target": "04.1 - Neural Network Basics",
+        "resolved_folder": "source-vaults/AI /AI Course/04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/00. Chapter Overview.md",
+        "line": 5,
+        "target": "09 - Quizzes and Question Banks",
+        "resolved_folder": "source-vaults/AI /AI Course/09 - Quizzes and Question Banks"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/00. Chapter Overview.md",
+        "line": 5,
+        "target": "10 - Generative Models",
+        "resolved_folder": "source-vaults/AI /AI Course/10 - Generative Models"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/00. Chapter Overview.md",
+        "line": 91,
+        "target": "07 - Sequence Models and RNNs",
+        "resolved_folder": "source-vaults/AI /AI Course/07 - Sequence Models and RNNs"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/00. Chapter Overview.md",
+        "line": 91,
+        "target": "05 - Convolutional Neural Networks (CNN)",
+        "resolved_folder": "source-vaults/AI /AI Course/05 - Convolutional Neural Networks (CNN)"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/00. Chapter Overview.md",
+        "line": 91,
+        "target": "10 - Generative Models",
+        "resolved_folder": "source-vaults/AI /AI Course/10 - Generative Models"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/08.2 - The Transformer Architecture/01. Self-Attention - When the Sequence Attends to Itself.md",
+        "line": 3,
+        "target": "08.1 - The Attention Mechanism",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers/08.1 - The Attention Mechanism"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/08.2 - The Transformer Architecture/05. The Full Transformer - Assembling the Pieces.md",
+        "line": 3,
+        "target": "08.2 - The Transformer Architecture",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers/08.2 - The Transformer Architecture"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/08.2 - The Transformer Architecture/05. The Full Transformer - Assembling the Pieces.md",
+        "line": 4,
+        "target": "08.3 - Vision Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers/08.3 - Vision Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/08.2 - The Transformer Architecture/05. The Full Transformer - Assembling the Pieces.md",
+        "line": 4,
+        "target": "08.4 - Encoder Decoder and the Design Space",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers/08.4 - Encoder Decoder and the Design Space"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/08.2 - The Transformer Architecture/05. The Full Transformer - Assembling the Pieces.md",
+        "line": 140,
+        "target": "08.3 - Vision Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers/08.3 - Vision Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/08.3 - Vision Transformers/01. From Words to Patches - How ViT Tokenizes an Image.md",
+        "line": 3,
+        "target": "01. Fundamentals of Digital Images",
+        "resolved_folder": "source-vaults/AI /AI Course/06 - Image Processing/01. Fundamentals of Digital Images"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/08.3 - Vision Transformers/04. ViT Architecture and Design Decisions.md",
+        "line": 3,
+        "target": "08.3 - Vision Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers/08.3 - Vision Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/08.3 - Vision Transformers/04. ViT Architecture and Design Decisions.md",
+        "line": 173,
+        "target": "08.4 - Encoder Decoder and the Design Space",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers/08.4 - Encoder Decoder and the Design Space"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/08.4 - Encoder Decoder and the Design Space/04. Choosing the Right Architecture for the Task.md",
+        "line": 3,
+        "target": "08.4 - Encoder Decoder and the Design Space",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers/08.4 - Encoder Decoder and the Design Space"
+      },
+      {
+        "kind": "wikilink",
+        "file": "08 - Attention and Transformers/08.4 - Encoder Decoder and the Design Space/04. Choosing the Right Architecture for the Task.md",
+        "line": 154,
+        "target": "10 - Generative Models",
+        "resolved_folder": "source-vaults/AI /AI Course/10 - Generative Models"
+      },
+      {
+        "kind": "wikilink",
+        "file": "10 - Generative Models/00. Chapter Overview.md",
+        "line": 3,
+        "target": "04.1 - Neural Network Basics",
+        "resolved_folder": "source-vaults/AI /AI Course/04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics"
+      },
+      {
+        "kind": "wikilink",
+        "file": "10 - Generative Models/00. Chapter Overview.md",
+        "line": 3,
+        "target": "08 - Attention and Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "10 - Generative Models/00. Chapter Overview.md",
+        "line": 66,
+        "target": "08 - Attention and Transformers",
+        "resolved_folder": "source-vaults/AI /AI Course/08 - Attention and Transformers"
+      },
+      {
+        "kind": "wikilink",
+        "file": "10 - Generative Models/10.1 - Autoencoders/01. The Autoencoder - Compression as Learning.md",
+        "line": 3,
+        "target": "04.1 - Neural Network Basics",
+        "resolved_folder": "source-vaults/AI /AI Course/04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics"
+      },
+      {
+        "kind": "wikilink",
+        "file": "10 - Generative Models/10.1 - Autoencoders/01. The Autoencoder - Compression as Learning.md",
+        "line": 53,
+        "target": "03.8 - Dimensionality Reduction",
+        "resolved_folder": "source-vaults/AI /AI Course/03 - Machine Learning/03.8 - Dimensionality Reduction"
+      },
+      {
+        "kind": "wikilink",
+        "file": "10 - Generative Models/10.1 - Autoencoders/02. Denoising Autoencoders and Sparse Autoencoders.md",
+        "line": 93,
+        "target": "10.2 - Variational Autoencoders",
+        "resolved_folder": "source-vaults/AI /AI Course/10 - Generative Models/10.2 - Variational Autoencoders"
+      },
+      {
+        "kind": "wikilink",
+        "file": "10 - Generative Models/10.2 - Variational Autoencoders/03. The KL Divergence Loss.md",
+        "line": 94,
+        "target": "10.3 - GANs",
+        "resolved_folder": "source-vaults/AI /AI Course/10 - Generative Models/10.3 - GANs"
+      },
+      {
+        "kind": "wikilink",
+        "file": "10 - Generative Models/10.3 - GANs/03. Wasserstein GANs and Modern Variants.md",
+        "line": 4,
+        "target": "10.4 - Diffusion Models",
+        "resolved_folder": "source-vaults/AI /AI Course/10 - Generative Models/10.4 - Diffusion Models"
+      },
+      {
+        "kind": "wikilink",
+        "file": "10 - Generative Models/10.3 - GANs/03. Wasserstein GANs and Modern Variants.md",
+        "line": 109,
+        "target": "10.4 - Diffusion Models",
+        "resolved_folder": "source-vaults/AI /AI Course/10 - Generative Models/10.4 - Diffusion Models"
+      },
+      {
+        "kind": "wikilink",
+        "file": "10 - Generative Models/10.4 - Diffusion Models/03. Score-Based and Latent Diffusion.md",
+        "line": 43,
+        "target": "10.2 - Variational Autoencoders",
+        "resolved_folder": "source-vaults/AI /AI Course/10 - Generative Models/10.2 - Variational Autoencoders"
+      }
+    ],
+    "folder_link_count": 54,
+    "problem_counts": {
+      "broken": 121,
+      "missing_anchor": 10,
+      "parse_error": 14
+    }
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.5.0",
+    "report_schema_version": "1.0",
+    "command": "check-links",
+    "args": {
+      "command": "check-links",
+      "root": "source-vaults/AI /AI Course",
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/rebaseline/frame001-ai-course-linkcheck.json"
+    },
+    "utc_timestamp": "2026-10-27T13:35:16+00:00",
+    "git_commit": "460d7d5"
+  }
+}

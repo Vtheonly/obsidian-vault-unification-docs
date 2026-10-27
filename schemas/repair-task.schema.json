@@ -1,0 +1,77 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Repair Task Record (targeted artifact repair loop)",
+ "$id": "https://github.com/Vtheonly/obsidian-vault-unification-docs/schemas/repair-task.schema.json",
+ "version": "1.0",
+ "type": "object",
+ "required": [
+  "repair_id",
+  "status",
+  "file",
+  "line",
+  "check",
+  "severity",
+  "message",
+  "original_excerpt",
+  "expected_fix",
+  "max_attempts",
+  "attempts"
+ ],
+ "properties": {
+  "repair_id": {
+   "type": "string",
+   "pattern": "^RT-[0-9a-f]{12}$",
+   "description": "Content-derived id over file|line|check|message: recreating tasks from a fresh lint run is idempotent; a verified-fixed task whose id reappears is a recorded regression."
+  },
+  "status": {
+   "type": "string",
+   "enum": ["open", "awaiting_verification", "verified_fixed", "escalated_review"],
+   "description": "escalated_review is the bounded-retry terminal state: the loop never runs forever."
+  },
+  "file": {"type": "string"},
+  "line": {"type": "integer", "minimum": 0},
+  "check": {
+   "type": "string",
+   "pattern": "^[A-Z][A-Z0-9_]+$",
+   "description": "Originating artifactlint check id."
+  },
+  "severity": {"type": "string", "enum": ["error", "warning"]},
+  "message": {"type": "string"},
+  "original_excerpt": {
+   "type": "string",
+   "description": "Original defect excerpt captured at creation — preserved forever for audit."
+  },
+  "expected_fix": {
+   "type": "string",
+   "description": "What 'repaired' means for this check id (repair-prompt precision)."
+  },
+  "max_attempts": {
+   "type": "integer",
+   "minimum": 1,
+   "maximum": 10,
+   "description": "Bounded retries (default 3)."
+  },
+  "attempts": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["outcome"],
+    "properties": {
+     "outcome": {
+      "type": "string",
+      "enum": ["fixed", "failed", "skipped", "regression_detected"]
+     },
+     "actor": {"type": "string"},
+     "note": {"type": ["string", "null"]},
+     "diff": {
+      "type": ["string", "null"],
+      "description": "Unified diff of the attempt (when provided)."
+     }
+    },
+    "additionalProperties": true
+   }
+  },
+  "created_from": {"type": "string"}
+ },
+ "additionalProperties": false
+}

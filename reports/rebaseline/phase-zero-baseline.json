@@ -1,0 +1,202 @@
+{
+  "task_id": "REBASE-000",
+  "command": "rebase000-reports (aggregator over real battery outputs)",
+  "repository": {
+    "branch": "main",
+    "head_commit": "460d7d5803efb8a3d75d112d6346f47051b4a703",
+    "origin_main": "460d7d5803efb8a3d75d112d6346f47051b4a703",
+    "working_tree_clean": false,
+    "source_roots": [
+      {
+        "name": "Master AI",
+        "literal_path": "source-vaults/AI /Master AI",
+        "files": 333
+      },
+      {
+        "name": "AI Course",
+        "literal_path": "source-vaults/AI /AI Course",
+        "files": 276
+      }
+    ]
+  },
+  "battery": [
+    {
+      "check": "vu selftest",
+      "command_report": null,
+      "exit_code": 0,
+      "note": "ok: true, mandatory checks passed, no optional missing"
+    },
+    {
+      "check": "python3 -m pytest tests -q (full suite)",
+      "command_report": "reports/rebaseline/rebase000-pytest.json",
+      "exit_code": 1,
+      "report_sha256": "c2aebb20e5c38ea7028822946fff74e89f8c5c031be72de29b7fc78f306ca9fe",
+      "note": "passed=415 failed=None total=415"
+    },
+    {
+      "check": "vu capabilities --verify",
+      "command_report": "reports/rebaseline/rebase000-capabilities.json",
+      "exit_code": 0,
+      "report_sha256": "60aeebbf7cb488b450ae2e9637a2f8141bdcd50413b91e4f608924e98d476476",
+      "note": "verified=True referenced_tests=392 passed=392 implemented_and_tested=16 planned=['CAP-014']"
+    },
+    {
+      "check": "vu verify-manifest (master-ai)",
+      "command_report": "reports/rebaseline/rebase000-immutable-master-ai.json",
+      "exit_code": 0,
+      "report_sha256": "c5c775087b6fa371b9cf5aa4f8a369afe7a7e1449f4e0f813cfda18d4dbfaec5",
+      "note": "added=0 removed=0 changed=0 unchanged=333"
+    },
+    {
+      "check": "vu verify-manifest (ai-course)",
+      "command_report": "reports/rebaseline/rebase000-immutable-ai-course.json",
+      "exit_code": 0,
+      "report_sha256": "ff1674dc0ed29659302dd50e18f42618d7f9ac755cb072938577dcfb484e2f05",
+      "note": "added=0 removed=0 changed=0 unchanged=276"
+    },
+    {
+      "check": "vu kureg-validate (state/registries/kuregistry.db)",
+      "command_report": "reports/rebaseline/rebase000-kureg-validate.json",
+      "exit_code": 0,
+      "report_sha256": "dbd857c341f82a0096c7e9286e82404e8c90e130bdbc6d783275b493968a0adc",
+      "note": "valid=True kus=1728 classifications=164 participating=514 unaccounted=1728"
+    },
+    {
+      "check": "vu validate-registry --tasks state/task-queue.jsonl",
+      "command_report": "reports/rebaseline/rebase000-taskqueue-validate.json",
+      "exit_code": 0,
+      "report_sha256": "4a42b20299865a263154d8c2a59fba3f54e2473c7474765d2143a1647ead9158",
+      "note": "valid=True records=21/21 unique_ids=21"
+    },
+    {
+      "check": "vu validate-registry --classifications (all 7 files)",
+      "command_report": null,
+      "exit_code": 0,
+      "note": "files=7 all valid (exit 0 each); records_total=164"
+    },
+    {
+      "check": "KU accounting recomputation (python, method: JSONL scan)",
+      "command_report": null,
+      "exit_code": 0,
+      "note": [
+        "batch_files=11 ku_records=1728 unique_source_files_extracted=31 of 609 total (333+276); agrees with kureg-validate ku_count"
+      ]
+    },
+    {
+      "check": "state/findings.jsonl enumeration",
+      "command_report": null,
+      "exit_code": 0,
+      "note": "open_findings=9 ids=['F-0001', 'F-0002', 'F-0003', 'F-0004', 'F-0005', 'F-0006', 'F-0007', 'F-0008', 'F-0009']"
+    }
+  ],
+  "claims_verification": [
+    {
+      "claim": "framework_foundation_tested: 415/415 tests",
+      "evidence": "pytest summary passed=415, failed=None",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "claim": "capabilities: 16 implemented-and-tested, 1 planned (CAP-014)",
+      "evidence": "capabilities --verify: 16 implemented-and-tested, planned=['CAP-014'], referenced tests 392/392 passed",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "claim": "1728 KUs, 164 classifications, 514 participating, all Unaccounted",
+      "evidence": "kureg-validate: kus=1728 classifications=164 participating=514 unaccounted=1728",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "claim": "31 of 609 source files extracted",
+      "evidence": "recomputed: 31 unique source files in 11 batches; manifests 333+276=609",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "claim": "both source vaults unchanged (immutability)",
+      "evidence": "verify-manifest exit 0 for both vaults; added=removed=changed=0",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "claim": "task queue 21 records valid (15 completed + REBASE-000 in_progress + 5 queued)",
+      "evidence": "validate-registry: 21/21 valid, 0 problems",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "claim": "EXT-010 handoff: local main == origin/main (tree clean at session start)",
+      "evidence": "branch=main head=460d7d5803ef origin/main=460d7d5803ef; working tree now contains ONLY this session's in-progress REBASE-000 artifacts (reports/rebaseline/*, scripts/rebase000_reports.py)",
+      "verdict": "CONFIRMED"
+    },
+    {
+      "claim": "F-0009 recorded in findings.jsonl (EXT-010 review repair R1)",
+      "evidence": "findings present: ['F-0001', 'F-0002', 'F-0003', 'F-0004', 'F-0005', 'F-0006', 'F-0007', 'F-0008', 'F-0009']",
+      "verdict": "CONFIRMED"
+    }
+  ],
+  "corpus_coverage": {
+    "source_files_total": 609,
+    "source_files_extracted": 31,
+    "coverage_fraction": 0.0509,
+    "ku_records": 1728,
+    "classification_records": 164,
+    "note": "extraction coverage is partial by design (EXT series); Phase 3 (REGEN-001) re-extracts the full corpus"
+  },
+  "open_findings": [
+    {
+      "id": "F-0001",
+      "severity": "medium",
+      "category": "path-hazard",
+      "title": "Source vault parent directory has a trailing space in its name"
+    },
+    {
+      "id": "F-0002",
+      "severity": "high",
+      "category": "source-defect",
+      "title": "14 AI Course notes have unclosed code fences or math blocks"
+    },
+    {
+      "id": "F-0003",
+      "severity": "medium",
+      "category": "source-characteristic",
+      "title": "AI Course vault contains 175 broken wikilinks including folder-name targets"
+    },
+    {
+      "id": "F-0004",
+      "severity": "low",
+      "category": "documentation-state",
+      "title": "README repository-status section contradicted actual repository contents"
+    },
+    {
+      "id": "F-0005",
+      "severity": "low",
+      "category": "handoff-accuracy",
+      "title": "BOOT-004 handoff and task record stated 7 files for the AI Course 03.1 Regression scope; actual count is 6"
+    },
+    {
+      "id": "F-0006",
+      "severity": "medium",
+      "category": "tooling-hazard",
+      "title": "Naive substring term matching produces false positives that would corrupt cross-vault overlap classification (EXT-003+)"
+    },
+    {
+      "id": "F-0007",
+      "severity": "low",
+      "category": "content-discrepancy",
+      "title": "Boosted-tree library dating differs across (and within) vaults; synthesis-time reconciliation required"
+    },
+    {
+      "id": "F-0008",
+      "severity": "medium",
+      "category": "terminology",
+      "title": "mAP name collision across vaults: ranking (IR) sense vs computer-vision detection sense"
+    },
+    {
+      "id": "F-0009",
+      "severity": "medium",
+      "category": "content-discrepancy",
+      "title": "AI Course internally inconsistent on the PyTorch Conv2d default bias initialization (zeros vs uniform)"
+    }
+  ],
+  "reproducibility": {
+    "note": "every battery entry cites a report file whose sha256 is recorded; re-run the same commands to reproduce",
+    "framework_version": "0.5.0"
+  }
+}

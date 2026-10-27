@@ -1,0 +1,188 @@
+{
+  "command": "validate-registry",
+  "validations": {
+    "tasks": {
+      "file": "state/task-queue.jsonl",
+      "schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/task.schema.json",
+      "valid": false,
+      "records_total": 21,
+      "records_valid": 17,
+      "errors": [
+        {
+          "line": 16,
+          "task_id": "REBASE-000",
+          "location": "<root>",
+          "error": "Additional properties are not allowed ('completed_utc', 'completion_notes' were unexpected)"
+        },
+        {
+          "line": 16,
+          "task_id": "REBASE-000",
+          "location": "tests_run.0",
+          "error": "'vu selftest (exit 0)' is not of type 'object'"
+        },
+        {
+          "line": 16,
+          "task_id": "REBASE-000",
+          "location": "tests_run.1",
+          "error": "'python3 -m pytest tests -q -> 415/415 (reports/rebaseline/rebase000-pytest.json)' is not of type 'object'"
+        },
+        {
+          "line": 16,
+          "task_id": "REBASE-000",
+          "location": "tests_run.2",
+          "error": "'vu capabilities --verify -> 16 implemented-and-tested + 1 planned (reports/rebaseline/rebase000-capabilities.json)' is not of type 'object'"
+        },
+        {
+          "line": 16,
+          "task_id": "REBASE-000",
+          "location": "tests_run.3",
+          "error": "'vu verify-manifest both vaults -> exit 0, sources unchanged (reports/rebaseline/rebase000-immutable-*.json)' is not of type 'object'"
+        },
+        {
+          "line": 16,
+          "task_id": "REBASE-000",
+          "location": "tests_run.4",
+          "error": "'vu kureg-validate -> valid, 1728 KUs / 164 classifications / 514 participating (reports/rebaseline/rebase000-kureg-validate.json)' is not of type 'object'"
+        },
+        {
+          "line": 16,
+          "task_id": "REBASE-000",
+          "location": "tests_run.5",
+          "error": "'vu validate-registry --tasks -> 21/21 valid (reports/rebaseline/rebase000-taskqueue-validate.json)' is not of type 'object'"
+        },
+        {
+          "line": 16,
+          "task_id": "REBASE-000",
+          "location": "tests_run.6",
+          "error": "'vu validate-registry --classifications x7 -> all valid' is not of type 'object'"
+        },
+        {
+          "line": 16,
+          "task_id": "REBASE-000",
+          "location": "tests_run.7",
+          "error": "'scripts/rebase000_reports.py -> phase-zero-baseline.json 8/8 claims CONFIRMED, 0 discrepancies + artifact-disposition.json' is not of type 'object'"
+        },
+        {
+          "line": 17,
+          "task_id": "AUDIT-011",
+          "location": "<root>",
+          "error": "Additional properties are not allowed ('completed_utc', 'completion_notes' were unexpected)"
+        },
+        {
+          "line": 17,
+          "task_id": "AUDIT-011",
+          "location": "tests_run.0",
+          "error": "'full source read of all 17 src/vault_unification modules + CLI + capability inventory cross-check' is not of type 'object'"
+        },
+        {
+          "line": 17,
+          "task_id": "AUDIT-011",
+          "location": "tests_run.1",
+          "error": "'scripts/audit011_reports.py -> framework-audit.json (17 capabilities mapped to code/tests/limitations) + known-limitations.json (13 limitations: 6 framework defects, 5 documented limitations, 1 missing capability L-12, 1 process debt L-13)' is not of type 'object'"
+        },
+        {
+          "line": 18,
+          "task_id": "FRAME-001",
+          "location": "<root>",
+          "error": "Additional properties are not allowed ('completed_utc', 'completion_notes' were unexpected)"
+        },
+        {
+          "line": 18,
+          "task_id": "FRAME-001",
+          "location": "tests_run.0",
+          "error": "'full suite after refactor: python3 -m pytest tests -q -> 486/486 (reports/rebaseline/frame001-disc001-final-pytest.json)' is not of type 'object'"
+        },
+        {
+          "line": 18,
+          "task_id": "FRAME-001",
+          "location": "tests_run.1",
+          "error": "'new tests: 6 atomic-write (test_pathsafety), 4 inline-math L-04 (test_mdextract), 14 phrase+word-boundary (test_search), 7 folder-link/cache/strict-block (test_linkcheck), 15 locator (test_locators)' is not of type 'object'"
+        },
+        {
+          "line": 18,
+          "task_id": "FRAME-001",
+          "location": "tests_run.2",
+          "error": "'re-extraction byte-identity: master-ai 07 - Initialization Schemes.md -> 57/57 records byte-identical vs committed batch 010 (reports/rebaseline/rebase000-reextract-07.json)' is not of type 'object'"
+        },
+        {
+          "line": 18,
+          "task_id": "FRAME-001",
+          "location": "tests_run.3",
+          "error": "'vu check-links Master AI (FIRST EVER): 333 files / 5221 links / 338 broken / 29 ambiguous in 2.16s (reports/rebaseline/frame001-master-ai-linkcheck.json)' is not of type 'object'"
+        },
+        {
+          "line": 18,
+          "task_id": "FRAME-001",
+          "location": "tests_run.4",
+          "error": "\"vu check-links AI Course re-run: 121 broken + 54 folder_link = exactly F-0003's 175 (reports/rebaseline/frame001-ai-course-linkcheck.json); F-0010/F-0011 appended to findings\" is not of type 'object'"
+        },
+        {
+          "line": 18,
+          "task_id": "FRAME-001",
+          "location": "tests_run.5",
+          "error": "'vu capabilities --verify after changes: 17 implemented-and-tested + 1 planned' is not of type 'object'"
+        },
+        {
+          "line": 19,
+          "task_id": "DISC-001",
+          "location": "<root>",
+          "error": "Additional properties are not allowed ('completed_utc', 'completion_notes' were unexpected)"
+        },
+        {
+          "line": 19,
+          "task_id": "DISC-001",
+          "location": "tests_run.0",
+          "error": "'tests/test_discovery.py: 25/25 - all mandated fixture scenarios (unexplained prerequisite, explained-elsewhere no-false-gap, fragmented derivation, rare essential no-frequency-threshold, copied passages collapsed, homonyms flagged not merged, contradictions surfaced, coverage gate incl. confirm_gap refusal, merge/split history preservation, section-vs-standalone, determinism, precision/recall 1.0 vs labels, negative paths)' is not of type 'object'"
+        },
+        {
+          "line": 19,
+          "task_id": "DISC-001",
+          "location": "tests_run.1",
+          "error": "'tests/test_locators.py: 15/15 (X2 unique-occurrence locator)' is not of type 'object'"
+        },
+        {
+          "line": 19,
+          "task_id": "DISC-001",
+          "location": "tests_run.2",
+          "error": "'full suite green with discovery module: 486/486' is not of type 'object'"
+        },
+        {
+          "line": 19,
+          "task_id": "DISC-001",
+          "location": "tests_run.3",
+          "error": "'REAL corpus run: vu discover-gaps over all 11 committed batches (1728 KUs, 43768 terms analyzed) -> 6340 schema-valid candidates (4116 unexplained_prerequisite, 1111 rare_essential, 294 fragmented_derivation, 819 concept_sighting/already_covered); all gap statuses provisional_candidate (31/609 coverage, gate active); report reports/discovery/disc001-real-corpus-run.json' is not of type 'object'"
+        },
+        {
+          "line": 19,
+          "task_id": "DISC-001",
+          "location": "tests_run.4",
+          "error": "'vu discovery-validate on the real candidate file with all 11 batches cross-checked: valid, 6340/6340, 0 errors (reports/discovery/disc001-validate.json)' is not of type 'object'"
+        }
+      ],
+      "cross_checks": {
+        "status": "not_run",
+        "reason": "per-record errors present"
+      }
+    }
+  },
+  "problems_total": 25,
+  "valid": false,
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.6.0",
+    "report_schema_version": "1.0",
+    "command": "validate-registry",
+    "args": {
+      "command": "validate-registry",
+      "tasks": "state/task-queue.jsonl",
+      "tasks_schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/task.schema.json",
+      "kus": null,
+      "kus_schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/knowledge-unit.schema.json",
+      "classifications": null,
+      "classifications_schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/overlap-classification.schema.json",
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/rebaseline/post-update-taskqueue-validate.json"
+    },
+    "utc_timestamp": "2026-10-27T13:36:49+00:00",
+    "git_commit": "460d7d5"
+  }
+}

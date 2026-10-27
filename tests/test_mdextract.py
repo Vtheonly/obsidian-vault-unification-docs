@@ -9,6 +9,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
+from vault_unification import mdextract  # noqa: E402
 from vault_unification.mdextract import extract_structure, heading_path  # noqa: E402
 
 
@@ -157,3 +158,40 @@ class TestEdgeCases:
         result = extract_structure(fixture_vault["note_a"])
         inline = [t["tag"] for t in result["tags"] if t.get("source") != "frontmatter"]
         assert "inline" in inline
+
+
+class TestInlineMathAuthoritativeRecount:
+    """L-04 fix: inline math counted from the authoritative state machine."""
+
+    def test_unclosed_fence_hides_following_inline_math(self):
+        # unclosed fence at line 1: the authoritative machine treats ALL
+        # remaining lines as fence content, so the $x$ below is NOT visible
+        # text and must not be counted (the old naive second scan counted it)
+        text = "```python\nprint('unclosed')\nconst $x$ and $y$\n"
+        result = mdextract.extract_structure_text(text)
+        assert any("unclosed code fence" in e for e in result["errors"])
+        assert result["inline_math_count"] == 0
+
+    def test_well_formed_file_counts_unchanged(self):
+        text = (
+            "# Title\n\n"
+            "Inline $a+b$ and $c$ stay countable.\n\n"
+            "```python\nx = 1  # $not_math$\n```\n\n"
+            "After fence $z$ counts.\n"
+        )
+        result = mdextract.extract_structure_text(text)
+        assert result["inline_math_count"] == 3
+
+    def test_inline_math_inside_display_math_block_not_counted(self):
+        # $$ ... $$ block content is not inline math even when it contains
+        # single-$ fragments (the old naive scan wrongly counted these)
+        text = "$$\nE = x^2 $ sub $\n$$\nvisible $m$\n"
+        result = mdextract.extract_structure_text(text)
+        assert len(result["math_blocks"]) == 1
+        assert result["math_blocks"][0]["closed"] is True
+        assert result["inline_math_count"] == 1  # only $m$
+
+    def test_single_line_display_math_not_counted_inline(self):
+        text = "$$E=mc^2$$\nplain $q$\n"
+        result = mdextract.extract_structure_text(text)
+        assert result["inline_math_count"] == 1

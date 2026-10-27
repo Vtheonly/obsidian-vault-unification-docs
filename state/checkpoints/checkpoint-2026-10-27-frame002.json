@@ -1,0 +1,77 @@
+{
+ "checkpoint_id": "checkpoint-2026-10-27-frame002",
+ "created_utc": "2026-10-27T15:19:25+00:00",
+ "task_ids_completed": [
+  "BOOT-000",
+  "BOOT-001",
+  "BOOT-002",
+  "BOOT-003",
+  "BOOT-004",
+  "EXT-001",
+  "EXT-002",
+  "EXT-003",
+  "EXT-004",
+  "EXT-005",
+  "EXT-006",
+  "EXT-007",
+  "EXT-008",
+  "EXT-009",
+  "EXT-010",
+  "REBASE-000",
+  "AUDIT-011",
+  "FRAME-001",
+  "DISC-001",
+  "FRAME-002"
+ ],
+ "task_ids_open": [
+  "REGEN-001",
+  "DISC-002"
+ ],
+ "framework_version": "0.7.0",
+ "test_suite": {
+  "command": "python3 -m pytest tests/ -q",
+  "result": "563 passed",
+  "evidence": "reports/rebaseline/frame002-final-pytest.json"
+ },
+ "capabilities": {
+  "verified": true,
+  "implemented_and_tested": 17,
+  "planned": 1,
+  "evidence": "reports/rebaseline/frame002-capabilities.json"
+ },
+ "phase_zero": {
+  "rebaseline": "complete",
+  "audit": "complete (13 limitations: 8 fixed, 1 implemented as discovery, 4 accepted-documented)",
+  "framework_refactor": "complete (L-01,02,03,04,06,07,08,13)",
+  "discovery": "implemented; partial-corpus run recorded (6340 candidates, coverage gate closed at 31/609)",
+  "quality_toolkit": "complete (CAP-018..021)",
+  "source_lint_baseline": {
+   "ai-course": {
+    "files": 276,
+    "errors": 164,
+    "warnings": 152
+   },
+   "master-ai": {
+    "files": 333,
+    "errors": 371,
+    "warnings": 60
+   },
+   "cross_validation": "LINK_BROKEN counts reproduce F-0010 (121) and F-0011 (338) exactly"
+  }
+ },
+ "extraction_state": {
+  "files_extracted": 31,
+  "files_total": 609,
+  "batches": 11,
+  "kus": 1728,
+  "classifications": 164,
+  "dossiers": 6,
+  "all_kus_disposition": "Unaccounted"
+ },
+ "retrospective": "reports/rebaseline/iteration-retrospective.md",
+ "next": [
+  "full-corpus re-extraction (queue record 20)",
+  "corpus-wide discovery + dossier reconciliation (queue record 21)",
+  "gated synthesis begins"
+ ]
+}

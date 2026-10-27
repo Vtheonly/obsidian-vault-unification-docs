@@ -1,0 +1,85 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Note Quality Assessment Record (notequality)",
+ "$id": "https://github.com/Vtheonly/obsidian-vault-unification-docs/schemas/note-quality.schema.json",
+ "version": "1.0",
+ "type": "object",
+ "required": [
+  "note",
+  "type",
+  "standards_version",
+  "dimensions",
+  "overall",
+  "lint_error_count"
+ ],
+ "properties": {
+  "note": {"type": "string", "description": "Path of the assessed note."},
+  "note_key": {"type": "string", "description": "Key used for provenance mapping."},
+  "type": {
+   "type": "string",
+   "enum": ["concept", "reference", "tutorial", "derivation", "overview", "example", "generic"],
+   "description": "Note type driving the applied standard (different types, different expectations — never one-size-fits-all)."
+  },
+  "standards_version": {
+   "type": "string",
+   "description": "Version of the deterministic standard definitions; scores are comparable across iterations only within the same version."
+  },
+  "sequence_hint": {
+   "description": "Generation-order hint used by drift detection (frontmatter index preferred, natural filename order fallback)."
+  },
+  "dimensions": {
+   "type": "object",
+   "description": "Dimension name -> measurement.",
+   "additionalProperties": {
+    "type": "object",
+    "required": ["score", "evidence", "band", "weight"],
+    "properties": {
+     "score": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "0..1 deterministic score, or null when the dimension is unmeasured (e.g. source coverage without a provenance mapping). Unmeasured is never guessed."
+     },
+     "evidence": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Machine evidence for the score (counts, thresholds, line references)."
+     },
+     "band": {
+      "type": "string",
+      "enum": ["below_band", "within_band", "above_band", "unmeasured"]
+     },
+     "weight": {"type": "number", "minimum": 0, "maximum": 1},
+     "uncovered": {
+      "type": "array",
+      "description": "source_coverage only: mapped source KUs not represented in the note, with reasons and terms.",
+      "items": {
+       "type": "object",
+       "required": ["ku_id", "reason"],
+       "properties": {
+        "ku_id": {"type": "string"},
+        "reason": {"type": "string"},
+        "terms": {"type": "array", "items": {"type": "string"}}
+       },
+       "additionalProperties": false
+      }
+     }
+    }
+   }
+  },
+  "overall": {
+   "type": ["number", "null"],
+   "minimum": 0,
+   "maximum": 1,
+   "description": "Weighted mean over measured dimensions (renormalized when some are unmeasured); null when nothing is measurable."
+  },
+  "overall_measured_weight": {"type": "number"},
+  "lint_error_count": {"type": "integer", "minimum": 0},
+  "lint_defect_count": {"type": "integer", "minimum": 0},
+  "caveat": {
+   "type": "string",
+   "description": "Standing caveat: deterministic measurement only; semantic adequacy is a review decision."
+  }
+ },
+ "additionalProperties": true
+}

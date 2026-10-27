@@ -51,6 +51,7 @@ from . import __version__
 from . import mdextract
 from .inventory import classify_extension, load_manifest, scan_root
 from .kuregistry import mint_ku_id
+from .pathsafety import atomic_write_text
 from .registry import validate_ku_file
 
 UNIT_TYPES = (
@@ -589,12 +590,13 @@ def extract_scope(
             }
         )
 
-    # ---- write the batch (deterministic order; stable serialization) ----
+    # ---- write the batch (deterministic order; stable serialization; ATOMIC L-08) ----
     out = Path(out_path)
     out.parent.mkdir(parents=True, exist_ok=True)
-    with open(out, "w", encoding="utf-8") as handle:
-        for record in records:
-            handle.write(json.dumps(record, sort_keys=True, ensure_ascii=False) + "\n")
+    payload = "".join(
+        json.dumps(record, sort_keys=True, ensure_ascii=False) + "\n" for record in records
+    )
+    atomic_write_text(out, payload)
 
     batch_validation = validate_ku_file(out, kus_schema)
     if not batch_validation["valid"]:

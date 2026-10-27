@@ -8,12 +8,52 @@ overlap any protected root.
 from __future__ import annotations
 
 import os
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 
 
 class PathSafetyError(Exception):
     """Raised when a requested path operation is unsafe."""
+
+
+def atomic_write_bytes(dest: str | os.PathLike, data: bytes) -> Path:
+    """Write *data* to *dest* atomically (L-08 fix).
+
+    The payload is written to a temporary file in the SAME directory as
+    *dest*, flushed + fsynced, then moved into place with ``os.replace``
+    (atomic on POSIX and Windows). A crash mid-write can therefore never
+    leave a truncated file at *dest*: readers see either the previous
+    content or the complete new content. The temporary file is removed on
+    failure. Symlink safety: the final ``os.replace`` REPLACES a symlink
+    at *dest* rather than following it, so an attacker-planted link cannot
+    redirect the write (also mitigates the L-09 TOCTOU window for the
+    leaf component).
+    """
+    dest_path = Path(dest)
+    dest_path.parent.mkdir(parents=True, exist_ok=True)
+    tmp_fd, tmp_name = tempfile.mkstemp(
+        prefix=f".{dest_path.name}.", suffix=".tmp", dir=str(dest_path.parent)
+    )
+    tmp_path = Path(tmp_name)
+    try:
+        with os.fdopen(tmp_fd, "wb") as handle:
+            handle.write(data)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(tmp_name, dest_path)
+    except BaseException:
+        try:
+            tmp_path.unlink(missing_ok=True)
+        except OSError:
+            pass
+        raise
+    return dest_path
+
+
+def atomic_write_text(dest: str | os.PathLike, text: str) -> Path:
+    """UTF-8 text variant of :func:`atomic_write_bytes`."""
+    return atomic_write_bytes(dest, text.encode("utf-8"))
 
 
 @dataclass(frozen=True)

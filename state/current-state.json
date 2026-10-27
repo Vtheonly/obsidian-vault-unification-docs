@@ -1,7 +1,7 @@
 {
  "project": "Obsidian Vault Unification",
  "execution_environment": "Z AI / GLM 5.3 with available subagents",
- "stage": "extraction",
+ "stage": "phase0-rebaseline-complete",
  "status": "in_progress",
  "source_vaults_located": true,
  "source_vaults": [
@@ -110,5 +110,20 @@
   "test_summary": "407 passed, 0 failed, 0 skipped",
   "capabilities": "reports/extraction/ext004-capabilities.json",
   "setup_doc": "docs/FRAMEWORK_SETUP.md"
- }
+ },
+ "framework_version": "0.7.0",
+ "phase_zero_rebaseline": {
+  "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
+  "rebaseline_baseline_report": "reports/rebaseline/phase-zero-baseline.json",
+  "framework_audit": "reports/rebaseline/framework-audit.json",
+  "known_limitations": "reports/rebaseline/known-limitations.json (13; 8 fixed FRAME-001, 1 DISC-001, 4 accepted)",
+  "retrospective": "reports/rebaseline/iteration-retrospective.md",
+  "discovery_partial_corpus_run": "state/concept-candidates/001-disc001-partial-corpus.jsonl (6340 candidates, coverage-gated)",
+  "quality_toolkit_baseline_lint": [
+   "reports/rebaseline/frame002-lint-ai-course.json (276 files, 164 errors)",
+   "reports/rebaseline/frame002-lint-master-ai.json (333 files, 371 errors)"
+  ],
+  "tests": "563/563 (reports/rebaseline/frame002-final-pytest.json)"
+ },
+ "quality_gates_for_synthesis": "every generation batch: check-prompt -> bounded generation -> lint-artifacts -> assess-quality -> quality-drift -> quality-gate -> repair loop; batch complete only when the gate passes or exceptions are explicitly waived with reasons"
 }

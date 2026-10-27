@@ -1,0 +1,107 @@
+{
+  "task_id": "REBASE-000",
+  "command": "rebase000-reports (artifact disposition)",
+  "policy": {
+    "dispositions": [
+      "reuse",
+      "recompute",
+      "migrate",
+      "quarantine",
+      "retire"
+    ],
+    "rule": "reuse only after the artifact passes the new verification criteria (battery above); derived artifacts are recomputed at Phase 3 regardless, so reuse here means 'do not delete and do not recompute before the framework gate'"
+  },
+  "items": [
+    {
+      "artifact": "source vaults (both)",
+      "path": "source-vaults/AI /Master AI + source-vaults/AI /AI Course",
+      "disposition": "reuse",
+      "rationale": "immutable inputs; verify-manifest exit 0 (added=removed=changed=0) against committed manifests",
+      "revalidation_required": "verify-manifest before and after every session (standing rule)"
+    },
+    {
+      "artifact": "baseline manifests",
+      "path": "state/manifests/master-ai.jsonl, state/manifests/ai-course.jsonl",
+      "disposition": "reuse",
+      "rationale": "compared against live disk trees during this battery; byte-for-byte agreement",
+      "revalidation_required": "re-verify at each session start and after any filesystem event"
+    },
+    {
+      "artifact": "KU batches (11 files, 1728 records)",
+      "path": "11 files under state/knowledge-units/",
+      "disposition": "reuse",
+      "rationale": "schema-valid (registry validation), registry-loaded, double-run byte-identical and fidelity-verified at commit time; 31/609 files coverage",
+      "revalidation_required": "REGEN-001 re-extracts ALL 609 files and compares; mismatches quarantine the affected batch"
+    },
+    {
+      "artifact": "overlap classifications (7 files, 164 records)",
+      "path": "7 files under state/classifications/",
+      "disposition": "reuse",
+      "rationale": "schema-valid (all 7 exit 0), machine-located quotes, independently reviewed (EXT-003..010 review chain)",
+      "revalidation_required": "locator re-verification against re-extracted sources during REGEN-001"
+    },
+    {
+      "artifact": "concept dossiers (6 domains)",
+      "path": "6 files under state/dossiers/",
+      "disposition": "reuse",
+      "rationale": "regenerate byte-identically (--check exit 0 x6 at EXT-010); scaffolding by design",
+      "revalidation_required": "DISC-002 reconciles with corpus-wide discovery results; extend, do not rewrite"
+    },
+    {
+      "artifact": "knowledge-unit registry (SQLite)",
+      "path": "state/registries/kuregistry.db",
+      "disposition": "recompute",
+      "rationale": "derived index; currently valid (1728/164/514) but rebuild is deterministic (init --force + load x11 + apply-overlap x7)",
+      "revalidation_required": "rebuild after any batch/classification change; never hand-edit"
+    },
+    {
+      "artifact": "findings register",
+      "path": "state/findings.jsonl",
+      "disposition": "reuse",
+      "rationale": "9 findings, all still open and still relevant; F-0002/F-0003 re-quantified during REGEN-001",
+      "revalidation_required": "append-only; new findings via recorded scripts only"
+    },
+    {
+      "artifact": "task queue",
+      "path": "state/task-queue.jsonl",
+      "disposition": "reuse",
+      "rationale": "21/21 schema-valid, unique ids, dependency chain REBASE-000 -> AUDIT-011 -> FRAME-001 -> DISC-001 -> REGEN-001 -> DISC-002 intact",
+      "revalidation_required": "append records only; update statuses with tests_run evidence"
+    },
+    {
+      "artifact": "checkpoints + handoff",
+      "path": "state/checkpoints/*, docs/agent-handoff/next-agent.md",
+      "disposition": "reuse",
+      "rationale": "EXT-010 checkpoint is the last verified state; handoff rewritten by REBASE-000 at session end",
+      "revalidation_required": "new checkpoint after each task (standing rule)"
+    },
+    {
+      "artifact": "bootstrap/extraction reports",
+      "path": "reports/bootstrap/*, reports/extraction/*",
+      "disposition": "reuse",
+      "rationale": "historical evidence with recorded commands and exit codes; not regenerated",
+      "revalidation_required": "none (evidence trail)"
+    },
+    {
+      "artifact": "task-local scripts",
+      "path": "56 scripts under scripts/",
+      "disposition": "migrate",
+      "rationale": "one-shot task scripts; reusable logic (X2 machine-locator, fidelity checker, term-map verifier) must migrate into the framework during FRAME-001/DISC-001 rather than being re-written ad hoc per task",
+      "revalidation_required": "FRAME-001 migrates the locator utility; remaining scripts stay as one-time migration tooling"
+    },
+    {
+      "artifact": "capability inventory",
+      "path": "src/vault_unification/capabilities.py + reports",
+      "disposition": "migrate",
+      "rationale": "16+1 verified today; must be updated in lockstep with FRAME-001/DISC-001 additions (CAP entries tied to real code and tests)",
+      "revalidation_required": "vu capabilities --verify after every framework change"
+    },
+    {
+      "artifact": "README repository-status",
+      "path": "README.md",
+      "disposition": "migrate",
+      "rationale": "F-0004 precedent: status must track evidence; update after each task",
+      "revalidation_required": "update at session end"
+    }
+  ]
+}

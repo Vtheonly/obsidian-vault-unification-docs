@@ -20,7 +20,12 @@ import sys
 from pathlib import Path
 
 from . import FRAMEWORK_NAME, __version__
+from . import artifactlint as artifactlint_mod
 from . import capabilities as capabilities_mod
+from . import discovery as discovery_mod
+from . import notequality as notequality_mod
+from . import promptspec as promptspec_mod
+from . import repair as repair_mod
 from . import inventory as inventory_mod
 from . import kuregistry as kuregistry_mod
 from . import kuextract as kuextract_mod
@@ -35,7 +40,12 @@ from . import vaultstats as vaultstats_mod
 from .kuregistry import RegistryError
 from .omission import AuditError
 from .overlap import OverlapError
+from .artifactlint import ArtifactLintError
+from .discovery import DiscoveryError
+from .notequality import QualityError
 from .pathsafety import PathSafetyError, ensure_dest_safe, validate_roots
+from .promptspec import PromptSpecError
+from .repair import RepairError
 from .reporting import write_json_report
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -109,14 +119,18 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--report", help="optional JSON report path")
 
     # ---- search ----
-    p = sub.add_parser("search", help="exact / case-insensitive / normalized term search")
+    p = sub.add_parser("search", help="exact / case-insensitive / normalized / multi-line phrase search")
     p.add_argument("--root", required=True, help="directory to search")
-    p.add_argument("--term", required=True, help="non-empty search term")
+    p.add_argument("--term", required=True, help="non-empty search term or (phrase mode) multi-line phrase")
     p.add_argument(
         "--mode",
-        choices=["exact", "case-insensitive", "normalized"],
+        choices=["exact", "case-insensitive", "normalized", "phrase"],
         default="exact",
-        help="matching mode (default: exact)",
+        help=(
+            "matching mode (default: exact); 'phrase' = whole-file normalized "
+            "matching that finds phrases spanning line breaks (L-01) with "
+            "(line_start, line_end) span locators"
+        ),
     )
     p.add_argument("--json", action="store_true", help="print full JSON result to stdout")
     p.add_argument("--report", help="optional JSON report path")
@@ -125,6 +139,16 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("term-stats", help="term frequency statistics with file distribution")
     p.add_argument("--root", required=True, help="directory to scan")
     p.add_argument("--terms-file", required=True, help="UTF-8 file, one term or 'term|alias|alias' per line")
+    p.add_argument(
+        "--match-mode",
+        choices=["substring", "word-boundary"],
+        default="substring",
+        help=(
+            "counting semantics (L-07): 'substring' = casefolded substring "
+            "(backward compatible, 'ridge' counts inside 'bridge'); "
+            "'word-boundary' = CAP-013 semantics via the shared pattern authority"
+        ),
+    )
     p.add_argument("--report", help="optional JSON report path")
 
     # ---- stats ----
@@ -353,6 +377,242 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p.add_argument("--report", help="optional JSON report path")
 
+    # ---- discover-gaps (CAP-017) ----
+    p = sub.add_parser(
+        "discover-gaps",
+        help="emergent concept & knowledge-gap discovery over KU batches (deterministic evidence; CAP-017)",
+    )
+    p.add_argument(
+        "--batch",
+        required=True,
+        action="append",
+        dest="batches",
+        help="KU batch JSONL path (repeatable)",
+    )
+    p.add_argument(
+        "--manifest",
+        required=True,
+        action="append",
+        dest="manifests",
+        help="coverage manifest as VAULT=manifest.jsonl (repeatable; every vault in the batches must be declared)",
+    )
+    p.add_argument(
+        "--out",
+        required=True,
+        help="candidates JSONL destination (explicit; never under a protected root)",
+    )
+    p.add_argument(
+        "--kus-schema",
+        default=str(REPO_ROOT / "schemas" / "knowledge-unit.schema.json"),
+        help="knowledge-unit JSON Schema path",
+    )
+    p.add_argument(
+        "--max-evidence",
+        type=int,
+        default=12,
+        help="cap on evidence entries per candidate (default 12; counts stay complete in the report)",
+    )
+    p.add_argument(
+        "--protected-root",
+        action="append",
+        default=None,
+        help="path the outputs must not be written under (repeatable); default: <repo>/source-vaults when present",
+    )
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- discovery-decide (CAP-017) ----
+    p = sub.add_parser(
+        "discovery-decide",
+        help="apply reviewed decisions (confirm/accept/reject/defer/merge/split/revise/cover) with append-only history",
+    )
+    p.add_argument("--candidates", required=True, help="candidates JSONL produced by discover-gaps")
+    p.add_argument("--decisions", required=True, help="decisions JSONL (candidate_id, decision_id, action, rationale, reviewer; merge->merge_into; split->split_into/new_candidates)")
+    p.add_argument("--out", required=True, help="updated candidates JSONL destination")
+    p.add_argument(
+        "--candidate-schema",
+        default=str(REPO_ROOT / "schemas" / "concept-candidate.schema.json"),
+        help="concept-candidate JSON Schema path",
+    )
+    p.add_argument(
+        "--decided-utc",
+        default=None,
+        help="ISO-8601 UTC timestamp for the decision history entries (default: now, recorded in the report)",
+    )
+    p.add_argument(
+        "--protected-root",
+        action="append",
+        default=None,
+        help="path the outputs must not be written under (repeatable)",
+    )
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- discovery-validate (CAP-017) ----
+    p = sub.add_parser(
+        "discovery-validate",
+        help="validate candidate records against the schema + cross-checks (coverage gate, history integrity)",
+    )
+    p.add_argument("--candidates", required=True, help="candidates JSONL to validate")
+    p.add_argument(
+        "--candidate-schema",
+        default=str(REPO_ROOT / "schemas" / "concept-candidate.schema.json"),
+        help="concept-candidate JSON Schema path",
+    )
+    p.add_argument(
+        "--batch",
+        action="append",
+        dest="batches",
+        default=None,
+        help="optional KU batch to cross-check evidence ku_ids (repeatable)",
+    )
+    p.add_argument(
+        "--kus-schema",
+        default=str(REPO_ROOT / "schemas" / "knowledge-unit.schema.json"),
+        help="knowledge-unit JSON Schema path",
+    )
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- lint-artifacts (CAP-018) ----
+    p = sub.add_parser(
+        "lint-artifacts",
+        help="structural/syntactic artifact validation of generated notes (fences, math, tables, mermaid, links, truncation)",
+    )
+    p.add_argument("path", help="Markdown file or directory to lint")
+    p.add_argument(
+        "--no-links",
+        action="store_true",
+        help="skip internal-link resolution (pure structural lint)",
+    )
+    p.add_argument(
+        "--skip-dir",
+        action="append",
+        dest="skip_dirs",
+        default=[".git", ".obsidian"],
+        help="directory name to skip when linting a tree (repeatable)",
+    )
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- assess-quality (CAP-019) ----
+    p = sub.add_parser(
+        "assess-quality",
+        help="note-type-aware deterministic quality assessment of every note under a root",
+    )
+    p.add_argument("root", help="directory containing generated notes")
+    p.add_argument(
+        "--provenance",
+        help="note->ku_ids mapping JSONL (enables the source_coverage dimension)",
+    )
+    p.add_argument(
+        "--ku-batch",
+        action="append",
+        dest="ku_batches",
+        default=None,
+        help="KU batch JSONL for source-coverage term extraction (repeatable)",
+    )
+    p.add_argument("--out", help="optional assessments JSONL destination")
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- quality-drift (CAP-019) ----
+    p = sub.add_parser(
+        "quality-drift",
+        help="detect systematic quality drift between early and late notes (per type, per dimension)",
+    )
+    p.add_argument("--assessments", required=True, help="assessments JSONL produced by assess-quality")
+    p.add_argument("--rel-drop", type=float, default=0.15, help="relative drop threshold (default 0.15)")
+    p.add_argument("--abs-drop", type=float, default=0.10, help="absolute drop threshold (default 0.10)")
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- quality-gate (CAP-019) ----
+    p = sub.add_parser(
+        "quality-gate",
+        help="batch acceptance gate: expected notes, lint cleanliness, dimension bands, drift explanation",
+    )
+    p.add_argument("--assessments", required=True, help="assessments JSONL produced by assess-quality")
+    p.add_argument(
+        "--expected",
+        help="optional text file listing expected note paths (one per line)",
+    )
+    p.add_argument(
+        "--drift-report",
+        help="optional quality-drift JSON report (drift explanation criterion)",
+    )
+    p.add_argument(
+        "--waiver",
+        action="append",
+        dest="waivers",
+        default=None,
+        help="explicit waiver 'note::dimension=reason' or 'drift::type=reason' (repeatable)",
+    )
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- repair-create (CAP-020) ----
+    p = sub.add_parser(
+        "repair-create",
+        help="convert an artifact-lint report into targeted repair tasks (idempotent, content-addressed)",
+    )
+    p.add_argument("--lint-report", required=True, help="lint-artifacts JSON report (tree or single file)")
+    p.add_argument("--store", required=True, help="repair-task JSONL store (merged when it exists)")
+    p.add_argument("--max-attempts", type=int, default=3, help="bounded retries per task (default 3)")
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- repair-record (CAP-020) ----
+    p = sub.add_parser(
+        "repair-record",
+        help="record a repair attempt (outcome fixed/failed/skipped) on a task",
+    )
+    p.add_argument("--store", required=True, help="repair-task JSONL store")
+    p.add_argument("--id", required=True, help="repair task id (RT-...)")
+    p.add_argument("--outcome", required=True, choices=["fixed", "failed", "skipped"], help="attempt outcome")
+    p.add_argument("--diff-file", help="optional file containing the unified diff of the change")
+    p.add_argument("--note", help="optional free-text note about the attempt")
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- repair-verify (CAP-020) ----
+    p = sub.add_parser(
+        "repair-verify",
+        help="verify a claimed repair: originating check passes, no new defects, scope local",
+    )
+    p.add_argument("--store", required=True, help="repair-task JSONL store")
+    p.add_argument("--id", required=True, help="repair task id (RT-...)")
+    p.add_argument("--note-file", required=True, help="current (repaired) note file")
+    p.add_argument("--original-file", help="optional pre-repair copy of the note (enables scope discipline)")
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- repair-list (CAP-020) ----
+    p = sub.add_parser(
+        "repair-list",
+        help="list repair tasks with status counts (optionally filtered by status)",
+    )
+    p.add_argument("--store", required=True, help="repair-task JSONL store")
+    p.add_argument("--status", help="filter by status (open/awaiting_verification/verified_fixed/escalated_review)")
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- repair-prompt (CAP-020/021) ----
+    p = sub.add_parser(
+        "repair-prompt",
+        help="build a targeted repair prompt spec from a repair task (smallest sufficient context)",
+    )
+    p.add_argument("--store", required=True, help="repair-task JSONL store")
+    p.add_argument("--id", required=True, help="repair task id (RT-...)")
+    p.add_argument("--out", required=True, help="generation-prompt JSON destination")
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- check-prompt (CAP-021) ----
+    p = sub.add_parser(
+        "check-prompt",
+        help="validate a generation-prompt spec (precision, evidence resolvability, testable criteria, boundedness)",
+    )
+    p.add_argument("spec", help="generation-prompt spec JSON file")
+    p.add_argument(
+        "--ku-batch",
+        action="append",
+        dest="ku_batches",
+        default=None,
+        help="KU batch JSONL to resolve ku_ids against (repeatable)",
+    )
+    p.add_argument("--context-budget", type=int, default=4000, help="context budget in words (default 4000)")
+    p.add_argument("--max-requirements", type=int, default=25, help="requirements cap (default 25)")
+    p.add_argument("--report", help="optional JSON report path")
+
     # ---- kureg-apply-overlap ----
     p = sub.add_parser(
         "kureg-apply-overlap",
@@ -485,7 +745,10 @@ def cmd_check_links(args) -> int:
 
 
 def cmd_search(args) -> int:
-    result = search_mod.search_term(args.root, args.term, args.mode)
+    if args.mode == "phrase":
+        result = search_mod.search_phrase(args.root, args.term)
+    else:
+        result = search_mod.search_term(args.root, args.term, args.mode)
     payload = {"command": "search", "result": result}
     _write_report_safe(args, "search", payload)
     if args.json:
@@ -522,7 +785,9 @@ def cmd_term_stats(args) -> int:
         alias_list = [a for a in parts[1:] if a]
         if alias_list:
             aliases[term] = alias_list
-    result = search_mod.term_stats(args.root, terms, aliases=aliases)
+    result = search_mod.term_stats(
+        args.root, terms, aliases=aliases, match_mode=args.match_mode
+    )
     payload = {"command": "term-stats", "result": result}
     _write_report_safe(args, "term-stats", payload)
     _emit_summary(
@@ -1002,6 +1267,422 @@ def cmd_kureg_apply_overlap(args) -> int:
     return 0
 
 
+def _parse_vault_manifests(manifest_args: list[str]) -> dict:
+    """Parse VAULT=PATH manifest arguments into an ordered dict."""
+    manifests: dict[str, str] = {}
+    for arg in manifest_args:
+        if "=" not in arg:
+            raise DiscoveryError(
+                f"manifest argument must be VAULT=PATH (got {arg!r})"
+            )
+        vault, path = arg.split("=", 1)
+        if not vault.strip() or not path.strip():
+            raise DiscoveryError(f"manifest argument must be VAULT=PATH (got {arg!r})")
+        manifests[vault.strip()] = path.strip()
+    return manifests
+
+
+def cmd_discover_gaps(args) -> int:
+    from .reporting import write_jsonl
+
+    protected = _default_protected_roots(args.protected_root)
+    for dest_name in ("out", "report"):
+        dest = getattr(args, dest_name, None)
+        if not dest:
+            continue
+        try:
+            ensure_dest_safe(dest, protected)
+        except PathSafetyError as exc:
+            print(f"error: {dest_name} destination: {exc}", file=sys.stderr)
+            return 1
+    try:
+        manifests = _parse_vault_manifests(args.manifests)
+        result = discovery_mod.discover_candidates(
+            args.batches,
+            args.kus_schema,
+            manifests,
+            max_evidence_per_candidate=args.max_evidence,
+        )
+    except (DiscoveryError, OverlapError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    if not result["ok"]:
+        for err in result["errors"]:
+            print(f"error: {err}", file=sys.stderr)
+    write_jsonl(args.out, result["candidates"])
+    report = result["report"]
+    report["ok"] = result["ok"]
+    report["candidates_path"] = str(args.out)
+    if args.report:
+        write_json_report(
+            args.report,
+            "discover-gaps",
+            {"result": report},
+            args=vars(args) | {"report": str(args.report)},
+            repo_root=REPO_ROOT,
+        )
+    _emit_summary(
+        {
+            "ok": report["ok"],
+            "candidates_emitted": report["denominators"]["candidates_emitted"],
+            "by_kind": report["candidates_by_kind"],
+            "by_status": report["candidates_by_status"],
+            "coverage": report["coverage"],
+        }
+    )
+    return 0 if result["ok"] else 1
+
+
+def cmd_discovery_decide(args) -> int:
+    from .reporting import write_jsonl
+    from datetime import datetime, timezone
+
+    protected = _default_protected_roots(args.protected_root)
+    for dest_name in ("out", "report"):
+        dest = getattr(args, dest_name, None)
+        if not dest:
+            continue
+        try:
+            ensure_dest_safe(dest, protected)
+        except PathSafetyError as exc:
+            print(f"error: {dest_name} destination: {exc}", file=sys.stderr)
+            return 1
+    decided_utc = args.decided_utc or datetime.now(timezone.utc).isoformat(timespec="seconds")
+    try:
+        result = discovery_mod.apply_decisions(
+            args.candidates,
+            args.decisions,
+            args.candidate_schema,
+            decided_utc=decided_utc,
+        )
+    except (DiscoveryError, OSError, json.JSONDecodeError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    for err in result["errors"]:
+        print(f"error: {err}", file=sys.stderr)
+    if not result["ok"]:
+        return 1
+    write_jsonl(args.out, result["records"])
+    summary = {
+        "ok": True,
+        "records_written": len(result["records"]),
+        "decisions_applied": sum(1 for r in result["records"] for h in r["decision_history"]),
+        "decided_utc": decided_utc,
+        "out": str(args.out),
+    }
+    if args.report:
+        write_json_report(
+            args.report,
+            "discovery-decide",
+            {"result": summary},
+            args=vars(args) | {"report": str(args.report)},
+            repo_root=REPO_ROOT,
+        )
+    _emit_summary(summary)
+    return 0
+
+
+def cmd_discovery_validate(args) -> int:
+    try:
+        result = discovery_mod.validate_candidates(
+            args.candidates,
+            args.candidate_schema,
+            ku_batches=args.batches,
+            kus_schema=args.kus_schema if args.batches else None,
+        )
+    except (DiscoveryError, OverlapError, OSError, json.JSONDecodeError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    payload = {"command": "discovery-validate", "result": result}
+    _write_report_safe(args, "discovery-validate", payload)
+    _emit_summary(
+        {
+            "valid": result["valid"],
+            "records_total": result["records_total"],
+            "errors_total": result["errors_total"],
+        }
+    )
+    return 0 if result["valid"] else 1
+
+
+# ---------------------------------------------------------------------------
+# FRAME-002: artifact lint, quality assessment, drift, gates, repair loop,
+# prompt checking (CAP-018..CAP-021)
+
+
+def cmd_lint_artifacts(args) -> int:
+    path = Path(args.path)
+    try:
+        if path.is_dir():
+            result = artifactlint_mod.lint_tree(
+                path, skip_dirs=tuple(args.skip_dirs), check_links=not args.no_links
+            )
+        elif path.is_file():
+            ctx = None if args.no_links else artifactlint_mod.build_link_context(path.parent)
+            result = artifactlint_mod.lint_file(path, link_context=ctx)
+        else:
+            print(f"error: no such file or directory: {path}", file=sys.stderr)
+            return 1
+    except ArtifactLintError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    _write_report_safe(args, "lint-artifacts", {"result": result})
+    if path.is_dir():
+        summary = result["summary"]
+        _emit_summary(
+            {
+                "files": summary["files"],
+                "defects": summary["defects"],
+                "errors": summary["errors"],
+                "warnings": summary["warnings"],
+                "infos": summary["infos"],
+                "files_with_errors": summary["files_with_errors"],
+            }
+        )
+        return 1 if summary["errors"] else 0
+    _emit_summary(
+        {
+            "file": result["file"],
+            "defects": result["defect_count"],
+            "errors": result["error_count"],
+            "warnings": result["warning_count"],
+            "infos": result["info_count"],
+        }
+    )
+    return 1 if result["error_count"] else 0
+
+
+def _load_assessments(path: str) -> list[dict]:
+    records = []
+    with Path(path).open(encoding="utf-8") as fh:
+        for lineno, line in enumerate(fh, start=1):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                records.append(json.loads(line))
+            except json.JSONDecodeError as exc:
+                raise QualityError(f"{path}:{lineno} is not valid JSON: {exc}") from exc
+    if not records:
+        raise QualityError(f"no assessment records in {path}")
+    return records
+
+
+def cmd_assess_quality(args) -> int:
+    from .reporting import write_jsonl
+
+    try:
+        provenance = notequality_mod.load_provenance(args.provenance) if args.provenance else None
+        result = notequality_mod.assess_tree(
+            args.root,
+            provenance=provenance,
+            ku_batches=args.ku_batches,
+        )
+    except (QualityError, OSError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    if args.out:
+        try:
+            ensure_dest_safe(args.out, _default_protected_roots(None))
+        except PathSafetyError as exc:
+            print(f"error: out destination: {exc}", file=sys.stderr)
+            return 1
+        write_jsonl(args.out, result["notes"])
+    _write_report_safe(args, "assess-quality", {"result": result})
+    by_type: dict[str, int] = {}
+    below_band = 0
+    for note in result["notes"]:
+        by_type[note["type"]] = by_type.get(note["type"], 0) + 1
+        below_band += sum(1 for d in note["dimensions"].values() if d["band"] == "below_band")
+    _emit_summary(
+        {
+            "notes_assessed": len(result["notes"]),
+            "by_type": dict(sorted(by_type.items())),
+            "notes_with_lint_errors": sum(1 for n in result["notes"] if n["lint_error_count"]),
+            "dimensions_below_band": below_band,
+        }
+    )
+    return 0
+
+
+def cmd_quality_drift(args) -> int:
+    try:
+        assessments = _load_assessments(args.assessments)
+        drift = notequality_mod.detect_drift(assessments, rel_drop=args.rel_drop, abs_drop=args.abs_drop)
+    except (QualityError, OSError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    _write_report_safe(args, "quality-drift", {"result": drift})
+    _emit_summary(
+        {
+            "verdict": drift["verdict"],
+            "drifted_types": [e["type"] for e in drift["drifted_types"]],
+            "clean_types": [e["type"] for e in drift["clean_types"]],
+        }
+    )
+    return 0
+
+
+def cmd_quality_gate(args) -> int:
+    try:
+        assessments = _load_assessments(args.assessments)
+        expected = None
+        if args.expected:
+            expected = [
+                ln.strip()
+                for ln in Path(args.expected).read_text(encoding="utf-8").splitlines()
+                if ln.strip() and not ln.strip().startswith("#")
+            ]
+        drift = None
+        if args.drift_report:
+            drift = json.loads(Path(args.drift_report).read_text(encoding="utf-8"))
+            drift = drift.get("result", drift)
+        waivers = {}
+        for w in args.waivers or []:
+            if "=" not in w:
+                print(f"error: waiver must be 'key=reason', got: {w}", file=sys.stderr)
+                return 1
+            key, reason = w.split("=", 1)
+            waivers[key.strip()] = reason.strip()
+        gate = notequality_mod.batch_gate(
+            assessments, expected_notes=expected, drift_report=drift, waivers=waivers
+        )
+    except (QualityError, OSError, json.JSONDecodeError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    _write_report_safe(args, "quality-gate", {"result": gate})
+    _emit_summary(
+        {
+            "verdict": gate["verdict"],
+            "notes_assessed": gate["notes_assessed"],
+            "failures": len(gate["failures"]),
+        }
+    )
+    return 0 if gate["passed"] else 1
+
+
+def _find_task(tasks: list[dict], repair_id: str) -> dict:
+    for task in tasks:
+        if task["repair_id"] == repair_id:
+            return task
+    raise RepairError(f"repair task not found: {repair_id}")
+
+
+def cmd_repair_create(args) -> int:
+    from .reporting import write_jsonl
+
+    try:
+        lint = json.loads(Path(args.lint_report).read_text(encoding="utf-8"))
+        lint = lint.get("result", lint)
+        existing = repair_mod.load_tasks(args.store)
+        new = repair_mod.create_repair_tasks([lint], max_attempts=args.max_attempts)
+        merged, added = repair_mod.merge_tasks(existing, new)
+        repair_mod.save_tasks(args.store, merged)
+    except (RepairError, OSError, json.JSONDecodeError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    status = repair_mod.task_status(merged)
+    _write_report_safe(args, "repair-create", {"result": {**status, "added": added, "store": args.store}})
+    _emit_summary({"tasks_total": status["total"], "added": len(added), "by_status": status["by_status"]})
+    return 0
+
+
+def cmd_repair_record(args) -> int:
+    from .reporting import write_jsonl
+
+    try:
+        tasks = repair_mod.load_tasks(args.store)
+        task = _find_task(tasks, args.id)
+        diff = Path(args.diff_file).read_text(encoding="utf-8") if args.diff_file else None
+        updated = repair_mod.record_attempt(task, args.outcome, diff=diff, note=args.note)
+        tasks = [updated if t["repair_id"] == args.id else t for t in tasks]
+        repair_mod.save_tasks(args.store, tasks)
+    except (RepairError, OSError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    _write_report_safe(args, "repair-record", {"result": updated})
+    _emit_summary({"repair_id": updated["repair_id"], "status": updated["status"], "attempts": len(updated["attempts"])})
+    return 0
+
+
+def cmd_repair_verify(args) -> int:
+    try:
+        tasks = repair_mod.load_tasks(args.store)
+        task = _find_task(tasks, args.id)
+        current = Path(args.note_file).read_text(encoding="utf-8")
+        original = Path(args.original_file).read_text(encoding="utf-8") if args.original_file else None
+        verification = repair_mod.verify_repair(task, current, original_text=original)
+        if verification["verified"]:
+            updated = repair_mod.apply_verification(task, verification)
+            tasks = [updated if t["repair_id"] == args.id else t for t in tasks]
+            repair_mod.save_tasks(args.store, tasks)
+    except (RepairError, OSError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    _write_report_safe(args, "repair-verify", {"result": verification})
+    _emit_summary(
+        {
+            "repair_id": verification["repair_id"],
+            "verified": verification["verified"],
+            "reason": verification["reason"],
+        }
+    )
+    return 0 if verification["verified"] else 1
+
+
+def cmd_repair_list(args) -> int:
+    try:
+        tasks = repair_mod.load_tasks(args.store)
+    except (RepairError, OSError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    if args.status:
+        tasks = [t for t in tasks if t["status"] == args.status]
+    status = repair_mod.task_status(tasks)
+    _write_report_safe(args, "repair-list", {"result": status})
+    _emit_summary(status)
+    return 0
+
+
+def cmd_repair_prompt(args) -> int:
+    try:
+        tasks = repair_mod.load_tasks(args.store)
+        task = _find_task(tasks, args.id)
+        spec = promptspec_mod.build_repair_prompt(task, note_path=task["file"])
+        ensure_dest_safe(args.out, _default_protected_roots(None))
+        Path(args.out).write_text(json.dumps(spec, indent=2, sort_keys=False) + "\n", encoding="utf-8")
+    except (RepairError, OSError, PathSafetyError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    _write_report_safe(args, "repair-prompt", {"result": {"repair_id": args.id, "prompt_path": args.out}})
+    _emit_summary({"repair_id": args.id, "prompt_path": args.out})
+    return 0
+
+
+def cmd_check_prompt(args) -> int:
+    try:
+        spec = promptspec_mod.load_prompt_spec(args.spec)
+        result = promptspec_mod.check_prompt(
+            spec,
+            ku_batches=args.ku_batches,
+            context_budget_words=args.context_budget,
+            max_requirements=args.max_requirements,
+        )
+    except (PromptSpecError, OSError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    _write_report_safe(args, "check-prompt", {"result": result})
+    _emit_summary(
+        {
+            "ok": result["ok"],
+            "failures": result["failures"],
+            "estimated_context_words": result["estimated_context_words"],
+            "context_budget_words": result["context_budget_words"],
+        }
+    )
+    return 0 if result["ok"] else 1
+
+
 HANDLERS = {
     "selftest": cmd_selftest,
     "check-paths": cmd_check_paths,
@@ -1024,6 +1705,19 @@ HANDLERS = {
     "omission-pilot": cmd_omission_pilot,
     "overlap-candidates": cmd_overlap_candidates,
     "kureg-apply-overlap": cmd_kureg_apply_overlap,
+    "discover-gaps": cmd_discover_gaps,
+    "discovery-decide": cmd_discovery_decide,
+    "discovery-validate": cmd_discovery_validate,
+    "lint-artifacts": cmd_lint_artifacts,
+    "assess-quality": cmd_assess_quality,
+    "quality-drift": cmd_quality_drift,
+    "quality-gate": cmd_quality_gate,
+    "repair-create": cmd_repair_create,
+    "repair-record": cmd_repair_record,
+    "repair-verify": cmd_repair_verify,
+    "repair-list": cmd_repair_list,
+    "repair-prompt": cmd_repair_prompt,
+    "check-prompt": cmd_check_prompt,
 }
 
 
@@ -1036,7 +1730,18 @@ def main(argv: list[str] | None = None) -> int:
     handler = HANDLERS[args.command]
     try:
         return handler(args)
-    except (PathSafetyError, NotADirectoryError, ValueError, RegistryError, AuditError) as exc:
+    except (
+        PathSafetyError,
+        NotADirectoryError,
+        ValueError,
+        RegistryError,
+        AuditError,
+        ArtifactLintError,
+        QualityError,
+        RepairError,
+        PromptSpecError,
+        DiscoveryError,
+    ) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
     except FileNotFoundError as exc:
