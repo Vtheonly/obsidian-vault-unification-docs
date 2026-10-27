@@ -51,5 +51,5 @@
   "New finding F-0009 recorded (state/findings.jsonl) and cross-referenced from the classification rationales"
  ],
  "next_task": "EXT-011 (to be selected at next session start with evidence): candidates - master-ai backpropagation/autodiff family (06 Backpropagation + ai-course backprop content), the 11-Training LLM-operations pair (05 Loss Spikes + 04 Mixed Precision vs ai-course optimization content), or a further ai-course chapter; consult state/manifests, the dossier gap markers, and the task-queue notes first, then append a full EXT-011 record before executing",
- "work_commit": "PENDING (recorded by the state commit)"
+ "work_commit": "ec6f5fc"
 }
