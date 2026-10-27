@@ -173,27 +173,118 @@ def _term_text(ngram: tuple[str, ...]) -> str:
     return " ".join(ngram)
 
 
+def _compile_relationship_patterns(
+    term: str,
+) -> tuple[re.Pattern, re.Pattern]:
+    """Precompile the definition/assumed templates for one term.
+
+    Each category becomes ONE combined alternation of the per-template
+    regexes (each branch wrapped in a non-capturing group), so a category
+    matches iff any of its templates matches — the same boolean the
+    per-template reference loop computed, with 2 compilations instead of
+    26 per term. Same patterns, same flags, same category order.
+    """
+    escaped = re.escape(term)
+    def_part = "|".join(
+        "(?:" + template.format(t=escaped) + ")" for template in _DEFINITION_PATTERNS
+    )
+    assumed_part = "|".join(
+        "(?:" + template.format(t=escaped) + ")" for template in _ASSUMED_PATTERNS
+    )
+    return (
+        re.compile(def_part, re.IGNORECASE),
+        re.compile(assumed_part, re.IGNORECASE),
+    )
+
+
+def _match_relationship_compiled(
+    def_pattern: re.Pattern,
+    assumed_pattern: re.Pattern,
+    ku_text_norm: str,
+    heading_declared: bool,
+    derivation_marker: bool,
+) -> str:
+    """Classify ONE (term, KU) pair with precompiled combined patterns.
+
+    Same decision order as :func:`_match_relationship`: defined > declared >
+    assumed > derivation > used. ``derivation_marker`` is the precomputed
+    ``_DERIVATION_MARKERS.search(norm_excerpt)`` result for the KU (the
+    markers never reference the term, so the flag is term-independent).
+    """
+    if def_pattern.search(ku_text_norm):
+        return "defined"
+    if heading_declared:
+        return "declared"
+    if assumed_pattern.search(ku_text_norm):
+        return "assumed"
+    if derivation_marker:
+        return "derivation"
+    return "used"
+
+
 def _match_relationship(
     term: str,
     ku_text_norm: str,
     heading_declared: bool,
 ) -> str:
     """Classify ONE (term, KU) pair: defined > declared > assumed > derivation > used."""
-    escaped = re.escape(term)
-    for template in _DEFINITION_PATTERNS:
-        if re.search(template.format(t=escaped), ku_text_norm, re.IGNORECASE):
-            return "defined"
-    if heading_declared:
-        return "declared"
-    for template in _ASSUMED_PATTERNS:
-        if re.search(template.format(t=escaped), ku_text_norm, re.IGNORECASE):
-            return "assumed"
-    if _DERIVATION_MARKERS.search(ku_text_norm):
-        return "derivation"
-    return "used"
+    def_pattern, assumed_pattern = _compile_relationship_patterns(term)
+    return _match_relationship_compiled(
+        def_pattern,
+        assumed_pattern,
+        ku_text_norm,
+        heading_declared,
+        bool(_DERIVATION_MARKERS.search(ku_text_norm)),
+    )
 
 
-def _locate_in_ku(ku: dict, term: str) -> tuple[int, int, str] | None:
+def _prepare_ku(ku: dict) -> dict:
+    """Precompute per-KU derived structures shared across all terms.
+
+    Computed ONCE per KU instead of once per (term, KU) pair. Every field is
+    a pure function of the KU record, so results are identical to the
+    per-call reference computations:
+
+    - ``lines`` / ``norm_lines``: excerpt lines and their normalized forms.
+    - ``first_offsets``: ``excerpt.find(line) if line else 0`` per line index
+      (duplicated line texts reuse their FIRST occurrence offset, exactly
+      like the reference per-call ``excerpt.find(line)``).
+    - ``norm_excerpt``: ``_normalize(excerpt)``.
+    - ``derivation_marker``: ``_DERIVATION_MARKERS.search(norm_excerpt)``.
+    - ``norm_headings``: per-heading ``_normalize(h) if h else h``.
+    """
+    excerpt = ku["excerpt"]
+    lines = excerpt.splitlines()
+    first_offsets: list[int] = []
+    seen_line_offsets: dict[str, int] = {}
+    for line in lines:
+        if not line:
+            first_offsets.append(0)
+            continue
+        offset = seen_line_offsets.get(line)
+        if offset is None:
+            offset = excerpt.find(line)
+            seen_line_offsets[line] = offset
+        first_offsets.append(offset)
+    norm_excerpt = _normalize(excerpt)
+    return {
+        "lines": lines,
+        "norm_lines": [_normalize(line) for line in lines],
+        "first_offsets": first_offsets,
+        "norm_excerpt": norm_excerpt,
+        "derivation_marker": bool(_DERIVATION_MARKERS.search(norm_excerpt)),
+        "norm_headings": [
+            _normalize(h) if h else h for h in ku.get("heading_path", [])
+        ],
+    }
+
+
+def _locate_in_ku(
+    ku: dict,
+    term: str,
+    pattern: re.Pattern | None = None,
+    prepared: dict | None = None,
+) -> tuple[int, int, str] | None:
     """Find the term inside this KU; return (abs_line_start, abs_line_end, quote).
 
     Line attribution uses normalized per-line matching with a uniqueness
@@ -201,18 +292,23 @@ def _locate_in_ku(ku: dict, term: str) -> tuple[int, int, str] | None:
     occurrence-level uniqueness inside one KU line is guaranteed by the word
     boundary; KU-level multi-line spans are handled by scanning lines in
     order). This is the X2 rule in miniature: no hand-typed line numbers.
+
+    ``pattern`` and ``prepared`` are optional precomputed values (compile-once
+    per term / once per KU); omitting them reproduces the reference
+    per-call behavior exactly.
     """
     excerpt = ku["excerpt"]
-    lines = excerpt.splitlines()
-    pattern = boundary_pattern(term)
-    norm_lines = [_normalize(line) for line in lines]
+    if prepared is None:
+        prepared = _prepare_ku(ku)
+    if pattern is None:
+        pattern = boundary_pattern(term)
+    lines = prepared["lines"]
+    norm_lines = prepared["norm_lines"]
+    first_offsets = prepared["first_offsets"]
     for offset, line in enumerate(lines):
         if pattern.search(line):
-            quote = _sentence_window(
-                excerpt,
-                excerpt.find(line) if line else 0,
-                (excerpt.find(line) if line else 0) + len(line),
-            )
+            start = first_offsets[offset]
+            quote = _sentence_window(excerpt, start, start + len(line))
             line_start = ku["line_start"] + offset
             # multi-line terms may continue; end line = start + span of term
             # if the term itself spans lines, extend while next line starts
@@ -222,20 +318,49 @@ def _locate_in_ku(ku: dict, term: str) -> tuple[int, int, str] | None:
         # normalized fallback (case/whitespace drift)
         if norm_lines[offset] and pattern.search(norm_lines[offset]):
             line_start = ku["line_start"] + offset
+            start = first_offsets[offset]
             return (
                 line_start,
                 line_start,
-                _sentence_window(
-                    excerpt,
-                    excerpt.find(line),
-                    excerpt.find(line) + len(line),
-                ),
+                _sentence_window(excerpt, start, start + len(line)),
             )
     return None
 
 
 def _passage_hash(quote: str) -> str:
     return hashlib.sha256(_normalize(quote).encode("utf-8")).hexdigest()
+
+
+def _gram_ranking(ku: dict, depth: int = 12) -> list[tuple[str, int]]:
+    """Top excerpt gram-texts by (count desc, text asc) for one KU.
+
+    Computed once per KU. ``depth`` covers the worst case needed by
+    :func:`_signature_from_ranking`: the top-8 signature after excluding the
+    query term needs at most ranks 1..9 when the term itself is ranked, so
+    12 is a safe margin (identical output for any query term).
+    """
+    counts = Counter(_term_text(g) for g in _mine_ngrams(ku["excerpt"]))
+    ordered = sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))
+    return ordered[:depth]
+
+
+def _signature_from_ranking(
+    ranking: list[tuple[str, int]], term: str, top_k: int = 8
+) -> list[str]:
+    """Top-k co-occurring gram-texts excluding *term*, from a cached ranking.
+
+    Equivalent to counting all grams except the term and taking the top-k:
+    removing the term from the multiset does not change the counts (and
+    therefore the ranking) of the other terms.
+    """
+    signature: list[str] = []
+    for text, _count in ranking:
+        if text == term:
+            continue
+        signature.append(text)
+        if len(signature) >= top_k:
+            break
+    return signature
 
 
 def _signature_terms(term: str, ku: dict, top_k: int = 8) -> list[str]:
@@ -262,11 +387,16 @@ def _cluster_contexts(contexts: list[dict]) -> list[list[dict]]:
         if ri != rj:
             parent[max(ri, rj)] = min(ri, rj)
 
+    # signature sets are built once; the reference implementation rebuilt
+    # the two sets per compared pair (identical intersection semantics)
+    sig_sets = [frozenset(c["signature"]) for c in contexts]
     for i in range(len(contexts)):
+        si = sig_sets[i]
+        if not si:
+            continue
         for j in range(i + 1, len(contexts)):
-            si = set(contexts[i]["signature"])
-            sj = set(contexts[j]["signature"])
-            if si and sj and si & sj:
+            sj = sig_sets[j]
+            if sj and not si.isdisjoint(sj):
                 union(i, j)
     clusters: dict[int, list[dict]] = defaultdict(list)
     for idx, ctx in enumerate(contexts):
@@ -346,19 +476,40 @@ def discover_candidates(
 
     # ---- term mining ----
     ku_by_id = {rec["knowledge_unit_id"]: rec for rec in records}
-    mined: dict[str, dict[str, list[dict]]] = defaultdict(lambda: defaultdict(list))
+    # term -> set of ku_ids. The reference implementation stored
+    # term -> {ku_id: [record]}; grams are deduplicated per KU before
+    # mining, so each (term, ku) pair carried exactly one record and the
+    # values were never read (records are re-fetched via ku_by_id). Storing
+    # the ku_id set is semantically identical and far cheaper at scale.
+    mined: dict[str, set[str]] = defaultdict(set)
     terms_analyzed = 0
+
+    # per-KU derived structures, computed ONCE (pure functions of the KU):
+    # prepared = lines / normalized lines / first-occurrence offsets /
+    #            normalized excerpt / derivation marker / normalized headings
+    # gram_ranking = top excerpt gram-texts for signature computation
+    prepared: dict[str, dict] = {}
+    gram_rankings: dict[str, list[tuple[str, int]]] = {}
+    interned_grams: dict[str, str] = {}
 
     for rec in records:
         if rec["unit_type"] not in _MINEABLE_UNIT_TYPES:
             continue
+        ku_id = rec["knowledge_unit_id"]
         grams = set(_mine_ngrams(rec["excerpt"]))
         # heading-path terms are concept declarations; mine them too
         for heading in rec.get("heading_path", []):
             for g in _mine_ngrams(heading):
                 grams.add(g)
         for g in grams:
-            mined[_term_text(g)][rec["knowledge_unit_id"]].append(rec)
+            mined[_term_text(g)].add(ku_id)
+        prepared[ku_id] = _prepare_ku(rec)
+        ranking = _gram_ranking(rec)
+        gram_rankings[ku_id] = [
+            (interned_grams.setdefault(text, text), count)
+            for text, count in ranking
+        ]
+        del grams, ranking
 
     candidates: list[dict] = []
     not_emitted_reasons: Counter[str] = Counter()
@@ -370,21 +521,42 @@ def discover_candidates(
             not_emitted_reasons["too_short"] += 1
             continue
 
+        # compile-once-per-term artifacts (pure functions of the term):
+        # word-boundary pattern + combined relationship alternations. The
+        # reference implementation recompiled these per (term, KU) pair.
+        # Relationship patterns are compiled LAZILY on the first KU that
+        # survives the locate check — terms with no locatable excerpt
+        # occurrence (heading-only terms) never use them, and laziness
+        # changes when the pure compilation happens, never what it returns.
+        term_pattern = boundary_pattern(term)
+        def_pattern: re.Pattern | None = None
+        assumed_pattern: re.Pattern | None = None
+
         # ---- classify each (term, KU) ----
         contexts: list[dict] = []
         definition_evidence: list[dict] = []
         for ku_id in sorted(occurrences):
             ku = ku_by_id[ku_id]
-            text = ku["excerpt"]
-            norm_text = _normalize(text)
-            heading_declared = any(
-                boundary_pattern(term).search(_normalize(h) if h else h)
-                for h in ku.get("heading_path", [])
-            )
-            relationship = _match_relationship(term, norm_text, heading_declared)
-            located = _locate_in_ku(ku, term)
+            prep = prepared[ku_id]
+            # locate FIRST: a KU with no locatable excerpt occurrence is
+            # skipped entirely, so its relationship classification would be
+            # discarded — computing it lazily is observably identical.
+            located = _locate_in_ku(ku, term, pattern=term_pattern, prepared=prep)
             if located is None:
                 continue  # term came from heading path only; no excerpt match
+            if def_pattern is None:
+                def_pattern, assumed_pattern = _compile_relationship_patterns(term)
+            norm_text = prep["norm_excerpt"]
+            heading_declared = any(
+                term_pattern.search(nh) for nh in prep["norm_headings"]
+            )
+            relationship = _match_relationship_compiled(
+                def_pattern,
+                assumed_pattern,
+                norm_text,
+                heading_declared,
+                prep["derivation_marker"],
+            )
             line_start, line_end, quote = located
             ev = {
                 "ku_id": ku_id,
@@ -401,7 +573,9 @@ def discover_candidates(
                 {
                     **ev,
                     "passage_hash": _passage_hash(quote),
-                    "signature": _signature_terms(term, ku),
+                    "signature": _signature_from_ranking(
+                        gram_rankings[ku_id], term
+                    ),
                 }
             )
 

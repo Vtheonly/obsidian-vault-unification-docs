@@ -609,3 +609,106 @@ class TestNegativePaths:
         from vault_unification.overlap import OverlapError
         with pytest.raises(OverlapError, match="duplicate knowledge_unit_id"):
             discover_candidates([dup], KUS_SCHEMA, {"notes": manifest})
+
+
+class TestOptimizationEquivalence:
+    """DISC-002 performance hardening: the optimized helpers must return
+    EXACTLY what the reference implementations return (the full-corpus run
+    relies on them; byte-identical output was additionally verified on the
+    real 14-batch subset, sha256 1322e74c...)."""
+
+    REL_TEXTS = [
+        "the chain rule is a fundamental result of differential calculus",
+        "chain rule is defined as the composition of derivatives",
+        "softmax refers to a normalized exponential distribution",
+        "recall that the chain rule gives us dL/dx through dz",
+        "using the chain rule we obtain the gradient of the loss",
+        "by the fundamental theorem of calculus the integral evaluates",
+        "we derive: substitute the expression, therefore the loss follows",
+        "the optimizer applies gradient clipping during training",
+        "the loss is 0.5 times the squared error term",
+        "attention: a mechanism that weighs inputs",
+        "called residual connections, these shortcuts help",
+        "define dropout as randomly zeroing units",
+        "the learning rate :",
+        "adam is an adaptive optimizer variant",
+        "output",
+        "",
+    ]
+
+    @pytest.mark.parametrize("term", ["chain rule", "softmax", "attention", "adam", "loss", "dropout"])
+    @pytest.mark.parametrize("heading_declared", [False, True])
+    def test_compiled_relationship_matches_reference(
+        self, term, heading_declared
+    ):
+        from vault_unification.locators import _normalize
+
+        def_pattern, assumed_pattern = disc._compile_relationship_patterns(term)
+        for text in self.REL_TEXTS:
+            norm = _normalize(text)
+            expected = disc._match_relationship(term, norm, heading_declared)
+            got = disc._match_relationship_compiled(
+                def_pattern,
+                assumed_pattern,
+                norm,
+                heading_declared,
+                bool(disc._DERIVATION_MARKERS.search(norm)),
+            )
+            assert got == expected, (term, heading_declared, text, got, expected)
+
+    def test_prepared_ku_first_offsets_equal_excerpt_find(self):
+        excerpt = "alpha line\n\nbeta line\nalpha line\n\ngamma tail"
+        ku = {"excerpt": excerpt, "heading_path": ["Head A", "Head B"], "line_start": 7}
+        prep = disc._prepare_ku(ku)
+        lines = excerpt.splitlines()
+        assert prep["lines"] == lines
+        for i, line in enumerate(lines):
+            assert prep["first_offsets"][i] == (excerpt.find(line) if line else 0)
+        # normalized excerpt is the normalize() of the whole excerpt
+        from vault_unification.locators import _normalize
+        assert prep["norm_excerpt"] == _normalize(excerpt)
+        # heading normalization identical to the reference expression
+        assert prep["norm_headings"] == [
+            _normalize(h) if h else h for h in ku["heading_path"]
+        ]
+
+    def test_locate_with_precomputed_matches_reference(self):
+        excerpt = "The chain rule appears here.\nSecond line mentions softmax.\n\nchain rule again"
+        ku = {"excerpt": excerpt, "heading_path": [], "line_start": 3}
+        pattern = disc.boundary_pattern("chain rule")
+        prep = disc._prepare_ku(ku)
+        for term in ["chain rule", "softmax", "second line", "missing term"]:
+            expected = disc._locate_in_ku(dict(ku), term)
+            got = disc._locate_in_ku(
+                dict(ku), term, pattern=disc.boundary_pattern(term), prepared=prep
+            )
+            assert got == expected, (term, got, expected)
+
+    def test_signature_from_ranking_matches_reference(self):
+        ku = {
+            "excerpt": (
+                "gradient descent minimizes the loss. gradient descent uses "
+                "learning rates; the loss surface and gradient descent "
+                "converge under conditions on the learning rate and loss."
+            ),
+            "heading_path": [],
+        }
+        ranking = disc._gram_ranking(ku)
+        for term in ["gradient descent", "loss", "learning rate", "conditions", "zzz"]:
+            expected = disc._signature_terms(term, ku)
+            got = disc._signature_from_ranking(ranking, term)
+            assert got == expected, (term, got, expected)
+
+    def test_cluster_contexts_merges_intersecting_signatures(self):
+        ctx = [
+            {"vault": "a", "source_path": "p1", "signature": ["x", "y"]},
+            {"vault": "a", "source_path": "p2", "signature": ["y", "z"]},
+            {"vault": "a", "source_path": "p3", "signature": ["q", "r"]},
+            {"vault": "a", "source_path": "p4", "signature": []},
+        ]
+        clusters = disc._cluster_contexts(ctx)
+        # p1 and p2 merge (shared "y"); p3 and p4 stay separate
+        members = [sorted(c["source_path"] for c in cl) for cl in clusters]
+        assert ["p1", "p2"] in members
+        assert ["p3"] in members
+        assert ["p4"] in members
