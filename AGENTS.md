@@ -139,3 +139,12 @@ Audits must produce findings tied to source knowledge-unit identifiers and targe
 
 ### 7.7 Honest state and handoffs
 Never state that source vaults have been located, inventoried, backed up, protected, or processed unless repository evidence confirms it. Never claim tests passed unless they were actually run. At every session end, update the task queue, checkpoint, registry when applicable, reports, and canonical session handoff with exact paths, commands, real exit codes, metrics, blockers, and the next bounded task.
+
+## 11. Authorized Phase 0 re-baseline (2026-10-27)
+
+The user explicitly authorized a controlled restart of the knowledge-processing pipeline. Follow [docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md](docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md) and the revised [ENTRY_PROMPT.md](ENTRY_PROMPT.md).
+
+Return to Phase 0, audit actual repository evidence, rerun verification, enumerate findings and capability limitations, refactor the real Python framework, implement and test integrated emergent-concept discovery, then revalidate/re-extract the corpus and rediscover concepts before synthesis.
+
+This directive authorizes revalidation and regeneration of derived artifacts, not deletion of the repository or valid history. Preserve source vaults byte-for-byte. Reuse derived artifacts only after they pass the new checks; otherwise recompute, migrate, quarantine, or retire them with rationale. Preserve task history and add valid tasks to the existing queue. Do not synthesize canonical notes until framework, full extraction/accounting, concept-discovery, and dossier gates pass. Documentation alone is not implementation; never claim tests passed unless actually run.
+
