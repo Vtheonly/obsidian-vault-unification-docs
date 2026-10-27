@@ -47,5 +47,6 @@
   "Registry rebuild valid: 1229 KUs / 128 classifications / 372 participating (reports/extraction/ext009-kureg-validate.json)",
   "Full test suite passes (415/415); capabilities --verify passes (16+1)"
  ],
- "next_task": "EXT-010 (to be selected at next session start with evidence): training-stability pair (master-ai '11 - Training/Optimization/05 - Loss Spikes and Stability.md' + ai-course 04.3 files 01-03, reserved by the EXT-009 scope notes) or CAP-014 source-to-output coverage reports (required before synthesis batches are accepted; no synthesis batch exists yet)"
+ "next_task": "EXT-010 (to be selected at next session start with evidence): training-stability pair (master-ai '11 - Training/Optimization/05 - Loss Spikes and Stability.md' + ai-course 04.3 files 01-03, reserved by the EXT-009 scope notes) or CAP-014 source-to-output coverage reports (required before synthesis batches are accepted; no synthesis batch exists yet)",
+ "work_commit": "b1ade67"
 }
