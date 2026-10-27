@@ -1,7 +1,7 @@
 {
  "project": "Obsidian Vault Unification",
  "execution_environment": "Z AI / GLM 5.3 with available subagents",
- "stage": "phase0-rebaseline-complete",
+ "stage": "regen001-full-corpus-extraction-complete",
  "status": "in_progress",
  "source_vaults_located": true,
  "source_vaults": [
@@ -53,9 +53,9 @@
   "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)"
  },
  "output_synthesis_started": false,
- "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-27-ext-010.json",
- "current_task_id": "EXT-011",
- "notes": "EXT-010 completed 2026-10-27 in one session. Training-stability domain pair with an EVIDENCE-BASED COUNTERPART ADJUSTMENT: the EXT-009 reservation paired ai-course 04.3 files 01-03 with master-ai '11 - Training/Optimization/05 - Loss Spikes and Stability.md', but the scope probe (heading evidence) showed that file is LLM-pretraining operations, not classical init/gradient theory; the executed pair is master-ai '04 - Neural Networks/Training/07 - Initialization Schemes.md' + '08 - Vanishing and Exploding Gradients.md' (a deliberate 2-of-3 partial-folder master-ai scope; 06 Backpropagation excluded as a distinct autodiff domain). Batches 010 (117 KUs) + 011 (382 KUs) double-run byte-identical; fidelity 117/117 + 382/382 byte-exact with ids unique vs all 1229 committed; term map 98 terms / 165 aliases / 66 cross-vault / 2 bridged machine-verified after four probe rounds; discovery 7486 pairs / 68 cross-vault topics / 21 truncated (largest yet); 36 evidence-based classifications (32 SD + 3 PO + 1 CC; 142 KUs; 159 quotes) via a NEW X2 machine-locator that eliminates hand-typed line numbers (first run caught 5 defects); independent review EXT-010-REVIEW PASS-WITH-NOTES (34 AGREE + 2 BORDERLINE + 0 DISAGREE, no coverage gaps, scope verified, F-0009 confirmed) with R1 (F-0009 finding appended) and S2 (clipping-API evidence, reviewer's course KU-id error corrected by orchestrator verification) applied before commit; training-stability-v1 dossier (36 concepts / 142 KUs, ZERO empty categories - first such) with schema enum extended additively and all six dossiers regenerating byte-identically; registry 1728 KUs / 164 classifications / 514 participating / valid; suite 415/415; capabilities 16+1; both vaults unchanged. NEW FINDING F-0009: course internally inconsistent on the PyTorch Conv2d default bias init (zeros vs uniform bound; the uniform bound matches PyTorch's actual reset_parameters) - synthesis-time reconciliation required. 31 of 609 source files extracted. EXT-011 to be selected with evidence at next session start (candidates: master-ai backpropagation/autodiff family, the 11-Training LLM-operations pair with ai-course optimization content, or a further ai-course chapter; check dossier gap markers and the task-queue notes first).",
+ "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-28-regen001.json",
+ "current_task_id": "DISC-002",
+ "notes": "REGEN-001 completed 2026-10-28 (feat commit 48ccd2d): full-corpus re-extraction under the hardened pipeline. All 609 source files extracted into 70 committed batches (11 revalidated pre-restart + 59 new REGEN batches 012-070); 27,536 KUs, every id globally unique; every batch double-run byte-identical and fidelity-verified by the NEW reusable gate vu ku-fidelity (CAP-022, framework 0.8.0), which replaces the per-task fidelity scripts. Registry rebuilt from all 70 batches + 7 classification overlays; kureg-validate green; full-corpus accounting: 276/276 ai-course + 333/333 master-ai files covered exactly once, 0 missing/extra/multi-batch, 0 source hash mismatches (both vaults byte-unchanged). Two latent defects were caught by the gates mid-run and fixed with regression tests: (1) the fidelity heading rule did not know the empty_section design contract (units sit ON their heading line; batches 014/015 first flagged it); (2) the extraction driver derived batch numbering from directory contents, so a resumed run renumbered the plan and minted 14 duplicate batches - caught by the id-collision gate, verified byte-identical to their twins, deleted, numbering pinned to the committed sequence. New findings F-0012 (stale 563-vs-576 test-count docs, now corrected), F-0013 (empty_section design contract), F-0014 (END-OF-FILE marker-heading source convention, 2 files). All 27,536 KUs remain 'Unaccounted' by design: disposition assignment is the release-blocking work after concept discovery. NEXT: DISC-002 - run corpus-wide emergent-concept discovery over the complete registry (the coverage gate is now OPEN at 609/609), review candidates via vu discovery-decide (semantic review is the agent's job; the tool collects evidence), reconcile dossiers, then gated synthesis.",
  "corpus_statistics": {
   "files_total": 609,
   "markdown_files": 609,
@@ -84,7 +84,7 @@
  "knowledge_registry": {
   "canonical_store": "state/knowledge-units/ (committed JSONL batches; ADR-0007)",
   "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load + kureg-apply-overlap)",
-  "records": 1728,
+  "records": 27536,
   "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)",
   "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records) + 002-ext004-tree-based-overlap.jsonl (28 records) + 003-ext005-evaluation-overlap.jsonl (29 records) + 004-ext007-evaluation-addendum.jsonl (4 records) + 005-ext008-clustering-dimreduction-overlap.jsonl (27 records) + 006-ext009-generalization-overlap.jsonl (26 records) + 007-ext010-training-stability-overlap.jsonl (36 records, EXT-010; ADR-0009 pair-level overlay)",
   "commands": "vu kureg-init / kureg-load / kureg-apply-overlap / kureg-query / kureg-validate",
@@ -111,7 +111,7 @@
   "capabilities": "reports/extraction/ext004-capabilities.json",
   "setup_doc": "docs/FRAMEWORK_SETUP.md"
  },
- "framework_version": "0.7.0",
+ "framework_version": "0.8.0",
  "phase_zero_rebaseline": {
   "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
   "rebaseline_baseline_report": "reports/rebaseline/phase-zero-baseline.json",
@@ -123,7 +123,20 @@
    "reports/rebaseline/frame002-lint-ai-course.json (276 files, 164 errors)",
    "reports/rebaseline/frame002-lint-master-ai.json (333 files, 371 errors)"
   ],
-  "tests": "563/563 (reports/rebaseline/frame002-final-pytest.json)"
+  "tests": "563/563 (reports/rebaseline/frame002-final-pytest.json)",
+  "full_corpus_extraction": {
+   "task": "REGEN-001",
+   "completed_utc": "2026-10-28",
+   "files_extracted": 609,
+   "batches": 70,
+   "kus": 27536,
+   "revalidation": "reports/regen/regen001-revalidation.json",
+   "plan": "reports/regen/regen001-plan.json",
+   "extraction": "reports/regen/regen001-extraction.json",
+   "registry": "reports/regen/regen001-registry.json",
+   "accounting": "reports/regen/regen001-accounting.json",
+   "tests": "604/604 (reports/regen/regen001-final-pytest.json)"
+  }
  },
  "quality_gates_for_synthesis": "every generation batch: check-prompt -> bounded generation -> lint-artifacts -> assess-quality -> quality-drift -> quality-gate -> repair loop; batch complete only when the gate passes or exceptions are explicitly waived with reasons"
 }

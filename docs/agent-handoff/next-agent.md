@@ -2,72 +2,85 @@
 
 ## Project state
 
-- Current milestone: Phase 0 re-baseline COMPLETE (user-authorized restart);
-  the project now moves to full-corpus re-extraction under the hardened
-  pipeline, then corpus-wide discovery, then GATED synthesis.
-- Completed and pushed this phase: REBASE-000 (machine-backed baseline),
-  AUDIT-011 (17 capabilities mapped to code/tests/limitations; 13 known
-  limitations L-01..L-13), FRAME-001 (framework refactor: L-01/02/03/04/06/
-  07/08/13 fixed), DISC-001 (emergent-concept discovery, CAP-017), and
-  FRAME-002 (quality toolkit: CAP-018 artifactlint, CAP-019 notequality,
-  CAP-020 repair loop, CAP-021 promptspec).
-- Framework version 0.7.0; 563/563 tests green; capabilities --verify:
-  verified true (17 implemented-and-tested + 1 planned CAP-014).
-- Extraction state (pre-restart work, all revalidated this phase): 11
-  committed KU batches (1728 KUs, 31 of 609 files), 164 overlap
-  classifications across six domains, 6 dossiers / 164 concepts / 514 KUs,
-  all KUs Unaccounted; discovery candidates 6340 (provisional, coverage
-  gate CLOSED: 31/609 files processed).
-- Registry/checkpoint: latest checkpoint
-  `state/checkpoints/checkpoint-2026-10-27-frame002.json`; task queue 22
-  records valid.
+- Current milestone: REGEN-001 full-corpus re-extraction COMPLETE
+  (user-authorized Phase-0 restart executed through FRAME-001/FRAME-002 and
+  now the full-corpus extraction); the project moves to DISC-002:
+  corpus-wide emergent-concept discovery, then dossier reconciliation, then
+  GATED synthesis with disposition assignment.
+- Completed and verified so far: BOOT-000..004, EXT-001..010, REBASE-000,
+  AUDIT-011, FRAME-001, DISC-001, FRAME-002, REGEN-001 (feat commit recorded
+  in the queue record and checkpoint).
+- Framework version 0.8.0; 604/604 tests green; capabilities --verify: 22
+  implemented-and-tested + 1 planned (CAP-014).
+- Extraction state: ALL 609 source files extracted into 70 committed batches
+  (11 revalidated pre-restart + 59 REGEN batches 012-070); 27,536 KUs; every
+  id globally unique; every batch double-run byte-identical and verified
+  byte-faithful to sources via `vu ku-fidelity` (CAP-022). Registry rebuilt
+  (state/registries/kuregistry.db, git-ignored; rebuild via
+  scripts/regen001_registry.py) with the 7 classification overlays applied;
+  kureg-validate green. All KUs `Unaccounted` by design.
 - Read FIRST (mandatory startup battery): AGENTS.md -> docs/* (esp.
   PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md,
-  EMERGENT_CONCEPT_DISCOVERY.md) -> state/task-queue.jsonl ->
-  state/current-state.json -> this file ->
-  reports/rebaseline/iteration-retrospective.md (lessons A-1/A-2: never
-  mark a task completed before its commit exists; always re-run the suite
-  after the last mutation).
+  EMERGENT_CONCEPT_DISCOVERY.md, TOOLING_FRAMEWORK.md) ->
+  state/task-queue.jsonl -> state/current-state.json -> this file ->
+  reports/rebaseline/iteration-retrospective.md (lessons A-1/A-2: never mark
+  a task completed before its commit exists; always re-run the suite after
+  the last mutation).
 
 ## What the previous session actually did (evidence-backed)
 
-1. Verified the interrupted Phase 0 session's uncommitted work was REAL
-   (FRAME-001 + DISC-001 code, 482/482 module tests) but NOT committed, and
-   its final task-queue edit broke schema validation (25 errors on 4
-   records) -> repaired the records (schema-conformant), re-ran the suite.
-2. Built the user-mandated quality toolkit (FRAME-002): artifactlint
-   (fences, math env/delimiters, tables, headings, lists, links, mermaid,
-   python/JSON AST-parse — never executed, truncation, placeholders,
-   frontmatter), notequality (7 note types x 9 evidence-carrying dimensions,
-   source-coverage vs KU provenance mappings, tertile drift detection that
-   demonstrably flags the polished-early/thin-late pattern), batch gates
-   (per-note failure enumeration; averages cannot hide failures; explicit
-   waivers only), repair loop (content-addressed tasks, bounded retries,
-   verification = originating check + no-new-defects + diff-scope-locality,
-   regression re-opening, escalation), promptspec (testable criteria,
-   vague-language rejection, ku_id resolvability, context budget, caps).
-3. Ran the toolkit on the REAL corpus: full lint census of both source
-   vaults (609 files) with link counts cross-validating EXACTLY against
-   F-0010 (121) and F-0011 (338); mermaid grammar iterated against the
-   corpus to zero false positives, every discovered form pinned by a
-   regression test.
-4. Full suite 563/563; capabilities verified; retrospective written.
+1. Verified the FRAME-002 completion claims against real evidence BEFORE
+   working: fresh full-suite run (576/576 — the handoff text said 563, a
+   stale undercount; the recorded report itself said 576; corrected as
+   F-0012), capabilities --verify (true), both vaults byte-unchanged vs
+   manifests.
+2. Added the reusable `vu ku-fidelity` command (CAP-022, 22 unit tests + 5
+   CLI tests), replacing the per-task fidelity scripts of EXT-001..010
+   (retrospective gap: task-local scripts duplicated framework
+   functionality).
+3. REGEN-001 step 1 — revalidated all 11 committed batches by replaying
+   their exact recorded recipes (report_meta.args): double-runs byte-
+   identical, every batch regenerates its committed bytes exactly,
+   1728/1728 records excerpt-byte-exact
+   (reports/regen/regen001-revalidation.json).
+4. REGEN-001 step 2 — extracted the remaining 578 files in 59 bounded
+   batches 012-070 (per-file runs concatenated sorted; folder scopes were
+   rejected because mixed folders would re-extract committed files). Two
+   real catches by the gates, both fixed with regression tests:
+   (a) F-0013: the fidelity heading rule did not know the empty_section
+   design contract (empty_section units sit ON their heading line; batches
+   014/015 first flagged it); (b) the extraction driver derived batch
+   numbering from directory contents, so a resumed run renumbered the plan
+   and minted 14 duplicate batches — the id-collision gate caught them,
+   they were verified byte-identical to their twins, deleted, and the
+   numbering was pinned to the committed sequence.
+5. REGEN-001 step 3 — rebuilt the registry from all 70 batches + 7 overlays
+   (kureg-validate green) and produced full-corpus accounting: 276/276 +
+   333/333 files covered exactly once, 0 missing/extra/multi-batch, 0
+   source-hash mismatches, 27,536 KUs, 0 duplicate ids
+   (reports/regen/regen001-registry.json + regen001-accounting.json).
 
-## Next task
+## Next task: DISC-002 (queue record; dependencies satisfied)
 
-Queue records 20-21 (already queued, dependencies satisfied):
-1. **Revalidate and regenerate full-corpus knowledge-unit evidence** —
-   re-extract all 609 files under the hardened pipeline (byte-identity
-   double-runs), validating the 11 existing batches regenerate identically;
-   repair any that do not; rebuild the registry.
-2. **Run corpus-wide concept discovery and reconcile dossiers** — with
-   complete coverage the discovery gate opens; review candidates via
-   `vu discovery-decide` (semantic review is YOUR job, the tool only
-   collects evidence), then reconcile dossiers.
-3. Then synthesis begins UNDER THE GATES: every batch through
-   check-prompt -> generation -> lint -> assess -> drift -> gate -> repair.
-   Use bounded batches (10-20+ iterations expected), fresh sessions, and
-   the two-commit pattern (feat, then state-with-hash).
+1. **Run corpus-wide concept discovery and reconcile dossiers before
+   synthesis.** The discovery coverage gate is NOW OPEN: the partial-corpus
+   run (6,340 provisional candidates, gate closed at 31/609) must be re-run
+   over the complete corpus (all 70 batches / 27,536 KUs). Expect a much
+   larger candidate set: budget the run, use bounded output, and record the
+   coverage denominator in every report.
+2. Semantic review of candidates is YOUR job (`vu discovery-decide`): the
+   tool collects evidence; you decide unsearched/provisional/confirmed/
+   already-covered/accepted/merged/split/rejected/deferred with rationale.
+   A gap can only be confirmed with complete corpus coverage — which now
+   exists.
+3. Reconcile the six existing dossiers (state/dossiers/) against the full
+   corpus; regenerate/extend where the evidence changed; keep the byte-
+   identical regeneration property where possible.
+4. Then synthesis begins UNDER THE GATES: map KUs to destinations and
+   dispositions first (Unaccounted blocks release), then every batch
+   through check-prompt -> generation -> lint -> assess -> drift -> gate ->
+   repair. Use bounded batches (10-20+ iterations expected), fresh sessions,
+   and the two-commit pattern (feat, then state-with-hash).
 
 ## Standing rules (unchanged, enforced)
 
@@ -77,3 +90,6 @@ Queue records 20-21 (already queued, dependencies satisfied):
 - Machine locators for every line citation (vault_unification.locators).
 - Every completion claim needs a report path or test run as evidence.
 - Push to main before session end; record push verification.
+- Note F-0014 (open): two ai-course files end with 'END OF FILE / File
+  Name' marker headings — synthesis must not copy them as knowledge
+  headings; their KUs are accounted as empty_section units.

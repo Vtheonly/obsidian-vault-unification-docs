@@ -1,0 +1,61 @@
+{
+ "checkpoint_id": "checkpoint-2026-10-28-regen001",
+ "created_utc": "2026-10-27T21:47:44.804250+00:00",
+ "task_ids_completed": [
+  "BOOT-000",
+  "BOOT-001",
+  "BOOT-002",
+  "BOOT-003",
+  "BOOT-004",
+  "EXT-001",
+  "EXT-002",
+  "EXT-003",
+  "EXT-004",
+  "EXT-005",
+  "EXT-006",
+  "EXT-007",
+  "EXT-008",
+  "EXT-009",
+  "EXT-010",
+  "REBASE-000",
+  "AUDIT-011",
+  "FRAME-001",
+  "DISC-001",
+  "FRAME-002",
+  "REGEN-001"
+ ],
+ "task_ids_open": [
+  "DISC-002"
+ ],
+ "framework_version": "0.8.0",
+ "feat_commit": "48ccd2d",
+ "test_suite": {
+  "command": "python3 -m pytest tests/ -q",
+  "result": "604 passed",
+  "evidence": "reports/regen/regen001-final-pytest.json"
+ },
+ "capabilities": {
+  "verified": true,
+  "implemented_and_tested": 22,
+  "planned": 1
+ },
+ "extraction_state": {
+  "files_extracted": 609,
+  "files_total": 609,
+  "batches": 70,
+  "kus": 27536,
+  "revalidated_pre_restart_batches": 11,
+  "new_regen_batches": 59,
+  "classifications": 164,
+  "dossiers": 6,
+  "all_kus_disposition": "Unaccounted"
+ },
+ "source_immutability": {
+  "ai-course": "276/276 unchanged (manifest verify exit 0, before and after)",
+  "master-ai": "333/333 unchanged (manifest verify exit 0, before and after)"
+ },
+ "next": [
+  "DISC-002: corpus-wide emergent-concept discovery over the complete registry (coverage gate now open at 609/609), candidate review via vu discovery-decide, dossier reconciliation",
+  "then disposition assignment and gated synthesis (every batch: check-prompt -> generation -> lint -> assess -> drift -> gate -> repair)"
+ ]
+}
