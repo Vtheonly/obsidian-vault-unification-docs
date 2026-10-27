@@ -16,12 +16,10 @@
   03.5 + 03.8).
 - Current task ID: EXT-009 (to be selected at session start — no record in
   the queue yet; see Next task).
-- Current Git commit: the EXT-008 work/state commits on LOCAL `main`, on top
-  of the EXT-007 commits. PUSH BLOCKER (STILL OPEN): all three PATs from the
-  brief were rejected on 2026-10-26 AND re-rejected 2026-10-27 (401 Bad
-  credentials). The user has instructed the session to continue committing
-  locally and deliver a ZIP (repo + git bundle) that the user will push
-  personally. Do NOT re-clone while local-only commits exist.
+- Current Git commit: 58ad0fa (EXT-008 state commit) — PUSHED to
+  origin/main on 2026-10-27 (PUSH BLOCKER RESOLVED: a fresh user-supplied
+  PAT with repo scope pushed 7d9e65f..58ad0fa; local == remote verified
+  via git ls-remote). Commit and push at session end as normal.
 - Working tree status: clean after the EXT-008 commits (verify `git status`)
 - Registry/checkpoint version: task-queue v11 (BOOT-000..004 + EXT-001..008
   completed with tests_run evidence); KU schema v1.1 (ADR-0008);
@@ -112,8 +110,8 @@
 - Open findings: F-0001 (trailing-space dir), F-0002 (14 unclosed-fence
   files), F-0003 (175 broken wikilinks + 10 missing anchors), F-0007
   (boosted-tree library dating), F-0008 (mAP name collision).
-- Blockers: PUSH BLOCKER (see Project state) — user pushes the delivered
-  zip/bundle personally; local commits accumulate in `/home/z/my-project/repo`.
+- Blockers: none. The 2026-10-26/27 PAT push blocker is RESOLVED (fresh
+  PAT worked; origin/main == local main at 58ad0fa).
 - Known gaps (deliberate non-claims): 21 of 609 source files extracted
   (3.4%); overlap classified for four domains only; dossiers cover ONLY the
   304 classified KUs (585 extracted KUs have no classification and therefore
@@ -177,10 +175,10 @@
 
 ## Resume procedure
 
-1. PUSH STATE: local main is ahead of origin/main (EXT-005 verification +
-   EXT-006 + EXT-007 + EXT-008 commits, and EXT-009 if completed). The user
-   pushes the delivered zip/bundle personally. NEVER clone fresh while
-   local-only commits exist; work in `/home/z/my-project/repo`.
+1. PUSH STATE: origin/main == local main at 58ad0fa (pushed 2026-10-27
+   with a working PAT). Run `git fetch origin && git status` to confirm; if
+   local-only commits ever accumulate again, work in
+   `/home/z/my-project/repo` and never clone fresh; push at session end.
 2. Read `AGENTS.md`, this file, `state/current-state.json`,
    `state/task-queue.jsonl`, `state/findings.jsonl`, and
    `/home/z/my-project/worklog.md`.
