@@ -514,6 +514,27 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p.add_argument("--report", help="optional JSON report path")
 
+    # ---- discovery-index (CAP-023) ----
+    p = sub.add_parser(
+        "discovery-index",
+        help="write a compact, committable index of a candidates JSONL file (drops quote payloads, keeps ku_id joins)",
+    )
+    p.add_argument("--candidates", required=True, help="candidates JSONL to index")
+    p.add_argument("--out", required=True, help="index JSONL destination (explicit)")
+    p.add_argument(
+        "--max-ku-ids",
+        type=int,
+        default=12,
+        help="cap on ku_ids/source files per index record (counts stay complete in the full file)",
+    )
+    p.add_argument(
+        "--protected-root",
+        action="append",
+        default=None,
+        help="path the output must not be written under (repeatable)",
+    )
+    p.add_argument("--report", help="optional JSON report path")
+
     # ---- lint-artifacts (CAP-018) ----
     p = sub.add_parser(
         "lint-artifacts",
@@ -1503,6 +1524,27 @@ def cmd_discovery_validate(args) -> int:
     return 0 if result["valid"] else 1
 
 
+def cmd_discovery_index(args) -> int:
+    out = Path(args.out)
+    try:
+        ensure_dest_safe(out, args.protected_root or [])
+        result = discovery_mod.write_candidate_index(
+            args.candidates, out, max_ku_ids=args.max_ku_ids
+        )
+    except (DiscoveryError, PathSafetyError, OverlapError, OSError, json.JSONDecodeError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    payload = {"command": "discovery-index", "result": result}
+    _write_report_safe(args, "discovery-index", payload)
+    _emit_summary(
+        {
+            "records_indexed": result["records_indexed"],
+            "index_path": result["index_path"],
+        }
+    )
+    return 0
+
+
 # ---------------------------------------------------------------------------
 # FRAME-002: artifact lint, quality assessment, drift, gates, repair loop,
 # prompt checking (CAP-018..CAP-021)
@@ -1807,6 +1849,7 @@ HANDLERS = {
     "discover-gaps": cmd_discover_gaps,
     "discovery-decide": cmd_discovery_decide,
     "discovery-validate": cmd_discovery_validate,
+    "discovery-index": cmd_discovery_index,
     "lint-artifacts": cmd_lint_artifacts,
     "assess-quality": cmd_assess_quality,
     "quality-drift": cmd_quality_drift,

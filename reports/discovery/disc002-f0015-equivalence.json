@@ -1,0 +1,27 @@
+{
+ "task": "DISC-002 F-0015 equivalence evidence",
+ "pair_differential": {
+  "batches": [
+   "001-ext001-ai-course-03.1-regression.jsonl",
+   "002-ext002-master-ai-supervised-learning.jsonl",
+   "003-ext004-ai-course-03.7-tree-based-models.jsonl",
+   "012-regen001-ai-course-01-foundations-and-overview.jsonl",
+   "026-regen001-ai-course-08-attention-and-transformers.jsonl",
+   "040-regen001-master-ai-08-llms.jsonl"
+  ],
+  "pairs_compared": 110799,
+  "mismatch_count": 0,
+  "mismatches": [],
+  "seconds": 99.0
+ },
+ "pipeline_ab": {
+  "fast_seconds": 10.4,
+  "reference_seconds": 49.2,
+  "fast_candidates": 6319,
+  "reference_candidates": 6319,
+  "fast_sha256": "584eda25b5d8158069b187ec3c1d263f4c5fdb5dd268bffd67aebc255b349a18",
+  "reference_sha256": "584eda25b5d8158069b187ec3c1d263f4c5fdb5dd268bffd67aebc255b349a18",
+  "byte_identical": true
+ },
+ "verdict": "PASS"
+}

@@ -336,6 +336,19 @@ CAPABILITIES: list[dict] = [
             "structural purity check assumes fresh batches by default; post-disposition verification requires --allow-processed",
         ],
     },
+    {
+        "id": "CAP-023",
+        "name": "Compact candidate index projection for corpus-scale discovery outputs (drops quote payloads, keeps ku_id joins and decision state)",
+        "module": "vault_unification.discovery",
+        "command": "vu discovery-index",
+        "status_declared": "implemented-and-tested",
+        "tests": ["tests/test_discovery.py"],
+        "limitations": [
+            "the index is a projection, not a replacement: evidence quotes are recoverable only by joining ku_ids against the committed KU batches or regenerating the full candidates file with the recorded discovery command",
+            "ku_ids and source files are capped at --max-ku-ids (default 12) per record; counts stay complete in the full file",
+            "index records carry no JSON Schema of their own; they inherit validity from the source candidates file",
+        ],
+    },
 ]
 
 

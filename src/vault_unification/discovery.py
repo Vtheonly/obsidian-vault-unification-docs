@@ -53,6 +53,7 @@ import hashlib
 import json
 import re
 from collections import Counter, defaultdict
+from functools import lru_cache
 from pathlib import Path
 
 from .locators import _normalize
@@ -178,19 +179,190 @@ def _match_relationship(
     ku_text_norm: str,
     heading_declared: bool,
 ) -> str:
-    """Classify ONE (term, KU) pair: defined > declared > assumed > derivation > used."""
-    escaped = re.escape(term)
-    for template in _DEFINITION_PATTERNS:
-        if re.search(template.format(t=escaped), ku_text_norm, re.IGNORECASE):
+    """Classify ONE (term, KU) pair: defined > declared > assumed > derivation > used.
+
+    REFERENCE implementation (per-term regex templates). Kept verbatim as
+    the equivalence oracle for :func:`_match_relationship_fast`: unit tests
+    compare the two on every template family, and corpus-level verification
+    runs both over real batches and compares candidate hashes. Do not change
+    this function's semantics without changing the fast path and the tests
+    together.
+    """
+    def_pats, assumed_pats = _relationship_patterns(term)
+    for pat in def_pats:
+        if pat.search(ku_text_norm):
             return "defined"
     if heading_declared:
         return "declared"
-    for template in _ASSUMED_PATTERNS:
-        if re.search(template.format(t=escaped), ku_text_norm, re.IGNORECASE):
+    for pat in assumed_pats:
+        if pat.search(ku_text_norm):
             return "assumed"
     if _DERIVATION_MARKERS.search(ku_text_norm):
         return "derivation"
     return "used"
+
+
+# ---- fast path (F-0015): term-agnostic trigger positions per KU ----------
+# The 24 reference templates above all have the shape
+#     <optional prefix trigger> \b{t}\b <optional continuation trigger>
+# so instead of compiling 24 term-anchored regexes per distinct term, we scan
+# each KU's normalized text ONCE with generic precompiled trigger patterns
+# and record WHERE a term would have to sit for each template to fire:
+#   - continuation starts (term END positions),
+#   - prefix ends (term START positions),
+#   - the D10 both-sides pair (``the ... rule``),
+#   - gap-reach positions for the two [^.]* templates (A3, A11).
+# A (term, KU) pair is then classified with ONE cached ``\b{t}\b`` finditer
+# plus O(occurrences) set lookups. Equivalence to the reference is pinned by
+# tests/test_discovery.py (TestRelationshipFastEquivalence) and by corpus
+# A/B runs recorded under reports/discovery/.
+
+_DEF_CONTINUATION_PATTERNS = tuple(
+    re.compile(p, re.IGNORECASE)
+    for p in (
+        r"\s+(?:is|are)\s+(?:a|an|the)\b",  # D1
+        r"\s+(?:is|are)\s+defined\s+as\b",  # D2
+        r"\s+refers\s+to\b",  # D3
+        r"\s+means\b",  # D4
+        r"\s+denotes\b",  # D5
+        r"\s+describes\b",  # D6
+        r"\s+states\s+that\b",  # D9
+        r"\s+(?:is|are)\s+(?:defined|set|chosen|initialized|initialised|drawn|computed|calculated|given)\b",  # D12
+        r"\s+(?:is|are)\s+-?\d",  # D13 (no trailing \b, mirrors the template)
+        r"\s*:\s*$",  # D14 (end-anchored)
+    )
+)
+_DEF_PREFIX_PATTERNS = tuple(
+    re.compile(p, re.IGNORECASE)
+    for p in (
+        r"definition\s+of\s+",  # D7
+        r"define[sd]?\s+",  # D8
+        r"called\s+",  # D11
+    )
+)
+_THE_PREFIX_PATTERN = re.compile(r"the\s+", re.IGNORECASE)  # D10 prefix
+_RULE_CONT_PATTERN = re.compile(r"\s+rule\b", re.IGNORECASE)  # D10 continuation
+_ASSUMED_PREFIX_PATTERNS = tuple(
+    re.compile(p, re.IGNORECASE)
+    for p in (
+        r"recall\s+(?:that\s+)?(?:the\s+)?",  # A1
+        r"remember\s+(?:that\s+)?(?:the\s+)?",  # A2
+        r"assuming\s+",  # A4
+        r"by\s+(?:the\s+)?",  # A5
+        r"from\s+(?:the\s+)?",  # A6
+        r"using\s+(?:the\s+)?",  # A7
+        r"per\s+",  # A8
+        r"according\s+to\s+",  # A9
+        r"apply(?:ing)?\s+(?:the\s+)?",  # A10
+    )
+)
+_GAP_PREFIX_PATTERNS = tuple(
+    re.compile(p, re.IGNORECASE)
+    for p in (
+        r"as\s+we\s+(?:saw|discussed|learned|derived|defined)\b",  # A3
+        r"we\s+already\s+(?:know|saw)\b",  # A11
+    )
+)
+
+
+@lru_cache(maxsize=512)
+def _term_occurrence_pattern(term: str) -> re.Pattern:
+    """``\\b{t}\\b`` with IGNORECASE — the term anchor shared by all 24 templates."""
+    return re.compile(rf"\b{re.escape(term)}\b", re.IGNORECASE)
+
+
+def _relationship_positions(norm_text: str) -> dict:
+    """Term-agnostic trigger positions for one normalized KU text.
+
+    Returns sets of character positions:
+    - ``def_cont``: term-END positions that fire a definition continuation;
+    - ``def_pref``: term-START positions that fire a definition prefix;
+    - ``the_pref`` / ``rule_cont``: the D10 both-sides pair;
+    - ``assumed_pref``: term-START positions that fire an assumed prefix;
+    - ``gap_reach``: term-START positions reachable by an A3/A11
+      ``[^.]*`` gap after "as we saw..." / "we already know...".
+    """
+    def_cont: set[int] = set()
+    for pat in _DEF_CONTINUATION_PATTERNS:
+        for m in pat.finditer(norm_text):
+            def_cont.add(m.start())
+    def_pref: set[int] = set()
+    for pat in _DEF_PREFIX_PATTERNS:
+        for m in pat.finditer(norm_text):
+            def_pref.add(m.end())
+    the_pref = {m.end() for m in _THE_PREFIX_PATTERN.finditer(norm_text)}
+    rule_cont = {m.start() for m in _RULE_CONT_PATTERN.finditer(norm_text)}
+    assumed_pref: set[int] = set()
+    for pat in _ASSUMED_PREFIX_PATTERNS:
+        for m in pat.finditer(norm_text):
+            assumed_pref.add(m.end())
+    gap_reach: set[int] = set()
+    n = len(norm_text)
+    for pat in _GAP_PREFIX_PATTERNS:
+        for m in pat.finditer(norm_text):
+            pos = m.end()
+            while pos < n and norm_text[pos] != ".":
+                gap_reach.add(pos)
+                pos += 1
+    return {
+        "def_cont": def_cont,
+        "def_pref": def_pref,
+        "the_pref": the_pref,
+        "rule_cont": rule_cont,
+        "assumed_pref": assumed_pref,
+        "gap_reach": gap_reach,
+    }
+
+
+def _match_relationship_fast(
+    term: str,
+    ku: dict,
+    ku_text_norm: str,
+    heading_declared: bool,
+) -> str:
+    """Byte-equivalent fast twin of :func:`_match_relationship`.
+
+    Trigger positions are computed once per KU and cached on the record under
+    the non-persistent ``_disc_relpos`` key. See the F-0015 note above the
+    pattern tables for the equivalence argument.
+    """
+    pos = ku.get("_disc_relpos")
+    if pos is None:
+        pos = _relationship_positions(ku_text_norm)
+        ku["_disc_relpos"] = pos
+    occ = _term_occurrence_pattern(term)
+    if pos["def_cont"] or pos["def_pref"] or (pos["the_pref"] and pos["rule_cont"]):
+        for m in occ.finditer(ku_text_norm):
+            e, s = m.end(), m.start()
+            if e in pos["def_cont"] or s in pos["def_pref"]:
+                return "defined"
+            if s in pos["the_pref"] and e in pos["rule_cont"]:
+                return "defined"
+    if heading_declared:
+        return "declared"
+    if pos["assumed_pref"] or pos["gap_reach"]:
+        for m in occ.finditer(ku_text_norm):
+            if m.start() in pos["assumed_pref"] or m.start() in pos["gap_reach"]:
+                return "assumed"
+    if _DERIVATION_MARKERS.search(ku_text_norm):
+        return "derivation"
+    return "used"
+
+
+@lru_cache(maxsize=64)
+def _relationship_patterns(
+    term: str,
+) -> tuple[tuple[re.Pattern, ...], tuple[re.Pattern, ...]]:
+    escaped = re.escape(term)
+    def_pats = tuple(
+        re.compile(template.format(t=escaped), re.IGNORECASE)
+        for template in _DEFINITION_PATTERNS
+    )
+    assumed_pats = tuple(
+        re.compile(template.format(t=escaped), re.IGNORECASE)
+        for template in _ASSUMED_PATTERNS
+    )
+    return def_pats, assumed_pats
 
 
 def _locate_in_ku(ku: dict, term: str) -> tuple[int, int, str] | None:
@@ -201,11 +373,21 @@ def _locate_in_ku(ku: dict, term: str) -> tuple[int, int, str] | None:
     occurrence-level uniqueness inside one KU line is guaranteed by the word
     boundary; KU-level multi-line spans are handled by scanning lines in
     order). This is the X2 rule in miniature: no hand-typed line numbers.
+
+    Performance (F-0015): split/normalized lines are cached on the KU record
+    under non-persistent ``_disc_lines``/``_disc_norm_lines`` keys (mirrors the
+    loader's ``_batch`` convention); they never reach any output.
     """
     excerpt = ku["excerpt"]
-    lines = excerpt.splitlines()
+    if "_disc_lines" in ku:
+        lines = ku["_disc_lines"]
+        norm_lines = ku["_disc_norm_lines"]
+    else:
+        lines = excerpt.splitlines()
+        norm_lines = [_normalize(line) for line in lines]
+        ku["_disc_lines"] = lines
+        ku["_disc_norm_lines"] = norm_lines
     pattern = boundary_pattern(term)
-    norm_lines = [_normalize(line) for line in lines]
     for offset, line in enumerate(lines):
         if pattern.search(line):
             quote = _sentence_window(
@@ -239,9 +421,18 @@ def _passage_hash(quote: str) -> str:
 
 
 def _signature_terms(term: str, ku: dict, top_k: int = 8) -> list[str]:
-    """Distinctive co-occurring mined terms in this KU (for homonym clustering)."""
-    grams = _mine_ngrams(ku["excerpt"])
-    counts = Counter(_term_text(g) for g in grams if _term_text(g) != term)
+    """Distinctive co-occurring mined terms in this KU (for homonym clustering).
+
+    Performance (F-0015): the per-KU term Counter is cached on the KU record
+    under the non-persistent ``_disc_counter`` key; only the exclusion sort
+    runs per call. Output is identical to re-mining per call.
+    """
+    counter = ku.get("_disc_counter")
+    if counter is None:
+        grams = _mine_ngrams(ku["excerpt"])
+        counter = Counter(_term_text(g) for g in grams)
+        ku["_disc_counter"] = counter
+    counts = {t: c for t, c in counter.items() if t != term}
     # deterministic ordering: count desc, then lexicographic
     ordered = sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))
     return [t for t, _ in ordered[:top_k]]
@@ -375,16 +566,29 @@ def discover_candidates(
         definition_evidence: list[dict] = []
         for ku_id in sorted(occurrences):
             ku = ku_by_id[ku_id]
-            text = ku["excerpt"]
-            norm_text = _normalize(text)
-            heading_declared = any(
-                boundary_pattern(term).search(_normalize(h) if h else h)
-                for h in ku.get("heading_path", [])
-            )
-            relationship = _match_relationship(term, norm_text, heading_declared)
+            # F-0015: locate FIRST. When the term has no excerpt match
+            # (heading-path-only term) the pair is discarded below, so the
+            # expensive relationship pass over that KU is pure waste — the
+            # partial-corpus run showed 56% of analyzed terms fall here.
+            # Reordering is byte-safe: `continue` drops the pair either way.
             located = _locate_in_ku(ku, term)
             if located is None:
                 continue  # term came from heading path only; no excerpt match
+            norm_text = ku.get("_disc_norm_text")
+            if norm_text is None:
+                norm_text = _normalize(ku["excerpt"])
+                ku["_disc_norm_text"] = norm_text
+                ku["_disc_norm_headings"] = [
+                    _normalize(h) if h else h
+                    for h in ku.get("heading_path", [])
+                ]
+            norm_headings = ku["_disc_norm_headings"]
+            heading_declared = any(
+                boundary_pattern(term).search(h) for h in norm_headings
+            )
+            relationship = _match_relationship_fast(
+                term, ku, norm_text, heading_declared
+            )
             line_start, line_end, quote = located
             ev = {
                 "ku_id": ku_id,
@@ -401,7 +605,9 @@ def discover_candidates(
                 {
                     **ev,
                     "passage_hash": _passage_hash(quote),
-                    "signature": _signature_terms(term, ku),
+                    # F-0015: signature is computed lazily below — only when
+                    # homonym clustering can run (independent_contexts >= 2).
+                    "signature": [],
                 }
             )
 
@@ -417,6 +623,11 @@ def discover_candidates(
         independent_contexts = len(
             {ctx["passage_hash"] for ctx in contexts}
         )
+        # F-0015: lazy signatures — computed only when clustering can use
+        # them (identical values to eager computation; byte-identical output).
+        if independent_contexts >= 2:
+            for ctx in contexts:
+                ctx["signature"] = _signature_terms(term, ku_by_id[ctx["ku_id"]])
         # dedupe evidence list: one evidence per (ku, relationship)
         seen_ev = set()
         evidence = []
@@ -708,6 +919,9 @@ def apply_decisions(
     import jsonschema
 
     schema = json.loads(Path(candidate_schema_path).read_text(encoding="utf-8"))
+    # F-0015: one reused validator instead of per-candidate re-resolution.
+    _candidate_validator = jsonschema.validators.validator_for(schema)(schema)
+    _candidate_validator.check_schema(schema)
 
     candidates = []
     by_id: dict[str, dict] = {}
@@ -765,7 +979,7 @@ def apply_decisions(
             new_cands = dec.get("new_candidates", [])
             for nc in new_cands:
                 try:
-                    jsonschema.validate(nc, schema)
+                    _candidate_validator.validate(nc)
                 except jsonschema.ValidationError as exc:
                     errors.append(
                         f"decision {dec['decision_id']}: new candidate "
@@ -851,6 +1065,10 @@ def validate_candidates(
     import jsonschema
 
     schema = json.loads(Path(candidate_schema_path).read_text(encoding="utf-8"))
+    # F-0015: one reused validator instead of per-record re-resolution
+    # (candidate files at corpus scale hold tens of thousands of records).
+    validator = jsonschema.validators.validator_for(schema)(schema)
+    validator.check_schema(schema)
     records = []
     with open(candidates_path, encoding="utf-8") as handle:
         for line in handle:
@@ -872,7 +1090,7 @@ def validate_candidates(
 
     for rec in records:
         try:
-            jsonschema.validate(rec, schema)
+            validator.validate(rec)
         except jsonschema.ValidationError as exc:
             errors.append(
                 f"{rec.get('candidate_id', '?')}: schema violation: {exc.message}"
@@ -913,4 +1131,79 @@ def validate_candidates(
         "records_total": len(records),
         "errors": errors[:50],
         "errors_total": len(errors),
+    }
+
+
+# ---------------------------------------------------------------------------
+# compact candidate index (CAP-023): the committable projection of a
+# corpus-scale candidates file. Full candidate records carry evidence quotes
+# that duplicate source text already committed inside the KU batches; at
+# corpus scale the full file can exceed repository limits (DISC-002: 60,154
+# candidates -> 270 MB). The index keeps every review-relevant field and the
+# ku_id join keys, dropping only the quote payloads (recoverable from the
+# KU batches via ku_id, or by deterministically regenerating the full file
+# with the recorded command).
+
+
+def candidate_index_record(rec: dict, *, max_ku_ids: int = 12) -> dict:
+    """Compact, review-sufficient projection of one candidate record."""
+    evidence = rec.get("evidence", [])
+    return {
+        "candidate_id": rec["candidate_id"],
+        "term": rec["term"],
+        "proposed_title": rec.get("proposed_title"),
+        "kind": rec["kind"],
+        "status": rec["status"],
+        "score": rec.get("confidence", {}).get("score"),
+        "independent_contexts": rec.get("independent_contexts"),
+        "cross_vault": rec.get("confidence", {}).get("signals", {}).get(
+            "cross_vault"
+        ),
+        "homonym_suspect": rec.get("homonym_suspect", False),
+        "contradiction_suspect": rec.get("contradiction_suspect", False),
+        "destination_recommendation": rec.get("destination_recommendation"),
+        "evidence_count": len(evidence),
+        "ku_ids": [e["ku_id"] for e in evidence][:max_ku_ids],
+        "source_files": sorted({e["source_path"] for e in evidence})[:max_ku_ids],
+        "decisions": [h["decision_id"] for h in rec.get("decision_history", [])],
+    }
+
+
+def write_candidate_index(
+    candidates_path: str | Path,
+    index_out: str | Path,
+    *,
+    max_ku_ids: int = 12,
+) -> dict:
+    """Write the compact index for a candidates JSONL file.
+
+    Deterministic: records are emitted in file order (discover-gaps emits
+    sorted records), no timestamps. Returns a summary dict with counts and
+    the projection contract.
+    """
+    candidates_path = Path(candidates_path)
+    index_out = Path(index_out)
+    records: list[dict] = []
+    with open(candidates_path, encoding="utf-8") as handle:
+        for line in handle:
+            if line.strip():
+                records.append(json.loads(line))
+    lines = [
+        json.dumps(
+            candidate_index_record(rec, max_ku_ids=max_ku_ids),
+            sort_keys=True,
+            ensure_ascii=False,
+        )
+        for rec in records
+    ]
+    index_out.write_text(
+        "\n".join(lines) + ("\n" if lines else ""), encoding="utf-8"
+    )
+    return {
+        "command": "discovery-index",
+        "candidates_path": str(candidates_path),
+        "index_path": str(index_out),
+        "records_indexed": len(records),
+        "dropped_payload": "evidence quotes (join via ku_ids against KU batches)",
+        "max_ku_ids": max_ku_ids,
     }

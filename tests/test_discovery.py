@@ -26,12 +26,15 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
 import sys
 from pathlib import Path
 
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
 
 from vault_unification import discovery as disc  # noqa: E402
 from vault_unification.discovery import (  # noqa: E402
@@ -609,3 +612,202 @@ class TestNegativePaths:
         from vault_unification.overlap import OverlapError
         with pytest.raises(OverlapError, match="duplicate knowledge_unit_id"):
             discover_candidates([dup], KUS_SCHEMA, {"notes": manifest})
+
+
+class TestRelationshipFastEquivalence:
+    """F-0015: _match_relationship_fast must equal the reference on every
+    template family (definition D1-D14, assumed A1-A11, both-sides D10,
+    gap templates A3/A11, derivation fallback) and on negatives."""
+
+    CASES = [
+        # (name, text, term, heading_declared)
+        ("D1 is-a", "a perceptron is a linear classifier", "perceptron", False),
+        ("D1 are-a", "convolutions are a family of layers", "convolutions", False),
+        ("D2 defined-as", "entropy is defined as expected surprise", "entropy", False),
+        ("D3 refers-to", "perplexity refers to exponentiated cross-entropy", "perplexity", False),
+        ("D4 means", "recall means retrieving stored items", "recall", False),
+        ("D5 denotes", "w denotes the weight vector here", "w", False),
+        ("D6 describes", "the softmax describes a distribution over classes", "softmax", False),
+        ("D7 definition-of", "the definition of dropout is simple", "dropout", False),
+        ("D8 defines", "the text defines attention as a weighted sum", "attention", False),
+        ("D8 defined", "she defined the loss curve precisely", "loss curve", False),
+        ("D9 states-that", "the theorem states that convergence holds", "theorem", False),
+        ("D10 the-rule", "apply the chain rule carefully here", "chain rule", False),
+        ("D11 called", "this is called early stopping", "early stopping", False),
+        ("D12 is-set", "the threshold is chosen by validation", "threshold", False),
+        ("D12 are-given", "the labels are given in advance", "labels", False),
+        ("D13 is-number", "the depth is 3 in this config", "depth", False),
+        ("D13 is-negative", "the slope is -2 overall", "slope", False),
+        ("D14 colon-end", "the key concept: learning rate:", "learning rate", False),
+        ("D14 colon-space-end", "the key concept: learning rate :", "learning rate", False),
+        ("A1 recall", "recall the gradient descent update", "gradient descent", False),
+        ("A1 recall-that-the", "recall that the jacobian encodes derivatives", "jacobian", False),
+        ("A2 remember", "remember the bias variance tradeoff", "bias variance tradeoff", False),
+        ("A3 as-we-saw", "as we saw the sigmoid saturates", "sigmoid", False),
+        ("A3 gap-with-words", "as we discussed earlier the tanh fixes this", "tanh", False),
+        ("A3 blocked-by-period", "as we saw. the sigmoid saturates", "sigmoid", False),
+        ("A4 assuming", "assuming iid samples the estimate holds", "iid samples", False),
+        ("A5 by", "by the union bound this holds", "union bound", False),
+        ("A5 by-bare", "by linearity of expectation", "linearity of expectation", False),
+        ("A6 from", "from the central limit theorem it follows", "central limit theorem", False),
+        ("A7 using", "using the bayes rule we rewrite", "bayes rule", False),
+        ("A7 using-bare", "using backpropagation here", "backpropagation", False),
+        ("A8 per", "per the no free lunch theorem", "no free lunch theorem", False),
+        ("A9 according-to", "according to the paper results differ", "paper", False),
+        ("A10 applying", "applying the cauchy schwarz inequality", "cauchy schwarz inequality", False),
+        ("A10 apply-the", "apply the pigeonhole principle now", "pigeonhole principle", False),
+        ("A11 we-already-know", "we already know the relu is sparse", "relu", False),
+        ("A11 we-already-saw", "we already saw that lstms gate", "lstms", False),
+        ("neg used", "we compute the gradient and step", "gradient", False),
+        ("neg no-space", "the chainrule is one word", "chain rule", False),
+        ("neg term-inside-word", "bridge contains ridge inside", "ridge", False),
+        ("neg multiword-wrong", "stochastic processes differ", "stochastic gradient", False),
+        ("case-insensitive", "a Perceptron IS a classifier", "perceptron", False),
+        ("case-insensitive-assumed", "BY the union bound", "union bound", False),
+        ("whitespace-drift", "the   definition   of   dropout   is", "dropout", False),
+        ("multi-line-collapse", "entropy\nis defined as surprise", "entropy", False),
+        ("trailing-hyphen-term", "we use the adam- optimizer here", "adam-", False),
+        ("apostrophe-term", "the model's output is a tensor", "model's", False),
+    ]
+
+    @pytest.mark.parametrize("name,text,term,heading", CASES)
+    def test_fast_equals_reference(self, name, text, term, heading):
+        norm = disc._normalize(text)
+        ku = {"excerpt": text, "knowledge_unit_id": "KU-test"}
+        ref = disc._match_relationship(term, norm, heading)
+        fast = disc._match_relationship_fast(term, ku, norm, heading)
+        assert fast == ref, f"{name}: fast={fast!r} reference={ref!r}"
+
+    def test_heading_declared_takes_precedence_over_assumed(self):
+        text = "we just use the value here"
+        term = "value"
+        norm = disc._normalize(text)
+        ku = {"excerpt": text, "knowledge_unit_id": "KU-test"}
+        assert disc._match_relationship(term, norm, True) == "declared"
+        assert disc._match_relationship_fast(term, ku, norm, True) == "declared"
+
+    def test_derivation_fallback(self):
+        text = "substituting and therefore it follows directly"
+        term = "momentum"
+        norm = disc._normalize(text)
+        ku = {"excerpt": text, "knowledge_unit_id": "KU-test"}
+        assert disc._match_relationship(term, norm, False) == "derivation"
+        assert disc._match_relationship_fast(term, ku, norm, False) == "derivation"
+
+    def test_position_cache_reuse(self):
+        # same ku dict -> positions computed once; repeated calls stay equal
+        text = "a gan is a generator discriminator pair; recall the gan"
+        ku = {"excerpt": text, "knowledge_unit_id": "KU-test"}
+        norm = disc._normalize(text)
+        first = disc._match_relationship_fast("gan", ku, norm, False)
+        cached = disc._match_relationship_fast("gan", ku, norm, False)
+        assert first == cached == "defined"
+
+
+class TestCandidateIndex:
+    """CAP-023 (vu discovery-index): compact committable projection."""
+
+    def _candidates_file(self, tmp_path, with_history=False):
+        cand = {
+            "candidate_id": "CG-abc123",
+            "term": "chain rule",
+            "proposed_title": "Chain Rule",
+            "kind": "fragmented_derivation",
+            "status": "provisional_candidate",
+            "evidence": [
+                {
+                    "ku_id": "KU-1",
+                    "vault": "a",
+                    "source_path": "f1.md",
+                    "line_start": 3,
+                    "line_end": 3,
+                    "relationship": "derivation",
+                    "quote": "x" * 250,
+                },
+                {
+                    "ku_id": "KU-2",
+                    "vault": "b",
+                    "source_path": "f2.md",
+                    "line_start": 9,
+                    "line_end": 9,
+                    "relationship": "used",
+                    "quote": "y" * 250,
+                },
+            ],
+            "confidence": {"score": 0.62, "signals": {"cross_vault": True}},
+            "independent_contexts": 2,
+            "homonym_suspect": False,
+            "contradiction_suspect": False,
+            "destination_recommendation": "standalone_note_candidate",
+            "decision_history": (
+                [{"decision_id": "D-1", "action": "accept", "rationale": "r",
+                  "reviewer": "t", "decided_utc": "2026-10-28T00:00:00+00:00"}]
+                if with_history
+                else []
+            ),
+        }
+        path = tmp_path / "cands.jsonl"
+        path.write_text(json.dumps(cand) + "\n", encoding="utf-8")
+        return path, cand
+
+    def test_index_record_is_compact_and_complete(self, tmp_path):
+        path, cand = self._candidates_file(tmp_path)
+        out = tmp_path / "index.jsonl"
+        result = disc.write_candidate_index(path, out)
+        assert result["records_indexed"] == 1
+        rec = json.loads(out.read_text(encoding="utf-8").splitlines()[0])
+        assert rec["candidate_id"] == "CG-abc123"
+        assert rec["ku_ids"] == ["KU-1", "KU-2"]
+        assert rec["evidence_count"] == 2
+        assert rec["source_files"] == ["f1.md", "f2.md"]
+        assert rec["score"] == 0.62
+        assert rec["cross_vault"] is True
+        # the quote payload must NOT be copied
+        assert "x" * 50 not in json.dumps(rec)
+        assert "quote" not in rec
+
+    def test_index_keeps_decision_ids(self, tmp_path):
+        path, _ = self._candidates_file(tmp_path, with_history=True)
+        out = tmp_path / "index.jsonl"
+        disc.write_candidate_index(path, out)
+        rec = json.loads(out.read_text(encoding="utf-8").splitlines()[0])
+        assert rec["decisions"] == ["D-1"]
+
+    def test_index_deterministic(self, tmp_path):
+        path, _ = self._candidates_file(tmp_path)
+        a, b = tmp_path / "i1.jsonl", tmp_path / "i2.jsonl"
+        disc.write_candidate_index(path, a)
+        disc.write_candidate_index(path, b)
+        assert a.read_bytes() == b.read_bytes()
+
+    def test_cli_command(self, tmp_path):
+        path, _ = self._candidates_file(tmp_path)
+        out = tmp_path / "index.jsonl"
+        proc = subprocess.run(
+            [
+                sys.executable, "-m", "vault_unification", "discovery-index",
+                "--candidates", str(path), "--out", str(out),
+            ],
+            capture_output=True, text=True, cwd=REPO_ROOT,
+        )
+        assert proc.returncode == 0, proc.stderr
+        assert out.exists()
+        summary = json.loads(proc.stdout)
+        assert summary["records_indexed"] == 1
+
+    def test_cli_refuses_protected_root(self, tmp_path):
+        from vault_unification.pathsafety import PathSafetyError
+        path, _ = self._candidates_file(tmp_path)
+        protected = tmp_path / "protected"
+        protected.mkdir()
+        out = protected / "index.jsonl"
+        proc = subprocess.run(
+            [
+                sys.executable, "-m", "vault_unification", "discovery-index",
+                "--candidates", str(path), "--out", str(out),
+                "--protected-root", str(protected),
+            ],
+            capture_output=True, text=True, cwd=REPO_ROOT,
+        )
+        assert proc.returncode == 1
+        assert not out.exists()

@@ -1,0 +1,33 @@
+{
+ "checkpoint_id": "checkpoint-2026-10-28-disc002-session1",
+ "completed_this_session": [
+  "verified baseline: 604/604 tests, both vaults byte-unchanged vs manifests, registry rebuilt green (27,536 KUs, 0 duplicates, full coverage)",
+  "F-0015 fixed: per-record jsonschema.validate -> single reused validator (load 239.7s -> 4.0s); discovery term loop inverted to per-KU trigger-position sets + cached occurrence patterns + locate-first reordering + lazy signatures (3-batch A/B 83.4s -> 8.1s, byte-identical)",
+  "equivalence evidence: 110,799 (term,KU) pair differential 0 mismatches; full-pipeline A/B byte-identical (fast 10.4s vs reference 49.2s); 48 parametrized template-family unit tests added",
+  "corpus-wide discovery: 60,154 candidates over 609/609 files; double-run byte-identical; discovery-validate green vs all 70 batches",
+  "CAP-023 vu discovery-index added + tested; compact index committed; 270MB full file git-ignored as regenerable (ADR-0007 class)",
+  "semantic review batch 1: 114 top candidates decided (63 noise rejects, 51 evidence-cited covers); discovery-decide applied; post-decide validate green",
+  "dossier reconciliation scoped: six dossiers byte-identical vs inputs; gap report quantifies extension funnel with explicit upper-bound caveat"
+ ],
+ "evidence": {
+  "capabilities": "reports/discovery/disc002-capabilities.json (23 implemented-and-tested + 1 planned)",
+  "decisions": "state/concept-candidates/002-disc002-decisions-batch1.jsonl",
+  "determinism": "double-run byte-identical (run2 288.9s)",
+  "discovery_run": "reports/discovery/disc002-full-corpus-run.json",
+  "dossier_gap": "reports/discovery/disc002-dossier-reconciliation-gap.json",
+  "equivalence": "reports/discovery/disc002-f0015-equivalence.json (verdict PASS)",
+  "validation": "reports/discovery/disc002-validate.json; reports/discovery/disc002-validate-postdecide.json"
+ },
+ "next_actions": [
+  "continue prioritized semantic review of 53,184 provisional candidates (bounded batches; use scripts/disc002_reviewset.py pattern with new selection rules)",
+  "dossier extension via overlap-candidates + classification per the gap report next_action",
+  "disposition assignment (Unaccounted blocks release) before gated synthesis"
+ ],
+ "open_findings": [
+  "F-0014 (open, low)",
+  "F-0015 (resolved this session)"
+ ],
+ "recorded_utc": "2026-10-28",
+ "stage": "disc002-corpus-discovery-in-progress",
+ "task_id": "DISC-002"
+}

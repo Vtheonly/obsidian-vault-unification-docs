@@ -1,0 +1,134 @@
+{
+ "task": "DISC-002 dossier reconciliation gap",
+ "regen_kus": 25808,
+ "regen_batches": 59,
+ "interpretation": "regen_kus_matching_terms is an UPPER BOUND funnel number, NOT a work order size: domain term maps contain broadly-occurring terms (e.g. 'gradient descent', 'learning rate'), so a term hit alone is not evidence of domain participation. Dossier extension MUST go through the same discipline the dossiers were built with: overlap-candidates (CAP-013) between the new KUs and each domain's existing concept KU sets, then semantic classification, then dossier regeneration with the ext006 rule set. The committed dossiers regenerate byte-identically from their inputs (scripts/ext006_dossiers.py --check, exit 0, 2026-10-28).",
+ "domains": {
+  "regression": {
+   "term_map": "state/term-maps/regression-domain-v1.json",
+   "canonical_terms": 45,
+   "dossier_concepts": 14,
+   "dossier_participating_kus": 61,
+   "regen_kus_matching_terms_upper_bound": 9192,
+   "new_kus_beyond_dossier_upper_bound": 9192,
+   "sample_new_kus": [
+    "KU-2d21b051334d05e2",
+    "KU-fbdcce52fb876424",
+    "KU-01f2ebc8f44c2f3e",
+    "KU-d516c8977bef75d4",
+    "KU-06e8f801e1ff955e",
+    "KU-472c95903301e6de",
+    "KU-25ce0ec1a9dbc746",
+    "KU-6d9e098c74c44ee6",
+    "KU-59ee696779a628f0",
+    "KU-dc6ddf6a0be9704b"
+   ],
+   "next_action": "run vu overlap-candidates between this domain's existing participating KUs and the regen KUs, then classify and extend the dossier (bounded batches); do NOT bulk-absorb term matches"
+  },
+  "tree-based": {
+   "term_map": "state/term-maps/tree-domain-v1.json",
+   "canonical_terms": 95,
+   "dossier_concepts": 28,
+   "dossier_participating_kus": 82,
+   "regen_kus_matching_terms_upper_bound": 9545,
+   "new_kus_beyond_dossier_upper_bound": 9545,
+   "sample_new_kus": [
+    "KU-c9140f1798fc0e6a",
+    "KU-25ce0ec1a9dbc746",
+    "KU-6d9e098c74c44ee6",
+    "KU-59ee696779a628f0",
+    "KU-dc6ddf6a0be9704b",
+    "KU-f31058e36318900a",
+    "KU-0d3e4e9ab305ebb5",
+    "KU-1c7096cd210d942e",
+    "KU-afd21798f70b80da",
+    "KU-8493fa6aead48592"
+   ],
+   "next_action": "run vu overlap-candidates between this domain's existing participating KUs and the regen KUs, then classify and extend the dossier (bounded batches); do NOT bulk-absorb term matches"
+  },
+  "evaluation": {
+   "term_map": "state/term-maps/evaluation-domain-v1.json",
+   "canonical_terms": 98,
+   "dossier_concepts": 33,
+   "dossier_participating_kus": 97,
+   "regen_kus_matching_terms_upper_bound": 4604,
+   "new_kus_beyond_dossier_upper_bound": 4604,
+   "sample_new_kus": [
+    "KU-fbdcce52fb876424",
+    "KU-01f2ebc8f44c2f3e",
+    "KU-d516c8977bef75d4",
+    "KU-126ffe02fbdbde9c",
+    "KU-3ddeaa4ba520417a",
+    "KU-72107d70cd189da5",
+    "KU-3da1dcdda1abc62e",
+    "KU-5040d30e353319a0",
+    "KU-2573f7bd1661a727",
+    "KU-a5377744868531a0"
+   ],
+   "next_action": "run vu overlap-candidates between this domain's existing participating KUs and the regen KUs, then classify and extend the dossier (bounded batches); do NOT bulk-absorb term matches"
+  },
+  "clustering": {
+   "term_map": "state/term-maps/clustering-domain-v1.json",
+   "canonical_terms": 51,
+   "dossier_concepts": 27,
+   "dossier_participating_kus": 64,
+   "regen_kus_matching_terms_upper_bound": 4467,
+   "new_kus_beyond_dossier_upper_bound": 4467,
+   "sample_new_kus": [
+    "KU-fbdcce52fb876424",
+    "KU-126ffe02fbdbde9c",
+    "KU-472c95903301e6de",
+    "KU-25ce0ec1a9dbc746",
+    "KU-3ddeaa4ba520417a",
+    "KU-72107d70cd189da5",
+    "KU-3da1dcdda1abc62e",
+    "KU-5040d30e353319a0",
+    "KU-fcd4292c54507634",
+    "KU-e7799ea4ce980eb8"
+   ],
+   "next_action": "run vu overlap-candidates between this domain's existing participating KUs and the regen KUs, then classify and extend the dossier (bounded batches); do NOT bulk-absorb term matches"
+  },
+  "generalization": {
+   "term_map": "state/term-maps/generalization-domain-v1.json",
+   "canonical_terms": 65,
+   "dossier_concepts": 26,
+   "dossier_participating_kus": 68,
+   "regen_kus_matching_terms_upper_bound": 10089,
+   "new_kus_beyond_dossier_upper_bound": 10089,
+   "sample_new_kus": [
+    "KU-d516c8977bef75d4",
+    "KU-8493fa6aead48592",
+    "KU-e2cb048e44b9a91c",
+    "KU-8312cbe57d7d47c2",
+    "KU-af22115c9aa83adc",
+    "KU-8924bc510447cbc3",
+    "KU-29def6faa86f9049",
+    "KU-edc67138a32f3be8",
+    "KU-b0b49a5638775825",
+    "KU-d34b3899a24d112b"
+   ],
+   "next_action": "run vu overlap-candidates between this domain's existing participating KUs and the regen KUs, then classify and extend the dossier (bounded batches); do NOT bulk-absorb term matches"
+  },
+  "training-stability": {
+   "term_map": "state/term-maps/training-stability-domain-v1.json",
+   "canonical_terms": 98,
+   "dossier_concepts": 36,
+   "dossier_participating_kus": 142,
+   "regen_kus_matching_terms_upper_bound": 18645,
+   "new_kus_beyond_dossier_upper_bound": 18645,
+   "sample_new_kus": [
+    "KU-fe8ad931814c9d3d",
+    "KU-f253e18eee2db034",
+    "KU-fbdcce52fb876424",
+    "KU-01f2ebc8f44c2f3e",
+    "KU-472c95903301e6de",
+    "KU-25ce0ec1a9dbc746",
+    "KU-72107d70cd189da5",
+    "KU-a5377744868531a0",
+    "KU-6d9e098c74c44ee6",
+    "KU-59ee696779a628f0"
+   ],
+   "next_action": "run vu overlap-candidates between this domain's existing participating KUs and the regen KUs, then classify and extend the dossier (bounded batches); do NOT bulk-absorb term matches"
+  }
+ }
+}

@@ -21,6 +21,7 @@ from __future__ import annotations
 import os
 import re
 import unicodedata
+from functools import lru_cache
 from pathlib import Path
 
 _TEXT_EXTENSIONS = {
@@ -50,7 +51,17 @@ def boundary_pattern(term: str) -> re.Pattern:
     matching 'ridge' at 'ridge:' or '(ridge)'. CAP-013 overlap discovery and
     word-boundary term statistics use this ONE implementation so their
     semantics can never drift apart (L-07).
+
+    Performance (F-0015): callers iterate term-by-term (all occurrences of
+    one term before the next), so a small memo of compiled patterns removes
+    re-compilation per occurrence. Compiled patterns are immutable, so
+    sharing them cannot change behavior.
     """
+    return _boundary_pattern_cached(term)
+
+
+@lru_cache(maxsize=512)
+def _boundary_pattern_cached(term: str) -> re.Pattern:
     escaped = re.escape(term.casefold())
     return re.compile(rf"(?<!\w){escaped}(?!\w)", re.IGNORECASE)
 

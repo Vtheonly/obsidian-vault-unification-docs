@@ -1,0 +1,9 @@
+stage 0 start rss=18MB batches=70
+stage 1 loaded 27536 KUs rss=144MB
+  mining 0/27536 rss=144MB
+  mining 5000/27536 rss=198MB
+  mining 10000/27536 rss=263MB
+  mining 15000/27536 rss=311MB
+  mining 20000/27536 rss=383MB
+  mining 25000/27536 rss=437MB
+stage 2 mined terms=557504 pairs=1707998 rss=481MB

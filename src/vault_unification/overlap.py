@@ -86,6 +86,17 @@ def load_ku_batches(
     except json.JSONDecodeError as exc:
         raise OverlapError(f"invalid JSON in KU schema {schema_path}: {exc}") from exc
 
+    # Performance (F-0015): build ONE validator and reuse it for every
+    # record. jsonschema.validate() re-resolves the validator class per call
+    # (~8.5 ms/record -> 235 s for the 27,536-record corpus); a reused
+    # validator costs ~0.09 ms/record with identical validation semantics
+    # (check_schema once below preserves the per-call contract).
+    try:
+        validator = jsonschema.validators.validator_for(schema)(schema)
+        validator.check_schema(schema)
+    except jsonschema.SchemaError as exc:
+        raise OverlapError(f"invalid KU schema {schema_path}: {exc.message}") from exc
+
     records: list[dict] = []
     for batch_path in batch_paths:
         path = Path(batch_path)
@@ -104,7 +115,7 @@ def load_ku_batches(
                     f"{path}:{lineno}: invalid JSON: {exc}"
                 ) from exc
             try:
-                jsonschema.validate(rec, schema)
+                validator.validate(rec)
             except jsonschema.ValidationError as exc:
                 raise OverlapError(
                     f"{path}:{lineno}: schema violation: "

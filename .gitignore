@@ -29,6 +29,11 @@ Thumbs.db
 
 # Derived registry indexes (rebuildable from state/knowledge-units/; ADR-0007)
 state/registries/
+# Corpus-scale discovery output (270 MB; deterministic and regenerable from
+# committed batches + manifests via the command recorded in
+# reports/discovery/disc002-full-corpus-run.json report_meta.args; ADR-0007 class).
+# The committed compact index + decisions preserve the durable state.
+state/concept-candidates/002-disc002-full-corpus.jsonl
 
 # Editable-install build metadata (rebuildable)
 src/vault_unification.egg-info/
