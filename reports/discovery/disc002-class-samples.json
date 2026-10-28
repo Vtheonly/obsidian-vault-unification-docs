@@ -1,0 +1,719 @@
+{
+ "purpose": "stratified verification samples for the two mechanical classes; reviewer + independent subagent must confirm class assignment before decisions are applied",
+ "decided_utc": "2026-10-28T00:45:00Z",
+ "R-NUM": [
+  {
+   "candidate_id": "CG-ac417183d151",
+   "term": "000",
+   "contexts": 110,
+   "sample_quotes": [
+    "1.  **Regression:**\n    *   **Output:** A continuous numerical value (Quantitative).\n    *   *Examples:* Predi",
+    "If `n = 1,000,000`:"
+   ]
+  },
+  {
+   "candidate_id": "CG-1a680a71ccbf",
+   "term": "175b",
+   "contexts": 31,
+   "sample_quotes": [
+    "tasks.\n- **GPT-2** (2019) — 1.5B parameter decoder; OpenAI initially deemed \"too dangerous to release.\"\n- **GP",
+    "- **GPT-3 (2020)**: showed decoder-only at 175B beats fine-tuned encoder-decoder on most NLP tasks, just with "
+   ]
+  },
+  {
+   "candidate_id": "CG-ebfab091af5b",
+   "term": "1x1",
+   "contexts": 21,
+   "sample_quotes": [
+    "Operation Deep Dive]] → [[02. The Mathematics of Receptive Fields and 1x1 Convolutions]] → [[03. Activation an",
+    "Flattening|4.4 The Fully Connected Layer (Classification Head) & Flattening]]\n* **Chapter 5: Advanced Architec"
+   ]
+  },
+  {
+   "candidate_id": "CG-a19035806566",
+   "term": "1600",
+   "contexts": 15,
+   "sample_quotes": [
+    "nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, stride=1, padding=0)\n        self.pool2 = nn.MaxPool",
+    "The debugging output immediately reveals that `fc1` receives a tensor of size 1600 but expects 3136. The trace"
+   ]
+  },
+  {
+   "candidate_id": "CG-19028d9f7e44",
+   "term": "144",
+   "contexts": 12,
+   "sample_quotes": [
+    "0.0001\"]\n        D1 --> E1[\"Var ≈ 0\"]\n        E1 --> F1[\"≈ 0\"]\n    end\n\n    subgraph \"N(0, 1): Exploding\"\n    ",
+    "| Approach | Parameters | FLOPs |\n|----------|-----------|-------|\n| Direct (3×3, 512→512) | 2,359,808 | 1,851"
+   ]
+  },
+  {
+   "candidate_id": "CG-ef3f40cfcefa",
+   "term": "7x7",
+   "contexts": 10,
+   "sample_quotes": [
+    "============================================================\n\ngap = nn.AdaptiveAvgPool2d(1)  # Output will be ",
+    "VGGStyleClassifier(nn.Module):\n    \"\"\"VGG-style classifier with Flatten + 3 FC layers.\n    \n    This approach "
+   ]
+  },
+  {
+   "candidate_id": "CG-059d0e6da6cd",
+   "term": "400m",
+   "contexts": 9,
+   "sample_quotes": [
+    "features that rival supervised ones across many tasks.\n- **CLIP** (Radford et al. 2021): co-train an image enc",
+    "**Architecture**: ViT image encoder + Transformer text encoder. Trained on 400M image-text pairs."
+   ]
+  },
+  {
+   "candidate_id": "CG-1839d2bb2e75",
+   "term": "536",
+   "contexts": 8,
+   "sample_quotes": [
+    "1. Each of the 128 output neurons connects to all 512 inputs: $512 \\times 128 = 65{,}536$ weights.\n2. Each of ",
+    "`conv2` get `padding=1` |\n| Feature map size | $5 \\times 5$ | $7 \\times 7$ |\n| fc1 input features | 1,600 | 3,"
+   ]
+  },
+  {
+   "candidate_id": "CG-331e9c43ba9b",
+   "term": "2310",
+   "contexts": 7,
+   "sample_quotes": [
+    "- Mistral 7B paper: arXiv:2310.06825 — see [[26 - Mistral 7B 2023]]\n- Mixtral: arXiv:2401.04088\n- Mistral blog",
+    "Packer, C., Wooders, S., Lin, K., Fang, V., & Gonzalez, J. E. (2023). *MemGPT: Towards LLMs as Operating Syste"
+   ]
+  },
+  {
+   "candidate_id": "CG-45d32ea294c1",
+   "term": "000 images",
+   "contexts": 6,
+   "sample_quotes": [
+    "**Le Dataset MNIST :**\nC'est le \"Hello World\" du Deep Learning. Il contient 70 000 images de chiffres manuscri",
+    "On teste le modèle final sur les 10 000 images de test. Cette étape est cruciale pour valider que le modèle es"
+   ]
+  },
+  {
+   "candidate_id": "CG-7e8e42bd970b",
+   "term": "2001",
+   "contexts": 6,
+   "sample_quotes": [
+    "**Random Forests** (Breiman, 2001) fix this by **averaging many trees**, each trained on a slightly different ",
+    "- **Decision trees** (CART, 1984; C4.5, 1993).\n- **Support Vector Machines** (1995).\n- **Random forests** (200"
+   ]
+  },
+  {
+   "candidate_id": "CG-f5fff1afb485",
+   "term": "50 tokens",
+   "contexts": 6,
+   "sample_quotes": [
+    "waits to fill a batch (e.g., 32 requests), processes the entire batch to completion, then returns all results.",
+    "| OOM (out of memory)     | 90%         |\n| LongBench (average)                | baseline                | -2%"
+   ]
+  },
+  {
+   "candidate_id": "CG-e972b309170d",
+   "term": "14m",
+   "contexts": 5,
+   "sample_quotes": [
+    "ResNet **dominates**. ViT underperforms — it does not have enough data to learn the spatial priors that ResNet",
+    "100× faster than CPUs for matrix multiplication. (2) **ImageNet**: Fei-Fei Li's dataset (started 2009, 14M lab"
+   ]
+  },
+  {
+   "candidate_id": "CG-c3fad4d9a536",
+   "term": "30k",
+   "contexts": 5,
+   "sample_quotes": [
+    "- **BERT** (2018): 30K WordPiece vocab, uncased and cased variants.\n- **DistilBERT**: same vocab as BERT.\n- **",
+    "|\n| o1-mini              | $3.00             | $12.00             | ~10K           | ~$0.12               |\n| "
+   ]
+  },
+  {
+   "candidate_id": "CG-2218ade98d19",
+   "term": "040",
+   "contexts": 4,
+   "sample_quotes": [
+    "| Approach | Parameters | FLOPs |\n|----------|-----------|-------|\n| Direct (3×3, 512→512) | 2,359,808 | 1,851",
+    "Total parameters: $32{,}832 + 36{,}928 + 33{,}280 = 103{,}040$\nTotal FLOPs: $25{,}690{,}112 + 28{,}901{,}376 +"
+   ]
+  },
+  {
+   "candidate_id": "CG-c563673f6910",
+   "term": "16 bits",
+   "contexts": 4,
+   "sample_quotes": [
+    "- **Bit depth** = number of bits per pixel = determines the number of intensity levels. 8 bits = 256 levels; 1",
+    "- **Bits**: 1 sign + 8 exponent + 7 mantissa = 16 bits.\n- **Range**: ~1e-38 to ~3e38. Same as FP32.\n- **Precis"
+   ]
+  },
+  {
+   "candidate_id": "CG-56cf5beb456a",
+   "term": "2309",
+   "contexts": 4,
+   "sample_quotes": [
+    "- Qwen technical report: arXiv:2309.16609 (Qwen 1)\n- Qwen 2: qwenlm.github.io/blog/qwen2/\n- Qwen 2.5: qwenlm.g",
+    "- Ring Attention: arXiv:2310.01889\n- Infini-Attention: arXiv:2404.07143\n- LongRoPE: arXiv:2402.13753\n- YaRN: a"
+   ]
+  },
+  {
+   "candidate_id": "CG-5f28b2b8d41b",
+   "term": "40 gb",
+   "contexts": 4,
+   "sample_quotes": [
+    "QLoRA save?**\n   A: For Llama 2 7B: fp16 base = 14 GB → 4-bit QLoRA base = ~3.5 GB. Total with LoRA + optimize",
+    "- 4-bit QLoRA base: ~35 GB\n- LoRA + optimizer + activations: ~5 GB\n- **Total: ~40 GB** → fits on a single 48 G"
+   ]
+  },
+  {
+   "candidate_id": "CG-b96a3d4a86f7",
+   "term": "750 tokens",
+   "contexts": 4,
+   "sample_quotes": [
+    "tokens (500-4000 per image depending on resolution and model). At GPT-4o pricing, a 1024×1024 image adds ~750 ",
+    "for TTS.\n- **Latency**: multimodal is slower than text-only (more tokens to process). Plan accordingly.\n- **Co"
+   ]
+  },
+  {
+   "candidate_id": "CG-7fe691f7792e",
+   "term": "079",
+   "contexts": 3,
+   "sample_quotes": [
+    "**Block 5 total parameters**: $2{,}359{,}808 \\times 3 = 7{,}079{,}424$",
+    "(Conv) | 38,720 | 0.03% |\n| Block 2 (Conv) | 221,440 | 0.16% |\n| Block 3 (Conv) | 1,475,328 | 1.07% |\n| Block "
+   ]
+  },
+  {
+   "candidate_id": "CG-02039e573c51",
+   "term": "12948",
+   "contexts": 3,
+   "sample_quotes": [
+    "- Original paper: arXiv:2501.12948\n- DeepSeek-V3 paper: arXiv:2412.19437 — the base model.\n- DeepSeekMath: arX",
+    "DeepSeek-AI (2025). *DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning*. arXi"
+   ]
+  },
+  {
+   "candidate_id": "CG-42f733ae9b91",
+   "term": "1968",
+   "contexts": 3,
+   "sample_quotes": [
+    "most beautiful results in deep learning: **decades of human-designed filter engineering (Sobel 1968, Gabor 194",
+    "(2023), *MemGPT: Towards LLMs as Operating Systems*.\n- Tulving (1972), *Episodic and Semantic Memory* (cogniti"
+   ]
+  },
+  {
+   "candidate_id": "CG-e1fa421148b6",
+   "term": "2401",
+   "contexts": 3,
+   "sample_quotes": [
+    "- Mistral 7B paper: arXiv:2310.06825 — see [[26 - Mistral 7B 2023]]\n- Mixtral: arXiv:2401.04088\n- Mistral blog",
+    "- Original paper: arXiv:2304.08485\n- LLaVA-1.5: arXiv:2310.03744\n- LLaVA-NeXT: arXiv:2401.04088 (LLaVA-1.6)\n- "
+   ]
+  },
+  {
+   "candidate_id": "CG-cdb8e7ec1572",
+   "term": "340m",
+   "contexts": 3,
+   "sample_quotes": [
+    "attention (no causal mask).\n- 12 layers (Base) or 24 layers (Large).\n- Hidden dim 768 (Base) or 1024 (Large).\n",
+    "| Layers | Hidden | Heads | Params |\n|------------|--------|--------|-------|--------|\n| BERT Base  | 12     |"
+   ]
+  },
+  {
+   "candidate_id": "CG-119a699c2d85",
+   "term": "560",
+   "contexts": 3,
+   "sample_quotes": [
+    "For 70B AdamW + fp32 master, you need 560 GB just for optimizer state — multiple H100s. This is why memory-eff",
+    "Momentum  | 1 (momentum buffer) | 28 GB        | 280 GB        |\n| Adam/AdamW | 2 (momentum + variance) | 42 G"
+   ]
+  },
+  {
+   "candidate_id": "CG-d0b564b7c1c2",
+   "term": "86400",
+   "contexts": 3,
+   "sample_quotes": [
+    "priority score in [0, 1].\"\"\"\n        if self.superseded_by:\n            return 0.0  # superseded memories are ",
+    "```python\ndef decay(user_id, max_age_days=90, max_memories=10000):\n    # Delete memories older than max_age_da"
+   ]
+  },
+  {
+   "candidate_id": "CG-a5ed3da68c7e",
+   "term": "024",
+   "contexts": 2,
+   "sample_quotes": [
+    "dimension axis exactly in half ($64 \\times 64 \\rightarrow 32 \\times 32$). The total number of spatial position",
+    "Reduction**: Suppose a feature map has dimensions $512 \\times 7 \\times 7$. \n  * Flattening yields a $25{,}088$"
+   ]
+  },
+  {
+   "candidate_id": "CG-950b4f9fd2de",
+   "term": "070",
+   "contexts": 2,
+   "sample_quotes": [
+    "$$\\text{FLOPs}_{\\text{Total}} = 3{,}211{,}264 + 20{,}070{,}400 = \\mathbf{23{,}281{,}664 \\text{ FLOPs}}$$",
+    "$$\\text{FLOPs}_{5\\times5} = 28 \\times 28 \\times (5 \\times 5 \\times 16 \\times 64) = 20{,}070{,}400 \\text{ FLOPs"
+   ]
+  },
+  {
+   "candidate_id": "CG-f3ac10a7f667",
+   "term": "1000 examples",
+   "contexts": 2,
+   "sample_quotes": [
+    "```mermaid\ngraph TD\n  Deploy[New model/prompt candidate] --> Eval[Run eval suite]\n  Eval -->|1000 examples| Ju",
+    "```mermaid\ngraph TD\n  Dev[Developer changes prompt] --> EvalLocal[Local eval: 200 examples]\n  EvalLocal --> |p"
+   ]
+  },
+  {
+   "candidate_id": "CG-ca9f592c1f62",
+   "term": "12 blocks",
+   "contexts": 2,
+   "sample_quotes": [
+    "contextualizes them — each token's representation becomes a function of all other tokens. Stacking $N$ blocks ",
+    "Transformer Encoder Block 2 │  (same structure)\n└─────────────────────────────┘\n    │\n   ...\n    │\n    ▼\n┌────"
+   ]
+  },
+  {
+   "candidate_id": "CG-12b86ba6a9e4",
+   "term": "1410",
+   "contexts": 2,
+   "sample_quotes": [
+    "|-------------------------------|----------|----------|------------------|\n| Uniform Bar Exam              | ~",
+    "human-expert level (bar exam top 10%, SAT 1410/1600), and was substantially more reliable on reasoning and ins"
+   ]
+  },
+  {
+   "candidate_id": "CG-c7cb126a132b",
+   "term": "16k tokens",
+   "contexts": 2,
+   "sample_quotes": [
+    "gracefully than a pure Transformer's $O(n^2)$ attention. At 256K tokens, Jamba runs at ~800 tok/s while Llama-",
+    "(2018–2019) achieved SOTA on most NLP benchmarks but were limited to 512-token contexts. Many important tasks "
+   ]
+  },
+  {
+   "candidate_id": "CG-4d15bf3f61dd",
+   "term": "1980",
+   "contexts": 2,
+   "sample_quotes": [
+    "convolutional filters (local, oriented feature detectors). Complex cells → pooling operations (position-tolera",
+    "David Marr and Ellen Hildreth (1980) proposed that the human visual system detects edges using the **zero cros"
+   ]
+  },
+  {
+   "candidate_id": "CG-dca14207ebbf",
+   "term": "2301",
+   "contexts": 2,
+   "sample_quotes": [
+    "- Li et al. (2023), *BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large La",
+    "Li, J., Li, D., Savarese, S., & Hoi, S. (2023). *BLIP-2: Bootstrapping Language-Image Pre-training with Frozen"
+   ]
+  },
+  {
+   "candidate_id": "CG-95eff0f63448",
+   "term": "284",
+   "contexts": 2,
+   "sample_quotes": [
+    "Normalization is Key (Implicit Context)**\n    *   Although not explicitly calculated in the exercise, notice t",
+    "than the equivalent fully connected layer. This enormous reduction is possible precisely because the 28 parame"
+   ]
+  },
+  {
+   "candidate_id": "CG-7cf52f2f9d0d",
+   "term": "36 layers",
+   "contexts": 2,
+   "sample_quotes": [
+    "The 56-layer network had **higher training error** than the 20-layer network, despite having strictly more cap",
+    "36 layers. But each layer consists of a convolution, batch normalization, and ReLU activation. The ReLU activa"
+   ]
+  },
+  {
+   "candidate_id": "CG-64b09c157d8a",
+   "term": "4822",
+   "contexts": 2,
+   "sample_quotes": [
+    "(PyTorch convention).\n    transforms.ToTensor(),\n\n    # Normalize: applies the per-channel normalization (x - ",
+    "transforms.Compose([\n    transforms.RandomCrop(32, padding=4),\n    transforms.RandomHorizontalFlip(p=0.5),\n   "
+   ]
+  },
+  {
+   "candidate_id": "CG-70db7dcf3a55",
+   "term": "558k",
+   "contexts": 2,
+   "sample_quotes": [
+    "| Visual tokens to LLM  | 64                     | 32                        | 256 (all patches)         |\n| T",
+    "CLIP features (256 patches) directly — no need for a separate bridge Transformer. A linear projection (just a "
+   ]
+  },
+  {
+   "candidate_id": "CG-718ec9cf355a",
+   "term": "6b parameters",
+   "contexts": 2,
+   "sample_quotes": [
+    "InternVL (2024): a family of VLMs from Shanghai AI Lab. Uses a large ViT (6B parameters in InternVL-Chat-V1.5)",
+    "**SigLIP-2 (2025)**: extends DeiT v2 with sigmoid contrastive loss for image-text pretraining. See [[55 - SigL"
+   ]
+  },
+  {
+   "candidate_id": "CG-3100428a0c84",
+   "term": "833",
+   "contexts": 2,
+   "sample_quotes": [
+    "*   From Example: $5 / (5 + 1) = 0.833$ or **83.3%**.",
+    "*   From Example: $2 \\times \\frac{1 \\times 0.833}{1 + 0.833} \\approx 0.91$."
+   ]
+  }
+ ],
+ "R-CODE": [
+  {
+   "candidate_id": "CG-0fefd847758b",
+   "term": "import torch",
+   "contexts": 191,
+   "sample_quotes": [
+    "=============================================================================\n# StepLR: STEP DECAY SCHEDULER\n#",
+    "=============================================================================\n# BINARY CROSS-ENTROPY LOSS: COM"
+   ]
+  },
+  {
+   "candidate_id": "CG-b166dabfa701",
+   "term": "return torch",
+   "contexts": 19,
+   "sample_quotes": [
+    "Clamp values to [0, 1] to prevent invalid pixel values\n        # Without clamping, adding noise could produce ",
+    "tensor):\n        # Noise is added directly to normalized PyTorch Tensors\n        noise = torch.randn(tensor.si"
+   ]
+  },
+  {
+   "candidate_id": "CG-3f97e744f2d7",
+   "term": "import matplotlib",
+   "contexts": 15,
+   "sample_quotes": [
+    "```python\nimport matplotlib.pyplot as plt\nplt.plot([1, 2, 3], [1, 4, 9])\nplt.title(\"Simple Plot\")\nplt.show()\n`",
+    "```python\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\ndata = {\n    'Student': ["
+   ]
+  },
+  {
+   "candidate_id": "CG-6b7741b0e05d",
+   "term": "preprocessing import",
+   "contexts": 12,
+   "sample_quotes": [
+    "```python\nfrom sklearn.preprocessing import QuantileTransformer\nscaler = QuantileTransformer(output_distributi",
+    "```python\nfrom sklearn.preprocessing import MinMaxScaler\nscaler = MinMaxScaler()\ndf_norm = scaler.fit_transfor"
+   ]
+  },
+  {
+   "candidate_id": "CG-13775c28793b",
+   "term": "def search",
+   "contexts": 9,
+   "sample_quotes": [
+    "new_embs\n        else:\n            self.embeddings = np.vstack([self.embeddings, new_embs])\n        self.docum",
+    "* (self.k1 + 1)) / (f + self.k1 * (1 - self.b + self.b * doc_len / self.avgdl))\n            score += self.idf["
+   ]
+  },
+  {
+   "candidate_id": "CG-8422492b9d36",
+   "term": "import datasets",
+   "contexts": 8,
+   "sample_quotes": [
+    "almost never iterate over a Dataset directly;\n                                         # you always use a Data",
+    "============================================================\n\n# ---- 1. Imports ----\nimport torch\nimport torch"
+   ]
+  },
+  {
+   "candidate_id": "CG-062fe5f432c8",
+   "term": "torchvision import datasets",
+   "contexts": 8,
+   "sample_quotes": [
+    "almost never iterate over a Dataset directly;\n                                         # you always use a Data",
+    "============================================================\n\n# ---- 1. Imports ----\nimport torch\nimport torch"
+   ]
+  },
+  {
+   "candidate_id": "CG-7e5685577f79",
+   "term": "import random",
+   "contexts": 7,
+   "sample_quotes": [
+    "pre-trained CNN front-end with an SVM classifier\nfrom sklearn.svm import SVC               # Import Support Ve",
+    "============================================================\n# COMPLETE REPRODUCIBILITY SETUP\n# =============="
+   ]
+  },
+  {
+   "candidate_id": "CG-799c5819e8e5",
+   "term": "scipy import",
+   "contexts": 6,
+   "sample_quotes": [
+    "```python\nfrom scipy import stats\nimport numpy as np\n\nz_scores = np.abs(stats.zscore(df['Salary']))\n# Filter o",
+    "```python\nimport cv2\nimport numpy as np\nfrom scipy import ndimage\n\n# Binary image\n_, binary = cv2.threshold(im"
+   ]
+  },
+  {
+   "candidate_id": "CG-adf4a8ff1510",
+   "term": "import pipeline",
+   "contexts": 5,
+   "sample_quotes": [
+    "```python\nfrom sklearn.pipeline import Pipeline\npipe = Pipeline([\n    ('scaler', StandardScaler()),\n    ('mode",
+    "```python\nfrom sklearn.compose import ColumnTransformer\nfrom sklearn.pipeline import Pipeline\n\npreprocessor = "
+   ]
+  },
+  {
+   "candidate_id": "CG-456d9cf9f782",
+   "term": "return outputs",
+   "contexts": 5,
+   "sample_quotes": [
+    "src):\n        embedded = self.embedding(src)  # (B, src_len, emb_dim)\n        outputs, hidden = self.rnn(embed",
+    "tokenizer.convert_ids_to_tokens(inputs[\"input_ids\"][0])\n    target_pos = tokens.index(target_word)\n    # Retur"
+   ]
+  },
+  {
+   "candidate_id": "CG-73405e9d156a",
+   "term": "import dataclass",
+   "contexts": 4,
+   "sample_quotes": [
+    "```python\nimport time\nfrom dataclasses import dataclass, field\nfrom typing import Optional\n\n@dataclass\nclass M",
+    "```python\nfrom dataclasses import dataclass\n\n@dataclass\nclass ResearchDeps:\n    api_key: str\n    rate_limiter:"
+   ]
+  },
+  {
+   "candidate_id": "CG-bf44bb63c0c5",
+   "term": "return raw logits",
+   "contexts": 4,
+   "sample_quotes": [
+    "= self.relu3(x)             # ReLU: shape unchanged\n        x = self.fc2(x)               # Linear: (B,128) → ",
+    "Pass through the FC classifier.\n                                       # (B, 25088) → (B, 4096) → (B, 4096) → "
+   ]
+  },
+  {
+   "candidate_id": "CG-c1b0e905a156",
+   "term": "typing import typeddict",
+   "contexts": 4,
+   "sample_quotes": [
+    "```python\nfrom langgraph.graph import StateGraph, END\nfrom langgraph.prebuilt import ToolNode\nfrom typing impo",
+    "```python\nfrom langgraph.graph import StateGraph, END\nfrom typing import TypedDict, List\n\nclass State(TypedDic"
+   ]
+  },
+  {
+   "candidate_id": "CG-34efc522dca6",
+   "term": "def mmlu",
+   "contexts": 3,
+   "sample_quotes": [
+    "max_length=2048).to(\"cuda\")\n        with torch.no_grad():\n            out = self.model(**enc, labels=enc[\"inpu",
+    "perplexity(self, dataset: str = \"wikitext-2-raw-v1/test\") -> float:\n        # ... (see Quantization Toolkit pr"
+   ]
+  },
+  {
+   "candidate_id": "CG-ffa2bc59266b",
+   "term": "import copy",
+   "contexts": 3,
+   "sample_quotes": [
+    "import torchvision.models as models          # Pre-trained model zoo\nimport os                          # File",
+    "import torchvision.models as models\nimport torchvision.transforms as transforms\nimport torchvision.datasets as"
+   ]
+  },
+  {
+   "candidate_id": "CG-b3e51ddde5ca",
+   "term": "import sfttrainer",
+   "contexts": 3,
+   "sample_quotes": [
+    "import AutoModelForCausalLM, AutoTokenizer, TrainingArguments\nfrom peft import LoraConfig, get_peft_model, Tas",
+    "```python\nfrom peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training\nfrom transformers impor"
+   ]
+  },
+  {
+   "candidate_id": "CG-ad1042a4f200",
+   "term": "return counter",
+   "contexts": 3,
+   "sample_quotes": [
+    "re.search(r'answer is (\\d+)', chain)\n        if match:\n            answers.append(int(match.group(1)))\n    \n  ",
+    "deadline.reached():\n        if buyer.accepts(offer):\n            return offer\n        counter = buyer.counter("
+   ]
+  },
+  {
+   "candidate_id": "CG-679a389ea3c2",
+   "term": "autogen import",
+   "contexts": 2,
+   "sample_quotes": [
+    "```python\nfrom autogen import GroupChat, GroupChatManager\n\ngroup_chat = GroupChat(\n    agents=[coder, reviewer",
+    "```python\nfrom autogen import ConversableAgent\n\ncoder = ConversableAgent(\n    name=\"Coder\",\n    system_message"
+   ]
+  },
+  {
+   "candidate_id": "CG-a6aceba61aec",
+   "term": "def calculator",
+   "contexts": 2,
+   "sample_quotes": [
+    "Define tools\ndef search_web(query: str) -> str:\n    \"\"\"Search the web.\"\"\"\n    # ... implementation ...\n    ret",
+    "{\"title\": r[\"title\"], \"url\": r[\"href\"], \"snippet\": r[\"body\"]}\n        for r in results\n    ]\n    return json.d"
+   ]
+  },
+  {
+   "candidate_id": "CG-a4eb90028c7f",
+   "term": "embedders import",
+   "contexts": 2,
+   "sample_quotes": [
+    "haystack.components.retrievers.in_memory import InMemoryBM25Retriever\nfrom haystack.components.generators impo",
+    "```python\nfrom haystack import Pipeline, Document\nfrom haystack.components.embedders import OpenAITextEmbedder"
+   ]
+  },
+  {
+   "candidate_id": "CG-8058d0b39c17",
+   "term": "glove2word2vec import",
+   "contexts": 2,
+   "sample_quotes": [
+    "```python\nfrom gensim.models import Word2Vec, FastText\nfrom gensim.scripts.glove2word2vec import glove2word2ve",
+    "```python\nfrom gensim.models import Word2Vec\nfrom gensim.scripts.glove2word2vec import glove2word2vec\nfrom sci"
+   ]
+  },
+  {
+   "candidate_id": "CG-a98941eef40b",
+   "term": "import chatprompttemplate",
+   "contexts": 2,
+   "sample_quotes": [
+    "```python\nfrom langchain.prompts import ChatPromptTemplate\n\nprompt = ChatPromptTemplate.from_messages([\n    (\"",
+    "```python\nfrom langchain_openai import ChatOpenAI\nfrom langchain_core.prompts import ChatPromptTemplate\nfrom l"
+   ]
+  },
+  {
+   "candidate_id": "CG-cd2adbb13352",
+   "term": "import imagefolder",
+   "contexts": 2,
+   "sample_quotes": [
+    "import torch.optim as optim\nimport torchvision.transforms as T\nimport torchvision.models as models\nfrom torch.",
+    "```python\nimport torch\nfrom torch.utils.data import DataLoader\nimport torchvision.transforms as T\nfrom torchvi"
+   ]
+  },
+  {
+   "candidate_id": "CG-991e21fd3770",
+   "term": "import openaiembeddings",
+   "contexts": 2,
+   "sample_quotes": [
+    "```python\nfrom langchain.vectorstores import Chroma\nfrom langchain.embeddings import OpenAIEmbeddings\n\nvectors",
+    "```python\nfrom langchain_community.vectorstores import pgvector\nfrom langchain_openai import OpenAIEmbeddings\n"
+   ]
+  },
+  {
+   "candidate_id": "CG-6a920ad7d960",
+   "term": "import shardingstrategy",
+   "contexts": 2,
+   "sample_quotes": [
+    "```python\nfrom torch.distributed.fsdp import FullyShardedDataParallel as FSDP\nfrom torch.distributed.fsdp impo",
+    "```python\nfrom torch.distributed.fsdp import FullyShardedDataParallel as FSDP\nfrom torch.distributed.fsdp impo"
+   ]
+  },
+  {
+   "candidate_id": "CG-a39e77188972",
+   "term": "memory import",
+   "contexts": 2,
+   "sample_quotes": [
+    "```python\nfrom letta import Letta\nfrom letta.schemas.memory import ChatMemory\n\n# Define memory blocks (each is",
+    "```python\nfrom langchain.memory import ConversationBufferMemory\nmemory = ConversationBufferMemory()\n```"
+   ]
+  },
+  {
+   "candidate_id": "CG-63a229a8c752",
+   "term": "pypdf import",
+   "contexts": 2,
+   "sample_quotes": [
+    "```python\nfrom pathlib import Path\nfrom pypdf import PdfReader\nfrom pdf2image import convert_from_path\nimport ",
+    "```python\nfrom pathlib import Path\nfrom pypdf import PdfReader\n\ndef ingest_document(path: str) -> str:\n    \"\"\""
+   ]
+  },
+  {
+   "candidate_id": "CG-9154bda621e8",
+   "term": "return embedding",
+   "contexts": 2,
+   "sample_quotes": [
+    "clip_model.get_image_features(**inputs)\n    # Normalize to unit length (CLIP works best with normalized embedd",
+    "% 100 == 0:\n            print(f\"Step {step}: LM loss={lm_loss.item():.4f}, \"\n                  f\"Aux loss={tot"
+   ]
+  },
+  {
+   "candidate_id": "CG-dc3b5244af6a",
+   "term": "return top",
+   "contexts": 2,
+   "sample_quotes": [
+    "```python\nfrom semantic_kernel.functions import kernel_function\n\nclass WebSearchPlugin:\n    @kernel_function(d",
+    "f\"https://example.com/{i+1}\"}\n        for i in range(max_results)\n    ]\n\n# Tool definitions\nTOOLS = [\n    {\n  "
+   ]
+  },
+  {
+   "candidate_id": "CG-d18498d80b7e",
+   "term": "transformers import llavaforconditionalgeneration",
+   "contexts": 2,
+   "sample_quotes": [
+    "```python\nfrom transformers import LlavaForConditionalGeneration, AutoProcessor\nfrom PIL import Image\nimport t",
+    "```python\nfrom transformers import LlavaForConditionalGeneration, AutoProcessor\nfrom PIL import Image\nimport p"
+   ]
+  },
+  {
+   "candidate_id": "CG-6b0e8139359c",
+   "term": "autogen import groupchat",
+   "contexts": 1,
+   "sample_quotes": [
+    "```python\nfrom autogen import GroupChat, GroupChatManager\n\ngroup_chat = GroupChat(\n    agents=[coder, reviewer"
+   ]
+  },
+  {
+   "candidate_id": "CG-db95d50ca089",
+   "term": "dataclasses import asdict",
+   "contexts": 1,
+   "sample_quotes": [
+    "```python\nimport time\nfrom dataclasses import asdict\n\n@dataclass\nclass QueryResult:\n    example: EvalExample\n "
+   ]
+  },
+  {
+   "candidate_id": "CG-a988886dabff",
+   "term": "evaluate import",
+   "contexts": 1,
+   "sample_quotes": [
+    "```python\nimport evaluate\nfrom evaluate import load\n\nclass QualityBenchmark:\n    def __init__(self, model_path"
+   ]
+  },
+  {
+   "candidate_id": "CG-5da18753cf0c",
+   "term": "guardrails import guard",
+   "contexts": 1,
+   "sample_quotes": [
+    "```python\nfrom guardrails import Guard\nfrom guardrails.hub import ToxicLanguage, PIIFilter\n\nguard = Guard().us"
+   ]
+  },
+  {
+   "candidate_id": "CG-25f3276ad764",
+   "term": "letta import",
+   "contexts": 1,
+   "sample_quotes": [
+    "```python\nfrom letta import Letta\nfrom letta.schemas.memory import ChatMemory\n\n# Define memory blocks (each is"
+   ]
+  },
+  {
+   "candidate_id": "CG-81d71fb9b97d",
+   "term": "opentelemetry import",
+   "contexts": 1,
+   "sample_quotes": [
+    "```python\nfrom opentelemetry import trace\n\ntracer = trace.get_tracer(__name__)\n\ndef handle_request(request):\n "
+   ]
+  },
+  {
+   "candidate_id": "CG-7ed992e20aaf",
+   "term": "return peak",
+   "contexts": 1,
+   "sample_quotes": [
+    "```python\nimport math\nimport matplotlib.pyplot as plt\n\ndef cosine_with_warmup(step, total, warmup, peak, final"
+   ]
+  },
+  {
+   "candidate_id": "CG-6251ac2577b4",
+   "term": "statistics import mean",
+   "contexts": 1,
+   "sample_quotes": [
+    "```python\nimport json\nfrom statistics import mean\n\ndef generate_report(results: list[QueryResult], dataset_nam"
+   ]
+  },
+  {
+   "candidate_id": "CG-4fa4cff49814",
+   "term": "transformers import clipvisionmodel",
+   "contexts": 1,
+   "sample_quotes": [
+    "```python\nimport torch\nimport torch.nn as nn\nfrom transformers import CLIPVisionModel, SiglipVisionModel\n\nclas"
+   ]
+  }
+ ]
+}

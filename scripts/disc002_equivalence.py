@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """DISC-002: differential verification of _match_relationship_fast.
 
-Part of the F-0015 performance fix evidence. Verifies that the inverted
+Part of the F-0017 performance fix evidence. Verifies that the inverted
 position-set classifier is equivalent to the per-term regex reference on:
 
 1. EVERY (term, KU) pair mined from a real sample of batches — both
@@ -138,7 +138,7 @@ def main() -> int:
     print("pipeline A/B:", json.dumps(ab))
 
     report = {
-        "task": "DISC-002 F-0015 equivalence evidence",
+        "task": "DISC-002 F-0017 equivalence evidence",
         "pair_differential": pair_report,
         "pipeline_ab": ab,
         "verdict": (

@@ -1,0 +1,12 @@
+{
+ "run": "verification double-run",
+ "batches": 70,
+ "kus": 27536,
+ "seconds_run1": 547.4,
+ "seconds_run2": 544.1,
+ "peak_rss_mb_run2": 1945.9,
+ "sha256_run1": "88a538eb3dc70e99f53093eaf5e55eaa2baa38461ea660b97e441f1fb0952bf8",
+ "sha256_run2": "88a538eb3dc70e99f53093eaf5e55eaa2baa38461ea660b97e441f1fb0952bf8",
+ "byte_identical": true,
+ "candidates": 60154
+}

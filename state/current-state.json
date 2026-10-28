@@ -66,29 +66,58 @@
   "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)"
  },
  "knowledge_registry_initialized": true,
- "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-28-regen001.json",
- "notes": "DISC-002 session 1 (2026-10-28): corpus-wide emergent-concept discovery COMPLETE over the full registry (609/609 files, 27,536 KUs, all 70 batches): 60,154 candidates, coverage gate OPEN, double-run determinism verified, discovery-validate green vs all 70 batches. F-0015 fixed (corpus-scale performance: single reused jsonschema validator + inverted relationship matching; ~10x faster, byte-identical output, equivalence pinned by TestRelationshipFastEquivalence + 110,799-pair differential + pipeline A/B, all recorded in reports/discovery/disc002-f0015-equivalence.json). CAP-023 vu discovery-index added (framework 0.9.0, 23+1 capabilities verified); the 270 MB full candidates file is git-ignored (regenerable, ADR-0007 class; command in reports/discovery/disc002-full-corpus-run.json report_meta.args) and the durable state is the committed compact index + decisions. First semantic review batch DONE: 114 top candidates decided (63 noise rejects, 51 covers with corpus citations; 0 confirmed gaps in this slice - the examined real concepts all have existing corpus treatments). Six dossiers verified byte-identical; extension scoped by the reconciliation gap report (upper-bound funnel; must use overlap-candidates + classification discipline). NEXT: continue prioritized semantic review of the 53,184 provisional candidates in bounded batches; dossier extension; then disposition assignment before gated synthesis.",
+ "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-28-disc002-progress.json",
+ "notes": "DISC-002 in progress; TWO parallel sessions merged on main (2026-10-28). Both independently ran the full-corpus discovery over all 70 batches (60,154 candidates each, byte-identical, coverage COMPLETE 609/609) and independently fixed the same corpus-scale performance root-cause class (F-0015 validate-scale by session A; F-0017 loader+term-loop by session B, kept in the merge: ~291s/run). Merged decision chain replayed clean: r1 (1,153 class rejects) + r2 (44: 2 CONFIRMED GAPS second moment + bradley-terry, 4 defers, 7 covers, 31 rejects) + batch2 (86 reconciled: 40 rejects, 44 evidence-cited covers incl. 12 auditable reversals of class-based rejects, 2 revises). FINAL STATUS: 52,032 provisional / 6,907 already_covered / 1,212 rejected / 2 confirmed_gap / 1 deferred; validate green; index regenerated. CAP-023 vu discovery-index added (framework 0.9.0). ADR-0010: candidates monolith git-ignored, replayable from committed batches + decision files with recorded --decided-utc (r1 00:45:00Z, r2 01:30:00Z, batch2 02:30:00Z). NEXT: continue review tranches, dossier extension, then disposition assignment before gated synthesis.",
  "output_synthesis_started": false,
  "phase_zero_rebaseline": {
   "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
   "disc002_full_corpus_discovery": {
    "candidates": 60154,
-   "coverage": "609/609 complete (276/276 ai-course + 333/333 master-ai)",
-   "decisions_batch1": "state/concept-candidates/002-disc002-decisions-batch1.jsonl (114 decisions: 63 reject / 51 cover)",
-   "determinism": "double-run byte-identical",
-   "dossier_gap_report": "reports/discovery/disc002-dossier-reconciliation-gap.json",
-   "equivalence_evidence": "reports/discovery/disc002-f0015-equivalence.json",
-   "full_file": "state/concept-candidates/002-disc002-full-corpus.jsonl (git-ignored, regenerable)",
-   "index": "state/concept-candidates/002-disc002-full-corpus.index.jsonl (committed)",
-   "post_decide_statuses": {
+   "confirmed_gaps": [
+    "second moment",
+    "bradley-terry"
+   ],
+   "coverage": "609/609 complete",
+   "decisions_chain": [
+    "state/concept-candidates/002a-disc002-decisions-r1.jsonl (1153)",
+    "state/concept-candidates/002b-disc002-decisions-r2.jsonl (44)",
+    "state/concept-candidates/002-disc002-decisions-batch2.jsonl (86)"
+   ],
+   "dossier_gap": "reports/discovery/disc002-dossier-reconciliation-gap.json",
+   "equivalence": "reports/discovery/disc002-f0015-equivalence.json",
+   "final_statuses": {
     "already_covered": 6907,
-    "provisional_candidate": 53184,
-    "rejected": 63
+    "confirmed_gap": 2,
+    "deferred": 1,
+    "provisional_candidate": 52032,
+    "rejected": 1212
    },
-   "run_report": "reports/discovery/disc002-full-corpus-run.json",
-   "session_1_utc": "2026-10-28",
+   "full_file": "state/concept-candidates/002-disc002-full-corpus.jsonl (git-ignored, ADR-0010 replayable)",
+   "index": "state/concept-candidates/002-disc002-full-corpus.index.jsonl (committed)",
+   "replay_decided_utc": {
+    "batch2": "2026-10-28T02:30:00Z",
+    "r1": "2026-10-28T00:45:00Z",
+    "r2": "2026-10-28T01:30:00Z"
+   },
+   "sessions_merged": [
+    "A: 3d2ff8b..e2914e9",
+    "B: merge commit"
+   ],
    "task": "DISC-002",
-   "validation": "reports/discovery/disc002-validate.json + disc002-validate-postdecide.json"
+   "validation": "reports/discovery/disc002-validate-merged.json (60,154 records, 0 errors)"
+  },
+  "discovery_full_corpus": {
+   "candidates": 60154,
+   "coverage_complete": true,
+   "decide_r1": "reports/discovery/disc002-decide-r1.json",
+   "decide_r2": "reports/discovery/disc002-decide-r2.json",
+   "dossier_reconciliation": "reports/discovery/disc002-dossier-reconciliation.json",
+   "perf": "reports/discovery/disc002-full-corpus-perf.json",
+   "run_report": "reports/discovery/disc002-full-corpus-run.json",
+   "task": "DISC-002 (in progress)",
+   "tests": "620/620",
+   "triage": "reports/discovery/disc002-triage.json",
+   "validate": "reports/discovery/disc002-validate.json"
   },
   "discovery_partial_corpus_run": "state/concept-candidates/001-disc001-partial-corpus.jsonl (6340 candidates, coverage-gated)",
   "framework_audit": "reports/rebaseline/framework-audit.json",
@@ -144,7 +173,7 @@
   }
  ],
  "source_vaults_located": true,
- "stage": "disc002-corpus-discovery-in-progress",
+ "stage": "disc002-review-in-progress-two-sessions-merged",
  "status": "in_progress",
  "verification_pilot_evidence": {
   "defect_classes": 12,

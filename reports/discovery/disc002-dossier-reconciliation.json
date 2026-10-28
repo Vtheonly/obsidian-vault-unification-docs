@@ -1,0 +1,271 @@
+{
+ "command": "disc002-dossier-reconciliation (bounded check)",
+ "dossiers": {
+  "clustering-v1": {
+   "concepts": 27,
+   "ku_references": 64,
+   "unresolved_ku_references": 0,
+   "unresolved_sample": [],
+   "regeneration": "scripts/ext006_dossiers.py"
+  },
+  "evaluation-v1": {
+   "concepts": 33,
+   "ku_references": 97,
+   "unresolved_ku_references": 0,
+   "unresolved_sample": [],
+   "regeneration": "scripts/ext006_dossiers.py"
+  },
+  "generalization-v1": {
+   "concepts": 26,
+   "ku_references": 68,
+   "unresolved_ku_references": 0,
+   "unresolved_sample": [],
+   "regeneration": "scripts/ext006_dossiers.py"
+  },
+  "regression-v1": {
+   "concepts": 14,
+   "ku_references": 61,
+   "unresolved_ku_references": 0,
+   "unresolved_sample": [],
+   "regeneration": "scripts/ext006_dossiers.py"
+  },
+  "training-stability-v1": {
+   "concepts": 36,
+   "ku_references": 142,
+   "unresolved_ku_references": 0,
+   "unresolved_sample": [],
+   "regeneration": "scripts/ext006_dossiers.py"
+  },
+  "tree-based-v1": {
+   "concepts": 28,
+   "ku_references": 82,
+   "unresolved_ku_references": 0,
+   "unresolved_sample": [],
+   "regeneration": "scripts/ext006_dossiers.py"
+  }
+ },
+ "decisions_touching_dossier_domains": [
+  {
+   "term": "decomposition import pca",
+   "status": "rejected",
+   "domains": [
+    "clustering"
+   ],
+   "candidate_id": "CG-0ec7b019869c"
+  },
+  {
+   "term": "different normalization",
+   "status": "rejected",
+   "domains": [
+    "training-stability"
+   ],
+   "candidate_id": "CG-b72f93413bec"
+  },
+  {
+   "term": "ensemble import randomforestclassifier",
+   "status": "rejected",
+   "domains": [
+    "tree-based"
+   ],
+   "candidate_id": "CG-7c2e7159596e"
+  },
+  {
+   "term": "evaluation metric",
+   "status": "rejected",
+   "domains": [
+    "evaluation"
+   ],
+   "candidate_id": "CG-3d52edf9c1f2"
+  },
+  {
+   "term": "fuzzywuzzy import process",
+   "status": "rejected",
+   "domains": [
+    "evaluation"
+   ],
+   "candidate_id": "CG-c052f1dbd186"
+  },
+  {
+   "term": "import adamw",
+   "status": "rejected",
+   "domains": [
+    "training-stability"
+   ],
+   "candidate_id": "CG-174a0d0cdd6b"
+  },
+  {
+   "term": "import clipimageprocessor",
+   "status": "rejected",
+   "domains": [
+    "evaluation"
+   ],
+   "candidate_id": "CG-a0ad48c56416"
+  },
+  {
+   "term": "import initialization",
+   "status": "rejected",
+   "domains": [
+    "training-stability"
+   ],
+   "candidate_id": "CG-7f888dec7bda"
+  },
+  {
+   "term": "import initialization functions",
+   "status": "rejected",
+   "domains": [
+    "training-stability"
+   ],
+   "candidate_id": "CG-4c2e92cb59df"
+  },
+  {
+   "term": "import linearregression",
+   "status": "rejected",
+   "domains": [
+    "regression"
+   ],
+   "candidate_id": "CG-7a886db09285"
+  },
+  {
+   "term": "import logisticregression",
+   "status": "rejected",
+   "domains": [
+    "regression"
+   ],
+   "candidate_id": "CG-77ec0e21cbac"
+  },
+  {
+   "term": "import pca",
+   "status": "rejected",
+   "domains": [
+    "clustering"
+   ],
+   "candidate_id": "CG-f5e1bd660db5"
+  },
+  {
+   "term": "import random forest",
+   "status": "rejected",
+   "domains": [
+    "tree-based"
+   ],
+   "candidate_id": "CG-e7afad54f8df"
+  },
+  {
+   "term": "import randomforestclassifier",
+   "status": "rejected",
+   "domains": [
+    "tree-based"
+   ],
+   "candidate_id": "CG-8e32a241af05"
+  },
+  {
+   "term": "import recursivecharactertextsplitter",
+   "status": "rejected",
+   "domains": [
+    "tree-based"
+   ],
+   "candidate_id": "CG-978e18a23b91"
+  },
+  {
+   "term": "import subprocess",
+   "status": "rejected",
+   "domains": [
+    "evaluation"
+   ],
+   "candidate_id": "CG-8fa1217c52cd"
+  },
+  {
+   "term": "metrics import",
+   "status": "rejected",
+   "domains": [
+    "evaluation"
+   ],
+   "candidate_id": "CG-f0ecbf43ff4d"
+  },
+  {
+   "term": "optim import adamw",
+   "status": "rejected",
+   "domains": [
+    "training-stability"
+   ],
+   "candidate_id": "CG-b38b6c421363"
+  },
+  {
+   "term": "preprocessing import",
+   "status": "rejected",
+   "domains": [
+    "evaluation"
+   ],
+   "candidate_id": "CG-6b7741b0e05d"
+  },
+  {
+   "term": "preprocessing import minmaxscaler",
+   "status": "rejected",
+   "domains": [
+    "evaluation"
+   ],
+   "candidate_id": "CG-fd52b90d38a6"
+  },
+  {
+   "term": "proper initialization",
+   "status": "already_covered",
+   "domains": [
+    "training-stability"
+   ],
+   "candidate_id": "CG-c77b5b7b5952"
+  },
+  {
+   "term": "second moment",
+   "status": "confirmed_gap",
+   "domains": [
+    "training-stability"
+   ],
+   "candidate_id": "CG-fe05f71fc6ba"
+  },
+  {
+   "term": "transformers import autoprocessor",
+   "status": "rejected",
+   "domains": [
+    "evaluation"
+   ],
+   "candidate_id": "CG-ae22760f9c67"
+  },
+  {
+   "term": "transformers import clipimageprocessor",
+   "status": "rejected",
+   "domains": [
+    "evaluation"
+   ],
+   "candidate_id": "CG-b9b70445971c"
+  },
+  {
+   "term": "transformers import clipprocessor",
+   "status": "rejected",
+   "domains": [
+    "evaluation"
+   ],
+   "candidate_id": "CG-1c629c424808"
+  },
+  {
+   "term": "upstream gradient",
+   "status": "already_covered",
+   "domains": [
+    "training-stability"
+   ],
+   "candidate_id": "CG-704d8cf33aba"
+  },
+  {
+   "term": "validation loss",
+   "status": "rejected",
+   "domains": [
+    "evaluation"
+   ],
+   "candidate_id": "CG-0e2ae3f77c42"
+  }
+ ],
+ "summary": {
+  "dossiers_checked": 6,
+  "all_ku_references_resolve": true,
+  "decisions_touching_dossiers": 27,
+  "note": "Dossier KU references are intact (pre-restart batches revalidated byte-identical in REGEN-001). The listed discovery decisions overlap dossier domains and feed the next dossier-extension pass; no dossier was modified in DISC-002 — extension is a separate reviewed change after accepted-concept flow is defined."
+ }
+}

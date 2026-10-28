@@ -52,7 +52,7 @@ def boundary_pattern(term: str) -> re.Pattern:
     word-boundary term statistics use this ONE implementation so their
     semantics can never drift apart (L-07).
 
-    Performance (F-0015): callers iterate term-by-term (all occurrences of
+    Performance (F-0017): callers iterate term-by-term (all occurrences of
     one term before the next), so a small memo of compiled patterns removes
     re-compilation per occurrence. Compiled patterns are immutable, so
     sharing them cannot change behavior.

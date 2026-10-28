@@ -1,0 +1,13 @@
+{
+ "provisional_total": 53298,
+ "R-NUM": 793,
+ "R-CODE": 360,
+ "unclassified_remain_provisional": 52145,
+ "decisions_emitted": 1153,
+ "decisions_path": "state/concept-candidates/002a-disc002-decisions-r1.jsonl",
+ "decided_utc": "2026-10-28T00:45:00Z",
+ "rule_notes": {
+  "R-NUM": "any numeric token + all tokens numeric-or-unit-like",
+  "R-CODE": "all evidence KUs are code_block AND explicit code marker (import/def/return/raise/assert keywords, dotted paths, calls, dunders, snake_case); prose phrases in code contexts stay provisional; numeric terms excluded (R-NUM takes precedence)"
+ }
+}

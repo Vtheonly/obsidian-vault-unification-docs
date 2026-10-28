@@ -615,7 +615,7 @@ class TestNegativePaths:
 
 
 class TestRelationshipFastEquivalence:
-    """F-0015: _match_relationship_fast must equal the reference on every
+    """F-0017: _match_relationship_fast must equal the reference on every
     template family (definition D1-D14, assumed A1-A11, both-sides D10,
     gap templates A3/A11, derivation fallback) and on negatives."""
 
@@ -811,3 +811,86 @@ class TestCandidateIndex:
         )
         assert proc.returncode == 1
         assert not out.exists()
+
+
+class TestDecisionReversal:
+    """Merge of the two parallel DISC-002 sessions: cover must be applicable
+    from rejected/deferred when new file:line evidence supersedes a
+    class-based rejection or a procedural deferral (EMERGENT_CONCEPT_DISCOVERY
+    "revisable with an audit trail"). The history keeps both entries."""
+
+    def _candidate(self, status):
+        return {
+            "candidate_id": "CG-rev1",
+            "term": "x",
+            "proposed_title": "X",
+            "kind": "unexplained_prerequisite",
+            "status": status,
+            "evidence": [],
+            "independent_contexts": 2,
+            "copied_passage": False,
+            "definition_evidence": [],
+            "homonym_suspect": False,
+            "homonym_clusters": None,
+            "contradiction_suspect": False,
+            "contradictions": None,
+            "gap_description": "g",
+            "destination_recommendation": "section_candidate",
+            "destination_rationale": "r",
+            "confidence": {"score": 0.5, "signals": {
+                "assumed_usages": 0, "copied_passage": False,
+                "cross_vault": False, "definition_count": 0,
+                "derivation_usages": 0, "homonym_suspect": False,
+                "independent_contexts": 2}},
+            "coverage": {"vaults": [{"vault": "v", "processed_files": 1,
+                                     "total_files": 1}],
+                         "coverage_complete": True},
+            "verification_criteria": ["c"],
+            "decision_history": [
+                {"decision_id": "D-prev", "action": "reject",
+                 "rationale": "class-based", "reviewer": "r",
+                 "decided_utc": "2026-10-28T00:00:00+00:00"},
+            ],
+        }
+
+    @pytest.mark.parametrize("start", ["rejected", "deferred"])
+    def test_cover_reverses_rejection_and_deferral(self, tmp_path, start):
+        cand = self._candidate(start)
+        cand["decision_history"][0]["action"] = (
+            "reject" if start == "rejected" else "defer"
+        )
+        cpath = tmp_path / "c.jsonl"
+        cpath.write_text(json.dumps(cand) + "\n", encoding="utf-8")
+        dpath = tmp_path / "d.jsonl"
+        dpath.write_text(json.dumps({
+            "candidate_id": "CG-rev1", "decision_id": "D-new",
+            "action": "cover",
+            "rationale": "evidence-cited cover: file.md:12 defines it",
+            "reviewer": "t",
+        }) + "\n", encoding="utf-8")
+        out = tmp_path / "out.jsonl"
+        res = apply_decisions(
+            cpath, dpath, CAND_SCHEMA, decided_utc="2026-10-28T01:00:00+00:00"
+        )
+        assert res["ok"], res["errors"]
+        rec = res["records"][0]
+        assert rec["status"] == "already_covered"
+        assert [h["decision_id"] for h in rec["decision_history"]] == [
+            "D-prev", "D-new"
+        ]
+
+    def test_reject_still_terminal_from_rejected(self, tmp_path):
+        cand = self._candidate("rejected")
+        cpath = tmp_path / "c.jsonl"
+        cpath.write_text(json.dumps(cand) + "\n", encoding="utf-8")
+        dpath = tmp_path / "d.jsonl"
+        dpath.write_text(json.dumps({
+            "candidate_id": "CG-rev1", "decision_id": "D-again",
+            "action": "reject", "rationale": "r", "reviewer": "t",
+        }) + "\n", encoding="utf-8")
+        out = tmp_path / "out.jsonl"
+        res = apply_decisions(
+            cpath, dpath, CAND_SCHEMA, decided_utc="2026-10-28T01:00:00+00:00"
+        )
+        assert not res["ok"]
+        assert any("not allowed" in e for e in res["errors"])

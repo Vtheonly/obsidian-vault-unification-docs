@@ -202,7 +202,7 @@ def _match_relationship(
     return "used"
 
 
-# ---- fast path (F-0015): term-agnostic trigger positions per KU ----------
+# ---- fast path (F-0017): term-agnostic trigger positions per KU ----------
 # The 24 reference templates above all have the shape
 #     <optional prefix trigger> \b{t}\b <optional continuation trigger>
 # so instead of compiling 24 term-anchored regexes per distinct term, we scan
@@ -323,7 +323,7 @@ def _match_relationship_fast(
     """Byte-equivalent fast twin of :func:`_match_relationship`.
 
     Trigger positions are computed once per KU and cached on the record under
-    the non-persistent ``_disc_relpos`` key. See the F-0015 note above the
+    the non-persistent ``_disc_relpos`` key. See the F-0017 note above the
     pattern tables for the equivalence argument.
     """
     pos = ku.get("_disc_relpos")
@@ -374,7 +374,7 @@ def _locate_in_ku(ku: dict, term: str) -> tuple[int, int, str] | None:
     boundary; KU-level multi-line spans are handled by scanning lines in
     order). This is the X2 rule in miniature: no hand-typed line numbers.
 
-    Performance (F-0015): split/normalized lines are cached on the KU record
+    Performance (F-0017): split/normalized lines are cached on the KU record
     under non-persistent ``_disc_lines``/``_disc_norm_lines`` keys (mirrors the
     loader's ``_batch`` convention); they never reach any output.
     """
@@ -423,7 +423,7 @@ def _passage_hash(quote: str) -> str:
 def _signature_terms(term: str, ku: dict, top_k: int = 8) -> list[str]:
     """Distinctive co-occurring mined terms in this KU (for homonym clustering).
 
-    Performance (F-0015): the per-KU term Counter is cached on the KU record
+    Performance (F-0017): the per-KU term Counter is cached on the KU record
     under the non-persistent ``_disc_counter`` key; only the exclusion sort
     runs per call. Output is identical to re-mining per call.
     """
@@ -566,7 +566,7 @@ def discover_candidates(
         definition_evidence: list[dict] = []
         for ku_id in sorted(occurrences):
             ku = ku_by_id[ku_id]
-            # F-0015: locate FIRST. When the term has no excerpt match
+            # F-0017: locate FIRST. When the term has no excerpt match
             # (heading-path-only term) the pair is discarded below, so the
             # expensive relationship pass over that KU is pure waste — the
             # partial-corpus run showed 56% of analyzed terms fall here.
@@ -605,7 +605,7 @@ def discover_candidates(
                 {
                     **ev,
                     "passage_hash": _passage_hash(quote),
-                    # F-0015: signature is computed lazily below — only when
+                    # F-0017: signature is computed lazily below — only when
                     # homonym clustering can run (independent_contexts >= 2).
                     "signature": [],
                 }
@@ -623,7 +623,7 @@ def discover_candidates(
         independent_contexts = len(
             {ctx["passage_hash"] for ctx in contexts}
         )
-        # F-0015: lazy signatures — computed only when clustering can use
+        # F-0017: lazy signatures — computed only when clustering can use
         # them (identical values to eager computation; byte-identical output).
         if independent_contexts >= 2:
             for ctx in contexts:
@@ -892,7 +892,17 @@ _ALLOWED_TRANSITIONS = {
     },
     "split": {"provisional_candidate": "split", "confirmed_gap": "split"},
     "revise": {},  # no status change
-    "cover": {"provisional_candidate": "already_covered"},
+    # cover from rejected/deferred (merge of the two parallel DISC-002
+    # sessions): EMERGENT_CONCEPT_DISCOVERY.md requires decisions to be
+    # "revisable with an audit trail" — a class-based rejection or a
+    # procedural deferral can be superseded by an evidence-cited cover
+    # (file:line definitional treatment found in the corpus). The
+    # decision_history keeps BOTH entries, so the reversal is auditable.
+    "cover": {
+        "provisional_candidate": "already_covered",
+        "rejected": "already_covered",
+        "deferred": "already_covered",
+    },
 }
 
 
@@ -919,7 +929,7 @@ def apply_decisions(
     import jsonschema
 
     schema = json.loads(Path(candidate_schema_path).read_text(encoding="utf-8"))
-    # F-0015: one reused validator instead of per-candidate re-resolution.
+    # F-0017: one reused validator instead of per-candidate re-resolution.
     _candidate_validator = jsonschema.validators.validator_for(schema)(schema)
     _candidate_validator.check_schema(schema)
 
@@ -1065,7 +1075,7 @@ def validate_candidates(
     import jsonschema
 
     schema = json.loads(Path(candidate_schema_path).read_text(encoding="utf-8"))
-    # F-0015: one reused validator instead of per-record re-resolution
+    # F-0017: one reused validator instead of per-record re-resolution
     # (candidate files at corpus scale hold tens of thousands of records).
     validator = jsonschema.validators.validator_for(schema)(schema)
     validator.check_schema(schema)
@@ -1077,9 +1087,18 @@ def validate_candidates(
 
     errors: list[str] = []
     ids = [r["candidate_id"] for r in records]
-    dupes = sorted({i for i in ids if ids.count(i) > 1})
-    if dupes:
-        errors.append(f"duplicate candidate_id: {dupes[:5]}")
+    # set-based duplicate detection (parallel-session fix, F-0015): the
+    # ids.count(i) comprehension was O(n^2) — 60k records meant billions of
+    # comparisons; identical output.
+    seen_ids: set[str] = set()
+    dupes: set[str] = set()
+    for i in ids:
+        if i in seen_ids:
+            dupes.add(i)
+        seen_ids.add(i)
+    dupes_sorted = sorted(dupes)
+    if dupes_sorted:
+        errors.append(f"duplicate candidate_id: {dupes_sorted[:5]}")
 
     ku_ids: set[str] | None = None
     if ku_batches and kus_schema:

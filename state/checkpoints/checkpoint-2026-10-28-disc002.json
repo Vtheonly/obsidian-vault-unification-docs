@@ -1,5 +1,5 @@
 {
- "checkpoint_id": "checkpoint-2026-10-28-disc002-session1",
+ "checkpoint_id": "checkpoint-2026-10-28-disc002-two-sessions-merged",
  "completed_this_session": [
   "verified baseline: 604/604 tests, both vaults byte-unchanged vs manifests, registry rebuilt green (27,536 KUs, 0 duplicates, full coverage)",
   "F-0015 fixed: per-record jsonschema.validate -> single reused validator (load 239.7s -> 4.0s); discovery term loop inverted to per-KU trigger-position sets + cached occurrence patterns + locate-first reordering + lazy signatures (3-batch A/B 83.4s -> 8.1s, byte-identical)",
@@ -24,6 +24,25 @@
   "report": "reports/discovery/disc002-final-pytest.json",
   "skipped": 0
  },
+ "merge": {
+  "final_statuses": {
+   "already_covered": 6907,
+   "confirmed_gap": 2,
+   "deferred": 1,
+   "provisional_candidate": 52032,
+   "rejected": 1212
+  },
+  "merged_chain": "fresh regeneration (double-run byte-identical 291.7s/286.7s) -> r1 -> r2 -> batch2; 0 errors",
+  "parallel_sessions": true,
+  "resolution": "kept session B's faster byte-verified discovery implementation (~291s vs ~547s per run; reference oracle + 48 template-family equivalence tests); adopted session A's validate-scale fix, ADR-0010, triage tooling, r1/r2 decisions; extended the cover transition to rejected/deferred for auditable evidence-cited reversal; converted the 2 confirm_gap/cover conflicts to revise (both views preserved in history); dropped 28 redundant agreement decisions",
+  "session_a_commits": [
+   "3d2ff8b",
+   "c816900",
+   "f215406",
+   "e2914e9"
+  ],
+  "session_b_local": "merged via this merge commit"
+ },
  "next_actions": [
   "continue prioritized semantic review of 53,184 provisional candidates (bounded batches; use scripts/disc002_reviewset.py pattern with new selection rules)",
   "dossier extension via overlap-candidates + classification per the gap report next_action",
@@ -31,7 +50,9 @@
  ],
  "open_findings": [
   "F-0014 (open, low)",
-  "F-0015 (resolved this session)"
+  "F-0016 (open-operational)",
+  "F-0015 (resolved, session A)",
+  "F-0017 (resolved, session B)"
  ],
  "recorded_utc": "2026-10-28",
  "stage": "disc002-corpus-discovery-in-progress",

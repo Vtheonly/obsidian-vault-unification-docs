@@ -261,6 +261,7 @@ CAPABILITIES: list[dict] = [
             "contradiction suspicion is a numeric-adjacent heuristic near definition contexts; surfaced with pairs, never resolved",
             "homonym clustering is co-occurrence-signature based; disjoint signatures flag the candidate but review decides whether senses truly differ",
             "registry loading of accepted candidates is deferred to DISC-002 (candidates persist as schema-validated JSONL, consistent with the classification overlay pattern before kureg-apply-overlap exists for candidates)",
+            "DISC-002 corpus-scale hardening (per-KU precomputation, lazy per-term pattern compilation, combined alternations, set-based mining index, precompiled schema validator) preserves the DISC-001 output byte-for-byte (verified on the real 14-batch subset, 9632 candidates, sha256-equal) but runtime and memory still grow superlinearly with corpus size through the O(contexts^2) homonym clustering of very high frequency terms; full-corpus runs must record duration and peak memory in the run report",
         ],
     },
     {
