@@ -18,6 +18,12 @@
   "equivalence": "reports/discovery/disc002-f0015-equivalence.json (verdict PASS)",
   "validation": "reports/discovery/disc002-validate.json; reports/discovery/disc002-validate-postdecide.json"
  },
+ "final_test_run": {
+  "failed": 0,
+  "passed": 659,
+  "report": "reports/discovery/disc002-final-pytest.json",
+  "skipped": 0
+ },
  "next_actions": [
   "continue prioritized semantic review of 53,184 provisional candidates (bounded batches; use scripts/disc002_reviewset.py pattern with new selection rules)",
   "dossier extension via overlap-candidates + classification per the gap report next_action",
@@ -29,5 +35,6 @@
  ],
  "recorded_utc": "2026-10-28",
  "stage": "disc002-corpus-discovery-in-progress",
- "task_id": "DISC-002"
+ "task_id": "DISC-002",
+ "work_commit": "1b7f0b7"
 }
