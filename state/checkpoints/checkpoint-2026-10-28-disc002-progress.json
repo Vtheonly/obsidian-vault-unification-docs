@@ -68,5 +68,10 @@
  "next": [
   "continue DISC-002 review tranches (52,101 provisional remain): rerun scripts/disc002_review_brief.py, review T1/T2/T3 in domain batches, resolve the 4 deferred families, extend dossiers, then define the accepted-concept flow",
   "then disposition assignment (KU -> destination + disposition mapping) before gated synthesis"
- ]
+ ],
+ "push_verification": {
+  "pushed_utc": "2026-10-28T02:40:00Z",
+  "result": "success",
+  "detail": "git push origin main: 4ae8125..f215406 (feat c816900 + state f215406); origin/main HEAD verified == f215406 after fetch; working tree clean"
+ }
 }
