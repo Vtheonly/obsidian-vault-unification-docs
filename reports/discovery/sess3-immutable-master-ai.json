@@ -1,0 +1,32 @@
+{
+  "command": "inventory",
+  "root": "source-vaults/AI /Master AI",
+  "counts": {
+    "code": 0,
+    "image": 0,
+    "markdown": 333,
+    "other": 0,
+    "pdf": 0,
+    "text": 0,
+    "unreadable": 0
+  },
+  "total_files": 333,
+  "manifest_path": "/tmp/sess3-ma-check.jsonl",
+  "manifest_records": 333,
+  "unreadable_files": [],
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "inventory",
+    "args": {
+      "command": "inventory",
+      "root": "source-vaults/AI /Master AI",
+      "manifest": "/tmp/sess3-ma-check.jsonl",
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/discovery/sess3-immutable-master-ai.json",
+      "follow_symlinks": false
+    },
+    "utc_timestamp": "2026-10-28T04:25:13+00:00",
+    "git_commit": "2804dcb"
+  }
+}

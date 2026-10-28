@@ -1,0 +1,32 @@
+{
+  "command": "inventory",
+  "root": "source-vaults/AI /AI Course",
+  "counts": {
+    "code": 0,
+    "image": 0,
+    "markdown": 276,
+    "other": 0,
+    "pdf": 0,
+    "text": 0,
+    "unreadable": 0
+  },
+  "total_files": 276,
+  "manifest_path": "/tmp/sess3-ac-check.jsonl",
+  "manifest_records": 276,
+  "unreadable_files": [],
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "inventory",
+    "args": {
+      "command": "inventory",
+      "root": "source-vaults/AI /AI Course",
+      "manifest": "/tmp/sess3-ac-check.jsonl",
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/discovery/sess3-immutable-ai-course.json",
+      "follow_symlinks": false
+    },
+    "utc_timestamp": "2026-10-28T04:25:20+00:00",
+    "git_commit": "2804dcb"
+  }
+}
