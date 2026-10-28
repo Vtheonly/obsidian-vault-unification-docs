@@ -1,142 +1,155 @@
 {
- "project": "Obsidian Vault Unification",
- "execution_environment": "Z AI / GLM 5.3 with available subagents",
- "stage": "regen001-full-corpus-extraction-complete",
- "status": "in_progress",
- "source_vaults_located": true,
- "source_vaults": [
-  {
-   "name": "Master AI",
-   "path": "source-vaults/AI /Master AI",
-   "note": "path contains a trailing space in parent directory 'AI ' (finding F-0001); always quote",
-   "files": 333,
-   "file_classes": {
-    "markdown": 333
-   },
-   "baseline_manifest": "state/manifests/master-ai.jsonl",
-   "bytes": 4601557,
-   "source_location_record": "reports/bootstrap/boot-001-source-location.json"
-  },
-  {
-   "name": "AI Course",
-   "path": "source-vaults/AI /AI Course",
-   "note": "path contains a trailing space in parent directory 'AI ' (finding F-0001); always quote",
-   "files": 276,
-   "file_classes": {
-    "markdown": 276
-   },
-   "baseline_manifest": "state/manifests/ai-course.jsonl",
-   "bytes": 3546362,
-   "source_location_record": "reports/bootstrap/boot-001-source-location.json"
-  }
- ],
- "source_inventory_complete": true,
- "knowledge_registry_initialized": true,
- "framework_foundation_built": true,
- "framework_foundation_tested": true,
- "framework_evidence": {
-  "test_run": "reports/bootstrap/boot-004-pytest-report.json",
-  "test_summary": "285 passed, 0 failed, 0 skipped",
-  "capabilities": "reports/bootstrap/boot-004-capabilities.json",
-  "setup_doc": "docs/FRAMEWORK_SETUP.md"
- },
- "verification_pilot_passed": true,
- "verification_pilot_evidence": {
-  "pilot_report": "reports/bootstrap/boot-004-omission-pilot.json",
-  "run_summary": "reports/bootstrap/boot-004-run-summary.json",
-  "verdict": "pass",
-  "detection_rate": "12/12",
-  "localization_rate": "12/12",
-  "false_negatives": 0,
-  "false_positives_on_clean_baseline": 0,
-  "defect_classes": 12,
-  "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)"
- },
- "output_synthesis_started": false,
- "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-28-regen001.json",
- "current_task_id": "DISC-002",
- "notes": "REGEN-001 completed 2026-10-28 (feat commit 48ccd2d): full-corpus re-extraction under the hardened pipeline. All 609 source files extracted into 70 committed batches (11 revalidated pre-restart + 59 new REGEN batches 012-070); 27,536 KUs, every id globally unique; every batch double-run byte-identical and fidelity-verified by the NEW reusable gate vu ku-fidelity (CAP-022, framework 0.8.0), which replaces the per-task fidelity scripts. Registry rebuilt from all 70 batches + 7 classification overlays; kureg-validate green; full-corpus accounting: 276/276 ai-course + 333/333 master-ai files covered exactly once, 0 missing/extra/multi-batch, 0 source hash mismatches (both vaults byte-unchanged). Two latent defects were caught by the gates mid-run and fixed with regression tests: (1) the fidelity heading rule did not know the empty_section design contract (units sit ON their heading line; batches 014/015 first flagged it); (2) the extraction driver derived batch numbering from directory contents, so a resumed run renumbered the plan and minted 14 duplicate batches - caught by the id-collision gate, verified byte-identical to their twins, deleted, numbering pinned to the committed sequence. New findings F-0012 (stale 563-vs-576 test-count docs, now corrected), F-0013 (empty_section design contract), F-0014 (END-OF-FILE marker-heading source convention, 2 files). All 27,536 KUs remain 'Unaccounted' by design: disposition assignment is the release-blocking work after concept discovery. NEXT: DISC-002 - run corpus-wide emergent-concept discovery over the complete registry (the coverage gate is now OPEN at 609/609), review candidates via vu discovery-decide (semantic review is the agent's job; the tool collects evidence), reconcile dossiers, then gated synthesis.",
  "corpus_statistics": {
+  "evidence": "reports/bootstrap/boot-002-inventory-summary.json",
   "files_total": 609,
-  "markdown_files": 609,
-  "words_total": 1157937,
-  "words_outside_fences": 990007,
-  "tokens_estimate_chars_div_4": 2027347,
   "headings_total": 12785,
+  "markdown_files": 609,
   "per_vault": {
-   "Master AI": {
-    "files": 333,
-    "words_total": 638004,
-    "tokens_estimate": 1144484,
-    "headings": 8610,
-    "files_with_errors": 0
-   },
    "AI Course": {
     "files": 276,
-    "words_total": 519933,
-    "tokens_estimate": 882863,
+    "files_with_errors": 14,
     "headings": 4175,
-    "files_with_errors": 14
+    "tokens_estimate": 882863,
+    "words_total": 519933
+   },
+   "Master AI": {
+    "files": 333,
+    "files_with_errors": 0,
+    "headings": 8610,
+    "tokens_estimate": 1144484,
+    "words_total": 638004
    }
   },
-  "evidence": "reports/bootstrap/boot-002-inventory-summary.json"
+  "tokens_estimate_chars_div_4": 2027347,
+  "words_outside_fences": 990007,
+  "words_total": 1157937
  },
+ "current_task_id": "DISC-002",
+ "execution_environment": "Z AI / GLM 5.3 with available subagents",
+ "framework_evidence": {
+  "capabilities": "reports/bootstrap/boot-004-capabilities.json",
+  "setup_doc": "docs/FRAMEWORK_SETUP.md",
+  "test_run": "reports/bootstrap/boot-004-pytest-report.json",
+  "test_summary": "285 passed, 0 failed, 0 skipped"
+ },
+ "framework_foundation_built": true,
+ "framework_foundation_evidence": {
+  "capabilities": "reports/extraction/ext004-capabilities.json",
+  "setup_doc": "docs/FRAMEWORK_SETUP.md",
+  "test_run": "reports/extraction/ext004-pytest-report.json",
+  "test_summary": "407 passed, 0 failed, 0 skipped"
+ },
+ "framework_foundation_tested": true,
+ "framework_version": "0.8.0",
  "knowledge_registry": {
   "canonical_store": "state/knowledge-units/ (committed JSONL batches; ADR-0007)",
-  "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load + kureg-apply-overlap)",
-  "records": 27536,
-  "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)",
   "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records) + 002-ext004-tree-based-overlap.jsonl (28 records) + 003-ext005-evaluation-overlap.jsonl (29 records) + 004-ext007-evaluation-addendum.jsonl (4 records) + 005-ext008-clustering-dimreduction-overlap.jsonl (27 records) + 006-ext009-generalization-overlap.jsonl (26 records) + 007-ext010-training-stability-overlap.jsonl (36 records, EXT-010; ADR-0009 pair-level overlay)",
   "commands": "vu kureg-init / kureg-load / kureg-apply-overlap / kureg-query / kureg-validate",
+  "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load + kureg-apply-overlap)",
   "dossiers": {
-   "store": "state/dossiers/ (derived view; regenerates via scripts/ext006_dossiers.py)",
-   "schema": "schemas/concept-dossier.schema.json",
-   "files": {
-    "regression-v1.json": "14 concepts / 61 KUs (from 001-ext003)",
-    "tree-based-v1.json": "28 concepts / 82 KUs (from 002-ext004)",
-    "evaluation-v1.json": "33 concepts / 97 KUs (from 003-ext005 + 004-ext007)",
-    "clustering-v1.json": "27 concepts / 64 KUs (from 005-ext008)",
-    "generalization-v1.json": "26 concepts / 68 KUs (from 006-ext009)",
-    "training-stability-v1.json": "36 concepts / 142 KUs (from 007-ext010)"
-   },
    "concepts_total": 164,
+   "dispositions_assigned": false,
+   "files": {
+    "clustering-v1.json": "27 concepts / 64 KUs (from 005-ext008)",
+    "evaluation-v1.json": "33 concepts / 97 KUs (from 003-ext005 + 004-ext007)",
+    "generalization-v1.json": "26 concepts / 68 KUs (from 006-ext009)",
+    "regression-v1.json": "14 concepts / 61 KUs (from 001-ext003)",
+    "training-stability-v1.json": "36 concepts / 142 KUs (from 007-ext010)",
+    "tree-based-v1.json": "28 concepts / 82 KUs (from 002-ext004)"
+   },
    "participating_kus_total": 514,
    "rule_set": "ext006-category-rules-v1 (documented in scripts/ext006_dossiers.py)",
-   "dispositions_assigned": false
-  }
+   "schema": "schemas/concept-dossier.schema.json",
+   "store": "state/dossiers/ (derived view; regenerates via scripts/ext006_dossiers.py)"
+  },
+  "records": 27536,
+  "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)"
  },
- "framework_foundation_evidence": {
-  "test_run": "reports/extraction/ext004-pytest-report.json",
-  "test_summary": "407 passed, 0 failed, 0 skipped",
-  "capabilities": "reports/extraction/ext004-capabilities.json",
-  "setup_doc": "docs/FRAMEWORK_SETUP.md"
- },
- "framework_version": "0.8.0",
+ "knowledge_registry_initialized": true,
+ "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-28-disc002-progress.json",
+ "notes": "DISC-002 in progress (feat commit c816900, 2026-10-28 session). Corpus-wide discovery COMPLETE and validated: 60,154 candidates over the full 609-file corpus (coverage gate OPEN); double-run byte-identical (sha256 88a538eb); peak RSS 1.95GB; framework hardened for corpus scale with byte-identical-output proof (620/620 tests). Review rounds 1+2 applied: 1,197 decisions (2 CONFIRMED GAPS: second moment, bradley-terry; 4 defers; 7 covers; 1,184 rejects), 52,101 provisional candidates remain for review tranches. All six dossiers' KU references verified intact; 27 decisions touch dossier domains for the next extension pass. Candidates monolith git-ignored per ADR-0010 (replayable from committed batches + decisions). NEXT: continue review tranches via the brief/class/family strategy, extend dossiers, define accepted-concept flow, then disposition assignment before gated synthesis.",
+ "output_synthesis_started": false,
  "phase_zero_rebaseline": {
   "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
-  "rebaseline_baseline_report": "reports/rebaseline/phase-zero-baseline.json",
-  "framework_audit": "reports/rebaseline/framework-audit.json",
-  "known_limitations": "reports/rebaseline/known-limitations.json (13; 8 fixed FRAME-001, 1 DISC-001, 4 accepted)",
-  "retrospective": "reports/rebaseline/iteration-retrospective.md",
+  "discovery_full_corpus": {
+   "candidates": 60154,
+   "coverage_complete": true,
+   "decide_r1": "reports/discovery/disc002-decide-r1.json",
+   "decide_r2": "reports/discovery/disc002-decide-r2.json",
+   "dossier_reconciliation": "reports/discovery/disc002-dossier-reconciliation.json",
+   "perf": "reports/discovery/disc002-full-corpus-perf.json",
+   "run_report": "reports/discovery/disc002-full-corpus-run.json",
+   "task": "DISC-002 (in progress)",
+   "tests": "620/620",
+   "triage": "reports/discovery/disc002-triage.json",
+   "validate": "reports/discovery/disc002-validate.json"
+  },
   "discovery_partial_corpus_run": "state/concept-candidates/001-disc001-partial-corpus.jsonl (6340 candidates, coverage-gated)",
+  "framework_audit": "reports/rebaseline/framework-audit.json",
+  "full_corpus_extraction": {
+   "accounting": "reports/regen/regen001-accounting.json",
+   "batches": 70,
+   "completed_utc": "2026-10-28",
+   "extraction": "reports/regen/regen001-extraction.json",
+   "files_extracted": 609,
+   "kus": 27536,
+   "plan": "reports/regen/regen001-plan.json",
+   "registry": "reports/regen/regen001-registry.json",
+   "revalidation": "reports/regen/regen001-revalidation.json",
+   "task": "REGEN-001",
+   "tests": "604/604 (reports/regen/regen001-final-pytest.json)"
+  },
+  "known_limitations": "reports/rebaseline/known-limitations.json (13; 8 fixed FRAME-001, 1 DISC-001, 4 accepted)",
   "quality_toolkit_baseline_lint": [
    "reports/rebaseline/frame002-lint-ai-course.json (276 files, 164 errors)",
    "reports/rebaseline/frame002-lint-master-ai.json (333 files, 371 errors)"
   ],
-  "tests": "563/563 (reports/rebaseline/frame002-final-pytest.json)",
-  "full_corpus_extraction": {
-   "task": "REGEN-001",
-   "completed_utc": "2026-10-28",
-   "files_extracted": 609,
-   "batches": 70,
-   "kus": 27536,
-   "revalidation": "reports/regen/regen001-revalidation.json",
-   "plan": "reports/regen/regen001-plan.json",
-   "extraction": "reports/regen/regen001-extraction.json",
-   "registry": "reports/regen/regen001-registry.json",
-   "accounting": "reports/regen/regen001-accounting.json",
-   "tests": "604/604 (reports/regen/regen001-final-pytest.json)"
-  }
+  "rebaseline_baseline_report": "reports/rebaseline/phase-zero-baseline.json",
+  "retrospective": "reports/rebaseline/iteration-retrospective.md",
+  "tests": "563/563 (reports/rebaseline/frame002-final-pytest.json)"
  },
- "quality_gates_for_synthesis": "every generation batch: check-prompt -> bounded generation -> lint-artifacts -> assess-quality -> quality-drift -> quality-gate -> repair loop; batch complete only when the gate passes or exceptions are explicitly waived with reasons"
+ "project": "Obsidian Vault Unification",
+ "quality_gates_for_synthesis": "every generation batch: check-prompt -> bounded generation -> lint-artifacts -> assess-quality -> quality-drift -> quality-gate -> repair loop; batch complete only when the gate passes or exceptions are explicitly waived with reasons",
+ "source_inventory_complete": true,
+ "source_vaults": [
+  {
+   "baseline_manifest": "state/manifests/master-ai.jsonl",
+   "bytes": 4601557,
+   "file_classes": {
+    "markdown": 333
+   },
+   "files": 333,
+   "name": "Master AI",
+   "note": "path contains a trailing space in parent directory 'AI ' (finding F-0001); always quote",
+   "path": "source-vaults/AI /Master AI",
+   "source_location_record": "reports/bootstrap/boot-001-source-location.json"
+  },
+  {
+   "baseline_manifest": "state/manifests/ai-course.jsonl",
+   "bytes": 3546362,
+   "file_classes": {
+    "markdown": 276
+   },
+   "files": 276,
+   "name": "AI Course",
+   "note": "path contains a trailing space in parent directory 'AI ' (finding F-0001); always quote",
+   "path": "source-vaults/AI /AI Course",
+   "source_location_record": "reports/bootstrap/boot-001-source-location.json"
+  }
+ ],
+ "source_vaults_located": true,
+ "stage": "disc002-corpus-discovery-in-progress",
+ "status": "in_progress",
+ "verification_pilot_evidence": {
+  "defect_classes": 12,
+  "detection_rate": "12/12",
+  "false_negatives": 0,
+  "false_positives_on_clean_baseline": 0,
+  "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)",
+  "localization_rate": "12/12",
+  "pilot_report": "reports/bootstrap/boot-004-omission-pilot.json",
+  "run_summary": "reports/bootstrap/boot-004-run-summary.json",
+  "verdict": "pass"
+ },
+ "verification_pilot_passed": true
 }

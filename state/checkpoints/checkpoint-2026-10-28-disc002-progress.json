@@ -1,0 +1,72 @@
+{
+ "checkpoint_id": "checkpoint-2026-10-28-disc002-progress",
+ "created_utc": "2026-10-28T02:20:00Z",
+ "task_ids_completed": [
+  "BOOT-000",
+  "BOOT-001",
+  "BOOT-002",
+  "BOOT-003",
+  "BOOT-004",
+  "EXT-001",
+  "EXT-002",
+  "EXT-003",
+  "EXT-004",
+  "EXT-005",
+  "EXT-006",
+  "EXT-007",
+  "EXT-008",
+  "EXT-009",
+  "EXT-010",
+  "REBASE-000",
+  "AUDIT-011",
+  "FRAME-001",
+  "DISC-001",
+  "FRAME-002",
+  "REGEN-001"
+ ],
+ "task_ids_open": [
+  "DISC-002"
+ ],
+ "task_ids_in_progress": [
+  "DISC-002"
+ ],
+ "framework_version": "0.8.0",
+ "feat_commit": "c816900e487666dcc90ad2b6f84106f5db7a2e13",
+ "test_suite": {
+  "command": "python3 -m pytest tests/ -q",
+  "result": "620 passed (re-run after last mutation; see queue tests_run)"
+ },
+ "capabilities": {
+  "verified": true,
+  "implemented_and_tested": 22,
+  "planned": 1
+ },
+ "discovery_state": {
+  "coverage": "COMPLETE (276/276 ai-course + 333/333 master-ai)",
+  "candidates_total": 60154,
+  "by_status": {
+   "provisional_candidate": 52101,
+   "already_covered": 6863,
+   "rejected": 1184,
+   "confirmed_gap": 2,
+   "deferred": 4
+  },
+  "confirmed_gaps": [
+   "second moment",
+   "bradley-terry"
+  ],
+  "candidates_file": "state/concept-candidates/002-disc002-full-corpus.jsonl (git-ignored, ADR-0010; regenerate via scripts/disc002_run_full.py then replay 002a+002b decisions)",
+  "decisions_committed": [
+   "state/concept-candidates/002a-disc002-decisions-r1.jsonl (1153 class-based rejects)",
+   "state/concept-candidates/002b-disc002-decisions-r2.jsonl (44 individual decisions)"
+  ]
+ },
+ "source_immutability": {
+  "ai-course": "276/276 unchanged (manifest verify exit 0, session start)",
+  "master-ai": "333/333 unchanged (manifest verify exit 0, session start)"
+ },
+ "next": [
+  "continue DISC-002 review tranches (52,101 provisional remain): rerun scripts/disc002_review_brief.py, review T1/T2/T3 in domain batches, resolve the 4 deferred families, extend dossiers, then define the accepted-concept flow",
+  "then disposition assignment (KU -> destination + disposition mapping) before gated synthesis"
+ ]
+}
