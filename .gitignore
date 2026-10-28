@@ -32,3 +32,8 @@ state/registries/
 
 # Editable-install build metadata (rebuildable)
 src/vault_unification.egg-info/
+
+# Full-corpus discovery candidates: derived, deterministically regenerable
+# from committed KU batches + manifests (ADR-0010; double-run sha256 recorded
+# in reports/discovery/disc002-full-corpus-perf.json). Decision records stay committed.
+state/concept-candidates/002-disc002-full-corpus.jsonl

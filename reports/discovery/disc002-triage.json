@@ -1,0 +1,1493 @@
+{
+ "command": "disc002-triage (deterministic review preparation)",
+ "denominators": {
+  "records_total": 60154,
+  "provisional": 53298,
+  "already_covered": 6856
+ },
+ "provisional_stats": {
+  "by_kind": {
+   "unexplained_prerequisite": 44990,
+   "fragmented_derivation": 1796,
+   "concept_sighting": 6856,
+   "rare_essential": 6512
+  },
+  "confidence_buckets": {
+   "0.0-0.4": 30569,
+   "0.6-0.8": 5254,
+   "0.4-0.6": 17186,
+   "0.8-1.0": 289
+  },
+  "independent_contexts_histogram": {
+   "1": 6512,
+   "2": 23374,
+   "3-5": 14814,
+   "6-10": 4726,
+   "11-50": 3469,
+   "51+": 403
+  },
+  "cross_vault": 10235,
+  "homonym_suspect": 24045,
+  "copied_passage_flagged": 660,
+  "contradiction_suspect_all_statuses": 2148,
+  "ngram_fragment_flagged": 11839
+ },
+ "tiers": {
+  "T1_fragmented_derivation": 1796,
+  "T2_unexplained_prereq_broad": 24068,
+  "T3_rare_essential": 6512,
+  "T4_unexplained_prereq_narrow": 20922,
+  "T4_fragment_flagged_share": 0.291
+ },
+ "samples": {
+  "T1_top40": [
+   {
+    "candidate_id": "CG-08acb0b7a1a1",
+    "term": "relu activation",
+    "contexts": 62,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-773c4aa61183",
+    "term": "2048",
+    "contexts": 48,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-0a5d5946b737",
+    "term": "spatial position",
+    "contexts": 47,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-569b29647e4f",
+    "term": "64 channels",
+    "contexts": 32,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-b473663fb61d",
+    "term": "l2 norm",
+    "contexts": 22,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-ac4ff159bdb0",
+    "term": "true class",
+    "contexts": 17,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-7d1712753acd",
+    "term": "val loss",
+    "contexts": 17,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-704d8cf33aba",
+    "term": "upstream gradient",
+    "contexts": 15,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-2854cac3e082",
+    "term": "datasets import",
+    "contexts": 14,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-6a203a2eeffe",
+    "term": "entire dataset",
+    "contexts": 23,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-975f30dec2e6",
+    "term": "human preferences",
+    "contexts": 19,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-c8f6e1408dc2",
+    "term": "bradley-terry",
+    "contexts": 17,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-8e8df9a27c43",
+    "term": "final linear",
+    "contexts": 14,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-cee7028d2159",
+    "term": "output step",
+    "contexts": 14,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-8f86aa1d168c",
+    "term": "pil image",
+    "contexts": 14,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-b317cb629210",
+    "term": "reference policy",
+    "contexts": 14,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-c2c6c4df02f8",
+    "term": "last convolutional layer",
+    "contexts": 13,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-aa57752fabfb",
+    "term": "final linear layer",
+    "contexts": 11,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-5778a68ac024",
+    "term": "imagefolder",
+    "contexts": 11,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-8b24892653ab",
+    "term": "last conv",
+    "contexts": 9,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-a68d2e72ea1d",
+    "term": "imagenet pre-trained",
+    "contexts": 7,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-94f6e34bb3b9",
+    "term": "eagle-2's",
+    "contexts": 6,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-e38d591f4a64",
+    "term": "device configuration",
+    "contexts": 5,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-8a973d8e9eda",
+    "term": "prerequisites",
+    "contexts": 105,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-2d2395466ca6",
+    "term": "def forward",
+    "contexts": 100,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-46083d013468",
+    "term": "args",
+    "contexts": 69,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-c96da95b70ce",
+    "term": "execute",
+    "contexts": 68,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-5eab3f3b4df8",
+    "term": "rejected",
+    "contexts": 43,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-0d7530ce26ef",
+    "term": "information theory",
+    "contexts": 29,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-fbea2e06f532",
+    "term": "squeeze",
+    "contexts": 27,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-1647562e95df",
+    "term": "encoder hidden",
+    "contexts": 24,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-3064d288d316",
+    "term": "network learns",
+    "contexts": 24,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-ae60f024ae0f",
+    "term": "intermediate activations",
+    "contexts": 23,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-be544ce2fc6c",
+    "term": "curvature",
+    "contexts": 22,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-11dbf330f9a2",
+    "term": "element-wise multiplication",
+    "contexts": 22,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-b2ef28b0b11d",
+    "term": "information across",
+    "contexts": 22,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-2e4f6b5fc58d",
+    "term": "per-parameter",
+    "contexts": 22,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-709fb770a72e",
+    "term": "validation data",
+    "contexts": 22,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-a59c5d443ddb",
+    "term": "import math",
+    "contexts": 21,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-5219bf3fae8d",
+    "term": "10 classes",
+    "contexts": 19,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   }
+  ],
+  "T2_top40": [
+   {
+    "candidate_id": "CG-fe05f71fc6ba",
+    "term": "second moment",
+    "contexts": 23,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-6528c7ae4dfe",
+    "term": "3d tensor",
+    "contexts": 21,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-ffa4c97025f5",
+    "term": "230",
+    "contexts": 20,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-74fc3287cde1",
+    "term": "different models",
+    "contexts": 19,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-41d4bc5b6d48",
+    "term": "large batches",
+    "contexts": 17,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-c77b5b7b5952",
+    "term": "proper initialization",
+    "contexts": 15,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-e74352b406e7",
+    "term": "majority class",
+    "contexts": 13,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-30c2a835f7ca",
+    "term": "large learning",
+    "contexts": 12,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-3d52edf9c1f2",
+    "term": "evaluation metric",
+    "contexts": 9,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-c547c0d7df30",
+    "term": "previous step",
+    "contexts": 8,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-6a5fe2d454b9",
+    "term": "input activations",
+    "contexts": 7,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-d6246bf8c7bd",
+    "term": "true convolution",
+    "contexts": 7,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-b72f93413bec",
+    "term": "different normalization",
+    "contexts": 6,
+    "cross_vault": true,
+    "score": 1.0,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-d58dff88b362",
+    "term": "log-softmax",
+    "contexts": 4,
+    "cross_vault": true,
+    "score": 0.92,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-57117ca90d2b",
+    "term": "llm call",
+    "contexts": 42,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-ebfab091af5b",
+    "term": "1x1",
+    "contexts": 21,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-ead2d1c4459f",
+    "term": "agent memory",
+    "contexts": 12,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-455246920c86",
+    "term": "current mini-batch",
+    "contexts": 10,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-f85359d746fb",
+    "term": "human eye",
+    "contexts": 10,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-a6f4cc0b729e",
+    "term": "mamba-2's ssd framework",
+    "contexts": 10,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-b84b31b2ccde",
+    "term": "first convolution",
+    "contexts": 9,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-4b877521deed",
+    "term": "50k tokens",
+    "contexts": 8,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-e772086a7ed7",
+    "term": "random augmentations",
+    "contexts": 8,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-cb26aa1f8f6d",
+    "term": "activation derivative",
+    "contexts": 7,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-674582e99f4e",
+    "term": "tool arguments",
+    "contexts": 7,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-4abab356557f",
+    "term": "first fully",
+    "contexts": 6,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-4ee4ac4753bc",
+    "term": "first fully connected",
+    "contexts": 6,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-71fc1712d61f",
+    "term": "jpegs",
+    "contexts": 6,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-8b837a81a43e",
+    "term": "draft's",
+    "contexts": 5,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-9df256cd5956",
+    "term": "last good",
+    "contexts": 5,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-cc93453f4f84",
+    "term": "scaling laws predict",
+    "contexts": 5,
+    "cross_vault": false,
+    "score": 0.9,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-f057ac271f60",
+    "term": "unsqueeze",
+    "contexts": 40,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-3104877d98ae",
+    "term": "attention scores",
+    "contexts": 39,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-09daa86eee84",
+    "term": "parse",
+    "contexts": 35,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-5ab01bf5d927",
+    "term": "training error",
+    "contexts": 31,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-b2b72c0811a2",
+    "term": "input shape",
+    "contexts": 27,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-88da6f32f1bc",
+    "term": "196",
+    "contexts": 26,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-8c4f3aa35924",
+    "term": "human feedback",
+    "contexts": 26,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-01a85906e051",
+    "term": "smaller model",
+    "contexts": 26,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   },
+   {
+    "candidate_id": "CG-6b88a096d68c",
+    "term": "attention patterns",
+    "contexts": 25,
+    "cross_vault": true,
+    "score": 0.85,
+    "fragment_flag": false,
+    "destination": "standalone_note_candidate"
+   }
+  ],
+  "T3_top40": [
+   {
+    "candidate_id": "CG-98e0be8c0492",
+    "term": "025",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-d51ae6421b5b",
+    "term": "1-2 candidate",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-41cc5f06ae79",
+    "term": "1-2 candidate notes",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-875b9381fe52",
+    "term": "1-h1",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-47180356dba1",
+    "term": "10 channels",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-30b0d3665076",
+    "term": "10 logits",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-ec8076304f7b",
+    "term": "10 tokens",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-b281e2382f8e",
+    "term": "10-class fc",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-13b1fc3c968c",
+    "term": "10-class medical",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-f566a88458d4",
+    "term": "10-class medical dataset",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-24326c00169a",
+    "term": "100 batches",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-020fe8925a22",
+    "term": "100 dummy",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-2425a880d41a",
+    "term": "100 dummy images",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-039e930da22a",
+    "term": "100 forward",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-b0a2387cd72f",
+    "term": "100 forward passes",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-79f8ff3f4b1f",
+    "term": "100 radians",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-95bf1b3a0e92",
+    "term": "100 trees",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-48fd34a0db1e",
+    "term": "1000 documents",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-9ec32498d75d",
+    "term": "1000-class fc",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-0a1dc06db10e",
+    "term": "1000-class task",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-250c5fc5a911",
+    "term": "100352",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-b7e904fb1066",
+    "term": "128 feature",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-a77401dea39f",
+    "term": "128 feature maps",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-5f222d96d23e",
+    "term": "128-dimensional vector",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-2997b2bf244a",
+    "term": "128-dimensional vector regardless",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-87a127c47f25",
+    "term": "13 billion",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-30001ce485b1",
+    "term": "13 billion operations",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-bc81a14035b8",
+    "term": "14 kb academic",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-8d2956916258",
+    "term": "14-3",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-d6b23a97b544",
+    "term": "156 steps",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-093911ee085f",
+    "term": "16 rgb",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-5f79a54855f4",
+    "term": "16 rgb 32",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-51b665a72935",
+    "term": "18-40",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-c7109d39eb3c",
+    "term": "180 degrees",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-8d7bda03efa1",
+    "term": "1990",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-b6551860f6de",
+    "term": "1d input vector",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-e3a8b6dc73f6",
+    "term": "1d sinusoid",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-920935af619c",
+    "term": "1d sinusoid pattern",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-0804c6c3af33",
+    "term": "1d spatial",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-ab39b5d2a188",
+    "term": "1d spatial dimension",
+    "contexts": 1,
+    "cross_vault": false,
+    "score": 0.43,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   }
+  ],
+  "T4_top40": [
+   {
+    "candidate_id": "CG-a45eecf39810",
+    "term": "smith 2020",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.66,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-badf2f624dd2",
+    "term": "000 test images",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-66a85d2724c0",
+    "term": "000 training images",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-f3d2a52c9a69",
+    "term": "004",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-543000d09075",
+    "term": "1-4 bytes",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-ce71ab8f73d0",
+    "term": "10-step",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-629e59b5a32c",
+    "term": "10-step math",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-72ed4455c1e9",
+    "term": "10-step math solution",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-df8a4033e31c",
+    "term": "1000 tokens ago",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-79faa828199d",
+    "term": "1000-class output",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-59ad32ae2d84",
+    "term": "12 fine-tuning moc",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-6ca1c0596c71",
+    "term": "128 images",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-d11e24bf3870",
+    "term": "128 output channels",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-5adae3403bc6",
+    "term": "1307",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-77b40b284dad",
+    "term": "14 kb",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-811949edc1bb",
+    "term": "140gb",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-904c9beb4b08",
+    "term": "16b parameters",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-9b58015bf565",
+    "term": "1b model trained",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-7172dc74a5cd",
+    "term": "1x28x28",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-c08619f29f1c",
+    "term": "20 words",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-3a8755973eab",
+    "term": "20 words ago",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-9f6d58cf0687",
+    "term": "20-50 timesteps",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-49bcba9a75f5",
+    "term": "2000-step",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-6816f43400f1",
+    "term": "2024 papers",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-1af01f3b260c",
+    "term": "224 region",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-1168348cb5c1",
+    "term": "224x224 region",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-dabfb4ef062e",
+    "term": "226 files",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-1a50907af4ad",
+    "term": "230 file blocks",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-783281609a4d",
+    "term": "2435",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-a15991373012",
+    "term": "2470",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-f0cb7afb66e6",
+    "term": "2616",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-f2e6e3dd9478",
+    "term": "27 kb",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-debbcb2b210c",
+    "term": "29 kb",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-be67aa4e4e78",
+    "term": "3081",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-e16c29b6a5e2",
+    "term": "32x14x14",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-dcdbca6d98f9",
+    "term": "32x28x28",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-123c4273e21b",
+    "term": "3d input",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-e66e26a44e1e",
+    "term": "3e-5",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-a4c71265f5c6",
+    "term": "3rd dimension",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": true,
+    "destination": "section_candidate"
+   },
+   {
+    "candidate_id": "CG-c53367196252",
+    "term": "400 models",
+    "contexts": 2,
+    "cross_vault": false,
+    "score": 0.51,
+    "fragment_flag": false,
+    "destination": "section_candidate"
+   }
+  ]
+ },
+ "note": "fragment_flag is a deterministic containment heuristic over evidence ku-id sets; it groups likely n-gram artifacts for efficient review and never decides by itself — every candidate still receives a semantic decision through discovery-decide"
+}

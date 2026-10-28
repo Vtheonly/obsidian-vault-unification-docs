@@ -1033,9 +1033,16 @@ def validate_candidates(
 
     errors: list[str] = []
     ids = [r["candidate_id"] for r in records]
-    dupes = sorted({i for i in ids if ids.count(i) > 1})
+    # set-based duplicate detection (the ids.count(i) comprehension was
+    # O(n^2) — 60k records meant billions of comparisons); identical output
+    seen_ids: set[str] = set()
+    dupes: set[str] = set()
+    for i in ids:
+        if i in seen_ids:
+            dupes.add(i)
+        seen_ids.add(i)
     if dupes:
-        errors.append(f"duplicate candidate_id: {dupes[:5]}")
+        errors.append(f"duplicate candidate_id: {sorted(dupes)[:5]}")
 
     ku_ids: set[str] | None = None
     if ku_batches and kus_schema:
@@ -1044,9 +1051,16 @@ def validate_candidates(
             for rec in load_ku_batches(list(ku_batches), kus_schema)
         }
 
+    # precompiled validator: same fix as load_ku_batches — the schema is
+    # checked once instead of on every record (per-record check_schema
+    # dominated validation time at corpus scale)
+    validator_cls = jsonschema.validators.validator_for(schema)
+    validator_cls.check_schema(schema)
+    validator = validator_cls(schema)
+
     for rec in records:
         try:
-            jsonschema.validate(rec, schema)
+            validator.validate(rec)
         except jsonschema.ValidationError as exc:
             errors.append(
                 f"{rec.get('candidate_id', '?')}: schema violation: {exc.message}"

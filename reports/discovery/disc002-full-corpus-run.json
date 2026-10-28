@@ -1,0 +1,44 @@
+{
+ "result": {
+  "command": "discover-gaps",
+  "ok": true,
+  "errors": [],
+  "denominators": {
+   "ku_records_loaded": 27536,
+   "terms_analyzed": 557504,
+   "candidates_emitted": 60154,
+   "terms_not_emitted": {
+    "weak_single_usage": 125616,
+    "no_locatable_occurrence": 370028,
+    "defined_low_usage": 1706
+   }
+  },
+  "candidates_by_kind": {
+   "unexplained_prerequisite": 44990,
+   "fragmented_derivation": 1796,
+   "concept_sighting": 6856,
+   "rare_essential": 6512
+  },
+  "candidates_by_status": {
+   "provisional_candidate": 53298,
+   "already_covered": 6856
+  },
+  "coverage": {
+   "vaults": [
+    {
+     "vault": "ai-course",
+     "processed_files": 276,
+     "total_files": 276
+    },
+    {
+     "vault": "master-ai",
+     "processed_files": 333,
+     "total_files": 333
+    }
+   ],
+   "coverage_complete": true
+  },
+  "coverage_gate_note": "gap candidates carry status provisional_candidate; confirmed_gap is reachable ONLY through reviewed decisions AND complete coverage (enforced by discovery-decide and discovery-validate)",
+  "determinism_note": "candidate ids are content-derived; records sorted; no timestamps in candidate records; identical inputs regenerate byte-identical output"
+ }
+}

@@ -163,3 +163,34 @@ re-run + full suite re-run (248/248).
 `validate_ku_file`), `src/vault_unification/kuregistry.py` (CHECK
 constraints + validate rules), `tests/test_kuregistry.py`,
 `tests/test_cli.py`.
+
+### ADR-0010 — Full-corpus discovery candidates: derived artifact, not a committed blob
+**Status:** accepted (2026-10-28, DISC-002 session)
+**Context:** the corpus-wide `discover-gaps` run emits 60,154 candidate
+records (269,220,219 bytes) — 1.6x the size of the entire repository at
+HEAD 4ae8125 (172MB). Committing the monolith would double the repo, and
+the spec (docs/EMERGENT_CONCEPT_DISCOVERY.md) expects discovery re-runs as
+review proceeds, each producing another 269MB blob.
+**Options considered:** (1) commit the monolith; (2) shard it into
+review-sized committed chunks; (3) treat it as a derived, deterministically
+regenerable artifact (the ADR-0007 registry pattern) and commit only the
+decision records + reports.
+**Decision:** option 3. `state/concept-candidates/002-disc002-full-corpus.jsonl`
+is git-ignored. The committed source of truth for review state is the
+decisions JSONL (`002a-disc002-decisions-r*.jsonl`, applied via
+`discovery-decide` with an explicit recorded `--decided-utc`); the
+candidates file regenerates byte-identically from the committed KU batches
++ manifests (verified: double-run sha256
+88a538eb3dc70e99f53093eaf5e55eaa2baa38461ea660b97e441f1fb0952bf8, both
+runs, 547.4s / 544.1s, peak RSS 1.95GB).
+**Rationale:** replay is exactly `discover-gaps` (deterministic, no
+timestamps in candidate records) followed by `discovery-decide` with the
+recorded timestamp; both commands are tested and their reports are
+committed. Rejection/acceptance of a candidate never affects KU
+dispositions, so no knowledge can be lost by a regeneration.
+**Impact / migration:** the partial-corpus file
+`001-disc001-partial-corpus.jsonl` (28MB) remains committed (historical
+evidence of the coverage-gated run); no migration needed. The
+`state/concept-candidates/` review outputs (decisions) stay committed.
+**Affected artifacts:** `.gitignore`, `reports/discovery/disc002-*`,
+`scripts/disc002_*.py`, `docs/agent-handoff/next-agent.md`.
