@@ -3,95 +3,79 @@
 ## Project state
 
 - Current milestone: DISC-002 corpus-wide concept discovery IN PROGRESS —
-  TWO PARALLEL SESSIONS MERGED on main (2026-10-28). The discovery run
-  itself is complete and verified by both sessions independently; the
-  multi-batch semantic review of the candidate set has started and must
-  continue. After DISC-002: dossier extension, then disposition assignment,
-  then GATED synthesis.
+  session 3 (post-merge) completed a full review tranche (batch 3) and the
+  mechanical stage of the dossier extension. After DISC-002: per-domain
+  classification of the extension overlap pairs, then disposition
+  assignment, then GATED synthesis.
 - Completed and verified: BOOT-000..004, EXT-001..010, REBASE-000, AUDIT-011,
-  FRAME-001, DISC-001, FRAME-002, REGEN-001; DISC-002 session A
-  (3d2ff8b..e2914e9) + session B (merged via the merge commit).
-- Framework version 0.9.0; 24 capabilities (CAP-023 `vu discovery-index` new).
+  FRAME-001, DISC-001, FRAME-002, REGEN-001; DISC-002 sessions A+B (merged)
+  and session 3 (this checkpoint).
+- Framework version 0.9.0; 24 capabilities.
 - Read FIRST (mandatory startup battery): AGENTS.md -> docs/* ->
   state/task-queue.jsonl -> state/current-state.json -> this file ->
   reports/rebaseline/iteration-retrospective.md (lessons A-1/A-2: never mark
   a task completed before its commit exists; always re-run the suite after
   the last mutation).
 
-## The two-session merge (what happened, evidence-backed)
+## Session 3 summary (evidence-backed)
 
-Two sessions worked DISC-002 in parallel from the same REGEN-001 base
-(4ae8125) and both pushed/pushed-at main:
+- Baseline verified: 662/662 tests; both vaults byte-identical to manifests at
+  session start AND after all operations.
+- ADR-0010 replay verified end-to-end: regenerated candidates are
+  byte-identical (sha256 88a538eb...), r1+r2+batch2 replayed with the recorded
+  --decided-utc values, statuses matched the committed index exactly
+  (52032/6907/1212/2/1), discovery-validate green.
+- Batch-3 review tranche: 60 highest-signal unreviewed provisional candidates
+  (of 5,054 matching the signal rule), individually reviewed with a 44-term
+  definitional-treatment coverage probe
+  (scripts/disc002_batch3_probe.py) and an independent subagent cross-check of
+  the 16 judgment calls. The subagent disagreed on 3 (input shape, scaling
+  laws predict, training diverges); the orchestrator re-verified each cited
+  treatment and accepted all 3 revisions. Result: 38 evidence-cited covers +
+  22 noise rejects. No new confirmed gaps (2 remain: second moment,
+  bradley-terry).
+- Fragment-boundary rule now recorded in the decision file: fragments that
+  LEXICALLY name a covered parent concept -> cover; synonymy-only parents ->
+  reject. This resolves a recurring review ambiguity consistently.
+- Dossier-extension mechanical stage COMPLETE for all six domains:
+  vu overlap-candidates over the 59 regen batches with each domain's term map
+  (reports/dossier-ext/disc002-dext-summary.json): 69,185 candidate pairs;
+  1,660-5,524 distinct new KUs per domain. Pairs live in scratch,
+  regenerable ~40s/domain via the recorded commands.
+- Current candidate set: 51,972 provisional / 6,945 already_covered /
+  1,234 rejected / 2 confirmed_gap / 1 deferred.
 
-- **Session A** (origin/main first): corpus-scale hardening (byte-identical,
-  3.3x), full-corpus discovery (60,154 candidates, coverage COMPLETE,
-  double-run byte-identical, peak RSS 1.95GB), discovery-validate scale fix
-  (F-0015), background-reap finding (F-0016), ADR-0010 (candidates monolith
-  git-ignored, replayable), deterministic triage, review rounds r1 (1,153
-  class-based rejects, subagent-verified) + r2 (44 individual decisions:
-  FIRST 2 CONFIRMED GAPS — second moment, bradley-terry; 4 defers; 7
-  covers; 31 rejects).
-- **Session B** (this merge): F-0017 performance fix (single reused
-  validators + inverted relationship matching; ~291s per full run vs ~547s,
-  byte-identical output, equivalence pinned by a kept-verbatim reference
-  oracle + 48 template-family tests + a 110,799-pair corpus differential),
-  CAP-023 `vu discovery-index`, independent 114-candidate review (63 noise
-  rejects, 51 evidence-cited covers), dossier reconciliation gap report.
+## Next task: DISC-002 continuation
 
-Merge resolution (recorded in the merge commit and checkpoint):
-- Kept session B's discovery implementation (faster; same byte output —
-  both sessions proved equivalence independently).
-- Adopted session A's validate-scale fix, ADR-0010, triage tooling, and
-  r1/r2 decision files.
-- Extended the decision state machine: `cover` is now valid FROM
-  `rejected`/`deferred` (EMERGENT_CONCEPT_DISCOVERY requires revisable
-  decisions with audit trail; the history keeps BOTH entries).
-- Reconciled the overlapping decisions: 28 agreements dropped as redundant;
-  12 of session A's class-based rejects were reversed to `cover` with
-  file:line evidence (their r2 had already found this false-positive class:
-  "paraphrased-definition" covers); 3 defers superseded by evidence-cited
-  covers; the 2 confirm_gap-vs-cover conflicts (second moment, bradley-terry)
-  resolved as `revise` — the confirmed_gap STANDS (conservative) and session
-  B's coverage evidence is recorded in the history for the synthesis
-  planner (the residual gap is coherent DERIVATION treatment, not total
-  absence).
-- The merged decision chain was REPLAYED CLEAN on the merged tree: fresh
-  regeneration (double-run byte-identical 291.7s/286.7s) -> r1 -> r2 ->
-  batch2; 0 errors; discovery-validate green (60,154 records).
-
-## Current candidate-set state (60,154 records, validated)
-
-- 52,032 provisional_candidate (review continues in bounded tranches)
-- 6,907 already_covered (6,856 tool sightings + 51 reviewed covers)
-- 1,212 rejected (class-based noise + individual rejects)
-- 2 confirmed_gap: **second moment** (moment-estimation prerequisite),
-  **bradley-terry** (preference-model math fragmented) — both carry revise
-  entries with the corpus coverage citations
-- 1 deferred (ssd framework family)
-- Replay recipe (ADR-0010): `vu discover-gaps` (all 70 batches, both
-  manifests — exact args in reports/discovery/disc002-full-corpus-run.json
-  report_meta.args) then `vu discovery-decide` r1 (--decided-utc
-  2026-10-28T00:45:00Z), r2 (2026-10-28T01:30:00Z), batch2
-  (2026-10-28T02:30:00Z), then `vu discovery-index`.
-
-## Next task: DISC-002 continuation (review tranches + dossier extension)
-
-1. **Continue the semantic review in bounded tranches.** 52,032 provisional
-   remain. Use session A's tooling (scripts/disc002_review_brief.py,
-   disc002_triage.json classes, family strategy) + session B's
-   scripts/disc002_coverage_probe.py (word-boundary definitional-treatment
-   probe) and the noise classes both sessions converged on (numeric
-   literals, code/import/def fragments, citation fragments, generic prose).
-   Learn from the merge: class-based rejection over-rejects real concepts —
-   individual evidence review with file:line citations is the standard;
-   confirmed gaps are RARE (2 in ~1,400 reviewed) — look for concepts used
-   in dependency position with NO definitional treatment anywhere.
-2. **Dossier extension** per reports/discovery/disc002-dossier-
-   reconciliation-gap.json next_action (overlap-candidates + classification
-   discipline; 27 decisions touch dossier domains).
+1. **Continue the semantic review in bounded tranches** (51,972 provisional;
+   4,994 more match the signal rule). Reuse scripts/disc002_batch3_tranche.py
+   (selection + brief), scripts/disc002_batch3_probe.py (coverage probe —
+   edit TERMS), and the batch-3 decision-file pattern
+   (scripts/disc002_batch3_decisions.py). Standard: individual evidence review
+   with file:line citations; subagent cross-check of judgment calls; confirmed
+   gaps are RARE — look for concepts used in dependency position with NO
+   definitional treatment anywhere.
+2. **Dossier extension classification** (per domain, bounded batches):
+   review the overlap candidate pairs in scratch (regenerate via the commands
+   in reports/dossier-ext/disc002-dext-<domain>-overlap-run.json if needed),
+   classify with dossier discipline (new-KU side must have real domain
+   participation, not a broad-term hit), extend the domain's
+   state/classifications/ file, regenerate dossiers with the ext006 rule set,
+   and keep --check byte-identity for the six committed dossiers until their
+   extension lands as a new version. NO bulk absorption of term matches.
 3. **Then disposition assignment** (Unaccounted blocks release) and GATED
    synthesis: check-prompt -> generation -> lint-artifacts -> assess-quality
    -> quality-drift -> quality-gate -> repair loop per batch.
+
+## Replay recipe (ADR-0010, now four decide rounds)
+
+`vu discover-gaps` over all 70 batches (exact args in
+reports/discovery/disc002-full-corpus-run.json report_meta.args; ~5 min,
+fits one tool call) then `vu discovery-decide` r1 (--decided-utc
+2026-10-28T00:45:00Z), r2 (01:30:00Z), batch2 (02:30:00Z), batch3
+(2026-10-28T05:30:00Z), then `vu discovery-index`. Expected result:
+60,154 records; 51,972 provisional / 6,945 already_covered / 1,234 rejected /
+2 confirmed_gap / 1 deferred.
 
 ## Standing rules (unchanged, enforced)
 
@@ -105,6 +89,7 @@ Merge resolution (recorded in the merge commit and checkpoint):
   commits, MERGE (do not rebase away history), reconcile decisions through
   the audit trail, and re-verify the chain before pushing again.
 - F-0016: background processes are reaped between tool calls — long runs
-  must fit one tool call (< 10 min); corpus discovery now takes ~5 min.
+  must fit one tool call (< 10 min); corpus discovery ~5 min; a six-domain
+  overlap-candidates sweep takes ~4 min total.
 - F-0014 (open): two ai-course files end with 'END OF FILE / File Name'
   marker headings — synthesis must not copy them as knowledge headings.

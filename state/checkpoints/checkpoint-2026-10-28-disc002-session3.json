@@ -1,0 +1,70 @@
+{
+ "checkpoint_id": "checkpoint-2026-10-28-disc002-session3",
+ "recorded_utc": "2026-10-28",
+ "task_id": "DISC-002",
+ "task_status": "in_progress",
+ "stage": "disc002-review-batch3-complete + dossier-extension-mechanical-complete",
+ "baseline_verification": {
+  "tests": "662/662 passed (python3 -m pytest tests/ -q, before any mutation)",
+  "immutability": "both vaults byte-identical to committed manifests at session start AND after all operations (vu inventory hash checks)",
+  "git_state": "HEAD == origin/main == 2804dcb at session start, clean tree"
+ },
+ "adr0010_replay_verification": {
+  "regeneration": "scripts/disc002_run_full.py: 281.7s, 60154 candidates, sha256 88a538eb3dc70e99... (== recorded double-run hash from both merged sessions)",
+  "decision_chain_replay": "r1 (--decided-utc 2026-10-28T00:45:00Z) -> r2 (01:30:00Z) -> batch2 (02:30:00Z)",
+  "statuses_matched_committed_index": {
+   "provisional_candidate": 52032,
+   "already_covered": 6907,
+   "rejected": 1212,
+   "confirmed_gap": 2,
+   "deferred": 1
+  },
+  "validate": "valid: true; 60154 records; 0 errors (reports/discovery/sess3-validate-replay.json)"
+ },
+ "batch3_review": {
+  "tranche_selection": "scripts/disc002_batch3_tranche.py: fragmented_derivation OR score>=0.8 OR contexts>=10, score-desc, excluding reviewed; 60 of 5054 matching (52032 total unreviewed provisional)",
+  "method": "individual evidence review + scripts/disc002_batch3_probe.py (44-term definitional-treatment coverage probe) + independent subagent cross-check of 16 judgment calls",
+  "subagent_disagreements_resolved": [
+   "input shape: defer->cover (verified '## Shape Conventions in Deep Learning' master-ai Tensors and Broadcasting.md:29 + '### How Tensor Shapes Flow Through Layers' ai-course Demystifying Tensors.md:106)",
+   "scaling laws predict: reject->cover (fragment lexically names covered concept; definition sentence at Pretraining Objectives and Scaling Laws.md:114-116)",
+   "training diverges: reject->cover (named failure mode; Loss Spikes and Stability.md aliases Loss Divergence/NaN Loss + Adam/LR-schedule symptom tables)"
+  ],
+  "decisions": "38 cover (evidence-cited) + 22 reject (prose-fragment, generic-vocabulary, code-fragment, citation-fragment, example-specific, numeric)",
+  "fragment_boundary_rule_recorded": "fragments that lexically name a covered parent concept -> cover (gradient-accumulation precedent); synonymy-only recoverable parents -> reject (see token-attends decision)",
+  "decisions_file": "state/concept-candidates/002-disc002-decisions-batch3.jsonl (60 records)",
+  "decided_utc": "2026-10-28T05:30:00Z",
+  "apply_report": "reports/discovery/sess3-decide-batch3.json",
+  "post_statuses": {
+   "provisional_candidate": 51972,
+   "already_covered": 6945,
+   "rejected": 1234,
+   "confirmed_gap": 2,
+   "deferred": 1
+  },
+  "post_validate": "valid: true; 60154 records; 0 errors (reports/discovery/sess3-validate-post-batch3.json)",
+  "index_diff_cross_check": "git diff on 002-disc002-full-corpus.index.jsonl == exactly the 60 tranche records (22 rejected, 38 already_covered)"
+ },
+ "dossier_extension_mechanical": {
+  "summary_report": "reports/dossier-ext/disc002-dext-summary.json",
+  "runs": "vu overlap-candidates over 59 regen batches (cross-vault) per domain with committed term maps",
+  "per_domain": {
+   "regression": "9211 pairs / 44 topics / 2449 new KUs",
+   "tree": "10833 pairs / 63 topics / 3247 new KUs",
+   "evaluation": "10603 pairs / 71 topics / 2317 new KUs",
+   "clustering": "6672 pairs / 42 topics / 1660 new KUs",
+   "generalization": "11275 pairs / 59 topics / 3570 new KUs",
+   "training-stability": "20591 pairs / 90 topics / 5524 new KUs"
+  },
+  "pairs_location": "scratch (regenerable ~40s/domain; exact commands recorded in each run report)",
+  "next": "per-domain semantic classification in bounded batches, then extend state/classifications/ and regenerate dossiers via scripts/ext006_dossiers.py --check discipline"
+ },
+ "source_immutability": {
+  "ai-course": "276/276 unchanged (manifest hash match, session start + end)",
+  "master-ai": "333/333 unchanged (manifest hash match, session start + end)"
+ },
+ "next": [
+  "continue review tranches: 51972 provisional remain; 4994 more match the signal rule (scripts/disc002_batch3_tranche.py pattern; batch4+)",
+  "dossier extension: semantic classification of the six overlap-pair sets (bounded per-domain batches; discipline: no bulk absorption of term matches)",
+  "then disposition assignment (Unaccounted blocks release) before GATED synthesis"
+ ]
+}

@@ -66,8 +66,8 @@
   "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)"
  },
  "knowledge_registry_initialized": true,
- "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-28-disc002-progress.json",
- "notes": "DISC-002 in progress; TWO parallel sessions merged on main (2026-10-28). Both independently ran the full-corpus discovery over all 70 batches (60,154 candidates each, byte-identical, coverage COMPLETE 609/609) and independently fixed the same corpus-scale performance root-cause class (F-0015 validate-scale by session A; F-0017 loader+term-loop by session B, kept in the merge: ~291s/run). Merged decision chain replayed clean: r1 (1,153 class rejects) + r2 (44: 2 CONFIRMED GAPS second moment + bradley-terry, 4 defers, 7 covers, 31 rejects) + batch2 (86 reconciled: 40 rejects, 44 evidence-cited covers incl. 12 auditable reversals of class-based rejects, 2 revises). FINAL STATUS: 52,032 provisional / 6,907 already_covered / 1,212 rejected / 2 confirmed_gap / 1 deferred; validate green; index regenerated. CAP-023 vu discovery-index added (framework 0.9.0). ADR-0010: candidates monolith git-ignored, replayable from committed batches + decision files with recorded --decided-utc (r1 00:45:00Z, r2 01:30:00Z, batch2 02:30:00Z). NEXT: continue review tranches, dossier extension, then disposition assignment before gated synthesis.",
+ "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-28-disc002-session3.json",
+ "notes": "DISC-002 in progress; session 3 (post-merge) completed: baseline verified (662/662 tests, vaults immutable start+end); ADR-0010 replay verified (regeneration sha256 88a538eb... byte-identical, decision chain r1+r2+batch2 replayed, statuses matched 52032/6907/1212/2/1, validate green); batch-3 review tranche: 60 highest-signal unreviewed provisional candidates individually reviewed with coverage probes + subagent cross-check (3 disagreements resolved by orchestrator re-verification), 38 evidence-cited covers + 22 noise rejects applied (--decided-utc 2026-10-28T05:30:00Z), validate green, index regenerated and diff-verified; dossier-extension mechanical stage complete: six-domain overlap-candidates runs (69,185 pairs; reports/dossier-ext/disc002-dext-summary.json). CURRENT: 51972 provisional / 6945 already_covered / 1234 rejected / 2 confirmed_gap (second moment, bradley-terry) / 1 deferred (ssd framework). Replay recipe now includes batch3 (--decided-utc 05:30:00Z after batch2). NEXT: continue review tranches; per-domain semantic classification of the dossier-extension overlap pairs (no bulk absorption); then disposition assignment before gated synthesis.",
  "output_synthesis_started": false,
  "phase_zero_rebaseline": {
   "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
@@ -81,21 +81,24 @@
    "decisions_chain": [
     "state/concept-candidates/002a-disc002-decisions-r1.jsonl (1153)",
     "state/concept-candidates/002b-disc002-decisions-r2.jsonl (44)",
-    "state/concept-candidates/002-disc002-decisions-batch2.jsonl (86)"
+    "state/concept-candidates/002-disc002-decisions-batch2.jsonl (86)",
+    "state/concept-candidates/002-disc002-decisions-batch3.jsonl (60)"
    ],
+   "dossier_ext_mechanical": "reports/dossier-ext/disc002-dext-summary.json (6 domains, 69185 candidate pairs, classification pending)",
    "dossier_gap": "reports/discovery/disc002-dossier-reconciliation-gap.json",
    "equivalence": "reports/discovery/disc002-f0015-equivalence.json",
    "final_statuses": {
-    "already_covered": 6907,
+    "already_covered": 6945,
     "confirmed_gap": 2,
     "deferred": 1,
-    "provisional_candidate": 52032,
-    "rejected": 1212
+    "provisional_candidate": 51972,
+    "rejected": 1234
    },
    "full_file": "state/concept-candidates/002-disc002-full-corpus.jsonl (git-ignored, ADR-0010 replayable)",
    "index": "state/concept-candidates/002-disc002-full-corpus.index.jsonl (committed)",
    "replay_decided_utc": {
     "batch2": "2026-10-28T02:30:00Z",
+    "batch3": "2026-10-28T05:30:00Z",
     "r1": "2026-10-28T00:45:00Z",
     "r2": "2026-10-28T01:30:00Z"
    },
@@ -173,7 +176,7 @@
   }
  ],
  "source_vaults_located": true,
- "stage": "disc002-review-in-progress-two-sessions-merged",
+ "stage": "disc002-review-batch3-done-dossier-ext-mechanical-done",
  "status": "in_progress",
  "verification_pilot_evidence": {
   "defect_classes": 12,
