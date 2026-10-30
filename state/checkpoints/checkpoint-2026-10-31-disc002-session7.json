@@ -1,0 +1,54 @@
+{
+ "checkpoint_id": "checkpoint-2026-10-31-disc002-session7",
+ "recorded_utc": "2026-10-31",
+ "task_id": "DISC-002",
+ "task_status": "in_progress",
+ "stage": "disc002-review-batch7-complete (seven-round replay re-verification + batch-7 tranche with a new confirmed gap)",
+ "baseline_verification": {
+  "tests": "663/663 passed (python3 -m pytest tests/ -q --json-report, before any mutation; reports/discovery/disc002-session7-baseline-pytest.json)",
+  "immutability_start": "both vaults byte-identical to committed manifests at session start (reports/discovery/disc002-session7-manifest-{ai-course,master-ai}.json; 0 added/removed/changed)",
+  "immutability_end": "both vaults byte-identical after all operations (reports/discovery/disc002-session7-manifest-end-{ai-course,master-ai}.json; 0 added/removed/changed)",
+  "git_state": "HEAD == origin/main == bfea36e at session start, clean tree (fresh clone)"
+ },
+ "adr0010_replay_verification": {
+  "driver": "scripts/disc002_batch7_replay.py (repo-relative; extends the batch-6 replay with the batch-6 decide round — seven rounds total)",
+  "regeneration": "vu discover-gaps over all 70 batches (recorded args from reports/discovery/disc002-full-corpus-run.json): 60,154 candidates (reports/discovery/disc002-s7-replay-full.json)",
+  "decision_chain_replay": "r1 (--decided-utc 2026-10-28T00:45:00Z) -> r2 (01:30:00Z) -> batch2 (02:30:00Z) -> batch3 (2026-10-28T05:30:00Z) -> batch4 (2026-10-30T13:05:00Z) -> batch5 (15:30:00Z) -> batch6 (16:30:00Z) on the CLI-regenerated candidates (reports/discovery/disc002-s7-replay-{r1,r2,batch2,batch3,batch4,batch5,batch6}.json)",
+  "index_content_identical_to_committed": true,
+  "content_comparison_method": "parsed-record equality (json.loads per line), per F-0019 — raw sha256 not compared",
+  "validate": "valid: true; 60,154 records; 0 errors (reports/discovery/disc002-s7-replay-validate.json)"
+ },
+ "batch7_review": {
+  "tranche_selection": "scripts/disc002_batch7_tranche.py (repo-relative; reads scratch/disc002-s7-batch6.jsonl): fragmented_derivation OR score>=0.8 OR contexts>=10, score-desc, excluding reviewed; 60 of 4,814 matching (51,792 unreviewed provisional; brief + pool stats + selected.json in /home/z/my-project/scratch/disc002-batch7-*)",
+  "tranche_character": "mixed: generic English vocabulary and prose fragments plus a substantive technical minority (attention variants gqa/mqa/mla, dpo derivation, bfloat16, deepseek-r1, RAG ingestion, weight updates, low-level features, tuple, pipeline overview, memory backends, audit log, async/await)",
+  "method": "individual evidence review of all 60 brief blocks + scripts/disc002_batch7_probe.py (58-term definitional-treatment coverage probe, results /home/z/my-project/scratch/disc002-batch7-probe.json) + targeted citation verification (scripts/disc002_batch7_verify.py, 58 locator checks, all OK after 3 fixes: rag ingest step, tuple definition bullet, PCA path 03.4->03.8) + independent subagent cross-check of 27 judgment calls (15 covers + 1 confirm_gap + 1 merge + 10 borderline rejects)",
+  "subagent_cross_check": "27/27 AGREE; corrections incorporated: (1) val citations upgraded from mermaid node labels ('Validation Phase' :271, 'Train vs Val Loss' :667 are diagram labels inside code fences, NOT headings) to real headings in ai-course '01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/08. Foundations of Machine Learning (Summary).md' ('## 2. Validation Set (15%)' :267, '### Why Validation Matters' :293, '# The Validation Step (Deep Dive)' :366, '## What Is the Validation Step?' :368) with chapter-level parent paths; (2) ingestion citation upgraded from the weak worked-example step :420 to the definitional '### Indexing (offline, batch)' :54-60 of master-ai '17 - RAG/Ingestion and Retrieval/01 - RAG Pipeline Overview.md'; (3) deepseek-r1 2025 cover strengthened with the dedicated paper note master-ai '26 - Papers/2024-2026/12 - DeepSeek-R1 2025.md' (:8). Subagent also flagged (not cited, no action needed) that the GQA note's :187/:192 '# Llama 3 8B...' / '# DeepSeek-V2...' are Python comments inside the worked-example code block — the false-heading caution class from session 6",
+  "decisions": "15 cover (evidence-cited: gqa mqa, gqa mqa mla, mqa mla, dpo derivation, bfloat16, deepseek-r1 2025, ingestion, weight updates, low-level features, tuple, pipeline overview, rag pipeline overview, memory backends, vector memory backends, audit log) + 1 confirm_gap (async def) + 1 merge (await -> CG-00366e34ee82) + 43 reject (generic-vocabulary/gerund/participle/adverb 28, homonym 5 [angle, upstream, light, operating, reset], code-identifier/abbreviation 2 [val, ref], quantifier phrase 4 [one token, per step, per-request + centered as participle], prose-fragment 4 [10 model, difficulty, natural language + misc]) — counted by rationale stem",
+  "new_confirmed_gap": {
+   "term": "async def",
+   "candidate_id": "CG-00366e34ee82",
+   "evidence": "Python's async/await execution model (coroutines, event loop, cooperative scheduling, asyncio.to_thread) used in implementation position in 17 master-ai files ('async def' 53 occurrences; 'await' 77 in 20 files: MCP 19-x, agent frameworks 25-x, capstones 27-x 08/15/16/18/23, memory 18-x, infra 20-x, production 22-x); ZERO definitional treatment corpus-wide: ai-course (whose Python curriculum 02 - Python and Data Tooling teaches variables through iterators/generators) contains zero occurrences of async/await/asyncio/coroutine/event loop; master-ai only warns operationally ('27 - Projects/Capstones/08 - Build an MCP Server.md:296,299,351'; '19 - MCP/Components/02 - MCP Components.md:329'; '16 - Multi-Agent Systems/Enterprise/04 - Enterprise Multi-Agent Architectures.md:222'); the capstones require writing async code (dependency position established); the absence claim survived a deliberate subagent attempt to disprove it",
+   "destination": "dedicated section in the unified vault's Python-tooling/MCP-implementation treatment",
+   "precedent": "third confirmed gap overall, after second moment and bradley-terry (r2)"
+  },
+  "merge": "await (CG-e84d593fa909) merged into async def (CG-00366e34ee82): same concept, 5 of 6 evidence files shared; the decide engine recorded an absorb entry on the target (decisions_applied 1584 = 1523 + 60 + 1 absorb)",
+  "decisions_file": "state/concept-candidates/002-disc002-decisions-batch7.jsonl (60 records, decision ids D-DISC002-B7-0001..0060)",
+  "decided_utc": "2026-10-31T00:30:00Z",
+  "apply_report": "reports/discovery/disc002-decide-batch7.json (decisions_applied: 1584 cumulative chain)",
+  "post_validate": "valid: true; 60,154 records; 0 errors (reports/discovery/disc002-validate-batch7.json)",
+  "post_index": "reports/discovery/disc002-index-batch7.json (60,154 records indexed; committed index regenerated)",
+  "post_statuses": {
+   "provisional_candidate": 51732,
+   "already_covered": 7021,
+   "rejected": 1396,
+   "confirmed_gap": 3,
+   "merged": 1,
+   "deferred": 1
+  },
+  "delta_verification": "exact: -60 provisional, +15 already_covered, +43 rejected, +1 confirmed_gap (async def), +1 merged (await); deferred unchanged"
+ },
+ "next_task": {
+  "summary": "DISC-002 continuation: batch-8+ review tranches (51,732 provisional; ~4,754 more match the signal rule), then per-domain semantic classification of the 69,185 dossier-extension overlap pairs, then disposition assignment, then GATED synthesis",
+  "resume": "docs/agent-handoff/next-agent.md"
+ }
+}
