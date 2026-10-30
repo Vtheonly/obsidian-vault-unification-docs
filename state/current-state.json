@@ -66,8 +66,8 @@
   "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)"
  },
  "knowledge_registry_initialized": true,
- "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-28-disc002-session3.json",
- "notes": "DISC-002 in progress; session 3 (post-merge) completed: baseline verified (662/662 tests, vaults immutable start+end); ADR-0010 replay verified (regeneration sha256 88a538eb... byte-identical, decision chain r1+r2+batch2 replayed, statuses matched 52032/6907/1212/2/1, validate green); batch-3 review tranche: 60 highest-signal unreviewed provisional candidates individually reviewed with coverage probes + subagent cross-check (3 disagreements resolved by orchestrator re-verification), 38 evidence-cited covers + 22 noise rejects applied (--decided-utc 2026-10-28T05:30:00Z), validate green, index regenerated and diff-verified; dossier-extension mechanical stage complete: six-domain overlap-candidates runs (69,185 pairs; reports/dossier-ext/disc002-dext-summary.json). CURRENT: 51972 provisional / 6945 already_covered / 1234 rejected / 2 confirmed_gap (second moment, bradley-terry) / 1 deferred (ssd framework). Replay recipe now includes batch3 (--decided-utc 05:30:00Z after batch2). NEXT: continue review tranches; per-domain semantic classification of the dossier-extension overlap pairs (no bulk absorption); then disposition assignment before gated synthesis.",
+ "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-30-disc002-session4.json",
+ "notes": "DISC-002 in progress; session 4 (fresh clone) verified the full baseline: 662/662 tests, both vaults byte-identical to manifests at start AND end, 23 implemented-and-tested capabilities + 1 planned, and the ADR-0010 replay end-to-end (CLI-regenerated candidates + r1/r2/batch2/batch3 decision-chain replay reproduced the committed index content-identically; writer-divergence caveat F-0019 recorded). Batch-4 review tranche: 60 highest-signal unreviewed provisional candidates individually reviewed with a 51-term definitional-treatment coverage probe + targeted corpus verification for boundary cases + independent subagent cross-check (14 judgment calls, 14/14 AGREE, 4 citation corrections incorporated). Decisions: 36 evidence-cited covers + 24 noise rejects applied (--decided-utc 2026-10-30T13:05:00Z), validate green, index regenerated and delta-verified. No new confirmed gaps (2 remain: second moment, bradley-terry). CURRENT: 51912 provisional / 6981 already_covered / 1258 rejected / 2 confirmed_gap / 1 deferred (ssd framework). Findings F-0018 (hardcoded sandbox paths in old helper scripts) and F-0019 (writer-specific ADR-0010 sha256) recorded. README repository-status paragraph refreshed to this verified state. NEXT: batch-5+ review tranches (~4,934 still match the signal rule); per-domain semantic classification of the dossier-extension overlap pairs (no bulk absorption); then disposition assignment before gated synthesis.",
  "output_synthesis_started": false,
  "phase_zero_rebaseline": {
   "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
@@ -82,32 +82,36 @@
     "state/concept-candidates/002a-disc002-decisions-r1.jsonl (1153)",
     "state/concept-candidates/002b-disc002-decisions-r2.jsonl (44)",
     "state/concept-candidates/002-disc002-decisions-batch2.jsonl (86)",
-    "state/concept-candidates/002-disc002-decisions-batch3.jsonl (60)"
+    "state/concept-candidates/002-disc002-decisions-batch3.jsonl (60)",
+    "state/concept-candidates/002-disc002-decisions-batch4.jsonl (60)"
    ],
    "dossier_ext_mechanical": "reports/dossier-ext/disc002-dext-summary.json (6 domains, 69185 candidate pairs, classification pending)",
    "dossier_gap": "reports/discovery/disc002-dossier-reconciliation-gap.json",
    "equivalence": "reports/discovery/disc002-f0015-equivalence.json",
    "final_statuses": {
-    "already_covered": 6945,
+    "already_covered": 6981,
     "confirmed_gap": 2,
     "deferred": 1,
-    "provisional_candidate": 51972,
-    "rejected": 1234
+    "provisional_candidate": 51912,
+    "rejected": 1258
    },
    "full_file": "state/concept-candidates/002-disc002-full-corpus.jsonl (git-ignored, ADR-0010 replayable)",
    "index": "state/concept-candidates/002-disc002-full-corpus.index.jsonl (committed)",
    "replay_decided_utc": {
+    "r1": "2026-10-28T00:45:00Z",
+    "r2": "2026-10-28T01:30:00Z",
     "batch2": "2026-10-28T02:30:00Z",
     "batch3": "2026-10-28T05:30:00Z",
-    "r1": "2026-10-28T00:45:00Z",
-    "r2": "2026-10-28T01:30:00Z"
+    "batch4": "2026-10-30T13:05:00Z"
    },
    "sessions_merged": [
     "A: 3d2ff8b..e2914e9",
-    "B: merge commit"
+    "B: merge commit",
+    "session 4: fresh-clone verification + batch-4 tranche (f83125a -> this session)"
    ],
    "task": "DISC-002",
-   "validation": "reports/discovery/disc002-validate-merged.json (60,154 records, 0 errors)"
+   "validation": "reports/discovery/disc002-validate-merged.json (60,154 records, 0 errors)",
+   "replay_writer_note": "recorded 88a538eb sha256 is script-writer-specific (ensure_ascii=False); CLI replay is byte-different but content-identical — compare parsed content (F-0019)"
   },
   "discovery_full_corpus": {
    "candidates": 60154,
@@ -176,7 +180,7 @@
   }
  ],
  "source_vaults_located": true,
- "stage": "disc002-review-batch3-done-dossier-ext-mechanical-done",
+ "stage": "disc002-review-batch4-done",
  "status": "in_progress",
  "verification_pilot_evidence": {
   "defect_classes": 12,

@@ -1,0 +1,55 @@
+{
+ "checkpoint_id": "checkpoint-2026-10-30-disc002-session4",
+ "recorded_utc": "2026-10-30",
+ "task_id": "DISC-002",
+ "task_status": "in_progress",
+ "stage": "disc002-review-batch4-complete (fresh-clone verification + batch-4 tranche)",
+ "baseline_verification": {
+  "tests": "662/662 passed (python3 -m pytest tests/ -q, before any mutation; reports/discovery/disc002-session4-baseline-pytest.json)",
+  "selftest": "vu selftest ok",
+  "capabilities": "23 implemented-and-tested + 1 planned (vu capabilities --verify; reports/discovery/disc002-session4-capabilities-verified.json)",
+  "immutability": "both vaults byte-identical to committed manifests at session start AND after all operations (reports/discovery/disc002-session4-manifest-*.json + -end-*.json; 0 added/removed/changed in all four checks)",
+  "git_state": "HEAD == origin/main == f83125a at session start, clean tree"
+ },
+ "adr0010_replay_verification": {
+  "regeneration": "vu discover-gaps over all 70 batches (recorded args): 60,154 candidates in ~282 s; sha256 f080193881112c2709637ae68cbe71b4cf2817f0563a047f536248d84b2154e6",
+  "writer_divergence_note": "recorded 88a538eb... hash belongs to the ensure_ascii=False script writer; the CLI writer (ensure_ascii=True) produces byte-different, content-identical output (F-0019)",
+  "decision_chain_replay": "r1 (--decided-utc 2026-10-28T00:45:00Z) -> r2 (01:30:00Z) -> batch2 (02:30:00Z) -> batch3 (05:30:00Z) on the CLI-regenerated candidates",
+  "index_content_identical_to_committed": true,
+  "validate": "valid: true; 60,154 records; 0 errors"
+ },
+ "batch4_review": {
+  "tranche_selection": "scripts/disc002_batch4_tranche.py (repo-relative; fixes F-0018 for new scripts): fragmented_derivation OR score>=0.8 OR contexts>=10, score-desc, excluding reviewed; 60 of 4,994 matching (51,972 unreviewed provisional)",
+  "method": "individual evidence review + scripts/disc002_batch4_probe.py (51-term definitional-treatment coverage probe) + targeted corpus verification for boundary cases (triangle inequality / batch size / weight sharing / loss-spikes stability / perceptron history) + independent subagent cross-check of 14 judgment calls",
+  "subagent_cross_check": "14/14 AGREE; 4 citation corrections incorporated into the committed rationales (BatchNorm 'normalizes activations per channel' is the :367 code comment, not the doc title; correct folder paths for Demystifying Tensors, Data Augmentation, Evolution and History of Deep Learning)",
+  "decisions": "36 cover (evidence-cited) + 24 reject",
+  "boundary_rule_consistency": "lexical parent -> cover (receptive-field-grows, use-gradient-accumulation, full-bidirectional-context families); synonymy-only parent -> reject (every-token-attends, per batch-3 token-attends precedent); verb form of a named treated failure mode -> cover (destabilize, per batch-3 training-diverges precedent)",
+  "new_confirmed_gaps": 0,
+  "confirmed_gaps_unchanged": ["second moment", "bradley-terry"],
+  "decisions_file": "state/concept-candidates/002-disc002-decisions-batch4.jsonl",
+  "decided_utc": "2026-10-30T13:05:00Z",
+  "apply_report": "reports/discovery/disc002-decide-batch4.json",
+  "post_statuses": {
+   "provisional_candidate": 51912,
+   "already_covered": 6981,
+   "rejected": 1258,
+   "confirmed_gap": 2,
+   "deferred": 1
+  },
+  "post_validate": "valid: true; 60,154 records; 0 errors (reports/discovery/disc002-validate-batch4.json)",
+  "index_regenerated": "state/concept-candidates/002-disc002-full-corpus.index.jsonl (delta verified: -60 provisional, +36 covered, +24 rejected)"
+ },
+ "session_findings": [
+  "F-0018 (low, partially-fixed): per-session helper scripts hardcode sandbox-absolute paths; batch-4 scripts repo-relative",
+  "F-0019 (low, resolved): ADR-0010 recorded sha256 is writer-specific; replay must compare parsed content across writers",
+  "README repository-status paragraph was stale at REGEN-001 state; updated this session"
+ ],
+ "source_immutability": "verified twice (start + end); see baseline_verification.immutability",
+ "next": {
+  "task": "DISC-002 continuation",
+  "step_1": "batch-5+ review tranches: 51,912 provisional remain, ~4,934 still match the signal rule; reuse scripts/disc002_batch4_tranche.py (edit TRANCHE_SIZE or nothing), scripts/disc002_batch4_probe.py (edit TERMS), scripts/disc002_batch4_decisions.py (new decision IDs D-DISC002-B5-****); standard unchanged: individual evidence review + subagent cross-check; confirmed gaps remain RARE",
+  "step_2": "dossier-extension per-domain semantic classification (69,185 pairs in scratch runs; regenerate via reports/dossier-ext/disc002-dext-<domain>-overlap-run.json commands); no bulk absorption",
+  "step_3": "disposition assignment (Unaccounted blocks release) then GATED synthesis: check-prompt -> generation -> lint-artifacts -> assess-quality -> quality-drift -> quality-gate -> repair loop",
+  "replay_recipe_now_five_rounds": "vu discover-gaps (recorded args) -> discovery-decide r1 (2026-10-28T00:45:00Z), r2 (01:30:00Z), batch2 (02:30:00Z), batch3 (05:30:00Z), batch4 (2026-10-30T13:05:00Z) -> discovery-index; expected 60,154 records: 51,912/6,981/1,258/2/1; compare parsed content, not raw sha256 (F-0019)"
+ }
+}
