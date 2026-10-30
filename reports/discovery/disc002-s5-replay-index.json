@@ -1,0 +1,27 @@
+{
+  "command": "discovery-index",
+  "result": {
+    "command": "discovery-index",
+    "candidates_path": "/home/z/my-project/scratch/disc002-s5-batch4.jsonl",
+    "index_path": "/home/z/my-project/scratch/disc002-s5-b4.index.jsonl",
+    "records_indexed": 60154,
+    "dropped_payload": "evidence quotes (join via ku_ids against KU batches)",
+    "max_ku_ids": 12
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "discovery-index",
+    "args": {
+      "command": "discovery-index",
+      "candidates": "/home/z/my-project/scratch/disc002-s5-batch4.jsonl",
+      "out": "/home/z/my-project/scratch/disc002-s5-b4.index.jsonl",
+      "max_ku_ids": 12,
+      "protected_root": null,
+      "report": "/home/z/my-project/work/repo/reports/discovery/disc002-s5-replay-index.json"
+    },
+    "utc_timestamp": "2026-10-30T15:09:36+00:00",
+    "git_commit": "203c171"
+  }
+}

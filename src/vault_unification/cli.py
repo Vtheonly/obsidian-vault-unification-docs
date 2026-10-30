@@ -1890,3 +1890,10 @@ def main(argv: list[str] | None = None) -> int:
     except FileNotFoundError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
+
+
+if __name__ == "__main__":  # pragma: no cover - exercised via subprocess test
+    # `python -m vault_unification.cli` executes this module as __main__;
+    # without this guard the import was a silent no-op that exited 0
+    # (finding F-0020). Keep behaviour identical to the `vu` entry point.
+    raise SystemExit(main())

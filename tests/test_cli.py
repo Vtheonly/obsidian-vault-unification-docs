@@ -85,6 +85,31 @@ def test_no_command_prints_help_and_exits_2():
     assert "usage:" in proc.stdout
 
 
+def test_module_cli_execution_is_not_a_silent_noop():
+    """Regression (finding F-0020): ``python -m vault_unification.cli`` used
+    to import the module without a ``__main__`` guard and exit 0 with no
+    output, silently doing nothing. It must behave exactly like the
+    ``python -m vault_unification`` / ``vu`` entry points."""
+    env = cli_env()
+    # happy path: --version must actually execute and print
+    proc = subprocess.run(
+        [sys.executable, "-m", "vault_unification.cli", "--version"],
+        cwd=REPO_ROOT, capture_output=True, text=True, timeout=60, env=env,
+    )
+    assert proc.returncode == 0, proc.stderr
+    assert "vault_unification" in proc.stdout
+
+    # failure path: a missing candidates file must exit nonzero with an
+    # error, never exit 0 silently
+    proc = subprocess.run(
+        [sys.executable, "-m", "vault_unification.cli", "discovery-validate",
+         "--candidates", str(REPO_ROOT / "does-not-exist.jsonl")],
+        cwd=REPO_ROOT, capture_output=True, text=True, timeout=60, env=env,
+    )
+    assert proc.returncode == 1
+    assert "error:" in proc.stderr
+
+
 class TestSelftestCLI:
     def test_selftest_passes(self):
         proc = run_cli("selftest")
