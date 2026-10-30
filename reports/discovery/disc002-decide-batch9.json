@@ -1,0 +1,27 @@
+{
+  "result": {
+    "ok": true,
+    "records_written": 60154,
+    "decisions_applied": 1704,
+    "decided_utc": "2026-10-31T03:00:00Z",
+    "out": "/home/z/my-project/scratch/disc002-s9-batch9.jsonl"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "discovery-decide",
+    "args": {
+      "command": "discovery-decide",
+      "candidates": "/home/z/my-project/scratch/disc002-s9-batch8.jsonl",
+      "decisions": "state/concept-candidates/002-disc002-decisions-batch9.jsonl",
+      "out": "/home/z/my-project/scratch/disc002-s9-batch9.jsonl",
+      "candidate_schema": "schemas/concept-candidate.schema.json",
+      "decided_utc": "2026-10-31T03:00:00Z",
+      "protected_root": null,
+      "report": "reports/discovery/disc002-decide-batch9.json"
+    },
+    "utc_timestamp": "2026-10-30T20:46:39+00:00",
+    "git_commit": "54dcc4b"
+  }
+}
