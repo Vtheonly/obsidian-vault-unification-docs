@@ -142,6 +142,19 @@ content-identity against the committed index automatically).
   is rejected because a parallel session moved main: fetch, review their
   commits, MERGE (do not rebase away history), reconcile decisions
   through the audit trail, and re-verify the chain before pushing again.
+  SESSION-8 EXCEPTION (open blocker): the session-8 push FAILED —
+  'could not read Username for https://github.com' — no credentials
+  exist in this environment (no ~/.git-credentials, no ~/.netrc, no
+  credential helper, no gh CLI, no GITHUB_TOKEN; the PAT used by
+  sessions 1-7 was supplied in an earlier conversation and is not
+  persisted across sessions). Local commits awaiting push: 6171b4f
+  (feat, session-8 work) + the state commit recording this blocker.
+  NEXT SESSION FIRST ACTION: obtain the PAT from the user (or have them
+  push), run `git push origin main`, verify with `git fetch origin &&
+  git rev-parse HEAD origin/main`, and record
+  reports/discovery/disc002-session8-push-verification.json in a state
+  commit, exactly per the session-7 pattern. No push verification is
+  claimed for session 8.
 - F-0016: background processes are reaped between tool calls — long runs
   must fit one tool call (< 10 min); corpus discovery ~5 min; a six-domain
   overlap-candidates sweep takes ~4 min total.

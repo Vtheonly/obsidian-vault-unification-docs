@@ -7,8 +7,10 @@
  "baseline_verification": {
   "tests": "663/663 passed (python3 -m pytest tests/ -q --json-report, before any mutation; reports/discovery/disc002-session8-baseline-pytest.json)",
   "immutability_start": "both vaults byte-identical to committed manifests at session start (reports/discovery/disc002-session8-manifest-{ai-course,master-ai}.json; 0 added/removed/changed)",
-  "immutability_end": "to be recorded at session end (reports/discovery/disc002-session8-manifest-end-{ai-course,master-ai}.json; 0 added/removed/changed expected)",
-  "git_state": "HEAD == origin/main == 4e25398 at session start, clean tree"
+  "immutability_end": "both vaults byte-identical after all operations (reports/discovery/disc002-session8-manifest-end-{ai-course,master-ai}.json; 0 added/removed/changed)",
+  "git_state": "HEAD == origin/main == 4e25398 at session start, clean tree",
+  "final_tests": "663/663 passed after the last state mutation (reports/discovery/disc002-session8-final-pytest.json; suite re-run per lesson A-2)",
+  "push_status": "BLOCKED — git push origin main failed with 'could not read Username for https://github.com': no credentials are available in this environment (no ~/.git-credentials, no ~/.netrc, no credential helper, no gh CLI, no GITHUB_TOKEN env var). The PAT used by sessions 1-7 was provided in an earlier conversation and is not persisted across sessions. Work commit 6171b4f (feat, all session-8 changes + state) exists locally; once the PAT is re-supplied, run: git push origin main — then record reports/discovery/disc002-session8-push-verification.json in the state commit, per the session-7 pattern. No push verification is claimed."
  },
  "adr0010_replay_verification": {
   "driver": "scripts/disc002_batch8_replay.py (repo-relative; extends the batch-7 replay with the batch-7 decide round — eight rounds total)",
