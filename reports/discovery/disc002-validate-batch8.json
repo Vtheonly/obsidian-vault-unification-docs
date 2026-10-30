@@ -1,0 +1,26 @@
+{
+  "command": "discovery-validate",
+  "result": {
+    "command": "discovery-validate",
+    "valid": true,
+    "records_total": 60154,
+    "errors": [],
+    "errors_total": 0
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "discovery-validate",
+    "args": {
+      "command": "discovery-validate",
+      "candidates": "/home/z/my-project/scratch/disc002-s8-batch8.jsonl",
+      "candidate_schema": "schemas/concept-candidate.schema.json",
+      "batches": null,
+      "kus_schema": "/home/z/my-project/repo/schemas/knowledge-unit.schema.json",
+      "report": "/home/z/my-project/repo/reports/discovery/disc002-validate-batch8.json"
+    },
+    "utc_timestamp": "2026-10-30T19:46:13+00:00",
+    "git_commit": "4e25398"
+  }
+}

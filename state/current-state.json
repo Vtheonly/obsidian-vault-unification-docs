@@ -66,8 +66,8 @@
   "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)"
  },
  "knowledge_registry_initialized": true,
- "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-31-disc002-session7.json",
- "notes": "DISC-002 in progress; session 7 re-verified the baseline (663/663 tests at start, both vaults byte-identical to manifests at start and end), extended the ADR-0010 replay to seven decide rounds (content-identical to the committed index before the batch-7 apply; replay ran clean on the first try; no new tooling defects), and completed the batch-7 review tranche: 60 highest-signal unreviewed candidates (mixed generic + technical tranche), 58-term coverage probe + 58-check citation verification + independent subagent cross-check (27 judgment calls, 27/27 AGREE, corrections incorporated: mermaid-label citations replaced with real headings, ingestion citation upgraded, deepseek-r1 paper note added). Decisions: 15 evidence-cited covers + 1 NEW CONFIRMED GAP (async def: Python async/await used in 17 master-ai implementation files with zero definitional treatment corpus-wide — the ai-course Python curriculum never mentions async/await/asyncio/coroutine/event loop) + 1 merge (await -> async def) + 43 noise rejects applied (--decided-utc 2026-10-31T00:30:00Z), validate green, index regenerated and delta-verified. CURRENT: 51,732 provisional / 7,021 already_covered / 1,396 rejected / 3 confirmed_gap (second moment, bradley-terry, async def) / 1 merged / 1 deferred. NEXT: batch-8+ review tranches (~4,754 still match the signal rule); per-domain semantic classification of the dossier-extension overlap pairs (no bulk absorption); then disposition assignment before gated synthesis.",
+ "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-31-disc002-session8.json",
+ "notes": "DISC-002 in progress; session 8 re-verified the baseline (663/663 tests at start, both vaults byte-identical to manifests at start; git HEAD == origin/main == 4e25398 clean), extended the ADR-0010 replay to eight decide rounds (content-identical to the committed index; replay ran clean on the first try; no new tooling defects), and completed the batch-8 review tranche: 60 highest-signal unreviewed candidates (mixed generic + technical tranche), 86-term coverage probe + 67-check citation verification + independent subagent cross-check (28 judgment calls, 28/28 AGREE, corrections incorporated: unfrozen line, bert-family line, chapter-13/10 note counts, float32 prose anchor, SiLU definition location). Decisions: 29 evidence-cited covers + 0 new gaps + 0 merges + 31 noise rejects applied (--decided-utc 2026-10-31T01:30:00Z), validate green, index regenerated and delta-verified. The three gap-shaped candidates (typing, computation graph, bilinear) all have real definitional treatments — no new confirmed gap. CURRENT: 51,672 provisional / 7,050 already_covered / 1,427 rejected / 3 confirmed_gap (second moment, bradley-terry, async def) / 1 merged / 1 deferred. NEXT: batch-9+ review tranches (~4,694 still match the signal rule); per-domain semantic classification of the dossier-extension overlap pairs; then disposition assignment before gated synthesis.",
  "output_synthesis_started": false,
  "phase_zero_rebaseline": {
   "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
@@ -87,18 +87,19 @@
     "state/concept-candidates/002-disc002-decisions-batch4.jsonl (60)",
     "state/concept-candidates/002-disc002-decisions-batch5.jsonl (60)",
     "state/concept-candidates/002-disc002-decisions-batch6.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch7.jsonl (60)"
+    "state/concept-candidates/002-disc002-decisions-batch7.jsonl (60)",
+    "state/concept-candidates/002-disc002-decisions-batch8.jsonl (60)"
    ],
    "dossier_ext_mechanical": "reports/dossier-ext/disc002-dext-summary.json (6 domains, 69185 candidate pairs, classification pending)",
    "dossier_gap": "reports/discovery/disc002-dossier-reconciliation-gap.json",
    "equivalence": "reports/discovery/disc002-f0015-equivalence.json",
    "final_statuses": {
-    "already_covered": 7021,
+    "already_covered": 7050,
     "confirmed_gap": 3,
     "deferred": 1,
     "merged": 1,
-    "provisional_candidate": 51732,
-    "rejected": 1396
+    "provisional_candidate": 51672,
+    "rejected": 1427
    },
    "full_file": "state/concept-candidates/002-disc002-full-corpus.jsonl (git-ignored, ADR-0010 replayable)",
    "index": "state/concept-candidates/002-disc002-full-corpus.index.jsonl (committed)",
@@ -110,7 +111,8 @@
     "batch4": "2026-10-30T13:05:00Z",
     "batch5": "2026-10-30T15:30:00Z",
     "batch6": "2026-10-30T16:30:00Z",
-    "batch7": "2026-10-31T00:30:00Z"
+    "batch7": "2026-10-31T00:30:00Z",
+    "batch8": "2026-10-31T01:30:00Z"
    },
    "sessions_merged": [
     "A: 3d2ff8b..e2914e9",
@@ -118,7 +120,8 @@
     "session 4: fresh-clone verification + batch-4 tranche (f83125a -> this session)",
     "session 5: fresh-clone verification + F-0020 fix + batch-5 tranche",
     "session 6: six-round replay re-verification + batch-6 tranche",
-    "session 7: seven-round replay re-verification + batch-7 tranche (15 covers + 1 new confirmed gap async def + 1 merge + 43 rejects)"
+    "session 7: seven-round replay re-verification + batch-7 tranche (15 covers + 1 new confirmed gap async def + 1 merge + 43 rejects)",
+    "session 8: eight-round replay re-verification + batch-8 tranche (29 covers + 31 rejects, no new gap)"
    ],
    "task": "DISC-002",
    "validation": "reports/discovery/disc002-validate-merged.json (60,154 records, 0 errors)",
@@ -191,7 +194,7 @@
   }
  ],
  "source_vaults_located": true,
- "stage": "disc002-review-batch7-done",
+ "stage": "disc002-review-batch8-done",
  "status": "in_progress",
  "verification_pilot_evidence": {
   "defect_classes": 12,

@@ -1,0 +1,49 @@
+{
+ "checkpoint_id": "checkpoint-2026-10-31-disc002-session8",
+ "recorded_utc": "2026-10-31",
+ "task_id": "DISC-002",
+ "task_status": "in_progress",
+ "stage": "disc002-review-batch8-complete (eight-round replay re-verification + batch-8 tranche, 29 covers + 31 rejects, no new gap)",
+ "baseline_verification": {
+  "tests": "663/663 passed (python3 -m pytest tests/ -q --json-report, before any mutation; reports/discovery/disc002-session8-baseline-pytest.json)",
+  "immutability_start": "both vaults byte-identical to committed manifests at session start (reports/discovery/disc002-session8-manifest-{ai-course,master-ai}.json; 0 added/removed/changed)",
+  "immutability_end": "to be recorded at session end (reports/discovery/disc002-session8-manifest-end-{ai-course,master-ai}.json; 0 added/removed/changed expected)",
+  "git_state": "HEAD == origin/main == 4e25398 at session start, clean tree"
+ },
+ "adr0010_replay_verification": {
+  "driver": "scripts/disc002_batch8_replay.py (repo-relative; extends the batch-7 replay with the batch-7 decide round — eight rounds total)",
+  "regeneration": "vu discover-gaps over all 70 batches (recorded args from reports/discovery/disc002-full-corpus-run.json): 60,154 candidates (reports/discovery/disc002-s8-replay-full.json)",
+  "decision_chain_replay": "r1 (--decided-utc 2026-10-28T00:45:00Z) -> r2 (01:30:00Z) -> batch2 (02:30:00Z) -> batch3 (2026-10-28T05:30:00Z) -> batch4 (2026-10-30T13:05:00Z) -> batch5 (15:30:00Z) -> batch6 (16:30:00Z) -> batch7 (2026-10-31T00:30:00Z) on the CLI-regenerated candidates (reports/discovery/disc002-s8-replay-{r1,r2,batch2,batch3,batch4,batch5,batch6,batch7}.json)",
+  "index_content_identical_to_committed": true,
+  "content_comparison_method": "parsed-record equality (json.loads per line), per F-0019 — raw sha256 not compared",
+  "validate": "valid: true; 60,154 records; 0 errors (reports/discovery/disc002-s8-replay-validate.json)",
+  "post_chain_state": "/home/z/my-project/scratch/disc002-s8-batch7.jsonl (content-identical to the committed index; starting point for the batch-8 tranche)"
+ },
+ "batch8_review": {
+  "tranche_selection": "scripts/disc002_batch8_tranche.py (repo-relative; reads scratch/disc002-s8-batch7.jsonl): fragmented_derivation OR score>=0.8 OR contexts>=10, score-desc, excluding reviewed; 60 of 4,754 matching (51,732 unreviewed provisional; brief + pool stats + selected.json in /home/z/my-project/scratch/disc002-batch8-*)",
+  "tranche_character": "mixed: heavy generic English vocabulary (gerunds, adverbs, participles, markup artifacts 'e1f5fe'/'\\operatorname', vault-management date '2026-08-08', numeric range '2-5') plus a substantive technical minority (MCP overview, reasoning capability, chapter-title fragments 13-inference/10-model-architecture/agent-vs-workflow family x6, PPO deep treatment x2, test data, BERT-family, computation graph, float32, partial derivative, typing, augmentations, conv layers, InstructGPT 2022, SiLU, channel depth, embedder, unfrozen, bilinear, draft head, output validation, predicted class)",
+  "method": "individual evidence review of all 60 brief blocks + scripts/disc002_batch8_probe.py (86-term definitional-treatment coverage probe, results /home/z/my-project/scratch/disc002-batch8-probe.json) + targeted citation verification (scripts/disc002_batch8_verify.py, 67 locator checks, all OK after 4 pattern fixes: agent-vs-workflow real title at line 7; retain_graph 'for re-use' wording; vanishing/exploding note is '# 15.'; batch-norm note is '# 16.') + independent subagent cross-check of 28 judgment calls (16 covers + 12 borderline rejects)",
+  "subagent_cross_check": "28/28 AGREE; corrections incorporated: (1) unfrozen — '### Freezing vs. Fine-Tuning Encoders' is at Cross-Modal Attention.md:210, not :212; (2) bert-family — the static-to-contextual leap sentence is at ELMo to BERT.md:109, not :110; (3) chapter 13 = MOC + 7 notes (8 .md files including the MOC), not '8 notes'; (4) chapter 10 = 16 model notes (9 Open Source + 7 Closed Source) + MOC + 2026 Frontier Model Synthesis, not 13; (5) float32 — the :310 quote is a code comment, prose anchor :427 preferred; (6) SiLU — the FFN Deep.md '### SwiGLU' :51 does not itself mention SiLU; the SiLU definition rests on Activation Functions.md:95-97 and Perceptrons/MLPs.md:198-206",
+  "probe_note": "the probe's heading detector matches '#' lines including Python comments — caught twice this session ('# From CSV (Most common)' in the DataFrames note, '# SiLU activation' in the mini-SSM project note); every heading cited in a decision rationale was re-verified against real markdown via scripts/disc002_batch8_verify.py; the fence-aware heading check remains worth automating (recurring class, sessions 5-8)",
+  "gap_candidates_resolved": "the three gap-shaped candidates all have real definitional treatments, so no new confirmed gap: typing (dynamic typing defined at ai-course '02.2/01' ## 1.1 :3, definition :7; type hints' schema role in-situ at PydanticAI.md:11 + Semantic Kernel.md:229; 'from typing import' surface = 18 master-ai + 2 ai-course files; static typing/type annotations zero corpus-wide but the core typing concept IS defined); computation graph (dedicated sections in BOTH vaults: master-ai Calculus 10 '## Backpropagation = Chain Rule Applied to a Computation Graph' :78 + ai-course '04.1/02' '### The Computational Graph (Full Forward Path)' + '04.2/04' :399 '## 13.8'); bilinear (dedicated note '3.7 Geometric Transformations and Interpolation.md' with ### Nearest-neighbor :90 / ### Bilinear :98 / ### Bicubic :108 headings; algebraic sense in-situ at Dot Product.md:93)",
+  "decisions": "29 cover (evidence-cited: chapter/note-title families mcp overview, ppo deep, ppo deep treatment, agent-vs x6 fragments, 13 inference, 10 model architecture, instructgpt 2022, augmentations; section-level treatments test data, partial derivative, typing, computation graph, float32, silu, unfrozen, bilinear, output validation; in-situ-definitional covers reasoning capability, bert-family, channel depth, embedder, draft head, predicted class, conv layers) + 0 confirm_gap + 0 merge + 31 reject (generic vocabulary 17 [virtually, wasting, solving, performing, dividing, ensuring, relatively, properly, successful, included, preceding, eliminating, person, 2-5, 2026-08-08, resizing], technical phrase/homonym 10 [large gradients, normalizing, subtracting, attending, rejection, tested, wrong answers, extract features, memory usage, gradient-based], artifact 2 [e1f5fe mermaid fill color, operatorname LaTeX], domain-term 2 [csv file format, gdpr external regulation]) — counted by rationale stem",
+  "decisions_file": "state/concept-candidates/002-disc002-decisions-batch8.jsonl (60 records, decision ids D-DISC002-B8-0001..0060)",
+  "decided_utc": "2026-10-31T01:30:00Z",
+  "apply_report": "reports/discovery/disc002-decide-batch8.json (ok: true; decisions_applied: 1644 cumulative chain = 1584 + 60)",
+  "post_validate": "valid: true; 60,154 records; 0 errors (reports/discovery/disc002-validate-batch8.json)",
+  "post_index": "reports/discovery/disc002-index-batch8.json (60,154 records indexed; committed index regenerated)",
+  "post_statuses": {
+   "provisional_candidate": 51672,
+   "already_covered": 7050,
+   "rejected": 1427,
+   "confirmed_gap": 3,
+   "merged": 1,
+   "deferred": 1
+  },
+  "delta_verification": "exact: -60 provisional, +29 already_covered, +31 rejected; confirmed_gap/merged/deferred unchanged"
+ },
+ "next_task": {
+  "summary": "DISC-002 continuation: batch-9+ review tranches (51,672 provisional; ~4,694 more match the signal rule), then per-domain semantic classification of the 69,185 dossier-extension overlap pairs, then disposition assignment (Unaccounted blocks release), then GATED synthesis",
+  "resume": "docs/agent-handoff/next-agent.md"
+ }
+}
