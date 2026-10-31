@@ -1,0 +1,26 @@
+{
+  "command": "discovery-validate",
+  "result": {
+    "command": "discovery-validate",
+    "valid": true,
+    "records_total": 60154,
+    "errors": [],
+    "errors_total": 0
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "discovery-validate",
+    "args": {
+      "command": "discovery-validate",
+      "candidates": "/home/z/my-project/scratch/disc002-s13-batch12.jsonl",
+      "candidate_schema": "schemas/concept-candidate.schema.json",
+      "batches": null,
+      "kus_schema": "/home/z/my-project/obsidian-vault-unification-docs/schemas/knowledge-unit.schema.json",
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/discovery/disc002-s13-replay-validate.json"
+    },
+    "utc_timestamp": "2026-10-31T16:07:42+00:00",
+    "git_commit": "c8fcfb8"
+  }
+}
