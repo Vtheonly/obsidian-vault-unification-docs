@@ -3,19 +3,18 @@
 ## Project state
 
 - Current milestone: DISC-002 corpus-wide concept discovery IN PROGRESS —
-  session 10 re-verified the baseline (663/663 tests, both vaults
+  session 11 re-verified the baseline (663/663 tests, both vaults
   byte-identical to manifests at start AND end, HEAD == origin/main ==
-  f54204e), answered the user's toolkit-status question with repository
-  evidence, extended the ADR-0010 replay to TEN decide rounds
-  (content-identical to the committed index on the first try), made the
-  batch-10 probe FENCE-AWARE (toolkit improvement; see below), and
-  completed the batch-10 review tranche: 30 covers + 30 rejects, no new
-  confirmed gap, no merge. After DISC-002: per-domain semantic
-  classification of the dossier-extension overlap pairs, then
-  disposition assignment, then GATED synthesis.
+  ee36362), extended the ADR-0010 replay to ELEVEN decide rounds
+  (content-identical to the committed index on the first try), reused the
+  fence-aware batch-10 probe pattern unchanged, and completed the batch-11
+  review tranche: 27 covers + 33 rejects, no new confirmed gap, no merge.
+  After DISC-002: per-domain semantic classification of the
+  dossier-extension overlap pairs, then disposition assignment, then GATED
+  synthesis.
 - Completed and verified: BOOT-000..004, EXT-001..010, REBASE-000,
   AUDIT-011, FRAME-001, DISC-001, FRAME-002, REGEN-001; DISC-002
-  sessions A+B (merged), sessions 3, 4, 5, 6, 7, 8, 9, and 10 (this
+  sessions A+B (merged), sessions 3, 4, 5, 6, 7, 8, 9, 10, and 11 (this
   checkpoint).
 - Framework version 0.9.0; 24 capabilities (23 implemented-and-tested +
   1 planned CAP-014 'source-to-output coverage and frequency regression
@@ -26,93 +25,87 @@
   mark a task completed before its commit exists; always re-run the
   suite after the last mutation).
 
-## Session 10 summary (evidence-backed)
+## Session 11 summary (evidence-backed)
 
 - Baseline verified: 663/663 tests at session start
-  (reports/discovery/disc002-session10-baseline-pytest.json); clean tree
-  with HEAD == origin/main == f54204e; both vaults byte-identical to
+  (reports/discovery/disc002-session11-baseline-pytest.json); clean tree
+  with HEAD == origin/main == ee36362; both vaults byte-identical to
   committed manifests at session start
-  (reports/discovery/disc002-session10-manifest-{ai-course,master-ai}.json,
+  (reports/discovery/disc002-session11-manifest-{ai-course,master-ai}.json,
   0 added/removed/changed) and again at session end (-end- reports).
-- USER STATUS QUESTION ANSWERED WITH EVIDENCE: the 2026-10-27 refactor
-  requirements ARE implemented and tested — discovery (CAP-017),
-  artifact linting (CAP-018, 25 check families), quality
-  assessment/drift/gates (CAP-019), repair loop (CAP-020), prompt
-  checking (CAP-021). Only CAP-014 (source-to-output coverage and
-  frequency regression reports) remains planned; it is a synthesis-time
-  capability. `vu capabilities` reports the 23+1 inventory; `vu --help`
-  lists all commands; 663 tests green.
-- ADR-0010 replay extended to TEN decide rounds via
-  scripts/disc002_batch10_replay.py: `vu discover-gaps` over all 70
-  batches (recorded args), then TEN decide rounds replayed with the
-  recorded --decided-utc values (r1, r2, batch2..batch9), then `vu
+- ADR-0010 replay extended to ELEVEN decide rounds via
+  scripts/disc002_batch11_replay.py: `vu discover-gaps` over all 70
+  batches (recorded args), then ELEVEN decide rounds replayed with the
+  recorded --decided-utc values (r1, r2, batch2..batch10), then `vu
   discovery-index` — CONTENT-IDENTICAL to the committed index (60,154
-  records; status counts matched exactly: 51,612/7,085/1,452/3/1/1;
+  records; status counts matched exactly: 51,552/7,115/1,482/3/1/1;
   validate green; F-0019 heeded; ran clean on the first try). NO NEW
-  TOOLING DEFECTS this session.
-- TOOLKIT IMPROVEMENT (session-9 handoff follow-up, recurring defect
-  class closed): scripts/disc002_batch10_probe.py is FENCE-AWARE —
-  heading detection uses the authoritative mdextract
-  extract_structure_text headings + code-fence spans instead of the
-  naive startswith('#') scan; in-fence definition-window hits are
-  excluded from def_hits and reported separately; the verify script
-  asserts heading citations against the authoritative heading list. The
-  '# comment in code fence looks like a heading' class (batches 7/8/9)
-  is now structurally prevented in the tranche tooling. Reuse this
-  pattern for all future probes.
-- Batch-10 review tranche: 60 highest-signal unreviewed provisional
-  candidates (of 4,634 matching the signal rule — exactly the count the
-  session-9 handoff predicted), individually reviewed with a 62-term
+  TOOLING DEFECTS this session; the fence-aware probe/verify pattern from
+  batch 10 was reused unchanged.
+- Batch-11 review tranche: 60 highest-signal unreviewed provisional
+  candidates (of 4,574 matching the signal rule — exactly the count the
+  session-10 handoff predicted), individually reviewed with a 129-term
   fence-aware definitional-treatment coverage probe
-  (scripts/disc002_batch10_probe.py), targeted citation verification
-  (scripts/disc002_batch10_verify.py, 91 locator checks, all OK after 9
-  pattern fixes — mostly **bold** markers plus two wrong-file pointers),
-  and an independent subagent cross-check of 40 judgment calls: 40/40
-  AGREE. Result: 30 evidence-cited covers + 30 noise rejects.
+  (scripts/disc002_batch11_probe.py), targeted citation verification
+  (scripts/disc002_batch11_verify.py, 102 locator checks, all OK after 5
+  pattern fixes — heading-prefix, curly-quote, note-title, **bold**-marker
+  and regex-escape classes), and an independent subagent cross-check of
+  ALL 60 judgment calls: 60/60 AGREE. Result: 27 evidence-cited covers +
+  33 noise rejects.
 - Subagent errata were INDEPENDENTLY RE-VERIFIED before incorporation;
-  ONE was itself wrong and rejected: the claim that '06. VGG16
-  Architecture Deep Dive.md' contains no ImageNet normalization — the
-  note HAS 4 ImageNet mentions incl. the mean-RGB preprocessing at
-  :131 and code defaults :513/:620/:622. (Two-session pattern now: at
-  least one wrong subagent correction per session. Keep the mandatory
-  re-verification step.) VERIFIED errata incorporated: ColPali
-  'embeds it via a VLM (PaliGemma)' quote at :132 (:12 carries the
-  other in-situ mention); Transfer Learning ImageNet mean/std at :564;
-  heading levels (### for Perplexity :87/:90, channel headings, Eval
-  :50, ResNet :477, TF-IDF :210, Scaling Laws :45; ## for
-  Agent-vs-Workflow :97).
+  TWO were themselves wrong and rejected (third consecutive session with
+  at least one wrong subagent correction — keep the mandatory
+  re-verification step): the file name '02 - Conceptual Interview
+  Questions 2.md' (actual: '06 - Conceptual Interview Questions 2.md';
+  substance was right, locator wrong) and the count '16 computed-gradient
+  occurrences' (actual: 13 in ai-course, 0 in master-ai). VERIFIED errata
+  incorporated: 'vgg16_bn = VGG16 with Batch Normalization' at PyTorch
+  Advanced :28 (not :26); io-aware glossary entries at
+  '28 - Glossary/Terms/A-Z Terms.md:98' AND ':135'; full
+  rejection-sampling interview treatment at '29 - Interview Prep/
+  Conceptual/06 - Conceptual Interview Questions 2.md:102'; DDPM
+  cross-vault usage with the forward-process formula at
+  '23 - Multimodal AI/Diffusion/05 - DiT and FLUX.md:20' and ':129'.
 - NO NEW CONFIRMED GAP this tranche. The one gap-shaped candidate,
-  'unembedding' (CG-4b5ef691d415: used in dependency position at
-  Initialization Schemes :176/:238, Logit Lens :85, InstructGPT :52,
-  with no 'unembedding' heading corpus-wide), resolved as COVER — the
-  defining note spells it HYPHENATED: master-ai '07 - Transformers/
-  Components/06 - Embedding Layer.md:60' 'The output layer
-  (un-embedding) is also a R^{d x |V|} matrix' inside '## Tied vs
-  Untied Embeddings' :58. NEW PROBE LESSON (extends session-9
-  LaTeX/unicode lessons): search hyphenation/spelling variants before
-  claiming absence.
-- Current candidate set: 51,552 provisional / 7,115 already_covered /
-  1,482 rejected / 3 confirmed_gap (second moment, bradley-terry, async
+  'ddpm' (CG-27d8b1b0734f: cross-vault, 3 homonym clusters, used in
+  dependency position across the ai-course 10.4 chapter and master-ai
+  DiT/FLUX, with no 'DDPM' heading corpus-wide), resolved as COVER — the
+  acronym is EXPANDED in the master-ai glossary: '28 - Glossary/Acronyms/
+  Acronyms Index.md:45' '**DDPM** — Denoising Diffusion Probabilistic
+  Models', and the underlying algorithm is the subject of the dedicated
+  3-note 10.4 Diffusion Models chapter. NEW PROBE LESSON (extends the
+  session-10 hyphenation lesson): check the master-ai glossary Acronyms
+  Index AND A-Z Terms (and underscore as well as hyphen variants) before
+  claiming acronym/term absence. Corpus confirmed_gap total stays 3
+  (second moment, bradley-terry, async def).
+- Current candidate set: 51,492 provisional / 7,142 already_covered /
+  1,515 rejected / 3 confirmed_gap (second moment, bradley-terry, async
   def) / 1 merged / 1 deferred.
+- Process note: the delta script's first run failed on ITS OWN
+  expectation (expected rejected 1482 instead of 1482+33=1515) while the
+  data's status transitions were perfect on the first run — fixed the
+  expectation and re-ran to PASS. Always separate "the data is wrong"
+  from "my expectation is wrong" before 'fixing' data.
 
 ## Next task: DISC-002 continuation
 
-1. **Continue the semantic review in bounded tranches** (51,552
-   provisional; ~4,574 more match the signal rule). Reuse the
-   REPO-RELATIVE scripts/disc002_batch10_{replay,tranche,probe,decisions,
-   verify}.py pattern (edit CAND to point at the current replayed state
-   scratch/disc002-s11-batch10.jsonl; new decision IDs D-DISC002-B11-****;
-   candidate IDs are asserted against the selection file, so a wrong ID
-   fails loudly). The batch-10 probe is fence-aware — copy it, do NOT
-   revert to the batch-9 naive probe. Standard: individual evidence
-   review with file:line citations (full vault-relative paths with
-   chapter-level parents); subagent cross-check of judgment calls WITH
-   INDEPENDENT RE-VERIFICATION of every subagent correction (two-session
-   pattern: at least one wrong correction per session); confirmed gaps
-   are RARE — look for concepts used in dependency position with NO
-   definitional treatment anywhere under ANY spelling variant (async def
-   is the model; the 'unembedding' near-miss shows why hyphenation
-   variants must be searched).
+1. **Continue the semantic review in bounded tranches** (51,492
+   provisional; ~4,514 more match the signal rule). Reuse the
+   REPO-RELATIVE scripts/disc002_batch11_{replay,tranche,probe,decisions,
+   verify,delta}.py pattern (edit CAND to point at the current replayed
+   state scratch/disc002-s12-batch11.jsonl; new decision IDs
+   D-DISC002-B12-****; candidate IDs are asserted against the selection
+   file, so a wrong ID fails loudly). The batch-11 probe is fence-aware
+   (copied from batch 10) — do NOT revert to a naive startswith('#')
+   probe. Standard: individual evidence review with file:line citations
+   (full vault-relative paths with chapter-level parents); subagent
+   cross-check of judgment calls WITH INDEPENDENT RE-VERIFICATION of
+   every subagent correction (three-session pattern: at least one wrong
+   correction per session); confirmed gaps are RARE — look for concepts
+   used in dependency position with NO definitional treatment anywhere
+   under ANY spelling variant, INCLUDING the master-ai glossary Acronyms
+   Index and A-Z Terms (ddpm is the model near-miss; async def remains
+   the only confirmed gap of this shape).
 2. **Dossier extension classification** (per domain, bounded batches):
    review the overlap candidate pairs in scratch (regenerate via the
    commands in reports/dossier-ext/disc002-dext-<domain>-overlap-run.json
@@ -127,7 +120,7 @@
    assess-quality -> quality-drift -> quality-gate -> repair loop per
    batch.
 
-## Replay recipe (ADR-0010, now eleven decide rounds)
+## Replay recipe (ADR-0010, now twelve decide rounds)
 
 `vu discover-gaps` over all 70 batches (exact args in
 reports/discovery/disc002-full-corpus-run.json report_meta.args; ~5 min,
@@ -136,16 +129,16 @@ fits one tool call) then `vu discovery-decide` r1 (--decided-utc
 (2026-10-28T05:30:00Z), batch4 (2026-10-30T13:05:00Z), batch5
 (15:30:00Z), batch6 (16:30:00Z), batch7 (2026-10-31T00:30:00Z), batch8
 (2026-10-31T01:30:00Z), batch9 (2026-10-31T03:00:00Z), batch10
-(2026-10-31T05:30:00Z), then `vu discovery-index`. Expected result:
-60,154 records; 51,552 provisional / 7,115 already_covered / 1,482
-rejected / 3 confirmed_gap / 1 merged / 1 deferred. CAUTION (F-0019):
-compare the regenerated index against the committed index by PARSED
-CONTENT (e.g. json.loads each line), not raw sha256 — the recorded hash
-is script-writer-specific while the CLI writer escapes Unicode.
-scripts/disc002_batch10_replay.py performs the whole chain in one run
-(adjust the output paths for a batch-11 replay or reuse as-is after
-adding the batch-10 round to DECIDE_CHAIN: it verifies content-identity
-against the committed index automatically).
+(2026-10-31T05:30:00Z), batch11 (2026-10-31T08:00:00Z), then `vu
+discovery-index`. Expected result: 60,154 records; 51,492 provisional /
+7,142 already_covered / 1,515 rejected / 3 confirmed_gap / 1 merged / 1
+deferred. CAUTION (F-0019): compare the regenerated index against the
+committed index by PARSED CONTENT (e.g. json.loads each line), not raw
+sha256 — the recorded hash is script-writer-specific while the CLI
+writer escapes Unicode. scripts/disc002_batch11_replay.py performs the
+whole chain in one run (adjust the output paths for a batch-12 replay or
+reuse as-is after adding the batch-11 round to DECIDE_CHAIN: it verifies
+content-identity against the committed index automatically).
 
 ## Standing rules (unchanged, enforced)
 
@@ -165,20 +158,27 @@ against the committed index automatically).
   overlap-candidates sweep takes ~4 min total.
 - F-0018: old extNNN/disc002 helper scripts (pre-batch-4) hardcode
   /home/z/my-project/obsidian-vault-unification-docs — fix paths or use
-  the batch-4..10 repo-relative scripts.
+  the batch-4..11 repo-relative scripts.
 - F-0020 (fixed, regression-tested): never invoke the CLI via
   `python -m vault_unification.cli` in old checked-out code without the
   guard — use `vu` or `python -m vault_unification` if unsure.
 - F-0014 (open): two ai-course files end with 'END OF FILE / File Name'
   marker headings — synthesis must not copy them as knowledge headings.
-- Subagent discipline (sessions 9-10): subagent corrections are hints,
+- Subagent discipline (sessions 9-11): subagent corrections are hints,
   not facts — INDEPENDENTLY RE-VERIFY every correction against the
   corpus before incorporating it (session 9: two wrong corrections;
-  session 10: one wrong correction — the false 'no ImageNet
-  normalization in the VGG16 Deep Dive note' claim). Probe/regex
-  searches must account for `\\text{...}` wrappers, unicode characters
-  (× vs x), **bold** markers, AND hyphenation/spelling variants
-  (unembedding vs un-embedding) inside patterns.
-- Probe discipline (session 10): use the FENCE-AWARE probe pattern
-  (scripts/disc002_batch10_probe.py) for all future coverage probes;
-  naive startswith('#') heading scans are a closed defect class.
+  session 10: one wrong correction — the false 'no ImageNet normalization
+  in the VGG16 Deep Dive note' claim; session 11: one wrong file name and
+  one wrong count). Probe/regex searches must account for `\\text{...}`
+  wrappers, unicode characters (× vs x), **bold** markers, AND
+  hyphenation/spelling variants (unembedding vs un-embedding; vgg16-bn vs
+  vgg16_bn; resnet50 vs ResNet-50) inside patterns.
+- Probe discipline (sessions 10-11): use the FENCE-AWARE probe pattern
+  (scripts/disc002_batch11_probe.py) for all future coverage probes;
+  naive startswith('#') heading scans are a closed defect class. Before
+  claiming acronym/term absence, ALSO check the master-ai glossary
+  ('28 - Glossary/Acronyms/Acronyms Index.md', '28 - Glossary/Terms/
+  A-Z Terms.md') — the ddpm near-miss is the model case.
+- Delta-verification discipline (session 11): when a delta check fails,
+  verify whether the DATA or the EXPECTATION is wrong before changing
+  anything; write the arithmetic of expectations down before running.

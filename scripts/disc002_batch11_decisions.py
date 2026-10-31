@@ -1,0 +1,220 @@
+#!/usr/bin/env python3
+"""DISC-002 session 11 (batch 11): emit the 60 review decisions as JSONL.
+
+Method (same as batches 3-10): individual evidence review of the 60
+highest-signal unreviewed provisional candidates (post-batch10 state,
+session-11 ELEVEN-round fresh replay), a FENCE-AWARE
+definitional-treatment coverage probe (scripts/disc002_batch11_probe.py,
+129 terms, results in /home/z/my-project/scratch/disc002-batch11-probe.json
+— heading detection uses the authoritative mdextract structure state
+machine, so Python comments inside code fences cannot masquerade as
+headings), targeted corpus verification for citations
+(scripts/disc002_batch11_verify.py, 102 locator checks, all OK after 5
+pattern fixes — heading-prefix, curly-quote, note-title, **bold**-marker
+and regex-escape classes), and an independent subagent cross-check of all
+60 judgment calls: 60/60 AGREE.
+
+Subagent errata INDEPENDENTLY RE-VERIFIED before incorporation (the
+mandatory step; three-session pattern of wrong corrections continues):
+ACCEPTED — 'vgg16_bn = VGG16 with Batch Normalization' is at
+'03. PyTorch Advanced - VGG16 and Pre-trained Models.md:28' (tranche brief
+said :26, which is the model-load line); io-aware glossary entries at
+'28 - Glossary/Terms/A-Z Terms.md:98' AND ':135'; full rejection-sampling
+treatment at '29 - Interview Prep/Conceptual/06 - Conceptual Interview
+Questions 2.md:102' (subagent said file '02 -' — WRONG file name, right
+substance: the file is '06 - Conceptual Interview Questions 2.md'); DDPM
+cross-vault usage with the forward-process formula at '23 - Multimodal
+AI/Diffusion/05 - DiT and FLUX.md:20' and ':129'. REJECTED (wrong) — the
+subagent's '16 occurrences of computed gradients' (actual rg count: 13 in
+ai-course, 0 in master-ai; count irrelevant to the reject either way).
+
+Gap candidates this tranche: 'ddpm' (cross-vault, 3 homonym clusters)
+looked gap-shaped (no 'DDPM' heading corpus-wide; used in dependency
+position in the 10.4 chapter and master-ai DiT/FLUX), but resolves as
+COVER — the acronym is expanded in the master-ai glossary: '28 -
+Glossary/Acronyms/Acronyms Index.md:45' '**DDPM** — Denoising Diffusion
+Probabilistic Models', and the underlying algorithm is the subject of the
+dedicated 3-note ai-course 10.4 chapter (forward process, reverse
+process, score-based unification). Probe lesson recorded: check the
+glossary Acronyms/A-Z Terms indexes before claiming acronym absence
+(extends the session-10 hyphenation lesson). 'rejection sampling' and
+'watermarks' also resolve as covers with dedicated/in-situ definitional
+treatments. NO new confirmed gap (corpus total stays 3: second moment,
+bradley-terry, async def).
+
+Result: 27 evidence-cited covers + 33 noise rejects, 0 new gaps, 0
+merges, 0 defers.
+"""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent.parent
+SELECTED = Path("/home/z/my-project/scratch/disc002-batch11-selected.json")
+OUT = REPO / "state/concept-candidates/002-disc002-decisions-batch11.jsonl"
+
+REVIEWER = (
+    "GLM-5.3 orchestrator, DISC-002 session 11 (batch 11, "
+    "subagent cross-checked 60/60; corrections independently "
+    "re-verified - one file-name and one count correction rejected)"
+)
+
+# (candidate_id, action, rationale) in tranche selection order.
+DECISIONS = [
+    ("CG-31a5daece3f6", "cover",
+     "Closed-source models have a dedicated research folder and treatments: master-ai '10 - Model Architecture Research/Closed Source/' (7 notes incl. GPT-4 Inferred, Gemini, Opus 5, Kimi K3); '## Closed-Source Model Architectures' ('00 - Vault Management/Research Queue.md:11'); ADR-006 heading 'ADR-006 — Source-labelling convention for closed-source model architectures' ('00 - Vault Management/Architecture Decisions.md:84'); dedicated synthesis note '# 10 — 2026 Frontier Model Synthesis' ('10 - Model Architecture Research/2026 Frontier Model Synthesis.md:9') with :147 'Closed-source models are increasingly hard to differentiate'; definitional 'the most architecturally transparent of the closed-source frontier models' ('10 - Model Architecture Research/Closed Source/09 - Gemini Architecture.md:11')."),
+    ("CG-9ce6dc2e7553", "reject",
+     "Non-concept noise (code-comment phrase): 'computed gradients' appears 13 times in ai-course, all inside PyTorch autograd code comments or autograd mechanics prose ('Update weights using computed gradients', '04.3 - Training Dynamics and Stability/07. Data Augmentation.md:668'; '.grad attribute' explanation '04.2 - Backpropagation Deep Dive/04. Backpropagation and Gradient Flow in CNNs.md:243'); 0 in master-ai; gradients/backprop are covered by the dedicated 04.2 Backpropagation Deep Dive chapter. No concept identity."),
+    ("CG-c66cebe0a157", "cover",
+     "Contextual embeddings (ELMo) have a dedicated note: master-ai '05 - NLP Fundamentals/Embeddings/06 - Contextual Embeddings ELMo to BERT.md:9' ('# 06 - Contextual Embeddings: ELMo → BERT') with '## Modern Contextual Embedding Models (2024-2026)' :236; contrast heading '## Static vs Contextual Embeddings' ('05 - NLP Fundamentals/Embeddings/05 - Word2Vec GloVe FastText.md:14'); cross-linked from '02 - Mathematics/Linear Algebra/03 - Cosine Similarity.md:283' and '05 - Word2Vec GloVe FastText.md:296'."),
+    ("CG-27d8b1b0734f", "cover",
+     "Gap-shaped but RESOLVED as cover: 'DDPM' has no heading corpus-wide and is used in dependency position (ai-course '10 - Generative Models/10.4 - Diffusion Models/02. The Reverse Process - Learning to Denoise.md:22' 'The key insight from DDPM (Ho et al. 2020)'; '01. The Forward Process - Adding Noise.md:51' 'Linear schedule (original DDPM)'; master-ai '23 - Multimodal AI/Diffusion/05 - DiT and FLUX.md:20' and ':129' 'Standard diffusion (DDPM): given data x_0, the forward process adds Gaussian noise over T steps'), but definitional treatments EXIST: the acronym is expanded in the master-ai glossary '28 - Glossary/Acronyms/Acronyms Index.md:45' ('**DDPM** — Denoising Diffusion Probabilistic Models'), and the underlying algorithm is the subject of the dedicated 3-note chapter '10.4 - Diffusion Models' ('10 - Generative Models/00. Chapter Overview.md:43'; forward process + noise schedules + closed-form sampling + reverse-process noise-prediction objective + score-based unification). PROBE LESSON for synthesis: check the glossary Acronyms Index and A-Z Terms before claiming acronym absence (extends the session-10 hyphenation lesson); consolidate DDPM/denoising-diffusion spellings."),
+    ("CG-e770ed64b636", "cover",
+     "Fragment of the same ELMo→BERT family as CG-c66cebe0a157 (title-fragment family precedent, batch-8/9/10): dedicated note master-ai '05 - NLP Fundamentals/Embeddings/06 - Contextual Embeddings ELMo to BERT.md:9' + '## Static vs Contextual Embeddings' ('05 - Word2Vec GloVe FastText.md:14') + MOC row ('05 - NLP Fundamentals/MOC.md:20')."),
+    ("CG-a6c962a66737", "reject",
+     "Non-concept noise (English comparative fragment): 'far fewer' is prose ('only ~60M total parameters — far fewer than VGG-16's 138M', '05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/04. Advanced Pooling Mechanisms and Global Average Pooling.md:227'); 2 homonym clusters; no concept identity."),
+    ("CG-97f90aa18d2f", "cover",
+     "Frozen parameters (transfer learning) have dedicated sections: '## Strategy 1: Feature Extraction (Freeze Everything)' ('05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/01. Transfer Learning and Fine-Tuning.md:67'); '## 6.3 Verifying What Is Frozen and What Is Trainable' ('03. PyTorch Advanced - VGG16 and Pre-trained Models.md:496'); '## Mistake 10: Freezing Wrong Layers or Forgetting to Freeze' ('05. Pipeline, Evaluation, and Interpretability/02. Common Mistakes and How to Fix Them.md:527'); '### Freezing vs. Fine-Tuning Encoders' (master-ai '23 - Multimodal AI/Fusion Architectures/06 - Cross-Modal Attention.md:210'); memory-savings rationale ('03. PyTorch Advanced - VGG16 and Pre-trained Models.md:479')."),
+    ("CG-1e81c7d03701", "cover",
+     "Fully-connected layers have a dedicated note: ai-course '05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/04. The Fully Connected Layer and Flattening.md:1' ('# 4.4 The Fully Connected Layer (Classification Head) and Flattening'); '## Why Fully Connected Layers?' ('01. Foundations and Philosophy/02. Core Architecture and Philosophy.md:99'); '## BatchNorm1d for Fully Connected Layers' ('04.3 - Training Dynamics and Stability/05. Batch Normalization.md:307'); '## For Fully Connected (FC) Layers: p = 0.5' ('06. Dropout and Regularization.md:341')."),
+    ("CG-6167f4a89285", "reject",
+     "Non-concept noise (generic word, homonym; 9 clusters): every technical sense of 'independence' is locally covered — linear independence ('02 - Mathematics/Linear Algebra/01 - Vectors.md:183' '**Linear independence** — no vector in a set can be written as a combination of the others'); statistical i.i.d. assumptions ('02 - Mathematics/Probability/07 - Probability Essentials.md:194' 'many ML mistakes come from assuming samples are i.i.d. when they aren't'); naive Bayes conditional-independence ('02 - Mathematics/Probability/08 - Bayes Theorem Deep Dive.md:99' 'The \"naive\" independence assumption is wrong (words are correlated), but the classifier still works well'); batch independence of LayerNorm ('08.2 - The Transformer Architecture/03. The Transformer Encoder Block.md:94' '**Batch independence.** BatchNorm depends on batch statistics...'). No single concept identity; do not merge the senses (EMERGENT_CONCEPT_DISCOVERY.md safeguard 4)."),
+    ("CG-5b185cea4fe7", "reject",
+     "Non-concept noise (verb phrase): 'introduces non-linearity' is a code comment / prose description of activation functions ('nn.ReLU() # ReLU activation (introduces non-lin...', '03.2 - Optimization Algorithms/08. Loss Functions and Optimizers Deep Dive.md:176'; 'Introduces non-linearity so the net...', '04. Training, Transfer Learning, and PyTorch/02. PyTorch Implementation Basics.md:256'); activation functions are covered by dedicated notes ('04.1 - Neural Network Basics/06. Activation Functions in Deep Learning.md', master-ai '04 - Neural Networks/Foundations/02 - Activation Functions.md'). No concept identity."),
+    ("CG-f4edf31b5091", "reject",
+     "Non-concept noise (vault-management phrase): 'new notes' is iteration-planning metadata in master-ai '00 - Vault Management/Architecture Decisions.md:169/:221/:249' and 'Completed Work.md:85' ('added 8 new notes + synthesis'); provenance of vault growth, not a knowledge concept (batch-9/10 vault-label precedent)."),
+    ("CG-e6f9a2e5f720", "reject",
+     "Non-concept noise (vault organization label): 'Non-Academic DL' labels the source-course track in ai-course README.md:560/:737/:785/:789 ('The source had backprop material in Academic DL Ch1 ... Non-Academic DL Backprop (a 4-stage tutorial)'); batch-9 'Academic DL' label precedent."),
+    ("CG-cb1df00b324c", "cover",
+     "Rejection sampling has multiple definitional treatments: dedicated section '#### Stage 1: Constitutional Rejection Sampling (Supervised)' (master-ai '26 - Papers/Alignment/31 - Constitutional AI 2022.md:43') with the 4-step generate→critique→revise→fine-tune procedure (:46-:49); the full mathematical acceptance criterion 'The acceptance/rejection criterion is importance sampling: accept token y_i with probability min(1, p(y_i)/q(y_i)) ... If rejected, resample from the adjusted distribution (p − q)_+ normalized' ('13 - Inference/Speculative Decoding/05 - Speculative Decoding.md:197') and again in interview form ('29 - Interview Prep/Conceptual/06 - Conceptual Interview Questions 2.md:102' 'Spec decoding uses **rejection sampling** to preserve the target model's distribution ... accept with probability min(1, P_target / P_draft) ... provably equivalent to sampling from P_target directly'); generate-filter RLHF usage ('26 - Papers/2024-2026/12 - DeepSeek-R1 2025.md:72' 'Stage 3: Rejection sampling + SFT. Generate many reasoning traces from the RL'd model, filter for correctness'); distribution-preservation claim ('26 - Papers/Efficient Attention/49 - Medusa and EAGLE 2024.md:69' 'rejection sampling preserves the target distribution')."),
+    ("CG-d92bc6cb2e2b", "cover",
+     "Spatial features have a dedicated note and in-situ treatments: ai-course '05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/02. Hierarchical Feature Extraction.md:1' ('# 4.2 Hierarchical Feature Extraction' — why stacking layers builds feature hierarchy); 'The convolutional layers learn the spatial feature detectors that actually understand the image' ('06. VGG16 Architecture Deep Dive.md:349'); 'This is where the actual spatial feature extraction happens—the 3×3 kernel mixes information from neighboring spatial locations' ('09. ResNet Bottleneck Blocks and Architectural Variants.md:117'); batch-10 covered the singular 'spatial feature' sibling; same family evidence."),
+    ("CG-5cdeeb4d5b51", "reject",
+     "Non-concept noise (possessive fragment): \"target model's\" is prose from the Medusa/EAGLE speculative-decoding notes (:34/:38/:54/:153); the target/draft model roles are defined in situ ('Medusa adds K extra prediction heads to the target model's final layer', '26 - Papers/Efficient Attention/49 - Medusa and EAGLE 2024.md:34'); batch-10 'target's' precedent."),
+    ("CG-bbdf6541a204", "cover",
+     "Top-k experts (MoE routing) have dedicated treatments: '## Mixture of Experts (MoE)' (master-ai '04 - Neural Networks/Foundations/01 - Perceptrons and MLPs.md:296') with 'Only the top-k experts (typically k=2) are evaluated per token, so compute scales with k, not with the number of experts' (:304); dedicated note '07 - Transformers/Variants/15 - Mixture of Experts Transformer.md' with '## The Router' :23; project note '27 - Projects/Implementations/04 - Build a Mini MoE.md:12' ('a router that selects top-K experts per token, and load-balancing auxil...') and routing implementation :84/:115."),
+    ("CG-53f8154752be", "reject",
+     "Non-concept noise (verb phrase): 'uses batch' fragments BatchNorm train/eval-mode prose ('BatchNorm uses batch statistics', '04.3 - Training Dynamics and Stability/05. Batch Normalization.md:183'; '09. ResNet Bottleneck Blocks and Architectural Variants.md:685'); the concept is covered by '## Training vs. Evaluation Mode (CRITICAL)' ('05. Batch Normalization.md:116'). No concept identity."),
+    ("CG-88750d712c29", "cover",
+     "Watermarks have definitional treatments in both senses: dataset-bias/shortcut-learning (ai-course '05. Pipeline, Evaluation, and Interpretability/03. Demystifying the Black Box - CNN Interpretability.md:111-:112' '> [!warning] Dataset Bias is the Silent Killer ... a broader problem called \"dataset bias\" or \"shortcut learning.\" Whenever a spurious correlation exists in the training data (watermarks, positioning, image quality), the model will tend to exploit it'; COVID case study :101 'the model learned to detect the hospital watermark rather than the disease'; mitigation table :513 'Focus on watermarks/text | Dataset bias from image source | Remove watermarks, balance...') and LLM-output watermarking ('### Watermarking' master-ai '25 - Frameworks and Tools/Serving/12 - TGI.md:89' 'TGI implements the Kirchenbauer et al. (2023) watermarking scheme. When enabled (--watermark 1), the model subtly biases the selection of \"green\" tokens ... The watermark is detectable later without affecting generation quality')."),
+    ("CG-f50e6f4f8f98", "reject",
+     "Non-concept noise (vault organization label): 'Academic DL Ch1' labels the source-course track in ai-course README.md:435/:509/:762/:785/:789; provenance metadata of source reorganization, not a knowledge concept (batch-9/10 label precedent)."),
+    ("CG-ed23a727d344", "reject",
+     "Non-concept noise (generic English word; 9 homonym clusters): 'accelerated' appears in FAST detector expansion ('Features from Accelerated Segment Test', '3.8 Feature Descriptors - SIFT, SURF, ORB, HOG.md:84'), 'accelerated samplers' diffusion prose ('02. The Reverse Process - Learning to Denoise.md:94'), and historical prose ('DL became dominant ... and accelerated with Transformers'); no concept identity."),
+    ("CG-84f7209bd9e7", "cover",
+     "Symmetry breaking (weight initialization) has dedicated treatments: '## 14.2 All-Zero Initialization: The Symmetry Problem' (ai-course '04.3 - Training Dynamics and Stability/01. Weight Initialization.md:24'); 'Symmetry breaking is a necessary condition, but it is far from sufficient' (:189); 'the random weights have already broken the symmetry' ('04.1 - Neural Network Basics/02. Neural Network Architecture and Notation.md:294', with the identical-neurons derivation at :286); mirrored heading '3.2.1 All-Zero and Constant Initialization (The Symmetry Problem)' ('06. Chapter Summaries (Aggregated)/06. Transfer Learning and ResNet - Summary.md:587')."),
+    ("CG-66c0fee32126", "reject",
+     "Non-concept noise (English fragment): \"can't tell\" is evaluation-prose ('you can't tell if changes help or hurt', master-ai '01 - AI Foundations/01 - What Is AI Engineering.md:178'; '08 - LLMs/Limitations/05 - Hallucination.md:232'; '09 - Foundation Models/Reasoning Models/03 - Reasoning Models.md:118'; '15 - AI Agents/Autonomy/08 - Autonomous Agent Lifecycles.md:23'); no concept identity."),
+    ("CG-e0214c95e236", "reject",
+     "Non-concept noise (generic word, homonym; 6 clusters): the dominant senses are covered locally — Common Crawl as data source (master-ai '11 - Training/Data/03 - Data Pipelines and Deduplication.md:178' mermaid 'Crawl[Common Crawl raw HTML] --> Extract[trafilatura extraction]' and :193 'CCNet: Facebook Research's pipeline for Common Crawl processing') and loss-landscape/optimizer prose ('the optimizer may become trapped', ai-course '04.3 - Training Dynamics and Stability/04. Hyperparameters and Network Configuration.md:130'); no single concept identity."),
+    ("CG-f4e342a87fb6", "reject",
+     "Non-concept noise (noun phrase): 'decoding step' fragments autoregressive/seq2seq exposition; the mechanics are covered by dedicated treatments — '## Teacher Forcing (Training Strategy)' (master-ai '04 - Neural Networks/Architectures/05 - Seq2Seq and the Information Bottleneck.md:174') plus the dedicated ai-course note '07.3 - Sequence to Sequence and Encoder-Decoder/02. Teacher Forcing and Exposure Bias.md:1', and '## Autoregressive decoding' ('08.4 - Encoder Decoder and the Design Space/03. Autoregressive vs Parallel Encoding.md:44'); per-step context vector explained at '06 - Attention Mechanisms/Origins/01 - Origins of Attention.md:155'. No concept identity beyond the covered decoder mechanics."),
+    ("CG-f2f3f3979deb", "cover",
+     "Eval-mode mechanics (disables dropout) have dedicated sections: '## Why model.eval() is Mandatory' (ai-course '04.3 - Training Dynamics and Stability/06. Dropout and Regularization.md:140') under '## Evaluation Mode' :136; '## Training vs. Evaluation Mode (CRITICAL)' ('05. Batch Normalization.md:116' with train/eval behavior and EMA at :122-:128); '## 2. model.eval() — Why It Matters' ('05 - Convolutional Neural Networks (CNN)/04. Training, Transfer Learning, and PyTorch/03. PyTorch Advanced - VGG16 and Pre-trained Models.md:80'); '## Mistake 2: Forgetting `model.eval()` During Evaluation' ('02. Common Mistakes and How to Fix Them.md:56')."),
+    ("CG-7aba98ac3c91", "cover",
+     "The error curve (1-D loss-as-function-of-parameter curve) has in-situ definitional treatments in the gradient-descent foundations: 'A negative slope means the error curve is sloping downwards to the right. To find the minimum (the bottom of the valley), we *want* to move to the right' (ai-course '01 - Foundations and Overview/01.2 - Mathematical Foundations/06. Gradients and Gradient Descent.md:140'); 'To find the lowest point on the error curve, we set this derivative to equal zero' ('05. Derivatives, Power Rule, and the Chain Rule.md:320'); same treatment in '03.2 - Optimization Algorithms/07. Gradient Descent - The Update Rule and Convergence.md:123'; related loss-landscape treatments across master-ai optimization notes (26 files)."),
+    ("CG-7ab319ebbbb9", "reject",
+     "Non-concept noise (code-comment fragment): 'First FC layer: input_dim → 64 hidden units' is a PyTorch constructor comment ('03.2 - Optimization Algorithms/08. Loss Functions and Optimizers Deep Dive.md:175'); the FC-layer family is covered by the dedicated note (see CG-1e81c7d03701). No concept identity."),
+    ("CG-048bbbb99af4", "reject",
+     "Non-concept noise (phrase fragment): 'first FC layer' denotes VGG-16's fc6 in covered in-situ detail ('in VGG-16, the first FC layer alone has 7 × 7 × 512 × 4096 = 102...', '04.3 - Training Dynamics and Stability/06. Dropout and Regularization.md:370'; 'For VGG-16, the final conv feature map is 7 × 7 ... fed into one or more fully connected (FC) layers', '02. Core Operators and Geometry/04. Advanced Pooling Mechanisms and Global Average Pooling.md:97'); the FC-layer family has the dedicated note. No concept identity."),
+    ("CG-ebd7e88aa0dc", "cover",
+     "Hyperbolic tangent (tanh) has multiple dedicated treatments: '## E. Hyperbolic Tangent (tanh)' (ai-course '04.1 - Neural Network Basics/03. Artificial Neural Networks (ANN) - Comprehensive.md:75'); '## 2. Tanh (Hyperbolic Tangent)' ('06. Activation Functions in Deep Learning.md:26'); '## 2. Hyperbolic Tangent (Tanh) Function' ('06. Chapter Summaries (Aggregated)/02. Core Operators and Geometry - Summary.md:1133'); definition sentence 'The Hyperbolic Tangent (Tanh) maps inputs to a range between -1 and 1' ('01 - Foundations and Overview/01.2 - Mathematical Foundations/02. Mathematical Notation and Symbols.md:122'); formula + derivative 'tanh(x) = (e^x − e^{-x})/(e^x + e^{-x}) ... is a zero-centered alternative to sigmoid' ('04.3 - Training Dynamics and Stability/03. The Vanishing and Exploding Gradient Problems.md:130'); '## Tanh' (master-ai '04 - Neural Networks/Foundations/02 - Activation Functions.md:36'); Xavier init pairing ('04 - Neural Networks/Training/07 - Initialization Schemes.md:40')."),
+    ("CG-38e6cf601cad", "cover",
+     "IO-aware (memory-hierarchy-aware algorithms) has definitional treatments: 'FlashAttention (Dao et al. 2022, Dao 2023, Shah et al. 2024) is an IO-aware exact attention algorithm. It tiles the computation to keep intermediate matrices in GPU SRAM, avoiding HBM round-trips' (master-ai '06 - Attention Mechanisms/Efficient Attention/11 - FlashAttention.md:12'); '## Other IO-Aware Kernels' ('26 - Papers/Efficient Attention/08 - FlashAttention 2022.md:152'); glossary entries '**FlashAttention** — IO-aware exact attention' and '**IO-aware** — algorithm optimized for memory access patterns' ('28 - Glossary/Terms/A-Z Terms.md:98' and ':135', subagent-found, independently re-verified); interview replication ('29 - Interview Prep/Conceptual/01 - Conceptual Interview Questions.md:37')."),
+    ("CG-277b596d9d8b", "cover",
+     "JSON-schema-constrained decoding has dedicated treatments: '## JSON Schema Constrained' (master-ai '13 - Inference/Decoding/07 - Constrained Decoding and CFG.md:57') in the dedicated note '# 07 — Constrained Decoding and CFG' (:9) with schema→state-machine compilation ('For JSON schemas, compile the schema into a state machine. Each state represents \"what we're expecting next\"' :169; xgrammar compiling 'JSON schemas and grammars into highly efficient state machines' :175; complexity caveat :221); '## Constrained decoding' ('08 - LLMs/Sampling/03 - Sampling Strategies.md:171'); TGI grammar-based decoding ('25 - Frameworks and Tools/Serving/12 - TGI.md:93')."),
+    ("CG-629294dd227a", "cover",
+     "Learning curves have a dedicated diagnostic treatment: '## Diagnosing Bias vs Variance with Learning Curves' (master-ai '03 - Machine Learning/Generalization/01 - Bias Variance Tradeoff.md:254') with the definition 'A more rigorous diagnostic than train/test error is the **learning curve**: plot train and validation error as a function of training set size' (:256); separate framework-learning-curve sense covered in '25 - Frameworks and Tools/Agent Frameworks/03 - LangGraph.md:207' and 'LLM Frameworks/04 - DSPy.md:174'."),
+    ("CG-77ce1265ae9c", "reject",
+     "Non-concept noise (prose fragment): \"Let's break\" is the narrative style of the math-foundations notes ('Let's break down each of the three terms', '01.2 - Mathematical Foundations/02. Mathematical Notation and Symbols.md:71'; 'Let's break this chain into its three links', '03. Understanding the Math Notation - Chain Rule and wrt.md:60'; 'Let's break down this formula part by part', '03.2 - Optimization Algorithms/06. Loss Functions and Error Calculation.md:122'); no concept identity."),
+    ("CG-8569b3919327", "reject",
+     "Non-concept noise (vault navigation label): 'ML MOC' is the display text of wikilinks to the Machine Learning map-of-content ('[[03 - Machine Learning/MOC|ML MOC]]', master-ai '03 - Machine Learning/Evaluation/05 - ML Evaluation Metrics.md:198' and 3 more files); navigation metadata, not a knowledge concept (batch-10 'projects index' family)."),
+    ("CG-2153bffd9cb8", "reject",
+     "Non-concept noise (worked-example artifact): 'New Animal' is the query point of the crocodile/alligator KNN exercise ('Classify a **New Animal** based on a provided training dataset', '03.3 - K-Nearest Neighbors (KNN)/01. K-Nearest Neighbors (KNN) - Comprehensive.md:484'; '**New Animal Features (X_new):** [Head: 0.17, Size: 2.84]' :840); KNN itself has the dedicated comprehensive note. No concept identity."),
+    ("CG-7d98670781de", "cover",
+     "Periodic noise has dedicated frequency-domain treatments: '## Notch filters — the killer use case' (ai-course '06 - Image Processing/04. Frequency Domain and Restoration/4.3 Frequency Domain Filtering.md:76') with '### The problem: periodic noise' :80 and '### The solution: notch filter' :84 ('surgical removal of periodic noise by zeroing specific frequencies'); interference-pattern explanation ('if an image has a periodic interference pattern (e.g., from electrical noise at 50/60 Hz), this shows up as **spikes** at specific frequencies in the spectrum', '4.1 Introduction to the Frequency Domain.md:31'); quiz reinforcement ('07. Quiz/Q1.md:38')."),
+    ("CG-7303aabd318a", "reject",
+     "Non-concept noise (verb phrase): 'persists across' fragments memory/state prose ('code persists across iterations', master-ai '16 - Multi-Agent Systems/Architectures/01 - Multi-Agent Architectures.md:319'; 'archival memory persists across sessions', '18 - Memory Systems/Architectures/02 - MemGPT and Letta.md:224'; 'a learned memory module that persists across sequences', '24 - Research Frontiers/State Space Models/01 - SSMs Mamba and Frontiers.md:241'); the memory concepts have their dedicated notes. No concept identity."),
+    ("CG-0d3295e6817f", "reject",
+     "Non-concept noise (vault navigation label): 'projects index' is the gloss text of wikilinks to the Projects MOC ('[[27 - Projects/MOC]] — projects index.', master-ai '27 - Projects/Capstones/15 - Build a Multimodal Agent.md:284' and 15 more capstone notes); navigation metadata, not a knowledge concept (batch-10 same-family precedent)."),
+    ("CG-a2d2217a15eb", "cover",
+     "Rare terms are the core IDF phenomenon, covered by dedicated lexical-search notes: '## Inverse Document Frequency (IDF)' (master-ai '05 - NLP Fundamentals/Pre-Transformer NLP/09 - TF-IDF.md:35') in the dedicated TF-IDF note (:9) with '- **Rare words** (\"quokka\", \"topotear\"): appear in few documents → high IDF → high TF-IDF' (:44) and the quokka worked example (:75); '- **Rare terms**: \"quokka\" — embeddings may not have seen it; TF-IDF handles it naturally' (:198); BM25 note '## Two Key Improvements over TF-IDF' ('10 - BM25.md:29') with 'BM25 handles rare terms; embeddings may not have seen them' (:313)."),
+    ("CG-cb7258d3b480", "cover",
+     "ResNet-50 covered under its hyphenated spelling variant (session-10 hyphenation lesson): '## The Bottleneck Block (ResNet-50, ResNet-101, ResNet-152)' (ai-course '05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/09. ResNet Bottleneck Blocks and Architectural Variants.md:75'); '## Complete PyTorch Code: Fine-Tuning with ResNet-50' ('04. Training, Transfer Learning, and PyTorch/01. Transfer Learning and Fine-Tuning.md:251'); '## Bottleneck Block (ResNet-50/101/152)' ('04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/03. Artificial Neural Networks (ANN) - Comprehensive.md:1061'); torchvision models.resnet50 API walkthroughs in the ResNet note (:458/:486/:547/:625)."),
+    ("CG-a7eaaee7f024", "cover",
+     "Stride has a dedicated note and sections: ai-course '05 - Convolutional Neural Networks (CNN)/02. Core Operators and Geometry/07. Strides - Skipping Pixels and Downsampling.md:1' ('# 2.3 Strides: Skipping Pixels and Downsampling' — 'A stride of S=2 means the filter shifts 2 columns right after each computation' :35); '## Stride' ('01. The Convolution Operation Deep Dive.md:169' — 'A stride of S=1 means the filter moves one pixel at a time (the default)' :173); '## 1.3 Stride and Padding' ('04.3 - Training Dynamics and Stability/04. Hyperparameters and Network Configuration.md:79' with the receptive-field recurrence for stride-1 :48); output-dimension formula note (:140)."),
+    ("CG-4a2e98b227fe", "reject",
+     "Non-concept noise (vault-management planning term): 'under-built' describes chapters needing depth in master-ai '00 - Vault Management/Architecture Decisions.md:192/:206/:254' ('Iteration 3 prioritizes deepening the under-built chapters identified in the iteration-2 handoff'); iteration-planning metadata, not a knowledge concept (batch-9/10 vault-label precedent)."),
+    ("CG-d39dce758328", "cover",
+     "Gap-shaped but RESOLVED as cover via the underscore spelling variant (session-10 hyphenation lesson, now extended to underscore variants): '## 5. VGG16 vs. VGG16_BN' (ai-course '05 - Convolutional Neural Networks (CNN)/03. Architecture and Connectivity/06. VGG16 Architecture Deep Dive.md:311'); '# vgg16_bn = VGG16 with Batch Normalization.' ('04. Training, Transfer Learning, and PyTorch/03. PyTorch Advanced - VGG16 and Pre-trained Models.md:28' — code comment defining the variant); 'VGG16-BN uses batch norm; original VGG16 does not' (:164); weights-file detail (:54) and loading walkthrough (:723)."),
+    ("CG-20d95e45c91f", "cover",
+     "ViDoRe (visual document retrieval benchmark) has inline definitional treatments: 'ViDoRe (2024) is the standard; evaluates page-level retrieval for document QA' (master-ai '27 - Projects/Capstones/13 - Build a RAG Evaluation Harness.md:549'); '**ViDoRe benchmark** (2024): became the standard for document retrieval evaluation, displacing text-only benchmarks for multimodal systems' ('26 - Papers/Multimodal/48 - ColPali 2024.md:114'); benchmark results table usage (:89) and headline claim ('ColPali beats text-based retrieval pipelines ... on the ViDoRe benchmark by 15-25%', :12/:53)."),
+    ("CG-5e62b908c8a8", "reject",
+     "Non-concept noise (vault-management metric phrase): 'count increase' fragments iteration metrics ('Average line count increase: ~150%', 'file count unchanged: 286', master-ai '00 - Vault Management/Architecture Decisions.md:333/:369/:447/:487'); provenance metadata of vault growth, not a knowledge concept."),
+    ("CG-8c6b9ad8e840", "reject",
+     "Non-concept noise (vault-management editorial rule): 'cross-domain connections' is the wikilink-density editorial rule in master-ai '00 - Vault Management/Architecture Decisions.md:374/:492' ('More cross-domain connections (6-10 new wikilinks per note)'); style-guide metadata, not a knowledge concept."),
+    ("CG-6d502b0e774e", "reject",
+     "Non-concept noise (generic verb): 'deactivates' fragments dropout/eval-mode prose ('**Dropout:** Randomly deactivates a percentage of neurons during training. This prevents the network from becoming overly reliant...', '04.1 - Neural Network Basics/08. Data Preparation and MLP Implementation.md:34' — itself the local explanation; 'Deactivates Dropout and mak...', '05. Pipeline, Evaluation, and Interpretability/01. The Full Training Pipeline End-to-End Checklist.md:620'); eval-mode mechanics have dedicated sections (see CG-f2f3f3979deb). No concept identity."),
+    ("CG-43eff24e9a44", "reject",
+     "Non-concept noise (Mermaid styling constant): 'e8f5e9' is a hex fill color in mermaid classDef/style directives ('classDef hidden fill:#e8f5e9,stroke:#1b5e20...', '01.2 - Mathematical Foundations/05. Derivatives, Power Rule, and the Chain Rule.md:368' and 3 more notes); rendering metadata, not a knowledge concept."),
+    ("CG-a252dc3af1b2", "reject",
+     "Non-concept noise (verb phrase): 'filter moves' fragments stride/convolution exposition ('A stride of S=1 means the filter moves one pixel at a time', '02. Core Operators and Geometry/01. The Convolution Operation Deep Dive.md:173'; '# How many pixels the filter moves each ste...', '04. Training, Transfer Learning, and PyTorch/02. PyTorch Implementation Basics.md:243' — in-fence code comment); stride mechanics are covered by the dedicated Strides note (see CG-a7eaaee7f024). No concept identity."),
+    ("CG-9e73ab2c1f08", "reject",
+     "Non-concept noise (verb phrase): 'filter slides' fragments convolution exposition ('During the forward pass, the filter slides across the entire input, computing a dot product at each position', '01. The Convolution Operation Deep Dive.md:11' — in-situ explanation; 'the filter slides to every valid spatial position', '01. Foundations and Philosophy/05. Processing 3D Volumes, Depth Summation, and Biases.md:46'); convolution mechanics are covered by the dedicated Convolution Deep Dive note. No concept identity."),
+    ("CG-7234ff3e4556", "cover",
+     "The gradient product (the vanishing/exploding mechanism) has a dedicated note and in-situ mechanism treatments: '03. The Vanishing and Exploding Gradient Problems.md' (dedicated note) with 'Exploding gradients occur when the terms in the gradient product consistently have magnitude greater than 1' (:198), 'the gradient product involves the same matrix raised to a high power' (:228, RNN case), 'the gradient product to grow with depth' (:222); 'In a 10-layer network where each layer uses a sigmoid activation, the gradient product includes ten derivative terms' ('06. Chapter Summaries (Aggregated)/06. Transfer Learning and ResNet - Summary.md:500')."),
+    ("CG-6f41031dcc26", "reject",
+     "Non-concept noise (vault-management metric phrase): 'line count increase' is the iteration-expansion metric in master-ai '00 - Vault Management/Architecture Decisions.md:333/:369/:447/:487' ('Expanded each note substantially (typically ~200% line count increase)'); provenance metadata, not a knowledge concept."),
+    ("CG-7a9d62fc736d", "cover",
+     "LR schedules have a dedicated note: master-ai '02 - Mathematics/Optimization/14 - Learning Rate Schedules.md:9' ('# 14 - Learning Rate Schedules') with '## The Standard Schedule: Warmup + Cosine Decay' :29 and 'The LR schedule is the **single biggest training-stability knob** after the LR itself' (:168); ai-course companion sections '### Warmup: Gradual Learning Rate Ramp-Up' ('03.2 - Optimization Algorithms/08. Loss Functions and Optimizers Deep Dive.md:539') and '### CosineAnnealingLR: Smooth Cosine Decay' (:418); 'Learning Rate Warmup' (master-ai '11 - Training/Optimization/05 - Loss Spikes and Stability.md:101'); hyperparameter-priority table ('04.3 - Training Dynamics and Stability/04. Hyperparameters and Network Configuration.md:445')."),
+    ("CG-f8372b2446ba", "reject",
+     "Non-concept noise (vault-management editorial phrase): 'mathematical detail' is the note-expansion editorial rule in master-ai '00 - Vault Management/Architecture Decisions.md:372/:438/:490' ('More mathematical detail and derivations'); style-guide metadata, not a knowledge concept."),
+    ("CG-579d5eafd930", "cover",
+     "Objective function is defined in the notation foundations: '**Name:** Cost Function (or Loss Function / Objective Function). **General Definition:** A mathematical function that outputs a \"score\" representing how *bad* a system is performing' (ai-course '01 - Foundations and Overview/01.2 - Mathematical Foundations/01. Mathematical Notation (ML Course).md:66-:68'); '## 3. The Error Function (Cost Function)' ('03.1 - Regression/02. Linear Regression from Scratch.md:55'); '## The Cost Function (MSE)' ('03. Linear Regression (DL Perspective).md:23'); 'This is the canonical objective function of the Support Vector Machine' ('03.4 - Support Vector Machines (SVM)/03. The Mathematics of Separation.md:69'); Lagrangian usage ('03.4 - Support Vector Machines (SVM)/04. The Lagrangian Optimization.md:9')."),
+    ("CG-2da3a2915e65", "reject",
+     "Non-concept noise (verb phrase): 'set model' fragments model.train()/model.eval() code ('model.eval() # Set model to evaluation mode', '03.6 - Model Evaluation/02. Model Evaluation Metrics Beyond Accuracy.md:324'; 'model.train() # Set model to training mode', '04.2 - Backpropagation Deep Dive/04. Backpropagation and Gradient Flow in CNNs.md:411' — in-fence); train/eval-mode mechanics have dedicated sections (see CG-f2f3f3979deb). No concept identity."),
+    ("CG-663bd8acd752", "cover",
+     "Single-vector (dense retrieval) is the explicit contrast case in dedicated multi-vector treatments: '## Multi-Vector Retrieval' (master-ai '26 - Papers/Multimodal/48 - ColPali 2024.md:39'); '## BGE-M3: Multi-Vector + Multi-Lingual' ('09 - Foundation Models/Embedding Models/02 - Embedding Models for Retrieval.md:180'); '## Multi-Vector and Late-Interaction Indexes' ('18 - Memory Systems/Vector Memory/04 - Vector Memory Backends.md:247'); contrast definition 'This is higher quality because it preserves token-level matching (vs single-vector which collapses all token...' ('02 - Embedding Models for Retrieval.md:215') and 'Higher quality than single-vector embeddings, but more expensive' (:70); '768–1024 is the sweet spot for single-vector' (:157)."),
+    ("CG-1ff9ada6f512", "reject",
+     "Non-concept noise (generic quantity): 'train loss' is the standard training-loop printout / overfitting-diagnostic table quantity ('| Epoch | Train Loss | Val Loss | Interpretation |', '01.1 - AI, ML, and DL Hierarchy/08. Foundations of Machine Learning (Summary).md:459' — the overfitting diagnosis which is the actual concept; loop prints in covered training code); train/val dynamics are covered by the early-stopping and overfitting treatments (batch-10 'best validation' family). No concept identity."),
+    ("CG-02856c9c9a31", "reject",
+     "Non-concept noise (numeric range fragment): '30-60' is the n-gram speculative-decoding hit-rate statistic ('Hit rate: 30-60% for repetitive content', master-ai '05 - NLP Fundamentals/Language Modeling/07 - N-gram Language Models.md:298' and '13 - Inference/Speculative Decoding/05 - Speculative Decoding.md:212'); a quantity inside covered treatments, not a concept."),
+    ("CG-a87bbe0c62c4", "reject",
+     "Non-concept noise (numeric range fragment): '6-10' is the wikilink-density editorial rule ('More cross-domain connections (6-10 new wikilinks per note)', master-ai '00 - Vault Management/Architecture Decisions.md:374/:486/:492') and section-count metadata (:432); vault-management metric, not a concept."),
+]
+
+
+def main() -> int:
+    selected = json.loads(SELECTED.read_text())
+    sel_ids = [s["candidate_id"] for s in selected]
+    dec_ids = [d[0] for d in DECISIONS]
+    if sel_ids != dec_ids:
+        raise SystemExit(
+            "decision order does not match tranche selection order:\n"
+            f"selected={sel_ids}\n decisions={dec_ids}"
+        )
+    if len(set(dec_ids)) != len(dec_ids):
+        raise SystemExit("duplicate candidate ids in decisions")
+
+    out = []
+    for i, (cid, action, rationale) in enumerate(DECISIONS, 1):
+        out.append({
+            "decision_id": f"D-DISC002-B11-{i:04d}",
+            "candidate_id": cid,
+            "action": action,
+            "rationale": rationale,
+            "reviewer": REVIEWER,
+        })
+    with open(OUT, "w", encoding="utf-8") as fh:
+        for rec in out:
+            fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    from collections import Counter
+    counts = Counter(d[1] for d in DECISIONS)
+    print(f"wrote {len(out)} decisions to {OUT}")
+    print("actions:", dict(counts))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
