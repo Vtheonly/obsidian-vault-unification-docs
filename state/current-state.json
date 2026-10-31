@@ -66,8 +66,8 @@
   "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)"
  },
  "knowledge_registry_initialized": true,
- "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-01-disc002-session15.json",
- "notes": "DISC-002 in progress; session 15 re-verified the baseline (663/663 tests at start — the editable install was run FIRST, first-run pass; both vaults byte-identical to manifests at start, HEAD == origin/main == 541d046), extended the ADR-0010 replay to FIFTEEN decide rounds (content-identical to the committed index on the first try; expected 51,312/7,214/1,623/3/1/1 matched exactly; disk-frugal intermediates — deleted as consumed, only the CAND scratch/disc002-s15-batch14.jsonl preserved), found NO new tooling defect (the F-0021-fixed fence_spans held: the batch-15 probe ran 267 terms clean), and completed the batch-15 review tranche: 60 highest-signal unreviewed candidates (4,334 matching the signal rule — exactly the session-14 prediction), 267-term fence-aware coverage probe + 168-check citation verification with the NEW LEVEL-EXACT heading discipline (every require_heading pattern is '^### '-style and a startup guard rejects '^#+' — the session-14 blind spot closed structurally; all OK after four pattern fixes) + independent subagent cross-check of ALL 60 judgment calls: 60/60 first-pass AGREE (third consecutive fully-agreeing tranche). TWELVE subagent errata flagged and ALL independently re-verified and ACCEPTED (three sibling-phrasing heading-LEVEL markers, the :479/:480 warning callout anchor, the :263/:265 accumulation clause, the 'releasing the graph' note attribution, the N-gram :9 and notation :3 title anchors, the ResNet :594-597 transform block); FOUR strengthening citations verified and incorporated (Mini Agent web_search :59/:150; A-Z Terms chat template :48 and Memory :166; Acronyms Index VLM :202). Decisions: 12 evidence-cited covers + 48 noise rejects applied (--decided-utc 2026-11-01T04:15:00Z), validate green, index regenerated and delta-verified PASS on the first try (counts match the pre-written arithmetic 51,312-60 / 7,214+12 / 1,623+48). NO NEW CONFIRMED GAP ('tulu' adversarially probed: 4 bare example-list occurrences, no gloss anywhere, not dependency position — reject stands; 'web search' COVERED via operational treatments; 'chat template' additionally glossary-covered). CURRENT: 51,252 provisional / 7,226 already_covered / 1,671 rejected / 3 confirmed_gap (second moment, bradley-terry, async def) / 1 merged / 1 deferred. NEXT: batch-16+ review tranches (4,274 still match the signal rule); per-domain semantic classification of the dossier-extension overlap pairs; then disposition assignment before gated synthesis. SESSION-15 PUSH VERIFIED: feat commit e75173b pushed to origin/main (541d046..e75173b); HEAD == origin/main == e75173b, working tree clean after the push.",
+ "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-01-disc002-session16.json",
+ "notes": "DISC-002 session 16 (2026-11-01): USER-AUTHORIZED ACCELERATED MODE (ADR-0011, user direction 2026-11-01: 'remove the universal review and do it fast then ... the final vault should be done in less than 12 additional sessions'). Baseline re-verified first (663/663 tests first-run after editable install; both vaults byte-identical to manifests; HEAD == origin/main == 182ac37). Sixteen-round ADR-0010 replay content-identical to the committed index on the first try (51,252/7,226/1,671/3/1/1). SIGNAL POOL EXHAUSTED: all 4,274 remaining signal-rule candidates decided in ONE session via the ADR-0011 tiered pipeline \u2014 (1) calibrated bulk classes (noise N1-N9/R2/R3aux/R4 with ZERO non-reject counter-examples among the 2,063-decision calibration set; attempted classes N5/H/N11/N12/N13 were REJECTED by calibration and routed to review), (2) 290 citation-backed bulk P-covers (fence-aware heading/def-window evidence, F-0021-fixed fence_spans), (3) 3,666 semantic review decisions by six parallel subagents with the 15-session precedent rubric, (4) orchestrator verification: 0 missing/dup decisions, every cover citation mechanically checked against the corpus (44 flagged, 43 format-variants re-verified, 1 manually confirmed), 150-reject sample personally re-reviewed (~97% agreement; ALL disagreements conservative reject->cover overrides, ZERO hidden gaps), and 11 orchestrator overrides of subagent-flagged borderline calls each carrying independently verified citations (credit assignment gap_watch OVERTURNED to cover: three in-situ colon-glosses at Policy Gradients:57 / PRM:23 / VR-vs-PRMs:31; SAM, llm-as-judge, open-weights, gaussian processes, vector database, randomresizedcrop, llm training, large language models likewise cover). Result: 667 covers + 3,607 rejects + 0 new gaps; decide applied (decisions_applied cumulative 6,338); index delta-verified against PRE-WRITTEN arithmetic on the first try (provisional 51,252-4,274=46,978; already_covered 7,226+667=7,893; rejected 1,671+3,607=5,278; confirmed_gap 3; merged 1; deferred 1); exactly 4,274 records changed, 55,880 unchanged; validate green (60,154 records, 0 errors); 663/663 tests re-run after the last mutation. Remaining 46,978 provisional candidates are ALL below the signal rule (max score 0.77, max contexts 9, no fragmented derivations; 6,404 rare_essential are single-occurrence score-0.43 numeric-led extraction noise structurally incapable of the confirm_gap dependency bar) \u2014 a documented exclusion per the batch-3..16 signal-rule standard. NEXT (in order): dossier-extension per-domain classification of the 69,185 overlap pairs (ADR-0011 tiering applies), then disposition assignment, then GATED synthesis; the 12-session budget target is the final vault by session 27.",
  "output_synthesis_started": false,
  "phase_zero_rebaseline": {
   "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
@@ -95,15 +95,16 @@
     "state/concept-candidates/002-disc002-decisions-batch12.jsonl (60)",
     "state/concept-candidates/002-disc002-decisions-batch13.jsonl (60)",
     "state/concept-candidates/002-disc002-decisions-batch14.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch15.jsonl (60)"
+    "state/concept-candidates/002-disc002-decisions-batch15.jsonl (60)",
+    "state/concept-candidates/002-disc002-decisions-batch16.jsonl (4,274)"
    ],
    "dossier_ext_mechanical": "reports/dossier-ext/disc002-dext-summary.json (6 domains, 69185 candidate pairs, classification pending)",
    "dossier_gap": "reports/discovery/disc002-dossier-reconciliation-gap.json",
    "equivalence": "reports/discovery/disc002-f0015-equivalence.json",
    "final_statuses": {
-    "provisional_candidate": 51252,
-    "already_covered": 7226,
-    "rejected": 1671,
+    "provisional_candidate": 46978,
+    "already_covered": 7893,
+    "rejected": 5278,
     "confirmed_gap": 3,
     "merged": 1,
     "deferred": 1
@@ -126,7 +127,8 @@
     "batch12": "2026-10-31T10:30:00Z",
     "batch13": "2026-10-31T13:30:00Z",
     "batch14": "2026-11-01T03:30:00Z",
-    "batch15": "2026-11-01T04:15:00Z"
+    "batch15": "2026-11-01T04:15:00Z",
+    "batch16": "2026-11-01T22:30:00Z"
    },
    "sessions_merged": [
     "A: 3d2ff8b..e2914e9",
@@ -144,7 +146,8 @@
    ],
    "task": "DISC-002",
    "validation": "reports/discovery/disc002-validate-merged.json (60,154 records, 0 errors)",
-   "replay_writer_note": "recorded 88a538eb sha256 is script-writer-specific (ensure_ascii=False); CLI replay is byte-different but content-identical — compare parsed content (F-0019)"
+   "replay_writer_note": "recorded 88a538eb sha256 is script-writer-specific (ensure_ascii=False); CLI replay is byte-different but content-identical \u2014 compare parsed content (F-0019)",
+   "signal_pool": "EXHAUSTED (session 16): 0 unreviewed candidates match the signal rule; 46,978 low-signal provisional remain as the documented exclusion"
   },
   "discovery_full_corpus": {
    "candidates": 60154,
@@ -213,7 +216,7 @@
   }
  ],
  "source_vaults_located": true,
- "stage": "disc002-review-batch15-done",
+ "stage": "disc002-signal-pool-complete",
  "status": "in_progress",
  "verification_pilot_evidence": {
   "defect_classes": 12,

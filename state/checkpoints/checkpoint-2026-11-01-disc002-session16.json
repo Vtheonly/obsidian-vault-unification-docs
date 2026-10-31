@@ -1,0 +1,69 @@
+{
+ "checkpoint_id": "checkpoint-2026-11-01-disc002-session16",
+ "date": "2026-11-01",
+ "task": "DISC-002 (accelerated completion mode, ADR-0011)",
+ "stage": "disc002-signal-pool-complete",
+ "baseline_verification": {
+  "tests": "663/663 first-run (reports/discovery/disc002-s16-baseline via scratch/disc002-s16-baseline-pytest.json)",
+  "manifests": "both vaults byte-identical (scratch/disc002-s16-manifest-{ai-course,master-ai}.json, 0 added/removed/changed)",
+  "start_head": "182ac37 == origin/main, clean tree"
+ },
+ "adr_0011": {
+  "authorization": "user direction 2026-11-01 (recorded in docs/RISKS_AND_DECISIONS.md ADR-0011)",
+  "bulk_classes_applied": [
+   "N1_numeric_unit",
+   "N3_import",
+   "N4_code_identifier",
+   "N6_adverb_adj",
+   "N7_month",
+   "N9_too_short",
+   "R2_everyday_single",
+   "R3_aux_prose",
+   "R4_vaultmeta"
+  ],
+  "bulk_classes_calibration_rejected": [
+   "N5_possessive(1 cover)",
+   "H_head(91 covers+1 gap)",
+   "N11/N12/N13(covers)",
+   "R3_ends_everyday(20 covers)",
+   "R4-greedy(3 covers)"
+  ],
+  "bulk_decisions": 608,
+  "subagent_review": {
+   "slices": 6,
+   "candidates": 3666,
+   "decisions": {
+    "reject": 3299,
+    "cover": 366,
+    "gap_watch": 1
+   }
+  },
+  "orchestrator_verification": {
+   "cover_citation_check": "366 covers checked; 322 direct OK, 44 flagged -> 43 citation-format variants re-verified OK + 1 (resnets) manually confirmed",
+   "reject_sample": "150/3299 (4.6%) personally re-reviewed; ~97% agreement; 5+ disagreements all conservative reject->cover; zero hidden gaps",
+   "overrides": 11,
+   "gap_watch_resolution": "credit assignment -> COVER (three in-situ colon-glosses; dependency test fails)"
+  }
+ },
+ "batch16_result": {
+  "decisions": 4274,
+  "covers": 667,
+  "rejects": 3607,
+  "new_gaps": 0,
+  "decided_utc": "2026-11-01T22:30:00Z",
+  "delta_verification": "PASS first try vs pre-written arithmetic; 4,274 changed / 55,880 unchanged",
+  "final_statuses": {
+   "provisional_candidate": 46978,
+   "already_covered": 7893,
+   "rejected": 5278,
+   "confirmed_gap": 3,
+   "merged": 1,
+   "deferred": 1
+  },
+  "validate": "green (60,154 records, 0 errors)",
+  "tests_after_last_mutation": "663/663"
+ },
+ "remaining_low_signal_pool": "46,978 provisional (max score 0.77, max contexts 9, no frag-deriv; 6,404 rare_essential single-occurrence 0.43-score noise) \u2014 documented exclusion",
+ "next_task": "Dossier-extension per-domain classification (69,185 pairs; ADR-0011 tiering), then disposition assignment, then gated synthesis; final vault by session 27",
+ "git_state_at_write": "uncommitted changes pending (this checkpoint is part of the session-16 commit)"
+}

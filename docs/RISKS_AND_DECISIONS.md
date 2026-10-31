@@ -194,3 +194,80 @@ evidence of the coverage-gated run); no migration needed. The
 `state/concept-candidates/` review outputs (decisions) stay committed.
 **Affected artifacts:** `.gitignore`, `reports/discovery/disc002-*`,
 `scripts/disc002_*.py`, `docs/agent-handoff/next-agent.md`.
+
+### ADR-0011 — User-authorized accelerated completion mode: calibrated bulk candidate decisions + tiered verification
+**Status:** accepted (2026-11-01, DISC-002 session 16)
+**Context:** After 15 review sessions (2,063 committed decisions; 60 per
+session), 4,274 signal-rule candidates remain, with 69,185 dossier-extension
+pairs, disposition assignment, and gated synthesis still ahead. At the
+historical 60-candidates/session pace the candidate stage alone needs ~72
+more sessions. The user reviewed the completion arithmetic
+(candidates 17.4% done; effort-weighted project completion single-digit
+percent) and directed (2026-11-01): remove the universal per-candidate
+subagent cross-check, streamline verification that does not advance the
+deliverable, and complete the final vault in fewer than 12 additional
+sessions.
+**Options considered:** (1) continue 60/session with universal dual review
+(~72 sessions for candidates alone — violates the user's constraint);
+(2) abandon review of remaining candidates (violates the discovery
+coverage contract); (3) calibrated deterministic bulk decisions for the
+mechanically-decidable classes, individual semantic review reserved for
+the gap-relevant residual, verification tiered by decision class.
+**Decision:** option 3, with these bindings:
+1. **Bulk classes are admissible only with zero counter-evidence in the
+   full 2,063-decision calibration set.** A mechanical noise class
+   (numeric/unit fragments, import statements, years, code identifiers,
+   adverb/prose fragments, vault meta) may be bulk-rejected only if NO
+   calibration member of that class received a non-reject outcome. Any
+   class with a counter-example goes to individual review.
+2. **Citation-backed bulk covers.** A candidate may be bulk-covered only
+   with machine-generated evidence: a real (fence-aware, authoritative
+   state-machine) heading hit or definition-window hit for the exact term
+   recorded as file:line in the rationale — the same evidence class the
+   batch-15 review cited by hand. Homonym/contradiction-suspect and
+   high-score candidates are excluded from bulk cover and reviewed
+   individually.
+3. **confirm_gap is never bulk-decided.** Gap-possible candidates
+   (probe-negative, concept-shaped, dependency-position usage) always get
+   individual semantic review, and every orchestrator-proposed
+   confirm_gap keeps the independent-subagent cross-check plus
+   independent re-verification (standing sessions 9-15 rule).
+4. **Tiered verification replaces universal cross-check:** (a) every
+   confirm_gap and merge: subagent cross-check + independent
+   re-verification; (b) bulk N/P classes: random 5% sample (minimum 30)
+   independently re-checked per applied batch, plus full re-verification
+   of any sample disagreement; if a sample reveals a wrong-decision class
+   member, the whole class is pulled back to individual review for that
+   batch; (c) the residual class: orchestrator individual review with
+   probe evidence bundles (no universal subagent re-check).
+5. **Safety argument (why this cannot lose knowledge):** per ADR-0010,
+   candidate acceptance/rejection never affects KU dispositions — all
+   27,536 knowledge units remain in the ledger with source locators
+   regardless of candidate outcomes. The only knowledge-affecting
+   candidate outcome is confirm_gap (new dedicated treatment), which
+   stays fully individually verified. A bulk cover/reject mislabel only
+   changes a status field between two "no new note needed" outcomes.
+6. **Preserved invariants:** the F-0021-fixed fence_spans probe
+   signature, level-exact heading patterns, delta-verification with
+   pre-written arithmetic, validate-green requirement, decided-utc
+   recording, decisions JSONL commit + ADR-0010 replayability.
+**Rationale:** The project's own contract (AGENTS.md §10) requires
+deterministic tooling for mechanical work and semantic review for
+judgment work. 2,063 hand-reviewed decisions provide a calibration set;
+classes with zero counter-examples are mechanically decidable by
+definition. The user explicitly authorized removing universal review and
+prioritizing the final deliverable.
+**Impact / migration:** No schema changes; decisions remain
+discovery-decide JSONL with rationale + reviewer fields (bulk rationales
+cite the calibration + per-candidate evidence). Batch sizes may exceed 60
+(decision IDs remain D-DISC002-B<n>-**** with n the session's batch
+number). The remaining-sessions plan: complete DISC-002 signal pool,
+dossier-extension tiered classification, disposition assignment, and
+gated synthesis within the user's <12-session budget.
+**Approval evidence:** user direction 2026-11-01 ("remove the universal
+review and do it fast then ... the final vault should be done in less
+than 12 additional sessions"), recorded in the session-16 handoff and
+checkpoint.
+**Affected artifacts:** `scripts/disc002_batch16_*.py`,
+`reports/discovery/disc002-s16-*`, `docs/agent-handoff/next-agent.md`,
+this register.
