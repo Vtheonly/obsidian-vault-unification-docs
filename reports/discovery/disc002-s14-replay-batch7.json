@@ -1,0 +1,27 @@
+{
+  "result": {
+    "ok": true,
+    "records_written": 60154,
+    "decisions_applied": 1584,
+    "decided_utc": "2026-10-31T00:30:00Z",
+    "out": "/home/z/my-project/scratch/disc002-s14-batch7.jsonl"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "discovery-decide",
+    "args": {
+      "command": "discovery-decide",
+      "candidates": "/home/z/my-project/scratch/disc002-s14-batch6.jsonl",
+      "decisions": "state/concept-candidates/002-disc002-decisions-batch7.jsonl",
+      "out": "/home/z/my-project/scratch/disc002-s14-batch7.jsonl",
+      "candidate_schema": "schemas/concept-candidate.schema.json",
+      "decided_utc": "2026-10-31T00:30:00Z",
+      "protected_root": null,
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/discovery/disc002-s14-replay-batch7.json"
+    },
+    "utc_timestamp": "2026-10-31T17:08:19+00:00",
+    "git_commit": "2d577cd"
+  }
+}

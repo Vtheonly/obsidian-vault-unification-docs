@@ -66,8 +66,8 @@
   "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)"
  },
  "knowledge_registry_initialized": true,
- "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-10-31-disc002-session13.json",
- "notes": "DISC-002 in progress; session 13 re-verified the baseline (663/663 tests at start after the documented editable install in the fresh sandbox — the first run failed 662/663 on the subprocess CLI test without the install; both vaults byte-identical to manifests at start, HEAD == origin/main == c8fcfb8), extended the ADR-0010 replay to THIRTEEN decide rounds (content-identical to the committed index on the first try; expected 51,432/7,167/1,550/3/1/1 matched exactly), reused the fence-aware probe/verify pattern unchanged, and completed the batch-13 review tranche: 60 highest-signal unreviewed candidates (4,454 matching the signal rule — exactly the session-12 prediction), ~230-term fence-aware coverage probe + 160-check citation verification (all OK after pattern fixes: heading-number prefixes, bold-marker placement, \\times and \\cos regex escaping) + independent subagent cross-check of ALL 60 judgment calls: 60/60 first-pass AGREE — the first fully-agreeing tranche since the cross-check discipline began. Two errata flagged and independently re-verified: the predicted-label symbol gloss at master-ai '01 - Perceptrons and MLPs.md:63' ACCEPTED (reject stands; rationale strengthened) and the claimed latent-representation locator ':14' REJECTED (the definition is at :15; original citation stands) — fifth consecutive session where subagent-erratum re-verification cut both ways. Decisions: 30 evidence-cited covers + 30 noise rejects applied (--decided-utc 2026-10-31T13:30:00Z), validate green, index regenerated and delta-verified PASS (60 changes: 30+30; 60,094 unchanged; counts match the pre-written arithmetic 51,432-60 / 7,167+30 / 1,550+30; one iteration on the script's stale embedded expectation, expectation side patched per the session-11 lesson, per-record checks green throughout). NO NEW CONFIRMED GAP: 'still sota' covered via the glossary SOTA entry (Acronyms Index:177; ddpm precedent); 'runtimeerror' covered via the dedicated Error Handling note + PyTorch cause/fix diagnostics; 'def'/'super' via the dedicated Functions/OOP notes; 'lfloor'/'rfloor'/'cos'/'sin' rejected as LaTeX artifacts with covered concept side. CURRENT: 51,372 provisional / 7,197 already_covered / 1,580 rejected / 3 confirmed_gap (second moment, bradley-terry, async def) / 1 merged / 1 deferred. NEXT: batch-14+ review tranches (4,394 still match the signal rule); per-domain semantic classification of the dossier-extension overlap pairs; then disposition assignment before gated synthesis. SESSION-13 PUSH VERIFIED: feat commit ab4101a ('feat(DISC-002): batch-13 review tranche (60 decisions) + thirteen-round ADR-0010 replay re-verification') pushed to origin/main (c8fcfb8..ab4101a) and verified with git fetch (HEAD == origin/main == ab4101a; clean tree) before this state commit. Session 13 is fully persisted.",
+ "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-01-disc002-session14.json",
+ "notes": "DISC-002 in progress; session 14 re-verified the baseline (663/663 tests at start — the editable install was run FIRST, so no failed baseline run this time; both vaults byte-identical to manifests at start, HEAD == origin/main == 2d577cd), extended the ADR-0010 replay to FOURTEEN decide rounds (content-identical to the committed index on the first try; expected 51,372/7,197/1,580/3/1/1 matched exactly), found and fixed ONE new tooling defect (F-0021: probe fence_spans mishandled unclosed fences' explicit-null end_line; fixed to extend to EOF, batch-10..13 probes carry the latent defect but never triggered it), and completed the batch-14 review tranche: 60 highest-signal unreviewed candidates (4,394 matching the signal rule — exactly the session-13 prediction), ~290-term fence-aware coverage probe + 178-check citation verification (all OK after five pattern fixes) + independent subagent cross-check of ALL 60 judgment calls: 60/60 first-pass AGREE (second consecutive fully-agreeing tranche). TEN subagent errata flagged and ALL independently re-verified and ACCEPTED (one off-by-one IoU line :20 vs :21, nine heading-LEVEL markers — root cause: the verify script's '^#+' require_heading pattern matches any level, a blind spot the subagent caught); ONE further level slip found by the orchestrator's own post-fix audit ('### One-stage detectors' at :69). Decisions: 17 evidence-cited covers + 43 noise rejects applied (--decided-utc 2026-11-01T03:30:00Z), validate green, index regenerated and delta-verified PASS on the first try (counts match the pre-written arithmetic 51,372-60 / 7,197+17 / 1,580+43). NO NEW CONFIRMED GAP (nearest misses 'exponential moving average' and 'loss curve' both have in-situ definitional treatments). CURRENT: 51,312 provisional / 7,214 already_covered / 1,623 rejected / 3 confirmed_gap (second moment, bradley-terry, async def) / 1 merged / 1 deferred. NEXT: batch-15+ review tranches (4,334 still match the signal rule); per-domain semantic classification of the dossier-extension overlap pairs; then disposition assignment before gated synthesis.",
  "output_synthesis_started": false,
  "phase_zero_rebaseline": {
   "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
@@ -93,15 +93,16 @@
     "state/concept-candidates/002-disc002-decisions-batch10.jsonl (60)",
     "state/concept-candidates/002-disc002-decisions-batch11.jsonl (60)",
     "state/concept-candidates/002-disc002-decisions-batch12.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch13.jsonl (60)"
+    "state/concept-candidates/002-disc002-decisions-batch13.jsonl (60)",
+    "state/concept-candidates/002-disc002-decisions-batch14.jsonl (60)"
    ],
    "dossier_ext_mechanical": "reports/dossier-ext/disc002-dext-summary.json (6 domains, 69185 candidate pairs, classification pending)",
    "dossier_gap": "reports/discovery/disc002-dossier-reconciliation-gap.json",
    "equivalence": "reports/discovery/disc002-f0015-equivalence.json",
    "final_statuses": {
-    "provisional_candidate": 51372,
-    "already_covered": 7197,
-    "rejected": 1580,
+    "provisional_candidate": 51312,
+    "already_covered": 7214,
+    "rejected": 1623,
     "confirmed_gap": 3,
     "merged": 1,
     "deferred": 1
@@ -122,7 +123,8 @@
     "batch10": "2026-10-31T05:30:00Z",
     "batch11": "2026-10-31T08:00:00Z",
     "batch12": "2026-10-31T10:30:00Z",
-    "batch13": "2026-10-31T13:30:00Z"
+    "batch13": "2026-10-31T13:30:00Z",
+    "batch14": "2026-11-01T03:30:00Z"
    },
    "sessions_merged": [
     "A: 3d2ff8b..e2914e9",
@@ -209,7 +211,7 @@
   }
  ],
  "source_vaults_located": true,
- "stage": "disc002-review-batch13-done",
+ "stage": "disc002-review-batch14-done",
  "status": "in_progress",
  "verification_pilot_evidence": {
   "defect_classes": 12,
