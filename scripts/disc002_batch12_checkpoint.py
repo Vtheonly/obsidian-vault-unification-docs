@@ -1,0 +1,157 @@
+#!/usr/bin/env python3
+"""DISC-002 session 12: write the session checkpoint."""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+OUT = Path("state/checkpoints/checkpoint-2026-10-31-disc002-session12.json")
+
+data = {
+    "checkpoint_id": "checkpoint-2026-10-31-disc002-session12",
+    "task_id": "DISC-002",
+    "written_utc": "2026-10-31T10:30:00Z",
+    "session_summary": {
+        "baseline_verification": (
+            "Clean tree at session start with HEAD == origin/main == "
+            "6d1cf8e (git status, git log, git fetch verified). 663/663 "
+            "tests passed (reports/discovery/disc002-session12-baseline-"
+            "pytest.json). Both vaults byte-identical to committed "
+            "manifests at session start (reports/discovery/"
+            "disc002-session12-manifest-{ai-course,master-ai}.json; 0 "
+            "added/removed/changed). Committed index verified: 60,154 "
+            "records, 51,492/7,142/1,515/3/1/1 — matching the session-11 "
+            "handoff exactly."
+        ),
+        "adr0010_replay": (
+            "TWELVE decide rounds replayed via scripts/"
+            "disc002_batch12_replay.py (r1 2026-10-28T00:45:00Z, r2 "
+            "01:30:00Z, batch2 02:30:00Z, batch3 05:30:00Z, batch4 "
+            "2026-10-30T13:05:00Z, batch5 15:30:00Z, batch6 16:30:00Z, "
+            "batch7 2026-10-31T00:30:00Z, batch8 01:30:00Z, batch9 "
+            "03:00:00Z, batch10 05:30:00Z, batch11 08:00:00Z), then "
+            "discovery-index — CONTENT-IDENTICAL to the committed index "
+            "(60,154 records; 51,492/7,142/1,515/3/1/1; F-0019 "
+            "content-comparison; replay ran clean on the first try; "
+            "validate green; reports/discovery/disc002-s12-replay-*.json; "
+            "post-batch11 chain state preserved at scratch/"
+            "disc002-s12-batch11.jsonl)."
+        ),
+        "batch12_tranche": (
+            "60 highest-signal unreviewed provisional candidates selected "
+            "(scripts/disc002_batch12_tranche.py; 4,514 matching the "
+            "signal rule of 51,492 unreviewed — exactly the session-11 "
+            "handoff prediction). Individual evidence review of all 60 "
+            "brief blocks; 137-term fence-aware coverage probe (scripts/"
+            "disc002_batch12_probe.py -> scratch/disc002-batch12-probe."
+            "json — reuses the batch-10/11 fence-aware design unchanged); "
+            "154-check targeted citation verification (scripts/"
+            "disc002_batch12_verify.py, all OK after 5 exact-text pattern "
+            "fixes: heading-form, **bold**-marker, missing-word, "
+            "heading-level and note-title-vs-filename classes); "
+            "independent subagent cross-check of ALL 60 judgment calls: "
+            "59/60 AGREE on the first pass."
+        ),
+        "subagent_cross_check": (
+            "60 judgment calls cross-checked; 59/60 first-pass AGREE; the "
+            "ONE disagreement (cifar10) was INDEPENDENTLY RE-VERIFIED by "
+            "the orchestrator against the corpus and the SUBAGENT WAS "
+            "RIGHT: a TERM-SEPARATED CIFAR-10 definition exists in the "
+            "Q11 quiz matching block ('c) CIFAR-10 dataset' :178 paired "
+            "with 'n) A popular benchmark dataset for deep learning with "
+            "60,000 32x32 color images in 10 classes' :182, answer key "
+            "'c) -> n)' :190) — the definition line does NOT contain the "
+            "string 'CIFAR', which is why the orchestrator's term-only "
+            "grep missed it. The orchestrator's draft confirm_gap was "
+            "CORRECTED to cover before applying. FOURTH consecutive "
+            "session with a decisive subagent correction (session 12: "
+            "the correction overturned the orchestrator's own gap claim "
+            "rather than a citation). Other errata ACCEPTED after "
+            "independent re-verification: the LogSoftmax ':109' locator "
+            "belongs to '08. Loss Functions and Optimizers Deep Dive.md' "
+            "(not '02. Loss Functions and Cost Optimization.md'); the "
+            "thought-vector definition is at '06 - Attention "
+            "Mechanisms/Origins/01 - Origins of Attention.md:19' (not "
+            "the Bahdanau 2014 note); heading-level corrections (### "
+            "not ##) for the running-stats, SGD and late-interaction "
+            "headings. No wrong subagent corrections found this session."
+        ),
+        "decisions": (
+            "25 evidence-cited covers + 35 noise rejects + 0 confirm_gap "
+            "+ 0 merge + 0 defer (state/concept-candidates/"
+            "002-disc002-decisions-batch12.jsonl, decision IDs "
+            "D-DISC002-B12-0001..0060; applied with --decided-utc "
+            "2026-10-31T10:30:00Z — chain-consistent value after "
+            "batch-11's 08:00:00Z; reports/discovery/"
+            "disc002-decide-batch12.json, disc002-validate-batch12.json "
+            "60,154 records 0 errors, disc002-index-batch12.json)."
+        ),
+        "gap_watch": (
+            "NO new confirmed gap. The one gap-shaped candidate, "
+            "'cifar10' (CG-d704d9fe65ef; 16+ ai-course files use it in "
+            "dependency position: the Exercise-3 end-to-end CNN, "
+            "hyperparameter guidance, He et al. degradation experiments, "
+            "three quiz files; 2 master-ai usage mentions), was RESOLVED "
+            "as COVER via the TERM-SEPARATED quiz definition (Q11:178/:"
+            "182/:190) plus in-situ composition statements (Exercise 3: "
+            "50,000/10,000 split :482, 10 class names :514-:516, 3 RGB "
+            "channels :541, 'CIFAR-10 has 10 classes' :1026, mermaid "
+            "3×32×32 :383). MNIST and ImageNet are both defined for "
+            "contrast (French lab :88; ILSVRC '05. Evolution and History "
+            "of Deep Learning.md:46'). NEW PROBE LESSON (extends the "
+            "session-10 hyphenation and session-11 glossary lessons): "
+            "definitions can be TERM-SEPARATED — quiz matching blocks "
+            "pair a Group-A term with a Group-B definition whose line "
+            "does not contain the term; before claiming definitional "
+            "absence, inspect the description lines near every "
+            "occurrence and search property-based phrases ('60,000 "
+            "32x32', '10 classes') rather than only the term. Corpus "
+            "confirmed_gap total stays 3 (second moment, bradley-terry, "
+            "async def)."
+        ),
+        "post_batch12_state": {
+            "total": 60154,
+            "provisional_candidate": 51432,
+            "already_covered": 7167,
+            "rejected": 1550,
+            "confirmed_gap": 3,
+            "merged": 1,
+            "deferred": 1,
+        },
+        "delta_verification": (
+            "scripts/disc002_batch12_delta.py: exactly 60 status changes "
+            "between scratch/disc002-s12-batch11.jsonl and scratch/"
+            "disc002-s12-batch12.jsonl (25 provisional->already_covered, "
+            "35 provisional->rejected), all matching the intended "
+            "actions; decision_history appended for all 60; all other "
+            "60,094 records unchanged; index regenerated "
+            "(reports/discovery/disc002-index-batch12.json) and committed "
+            "with counts 51,432/7,167/1,550/3/1/1 = expected deltas. "
+            "PASS ON THE FIRST RUN — the expectation arithmetic was "
+            "written down before running (session-11 delta-verification "
+            "discipline applied: 51,492-60 / 7,142+25 / 1,515+35)."
+        ),
+    },
+    "evidence": {
+        "baseline_pytest": "reports/discovery/disc002-session12-baseline-pytest.json (663/663)",
+        "manifest_start": "reports/discovery/disc002-session12-manifest-{ai-course,master-ai}.json (0 drift)",
+        "manifest_end": "reports/discovery/disc002-session12-manifest-end-{ai-course,master-ai}.json (0 drift; run after the last mutation)",
+        "final_pytest": "reports/discovery/disc002-session12-final-pytest.json (run after the last state mutation)",
+        "replay_reports": "reports/discovery/disc002-s12-replay-{full,r1,r2,batch2..batch11,index,validate}.json",
+        "tranche_selection": "scripts/disc002_batch12_tranche.py; scratch/disc002-batch12-{brief.md,pool.json,selected.json}",
+        "coverage_probe": "scripts/disc002_batch12_probe.py (fence-aware); scratch/disc002-batch12-probe.json (137 terms)",
+        "citation_verification": "scripts/disc002_batch12_verify.py (154 checks OK after 5 exact-text pattern fixes)",
+        "cross_check": "scratch/disc002-batch12-crosscheck-input.md (60 judgment calls; subagent 59/60 first-pass AGREE; the 1 disagreement independently re-verified — the subagent was right, draft confirm_gap on 'cifar10' corrected to cover)",
+        "decisions": "state/concept-candidates/002-disc002-decisions-batch12.jsonl (60)",
+        "apply_report": "reports/discovery/disc002-decide-batch12.json",
+        "validation": "reports/discovery/disc002-validate-batch12.json (60,154 records, 0 errors)",
+        "index": "reports/discovery/disc002-index-batch12.json; state/concept-candidates/002-disc002-full-corpus.index.jsonl (committed)",
+        "delta": "scripts/disc002_batch12_delta.py; scratch/disc002-batch12-delta.json (PASS first run)"
+    },
+    "source_immutability": "Both vaults verified byte-identical to committed manifests at session start and end; all outputs written outside source roots.",
+    "next_task": "DISC-002 continuation: batch-13+ review tranches (~4,454 still match the signal rule of 51,432 unreviewed provisional), then per-domain semantic classification of the 69,185 dossier-extension overlap pairs, then disposition assignment (release-blocking), then GATED synthesis (check-prompt -> generation -> lint-artifacts -> assess-quality -> quality-drift -> quality-gate -> repair loop per batch).",
+    "next_session_first_actions": "1) git fetch origin && git status (verify HEAD == origin/main). 2) Re-run the startup battery: AGENTS.md -> docs/* -> state/task-queue.jsonl -> state/current-state.json -> docs/agent-handoff/next-agent.md. 3) Re-run the full pytest suite (663 tests expected). 4) Verify both vault manifests. 5) Replay the THIRTEEN-round chain via the scripts/disc002_batch12_replay.py pattern with batch12 added (decided-utc 2026-10-31T10:30:00Z) and content-compare against the committed index (expected 51,432/7,167/1,550/3/1/1). 6) Select the batch-13 tranche (copy the tranche script, point CAND at scratch/disc002-s13-batch12.jsonl; new decision IDs D-DISC002-B13-****).",
+}
+
+OUT.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+print(f"checkpoint written: {OUT}")
