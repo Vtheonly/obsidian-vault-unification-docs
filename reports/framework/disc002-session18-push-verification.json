@@ -1,0 +1,36 @@
+{
+ "command": "git push origin main",
+ "date": "2026-11-01",
+ "session": 18,
+ "task": "DISC-002 dossier-extension classification (ADR-0011 tiered mode, ADR-0012 accelerated policy)",
+ "result": "accepted",
+ "push_range": "4361229..02f373d",
+ "head_after_push": "02f373d3c1e94ff6be76a72501f24c84d894933b",
+ "origin_main_after": "02f373d3c1e94ff6be76a72501f24c84d894933b",
+ "branch": "main",
+ "verification": {
+  "fetched_and_compared": true,
+  "head_equals_origin_main": true,
+  "working_tree_clean_after_this_commit": true,
+  "commit_subject": "feat(DISC-002): complete dossier-extension classification — all 69,185 pairs decided (session 18, ADR-0011 tiered mode)"
+ },
+ "deliverable_metric": {
+  "name": "dossier-extension pairs classified",
+  "before": 0,
+  "after": 69185,
+  "denominator": 69185,
+  "budget_sessions_remaining": 8
+ },
+ "pushed_artifacts": [
+  "state/classifications/008-disc002-dext-review-verdicts.jsonl (4,893 review verdicts)",
+  "state/classifications/009..014-disc002-dext-<domain>-extension.jsonl (294 extension records)",
+  "state/term-maps/dext-tier-config-v1.json (calibrated tier config)",
+  "scripts/s18_*.py (tiering, bundles, verification, assembly, gates)",
+  "reports/dossier-ext/s18-tiering-report.json + s18-dext-final-report.json",
+  "state/checkpoints/checkpoint-2026-11-01-disc002-session18.json",
+  "docs/agent-handoff/next-agent.md (rewritten for session 19)",
+  "docs/ACCELERATED_COMPLETION_POLICY.md (session-18 ledger row)",
+  "README.md (repository status)",
+  "reports/framework/disc002-session18-final-pytest.json (663/663)"
+ ]
+}
