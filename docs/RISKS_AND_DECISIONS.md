@@ -271,3 +271,67 @@ checkpoint.
 **Affected artifacts:** `scripts/disc002_batch16_*.py`,
 `reports/discovery/disc002-s16-*`, `docs/agent-handoff/next-agent.md`,
 this register.
+
+### ADR-0012 — Binding accelerated-completion policy (enforce the speed decision across all future sessions)
+**Status:** accepted (2026-11-01, policy session 17; user-directed)
+**Context:** ADR-0011 authorized the accelerated mode and session 16
+executed it (the entire 4,274-candidate signal pool in one session). The
+user then directed (2026-11-01): "make new policy to ensure the next
+agent follow the new decision of becoming faster" — the speed decision
+must bind future sessions structurally, through the repository's
+mandatory startup chain, rather than depending on each fresh session
+choosing to follow it.
+**Options considered:** (1) rely on ADR-0011 + handoff prose only (weak:
+handoffs are advisory and get rewritten; a fresh agent could reinstate
+slow modes without violating any rule); (2) amend AGENTS.md alone (the
+mandatory-read file, but a full policy inline would bloat it and split
+from the decision register); (3) canonical policy document + AGENTS.md
+binding section + compliance block in every checkpoint + visible session
+ledger.
+**Decision:** option 3. Create
+`docs/ACCELERATED_COMPLETION_POLICY.md` as the canonical binding policy;
+amend AGENTS.md with §12 (mandatory-read chain: AGENTS.md → policy →
+ADR-0011 → handoff); require an `accelerated_mode` block in every
+session checkpoint (session number, budget consumed/remaining,
+deliverable metric moved with before/after/denominator, failed-session
+flag); maintain a session ledger inside the policy making budget burn
+visible. Policy contents: hard deadline = final vault by end of session
+26 (strict reading of "less than 12 additional sessions": sessions
+16–26 = 11; the session-16 handoff's "session 27" was the looser reading
+and is superseded); phase allocation S18–20 dossier-extension
+classification (69,185 pairs), S21–22 disposition assignment (27,536
+KUs), S23–25 gated synthesis, S26 final verification and delivery;
+deliverable-first measurement with the failed-session rule (bookkeeping
+without deliverable movement = failed session, reported as such);
+anti-stall rules (synthesis must start by S23; no new process layers
+without user-approved ADR; no re-performance of verified work without a
+regression trigger; blocked phases are compressed via calibrated tiers,
+never by skipping calibration); enumerated inviolate quality floor
+(source immutability + per-session manifest checks, full suite green at
+start and after last mutation, machine-verified accept/cover citations,
+full probe discipline for gap decisions, delta-verification with
+pre-written arithmetic, Unaccounted-blocks-release, honesty rules);
+deadline–floor conflicts are escalated to the user, never resolved by
+weakening either.
+**Rationale:** the failure mode the user identified was structural
+(endless batches, checkpoints, replays, and handoffs with synthesis
+perpetually deferred), not a one-off lapse. A policy read through the
+mandatory AGENTS.md startup chain is the repository's only durable
+enforcement mechanism that survives session resets and sandbox
+recycling. The failed-session rule and the session ledger convert
+"becoming faster" from an intention into a measurable, auditable
+obligation.
+**Impact / migration:** no code or schema changes; checkpoints gain a
+documented free-form `accelerated_mode` JSON block (session 17's
+checkpoint is the exemplar). Existing ADR-0011 tiering rules are
+incorporated by reference, not duplicated. 663/663 tests green before
+and after (docs-only change). The 46,978 low-signal documented exclusion
+and the three confirmed gaps (second moment, bradley-terry, async def)
+remain explicit non-claims requiring dedicated synthesis-time treatment.
+**Approval evidence:** user direction 2026-11-01 ("make new policy to
+ensure the next agent follow the new decision of becoming faster"),
+following the same-day acceleration directive recorded in ADR-0011.
+**Affected artifacts:** `docs/ACCELERATED_COMPLETION_POLICY.md` (new),
+`AGENTS.md` (§12), this register, `docs/agent-handoff/next-agent.md`,
+`README.md` (repository-status paragraph),
+`state/checkpoints/checkpoint-2026-11-01-policy-session17.json`.

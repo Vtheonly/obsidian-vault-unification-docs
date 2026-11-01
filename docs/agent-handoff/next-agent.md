@@ -7,11 +7,17 @@
   (ADR-0011) and decided ALL 4,274 remaining signal-rule candidates in one
   session: 667 covers + 3,607 rejects + 0 new confirmed gaps. The corpus
   confirmed_gap total remains 3 (second moment, bradley-terry, async def).
-- USER DIRECTIVE IN FORCE (2026-11-01): "remove the universal review and
-  do it fast then ... the final vault should be done in less than 12
-  additional sessions" — the final vault must land by session 27. Read
-  ADR-0011 (docs/RISKS_AND_DECISIONS.md) BEFORE planning; it defines the
-  tiered-verification rules that replace universal dual review.
+- USER DIRECTIVE IN FORCE (2026-11-01): "remove the universal
+  review and do it fast then ... the final vault should be done in
+  less than 12 additional sessions". **BINDING POLICY IN FORCE
+  (session 17, ADR-0012): read `docs/ACCELERATED_COMPLETION_POLICY.md`
+  and AGENTS.md §12 BEFORE planning.** Hard deadline: final vault by
+  the END OF SESSION 26 (strict reading: sessions 16-26 = 11; this
+  supersedes the earlier "session 27" wording). Deliverable-first
+  reporting; tiered verification only (ADR-0011); a bookkeeping-only
+  session is a FAILED session; every checkpoint carries the
+  `accelerated_mode` block; budget after session 17: 9 sessions
+  remaining.
 - Completed and verified: BOOT-000..004, EXT-001..010, REBASE-000,
   AUDIT-011, FRAME-001, DISC-001, FRAME-002, REGEN-001; DISC-002 sessions
   A+B (merged), 3-15 (60-candidate tranches), and 16 (this session —
@@ -91,7 +97,8 @@
   the signal rule (fragmented_derivation OR score ≥ 0.8 OR contexts ≥
   10).
 
-## Next task (in order, per the user's 12-session budget)
+## Next task (in order, per the binding session budget — see the session
+ledger in docs/ACCELERATED_COMPLETION_POLICY.md; deadline: session 26)
 
 1. **DOSSIER-EXTENSION CLASSIFICATION** (next session's main work; the
    69,185 overlap pairs across six domains). Regenerate the six pairs
@@ -119,10 +126,12 @@
 2. **DISPOSITION ASSIGNMENT** (Unaccounted blocks release; 27,536 KUs).
    Rule-driven from classification + dossier + file-level synthesis
    mapping; exceptions to individual review.
-3. **GATED SYNTHESIS** (the actual vault): check-prompt → bounded
+3. **GATED SYNTHESIS** (the actual vault; MUST START by session 23 per
+   the policy anti-stall rules): check-prompt → bounded
    generation → lint-artifacts → assess-quality → quality-drift →
-   quality-gate → repair loop per batch. Target: final vault by
-   session 27 (12-session budget from session 16).
+   quality-gate → repair loop per batch. Target: final vault by the
+   end of session 26 (11 sessions from session 16; sessions 18-26
+   remain).
 
 ## Replay recipe (ADR-0010, now SEVENTEEN decide rounds)
 

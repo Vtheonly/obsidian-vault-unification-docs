@@ -1,5 +1,15 @@
 ## Repository status
 
+BINDING ACCELERATED-COMPLETION POLICY in force since session 17
+(2026-11-01, ADR-0012): `docs/ACCELERATED_COMPLETION_POLICY.md` +
+AGENTS.md §12. Final vault deadline: end of session 26 (user directive:
+"less than 12 additional sessions"). Progress is measured by
+deliverables only (dossier pairs classified / 69,185; KU dispositions
+assigned / 27,536; release-gate predicates; verified notes); the
+universal per-unit dual review is removed in favor of ADR-0011 tiered
+verification; the quality floor (source immutability, full test suite,
+machine-verified citations, release gates) is inviolate.
+
 DISC-002 signal-pool review is COMPLETE (session 16, 2026-11-01, ADR-0011
 user-authorized accelerated mode). All 4,274 remaining signal-rule
 candidates were decided in one session through a tiered pipeline:

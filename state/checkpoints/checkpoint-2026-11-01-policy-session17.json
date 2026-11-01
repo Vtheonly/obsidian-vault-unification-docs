@@ -1,0 +1,41 @@
+{
+ "checkpoint_id": "checkpoint-2026-11-01-policy-session17",
+ "date": "2026-11-01",
+ "task": "Policy binding (user-directed; ADR-0012)",
+ "stage": "accelerated-completion-policy-in-force",
+ "session_number": 17,
+ "user_directive": "make new policy to ensure the next agent follow the new decision of becoming faster (2026-11-01)",
+ "baseline_verification": {
+  "head_at_start": "4cf404d (== origin/main, clean tree)",
+  "tests_baseline": "663/663 passed first-run after editable install (fresh sandbox re-clone)",
+  "source_manifests": "AI Course 276/276 unchanged; Master AI 333/333 unchanged (vu verify-manifest, 0 added/removed/changed)"
+ },
+ "work_completed": [
+  "docs/ACCELERATED_COMPLETION_POLICY.md (new, canonical binding policy: budget contract, deliverable-first measurement, speed rules, anti-stall rules, quality floor, session compliance checklist, session ledger, amendment rules)",
+  "AGENTS.md section 12 (binding amendment in the mandatory-read file; startup chain now AGENTS.md -> policy -> ADR-0011 -> handoff)",
+  "docs/RISKS_AND_DECISIONS.md ADR-0012 (decision record with options, rationale, approval evidence)",
+  "docs/agent-handoff/next-agent.md (directive paragraph now cites the binding policy; deadline corrected to session 26 strict reading; gated-synthesis start-by-session-23 rule added)",
+  "README.md repository-status paragraph (policy in force, deadline, deliverable metrics)"
+ ],
+ "deadline_interpretation": "end of session 26 (sessions 16-26 = 11, strict reading of 'less than 12 additional sessions'); supersedes the session-16 handoff's 'session 27' wording; recorded in ADR-0012",
+ "phase_allocation": "S18-20 dossier-extension classification (69,185 pairs); S21-22 disposition assignment (27,536 KUs); S23-25 gated synthesis (must start by S23); S26 final verification and delivery",
+ "tests_after_last_mutation": {
+  "command": "python3 -m pytest tests/ -q --json-report --json-report-file=reports/framework/policy-session17-pytest.json",
+  "result": "663 passed, 0 failed, 0 skipped",
+  "evidence": "reports/framework/policy-session17-pytest.json"
+ },
+ "next_task": "Session 18: dossier-extension per-domain classification via ADR-0011 tiering (regenerate the six pairs files per reports/dossier-ext/disc002-dext-<domain>-overlap-run.json, then Tier A auto-participate / Tier B auto-non-participate / Tier C subagent review); target: move pairs-classified/69,185 substantially (all six domains if possible)",
+ "git_state_at_write": "uncommitted changes pending (this checkpoint is part of the session-17 work commit)",
+ "accelerated_mode": {
+  "session_number": 17,
+  "budget_sessions_consumed": 2,
+  "budget_sessions_remaining": 9,
+  "deliverable_metric_moved": "policy-bound (user-directed governance deliverable; not one of the five pipeline metrics)",
+  "before": null,
+  "after": null,
+  "denominator": null,
+  "failed_session": false,
+  "cause_if_failed": null,
+  "note": "Session 17 was spent on the user's explicit policy request, not a pipeline metric. Per policy section 3 this is NOT counted as pipeline progress; the five pipeline metrics are all unchanged (pairs 0/69,185; dispositions 0/27,536; synthesis not started). Sessions 18-26 must move them."
+ }
+}

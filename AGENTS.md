@@ -148,3 +148,17 @@ Return to Phase 0, audit actual repository evidence, rerun verification, enumera
 
 This directive authorizes revalidation and regeneration of derived artifacts, not deletion of the repository or valid history. Preserve source vaults byte-for-byte. Reuse derived artifacts only after they pass the new checks; otherwise recompute, migrate, quarantine, or retire them with rationale. Preserve task history and add valid tasks to the existing queue. Do not synthesize canonical notes until framework, full extraction/accounting, concept-discovery, and dossier gates pass. Documentation alone is not implementation; never claim tests passed unless actually run.
 
+## 12. Accelerated completion policy (user directive 2026-11-01 — BINDING)
+
+This project operates under [docs/ACCELERATED_COMPLETION_POLICY.md](docs/ACCELERATED_COMPLETION_POLICY.md) (ADR-0012). Read it immediately after this file, before planning any work. Headline bindings:
+
+- **Deadline:** the final vault is delivered by the end of session 26 (user: "less than 12 additional sessions"; session 16 was the first under the directive).
+- **Deliverable-first measurement:** progress is only the metrics enumerated in the policy (dossier pairs classified / 69,185; KU dispositions assigned / 27,536; release-gate predicates; verified canonical notes; final verification pass rate). Checkpoints, indexes, replays, handoffs, and reports are never progress. A bookkeeping-only session is a FAILED session and must be reported as one.
+- **Tiered verification only:** the universal per-unit dual review is REMOVED (ADR-0011). Do not reinstate it or invent equivalent process layers, registries, or reporting artifacts without explicit user approval recorded as an ADR.
+- **Anti-stall:** synthesis must start no later than session 23. Verified work is not re-run without a regression trigger. A blocked phase is compressed via wider calibrated tiers and parallelism, never by skipping calibration or weakening checks.
+- **Quality floor is inviolate:** source immutability with per-session manifest checks; full test suite green at session start and after the last mutation; machine-verified citations for every accept/cover; full individual probe discipline for every gap decision; delta-verification with pre-written arithmetic; Unaccounted KUs block release. If the deadline and the floor conflict, escalate to the user — never weaken the floor, never silently slip the deadline.
+- **Compliance:** every session checkpoint includes the `accelerated_mode` block defined in the policy (session number, budget remaining, deliverable metric moved with before/after/denominator, failed-session flag), and every session report leads with deliverable metrics and budget position.
+
+Where an older document in this repository implies a slower universal mode, this section and the policy control on matters of speed and process overhead; they never license weakening the preservation contract (§3, §7) or the verification and acceptance rules (§7 of this file, `docs/VERIFICATION_SPECIFICATION.md`).
+
+
