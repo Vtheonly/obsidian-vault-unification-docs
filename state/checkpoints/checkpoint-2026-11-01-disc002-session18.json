@@ -1,0 +1,58 @@
+{
+ "checkpoint_id": "checkpoint-2026-11-01-disc002-session18",
+ "date": "2026-11-01",
+ "task": "DISC-002 dossier-extension classification (ADR-0011 tiered mode, ADR-0012 accelerated policy)",
+ "stage": "dossier-extension-classification-COMPLETE",
+ "session_number": 18,
+ "baseline_verification": {
+  "head_at_start": "4361229 (== origin/main, clean tree)",
+  "tests_baseline": "663/663 passed first-run after editable install (fresh sandbox clone)",
+  "source_manifests": "AI Course 276/276 unchanged; Master AI 333/333 unchanged (vu verify-manifest, 0 added/removed/changed)"
+ },
+ "work_completed": [
+  "Regenerated all six dossier-extension pair files (69,185 pairs; per-domain counts exactly match the committed run reports: 9,211/10,833/10,603/6,672/11,275/20,591)",
+  "state/term-maps/dext-tier-config-v1.json (curated tiering config: broad_terms, domain_folders, nav rules, weak_aliases; two calibration iterations applied after ADR-0011 pull-backs)",
+  "scripts/s18_dext_tiering.py (tier engine: per-side verdicts A1/A2/B1/B2/nav + C2b evidence rule; C1/C2 zero-counter-example calibration against the 164 hand-classified records and six original pair pools; exits non-zero on counter-examples)",
+  "scripts/s18_build_review_bundles.py, scripts/s18_verify_review.py, scripts/s18_verify_round2.py, scripts/s18_verify_round3.py (review bundle builder + mechanical verification of subagent outputs: completeness, ku-set match, citation anchors)",
+  "Four review rounds via 15+1 subagent slices + orchestrator personal review of the 9 tiny evaluation/clustering deltas (2,482 (file,term) combos, 4,893 distinct (domain,file,term,ku) verdicts)",
+  "scripts/s18_dext_assembly.py (final assembly: review-over-auto precedence, pair decisions, KU participant sets, extension records, pre-written arithmetic assertions)",
+  "state/classifications/008-disc002-dext-review-verdicts.jsonl (4,893 effective review decisions with round provenance — the irreplaceable decision record)",
+  "state/classifications/009..014-disc002-dext-<domain>-extension.jsonl (294 term-level extension classification records, 5,168 distinct participating KUs)",
+  "reports/dossier-ext/s18-tiering-report.json + s18-dext-final-report.json (tiering stats, calibration detail, final accounting, sampling evidence, residual risks)",
+  "scripts/s18_final_gates.py: G1 every extension-record ku_id exists in regen batches; G2 unique classification ids; G3 review-verdict ku_ids exist; G4 69,185 pair decisions with per-domain sums; G5 source manifests unchanged after all operations; G6 verification evidence appended to the final report"
+ ],
+ "deliverable_metric": {
+  "name": "dossier-extension pairs classified",
+  "before": 0,
+  "after": 69185,
+  "denominator": 69185,
+  "detail": "5,441 participate / 63,744 reject-pair; 5,168 distinct extension participant KUs; 294 extension classification records across six domains"
+ },
+ "verification_evidence": {
+  "calibration": "C1-folder zero violations (domain folder lists cover all 514 dossier-participating KUs' folders); C2 zero violations (auto_reject never fires on hand-accepted evidence in the six original pools); two ADR-0011 pull-backs applied after sampled wrong-class members (weak aliases; canonical homonyms) with re-review of the pulled-back material",
+  "sampling": "orchestrator personally re-reviewed 179/539 reviewed-rejects (5% min-30 per domain): 99.4% agreement, 1 conservative override, zero hidden gaps; Tier A fresh 30-sample: ~17% residual single-side over-inclusion (safe direction only); Tier B 20-sample: 19/20; Tier B3 15-sample: 1 miss overridden",
+  "citation_checks": "every reviewed-accept verdict machine-checked for a term/alias/matched_text anchor in the KU excerpt or match context (0 failures)",
+  "gates": "G1-G5 green (scripts/s18_final_gates.py, exit 0)"
+ },
+ "accelerated_mode": {
+  "session_number": 18,
+  "budget_sessions_consumed": 3,
+  "budget_sessions_remaining": 8,
+  "deliverable_metric_moved": "dossier-extension pairs classified",
+  "before": 0,
+  "after": 69185,
+  "denominator": 69185,
+  "failed_session": false,
+  "cause_if_failed": null
+ },
+ "next_task": {
+  "task": "Dossier v2 regeneration (ext006 extension) then disposition assignment",
+  "steps": [
+   "Extend scripts/ext006_dossiers.py DOMAINS config: for each domain add the regen batches (state/knowledge-units/012..070 covering the extension KUs) and the new extension classification file (009..014); emit dossier v2 (new dossier_id <domain>-v2, version v2) keeping the committed v1 dossiers untouched; update/extend tests for the new config and concept-dossier schema constraints",
+   "Run scripts/ext006_dossiers.py for v2 (V1-V5 validations must pass: every extension ku_id resolves in regen batches, classification ids unique, bidirectional coverage)",
+   "Then DISPOSITION ASSIGNMENT (S21-22 target, ahead of schedule): rule-driven dispositions from classification + dossier + file-level synthesis mapping; exceptions to individual review; Unaccounted -> 0"
+  ],
+  "acceptance_criteria": "v2 dossiers regenerate byte-identically on re-run (--check); every extension KU appears in >=1 v2 concept; all 514 original participating KUs still present; full suite green"
+ },
+ "scratch_regenerable": "pairs files: commands recorded in reports/dossier-ext/disc002-dext-<domain>-overlap-run.json (~40s per domain); tiers: scripts/s18_dext_tiering.py; review bundles: scripts/s18_build_review_bundles.py + delta logic; pair decisions: scripts/s18_dext_assembly.py"
+}

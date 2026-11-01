@@ -1,0 +1,362 @@
+{
+  "_comment": "DISC-002 dossier-extension tiering config v1 (session 18, ADR-0011 tiered mode). Curated by the session-18 orchestrator from the six committed domain term maps, the corpus folder census (scripts/s18_folder_census.py), and the original domain batch file lists. CALIBRATED against the 164 hand-classified EXT-003..010 records and the six original overlap-candidate pair pools by scripts/s18_dext_tiering.py: a broad term or folder rule that contradicts hand-accepted evidence (counter-example) must be corrected before tiers are applied. Semantics: broad_terms = terms whose matches outside domain_folders are incidental lexical co-occurrence (auto-reject only when ALL matched terms on that side are broad AND the side is outside domain_folders); domain_folders = folders whose specific-term matches are auto-participate evidence (Tier A, both sides must qualify); nav_matchers = navigation/meta locations whose KUs are never concept evidence. Everything else is Tier C (individual review of the undecided side). Keys starting with _ are documentation.",
+  "broad_terms": {
+    "regression": [
+      "Gaussian",
+      "Bayesian",
+      "prior",
+      "derivative",
+      "training",
+      "sklearn",
+      "keras",
+      "MNIST",
+      "overfitting",
+      "calibration"
+    ],
+    "tree-based": [
+      "noise",
+      "deep learning",
+      "scikit-learn",
+      "ensembling",
+      "benchmarks",
+      "hyperparameters",
+      "state of the art",
+      "MSE",
+      "validation",
+      "gradient descent",
+      "regularization",
+      "with replacement",
+      "enterprise",
+      "production",
+      "greedy"
+    ],
+    "evaluation": [
+      "threshold",
+      "training set",
+      "validation set",
+      "overfitting",
+      "baseline",
+      "tradeoff",
+      "clustering",
+      "imbalanced",
+      "majority class",
+      "micro",
+      "weighted average",
+      "variance",
+      "outlier",
+      "noise",
+      "logits",
+      "retrieval",
+      "detection",
+      "segmentation",
+      "pixel",
+      "mask",
+      "ground truth",
+      "medical",
+      "spam",
+      "cancer",
+      "screening",
+      "fraud",
+      "disease",
+      "diagnosis",
+      "healthy",
+      "credit card",
+      "intrusion",
+      "sensitivity",
+      "ranking"
+    ],
+    "clustering": [
+      "labels",
+      "scale",
+      "sklearn",
+      "projection",
+      "compression",
+      "embedding",
+      "tradeoff"
+    ],
+    "generalization": [
+      "tradeoff",
+      "scaling",
+      "hyperparameter",
+      "PyTorch",
+      "sklearn",
+      "epoch",
+      "AdamW",
+      "SGD",
+      "LLM",
+      "fine-tuning",
+      "pipeline",
+      "gamma",
+      "beta"
+    ],
+    "training-stability": [
+      "bias",
+      "variance",
+      "layer",
+      "neuron",
+      "sequence",
+      "product",
+      "exponential",
+      "signal",
+      "noise",
+      "attention",
+      "transformer",
+      "embedding",
+      "tuning",
+      "epoch",
+      "GPT",
+      "LLM"
+    ]
+  },
+  "domain_folders": {
+    "regression": {
+      "ai-course": [
+        "03 - Machine Learning/03.1 - Regression",
+        "03 - Machine Learning/03.2 - Optimization Algorithms"
+      ],
+      "master-ai": [
+        "03 - Machine Learning/Supervised Learning",
+        "02 - Mathematics/Probability",
+        "02 - Mathematics/Linear Algebra",
+        "02 - Mathematics/Statistics",
+        "02 - Mathematics/Optimization",
+        "02 - Mathematics/Calculus",
+        "28 - Glossary/Terms",
+        "28 - Glossary/Acronyms",
+        "29 - Interview Prep/Conceptual",
+        "29 - Interview Prep/Coding"
+      ]
+    },
+    "tree-based": {
+      "ai-course": [
+        "03 - Machine Learning/03.7 - Tree-Based Models",
+        "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing"
+      ],
+      "master-ai": [
+        "03 - Machine Learning/Supervised Learning",
+        "02 - Mathematics/Probability",
+        "02 - Mathematics/Statistics",
+        "02 - Mathematics/Information Theory",
+        "28 - Glossary/Terms",
+        "28 - Glossary/Acronyms",
+        "29 - Interview Prep/Conceptual",
+        "29 - Interview Prep/Coding"
+      ]
+    },
+    "evaluation": {
+      "ai-course": [
+        "03 - Machine Learning/03.6 - Model Evaluation",
+        "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability"
+      ],
+      "master-ai": [
+        "03 - Machine Learning/Evaluation",
+        "08 - LLMs/Evaluation",
+        "21 - LLMOps and MLOps/Evaluation",
+        "28 - Glossary/Terms",
+        "28 - Glossary/Acronyms",
+        "29 - Interview Prep/Conceptual"
+      ]
+    },
+    "clustering": {
+      "ai-course": [
+        "03 - Machine Learning/03.5 - K-Means Clustering",
+        "03 - Machine Learning/03.8 - Dimensionality Reduction",
+        "10 - Generative Models/10.1 - Autoencoders"
+      ],
+      "master-ai": [
+        "03 - Machine Learning/Unsupervised Learning",
+        "02 - Mathematics/Linear Algebra",
+        "28 - Glossary/Terms",
+        "28 - Glossary/Acronyms",
+        "29 - Interview Prep/Conceptual"
+      ]
+    },
+    "generalization": {
+      "ai-course": [
+        "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability",
+        "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics"
+      ],
+      "master-ai": [
+        "03 - Machine Learning/Generalization",
+        "04 - Neural Networks/Training",
+        "11 - Training/Optimization",
+        "11 - Training/Data",
+        "28 - Glossary/Terms",
+        "28 - Glossary/Acronyms",
+        "29 - Interview Prep/Conceptual"
+      ]
+    },
+    "training-stability": {
+      "ai-course": [
+        "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability",
+        "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive",
+        "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics",
+        "04 - Neural Networks and Deep Learning Foundations/04.4 - Labs"
+      ],
+      "master-ai": [
+        "04 - Neural Networks/Training",
+        "11 - Training/Optimization",
+        "02 - Mathematics/Calculus",
+        "02 - Mathematics/Linear Algebra",
+        "28 - Glossary/Terms",
+        "28 - Glossary/Acronyms",
+        "29 - Interview Prep/Conceptual"
+      ]
+    }
+  },
+  "nav_rules": {
+    "exact_filenames": [
+      "00 - Master Index.md",
+      "README.md",
+      "MOC.md",
+      "Index.md",
+      "Reading Order.md",
+      "Learning Roadmap.md",
+      "00. CNN Mastery Roadmap.md",
+      "00. Course Overview.md",
+      "00. Chapter Overview.md",
+      "00. Global Index.md"
+    ],
+    "prefix_folders": [
+      "00 - Vault Management"
+    ]
+  },
+  "weak_aliases": {
+    "regression": [
+      "singular",
+      "singularity",
+      "hypothesis",
+      "normalization",
+      "standardization",
+      "normalisation",
+      "standardisation",
+      "odds",
+      "polynomial",
+      "L1",
+      "L2",
+      "calibrated",
+      "calibrate",
+      "imbalanced",
+      "Bayes",
+      "Laplace",
+      "Laplacian",
+      "closed-form solution",
+      "closed form solution",
+      "analytical solution",
+      "MAP",
+      "residuals",
+      "vectorized",
+      "vectorize",
+      "regularized",
+      "regularize"
+    ],
+    "tree-based": [
+      "residuals",
+      "residual",
+      "shrinks",
+      "shallow",
+      "histogram",
+      "histograms",
+      "categorical",
+      "categoricals",
+      "Hessian",
+      "leakage",
+      "scaling",
+      "gamma",
+      "L1",
+      "L2",
+      "interpretable",
+      "non-linearities",
+      "average",
+      "boosting",
+      "prune",
+      "pure",
+      "purity"
+    ],
+    "evaluation": [
+      "stratified",
+      "nested",
+      "generalize",
+      "extrinsic",
+      "precision"
+    ],
+    "clustering": [
+      "anomaly"
+    ],
+    "generalization": [
+      "shift",
+      "shifting",
+      "jitter",
+      "normalize",
+      "normalizing",
+      "rotate",
+      "rotations",
+      "BN",
+      "BatchNorm",
+      "L1",
+      "L2"
+    ],
+    "training-stability": [
+      "residual",
+      "residuals",
+      "decay",
+      "attenuate",
+      "norm",
+      "norms",
+      "magnitude",
+      "magnitudes",
+      "clip",
+      "clipped",
+      "divergence",
+      "numerical",
+      "symmetric",
+      "symmetry",
+      "deep",
+      "wide",
+      "wider",
+      "depth",
+      "shallow",
+      "shallower",
+      "seed",
+      "constant",
+      "initialize",
+      "initialized",
+      "dead",
+      "plain",
+      "monitoring",
+      "diagnostic",
+      "derive",
+      "forward",
+      "products",
+      "multiply",
+      "multiplication",
+      "sequential",
+      "spectral",
+      "std",
+      "plateau",
+      "plateaus",
+      "non-linear",
+      "tune",
+      "tuned",
+      "projection",
+      "threshold",
+      "ones",
+      "zeros",
+      "default",
+      "defaults",
+      "inf",
+      "infinity",
+      "saturated",
+      "saturates",
+      "compound",
+      "cycle",
+      "catastrophic",
+      "identity",
+      "orthogonal",
+      "flat",
+      "spikes",
+      "gain",
+      "shrink"
+    ]
+  }
+}

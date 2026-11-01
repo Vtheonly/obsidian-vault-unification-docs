@@ -22,9 +22,21 @@ overrides, one gap_watch overturned to cover). Result: 667 covers +
 bradley-terry, async def). Index status: 46,978 provisional (documented
 low-signal exclusion) / 7,893 already_covered / 5,278 rejected / 3
 confirmed_gap / 1 merged / 1 deferred; validate green; 663/663 tests.
-Next: dossier-extension classification (69,185 pairs), disposition
-assignment, then gated synthesis — final vault targeted within the
-user's 12-session budget (by session 27).
+
+DISC-002 dossier-extension classification is COMPLETE (session 18,
+2026-11-01, one session ahead of the S18–20 phase window): all 69,185
+extension pairs decided (5,441 participate / 63,744 reject-pair; 5,168
+distinct participant KUs; 294 extension records in
+state/classifications/009..014; 4,893 review verdicts in 008) through a
+calibrated tiering engine (state/term-maps/dext-tier-config-v1.json +
+scripts/s18_dext_tiering.py; C1/C2 zero-counter-example calibration, two
+ADR-0011 pull-backs after sampled wrong-class members) plus four subagent
+review rounds with mechanical completeness/citation verification and
+orchestrator sampling (99.4% reject agreement; Tier A residual ~17%
+safe-direction over-inclusion documented). Next: dossier v2 regeneration
+(ext006 config extension), disposition assignment (27,536 KUs, Unaccounted
+→ 0), then gated synthesis — synthesis must start by session 23; final
+vault by end of session 26.
 
 ## Suggested top-level layout
 

@@ -1,0 +1,449 @@
+{
+  "command": "s18_dext_tiering",
+  "config": "state/term-maps/dext-tier-config-v1.json",
+  "calibration": {
+    "regression": {
+      "participating_kus": 61,
+      "participating_kus_in_orig_pool": 38,
+      "c1_folder_violations": 0,
+      "c1_term_violations": 0,
+      "c2_reject_violations": 0
+    },
+    "tree-based": {
+      "participating_kus": 82,
+      "participating_kus_in_orig_pool": 71,
+      "c1_folder_violations": 0,
+      "c1_term_violations": 0,
+      "c2_reject_violations": 0
+    },
+    "evaluation": {
+      "participating_kus": 97,
+      "participating_kus_in_orig_pool": 89,
+      "c1_folder_violations": 0,
+      "c1_term_violations": 0,
+      "c2_reject_violations": 0
+    },
+    "clustering": {
+      "participating_kus": 64,
+      "participating_kus_in_orig_pool": 63,
+      "c1_folder_violations": 0,
+      "c1_term_violations": 0,
+      "c2_reject_violations": 0
+    },
+    "generalization": {
+      "participating_kus": 68,
+      "participating_kus_in_orig_pool": 58,
+      "c1_folder_violations": 0,
+      "c1_term_violations": 0,
+      "c2_reject_violations": 0
+    },
+    "training-stability": {
+      "participating_kus": 142,
+      "participating_kus_in_orig_pool": 127,
+      "c1_folder_violations": 0,
+      "c1_term_violations": 0,
+      "c2_reject_violations": 0
+    }
+  },
+  "domains": {
+    "regression": {
+      "pairs_total": 9211,
+      "tier_counts": {
+        "A": 682,
+        "B": 2584,
+        "B3": 2393,
+        "C": 3552
+      },
+      "side_verdict_counts": {
+        "auto_participate": 4154,
+        "auto_reject": 9894,
+        "undecided": 4374
+      },
+      "distinct_undecided_ku_term_combos": 840,
+      "top_undecided_files": [
+        {
+          "file": "02 - Mathematics/Linear Algebra/05 - Matrix Decomposition.md",
+          "sides": 282
+        },
+        {
+          "file": "02 - Mathematics/Probability/08 - Bayes Theorem Deep Dive.md",
+          "sides": 281
+        },
+        {
+          "file": "02 - Mathematics/Statistics/16 - Estimators and Bias.md",
+          "sides": 248
+        },
+        {
+          "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+          "sides": 241
+        },
+        {
+          "file": "02 - Mathematics/Probability/09 - Gaussian Distribution.md",
+          "sides": 181
+        },
+        {
+          "file": "01 - Foundations and Overview/01.2 - Mathematical Foundations/00. Linear Algebra Fundamentals.md",
+          "sides": 155
+        },
+        {
+          "file": "02 - Mathematics/Calculus/10 - Gradient and Chain Rule.md",
+          "sides": 122
+        },
+        {
+          "file": "06 - Image Processing/03. Spatial Filtering and Neighborhood Processing/3.5 Sharpening and Edge Detection.md",
+          "sides": 106
+        },
+        {
+          "file": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q8 - Logistic Regression.md",
+          "sides": 104
+        },
+        {
+          "file": "02 - Mathematics/Linear Algebra/06 - Tensors and Broadcasting.md",
+          "sides": 98
+        },
+        {
+          "file": "02 - Mathematics/Linear Algebra/01 - Vectors.md",
+          "sides": 97
+        },
+        {
+          "file": "02 - Mathematics/Statistics/17 - Hypothesis Testing.md",
+          "sides": 94
+        }
+      ]
+    },
+    "tree-based": {
+      "pairs_total": 10833,
+      "tier_counts": {
+        "A": 455,
+        "B": 5242,
+        "B3": 2088,
+        "C": 3048
+      },
+      "side_verdict_counts": {
+        "auto_participate": 3200,
+        "auto_reject": 14681,
+        "undecided": 3785
+      },
+      "distinct_undecided_ku_term_combos": 704,
+      "top_undecided_files": [
+        {
+          "file": "02 - Mathematics/Statistics/16 - Estimators and Bias.md",
+          "sides": 198
+        },
+        {
+          "file": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/04. Feature Scaling and Normalization.md",
+          "sides": 186
+        },
+        {
+          "file": "02 - Mathematics/Probability/07 - Probability Essentials.md",
+          "sides": 181
+        },
+        {
+          "file": "02 - Mathematics/Calculus/11 - Jacobians and Hessians.md",
+          "sides": 169
+        },
+        {
+          "file": "02 - Mathematics/Probability/08 - Bayes Theorem Deep Dive.md",
+          "sides": 117
+        },
+        {
+          "file": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/05. Categorical Encoding and Text Normalization.md",
+          "sides": 115
+        },
+        {
+          "file": "06 - Image Processing/02. Intensity Transformations and Histograms/2.1 The Image Histogram.md",
+          "sides": 105
+        },
+        {
+          "file": "02 - Mathematics/Information Theory/15 - Entropy Cross-Entropy KL.md",
+          "sides": 93
+        },
+        {
+          "file": "01 - Foundations and Overview/01.2 - Mathematical Foundations/08. Multivariate Calculus - Jacobians and Hessians.md",
+          "sides": 91
+        },
+        {
+          "file": "01 - Foundations and Overview/01.2 - Mathematical Foundations/00. Linear Algebra Fundamentals.md",
+          "sides": 68
+        },
+        {
+          "file": "02 - Mathematics/Probability/09 - Gaussian Distribution.md",
+          "sides": 60
+        },
+        {
+          "file": "02 - Mathematics/Statistics/17 - Hypothesis Testing.md",
+          "sides": 57
+        }
+      ]
+    },
+    "evaluation": {
+      "pairs_total": 10603,
+      "tier_counts": {
+        "A": 638,
+        "B": 6290,
+        "B3": 1735,
+        "C": 1940
+      },
+      "side_verdict_counts": {
+        "auto_participate": 3343,
+        "auto_reject": 15473,
+        "undecided": 2390
+      },
+      "distinct_undecided_ku_term_combos": 351,
+      "top_undecided_files": [
+        {
+          "file": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/08. Foundations of Machine Learning (Summary).md",
+          "sides": 159
+        },
+        {
+          "file": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q6 - Loss Functions and Cost Optimization.md",
+          "sides": 125
+        },
+        {
+          "file": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/06. Applications of Deep Learning.md",
+          "sides": 108
+        },
+        {
+          "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/01. The Full Training Pipeline End-to-End Checklist.md",
+          "sides": 96
+        },
+        {
+          "file": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/07. Scaling, Pipeline and Interpretability - Summary.md",
+          "sides": 82
+        },
+        {
+          "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/04. Exercises Solved and Explained.md",
+          "sides": 79
+        },
+        {
+          "file": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/05. Categorical Encoding and Text Normalization.md",
+          "sides": 58
+        },
+        {
+          "file": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q20 - Loss Functions and Optimizers Deep Dive.md",
+          "sides": 47
+        },
+        {
+          "file": "04 - Neural Networks/Foundations/01 - Perceptrons and MLPs.md",
+          "sides": 46
+        },
+        {
+          "file": "26 - Papers/Multimodal/36 - Perceiver 2022.md",
+          "sides": 46
+        },
+        {
+          "file": "27 - Projects/Capstones/13 - Build a RAG Evaluation Harness.md",
+          "sides": 45
+        },
+        {
+          "file": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q21 - Model Evaluation Metrics Beyond Accuracy.md",
+          "sides": 45
+        }
+      ]
+    },
+    "clustering": {
+      "pairs_total": 6672,
+      "tier_counts": {
+        "A": 630,
+        "B": 2963,
+        "B3": 2235,
+        "C": 844
+      },
+      "side_verdict_counts": {
+        "auto_participate": 3583,
+        "auto_reject": 8541,
+        "undecided": 1220
+      },
+      "distinct_undecided_ku_term_combos": 146,
+      "top_undecided_files": [
+        {
+          "file": "02 - Mathematics/Linear Algebra/05 - Matrix Decomposition.md",
+          "sides": 189
+        },
+        {
+          "file": "03 - Machine Learning/03.4 - Support Vector Machines (SVM)/01. SVM - Course Overview.md",
+          "sides": 53
+        },
+        {
+          "file": "04 - Neural Networks/Foundations/01 - Perceptrons and MLPs.md",
+          "sides": 46
+        },
+        {
+          "file": "26 - Papers/Multimodal/36 - Perceiver 2022.md",
+          "sides": 46
+        },
+        {
+          "file": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/02. Core Operators and Geometry - Summary.md",
+          "sides": 45
+        },
+        {
+          "file": "04 - Neural Networks and Deep Learning Foundations/04.2 - Backpropagation Deep Dive/03. Matrix Implementation and the Delta Weight Formula.md",
+          "sides": 30
+        },
+        {
+          "file": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/04. VGG and Classic Architectures - Summary.md",
+          "sides": 30
+        },
+        {
+          "file": "02 - Mathematics/Linear Algebra/03 - Cosine Similarity.md",
+          "sides": 29
+        },
+        {
+          "file": "05 - Convolutional Neural Networks (CNN)/05. Pipeline, Evaluation, and Interpretability/04. Exercises Solved and Explained.md",
+          "sides": 27
+        },
+        {
+          "file": "06 - Attention Mechanisms/Self-Attention/04 - Self-Attention.md",
+          "sides": 26
+        },
+        {
+          "file": "09 - Quizzes and Question Banks/01. Deep Learning - Chapter 1 (Introduction to DL)/Q2 - Machine Learning vs Deep Learning.md",
+          "sides": 23
+        },
+        {
+          "file": "03 - Machine Learning/Reinforcement Learning/10 - PPO Deep Treatment.md",
+          "sides": 23
+        }
+      ]
+    },
+    "generalization": {
+      "pairs_total": 11275,
+      "tier_counts": {
+        "A": 840,
+        "B": 5271,
+        "B3": 2836,
+        "C": 2328
+      },
+      "side_verdict_counts": {
+        "auto_participate": 4775,
+        "auto_reject": 14791,
+        "undecided": 2984
+      },
+      "distinct_undecided_ku_term_combos": 397,
+      "top_undecided_files": [
+        {
+          "file": "04 - Neural Networks and Deep Learning Foundations/04.3 - Training Dynamics and Stability/04. Hyperparameters and Network Configuration.md",
+          "sides": 240
+        },
+        {
+          "file": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/08. Foundations of Machine Learning (Summary).md",
+          "sides": 223
+        },
+        {
+          "file": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/05. Evolution and History of Deep Learning.md",
+          "sides": 184
+        },
+        {
+          "file": "01 - Foundations and Overview/01.2 - Mathematical Foundations/07. Probability and Statistics for ML.md",
+          "sides": 181
+        },
+        {
+          "file": "01 - Foundations and Overview/01.2 - Mathematical Foundations/00. Linear Algebra Fundamentals.md",
+          "sides": 104
+        },
+        {
+          "file": "05 - Convolutional Neural Networks (CNN)/06. Chapter Summaries (Aggregated)/05. Normalization, Regularization and Augmentation - Summary.md",
+          "sides": 94
+        },
+        {
+          "file": "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/03. Artificial Neural Networks (ANN) - Comprehensive.md",
+          "sides": 93
+        },
+        {
+          "file": "02 - Mathematics/Probability/08 - Bayes Theorem Deep Dive.md",
+          "sides": 61
+        },
+        {
+          "file": "09 - Quizzes and Question Banks/02. Deep Learning - Chapter 2 (CNN)/Q7 - Hyperparameters and Network Configuration.md",
+          "sides": 56
+        },
+        {
+          "file": "11 - Training/Optimization/05 - Loss Spikes and Stability.md",
+          "sides": 53
+        },
+        {
+          "file": "04 - Neural Networks/Foundations/01 - Perceptrons and MLPs.md",
+          "sides": 53
+        },
+        {
+          "file": "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/08. Data Preparation and MLP Implementation.md",
+          "sides": 52
+        }
+      ]
+    },
+    "training-stability": {
+      "pairs_total": 20591,
+      "tier_counts": {
+        "A": 1368,
+        "B": 8243,
+        "B3": 4998,
+        "C": 5982
+      },
+      "side_verdict_counts": {
+        "auto_participate": 8272,
+        "auto_reject": 25340,
+        "undecided": 7570
+      },
+      "distinct_undecided_ku_term_combos": 1878,
+      "top_undecided_files": [
+        {
+          "file": "01 - Foundations and Overview/01.2 - Mathematical Foundations/00. Linear Algebra Fundamentals.md",
+          "sides": 462
+        },
+        {
+          "file": "04 - Neural Networks and Deep Learning Foundations/04.1 - Neural Network Basics/03. Artificial Neural Networks (ANN) - Comprehensive.md",
+          "sides": 432
+        },
+        {
+          "file": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/08. Foundations of Machine Learning (Summary).md",
+          "sides": 263
+        },
+        {
+          "file": "02 - Python and Data Tooling/02.1 - Python Environment Setup/02. Installation and Distributions.md",
+          "sides": 250
+        },
+        {
+          "file": "02 - Python and Data Tooling/02.4 - Data Cleaning and Preprocessing/04. Feature Scaling and Normalization.md",
+          "sides": 250
+        },
+        {
+          "file": "02 - Mathematics/Linear Algebra/02 - Dot Product.md",
+          "sides": 223
+        },
+        {
+          "file": "02 - Mathematics/Linear Algebra/05 - Matrix Decomposition.md",
+          "sides": 205
+        },
+        {
+          "file": "11 - Training/Optimization/05 - Loss Spikes and Stability.md",
+          "sides": 192
+        },
+        {
+          "file": "01 - Foundations and Overview/01.2 - Mathematical Foundations/06. Gradients and Gradient Descent.md",
+          "sides": 141
+        },
+        {
+          "file": "02 - Mathematics/Linear Algebra/01 - Vectors.md",
+          "sides": 137
+        },
+        {
+          "file": "01 - Foundations and Overview/01.1 - AI, ML, and DL Hierarchy/05. Evolution and History of Deep Learning.md",
+          "sides": 137
+        },
+        {
+          "file": "02 - Mathematics/Calculus/11 - Jacobians and Hessians.md",
+          "sides": 135
+        }
+      ]
+    }
+  },
+  "grand_total": {
+    "pairs": 69185,
+    "tier_counts": {
+      "A": 4613,
+      "B": 30593,
+      "B3": 16285,
+      "C": 17694
+    }
+  }
+}

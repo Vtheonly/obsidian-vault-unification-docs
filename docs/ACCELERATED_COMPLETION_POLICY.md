@@ -191,6 +191,7 @@ last, if at all.
 |---|---|---|---|---|
 | 16 | 2026-11-01 | signal-pool candidates decided | 4,274/4,274; pool verified empty; 667 covers, 3,607 rejects, 0 new gaps | 10 |
 | 17 | 2026-11-01 | policy bound (user-directed) | this policy + AGENTS.md §12 + ADR-0012 committed | 9 |
+| 18 | 2026-11-01 | dossier-extension pairs classified | 69,185/69,185 (5,441 participate / 63,744 reject-pair; 5,168 participant KUs; 294 extension records; tiered ADR-0011 pipeline, 2 calibration pull-backs, 4 review rounds) | 8 |
 
 ## 9. Amendment
 

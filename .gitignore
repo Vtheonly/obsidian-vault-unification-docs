@@ -42,3 +42,8 @@ src/vault_unification.egg-info/
 # from committed KU batches + manifests (ADR-0010; double-run sha256 recorded
 # in reports/discovery/disc002-full-corpus-perf.json). Decision records stay committed.
 state/concept-candidates/002-disc002-full-corpus.jsonl
+
+# Session scratch: derived, regenerable artifacts (ADR-0010 pattern)
+# - dossier-ext pairs: commands in reports/dossier-ext/*-overlap-run.json
+# - s18 tiers/decisions: scripts/s18_*.py from committed state
+scratch/
