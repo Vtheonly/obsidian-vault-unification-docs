@@ -6,7 +6,13 @@
     "task_id": "DISP-001",
     "title": "Assign rule-driven dispositions to all knowledge units (Unaccounted -> 0)",
     "status": "completed",
-    "completed_with": ["EXT-011 (dossier v2 regeneration)", "F-0022 repair", "ADR-0013", "ADR-0014", "F-0023 fix"]
+    "completed_with": [
+      "EXT-011 (dossier v2 regeneration)",
+      "F-0022 repair",
+      "ADR-0013",
+      "ADR-0014",
+      "F-0023 fix"
+    ]
   },
   "stage": "dispositions-complete-synthesis-next",
   "baseline_verification": {
@@ -54,13 +60,28 @@
     "after": 27536,
     "denominator": 27536,
     "unaccounted": 0,
-    "by_disposition": {"Preserved": 18478, "Consolidated": 8106, "Contextualized": 950, "Superseded": 2},
-    "by_rule": {"DISP-R1": 4030, "DISP-R2": 4076, "DISP-R3": 18478, "DISP-R4": 949, "DISP-X1": 1, "DISP-X2": 2}
+    "by_disposition": {
+      "Preserved": 18478,
+      "Consolidated": 8106,
+      "Contextualized": 950,
+      "Superseded": 2
+    },
+    "by_rule": {
+      "DISP-R1": 4030,
+      "DISP-R2": 4076,
+      "DISP-R3": 18478,
+      "DISP-R4": 949,
+      "DISP-X1": 1,
+      "DISP-X2": 2
+    }
   },
   "verification_evidence": {
     "full_suite_end": "708/708 passed in 238.71s (reports/framework/session19-end-pytest.json)",
     "full_suite_start": "663/663 passed in 216.37s (reports/framework/session19-start-pytest.json)",
-    "source_manifests_end": {"ai-course": "276/276 unchanged", "master-ai": "333/333 unchanged"},
+    "source_manifests_end": {
+      "ai-course": "276/276 unchanged",
+      "master-ai": "333/333 unchanged"
+    },
     "dossier_check": "12/12 byte-identical (v1 + v2)",
     "repair_idempotence": "s19_repair_ext_evidence.py --check: 0 changed",
     "ledger_determinism": "double-run sha256 identical",
@@ -81,7 +102,9 @@
     "task_id": "SYNTH-001",
     "title": "Gated synthesis of the unified vault (first batches)",
     "why_next": "All pre-synthesis phases are complete: framework foundation + omission pilot (historical), full extraction/accounting (27,536 KUs), discovery (signal pool + dossier-extension complete), dossiers v2, disposition assignment (Unaccounted=0). ADR-0012 anti-stall: synthesis MUST START by session 23.",
-    "dependencies": ["DISP-001"],
+    "dependencies": [
+      "DISP-001"
+    ],
     "inputs": [
       "state/synthesis/canonical-structure-v1.json (20 areas, 544 planned notes)",
       "state/synthesis/file-mapping-v1.jsonl (609 files -> notes)",
@@ -109,5 +132,12 @@
   "scratch_regenerable": {
     "note": "scratch/ is git-ignored and disposable. The committed state/synthesis/file-mapping-v1.jsonl and canonical-structure-v1.json ARE the durable mapping record (the subagent intermediates in scratch/s19-mapping/ are redundant). The disposition ledger regenerates deterministically via vu assign-dispositions from committed inputs. The registry DB rebuilds via kureg-init --force + kureg-load x70 + kureg-apply-dispositions."
   },
-  "git_state_at_checkpoint": "uncommitted changes staged for the single session-19 work commit (to be created immediately after this checkpoint is written); push to main follows, then the push-verification record commit"
+  "git_state_at_checkpoint": "work commit 43b3479 pushed to origin/main (0c9b31e..43b3479); HEAD == origin/main == 43b3479 verified after fetch; clean tree",
+  "push_verification": {
+    "work_commit": "43b3479",
+    "pushed_range": "0c9b31e..43b3479",
+    "branch": "main",
+    "verified_after_fetch": true,
+    "head_equals_origin_main": "43b34790bf7f5dada412aac64224872d3463e17c"
+  }
 }
