@@ -195,3 +195,23 @@ class TestInlineMathAuthoritativeRecount:
         text = "$$E=mc^2$$\nplain $q$\n"
         result = mdextract.extract_structure_text(text)
         assert result["inline_math_count"] == 1
+
+
+# F-0027 regression: Obsidian table cells escape the alias pipe as \|
+# ([[path\|Display]]); the target must resolve WITHOUT the backslash.
+
+
+def test_wikilink_escaped_pipe_in_table():
+    text = "| [[04 - Machine Learning/Regression/Linear Regression\\|Linear Regression]] | note |\n"
+    result = mdextract.extract_structure_text(text)
+    assert len(result["wikilinks"]) == 1
+    link = result["wikilinks"][0]
+    assert link["target"] == "04 - Machine Learning/Regression/Linear Regression"
+    assert link["alias"] == "Linear Regression"
+
+
+def test_wikilink_plain_target_unchanged():
+    text = "See [[Gradient Descent]] and [[Note#Section|Alias]].\n"
+    result = mdextract.extract_structure_text(text)
+    targets = [w["target"] for w in result["wikilinks"]]
+    assert targets == ["Gradient Descent", "Note"]

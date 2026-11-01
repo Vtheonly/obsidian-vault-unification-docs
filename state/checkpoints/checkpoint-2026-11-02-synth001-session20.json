@@ -1,0 +1,77 @@
+{
+  "checkpoint_id": "checkpoint-2026-11-02-synth001-session20",
+  "date": "2026-11-02",
+  "session_number": 20,
+  "task": {
+    "task_id": "SYNTH-001",
+    "title": "Gated synthesis of the unified vault (first batches)",
+    "status": "in_progress",
+    "completed_this_session": "area 04 - Machine Learning end-to-end (27/27 notes through all gates)"
+  },
+  "stage": "synthesis-in-progress-area04-complete",
+  "accelerated_mode": {
+    "session_number": 20,
+    "budget_sessions_consumed": 5,
+    "budget_sessions_remaining": 6,
+    "deliverable_metric_moved": "canonical notes generated and verified (area batch through full gate chain)",
+    "before": 0,
+    "after": 27,
+    "denominator": 544,
+    "failed_session": false,
+    "cause_if_failed": null
+  },
+  "baseline_verification": {
+    "git": "clean tree, HEAD == origin/main == 3abf295 at session start",
+    "tests_first_run": "708/708 passed at session start (first run after editable install)",
+    "source_manifests": {
+      "ai-course": "276/276 unchanged (session start AND end: reports/synthesis/s20-immutable-ai-course.json + s20-immutable-ai-course-final.json)",
+      "master-ai": "333/333 unchanged (session start AND end: reports/synthesis/s20-immutable-master-ai.json + s20-immutable-master-ai-final.json)"
+    },
+    "editable_install": "python3 -m pip install -e . completed before baseline tests",
+    "registry_rebuild": "kureg-init + kureg-load x71 + kureg-apply-dispositions (applied=27,536, unaccounted_after=0) + kureg-validate (valid=true, 0 errors, 0 warnings)"
+  },
+  "work_completed": [
+    {
+      "item": "Synthesis infrastructure (scripted, deterministic, replayable): scripts/s20_build_synthesis_inputs.py (per-note evidence bundles from committed structure/mapping/ledger/dossiers; audit batch = KU records + ledger overlay incl. superseded_rationale; provenance mapping; expected-notes; committed report), scripts/s20_check_prompts.py (vu check-prompt over all specs), scripts/s20_french_lab_appendix.py (verbatim alternating-fence appendix), scripts/s20_marker_repairs.py (anchored, idempotent, asserted repairs)",
+      "evidence": "reports/synthesis/s20-area04-inputs-report.json (27 notes, 40 files, 1,829 KUs, 0 problems); reports/synthesis/s20-area04-checkprompt.json (27/27 ok)"
+    },
+    {
+      "item": "Editorial conventions v1 recorded in docs/EDITORIAL_STYLE_GUIDE.md before generation (frontmatter contract, no-H1 body, unnumbered sentence-case headings, $/$$ math, verbatim equations/code, wikilink policy incl. the 32 colliding basenames, no merge narration)",
+      "evidence": "docs/EDITORIAL_STYLE_GUIDE.md section 'Unified Vault Conventions v1'"
+    },
+    {
+      "item": "Area 04 generation: 26 notes by 13 bounded subagents (wave-parallel; every bundle = full verbatim sources + KU checklist + dossier concepts) + Machine Learning MOC by the orchestrator; 87,300 words total",
+      "evidence": "output/Unified-Vault/04 - Machine Learning/ (27 .md files)"
+    },
+    {
+      "item": "Gate chain GREEN for the batch: lint-artifacts 27 files / 0 errors / 0 warnings; assess-quality 27/27 notes, 0 dimensions below band; quality-drift explained (reference-type n=4 ordering artifact, waived with documented reason: preservation-driven length vs the deliberate beyond-ceiling penalty; last-third para ratio 0.34 > first-third 0.24); quality-gate PASS; audit-output valid=true with 0 findings over all 8 checks (ku-batch, output-drift, ku-accounting, destination, marker-retention, link-integrity, heading-convention, prose-quality) for all 1,829 area-04 KUs",
+      "evidence": "reports/synthesis/s20-area04-lint.json; s20-area04-assess.json; s20-area04-drift.json; s20-area04-gate.json (verdict pass, 0 failures); s20-area04-audit.json (valid true, findings_total 0)"
+    },
+    {
+      "item": "Framework fixes found by the first real synthesis batch (all with regression tests, suite 708 -> 725): F-0024 check_prompt/_ku_terms canonical 'knowledge_unit_id' field; F-0025 mermaid open dotted links; F-0026 inline-math bracket balance; F-0027 wikilink escaped-pipe targets in tables; F-0028 depth counts prose only; F-0029 markdown-quotation fences and scaffold fragments are not code markers (omission pilot re-verified after the change: 12/12 detection, 12/12 localization, 0 false positives)",
+      "evidence": "state/findings.jsonl F-0024..F-0029; reports/synthesis/s20-omission-pilot-refix.json; reports/synthesis/s20-capabilities.json (verified)"
+    },
+    {
+      "item": "Preservation decisions recorded: the French MNIST lab guide is preserved VERBATIM as an alternating-fence appendix inside Linear Regression (translated synthesis + original); KNN/SVM overview files' quoted-file scaffolding documented as historical notes; the F-0014 END-OF-FILE marker is NOT copied as knowledge (Superseded KU verified)",
+      "evidence": "output/Unified-Vault/04 - Machine Learning/Regression/Linear Regression.md appendix; K-Nearest Neighbors.md + Support Vector Machines.md historical notes; grep 'END OF FILE' over output/ returns nothing"
+    }
+  ],
+  "verification": {
+    "tests_final": "725/725 passed after the last mutation (python3 -m pytest tests/ -q)",
+    "audit": "vu audit-output --source-root 'source-vaults/AI ' --output-root output/Unified-Vault --ku-batch scratch/synth/area04/audit-kus.jsonl -> valid=true, 0 findings, 1,829 KUs",
+    "gate": "vu quality-gate -> verdict pass, 27/27 notes, 0 failures (drift waiver documented in the report)",
+    "independent_review": "orchestrator spot-checks: 10/10 semantic probes passed (widest street, PPO clip, DBSCAN, saddle points, Dice, XGBoost, double descent, French lab terms, crocodile exercise, calibration); SVM Lagrangian Dual derivation read in full"
+  },
+  "explicit_non_claims": [
+    "26 of 27 notes were written by subagents; their self-reports are NOT the evidence — the gates above are. The orchestrator personally reviewed the MOC, the SVM Lagrangian Dual note, and all repair edits, and probed 10 semantic details across 10 notes.",
+    "Marker retention proves lexical/formula preservation of every KU excerpt (rare terms, equation and code fingerprints) — it does not by itself prove semantic fidelity of the rewritten prose; the semantic verification layer is the orchestrator review + the cross-batch consistency pass still ahead (session 25 plan).",
+    "Cross-area wikilinks are deliberately absent (only area-4 notes exist); they are added in the cross-batch consistency pass once more areas exist.",
+    "The reference-type drift waiver is an EXPLAINED artifact, not a pass-forging edit: the underlying notes are individually within band."
+  ],
+  "next_task": {
+    "task_id": "SYNTH-001 (continue)",
+    "what": "areas 05 (Neural Network Foundations, 79 notes), 06 (Computer Vision, 26), 07 (Sequence Models, 38) via the s20 pipeline: build inputs -> check-prompt -> subagent generation waves -> lint/assess/drift/gate -> audit-output per area; reuse scripts/s20_* verbatim with a new --area/--slug",
+    "budget_arithmetic": "sessions 21-26 remain; remaining notes 517/544; suggested split: 21-24 four area waves (05+06, 07+08, 09-11, 12-16+17-19), 25 cross-batch consistency + gap treatments (second moment, bradley-terry, async def) + cross-area links, 26 final verification + delivery",
+    "resume": "see docs/agent-handoff/next-agent.md"
+  }
+}

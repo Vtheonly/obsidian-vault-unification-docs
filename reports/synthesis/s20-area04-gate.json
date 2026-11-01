@@ -1,0 +1,38 @@
+{
+  "result": {
+    "passed": true,
+    "criteria": [
+      "every expected note assessed or explicitly unresolved",
+      "every note lint-error clean (allowed: 0)",
+      "every measured dimension within its type band or explicitly waived with reason",
+      "no unexplained systematic quality drift"
+    ],
+    "failures": [],
+    "notes_assessed": 27,
+    "waivers_applied": [
+      [
+        "drift::reference",
+        "Small-sample ordering artifact: 4 reference notes, first-third=Clustering Evaluation Metrics (1,334 prose words) vs last-third=Regression Evaluation Metrics (2,767 prose words); both individually within band (0.754/0.573 vs min 0.4); the depth delta is driven by the deliberate beyond-ceiling length penalty (reference band hi=1,200 words) interacting with preservation-driven note sizes (54 vs 95 KUs, 1,186 vs 2,527 source words). No editorial thinning: last-third para ratio 0.34 exceeds first-third 0.24."
+      ]
+    ],
+    "verdict": "pass"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-gate",
+    "args": {
+      "command": "quality-gate",
+      "assessments": "scratch/synth/area04/gates/assessments.jsonl",
+      "expected": "scratch/synth/area04/expected-notes.txt",
+      "drift_report": "reports/synthesis/s20-area04-drift.json",
+      "waivers": [
+        "drift::reference=Small-sample ordering artifact: 4 reference notes, first-third=Clustering Evaluation Metrics (1,334 prose words) vs last-third=Regression Evaluation Metrics (2,767 prose words); both individually within band (0.754/0.573 vs min 0.4); the depth delta is driven by the deliberate beyond-ceiling length penalty (reference band hi=1,200 words) interacting with preservation-driven note sizes (54 vs 95 KUs, 1,186 vs 2,527 source words). No editorial thinning: last-third para ratio 0.34 exceeds first-third 0.24."
+      ],
+      "report": "/home/z/my-project/repo/reports/synthesis/s20-area04-gate.json"
+    },
+    "utc_timestamp": "2026-11-01T19:09:59+00:00",
+    "git_commit": "3abf295"
+  }
+}

@@ -191,7 +191,7 @@ def check_prompt(
                     if not line:
                         continue
                     rec = json.loads(line)
-                    kid = rec.get("ku_id") or rec.get("id")
+                    kid = rec.get("ku_id") or rec.get("id") or rec.get("knowledge_unit_id")
                     if kid:
                         known_ids.add(str(kid))
         missing = [k for k in ku_ids if str(k) not in known_ids]

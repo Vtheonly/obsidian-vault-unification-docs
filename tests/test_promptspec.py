@@ -178,3 +178,49 @@ def test_build_repair_prompt_is_targeted():
     # (objective, evidence, criteria, constraints, contract all present)
     result = check_prompt(spec)
     assert result["ok"], [c for c in result["checks"] if not c["ok"]]
+
+
+# ---------------------------------------------------------------------------
+# F-0024 regression: canonical KU batches carry 'knowledge_unit_id'
+# (state/knowledge-units/*.jsonl); check_prompt must resolve ids from the
+# project's real batch format, not only the 'ku_id'/'id' fixture spellings.
+
+
+def test_ku_ids_resolve_from_canonical_knowledge_unit_id_field(tmp_path: Path):
+    batch = tmp_path / "canonical-batch.jsonl"
+    batch.write_text(
+        json.dumps(
+            {
+                "knowledge_unit_id": "KU-0a35dc16707fd93f",
+                "source_id": "ai-course:x.md",
+                "heading_path": ["5. Gradient Descent Optimization"],
+                "excerpt": "Gradient Descent is the backbone of Deep Learning.",
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    spec = {
+        **GOOD_SPEC,
+        "source_evidence": {**GOOD_SPEC["source_evidence"], "ku_ids": ["KU-0a35dc16707fd93f"]},
+    }
+    result = check_prompt(spec, ku_batches=[batch])
+    assert result["ok"], [c for c in result["checks"] if not c["ok"]]
+    resolvable = next(c for c in result["checks"] if c["check"] == "source_evidence_resolvable")
+    assert resolvable["ok"]
+
+
+def test_ku_ids_still_unresolvable_when_absent_everywhere(tmp_path: Path):
+    batch = tmp_path / "canonical-batch.jsonl"
+    batch.write_text(
+        json.dumps({"knowledge_unit_id": "KU-real", "excerpt": "x"}) + "\n", encoding="utf-8"
+    )
+    spec = {
+        **GOOD_SPEC,
+        "source_evidence": {**GOOD_SPEC["source_evidence"], "ku_ids": ["KU-GHOST"]},
+    }
+    result = check_prompt(spec, ku_batches=[batch])
+    assert not result["ok"]
+    resolvable = next(c for c in result["checks"] if c["check"] == "source_evidence_resolvable")
+    assert not resolvable["ok"]
+    assert "KU-GHOST" in resolvable["detail"]

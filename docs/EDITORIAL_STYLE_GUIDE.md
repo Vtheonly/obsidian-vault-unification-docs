@@ -8,6 +8,52 @@ Ensure that the final vault reads as one coherent body of work, with consistent 
 
 The first agent must inspect both vaults to discover existing conventions and decide, with documented rationale, which conventions should define the unified vault. Do not assume either source vault's style is universally superior. Record the chosen policy before large-scale generation.
 
+## Unified Vault Conventions v1 (recorded at synthesis start — session 20, SYNTH-001)
+
+Derived from both vaults' observed conventions (AI Course: numbered-H1 course
+notes, rich explanatory prose, `$`/`$$` LaTeX; Master AI: YAML frontmatter with
+tags/aliases, TL;DR callouts, tables and mermaid diagrams). Recorded here, per
+"Establishing the target style", before the first generation batch. Changing
+any rule below requires the documented change-control procedure in this guide.
+
+1. **File layout**: notes live at their planned canonical path
+   (`state/synthesis/canonical-structure-v1.json`); folder names carry the
+   `NN - Area/Subfamily` prefix scheme already fixed by the structure.
+2. **Frontmatter** (every note): `title`, `type` (one of concept, reference,
+   tutorial, derivation, overview, example), `aliases` (when the topic has
+   known synonyms, including source-vault phrasings), `tags` (lowercase,
+   hyphenated), `sources` (list of the SOURCE NOTE TITLES this note
+   synthesizes — attribution metadata, not prose), `created_index` (generation
+   order for drift detection).
+3. **Body shape**: no H1 in the body (the filename is the title); the body
+   opens with a 2–4 sentence orienting introduction; sections use `##` and
+   subsections `###`, sentence case, unnumbered, no hierarchy skips; the note
+   ends with a `## See also` section of wikilinks when siblings exist.
+4. **Math**: `$...$` inline, `$$...$$` display, one convention everywhere (no
+   `\(...\)` mixing). Equations from the source material are copied verbatim
+   (whitespace-insensitive); surrounding prose is rewritten for coherence.
+5. **Code**: fenced blocks always carry a language label; code from sources is
+   preserved verbatim. Mermaid diagrams from sources are preserved (and must
+   stay grammatically valid).
+6. **Callouts**: `> [!info]`/`> [!warning]` etc. are allowed where they aid
+   clarity (pitfalls, key distinctions); they are not mandatory. A short
+   TL;DR-style opening callout is permitted for dense reference notes.
+7. **Links**: Obsidian wikilinks. `[[Note Name]]` when the basename is unique
+   vault-wide; `[[path/to/Note Name|Note Name]]` for the 32 known colliding
+   basenames (path-based, unambiguous). During incremental area batches,
+   links resolve within the generated set only; cross-area links are added in
+   the cross-batch consistency pass once all areas exist. Every note links to
+   its area MOC and at least two topical siblings.
+8. **Tables and lists**: tables for genuine comparisons/lookups; lists only
+   where enumeration is natural; no section is a bare bullet list (prose
+   develops the reasoning).
+9. **Provenance in prose**: notes never mention source vaults, merge history,
+   file paths, or this project. Legitimate subject-matter citations, version
+   distinctions, and historical context are kept.
+10. **Depth**: notes match the depth of their evidence (see the preservation
+    rules above); the per-type quality bands in the FRAME-002 tooling
+    (`vu assess-quality`) operationalize the floor, never the ceiling.
+
 The target must define:
 - folder hierarchy and category boundaries;
 - filename conventions and capitalization;

@@ -291,3 +291,44 @@ class TestPilot:
             apply_mutation(fixture_dir["output_root"], tmp_path / defect_id, defect_id)
         after = baseline_main.read_bytes()
         assert before == after
+
+
+# F-0029: markdown-labelled fences are quotation convention, not code.
+
+
+def test_markdown_quoted_blocks_are_not_code_markers():
+    from vault_unification.omission import _code_bodies
+
+    text = (
+        "### File 1: intro.md\n\n```markdown\n# Intro\nSome quoted prose.\n```\n\n"
+        "```python\nx = 1\n```\n"
+    )
+    bodies = _code_bodies(text)
+    assert bodies == ["x = 1"], bodies
+
+
+def test_unlabeled_fences_remain_code_markers():
+    from vault_unification.omission import _code_bodies
+
+    text = "```\nbare fence body\n```\n"
+    assert _code_bodies(text) == ["bare fence body"]
+
+
+# F-0029b: inter-fence scaffolding fragments from tangled source fencing
+# (hr + 'File N: <name>.md' heading lines only) are not code fingerprints.
+
+
+def test_scaffold_only_fragments_are_not_code_markers():
+    from vault_unification.omission import _code_bodies
+
+    text = "```\n---\n\n### File 2: 5. Distance Metrics.md\n```\n"
+    assert _code_bodies(text) == []
+    text2 = "```\n### **File: 3.2. The Kernel Trick & Non-Linearity.md**\n```\n"
+    assert _code_bodies(text2) == []
+
+
+def test_scaffold_plus_content_still_counts_as_code():
+    from vault_unification.omission import _code_bodies
+
+    text = "```\n---\n### File 2: x.md\nprint('real code')\n```\n"
+    assert _code_bodies(text) == ["---\n### File 2: x.md\nprint('real code')"]

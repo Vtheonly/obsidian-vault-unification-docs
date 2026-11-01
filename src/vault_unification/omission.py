@@ -538,6 +538,7 @@ def build_fixture(dest_root: str | Path, *, protected_roots: list | None = None)
 _TOKEN_RE = re.compile(r"[A-Za-z0-9_][A-Za-z0-9_.\-]*")
 _FENCE_RE = re.compile(r"```[^\n]*\n.*?```", re.S)
 _FENCE_BODY_RE = re.compile(r"```[^\n]*\n(.*?)```", re.S)
+_FENCE_LANG_RE = re.compile(r"```([^\n]*)\n(.*?)```", re.S)
 _DISPLAY_MATH_RE = re.compile(r"\$\$(.+?)\$\$", re.S)
 _INLINE_MATH_RE = re.compile(r"(?<!\$)\$([^$\n]+?)\$(?!\$)")
 _NUMBERED_HEADING_RE = re.compile(r"^(\d+(?:\.\d+)*)[.)]?\s+\S")
@@ -567,13 +568,41 @@ def _math_markers(text: str) -> list[str]:
 
 
 def _code_bodies(text: str) -> list[str]:
-    """Normalized fenced-code bodies (trailing whitespace stripped per line)."""
+    """Normalized fenced-code bodies (trailing whitespace stripped per line).
+
+    F-0029: fences labelled ``markdown`` (or ``md``) are the source vaults'
+    QUOTATION convention — overview notes embed verbatim copies of sibling
+    note files inside ```markdown fences. They are prose evidence, not code:
+    their knowledge is enforced by the term and math markers extracted from
+    the same KU excerpt, so they are excluded from code fingerprints instead
+    of demanding duplicated fenced copies in the output.
+
+    F-0029b: the same quotation convention, in sources with tangled/broken
+    fence nesting, also produces inter-fence SCAFFOLD fragments whose entire
+    body is a horizontal rule and/or a 'File N: <name>.md' heading line
+    (e.g. ``---\\n\\n### File 2: 5. Distance Metrics.md``). A body whose
+    every non-empty line is such scaffolding carries no code and no
+    knowledge; it is exempt too. Any other content keeps the fingerprint.
+    """
     bodies = []
-    for body in _FENCE_BODY_RE.findall(text):
+    for info, body in _FENCE_LANG_RE.findall(text):
+        if info.strip().lower() in ("markdown", "md"):
+            continue
         normalized = "\n".join(line.rstrip() for line in body.split("\n")).strip("\n")
-        if normalized:
+        if normalized and not _is_scaffold_body(normalized):
             bodies.append(normalized)
     return bodies
+
+
+_SCAFFOLD_LINE_RE = re.compile(
+    r"^(?:-{3,}|#{1,6}\s*\**File\b.*\.md\**\s*)$"
+)
+
+
+def _is_scaffold_body(normalized_body: str) -> bool:
+    """True when every non-empty line is an hr or a 'File …​.md' heading."""
+    lines = [ln.strip() for ln in normalized_body.split("\n") if ln.strip()]
+    return bool(lines) and all(_SCAFFOLD_LINE_RE.match(ln) for ln in lines)
 
 
 def _clean_token(token: str) -> str:

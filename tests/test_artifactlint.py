@@ -322,3 +322,49 @@ def test_gantt_task_rows_are_valid():
     )
     report = lint_text(text)
     assert not _checks(report, "MERMAID_PARSE"), report["defects"]
+
+
+# F-0025 regression: open dotted links (no arrowhead) with text are valid
+# mermaid (A-. text .-B). The construct appears live in the unified-vault
+# synthesis output (KNN / evaluation notes copy it from ai-course sources,
+# where it was hidden inside a ```markdown fence and thus never calibrated).
+
+
+@pytest.mark.parametrize(
+    "line",
+    [
+        "New -. distance .- C",
+        "A-. text .-B",
+        "A -.- B",
+        "A-.-> B",
+    ],
+)
+def test_open_dotted_links_are_valid(line):
+    text = f"```mermaid\nflowchart TD\nA[Start]\n{line}\n```\n"
+    report = lint_text(text)
+    assert not _checks(report, "MERMAID_PARSE"), (line, report["defects"])
+
+
+def test_mermaid_prose_still_rejected_after_dotted_link_fix():
+    text = "```mermaid\nflowchart TD\nA --> B\nthis line is just prose, not a diagram statement\n```\n"
+    report = lint_text(text)
+    assert _checks(report, "MERMAID_PARSE")
+
+
+# F-0026 regression: half-open interval notation inside inline math
+# ($\gamma \in [0, 1)$ etc.) must not trigger BRACKET_UNBALANCED.
+
+
+def test_half_open_intervals_in_inline_math_do_not_unbalance():
+    text = (
+        "The discount factor $\\gamma \\in [0, 1)$ weighs future rewards, "
+        "and the shrinkage $\\nu \\in (0, 1]$ scales each tree.\n"
+    )
+    report = lint_text(text)
+    assert not _checks(report, "BRACKET_UNBALANCED"), report["defects"]
+
+
+def test_genuinely_unbalanced_brackets_still_detected():
+    text = "An unclosed paren ( like this stays a finding.\n"
+    report = lint_text(text)
+    assert _checks(report, "BRACKET_UNBALANCED")

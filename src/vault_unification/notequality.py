@@ -260,7 +260,8 @@ def _ku_terms(batches: list[Path] | None) -> dict[str, list[str]]:
                 if not line:
                     continue
                 rec = json.loads(line)
-                ku_id = rec.get("ku_id") or rec.get("id")
+                # F-0024: canonical KU batches carry 'knowledge_unit_id'
+                ku_id = rec.get("ku_id") or rec.get("id") or rec.get("knowledge_unit_id")
                 if not ku_id:
                     continue
                 candidates: list[str] = []
@@ -323,10 +324,34 @@ def _score_definitions(text: str) -> tuple[float, list[str]]:
     return score, [f"{len(hits)} definition-pattern matches"] if hits else ["no definition patterns detected"]
 
 
+_NONPROSE_FENCE_RE = re.compile(r"```.*?```", re.DOTALL)
+_NONPROSE_MATH_RE = re.compile(r"\$\$.*?\$\$", re.DOTALL)
+_NONPROSE_TABLE_RE = re.compile(r"(?:^[ \t]*\|.*\|[ \t]*$\n?)+", re.MULTILINE)
+_NONPROSE_FRONTMATTER_RE = re.compile(r"\A---\n.*?\n---\n", re.DOTALL)
+
+
+def _strip_nonprose(text: str) -> str:
+    """Remove frontmatter, code fences, display math and tables (F-0028).
+
+    Depth measures explanatory prose; fenced code, $$math$$ blocks and table
+    rows are not paragraphs and previously diluted the multi-sentence ratio
+    of math/code-heavy notes.
+    """
+    out = _NONPROSE_FRONTMATTER_RE.sub("", text)
+    out = _NONPROSE_FENCE_RE.sub("", out)
+    out = _NONPROSE_MATH_RE.sub("", out)
+    out = _NONPROSE_TABLE_RE.sub("", out)
+    return out
+
+
 def _score_depth(text: str, ntype: str) -> tuple[float, list[str]]:
-    words = len(re.findall(r"\S+", text))
-    para_blocks = [p for p in re.split(r"\n\s*\n", text) if p.strip()]
-    sentences = [s for s in re.split(r"(?<=[.!?])\s+", text) if s.strip()]
+    # F-0028: depth measures PROSE. Code fences, display-math blocks, tables
+    # and frontmatter are not paragraphs; counting them as zero-sentence
+    # paragraphs systematically under-scored math/code-heavy notes.
+    prose = _strip_nonprose(text)
+    words = len(re.findall(r"\S+", prose))
+    para_blocks = [p for p in re.split(r"\n\s*\n", prose) if p.strip()]
+    sentences = [s for s in re.split(r"(?<=[.!?])\s+", prose) if s.strip()]
     lo, target, hi = _DEPTH_BANDS.get(ntype, _DEPTH_BANDS["generic"])
     if words < lo:
         score = max(0.0, words / lo) * 0.5

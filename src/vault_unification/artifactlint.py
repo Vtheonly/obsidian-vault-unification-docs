@@ -189,7 +189,12 @@ _FLOWCHART_KEYWORD_LINE = re.compile(
 # A -. "text" .-> B, thick links, bidirectional)
 _FLOWCHART_EDGE_OP = re.compile(
     r"<-->|<--|-\.?\.?->|-->|->|--x|-x|--o|-o|==>|=->|==o|==x|---|===|~~~"
+    r"|-\..*\.-|-\.-"  # F-0025: open dotted links, with or without text (A-. text .-B / A-.-B)
 )
+
+# F-0026: single-line inline math spans ($...$, no escaped dollars), removed
+# before bracket counting — half-open intervals are not literal brackets
+_INLINE_MATH_STRIP_RE = re.compile(r"(?<!\\)\$[^$\n]+(?<!\\)\$")
 
 _FLOWCHART_BARE_NODE = re.compile(
     r"""^\s*
@@ -720,7 +725,9 @@ def lint_text(text: str, *, path: str = "<text>") -> dict:
         for idx, line in enumerate(lines, start=1):
             if _in_fence(idx) or _in_math(idx):
                 continue
-            for ch in line:
+            # F-0026: inline math is not literal Markdown — half-open
+            # intervals like $[0, 1)$ / $(0, 1]$ must not unbalance the count
+            for ch in _INLINE_MATH_STRIP_RE.sub(" ", line):
                 if ch in balance:
                     balance[ch] += 1
                 elif ch in pairs:

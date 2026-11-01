@@ -1,0 +1,2810 @@
+{
+  "result": {
+    "root": "output/Unified-Vault",
+    "standards_version": "1.0.0",
+    "notes": [
+      {
+        "note": "04 - Machine Learning/Clustering and Dimensionality Reduction/Clustering.md",
+        "note_key": "04 - Machine Learning/Clustering and Dimensionality Reduction/Clustering.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "24 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (21 lines)"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "51 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.6825983122362869,
+            "evidence": [
+              "2528 words (band 80..1500, target 350)",
+              "79 paragraphs, 27 with >=3 sentences (ratio 0.34)",
+              "152 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 0.7,
+            "evidence": [
+              "2 display math blocks",
+              "53 inline math",
+              "0 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "15 example markers",
+              "3 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "68/68 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "12 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9252568213783403,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 0,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          1.0,
+          "Clustering.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Clustering and Dimensionality Reduction/Principal Component Analysis.md",
+        "note_key": "04 - Machine Learning/Clustering and Dimensionality Reduction/Principal Component Analysis.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "21 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (17 lines)"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "27 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.7552772727272727,
+            "evidence": [
+              "1821 words (band 80..1500, target 350)",
+              "55 paragraphs, 17 with >=3 sentences (ratio 0.31)",
+              "113 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 0.2,
+            "evidence": [
+              "0 display math blocks",
+              "25 inline math",
+              "0 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "3 example markers",
+              "1 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "46/46 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "14 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9152909090909092,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 0,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          2.0,
+          "Principal Component Analysis.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Clustering and Dimensionality Reduction/t-SNE and UMAP.md",
+        "note_key": "04 - Machine Learning/Clustering and Dimensionality Reduction/t-SNE and UMAP.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "18 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (22 lines)"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "21 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.7499999999999999,
+            "evidence": [
+              "1800 words (band 80..1500, target 350)",
+              "60 paragraphs, 17 with >=3 sentences (ratio 0.28)",
+              "110 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 0.7,
+            "evidence": [
+              "3 display math blocks",
+              "8 inline math",
+              "0 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "3 example markers",
+              "1 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "54/54 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "12 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9380952380952381,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 0,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          3.0,
+          "t-SNE and UMAP.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Generalization and Regularization/Bias Variance Tradeoff.md",
+        "note_key": "04 - Machine Learning/Generalization and Regularization/Bias Variance Tradeoff.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "25 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (22 lines)",
+              "2 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "22 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.6586779069767441,
+            "evidence": [
+              "2811 words (band 80..1500, target 350)",
+              "86 paragraphs, 32 with >=3 sentences (ratio 0.37)",
+              "168 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 1.0,
+            "evidence": [
+              "6 display math blocks",
+              "34 inline math",
+              "8 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "5 example markers",
+              "5 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "68/68 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "21 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9349862679955704,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 2,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          4.0,
+          "Bias Variance Tradeoff.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Generalization and Regularization/Regularization Techniques.md",
+        "note_key": "04 - Machine Learning/Generalization and Regularization/Regularization Techniques.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "23 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (26 lines)",
+              "2 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "14 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.7948666666666666,
+            "evidence": [
+              "1544 words (band 80..1500, target 350)",
+              "60 paragraphs, 20 with >=3 sentences (ratio 0.33)",
+              "99 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 0.7,
+            "evidence": [
+              "4 display math blocks",
+              "8 inline math",
+              "0 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "2 example markers",
+              "3 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "38/38 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "17 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9466412698412698,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 2,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          5.0,
+          "Regularization Techniques.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Machine Learning MOC.md",
+        "note_key": "04 - Machine Learning/Machine Learning MOC.md",
+        "type": "overview",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "8 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (10 lines)",
+              "1 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "4 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "depth": {
+            "score": 0.7343749999999999,
+            "evidence": [
+              "325 words (band 100..1500, target 400)",
+              "12 paragraphs, 4 with >=3 sentences (ratio 0.33)",
+              "19 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "math_rigor": {
+            "score": 0.15,
+            "evidence": [
+              "0 display math blocks",
+              "0 inline math",
+              "1 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.0
+          },
+          "examples": {
+            "score": 0.0,
+            "evidence": [
+              "0 example markers",
+              "0 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "9/9 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.1,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "27 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.4
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9270833333333334,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 1,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          6.0,
+          "Machine Learning MOC.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Model Evaluation/Clustering Evaluation Metrics.md",
+        "note_key": "04 - Machine Learning/Model Evaluation/Clustering Evaluation Metrics.md",
+        "type": "reference",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "12 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (28 lines)",
+              "1 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "16 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "depth": {
+            "score": 0.7502916666666666,
+            "evidence": [
+              "1358 words (band 40..1200, target 180)",
+              "45 paragraphs, 11 with >=3 sentences (ratio 0.24)",
+              "66 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "math_rigor": {
+            "score": 0.85,
+            "evidence": [
+              "6 display math blocks",
+              "43 inline math",
+              "1 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 0.6,
+            "evidence": [
+              "3 example markers",
+              "0 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "54/54 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.2,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "9 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9309801587301589,
+        "overall_measured_weight": 1.0499999999999998,
+        "lint_error_count": 0,
+        "lint_defect_count": 1,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          7.0,
+          "Clustering Evaluation Metrics.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Model Evaluation/Computer Vision Evaluation Metrics.md",
+        "note_key": "04 - Machine Learning/Model Evaluation/Computer Vision Evaluation Metrics.md",
+        "type": "reference",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "17 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (28 lines)",
+              "3 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "16 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "depth": {
+            "score": 0.7486700680272108,
+            "evidence": [
+              "1496 words (band 40..1200, target 180)",
+              "49 paragraphs, 15 with >=3 sentences (ratio 0.31)",
+              "85 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "math_rigor": {
+            "score": 0.7,
+            "evidence": [
+              "4 display math blocks",
+              "1 inline math",
+              "0 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 0.6,
+            "evidence": [
+              "1 example markers",
+              "0 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "36/36 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.2,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "5 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9236828636216392,
+        "overall_measured_weight": 1.0499999999999998,
+        "lint_error_count": 0,
+        "lint_defect_count": 3,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          8.0,
+          "Computer Vision Evaluation Metrics.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Model Evaluation/Model Evaluation Metrics.md",
+        "note_key": "04 - Machine Learning/Model Evaluation/Model Evaluation Metrics.md",
+        "type": "reference",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "36 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (24 lines)",
+              "1 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "76 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "depth": {
+            "score": 0.4472527472527472,
+            "evidence": [
+              "8271 words (band 40..1200, target 180)",
+              "182 paragraphs, 59 with >=3 sentences (ratio 0.32)",
+              "316 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "math_rigor": {
+            "score": 1.0,
+            "evidence": [
+              "32 display math blocks",
+              "84 inline math",
+              "6 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "25 example markers",
+              "11 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "339/339 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.2,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "43 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9473574045002618,
+        "overall_measured_weight": 1.0499999999999998,
+        "lint_error_count": 0,
+        "lint_defect_count": 1,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          9.0,
+          "Model Evaluation Metrics.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Model Evaluation/Regression Evaluation Metrics.md",
+        "note_key": "04 - Machine Learning/Model Evaluation/Regression Evaluation Metrics.md",
+        "type": "reference",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "23 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (26 lines)",
+              "2 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "32 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "depth": {
+            "score": 0.5730955882352942,
+            "evidence": [
+              "2766 words (band 40..1200, target 180)",
+              "68 paragraphs, 23 with >=3 sentences (ratio 0.34)",
+              "110 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "math_rigor": {
+            "score": 0.85,
+            "evidence": [
+              "12 display math blocks",
+              "25 inline math",
+              "1 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "6 example markers",
+              "1 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "95/95 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.2,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "20 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9521995798319328,
+        "overall_measured_weight": 1.0499999999999998,
+        "lint_error_count": 0,
+        "lint_defect_count": 2,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          10.0,
+          "Regression Evaluation Metrics.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Nearest Neighbors/K-Nearest Neighbors.md",
+        "note_key": "04 - Machine Learning/Nearest Neighbors/K-Nearest Neighbors.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "41 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (20 lines)"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "34 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.43963414634146336,
+            "evidence": [
+              "4970 words (band 80..1500, target 350)",
+              "164 paragraphs, 49 with >=3 sentences (ratio 0.30)",
+              "294 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 0.85,
+            "evidence": [
+              "19 display math blocks",
+              "129 inline math",
+              "1 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "32 example markers",
+              "6 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "163/163 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "24 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.8861207897793263,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 0,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          11.0,
+          "K-Nearest Neighbors.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Optimization Algorithms/Gradient Descent.md",
+        "note_key": "04 - Machine Learning/Optimization Algorithms/Gradient Descent.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "39 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (23 lines)",
+              "4 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "29 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.4716216216216216,
+            "evidence": [
+              "5259 words (band 80..1500, target 350)",
+              "148 paragraphs, 60 with >=3 sentences (ratio 0.41)",
+              "324 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 1.0,
+            "evidence": [
+              "15 display math blocks",
+              "146 inline math",
+              "3 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "24 example markers",
+              "7 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "137/137 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "17 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.8993564993564993,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 4,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          12.0,
+          "Gradient Descent.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Optimization Algorithms/Loss Functions.md",
+        "note_key": "04 - Machine Learning/Optimization Algorithms/Loss Functions.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "32 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (26 lines)",
+              "2 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "63 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.4572847682119205,
+            "evidence": [
+              "6510 words (band 80..1500, target 350)",
+              "151 paragraphs, 54 with >=3 sentences (ratio 0.36)",
+              "276 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 1.0,
+            "evidence": [
+              "31 display math blocks",
+              "202 inline math",
+              "4 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "20 example markers",
+              "8 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "222/222 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "25 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.8966256701356039,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 2,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          13.0,
+          "Loss Functions.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Optimization Algorithms/Optimizers and Learning Rate Schedulers.md",
+        "note_key": "04 - Machine Learning/Optimization Algorithms/Optimizers and Learning Rate Schedulers.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "19 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (26 lines)",
+              "2 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "42 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.5312,
+            "evidence": [
+              "3804 words (band 80..1500, target 350)",
+              "81 paragraphs, 27 with >=3 sentences (ratio 0.33)",
+              "138 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 0.7,
+            "evidence": [
+              "12 display math blocks",
+              "65 inline math",
+              "0 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "9 example markers",
+              "6 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "112/112 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "23 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.8964190476190477,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 2,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          14.0,
+          "Optimizers and Learning Rate Schedulers.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Regression/Linear Regression.md",
+        "note_key": "04 - Machine Learning/Regression/Linear Regression.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "68 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (33 lines)",
+              "1 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "66 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.41185567010309276,
+            "evidence": [
+              "5961 words (band 80..1500, target 350)",
+              "194 paragraphs, 40 with >=3 sentences (ratio 0.21)",
+              "256 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 1.0,
+            "evidence": [
+              "33 display math blocks",
+              "195 inline math",
+              "15 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "14 example markers",
+              "45 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "206/206 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "21 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.8879725085910654,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 1,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          15.0,
+          "Linear Regression.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Regression/Logistic Regression.md",
+        "note_key": "04 - Machine Learning/Regression/Logistic Regression.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "25 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (19 lines)",
+              "1 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "28 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.6195941860465116,
+            "evidence": [
+              "2847 words (band 80..1500, target 350)",
+              "86 paragraphs, 22 with >=3 sentences (ratio 0.26)",
+              "127 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 1.0,
+            "evidence": [
+              "16 display math blocks",
+              "91 inline math",
+              "12 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "7 example markers",
+              "1 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "97/97 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "22 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9275417497231451,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 1,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          16.0,
+          "Logistic Regression.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Regression/Regression Fundamentals.md",
+        "note_key": "04 - Machine Learning/Regression/Regression Fundamentals.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "13 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (16 lines)"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "22 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.74645,
+            "evidence": [
+              "1959 words (band 80..1500, target 350)",
+              "66 paragraphs, 22 with >=3 sentences (ratio 0.33)",
+              "101 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 0.7,
+            "evidence": [
+              "9 display math blocks",
+              "69 inline math",
+              "0 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "8 example markers",
+              "4 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "65/65 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "17 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9374190476190477,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 0,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          17.0,
+          "Regression Fundamentals.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Reinforcement Learning/Markov Decision Processes and Bellman Equations.md",
+        "note_key": "04 - Machine Learning/Reinforcement Learning/Markov Decision Processes and Bellman Equations.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "19 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (20 lines)"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "18 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.7545322033898305,
+            "evidence": [
+              "1512 words (band 80..1500, target 350)",
+              "59 paragraphs, 11 with >=3 sentences (ratio 0.19)",
+              "67 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 0.85,
+            "evidence": [
+              "9 display math blocks",
+              "51 inline math",
+              "1 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "1 example markers",
+              "1 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "43/43 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "11 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9461013720742534,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 0,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          18.0,
+          "Markov Decision Processes and Bellman Equations.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Reinforcement Learning/Policy Gradients and Actor Critic.md",
+        "note_key": "04 - Machine Learning/Reinforcement Learning/Policy Gradients and Actor Critic.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "17 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (21 lines)"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "17 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.7777777777777777,
+            "evidence": [
+              "1347 words (band 80..1500, target 350)",
+              "54 paragraphs, 14 with >=3 sentences (ratio 0.26)",
+              "77 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 0.85,
+            "evidence": [
+              "7 display math blocks",
+              "39 inline math",
+              "1 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "4 example markers",
+              "1 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "42/42 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "9 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9505291005291006,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 0,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          19.0,
+          "Policy Gradients and Actor Critic.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Reinforcement Learning/Proximal Policy Optimization.md",
+        "note_key": "04 - Machine Learning/Reinforcement Learning/Proximal Policy Optimization.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "15 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (20 lines)"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "8 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.7749999999999999,
+            "evidence": [
+              "1278 words (band 80..1500, target 350)",
+              "48 paragraphs, 12 with >=3 sentences (ratio 0.25)",
+              "80 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 0.7,
+            "evidence": [
+              "4 display math blocks",
+              "31 inline math",
+              "0 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "1 example markers",
+              "1 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "36/36 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "9 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.942857142857143,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 0,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          20.0,
+          "Proximal Policy Optimization.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Reinforcement Learning/Q-Learning and Deep Q Networks.md",
+        "note_key": "04 - Machine Learning/Reinforcement Learning/Q-Learning and Deep Q Networks.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "27 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (21 lines)",
+              "1 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "15 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.6723886178861788,
+            "evidence": [
+              "2552 words (band 80..1500, target 350)",
+              "82 paragraphs, 26 with >=3 sentences (ratio 0.32)",
+              "140 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 0.7,
+            "evidence": [
+              "3 display math blocks",
+              "53 inline math",
+              "0 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "1 example markers",
+              "4 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "62/62 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "12 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9233121176926055,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 1,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          21.0,
+          "Q-Learning and Deep Q Networks.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Support Vector Machines/Kernel Trick.md",
+        "note_key": "04 - Machine Learning/Support Vector Machines/Kernel Trick.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "11 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (23 lines)"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "9 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.7878048780487804,
+            "evidence": [
+              "1266 words (band 80..1500, target 350)",
+              "41 paragraphs, 12 with >=3 sentences (ratio 0.29)",
+              "65 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 1.0,
+            "evidence": [
+              "4 display math blocks",
+              "14 inline math",
+              "5 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "1 example markers",
+              "4 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "42/42 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "16 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.959581881533101,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 0,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          22.0,
+          "Kernel Trick.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Support Vector Machines/SVM Lagrangian Dual.md",
+        "note_key": "04 - Machine Learning/Support Vector Machines/SVM Lagrangian Dual.md",
+        "type": "derivation",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "10 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (22 lines)"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "5 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "depth": {
+            "score": 0.7416666666666666,
+            "evidence": [
+              "920 words (band 150..2500, target 550)",
+              "36 paragraphs, 5 with >=3 sentences (ratio 0.14)",
+              "43 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "math_rigor": {
+            "score": 1.0,
+            "evidence": [
+              "11 display math blocks",
+              "34 inline math",
+              "8 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.35
+          },
+          "examples": {
+            "score": 0.0,
+            "evidence": [
+              "0 example markers",
+              "0 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "31/31 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "12 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9154761904761904,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 0,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          23.0,
+          "SVM Lagrangian Dual.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Support Vector Machines/Support Vector Machines.md",
+        "note_key": "04 - Machine Learning/Support Vector Machines/Support Vector Machines.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "19 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (24 lines)"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "18 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.7293402985074626,
+            "evidence": [
+              "2208 words (band 80..1500, target 350)",
+              "67 paragraphs, 25 with >=3 sentences (ratio 0.37)",
+              "122 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 1.0,
+            "evidence": [
+              "9 display math blocks",
+              "42 inline math",
+              "5 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "3 example markers",
+              "5 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "70/70 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "24 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9484457711442786,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 0,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          24.0,
+          "Support Vector Machines.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Tree-Based Models/Decision Trees.md",
+        "note_key": "04 - Machine Learning/Tree-Based Models/Decision Trees.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "14 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (21 lines)",
+              "1 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "21 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.7296833333333332,
+            "evidence": [
+              "2017 words (band 80..1500, target 350)",
+              "50 paragraphs, 15 with >=3 sentences (ratio 0.30)",
+              "117 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 0.7,
+            "evidence": [
+              "5 display math blocks",
+              "11 inline math",
+              "0 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "5 example markers",
+              "2 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "62/62 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "22 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9342253968253968,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 1,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          25.0,
+          "Decision Trees.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Tree-Based Models/Gradient Boosting.md",
+        "note_key": "04 - Machine Learning/Tree-Based Models/Gradient Boosting.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "20 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (24 lines)",
+              "2 empty sections"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "21 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.6980823943661971,
+            "evidence": [
+              "2277 words (band 80..1500, target 350)",
+              "71 paragraphs, 21 with >=3 sentences (ratio 0.30)",
+              "152 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 0.7,
+            "evidence": [
+              "4 display math blocks",
+              "30 inline math",
+              "0 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 1.0,
+            "evidence": [
+              "3 example markers",
+              "1 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "72/72 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "21 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9282061703554662,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 2,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          26.0,
+          "Gradient Boosting.md"
+        ]
+      },
+      {
+        "note": "04 - Machine Learning/Tree-Based Models/Random Forests and Bagging.md",
+        "note_key": "04 - Machine Learning/Tree-Based Models/Random Forests and Bagging.md",
+        "type": "concept",
+        "standards_version": "1.0.0",
+        "dimensions": {
+          "structure": {
+            "score": 1.0,
+            "evidence": [
+              "11 headings",
+              "sectioned (>=2 headings)",
+              "intro paragraph before first heading (24 lines)"
+            ],
+            "band": "within_band",
+            "weight": 0.15
+          },
+          "definitions": {
+            "score": 1.0,
+            "evidence": [
+              "9 definition-pattern matches"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "depth": {
+            "score": 0.7787512820512821,
+            "evidence": [
+              "1814 words (band 80..1500, target 350)",
+              "39 paragraphs, 15 with >=3 sentences (ratio 0.38)",
+              "104 sentences"
+            ],
+            "band": "within_band",
+            "weight": 0.2
+          },
+          "math_rigor": {
+            "score": 0.7,
+            "evidence": [
+              "1 display math blocks",
+              "15 inline math",
+              "0 derivation markers"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "examples": {
+            "score": 0.6,
+            "evidence": [
+              "1 example markers",
+              "0 labeled code blocks"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "source_coverage": {
+            "score": 1.0,
+            "evidence": [
+              "50/50 mapped KUs have >=1 key term present in the note"
+            ],
+            "band": "within_band",
+            "weight": 0.15,
+            "uncovered": []
+          },
+          "provenance": {
+            "score": 1.0,
+            "evidence": [
+              "frontmatter carries source attribution",
+              "in-text links or source mentions present"
+            ],
+            "band": "within_band",
+            "weight": 0.1
+          },
+          "links": {
+            "score": 1.0,
+            "evidence": [
+              "16 internal links",
+              "0 link defects"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          },
+          "editorial": {
+            "score": 1.0,
+            "evidence": [
+              "no editorial inconsistencies detected by deterministic checks"
+            ],
+            "band": "within_band",
+            "weight": 0.05
+          }
+        },
+        "overall": 0.9054764346764348,
+        "overall_measured_weight": 1.05,
+        "lint_error_count": 0,
+        "lint_defect_count": 0,
+        "caveat": "deterministic measurement only; semantic adequacy is a review decision",
+        "sequence_hint": [
+          0,
+          27.0,
+          "Random Forests and Bagging.md"
+        ]
+      }
+    ]
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "assess-quality",
+    "args": {
+      "command": "assess-quality",
+      "root": "output/Unified-Vault",
+      "provenance": "scratch/synth/area04/provenance.jsonl",
+      "ku_batches": [
+        "state/knowledge-units/001-ext001-ai-course-03.1-regression.jsonl",
+        "state/knowledge-units/002-ext002-master-ai-supervised-learning.jsonl",
+        "state/knowledge-units/003-ext004-ai-course-03.7-tree-based-models.jsonl",
+        "state/knowledge-units/004-ext005-master-ai-evaluation.jsonl",
+        "state/knowledge-units/005-ext005-ai-course-03.6-model-evaluation.jsonl",
+        "state/knowledge-units/006-ext008-master-ai-unsupervised.jsonl",
+        "state/knowledge-units/007-ext008-ai-course-clustering-dimreduction.jsonl",
+        "state/knowledge-units/008-ext009-master-ai-generalization.jsonl",
+        "state/knowledge-units/009-ext009-ai-course-04.3-regularization.jsonl",
+        "state/knowledge-units/010-ext010-master-ai-training-stability.jsonl",
+        "state/knowledge-units/011-ext010-ai-course-04.3-init-gradients.jsonl",
+        "state/knowledge-units/012-regen001-ai-course-01-foundations-and-overview.jsonl",
+        "state/knowledge-units/013-regen001-ai-course-02-python-and-data-tooling.jsonl",
+        "state/knowledge-units/014-regen001-ai-course-03-machine-learning.jsonl",
+        "state/knowledge-units/015-regen001-ai-course-04-neural-networks-and-deep-learning-foundations.jsonl",
+        "state/knowledge-units/016-regen001-ai-course-05-convolutional-neural-networks-cnn.jsonl",
+        "state/knowledge-units/017-regen001-ai-course-06-image-processing-00-global-index-md.jsonl",
+        "state/knowledge-units/018-regen001-ai-course-06-image-processing-01-fundamentals-of-digital-images.jsonl",
+        "state/knowledge-units/019-regen001-ai-course-06-image-processing-02-intensity-transformations-and-histograms.jsonl",
+        "state/knowledge-units/020-regen001-ai-course-06-image-processing-03-spatial-filtering-and-neighborhood-processing.jsonl",
+        "state/knowledge-units/021-regen001-ai-course-06-image-processing-04-frequency-domain-and-restoration.jsonl",
+        "state/knowledge-units/022-regen001-ai-course-06-image-processing-05-morphological-processing-and-segmentation.jsonl",
+        "state/knowledge-units/023-regen001-ai-course-06-image-processing-06-concepts-ml-perspective.jsonl",
+        "state/knowledge-units/024-regen001-ai-course-06-image-processing-07-quiz.jsonl",
+        "state/knowledge-units/025-regen001-ai-course-07-sequence-models-and-rnns.jsonl",
+        "state/knowledge-units/026-regen001-ai-course-08-attention-and-transformers.jsonl",
+        "state/knowledge-units/027-regen001-ai-course-09-quizzes-and-question-banks-01-deep-learning-chapter-1-introduction-to-dl.jsonl",
+        "state/knowledge-units/028-regen001-ai-course-09-quizzes-and-question-banks-02-deep-learning-chapter-2-cnn.jsonl",
+        "state/knowledge-units/029-regen001-ai-course-09-quizzes-and-question-banks-03-question-series.jsonl",
+        "state/knowledge-units/030-regen001-ai-course-10-generative-models.jsonl",
+        "state/knowledge-units/031-regen001-ai-course-root-files.jsonl",
+        "state/knowledge-units/032-regen001-master-ai-00-vault-management.jsonl",
+        "state/knowledge-units/033-regen001-master-ai-01-ai-foundations.jsonl",
+        "state/knowledge-units/034-regen001-master-ai-02-mathematics.jsonl",
+        "state/knowledge-units/035-regen001-master-ai-03-machine-learning.jsonl",
+        "state/knowledge-units/036-regen001-master-ai-04-neural-networks.jsonl",
+        "state/knowledge-units/037-regen001-master-ai-05-nlp-fundamentals.jsonl",
+        "state/knowledge-units/038-regen001-master-ai-06-attention-mechanisms.jsonl",
+        "state/knowledge-units/039-regen001-master-ai-07-transformers.jsonl",
+        "state/knowledge-units/040-regen001-master-ai-08-llms.jsonl",
+        "state/knowledge-units/041-regen001-master-ai-09-foundation-models.jsonl",
+        "state/knowledge-units/042-regen001-master-ai-10-model-architecture-research.jsonl",
+        "state/knowledge-units/043-regen001-master-ai-11-training.jsonl",
+        "state/knowledge-units/044-regen001-master-ai-12-fine-tuning.jsonl",
+        "state/knowledge-units/045-regen001-master-ai-13-inference.jsonl",
+        "state/knowledge-units/046-regen001-master-ai-14-interpretability.jsonl",
+        "state/knowledge-units/047-regen001-master-ai-15-ai-agents.jsonl",
+        "state/knowledge-units/048-regen001-master-ai-16-multi-agent-systems.jsonl",
+        "state/knowledge-units/049-regen001-master-ai-17-rag.jsonl",
+        "state/knowledge-units/050-regen001-master-ai-18-memory-systems.jsonl",
+        "state/knowledge-units/051-regen001-master-ai-19-mcp.jsonl",
+        "state/knowledge-units/052-regen001-master-ai-20-ai-infrastructure.jsonl",
+        "state/knowledge-units/053-regen001-master-ai-21-llmops-and-mlops.jsonl",
+        "state/knowledge-units/054-regen001-master-ai-22-production-ai.jsonl",
+        "state/knowledge-units/055-regen001-master-ai-23-multimodal-ai.jsonl",
+        "state/knowledge-units/056-regen001-master-ai-24-research-frontiers.jsonl",
+        "state/knowledge-units/057-regen001-master-ai-25-frameworks-and-tools.jsonl",
+        "state/knowledge-units/058-regen001-master-ai-26-papers-2024-2026.jsonl",
+        "state/knowledge-units/059-regen001-master-ai-26-papers-agents-and-rag.jsonl",
+        "state/knowledge-units/060-regen001-master-ai-26-papers-alignment.jsonl",
+        "state/knowledge-units/061-regen001-master-ai-26-papers-attention-origins.jsonl",
+        "state/knowledge-units/062-regen001-master-ai-26-papers-efficient-attention.jsonl",
+        "state/knowledge-units/063-regen001-master-ai-26-papers-llms.jsonl",
+        "state/knowledge-units/064-regen001-master-ai-26-papers-moc-md.jsonl",
+        "state/knowledge-units/065-regen001-master-ai-26-papers-multimodal.jsonl",
+        "state/knowledge-units/066-regen001-master-ai-26-papers-transformers.jsonl",
+        "state/knowledge-units/067-regen001-master-ai-27-projects.jsonl",
+        "state/knowledge-units/068-regen001-master-ai-28-glossary.jsonl",
+        "state/knowledge-units/069-regen001-master-ai-29-interview-prep.jsonl",
+        "state/knowledge-units/070-regen001-master-ai-root-files.jsonl"
+      ],
+      "out": "scratch/synth/area04/gates/assessments.jsonl",
+      "report": "/home/z/my-project/repo/reports/synthesis/s20-area04-assess.json"
+    },
+    "utc_timestamp": "2026-11-01T19:09:51+00:00",
+    "git_commit": "3abf295"
+  }
+}

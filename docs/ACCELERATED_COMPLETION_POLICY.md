@@ -193,6 +193,7 @@ last, if at all.
 | 17 | 2026-11-01 | policy bound (user-directed) | this policy + AGENTS.md §12 + ADR-0012 committed | 9 |
 | 18 | 2026-11-01 | dossier-extension pairs classified | 69,185/69,185 (5,441 participate / 63,744 reject-pair; 5,168 participant KUs; 294 extension records; tiered ADR-0011 pipeline, 2 calibration pull-backs, 4 review rounds) | 8 |
 | 19 | 2026-11-01 | KU dispositions assigned | 27,536/27,536; Unaccounted = 0 (Preserved 18,478 / Consolidated 8,106 / Contextualized 950 / Superseded 2; ADR-0014 rule engine + synthesis mapping 609 files / 544 notes + dossier v2 + F-0022 repair + F-0023 fix) | 7 |
+| 20 | 2026-11-02 | canonical notes generated + verified (area 04 end-to-end) | 27/544 notes green through lint/assess/drift/gate + audit-output 0 findings over 1,829 KUs; framework F-0024..F-0029 fixed (708→725 tests, pilot re-verified 12/12); editorial conventions v1 recorded | 6 |
 
 ## 9. Amendment
 

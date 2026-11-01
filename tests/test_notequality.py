@@ -268,3 +268,49 @@ def test_assess_tree_deterministic(tmp_path: Path):
     r1 = assess_tree(vault)
     r2 = assess_tree(vault)
     assert json.dumps(r1, sort_keys=True) == json.dumps(r2, sort_keys=True)
+
+
+# F-0024 regression: source_coverage must resolve ku ids from canonical KU
+# batches (field 'knowledge_unit_id'), not only fixture spellings.
+def test_source_coverage_resolves_canonical_ku_field(tmp_path):
+    batch = tmp_path / "canonical.jsonl"
+    batch.write_text(
+        json.dumps(
+            {
+                "knowledge_unit_id": "KU-canonical-1",
+                "heading_path": ["Silhouette Coefficient"],
+                "excerpt": "x",
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    from vault_unification.notequality import _ku_terms, _score_source_coverage
+
+    terms = _ku_terms([batch])
+    assert "KU-canonical-1" in terms
+    score, evidence, uncovered = _score_source_coverage(
+        "notes/A.md", {"notes/A.md": ["KU-canonical-1"]}, terms,
+        "The silhouette coefficient measures cluster cohesion.",
+    )
+    assert score == 1.0, (score, evidence, uncovered)
+
+
+# F-0028 regression: depth measures prose; code fences, display math and
+# tables are not zero-sentence paragraphs.
+def test_depth_ignores_code_math_tables():
+    from vault_unification.notequality import _score_depth
+
+    prose = (
+        "This note explains gradient descent in careful detail. "
+        "The algorithm follows a simple update rule. "
+        "Each step moves against the gradient.\n\n"
+        "Convergence depends on the learning rate. "
+        "Too large a rate diverges. "
+        "Too small a rate crawls.\n\n"
+    )
+    codey = prose + "```python\nfor i in range(10):\n    pass\n```\n\n$$w = w - eta g$$\n\n"
+    "| a | b |\n|---|---|\n| 1 | 2 |\n"
+    s_prose, _ = _score_depth(prose, "concept")
+    s_codey, _ = _score_depth(codey, "concept")
+    assert s_prose == s_codey, (s_prose, s_codey)

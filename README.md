@@ -10,6 +10,26 @@ universal per-unit dual review is removed in favor of ADR-0011 tiered
 verification; the quality floor (source immutability, full test suite,
 machine-verified citations, release gates) is inviolate.
 
+GATED SYNTHESIS IS UNDERWAY (session 20, 2026-11-02 — SYNTH-001). Area
+04 - Machine Learning is synthesized end-to-end and GREEN through the full
+FRAME-002 gate chain: 27/27 canonical notes (26 written by 13 bounded
+subagents + the MOC by the orchestrator; 87,300 words), lint 0 errors /
+0 warnings, assess-quality 0 dimensions below band, quality-gate PASS
+(one documented drift waiver: a 4-note reference-type ordering artifact),
+and `vu audit-output` valid=true with ZERO findings over all 8 checks for
+all 1,829 area-04 KUs (rare-term, equation and code fingerprints of every
+KU verified present). Deliverable metric: canonical notes verified
+0 → 27/544. The reusable area pipeline is committed
+(`scripts/s20_build_synthesis_inputs.py` → `s20_check_prompts.py` →
+subagent generation → lint/assess/drift/gate → audit-output), editorial
+conventions v1 are recorded in `docs/EDITORIAL_STYLE_GUIDE.md`, and the
+French MNIST lab is preserved verbatim as an appendix inside Linear
+Regression. The first real batch surfaced and fixed six framework defects
+(F-0024..F-0029, 708 → 725 tests, omission pilot re-verified 12/12).
+REMAINING: 15 areas / 517 notes (sessions 21–24), cross-batch consistency
++ the three confirmed-gap treatments (session 25), final verification and
+delivery (session 26).
+
 DISPOSITION ASSIGNMENT IS COMPLETE (session 19, 2026-11-01 — the S21–22
 phase target finished two sessions early). All 27,536/27,536 KUs received
 exactly one disposition with planned destinations; Unaccounted = 0
@@ -29,8 +49,7 @@ original participants; byte-identical `--check`), repaired finding F-0022
 in the session-18 assembly script; new term-level schema +
 `--extension-classifications` validator with batch cross-checks, ADR-0013),
 and fixed F-0023 (registry destinations UNIQUE(path, heading) cannot
-dedupe NULL headings). 708/708 tests. NEXT: gated synthesis (SYNTH-001) —
-must start by session 23; final vault by end of session 26.
+dedupe NULL headings). 708/708 tests.
 
 DISC-002 signal-pool review is COMPLETE (session 16, 2026-11-01, ADR-0011
 user-authorized accelerated mode). All 4,274 remaining signal-rule

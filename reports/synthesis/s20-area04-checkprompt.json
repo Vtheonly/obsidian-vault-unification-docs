@@ -1,0 +1,169 @@
+{
+ "specs_total": 27,
+ "ok": 27,
+ "failed": 0,
+ "results": [
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/01-clustering.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/02-principal-component-analysis.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/03-t-sne-and-umap.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/04-bias-variance-tradeoff.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/05-regularization-techniques.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/06-machine-learning-moc.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/07-clustering-evaluation-metrics.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/08-computer-vision-evaluation-metrics.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/09-model-evaluation-metrics.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/10-regression-evaluation-metrics.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/11-k-nearest-neighbors.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/12-gradient-descent.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/13-loss-functions.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/14-optimizers-and-learning-rate-schedulers.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/15-linear-regression.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/16-logistic-regression.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/17-regression-fundamentals.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/18-markov-decision-processes-and-bellman-equations.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/19-policy-gradients-and-actor-critic.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/20-proximal-policy-optimization.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/21-q-learning-and-deep-q-networks.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/22-kernel-trick.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/23-svm-lagrangian-dual.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/24-support-vector-machines.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/25-decision-trees.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/26-gradient-boosting.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area04/specs/27-random-forests-and-bagging.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  }
+ ]
+}

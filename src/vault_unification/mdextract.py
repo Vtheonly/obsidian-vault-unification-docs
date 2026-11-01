@@ -231,8 +231,14 @@ def _scan_text(result: dict[str, Any], text: str) -> dict:
         # wikilinks and embeds (also inside heading text)
         for match in _WIKILINK_RE.finditer(line):
             is_embed = match.group(1) == "!"
+            # F-0027: Obsidian table cells escape the alias pipe as \| —
+            # [[path\|Display]] inside a table resolves to target 'path'
+            # with alias 'Display'; the backslash is never part of a target
+            target = match.group(2).strip()
+            if target.endswith("\\"):
+                target = target[:-1]
             record = {
-                "target": match.group(2).strip(),
+                "target": target,
                 "anchor": (match.group(3) or "").strip() or None,
                 "block": (match.group(4) or "").strip() or None,
                 "alias": (match.group(5) or "").strip() or None,

@@ -1,0 +1,507 @@
+{
+  "result": {
+    "root": "output/Unified-Vault",
+    "summary": {
+      "files": 27,
+      "defects": 26,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 26,
+      "files_with_errors": 0
+    },
+    "counts_by_check": {
+      "info:EMPTY_SECTION": 26
+    },
+    "files": [
+      {
+        "file": "04 - Machine Learning/Clustering and Dimensionality Reduction/Clustering.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Clustering and Dimensionality Reduction/Principal Component Analysis.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Clustering and Dimensionality Reduction/t-SNE and UMAP.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Generalization and Regularization/Bias Variance Tradeoff.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 206,
+            "message": "section 'Double descent and modern practice' has no content before the next heading",
+            "excerpt": "## Double descent and modern practice"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 276,
+            "message": "section 'Detection and remedies' has no content before the next heading",
+            "excerpt": "## Detection and remedies"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Generalization and Regularization/Regularization Techniques.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 139,
+            "message": "section 'Related techniques' has no content before the next heading",
+            "excerpt": "## Related techniques"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 176,
+            "message": "section 'Choosing a regularization strategy' has no content before the next heading",
+            "excerpt": "## Choosing a regularization strategy"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Machine Learning MOC.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 59,
+            "message": "section 'Reading order recommendation' has no content before the next heading",
+            "excerpt": "## Reading order recommendation"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Model Evaluation/Clustering Evaluation Metrics.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 40,
+            "message": "section 'Intrinsic metrics (no ground truth)' has no content before the next heading",
+            "excerpt": "## Intrinsic metrics (no ground truth)"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Model Evaluation/Computer Vision Evaluation Metrics.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 35,
+            "message": "section 'Object detection metrics' has no content before the next heading",
+            "excerpt": "## Object detection metrics"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 85,
+            "message": "section 'Segmentation metrics' has no content before the next heading",
+            "excerpt": "## Segmentation metrics"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 127,
+            "message": "section 'Common pitfalls' has no content before the next heading",
+            "excerpt": "## Common pitfalls"
+          }
+        ],
+        "defect_count": 3,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 3,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 3
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Model Evaluation/Model Evaluation Metrics.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 358,
+            "message": "section 'Probabilistic metrics and calibration' has no content before the next heading",
+            "excerpt": "## Probabilistic metrics and calibration"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Model Evaluation/Regression Evaluation Metrics.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 80,
+            "message": "section 'R\u00b2, the coefficient of determination' has no content before the next heading",
+            "excerpt": "## R\u00b2, the coefficient of determination"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 192,
+            "message": "section 'Evaluation practice' has no content before the next heading",
+            "excerpt": "## Evaluation practice"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Nearest Neighbors/K-Nearest Neighbors.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Optimization Algorithms/Gradient Descent.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 26,
+            "message": "section 'What is gradient descent' has no content before the next heading",
+            "excerpt": "## What is gradient descent"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 69,
+            "message": "section 'The update rule' has no content before the next heading",
+            "excerpt": "## The update rule"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 335,
+            "message": "section 'Convergence and pathologies' has no content before the next heading",
+            "excerpt": "## Convergence and pathologies"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 486,
+            "message": "section 'Practical guidance' has no content before the next heading",
+            "excerpt": "## Practical guidance"
+          }
+        ],
+        "defect_count": 4,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 4,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 4
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Optimization Algorithms/Loss Functions.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 59,
+            "message": "section 'From raw error to a training objective' has no content before the next heading",
+            "excerpt": "## From raw error to a training objective"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 576,
+            "message": "section 'Loss landscapes and the optimization interface' has no content before the next heading",
+            "excerpt": "## Loss landscapes and the optimization interface"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Optimization Algorithms/Optimizers and Learning Rate Schedulers.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 136,
+            "message": "section 'Hyperparameters and tuning' has no content before the next heading",
+            "excerpt": "## Hyperparameters and tuning"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 171,
+            "message": "section 'Learning rate schedulers' has no content before the next heading",
+            "excerpt": "## Learning rate schedulers"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Regression/Linear Regression.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 269,
+            "message": "section 'Vectorization and the matrix formulation' has no content before the next heading",
+            "excerpt": "## Vectorization and the matrix formulation"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Regression/Logistic Regression.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 207,
+            "message": "section 'Practice' has no content before the next heading",
+            "excerpt": "## Practice"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Regression/Regression Fundamentals.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Reinforcement Learning/Markov Decision Processes and Bellman Equations.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Reinforcement Learning/Policy Gradients and Actor Critic.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Reinforcement Learning/Proximal Policy Optimization.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Reinforcement Learning/Q-Learning and Deep Q Networks.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 125,
+            "message": "section 'Convergence: what is proven and what is not' has no content before the next heading",
+            "excerpt": "## Convergence: what is proven and what is not"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Support Vector Machines/Kernel Trick.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Support Vector Machines/SVM Lagrangian Dual.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Support Vector Machines/Support Vector Machines.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Tree-Based Models/Decision Trees.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 74,
+            "message": "section 'Splitting criteria for classification' has no content before the next heading",
+            "excerpt": "## Splitting criteria for classification"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Tree-Based Models/Gradient Boosting.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 44,
+            "message": "section 'The gradient boosting algorithm' has no content before the next heading",
+            "excerpt": "## The gradient boosting algorithm"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 109,
+            "message": "section 'XGBoost, LightGBM, CatBoost: the three implementations' has no content before the next heading",
+            "excerpt": "## XGBoost, LightGBM, CatBoost: the three implementations"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Tree-Based Models/Random Forests and Bagging.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      }
+    ],
+    "caveat": "syntax/reference validation only: a passing lint is necessary, never sufficient \u2014 semantic correctness requires review"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "lint-artifacts",
+    "args": {
+      "command": "lint-artifacts",
+      "path": "output/Unified-Vault",
+      "no_links": false,
+      "skip_dirs": [
+        ".git",
+        ".obsidian"
+      ],
+      "report": "/home/z/my-project/repo/reports/synthesis/s20-area04-lint.json"
+    },
+    "utc_timestamp": "2026-11-01T19:09:35+00:00",
+    "git_commit": "3abf295"
+  }
+}
