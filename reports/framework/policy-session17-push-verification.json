@@ -1,0 +1,26 @@
+{
+ "command": "git push origin main",
+ "date": "2026-11-01",
+ "session": 17,
+ "task": "Policy binding (ADR-0012)",
+ "result": "accepted",
+ "push_range": "4cf404d..a45525e",
+ "head_after_push": "a45525e",
+ "origin_main_after": "a45525e",
+ "branch": "main",
+ "verification": {
+  "fetched_and_compared": true,
+  "head_equals_origin_main": true,
+  "working_tree_clean": true,
+  "commit_subject": "policy(ADR-0012): bind accelerated completion mode for all future sessions"
+ },
+ "pushed_artifacts": [
+  "docs/ACCELERATED_COMPLETION_POLICY.md (new)",
+  "AGENTS.md (section 12)",
+  "docs/RISKS_AND_DECISIONS.md (ADR-0012)",
+  "docs/agent-handoff/next-agent.md",
+  "README.md",
+  "state/checkpoints/checkpoint-2026-11-01-policy-session17.json",
+  "reports/framework/policy-session17-pytest.json"
+ ]
+}
