@@ -1,0 +1,61 @@
+{
+  "command": "s19_repair_ext_evidence",
+  "defect": "F-0022 (empty evidence lines in 009..014)",
+  "files": {
+    "regression": {
+      "file": "state/classifications/009-disc002-dext-regression-extension.jsonl",
+      "records": 33,
+      "evidence_entries": 1159,
+      "entries_changed": 0,
+      "empty_lines_before": 0,
+      "empty_lines_after": 0
+    },
+    "tree-based": {
+      "file": "state/classifications/010-disc002-dext-tree-extension.jsonl",
+      "records": 41,
+      "evidence_entries": 787,
+      "entries_changed": 0,
+      "empty_lines_before": 0,
+      "empty_lines_after": 0
+    },
+    "evaluation": {
+      "file": "state/classifications/011-disc002-dext-evaluation-extension.jsonl",
+      "records": 49,
+      "evidence_entries": 586,
+      "entries_changed": 0,
+      "empty_lines_before": 0,
+      "empty_lines_after": 0
+    },
+    "clustering": {
+      "file": "state/classifications/012-disc002-dext-clustering-extension.jsonl",
+      "records": 40,
+      "evidence_entries": 531,
+      "entries_changed": 0,
+      "empty_lines_before": 0,
+      "empty_lines_after": 0
+    },
+    "generalization": {
+      "file": "state/classifications/013-disc002-dext-generalization-extension.jsonl",
+      "records": 47,
+      "evidence_entries": 1221,
+      "entries_changed": 0,
+      "empty_lines_before": 0,
+      "empty_lines_after": 0
+    },
+    "training-stability": {
+      "file": "state/classifications/014-disc002-dext-training-stability-extension.jsonl",
+      "records": 84,
+      "evidence_entries": 2750,
+      "entries_changed": 0,
+      "empty_lines_before": 0,
+      "empty_lines_after": 0
+    }
+  },
+  "checks": {
+    "total_records": 294,
+    "expected_total_records": 294,
+    "total_evidence_entries": 7034,
+    "expected_total_evidence_entries": 7034,
+    "arithmetic_ok": true
+  }
+}

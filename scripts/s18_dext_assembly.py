@@ -226,7 +226,7 @@ def main() -> int:
                         by_term.setdefault(p["topic"], set()).add(side["ku_id"])
         # KU metadata for evidence quotes
         ku_meta = {}
-        for p in sorted((REPO / "state" / "knowledge-units").glob("0[1-7][0-9]-regen001-*.jsonl")):
+        for p in sorted((REPO / "state" / "knowledge-units").glob("*.jsonl")):
             for r in load_jsonl(p):
                 if r["knowledge_unit_id"] in ku_participants[domain]:
                     ku_meta[r["knowledge_unit_id"]] = r
@@ -238,9 +238,10 @@ def main() -> int:
                 m = ku_meta.get(kid, {})
                 evidence.append({
                     "ku_id": kid,
-                    "source_path": (m.get("source_id", "").split(":", 1) + [""])[1],
-                    "lines": m.get("source_lines", []),
-                    "quote": (m.get("excerpt", "") or "")[:200],
+                    "source_path": m.get("source_path", ""),
+                    "lines": list(range(m.get("line_start", 0),
+                                        m.get("line_end", -1) + 1)),
+                    "quote": m.get("excerpt", "") or "",
                 })
             records.append({
                 "candidate_ref": ("dossier-extension pair pool: scratch/dossier-ext-"

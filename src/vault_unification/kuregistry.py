@@ -447,17 +447,12 @@ def _insert_record(conn: sqlite3.Connection, record: dict) -> None:
             (ku_id, concept_id),
         )
     for destination in record.get("destinations") or []:
-        conn.execute(
-            "INSERT OR IGNORE INTO destinations (path, heading) VALUES (?, ?)",
-            (destination["path"], destination.get("heading")),
+        dest_id = _upsert_destination(
+            conn, destination["path"], destination.get("heading")
         )
-        row = conn.execute(
-            "SELECT destination_id FROM destinations WHERE path = ? AND heading IS ?",
-            (destination["path"], destination.get("heading")),
-        ).fetchone()
         conn.execute(
             "INSERT OR IGNORE INTO ku_destinations (ku_id, destination_id) VALUES (?, ?)",
-            (ku_id, row["destination_id"]),
+            (ku_id, dest_id),
         )
     for finding_id in sorted(set(record.get("finding_ids") or [])):
         conn.execute(
@@ -469,6 +464,29 @@ def _insert_record(conn: sqlite3.Connection, record: dict) -> None:
             "INSERT OR IGNORE INTO ku_supports (ku_id, supports_ku_id) VALUES (?, ?)",
             (ku_id, supports_id),
         )
+
+
+def _upsert_destination(
+    conn: sqlite3.Connection, path: str, heading: str | None
+) -> int:
+    """Return the destination_id for (path, heading), inserting if missing.
+
+    F-0023: UNIQUE(path, heading) does NOT dedupe rows when heading is NULL
+    (SQL NULL semantics: NULL is distinct from NULL in unique indexes), so
+    'INSERT OR IGNORE' would create one row per call. SELECT-first, insert
+    only when absent.
+    """
+    row = conn.execute(
+        "SELECT destination_id FROM destinations WHERE path = ? AND heading IS ?",
+        (path, heading),
+    ).fetchone()
+    if row is not None:
+        return row["destination_id"]
+    cur = conn.execute(
+        "INSERT INTO destinations (path, heading) VALUES (?, ?)",
+        (path, heading),
+    )
+    return cur.lastrowid
 
 
 def _counts_by_disposition(conn: sqlite3.Connection) -> dict:
@@ -1264,6 +1282,155 @@ def apply_overlap_classifications(
             "inserted": inserted,
             "idempotent_skipped": idempotent_skipped,
             "rejected": 0,
+        }
+    finally:
+        conn.close()
+
+
+def apply_dispositions(
+    db_path: str | Path,
+    ledger_path: str | Path,
+) -> dict:
+    """Apply a disposition ledger to the registry (DISP-001 overlay).
+
+    The committed ledger JSONL is the append-only decision record; this
+    command materializes the EFFECTIVE disposition of every KU in the
+    derived registry (the ADR-0007/0009 pattern: extraction batches stay
+    untouched, decisions live in committed JSONL, the DB is derived state).
+
+    Validation before any write (single transaction; atomic on failure):
+      * every ku_id exists in the registry;
+      * every disposition is a valid enum value;
+      * every Superseded record carries a non-empty rationale
+        (KNOWLEDGE_AND_PROVENANCE invariant 3);
+      * every destination path is non-empty.
+
+    Semantics per record:
+      * effective state identical (disposition + destination set) ->
+        idempotent skip;
+      * different -> applied as a REVISION (the ledger records why; the
+        registry reflects the latest decision). Revisions are expected at
+        synthesis time (dispositions get refined), which is why this is a
+        revision model rather than the append-only conflict model of
+        kureg-apply-overlap: the append-only discipline lives in the
+        committed ledger files, not the derived DB.
+    """
+    from vault_unification.dispositions import DISPOSITIONS  # avoid cycle at import
+
+    records = []
+    with open(ledger_path, encoding="utf-8") as fh:
+        for lineno, line in enumerate(fh, start=1):
+            if not line.strip():
+                continue
+            try:
+                records.append(json.loads(line))
+            except json.JSONDecodeError as exc:
+                raise RegistryError(
+                    f"{ledger_path}:{lineno}: invalid JSON: {exc}"
+                ) from exc
+
+    problems: list[str] = []
+    seen: set[str] = set()
+    for i, rec in enumerate(records):
+        kid = rec.get("ku_id")
+        if not kid:
+            problems.append(f"record {i}: missing ku_id")
+            continue
+        if kid in seen:
+            problems.append(f"record {i}: duplicate ku_id {kid}")
+        seen.add(kid)
+        disp = rec.get("disposition")
+        if disp not in DISPOSITIONS:
+            problems.append(f"record {i} ({kid}): invalid disposition {disp!r}")
+        if disp == "Superseded" and not (rec.get("rationale") or "").strip():
+            problems.append(f"record {i} ({kid}): Superseded without rationale")
+        for dest in rec.get("destinations") or []:
+            if not (dest.get("path") or "").strip():
+                problems.append(f"record {i} ({kid}): empty destination path")
+    if problems:
+        raise RegistryError(
+            "disposition ledger validation failures: "
+            + "; ".join(problems[:5])
+            + (f" (+{len(problems) - 5} more)" if len(problems) > 5 else "")
+        )
+
+    conn = _connect(db_path)
+    try:
+        _check_registry(conn)
+        known = {
+            row["ku_id"]: row["disposition"]
+            for row in conn.execute("SELECT ku_id, disposition FROM knowledge_units")
+        }
+        unknown = sorted(kid for kid in seen if kid not in known)
+        if unknown:
+            raise RegistryError(
+                f"ledger references {len(unknown)} unknown ku_id(s): "
+                f"{unknown[:5]}"
+            )
+
+        current_dests: dict[str, set] = {}
+        for row in conn.execute(
+            "SELECT kd.ku_id, d.path, d.heading FROM ku_destinations kd "
+            "JOIN destinations d ON d.destination_id = kd.destination_id"
+        ):
+            current_dests.setdefault(row["ku_id"], set()).add(
+                (row["path"], row["heading"])
+            )
+
+        applied = revised = skipped = 0
+        with conn:  # single transaction
+            for rec in records:
+                kid = rec["ku_id"]
+                disp = rec["disposition"]
+                dests = {
+                    (d.get("path"), d.get("heading"))
+                    for d in rec.get("destinations") or []
+                }
+                if known.get(kid) == disp and current_dests.get(kid, set()) == dests:
+                    skipped += 1
+                    continue
+                was = known.get(kid)
+                conn.execute(
+                    "UPDATE knowledge_units SET disposition = ?, "
+                    "superseded_rationale = ?, reviewer = ?, review_method = ?, "
+                    "review_date = ?, updated_utc = ? WHERE ku_id = ?",
+                    (
+                        disp,
+                        rec.get("rationale") if disp == "Superseded" else None,
+                        rec.get("assigned_by"),
+                        rec.get("rule_id"),
+                        rec.get("date"),
+                        _utcnow(),
+                        kid,
+                    ),
+                )
+                # effective destination set = the ledger's set
+                conn.execute(
+                    "DELETE FROM ku_destinations WHERE ku_id = ?", (kid,)
+                )
+                for path, heading in sorted(dests):
+                    dest_id = _upsert_destination(conn, path, heading)
+                    conn.execute(
+                        "INSERT OR IGNORE INTO ku_destinations (ku_id, "
+                        "destination_id) VALUES (?, ?)",
+                        (kid, dest_id),
+                    )
+                if was == "Unaccounted" or was is None:
+                    applied += 1
+                else:
+                    revised += 1
+                known[kid] = disp
+                current_dests[kid] = dests
+
+        by_disposition = _counts_by_disposition(conn)
+        return {
+            "db_path": str(db_path),
+            "ledger_file": str(ledger_path),
+            "records_in_file": len(records),
+            "applied": applied,
+            "revised": revised,
+            "idempotent_skipped": skipped,
+            "counts_after_apply": by_disposition,
         }
     finally:
         conn.close()

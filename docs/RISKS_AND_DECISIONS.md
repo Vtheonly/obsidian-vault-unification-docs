@@ -335,3 +335,143 @@ following the same-day acceleration directive recorded in ADR-0011.
 `AGENTS.md` (§12), this register, `docs/agent-handoff/next-agent.md`,
 `README.md` (repository-status paragraph),
 `state/checkpoints/checkpoint-2026-11-01-policy-session17.json`.
+
+### ADR-0013 — Term-level dossier-extension record class; F-0022 repair; dossier v2 schema admission
+**Status:** accepted (2026-11-01, DISC-002 session 19)
+**Context:** Session 18 committed 294 term-level dossier-extension
+classification records (state/classifications/009..014) as dossier-v2 input.
+Three issues surfaced at session-19 startup:
+(1) every one of the 7,034 evidence entries carried `lines: []` because
+scripts/s18_dext_assembly.py read a non-existent KU field
+(`source_lines` instead of `line_start`/`line_end`) — recorded as finding
+F-0022 (would have been caught by a batch cross-check, which did not exist);
+(2) the records were validated against
+schemas/overlap-classification.schema.json, whose pair-level semantics
+(`ku_ids` minItems 2, cross-vault requirement) do not model term-level
+extension evidence — 23 records legitimately carry a single KU and
+single-vault evidence is the normal case for corpus extension;
+(3) dossier v2 concepts built from those records need
+schemas/concept-dossier.schema.json to admit single-KU concepts and
+DX-disc002-s18-… classification ids.
+**Options considered:** (1) relax the overlap-classification schema to
+minItems 1 / drop cross-vault (rejected: weakens the pair-level ADR-0009
+contract for a record class it was never meant to model); (2) merge the 23
+single-KU records into sibling records (rejected: falsifies the term-level
+classification); (3) a separate schema for the new record class, a narrow
+mechanical repair of the evidence metadata, and additive dossier-schema
+admissions.
+**Decision:** option 3.
+- New `schemas/dossier-extension-classification.schema.json` (ku_ids
+  minItems 1; evidence lines non-empty; same provenance fields).
+- New framework validation:
+  `vu validate-registry --extension-classifications F [--ku-batch B ...]`
+  (registry.validate_extension_classification_file) with file-level
+  cross-checks plus batch cross-checks — ku existence, lines == KU
+  [line_start..line_end], source_path equality, byte-exact quote — the
+  check that would have caught F-0022.
+- F-0022 repair: scripts/s19_repair_ext_evidence.py regenerated the 7,034
+  evidence entries from committed KU batches (full excerpt + inclusive span,
+  the ext003..010 convention); classification ids, topics, ku_ids and all
+  decision fields byte-unchanged; idempotent (--check verifies zero drift);
+  scripts/s18_dext_assembly.py fixed to construct evidence identically so a
+  future replay reproduces the repaired files.
+- concept-dossier.schema.json: concept ku_ids/ku_count minimums 2 -> 1 and
+  classification_ref extended with the DX-discNNN-sNN-<domain>-MMMM
+  alternative (documented in the schema descriptions; all six v1 dossiers
+  re-validated unchanged after the edit).
+**Rationale:** separation of record classes keeps both contracts strict:
+pair-level overlap classifications keep their >= 2 KU / cross-vault
+semantics; term-level extension records get a schema that models what they
+actually are. The repair is mechanical and reproducible; no decision content
+(ku_ids, topics, verdicts) changed.
+**Impact / migration:** none for existing records (009..014 ku_ids and
+classification ids unchanged); 20 new tests
+(tests/test_extension_classification.py) + 1 CLI test + 6 new dossier-v2
+tests (tests/test_concept_dossier.py) prove the contracts; the six extension
+files re-validate clean with batch cross-checks (exit 0, 294/294 records).
+**Affected artifacts:** schemas/dossier-extension-classification.schema.json
+(new), schemas/concept-dossier.schema.json (additive),
+src/vault_unification/registry.py (validate_extension_classification_file),
+src/vault_unification/cli.py (--extension-classifications, --ku-batch),
+scripts/s19_repair_ext_evidence.py (new), scripts/s18_dext_assembly.py
+(evidence construction fixed), state/classifications/009..014 (evidence
+arrays repaired), reports/dossier-ext/s19-f0022-repair-report.json,
+tests/test_extension_classification.py, tests/test_concept_dossier.py,
+tests/test_cli.py, this register.
+
+### ADR-0014 — Rule-driven disposition assignment: synthesis mapping + disposition ledger + registry overlay
+**Status:** accepted (2026-11-01, DISP-001 session 19)
+**Context:** The S21–22 phase target (accelerated policy §2) is to assign a
+defensible disposition to every one of the 27,536 KUs (Unaccounted → 0,
+release blocker). The handoff's method: "rule-driven dispositions from
+classification + dossier membership + file-level synthesis mapping;
+exceptions to individual review". Prerequisites finished this session:
+dossier v2 (all extension participant KUs inside dossier concepts) and the
+F-0022 repair of the extension classification evidence.
+**Options considered:** (1) hand-review all 27,536 units individually
+(violates the session budget; the accelerated mode exists precisely to
+avoid this); (2) bulk-write dispositions into the KU batch files (mutates
+the canonical extraction store and invalidates dossier provenance hashes);
+(3) a committed file-level synthesis mapping (canonical structure + note
+plan) feeding a deterministic rule engine whose output is a committed,
+append-only disposition LEDGER, applied to the derived registry as an
+effective-state overlay (the ADR-0007/0009 pattern).
+**Decision:** option 3, with these components and rules:
+- **Canonical structure v1** (state/synthesis/canonical-structure-v1.json):
+  a 20-area unified backbone designed by the orchestrator from both vaults'
+  taxonomies as a learning progression, with 544 planned canonical notes.
+- **File-level synthesis mapping v1** (state/synthesis/file-mapping-v1.jsonl):
+  all 609 source files mapped to planned canonical notes by 13 bounded
+  subagents (one to three areas each; same-topic files from both vaults map
+  to the same note) plus one orchestrator-reviewed context group; every
+  output mechanically verified (completeness against the 609-file inventory,
+  path format, notes/records cross-consistency, cross-group uniqueness) by
+  scripts/s19_verify_mapping.py, and integration arithmetic asserted by
+  scripts/s19_integrate_mapping.py.
+- **Rule engine** (`vu assign-dispositions`, src/vault_unification/dispositions.py):
+  DISP-R1 dossier concept member → Consolidated (source_refs carry the
+  concept ids so synthesis pulls the full concept evidence); DISP-R2 file
+  feeds a note alongside other files → Consolidated; DISP-R3 sole-feeder
+  file → Preserved; DISP-R4 archival context area (the individually
+  reviewed source-vault construction documents) → Contextualized; DISP-X a
+  three-entry individually reviewed exception table (the Qs4 planning stub
+  → Contextualized; the two F-0014 marker headings → Superseded with the
+  marker text preserved verbatim in the registry record).
+- **Ledger + overlay** (`state/dispositions/001-disp001-rule-driven.jsonl` +
+  `vu kureg-apply-dispositions`): the committed JSONL is the append-only
+  decision record; the derived registry materializes the EFFECTIVE
+  disposition (idempotent full-apply; revisions allowed because
+  dispositions legitimately get refined at synthesis — the append-only
+  discipline lives in the committed ledger files, not the derived DB).
+**Rationale / safety argument (why this cannot lose knowledge):** every KU
+keeps its immutable source locator in the committed batches regardless of
+disposition; the ledger regenerates byte-identically from committed inputs
+(sha256-stable double run recorded); Superseded is never bulk-assigned
+because invariant 3 (unique information preserved elsewhere) requires
+per-unit evidence — a semantic judgment reserved for synthesis-time review;
+dispositions are planning statements with recorded destinations whose
+semantic verification happens at the synthesis gates (M6/M7 batch gates,
+omission audits), not at assignment time; the mapping covers all 609 files
+exactly once (machine-verified) so no KU can lack a destination.
+**Impact:** metric 2 moved 0 → 27,536/27,536 (Unaccounted = 0 in the
+rebuilt registry: Preserved 18,478 / Consolidated 8,106 / Contextualized
+950 / Superseded 2); F-0023 (NULL-heading destination duplication) found
+and fixed in the shared destination loader; 17 new tests
+(tests/test_dispositions.py) + 20 (test_extension_classification.py) + 7
+new dossier-v2 tests.
+**Open questions carried to synthesis (explicit non-claims):** the final
+PRESENTATION of area 20 (archival context layer) is a release-audit
+decision — ordinary notes never narrate merges; note titles/folders may be
+refined at synthesis start under EDITORIAL_STYLE_GUIDE change control with
+a versioned migration of the mapping; Needs review = 0 today, but
+synthesis-time semantic review may legitimately reclassify individual units
+(via new ledger files, never edits).
+**Affected artifacts:** state/synthesis/canonical-structure-v1.json,
+state/synthesis/file-mapping-v1.jsonl,
+state/dispositions/001-disp001-rule-driven.jsonl,
+src/vault_unification/dispositions.py, src/vault_unification/kuregistry.py
+(apply_dispositions, _upsert_destination, F-0023 fix),
+src/vault_unification/cli.py (assign-dispositions,
+kureg-apply-dispositions), scripts/s19_area_filelists.py,
+scripts/s19_verify_mapping.py, scripts/s19_integrate_mapping.py,
+reports/dispositions/*, tests/test_dispositions.py, this register.

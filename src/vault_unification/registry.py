@@ -403,3 +403,188 @@ def validate_classification_file(path: str | Path, schema_path: str | Path) -> d
         "references are checked at registry apply time",
     }
     return report
+
+
+def validate_extension_classification_file(
+    path: str | Path,
+    schema_path: str | Path,
+    ku_batches: list[str | Path] | None = None,
+) -> dict:
+    """Validate a term-level dossier-extension classification JSONL file.
+
+    Introduced with the session-18 record class (ADR-0013): these records
+    are NOT pair-level cross-vault overlap classifications, so they carry
+    their own schema (``schemas/dossier-extension-classification.schema.json``)
+    with ``ku_ids`` minItems 1 and no cross-vault requirement.
+
+    File-level cross-checks:
+    - classification_ids are unique within the file;
+    - every record has exactly one evidence entry per ku_id and vice versa
+      (set equality, no duplicates);
+    - supersedes_classification_id references exist within the file.
+
+    Batch cross-checks (run when ``ku_batches`` is provided — this is the
+    check that would have caught F-0022 before commit):
+    - every ku_id exists in the committed KU batches;
+    - every evidence entry's ``lines`` equals the KU's inclusive span
+      ``[line_start..line_end]``;
+    - every evidence ``source_path`` equals the KU's ``source_path``;
+    - every evidence ``quote`` is byte-exact the KU's ``excerpt``.
+    """
+    report = validate_records_against_schema(path, schema_path)
+    if report["errors"]:
+        report["cross_checks"] = {"status": "not_run", "reason": "per-record errors present"}
+        return report
+
+    entries, _ = load_jsonl_records(path)
+    records = [entry["record"] for entry in entries]
+
+    seen_ids: set[str] = set()
+    for record in records:
+        cid = record.get("classification_id")
+        if cid in seen_ids:
+            report["errors"].append(
+                {
+                    "line": None,
+                    "classification_id": cid,
+                    "rule": "duplicate_classification_id",
+                    "error": f"classification_id {cid!r} appears more than once",
+                }
+            )
+        seen_ids.add(cid)
+        ku_ids = list(record.get("ku_ids") or [])
+        ev_kus = [ev.get("ku_id") for ev in record.get("evidence") or []]
+        if sorted(ku_ids) != sorted(ev_kus):
+            report["errors"].append(
+                {
+                    "line": None,
+                    "classification_id": cid,
+                    "rule": "evidence_ku_set_mismatch",
+                    "error": "evidence entries and ku_ids are not the same set "
+                    "(every ku_id needs exactly one evidence entry and vice versa)",
+                }
+            )
+        supersedes = record.get("supersedes_classification_id")
+        if supersedes is not None:
+            file_ids = {r.get("classification_id") for r in records}
+            if supersedes == cid:
+                report["errors"].append(
+                    {
+                        "line": None,
+                        "classification_id": cid,
+                        "rule": "self_supersede",
+                        "error": "classification cannot supersede itself",
+                    }
+                )
+            elif supersedes not in file_ids:
+                report.setdefault("external_supersedes_references", []).append(
+                    {"classification_id": cid, "supersedes": supersedes}
+                )
+
+    report["valid"] = not report["errors"]
+    report["cross_checks"] = {
+        "status": "run",
+        "classifications_total": len(records),
+        "rules": [
+            "duplicate_classification_id",
+            "evidence_ku_set_mismatch",
+            "self_supersede",
+        ],
+    }
+
+    if ku_batches:
+        kus: dict[str, dict] = {}
+        missing_batches: list[str] = []
+        for batch in ku_batches:
+            batch_path = Path(batch)
+            if not batch_path.exists():
+                missing_batches.append(str(batch))
+                continue
+            batch_entries, _ = load_jsonl_records(batch_path)
+            for entry in batch_entries:
+                kus[entry["record"]["knowledge_unit_id"]] = entry["record"]
+        if missing_batches:
+            report["errors"].append(
+                {
+                    "line": None,
+                    "classification_id": None,
+                    "rule": "missing_ku_batch",
+                    "error": "KU batch file(s) not found: " + ", ".join(missing_batches),
+                }
+            )
+            report["valid"] = False
+            report["batch_cross_checks"] = {
+                "status": "not_run",
+                "batches": [str(b) for b in ku_batches],
+                "missing_batches": missing_batches,
+                "reason": "one or more KU batch files are missing",
+            }
+            return report
+        batch_errors = 0
+        for record in records:
+            cid = record.get("classification_id")
+            for ev in record.get("evidence") or []:
+                ku = kus.get(ev.get("ku_id"))
+                if ku is None:
+                    report["errors"].append(
+                        {
+                            "line": None,
+                            "classification_id": cid,
+                            "rule": "unknown_ku_id",
+                            "error": f"ku_id {ev.get('ku_id')!r} not found in "
+                            "the provided KU batches",
+                        }
+                    )
+                    batch_errors += 1
+                    continue
+                expected_lines = list(
+                    range(ku["line_start"], ku["line_end"] + 1)
+                )
+                if ev.get("lines") != expected_lines:
+                    report["errors"].append(
+                        {
+                            "line": None,
+                            "classification_id": cid,
+                            "rule": "evidence_lines_mismatch",
+                            "error": f"ku {ev.get('ku_id')!r}: lines "
+                            f"{ev.get('lines')!r} != KU span {expected_lines}",
+                        }
+                    )
+                    batch_errors += 1
+                if ev.get("source_path") != ku.get("source_path"):
+                    report["errors"].append(
+                        {
+                            "line": None,
+                            "classification_id": cid,
+                            "rule": "evidence_source_path_mismatch",
+                            "error": f"ku {ev.get('ku_id')!r}: source_path "
+                            f"{ev.get('source_path')!r} != KU source_path "
+                            f"{ku.get('source_path')!r}",
+                        }
+                    )
+                    batch_errors += 1
+                if ev.get("quote") != ku.get("excerpt"):
+                    report["errors"].append(
+                        {
+                            "line": None,
+                            "classification_id": cid,
+                            "rule": "evidence_quote_not_byte_exact",
+                            "error": f"ku {ev.get('ku_id')!r}: quote is not "
+                            "byte-exact the KU excerpt",
+                        }
+                    )
+                    batch_errors += 1
+        report["valid"] = not report["errors"]
+        report["batch_cross_checks"] = {
+            "status": "run",
+            "batches": [str(b) for b in ku_batches],
+            "ku_records_indexed": len(kus),
+            "errors": batch_errors,
+            "rules": [
+                "unknown_ku_id",
+                "evidence_lines_mismatch",
+                "evidence_source_path_mismatch",
+                "evidence_quote_not_byte_exact",
+            ],
+        }
+    return report

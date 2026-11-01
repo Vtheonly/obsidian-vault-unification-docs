@@ -1,38 +1,52 @@
 #!/usr/bin/env python3
-"""EXT-006: deterministic concept-dossier scaffolding for the classified domains.
+"""EXT-006 / DISC-002 session 19: deterministic concept-dossier scaffolding.
 
-Assembles one dossier per domain (regression, tree-based, evaluation) from the
-COMMITTED knowledge-unit batches and overlap-classification files:
+Assembles dossiers per domain (regression, tree-based, evaluation,
+clustering, generalization, training-stability) from the COMMITTED
+knowledge-unit batches and classification files, in TWO versions:
 
-  * one dossier CONCEPT per classification record (label = record topic;
-    participating KUs = record ku_ids — provenance is many-to-many, invariant 5);
+  v1 (EXT-006, unchanged): one dossier CONCEPT per original pair-level
+     classification record (label = record topic; participating KUs =
+     record ku_ids — provenance is many-to-many, invariant 5);
+  v2 (session 19): the same original records PLUS the session-18
+     term-level dossier-extension classification records
+     (state/classifications/009..014, ADR-0013) and every regen batch
+     (state/knowledge-units/012..070) that carries the extension KUs —
+     so every extension participant KU lands inside >= 1 v2 concept.
+
+For every concept and version:
   * every participating KU is placed into >= 1 of the ten evidence categories
     of docs/KNOWLEDGE_AND_PROVENANCE.md section 7 by the deterministic rule set
     RULE_SET_ID below (every assignment records its basis; synthesis re-examines
     and never blindly trusts the scaffold);
   * per (concept, category) explicit gap markers: no_evidence (neither vault)
-    or single_vault (one vault missing — e.g. calibration content only on the
-    master-ai side);
+    or single_vault (one vault missing — e.g. extension evidence that exists on
+    only one side, which is legitimate for term-level records);
   * dossiers NEVER assign dispositions: all KUs stay Unaccounted (invariant 2);
-    overlap_type is a pair-level reference carried over from the classification
-    record (ADR-0009), never a disposition.
+    overlap_type is a pair/record-level reference carried over from the
+    classification record (ADR-0009), never a disposition.
 
 Determinism: no timestamps, no randomness, no absolute paths; stable sort
 order everywhere; JSON dumped with sort_keys=True. Two runs over the same
 committed inputs produce byte-identical files (--check verifies this against
-the committed dossiers).
+the committed dossiers, for BOTH versions).
 
 Validation before writing (exit non-zero on any violation):
-  V1 every referenced KU id exists in the domain's committed batches;
-  V2 every classification id exists in the domain's classification files;
+  V1 every referenced KU id exists in the version's committed batches;
+  V2 every classification id exists uniquely in the version's classification
+     files;
   V3 each concept's ku_ids equal the source record's ku_ids exactly;
   V4 bidirectional coverage: participating KUs <-> category-covered KUs;
-  V5 output validates against schemas/concept-dossier.schema.json.
+  V5 output validates against schemas/concept-dossier.schema.json;
+  V6 (v2 acceptance) per domain: every v1 participating KU is still
+     participating in v2, and every extension-record KU is covered by >= 1
+     v2 concept.
 
 Usage:
-  python3 scripts/ext006_dossiers.py            # write dossiers + coverage report
+  python3 scripts/ext006_dossiers.py            # write v1+v2 dossiers + report
   python3 scripts/ext006_dossiers.py --check    # regenerate in memory, compare
-                                                # byte-exactly with committed files
+                                                # byte-exactly with committed
+                                                # files (both versions)
 """
 
 from __future__ import annotations
@@ -136,6 +150,57 @@ DOMAINS = {
 EXT007_ADDENDUM = "state/classifications/004-ext007-evaluation-addendum.jsonl"
 if (REPO_ROOT / EXT007_ADDENDUM).exists():
     DOMAINS["evaluation"]["classifications"].append(EXT007_ADDENDUM)
+
+# ---------------------------------------------------------------------------
+# Session-19 v2 layer (DISC-002 dossier-v2 regeneration, ADR-0013).
+#
+# Each v2 domain config extends the FINAL v1 config (including the EXT-007
+# addendum) with (a) the term-level dossier-extension classification file
+# (state/classifications/009..014) and (b) every committed regen batch
+# (state/knowledge-units/012..070) — extension KUs come from the regen
+# batches corpus-wide, so all of them are included (see the session-18
+# handoff note; the provenance block of each v2 dossier lists every input).
+# The committed v1 dossiers stay untouched and --check-able.
+# ---------------------------------------------------------------------------
+
+EXTENSION_CLASSIFICATIONS = {
+    "regression": "state/classifications/009-disc002-dext-regression-extension.jsonl",
+    "tree-based": "state/classifications/010-disc002-dext-tree-extension.jsonl",
+    "evaluation": "state/classifications/011-disc002-dext-evaluation-extension.jsonl",
+    "clustering": "state/classifications/012-disc002-dext-clustering-extension.jsonl",
+    "generalization": "state/classifications/013-disc002-dext-generalization-extension.jsonl",
+    "training-stability": "state/classifications/014-disc002-dext-training-stability-extension.jsonl",
+}
+
+
+def _regen_batches() -> list[str]:
+    """Repository-relative paths of the 59 committed regen batches (012..070)."""
+    out = []
+    for p in sorted((REPO_ROOT / "state" / "knowledge-units").glob("*.jsonl")):
+        stem = p.name.split("-", 1)[0]
+        if stem.isdigit() and 12 <= int(stem) <= 70 and "-regen001-" in p.name:
+            out.append(p.relative_to(REPO_ROOT).as_posix())
+    return out
+
+
+REGEN_BATCHES = _regen_batches()
+
+V2_DOMAINS = {}
+for _domain, _config in DOMAINS.items():
+    _slug = _domain.replace(" ", "-")
+    _v2_batches = list(_config["batches"]) + [
+        b for b in REGEN_BATCHES if b not in _config["batches"]
+    ]
+    V2_DOMAINS[_domain] = {
+        "batches": _v2_batches,
+        "classifications": list(_config["classifications"]) + [
+            EXTENSION_CLASSIFICATIONS[_domain]
+        ],
+        "dossier_id": f"{_slug}-v2",
+        "version": "v2",
+    }
+    # record the version on the v1 configs too (output must stay identical)
+    DOMAINS[_domain]["version"] = "v1"
 
 # ---------------------------------------------------------------------------
 # The ten evidence categories (KNOWLEDGE_AND_PROVENANCE.md section 7).
@@ -402,7 +467,7 @@ def build_dossier(domain: str, config: dict) -> tuple[dict, dict]:
     dossier = {
         "dossier_id": config["dossier_id"],
         "domain": domain,
-        "version": "v1",
+        "version": config.get("version", "v1"),
         "rule_set": RULE_SET_ID,
         "generated_by": GENERATED_BY,
         "provenance": {"batches": batch_prov, "classification_files": cls_prov},
@@ -470,53 +535,112 @@ def main() -> int:
                              "with the committed dossiers; write nothing")
     args = parser.parse_args()
 
-    dossiers: dict[str, tuple[dict, dict]] = {}
-    for domain, config in DOMAINS.items():
-        try:
-            dossiers[domain] = build_dossier(domain, config)
-        except ValueError as exc:
-            print(f"VALIDATION FAILURE [{domain}]: {exc}", file=sys.stderr)
-            return 1
+    version_configs = {"v1": DOMAINS, "v2": V2_DOMAINS}
+    built: dict[str, dict[str, tuple[dict, dict]]] = {}
+    for version, configs in version_configs.items():
+        built[version] = {}
+        for domain, config in configs.items():
+            try:
+                built[version][domain] = build_dossier(domain, config)
+            except ValueError as exc:
+                print(f"VALIDATION FAILURE [{version}/{domain}]: {exc}",
+                      file=sys.stderr)
+                return 1
 
-    for domain, (dossier, _) in dossiers.items():
-        try:
-            validate_dossier(dossier)
-        except Exception as exc:  # noqa: BLE001 — report and fail cleanly
-            print(f"SCHEMA VALIDATION FAILURE [{domain}]: {exc}", file=sys.stderr)
-            return 1
+    for version, dossiers in built.items():
+        for domain, (dossier, _) in dossiers.items():
+            try:
+                validate_dossier(dossier)
+            except Exception as exc:  # noqa: BLE001 — report and fail cleanly
+                print(f"SCHEMA VALIDATION FAILURE [{version}/{domain}]: {exc}",
+                      file=sys.stderr)
+                return 1
+
+    # ---- V6: v2 acceptance (pre-written expectations) ----------------------
+    # every v1 participating KU is still participating in v2, and every
+    # extension-record KU is covered by >= 1 v2 concept.
+    v2_acceptance = {}
+    v6_ok = True
+    for domain in DOMAINS:
+        v1_ids = set(built["v1"][domain][0]["accounting"]["participating_ku_ids"])
+        v2_ids = set(built["v2"][domain][0]["accounting"]["participating_ku_ids"])
+        ext_records = load_jsonl(REPO_ROOT / EXTENSION_CLASSIFICATIONS[domain])
+        ext_kus = {k for r in ext_records for k in r["ku_ids"]}
+        v1_still_present = v1_ids <= v2_ids
+        ext_covered = ext_kus <= v2_ids
+        if not v1_still_present or not ext_covered:
+            v6_ok = False
+            print(f"V6 FAILURE [{domain}]: v1_still_present={v1_still_present} "
+                  f"ext_covered={ext_covered}", file=sys.stderr)
+        v2_acceptance[domain] = {
+            "v1_participating_kus": len(v1_ids),
+            "v2_participating_kus": len(v2_ids),
+            "extension_record_kus": len(ext_kus),
+            "extension_kus_covered": len(ext_kus & v2_ids),
+            "all_v1_participating_present_in_v2": v1_still_present,
+            "all_extension_kus_covered": ext_covered,
+        }
+    if not v6_ok:
+        return 1
 
     if args.check:
         all_match = True
-        for domain, (dossier, _) in dossiers.items():
-            committed = REPO_ROOT / "state" / "dossiers" / f"{dossier['dossier_id']}.json"
-            if not committed.exists():
-                print(f"CHECK FAIL [{domain}]: committed dossier missing: {committed}")
-                all_match = False
-                continue
-            if committed.read_text(encoding="utf-8") != dump_json(dossier):
-                print(f"CHECK FAIL [{domain}]: regenerated bytes differ from committed")
-                all_match = False
-            else:
-                print(f"CHECK OK [{domain}]: byte-identical regeneration")
+        for version, dossiers in built.items():
+            for domain, (dossier, _) in dossiers.items():
+                committed = (REPO_ROOT / "state" / "dossiers"
+                             / f"{dossier['dossier_id']}.json")
+                if not committed.exists():
+                    print(f"CHECK FAIL [{version}/{domain}]: committed "
+                          f"dossier missing: {committed}")
+                    all_match = False
+                    continue
+                if committed.read_text(encoding="utf-8") != dump_json(dossier):
+                    print(f"CHECK FAIL [{version}/{domain}]: regenerated "
+                          "bytes differ from committed")
+                    all_match = False
+                else:
+                    print(f"CHECK OK [{version}/{domain}]: "
+                          "byte-identical regeneration")
         return 0 if all_match else 1
 
     DOSSIER_DIR.mkdir(parents=True, exist_ok=True)
     COVERAGE_REPORT.parent.mkdir(parents=True, exist_ok=True)
 
-    for domain, (dossier, _) in dossiers.items():
-        out = DOSSIER_DIR / f"{dossier['dossier_id']}.json"
-        out.write_text(dump_json(dossier), encoding="utf-8")
-        acc = dossier["accounting"]
-        print(f"wrote {out.relative_to(REPO_ROOT)}: "
-              f"{acc['concept_count']} concepts, "
-              f"{acc['participating_ku_count']} participating KUs, "
-              f"zero-evidence categories: {acc['zero_evidence_categories'] or 'none'}")
+    for version, dossiers in built.items():
+        for domain, (dossier, _) in dossiers.items():
+            out = DOSSIER_DIR / f"{dossier['dossier_id']}.json"
+            out.write_text(dump_json(dossier), encoding="utf-8")
+            acc = dossier["accounting"]
+            print(f"wrote {out.relative_to(REPO_ROOT)}: "
+                  f"{acc['concept_count']} concepts, "
+                  f"{acc['participating_ku_count']} participating KUs, "
+                  f"zero-evidence categories: "
+                  f"{acc['zero_evidence_categories'] or 'none'}")
 
     report = {
         "command": "ext006_dossiers",
         "rule_set": RULE_SET_ID,
         "schema": "schemas/concept-dossier.schema.json",
-        "domains": {d: dossiers[d][1] for d in sorted(dossiers)},
+        "versions": {
+            version: {
+                "domains": {d: built[version][d][1] for d in sorted(built[version])},
+            }
+            for version in ("v1", "v2")
+        },
+    }
+    report["versions"]["v2"]["acceptance"] = {
+        "method": ("v2 participating set must be a superset of the v1 "
+                   "participating set and cover every extension-record KU "
+                   "(session-18 handoff acceptance criteria)"),
+        "per_domain": v2_acceptance,
+        "totals": {
+            "v1_participating_kus": sum(
+                v["v1_participating_kus"] for v in v2_acceptance.values()),
+            "v2_participating_kus": sum(
+                v["v2_participating_kus"] for v in v2_acceptance.values()),
+            "extension_record_kus_covered": sum(
+                v["extension_kus_covered"] for v in v2_acceptance.values()),
+        },
     }
     COVERAGE_REPORT.write_text(dump_json(report), encoding="utf-8")
     print(f"wrote {COVERAGE_REPORT.relative_to(REPO_ROOT)}")

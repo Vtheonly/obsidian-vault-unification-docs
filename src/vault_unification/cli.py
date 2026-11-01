@@ -44,6 +44,7 @@ from .omission import AuditError
 from .overlap import OverlapError
 from .artifactlint import ArtifactLintError
 from .discovery import DiscoveryError
+from .dispositions import DispositionError
 from .notequality import QualityError
 from .pathsafety import PathSafetyError, ensure_dest_safe, validate_roots
 from .promptspec import PromptSpecError
@@ -173,6 +174,20 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument(
         "--classifications-schema",
         default=str(REPO_ROOT / "schemas" / "overlap-classification.schema.json"),
+    )
+    p.add_argument(
+        "--extension-classifications",
+        help="term-level dossier-extension classification JSONL path (session-18 record class, ADR-0013)",
+    )
+    p.add_argument(
+        "--extension-classifications-schema",
+        default=str(REPO_ROOT / "schemas" / "dossier-extension-classification.schema.json"),
+    )
+    p.add_argument(
+        "--ku-batch",
+        action="append",
+        default=[],
+        help="committed KU batch JSONL for extension-classification batch cross-checks (repeatable)",
     )
     p.add_argument("--report", help="optional JSON report path")
 
@@ -701,6 +716,52 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p.add_argument("--report", help="optional JSON report path")
 
+    # ---- assign-dispositions ----
+    p = sub.add_parser(
+        "assign-dispositions",
+        help="compute the rule-driven disposition ledger from dossiers + synthesis file mapping (DISP-001)",
+    )
+    p.add_argument(
+        "--ku-batch",
+        action="append",
+        required=True,
+        help="committed KU batch JSONL (repeatable)",
+    )
+    p.add_argument(
+        "--dossier",
+        action="append",
+        required=True,
+        help="committed v2 concept dossier JSON (repeatable)",
+    )
+    p.add_argument(
+        "--file-mapping",
+        required=True,
+        help="file-level synthesis mapping JSONL (state/synthesis/file-mapping-v1.jsonl)",
+    )
+    p.add_argument("--out", required=True, help="disposition ledger JSONL output path")
+    p.add_argument(
+        "--protected-root",
+        action="append",
+        default=None,
+        help="path the output must not be written under (repeatable); default: <repo>/source-vaults when present",
+    )
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- kureg-apply-dispositions ----
+    p = sub.add_parser(
+        "kureg-apply-dispositions",
+        help="apply a disposition ledger to the registry (effective-state overlay, DISP-001)",
+    )
+    p.add_argument("--db", required=True, help="registry database path (must exist; run kureg-init first)")
+    p.add_argument("--dispositions", required=True, help="disposition ledger JSONL path")
+    p.add_argument(
+        "--protected-root",
+        action="append",
+        default=None,
+        help="path the database must not be written under (repeatable); default: <repo>/source-vaults when present",
+    )
+    p.add_argument("--report", help="optional JSON report path")
+
     return parser
 
 
@@ -915,8 +976,25 @@ def cmd_validate_registry(args) -> int:
         )
         payload["validations"]["overlap_classifications"] = result
         problems += len(result["errors"])
-    if not args.tasks and not args.kus and not getattr(args, "classifications", None):
-        print("error: provide --tasks and/or --kus and/or --classifications", file=sys.stderr)
+    if getattr(args, "extension_classifications", None):
+        result = registry_mod.validate_extension_classification_file(
+            args.extension_classifications,
+            args.extension_classifications_schema,
+            ku_batches=list(getattr(args, "ku_batch", None) or []),
+        )
+        payload["validations"]["dossier_extension_classifications"] = result
+        problems += len(result["errors"])
+    if (
+        not args.tasks
+        and not args.kus
+        and not getattr(args, "classifications", None)
+        and not getattr(args, "extension_classifications", None)
+    ):
+        print(
+            "error: provide --tasks and/or --kus and/or --classifications "
+            "and/or --extension-classifications",
+            file=sys.stderr,
+        )
         return 1
     payload["problems_total"] = problems
     payload["valid"] = problems == 0
@@ -1346,6 +1424,80 @@ def cmd_overlap_candidates(args) -> int:
             "note": "candidates only; no overlap classification is assigned by this command",
         }
     )
+    return 0
+
+
+def cmd_assign_dispositions(args) -> int:
+    from vault_unification import dispositions as disp_mod
+
+    protected = _default_protected_roots(args.protected_root)
+    for target in [args.out] + ([args.report] if args.report else []):
+        try:
+            ensure_dest_safe(target, protected)
+        except PathSafetyError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 1
+    try:
+        records, report = disp_mod.assign_dispositions(
+            args.ku_batch, args.dossier, args.file_mapping
+        )
+        ledger_sha = disp_mod.write_ledger(records, args.out)
+    except disp_mod.DispositionError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    payload = {
+        "command": "assign-dispositions",
+        "result": report,
+        "ledger_file": str(args.out),
+        "ledger_sha256": ledger_sha,
+        "ledger_records": len(records),
+    }
+    if args.report:
+        write_json_report(
+            args.report,
+            "assign-dispositions",
+            payload,
+            args=vars(args) | {"report": str(args.report)},
+            repo_root=REPO_ROOT,
+        )
+    _emit_summary({
+        "kus_total": report["kus_total"],
+        "by_disposition": report["by_disposition"],
+        "ledger": str(args.out),
+    })
+    return 0
+
+
+def cmd_kureg_apply_dispositions(args) -> int:
+    protected = _default_protected_roots(args.protected_root)
+    try:
+        result = kuregistry_mod.apply_dispositions(args.db, args.dispositions)
+    except RegistryError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    payload = {"command": "kureg-apply-dispositions", "result": result}
+    if args.report:
+        try:
+            ensure_dest_safe(args.report, protected)
+        except PathSafetyError as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 1
+        write_json_report(
+            args.report,
+            "kureg-apply-dispositions",
+            payload,
+            args=vars(args) | {"report": str(args.report)},
+            repo_root=REPO_ROOT,
+        )
+    _emit_summary({
+        "records": result["records_in_file"],
+        "applied": result["applied"],
+        "revised": result["revised"],
+        "skipped": result["idempotent_skipped"],
+        "unaccounted_after": result["counts_after_apply"]["by_disposition"].get(
+            "Unaccounted", 0
+        ),
+    })
     return 0
 
 
@@ -1846,6 +1998,8 @@ HANDLERS = {
     "omission-pilot": cmd_omission_pilot,
     "overlap-candidates": cmd_overlap_candidates,
     "kureg-apply-overlap": cmd_kureg_apply_overlap,
+    "assign-dispositions": cmd_assign_dispositions,
+    "kureg-apply-dispositions": cmd_kureg_apply_dispositions,
     "discover-gaps": cmd_discover_gaps,
     "discovery-decide": cmd_discovery_decide,
     "discovery-validate": cmd_discovery_validate,
@@ -1884,6 +2038,7 @@ def main(argv: list[str] | None = None) -> int:
         PromptSpecError,
         DiscoveryError,
         FidelityError,
+        DispositionError,
     ) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1

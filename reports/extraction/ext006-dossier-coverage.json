@@ -1,287 +1,648 @@
 {
   "command": "ext006_dossiers",
-  "domains": {
-    "clustering": {
-      "bidirectional_check": {
-        "every_covered_ku_participates": true,
-        "every_participating_ku_covered": true
-      },
-      "category_assignment_counts": {
-        "alternative_explanations": 1,
-        "applications_engineering": 10,
-        "code_implementation": 6,
-        "computational_mechanics": 8,
-        "critical_distinctions": 3,
-        "definitions_terminology": 50,
-        "historical_deprecated": 0,
-        "interview_misconceptions_comparisons": 0,
-        "mathematical_foundations": 1,
-        "worked_examples_failure_cases": 21
-      },
-      "classification_records": 27,
-      "concepts": 27,
-      "default_rule_ku_assignments": 50,
-      "dossier": "state/dossiers/clustering-v1.json",
-      "gap_census": {
-        "no_evidence": 214,
-        "single_vault": 37
-      },
-      "participating_kus": 64,
-      "rule_basis_census": {
-        "default:no-rule-fired(unit_type=callout)": 3,
-        "default:no-rule-fired(unit_type=list)": 27,
-        "default:no-rule-fired(unit_type=prose)": 19,
-        "default:no-rule-fired(unit_type=quote)": 1,
-        "excerpt:complexity-notation": 2,
-        "excerpt:library-mention": 5,
-        "heading:algorithm-mechanics": 6,
-        "heading:engineering-guidance": 10,
-        "heading:example": 5,
-        "heading:failure-case": 16,
-        "heading:interpretation-intuition": 1,
-        "heading:mathematical": 1,
-        "heading:versus-distinction": 3,
-        "unit_type:code_block": 1
-      },
-      "zero_evidence_categories": [
-        "interview_misconceptions_comparisons",
-        "historical_deprecated"
-      ]
-    },
-    "evaluation": {
-      "bidirectional_check": {
-        "every_covered_ku_participates": true,
-        "every_participating_ku_covered": true
-      },
-      "category_assignment_counts": {
-        "alternative_explanations": 0,
-        "applications_engineering": 29,
-        "code_implementation": 4,
-        "computational_mechanics": 0,
-        "critical_distinctions": 3,
-        "definitions_terminology": 50,
-        "historical_deprecated": 0,
-        "interview_misconceptions_comparisons": 0,
-        "mathematical_foundations": 24,
-        "worked_examples_failure_cases": 11
-      },
-      "classification_records": 33,
-      "concepts": 33,
-      "default_rule_ku_assignments": 50,
-      "dossier": "state/dossiers/evaluation-v1.json",
-      "gap_census": {
-        "no_evidence": 263,
-        "single_vault": 46
-      },
-      "participating_kus": 97,
-      "rule_basis_census": {
-        "default:no-rule-fired(unit_type=list)": 16,
-        "default:no-rule-fired(unit_type=prose)": 31,
-        "default:no-rule-fired(unit_type=table)": 3,
-        "excerpt:library-mention": 1,
-        "heading:engineering-guidance": 29,
-        "heading:example": 4,
-        "heading:failure-case": 7,
-        "heading:implementation": 3,
-        "heading:mathematical": 11,
-        "heading:versus-distinction": 3,
-        "unit_type:code_block": 3,
-        "unit_type:math_block": 18
-      },
-      "zero_evidence_categories": [
-        "computational_mechanics",
-        "alternative_explanations",
-        "interview_misconceptions_comparisons",
-        "historical_deprecated"
-      ]
-    },
-    "generalization": {
-      "bidirectional_check": {
-        "every_covered_ku_participates": true,
-        "every_participating_ku_covered": true
-      },
-      "category_assignment_counts": {
-        "alternative_explanations": 1,
-        "applications_engineering": 5,
-        "code_implementation": 3,
-        "computational_mechanics": 0,
-        "critical_distinctions": 12,
-        "definitions_terminology": 52,
-        "historical_deprecated": 4,
-        "interview_misconceptions_comparisons": 0,
-        "mathematical_foundations": 2,
-        "worked_examples_failure_cases": 5
-      },
-      "classification_records": 26,
-      "concepts": 26,
-      "default_rule_ku_assignments": 52,
-      "dossier": "state/dossiers/generalization-v1.json",
-      "gap_census": {
-        "no_evidence": 211,
-        "single_vault": 37
-      },
-      "participating_kus": 68,
-      "rule_basis_census": {
-        "default:no-rule-fired(unit_type=callout)": 5,
-        "default:no-rule-fired(unit_type=list)": 5,
-        "default:no-rule-fired(unit_type=prose)": 42,
-        "heading:engineering-guidance": 5,
-        "heading:failure-case": 5,
-        "heading:implementation": 2,
-        "heading:interpretation-intuition": 1,
-        "heading:mathematical": 1,
-        "heading:versus-distinction": 12,
-        "heading:year-reference": 4,
-        "unit_type:code_block": 1,
-        "unit_type:math_block": 1
-      },
-      "zero_evidence_categories": [
-        "computational_mechanics",
-        "interview_misconceptions_comparisons"
-      ]
-    },
-    "regression": {
-      "bidirectional_check": {
-        "every_covered_ku_participates": true,
-        "every_participating_ku_covered": true
-      },
-      "category_assignment_counts": {
-        "alternative_explanations": 3,
-        "applications_engineering": 3,
-        "code_implementation": 15,
-        "computational_mechanics": 10,
-        "critical_distinctions": 10,
-        "definitions_terminology": 15,
-        "historical_deprecated": 0,
-        "interview_misconceptions_comparisons": 0,
-        "mathematical_foundations": 29,
-        "worked_examples_failure_cases": 3
-      },
-      "classification_records": 14,
-      "concepts": 14,
-      "default_rule_ku_assignments": 15,
-      "dossier": "state/dossiers/regression-v1.json",
-      "gap_census": {
-        "no_evidence": 98,
-        "single_vault": 29
-      },
-      "participating_kus": 61,
-      "rule_basis_census": {
-        "default:no-rule-fired(unit_type=callout)": 1,
-        "default:no-rule-fired(unit_type=list)": 3,
-        "default:no-rule-fired(unit_type=prose)": 11,
-        "excerpt:complexity-notation": 5,
-        "excerpt:french-treatment": 2,
-        "heading:algorithm-mechanics": 5,
-        "heading:engineering-guidance": 3,
-        "heading:example": 1,
-        "heading:failure-case": 2,
-        "heading:implementation": 14,
-        "heading:interpretation-intuition": 1,
-        "heading:mathematical": 23,
-        "heading:versus-distinction": 10,
-        "unit_type:code_block": 8,
-        "unit_type:math_block": 15
-      },
-      "zero_evidence_categories": [
-        "interview_misconceptions_comparisons",
-        "historical_deprecated"
-      ]
-    },
-    "training-stability": {
-      "bidirectional_check": {
-        "every_covered_ku_participates": true,
-        "every_participating_ku_covered": true
-      },
-      "category_assignment_counts": {
-        "alternative_explanations": 1,
-        "applications_engineering": 24,
-        "code_implementation": 14,
-        "computational_mechanics": 1,
-        "critical_distinctions": 9,
-        "definitions_terminology": 77,
-        "historical_deprecated": 18,
-        "interview_misconceptions_comparisons": 2,
-        "mathematical_foundations": 20,
-        "worked_examples_failure_cases": 9
-      },
-      "classification_records": 36,
-      "concepts": 36,
-      "default_rule_ku_assignments": 77,
-      "dossier": "state/dossiers/training-stability-v1.json",
-      "gap_census": {
-        "no_evidence": 269,
-        "single_vault": 70
-      },
-      "participating_kus": 142,
-      "rule_basis_census": {
-        "default:no-rule-fired(unit_type=callout)": 5,
-        "default:no-rule-fired(unit_type=list)": 18,
-        "default:no-rule-fired(unit_type=prose)": 50,
-        "default:no-rule-fired(unit_type=table)": 4,
-        "excerpt:complexity-notation": 1,
-        "heading:engineering-guidance": 24,
-        "heading:example": 4,
-        "heading:failure-case": 5,
-        "heading:implementation": 11,
-        "heading:interpretation-intuition": 1,
-        "heading:interview-misconception": 2,
-        "heading:mathematical": 15,
-        "heading:versus-distinction": 9,
-        "heading:year-reference": 18,
-        "unit_type:code_block": 7,
-        "unit_type:math_block": 5
-      },
-      "zero_evidence_categories": []
-    },
-    "tree-based": {
-      "bidirectional_check": {
-        "every_covered_ku_participates": true,
-        "every_participating_ku_covered": true
-      },
-      "category_assignment_counts": {
-        "alternative_explanations": 4,
-        "applications_engineering": 30,
-        "code_implementation": 16,
-        "computational_mechanics": 12,
-        "critical_distinctions": 5,
-        "definitions_terminology": 38,
-        "historical_deprecated": 8,
-        "interview_misconceptions_comparisons": 0,
-        "mathematical_foundations": 9,
-        "worked_examples_failure_cases": 7
-      },
-      "classification_records": 28,
-      "concepts": 28,
-      "default_rule_ku_assignments": 38,
-      "dossier": "state/dossiers/tree-based-v1.json",
-      "gap_census": {
-        "no_evidence": 218,
-        "single_vault": 39
-      },
-      "participating_kus": 82,
-      "rule_basis_census": {
-        "default:no-rule-fired(unit_type=callout)": 5,
-        "default:no-rule-fired(unit_type=list)": 9,
-        "default:no-rule-fired(unit_type=prose)": 24,
-        "excerpt:library-mention": 1,
-        "heading:algorithm-mechanics": 12,
-        "heading:engineering-guidance": 30,
-        "heading:example": 1,
-        "heading:failure-case": 6,
-        "heading:implementation": 13,
-        "heading:interpretation-intuition": 4,
-        "heading:mathematical": 5,
-        "heading:versus-distinction": 5,
-        "heading:year-reference": 8,
-        "unit_type:code_block": 2,
-        "unit_type:math_block": 6
-      },
-      "zero_evidence_categories": [
-        "interview_misconceptions_comparisons"
-      ]
-    }
-  },
   "rule_set": "ext006-category-rules-v1",
-  "schema": "schemas/concept-dossier.schema.json"
+  "schema": "schemas/concept-dossier.schema.json",
+  "versions": {
+    "v1": {
+      "domains": {
+        "clustering": {
+          "bidirectional_check": {
+            "every_covered_ku_participates": true,
+            "every_participating_ku_covered": true
+          },
+          "category_assignment_counts": {
+            "alternative_explanations": 1,
+            "applications_engineering": 10,
+            "code_implementation": 6,
+            "computational_mechanics": 8,
+            "critical_distinctions": 3,
+            "definitions_terminology": 50,
+            "historical_deprecated": 0,
+            "interview_misconceptions_comparisons": 0,
+            "mathematical_foundations": 1,
+            "worked_examples_failure_cases": 21
+          },
+          "classification_records": 27,
+          "concepts": 27,
+          "default_rule_ku_assignments": 50,
+          "dossier": "state/dossiers/clustering-v1.json",
+          "gap_census": {
+            "no_evidence": 214,
+            "single_vault": 37
+          },
+          "participating_kus": 64,
+          "rule_basis_census": {
+            "default:no-rule-fired(unit_type=callout)": 3,
+            "default:no-rule-fired(unit_type=list)": 27,
+            "default:no-rule-fired(unit_type=prose)": 19,
+            "default:no-rule-fired(unit_type=quote)": 1,
+            "excerpt:complexity-notation": 2,
+            "excerpt:library-mention": 5,
+            "heading:algorithm-mechanics": 6,
+            "heading:engineering-guidance": 10,
+            "heading:example": 5,
+            "heading:failure-case": 16,
+            "heading:interpretation-intuition": 1,
+            "heading:mathematical": 1,
+            "heading:versus-distinction": 3,
+            "unit_type:code_block": 1
+          },
+          "zero_evidence_categories": [
+            "interview_misconceptions_comparisons",
+            "historical_deprecated"
+          ]
+        },
+        "evaluation": {
+          "bidirectional_check": {
+            "every_covered_ku_participates": true,
+            "every_participating_ku_covered": true
+          },
+          "category_assignment_counts": {
+            "alternative_explanations": 0,
+            "applications_engineering": 29,
+            "code_implementation": 4,
+            "computational_mechanics": 0,
+            "critical_distinctions": 3,
+            "definitions_terminology": 50,
+            "historical_deprecated": 0,
+            "interview_misconceptions_comparisons": 0,
+            "mathematical_foundations": 24,
+            "worked_examples_failure_cases": 11
+          },
+          "classification_records": 33,
+          "concepts": 33,
+          "default_rule_ku_assignments": 50,
+          "dossier": "state/dossiers/evaluation-v1.json",
+          "gap_census": {
+            "no_evidence": 263,
+            "single_vault": 46
+          },
+          "participating_kus": 97,
+          "rule_basis_census": {
+            "default:no-rule-fired(unit_type=list)": 16,
+            "default:no-rule-fired(unit_type=prose)": 31,
+            "default:no-rule-fired(unit_type=table)": 3,
+            "excerpt:library-mention": 1,
+            "heading:engineering-guidance": 29,
+            "heading:example": 4,
+            "heading:failure-case": 7,
+            "heading:implementation": 3,
+            "heading:mathematical": 11,
+            "heading:versus-distinction": 3,
+            "unit_type:code_block": 3,
+            "unit_type:math_block": 18
+          },
+          "zero_evidence_categories": [
+            "computational_mechanics",
+            "alternative_explanations",
+            "interview_misconceptions_comparisons",
+            "historical_deprecated"
+          ]
+        },
+        "generalization": {
+          "bidirectional_check": {
+            "every_covered_ku_participates": true,
+            "every_participating_ku_covered": true
+          },
+          "category_assignment_counts": {
+            "alternative_explanations": 1,
+            "applications_engineering": 5,
+            "code_implementation": 3,
+            "computational_mechanics": 0,
+            "critical_distinctions": 12,
+            "definitions_terminology": 52,
+            "historical_deprecated": 4,
+            "interview_misconceptions_comparisons": 0,
+            "mathematical_foundations": 2,
+            "worked_examples_failure_cases": 5
+          },
+          "classification_records": 26,
+          "concepts": 26,
+          "default_rule_ku_assignments": 52,
+          "dossier": "state/dossiers/generalization-v1.json",
+          "gap_census": {
+            "no_evidence": 211,
+            "single_vault": 37
+          },
+          "participating_kus": 68,
+          "rule_basis_census": {
+            "default:no-rule-fired(unit_type=callout)": 5,
+            "default:no-rule-fired(unit_type=list)": 5,
+            "default:no-rule-fired(unit_type=prose)": 42,
+            "heading:engineering-guidance": 5,
+            "heading:failure-case": 5,
+            "heading:implementation": 2,
+            "heading:interpretation-intuition": 1,
+            "heading:mathematical": 1,
+            "heading:versus-distinction": 12,
+            "heading:year-reference": 4,
+            "unit_type:code_block": 1,
+            "unit_type:math_block": 1
+          },
+          "zero_evidence_categories": [
+            "computational_mechanics",
+            "interview_misconceptions_comparisons"
+          ]
+        },
+        "regression": {
+          "bidirectional_check": {
+            "every_covered_ku_participates": true,
+            "every_participating_ku_covered": true
+          },
+          "category_assignment_counts": {
+            "alternative_explanations": 3,
+            "applications_engineering": 3,
+            "code_implementation": 15,
+            "computational_mechanics": 10,
+            "critical_distinctions": 10,
+            "definitions_terminology": 15,
+            "historical_deprecated": 0,
+            "interview_misconceptions_comparisons": 0,
+            "mathematical_foundations": 29,
+            "worked_examples_failure_cases": 3
+          },
+          "classification_records": 14,
+          "concepts": 14,
+          "default_rule_ku_assignments": 15,
+          "dossier": "state/dossiers/regression-v1.json",
+          "gap_census": {
+            "no_evidence": 98,
+            "single_vault": 29
+          },
+          "participating_kus": 61,
+          "rule_basis_census": {
+            "default:no-rule-fired(unit_type=callout)": 1,
+            "default:no-rule-fired(unit_type=list)": 3,
+            "default:no-rule-fired(unit_type=prose)": 11,
+            "excerpt:complexity-notation": 5,
+            "excerpt:french-treatment": 2,
+            "heading:algorithm-mechanics": 5,
+            "heading:engineering-guidance": 3,
+            "heading:example": 1,
+            "heading:failure-case": 2,
+            "heading:implementation": 14,
+            "heading:interpretation-intuition": 1,
+            "heading:mathematical": 23,
+            "heading:versus-distinction": 10,
+            "unit_type:code_block": 8,
+            "unit_type:math_block": 15
+          },
+          "zero_evidence_categories": [
+            "interview_misconceptions_comparisons",
+            "historical_deprecated"
+          ]
+        },
+        "training-stability": {
+          "bidirectional_check": {
+            "every_covered_ku_participates": true,
+            "every_participating_ku_covered": true
+          },
+          "category_assignment_counts": {
+            "alternative_explanations": 1,
+            "applications_engineering": 24,
+            "code_implementation": 14,
+            "computational_mechanics": 1,
+            "critical_distinctions": 9,
+            "definitions_terminology": 77,
+            "historical_deprecated": 18,
+            "interview_misconceptions_comparisons": 2,
+            "mathematical_foundations": 20,
+            "worked_examples_failure_cases": 9
+          },
+          "classification_records": 36,
+          "concepts": 36,
+          "default_rule_ku_assignments": 77,
+          "dossier": "state/dossiers/training-stability-v1.json",
+          "gap_census": {
+            "no_evidence": 269,
+            "single_vault": 70
+          },
+          "participating_kus": 142,
+          "rule_basis_census": {
+            "default:no-rule-fired(unit_type=callout)": 5,
+            "default:no-rule-fired(unit_type=list)": 18,
+            "default:no-rule-fired(unit_type=prose)": 50,
+            "default:no-rule-fired(unit_type=table)": 4,
+            "excerpt:complexity-notation": 1,
+            "heading:engineering-guidance": 24,
+            "heading:example": 4,
+            "heading:failure-case": 5,
+            "heading:implementation": 11,
+            "heading:interpretation-intuition": 1,
+            "heading:interview-misconception": 2,
+            "heading:mathematical": 15,
+            "heading:versus-distinction": 9,
+            "heading:year-reference": 18,
+            "unit_type:code_block": 7,
+            "unit_type:math_block": 5
+          },
+          "zero_evidence_categories": []
+        },
+        "tree-based": {
+          "bidirectional_check": {
+            "every_covered_ku_participates": true,
+            "every_participating_ku_covered": true
+          },
+          "category_assignment_counts": {
+            "alternative_explanations": 4,
+            "applications_engineering": 30,
+            "code_implementation": 16,
+            "computational_mechanics": 12,
+            "critical_distinctions": 5,
+            "definitions_terminology": 38,
+            "historical_deprecated": 8,
+            "interview_misconceptions_comparisons": 0,
+            "mathematical_foundations": 9,
+            "worked_examples_failure_cases": 7
+          },
+          "classification_records": 28,
+          "concepts": 28,
+          "default_rule_ku_assignments": 38,
+          "dossier": "state/dossiers/tree-based-v1.json",
+          "gap_census": {
+            "no_evidence": 218,
+            "single_vault": 39
+          },
+          "participating_kus": 82,
+          "rule_basis_census": {
+            "default:no-rule-fired(unit_type=callout)": 5,
+            "default:no-rule-fired(unit_type=list)": 9,
+            "default:no-rule-fired(unit_type=prose)": 24,
+            "excerpt:library-mention": 1,
+            "heading:algorithm-mechanics": 12,
+            "heading:engineering-guidance": 30,
+            "heading:example": 1,
+            "heading:failure-case": 6,
+            "heading:implementation": 13,
+            "heading:interpretation-intuition": 4,
+            "heading:mathematical": 5,
+            "heading:versus-distinction": 5,
+            "heading:year-reference": 8,
+            "unit_type:code_block": 2,
+            "unit_type:math_block": 6
+          },
+          "zero_evidence_categories": [
+            "interview_misconceptions_comparisons"
+          ]
+        }
+      }
+    },
+    "v2": {
+      "acceptance": {
+        "method": "v2 participating set must be a superset of the v1 participating set and cover every extension-record KU (session-18 handoff acceptance criteria)",
+        "per_domain": {
+          "clustering": {
+            "all_extension_kus_covered": true,
+            "all_v1_participating_present_in_v2": true,
+            "extension_kus_covered": 390,
+            "extension_record_kus": 390,
+            "v1_participating_kus": 64,
+            "v2_participating_kus": 454
+          },
+          "evaluation": {
+            "all_extension_kus_covered": true,
+            "all_v1_participating_present_in_v2": true,
+            "extension_kus_covered": 464,
+            "extension_record_kus": 464,
+            "v1_participating_kus": 97,
+            "v2_participating_kus": 561
+          },
+          "generalization": {
+            "all_extension_kus_covered": true,
+            "all_v1_participating_present_in_v2": true,
+            "extension_kus_covered": 1037,
+            "extension_record_kus": 1037,
+            "v1_participating_kus": 68,
+            "v2_participating_kus": 1105
+          },
+          "regression": {
+            "all_extension_kus_covered": true,
+            "all_v1_participating_present_in_v2": true,
+            "extension_kus_covered": 862,
+            "extension_record_kus": 862,
+            "v1_participating_kus": 61,
+            "v2_participating_kus": 923
+          },
+          "training-stability": {
+            "all_extension_kus_covered": true,
+            "all_v1_participating_present_in_v2": true,
+            "extension_kus_covered": 1748,
+            "extension_record_kus": 1748,
+            "v1_participating_kus": 142,
+            "v2_participating_kus": 1890
+          },
+          "tree-based": {
+            "all_extension_kus_covered": true,
+            "all_v1_participating_present_in_v2": true,
+            "extension_kus_covered": 667,
+            "extension_record_kus": 667,
+            "v1_participating_kus": 82,
+            "v2_participating_kus": 749
+          }
+        },
+        "totals": {
+          "extension_record_kus_covered": 5168,
+          "v1_participating_kus": 514,
+          "v2_participating_kus": 5682
+        }
+      },
+      "domains": {
+        "clustering": {
+          "bidirectional_check": {
+            "every_covered_ku_participates": true,
+            "every_participating_ku_covered": true
+          },
+          "category_assignment_counts": {
+            "alternative_explanations": 4,
+            "applications_engineering": 71,
+            "code_implementation": 39,
+            "computational_mechanics": 22,
+            "critical_distinctions": 19,
+            "definitions_terminology": 318,
+            "historical_deprecated": 25,
+            "interview_misconceptions_comparisons": 84,
+            "mathematical_foundations": 30,
+            "worked_examples_failure_cases": 75
+          },
+          "classification_records": 67,
+          "concepts": 67,
+          "default_rule_ku_assignments": 318,
+          "dossier": "state/dossiers/clustering-v2.json",
+          "gap_census": {
+            "no_evidence": 437,
+            "single_vault": 194
+          },
+          "participating_kus": 454,
+          "rule_basis_census": {
+            "default:no-rule-fired(unit_type=callout)": 9,
+            "default:no-rule-fired(unit_type=frontmatter)": 2,
+            "default:no-rule-fired(unit_type=list)": 152,
+            "default:no-rule-fired(unit_type=prose)": 144,
+            "default:no-rule-fired(unit_type=quote)": 6,
+            "default:no-rule-fired(unit_type=table)": 5,
+            "excerpt:complexity-notation": 8,
+            "excerpt:library-mention": 10,
+            "heading:algorithm-mechanics": 14,
+            "heading:engineering-guidance": 71,
+            "heading:example": 32,
+            "heading:failure-case": 43,
+            "heading:implementation": 24,
+            "heading:interpretation-intuition": 4,
+            "heading:interview-misconception": 84,
+            "heading:mathematical": 30,
+            "heading:versus-distinction": 19,
+            "heading:year-reference": 25,
+            "unit_type:code_block": 16
+          },
+          "zero_evidence_categories": []
+        },
+        "evaluation": {
+          "bidirectional_check": {
+            "every_covered_ku_participates": true,
+            "every_participating_ku_covered": true
+          },
+          "category_assignment_counts": {
+            "alternative_explanations": 3,
+            "applications_engineering": 64,
+            "code_implementation": 68,
+            "computational_mechanics": 18,
+            "critical_distinctions": 33,
+            "definitions_terminology": 369,
+            "historical_deprecated": 26,
+            "interview_misconceptions_comparisons": 75,
+            "mathematical_foundations": 76,
+            "worked_examples_failure_cases": 32
+          },
+          "classification_records": 82,
+          "concepts": 82,
+          "default_rule_ku_assignments": 369,
+          "dossier": "state/dossiers/evaluation-v2.json",
+          "gap_census": {
+            "no_evidence": 576,
+            "single_vault": 198
+          },
+          "participating_kus": 561,
+          "rule_basis_census": {
+            "default:no-rule-fired(unit_type=callout)": 72,
+            "default:no-rule-fired(unit_type=frontmatter)": 1,
+            "default:no-rule-fired(unit_type=list)": 143,
+            "default:no-rule-fired(unit_type=prose)": 138,
+            "default:no-rule-fired(unit_type=table)": 15,
+            "excerpt:complexity-notation": 8,
+            "excerpt:library-mention": 3,
+            "heading:algorithm-mechanics": 10,
+            "heading:engineering-guidance": 64,
+            "heading:example": 12,
+            "heading:failure-case": 20,
+            "heading:implementation": 26,
+            "heading:interpretation-intuition": 3,
+            "heading:interview-misconception": 75,
+            "heading:mathematical": 52,
+            "heading:versus-distinction": 33,
+            "heading:year-reference": 26,
+            "unit_type:code_block": 58,
+            "unit_type:math_block": 29
+          },
+          "zero_evidence_categories": []
+        },
+        "generalization": {
+          "bidirectional_check": {
+            "every_covered_ku_participates": true,
+            "every_participating_ku_covered": true
+          },
+          "category_assignment_counts": {
+            "alternative_explanations": 12,
+            "applications_engineering": 119,
+            "code_implementation": 61,
+            "computational_mechanics": 25,
+            "critical_distinctions": 72,
+            "definitions_terminology": 649,
+            "historical_deprecated": 120,
+            "interview_misconceptions_comparisons": 206,
+            "mathematical_foundations": 65,
+            "worked_examples_failure_cases": 105
+          },
+          "classification_records": 73,
+          "concepts": 73,
+          "default_rule_ku_assignments": 649,
+          "dossier": "state/dossiers/generalization-v2.json",
+          "gap_census": {
+            "no_evidence": 442,
+            "single_vault": 239
+          },
+          "participating_kus": 1105,
+          "rule_basis_census": {
+            "default:no-rule-fired(unit_type=callout)": 79,
+            "default:no-rule-fired(unit_type=list)": 255,
+            "default:no-rule-fired(unit_type=prose)": 304,
+            "default:no-rule-fired(unit_type=table)": 11,
+            "excerpt:complexity-notation": 19,
+            "heading:algorithm-mechanics": 6,
+            "heading:engineering-guidance": 119,
+            "heading:example": 13,
+            "heading:failure-case": 92,
+            "heading:implementation": 44,
+            "heading:interpretation-intuition": 12,
+            "heading:interview-misconception": 206,
+            "heading:mathematical": 64,
+            "heading:versus-distinction": 72,
+            "heading:year-reference": 120,
+            "unit_type:code_block": 25,
+            "unit_type:math_block": 1
+          },
+          "zero_evidence_categories": []
+        },
+        "regression": {
+          "bidirectional_check": {
+            "every_covered_ku_participates": true,
+            "every_participating_ku_covered": true
+          },
+          "category_assignment_counts": {
+            "alternative_explanations": 12,
+            "applications_engineering": 50,
+            "code_implementation": 36,
+            "computational_mechanics": 50,
+            "critical_distinctions": 56,
+            "definitions_terminology": 651,
+            "historical_deprecated": 90,
+            "interview_misconceptions_comparisons": 156,
+            "mathematical_foundations": 139,
+            "worked_examples_failure_cases": 101
+          },
+          "classification_records": 47,
+          "concepts": 47,
+          "default_rule_ku_assignments": 651,
+          "dossier": "state/dossiers/regression-v2.json",
+          "gap_census": {
+            "no_evidence": 252,
+            "single_vault": 189
+          },
+          "participating_kus": 923,
+          "rule_basis_census": {
+            "default:no-rule-fired(unit_type=callout)": 75,
+            "default:no-rule-fired(unit_type=frontmatter)": 2,
+            "default:no-rule-fired(unit_type=list)": 238,
+            "default:no-rule-fired(unit_type=prose)": 304,
+            "default:no-rule-fired(unit_type=quote)": 1,
+            "default:no-rule-fired(unit_type=table)": 31,
+            "excerpt:complexity-notation": 37,
+            "excerpt:french-treatment": 2,
+            "excerpt:library-mention": 1,
+            "heading:algorithm-mechanics": 14,
+            "heading:engineering-guidance": 50,
+            "heading:example": 38,
+            "heading:failure-case": 63,
+            "heading:implementation": 29,
+            "heading:interpretation-intuition": 10,
+            "heading:interview-misconception": 156,
+            "heading:mathematical": 129,
+            "heading:versus-distinction": 56,
+            "heading:year-reference": 90,
+            "unit_type:code_block": 14,
+            "unit_type:math_block": 22
+          },
+          "zero_evidence_categories": []
+        },
+        "training-stability": {
+          "bidirectional_check": {
+            "every_covered_ku_participates": true,
+            "every_participating_ku_covered": true
+          },
+          "category_assignment_counts": {
+            "alternative_explanations": 25,
+            "applications_engineering": 197,
+            "code_implementation": 145,
+            "computational_mechanics": 99,
+            "critical_distinctions": 117,
+            "definitions_terminology": 1515,
+            "historical_deprecated": 212,
+            "interview_misconceptions_comparisons": 408,
+            "mathematical_foundations": 204,
+            "worked_examples_failure_cases": 214
+          },
+          "classification_records": 120,
+          "concepts": 120,
+          "default_rule_ku_assignments": 1515,
+          "dossier": "state/dossiers/training-stability-v2.json",
+          "gap_census": {
+            "no_evidence": 656,
+            "single_vault": 487
+          },
+          "participating_kus": 1890,
+          "rule_basis_census": {
+            "default:no-rule-fired(unit_type=callout)": 86,
+            "default:no-rule-fired(unit_type=frontmatter)": 7,
+            "default:no-rule-fired(unit_type=list)": 629,
+            "default:no-rule-fired(unit_type=prose)": 720,
+            "default:no-rule-fired(unit_type=quote)": 3,
+            "default:no-rule-fired(unit_type=table)": 70,
+            "excerpt:complexity-notation": 84,
+            "excerpt:library-mention": 2,
+            "heading:algorithm-mechanics": 19,
+            "heading:engineering-guidance": 197,
+            "heading:example": 65,
+            "heading:failure-case": 149,
+            "heading:implementation": 72,
+            "heading:interpretation-intuition": 25,
+            "heading:interview-misconception": 408,
+            "heading:mathematical": 170,
+            "heading:versus-distinction": 117,
+            "heading:year-reference": 212,
+            "unit_type:code_block": 90,
+            "unit_type:math_block": 36
+          },
+          "zero_evidence_categories": []
+        },
+        "tree-based": {
+          "bidirectional_check": {
+            "every_covered_ku_participates": true,
+            "every_participating_ku_covered": true
+          },
+          "category_assignment_counts": {
+            "alternative_explanations": 15,
+            "applications_engineering": 94,
+            "code_implementation": 38,
+            "computational_mechanics": 27,
+            "critical_distinctions": 56,
+            "definitions_terminology": 457,
+            "historical_deprecated": 55,
+            "interview_misconceptions_comparisons": 101,
+            "mathematical_foundations": 93,
+            "worked_examples_failure_cases": 51
+          },
+          "classification_records": 69,
+          "concepts": 69,
+          "default_rule_ku_assignments": 457,
+          "dossier": "state/dossiers/tree-based-v2.json",
+          "gap_census": {
+            "no_evidence": 448,
+            "single_vault": 195
+          },
+          "participating_kus": 749,
+          "rule_basis_census": {
+            "default:no-rule-fired(unit_type=callout)": 27,
+            "default:no-rule-fired(unit_type=frontmatter)": 4,
+            "default:no-rule-fired(unit_type=list)": 221,
+            "default:no-rule-fired(unit_type=prose)": 194,
+            "default:no-rule-fired(unit_type=table)": 11,
+            "excerpt:complexity-notation": 6,
+            "excerpt:library-mention": 2,
+            "heading:algorithm-mechanics": 21,
+            "heading:engineering-guidance": 94,
+            "heading:example": 9,
+            "heading:failure-case": 42,
+            "heading:implementation": 31,
+            "heading:interpretation-intuition": 15,
+            "heading:interview-misconception": 101,
+            "heading:mathematical": 88,
+            "heading:versus-distinction": 56,
+            "heading:year-reference": 55,
+            "unit_type:code_block": 6,
+            "unit_type:math_block": 7
+          },
+          "zero_evidence_categories": []
+        }
+      }
+    }
+  }
 }

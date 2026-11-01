@@ -10,6 +10,28 @@ universal per-unit dual review is removed in favor of ADR-0011 tiered
 verification; the quality floor (source immutability, full test suite,
 machine-verified citations, release gates) is inviolate.
 
+DISPOSITION ASSIGNMENT IS COMPLETE (session 19, 2026-11-01 — the S21–22
+phase target finished two sessions early). All 27,536/27,536 KUs received
+exactly one disposition with planned destinations; Unaccounted = 0
+(Preserved 18,478 / Consolidated 8,106 / Contextualized 950 / Superseded 2)
+under the ADR-0014 rule engine (`vu assign-dispositions` + committed
+ledger `state/dispositions/001-disp001-rule-driven.jsonl` + registry
+overlay `vu kureg-apply-dispositions`; rebuilt registry validates green
+with 0 warnings). The rule engine consumes the committed synthesis plan:
+`state/synthesis/canonical-structure-v1.json` (20-area unified backbone,
+544 planned canonical notes) and `state/synthesis/file-mapping-v1.jsonl`
+(609 source files mapped by 13 bounded subagents + one
+orchestrator-reviewed context group; machine-verified, 0 problems).
+Session 19 also completed dossier v2 (EXT-011: six `<domain>-v2.json`
+dossiers covering all 5,168 per-domain extension participants plus the 514
+original participants; byte-identical `--check`), repaired finding F-0022
+(all 7,034 evidence entries in 009..014 had empty `lines` — field-name bug
+in the session-18 assembly script; new term-level schema +
+`--extension-classifications` validator with batch cross-checks, ADR-0013),
+and fixed F-0023 (registry destinations UNIQUE(path, heading) cannot
+dedupe NULL headings). 708/708 tests. NEXT: gated synthesis (SYNTH-001) —
+must start by session 23; final vault by end of session 26.
+
 DISC-002 signal-pool review is COMPLETE (session 16, 2026-11-01, ADR-0011
 user-authorized accelerated mode). All 4,274 remaining signal-rule
 candidates were decided in one session through a tiered pipeline:

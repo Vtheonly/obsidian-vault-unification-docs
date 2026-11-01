@@ -2,200 +2,204 @@
 
 ## Project state
 
-- Current milestone: DISC-002 **dossier-extension classification COMPLETE** —
-  session 18 (2026-11-01) classified ALL 69,185 extension pairs in one
-  session under the ADR-0011/ADR-0012 accelerated mode: 5,441 participate /
-  63,744 reject-pair; 5,168 distinct extension participant KUs; 294
-  term-level extension classification records; 4,893 subagent+orchestrator
-  review verdicts. The S18–20 phase target finished one session early.
+- Current milestone: **DISPOSITIONS COMPLETE — SYNTHESIS NEXT**. Session 19
+  (2026-11-01) executed the S21–22 phase target two sessions early: all
+  **27,536/27,536 KU dispositions assigned, Unaccounted = 0**
+  (Preserved 18,478 / Consolidated 8,106 / Contextualized 950 / Superseded 2;
+  ADR-0014 rule engine + committed ledger + registry overlay). The remaining
+  phase is GATED SYNTHESIS (SYNTH-001) — **must start by session 23; final
+  vault by the END OF SESSION 26**.
 - USER DIRECTIVE IN FORCE (2026-11-01): BINDING POLICY (ADR-0012): read
   `docs/ACCELERATED_COMPLETION_POLICY.md` and AGENTS.md §12 BEFORE planning.
-  Hard deadline: final vault by the END OF SESSION 26. Budget after session
-  18: 8 sessions remaining. Deliverable-first reporting; a bookkeeping-only
-  session is a FAILED session; every checkpoint carries the
-  `accelerated_mode` block; synthesis MUST START by session 23.
-- Completed and verified: BOOT-000..004, EXT-001..010, REBASE-000,
-  AUDIT-011, FRAME-001, DISC-001, FRAME-002, REGEN-001; DISC-002 sessions
-  A+B, 3–16 (signal pool: 4,274 decided in session 16; pool verified empty;
-  46,978 low-signal documented exclusion; 3 confirmed gaps: second moment,
-  bradley-terry, async def), 17 (policy), 18 (this dossier-extension
-  classification).
-- Framework version 0.9.0; 663/663 tests at session start (first run after
-  editable install) and re-run after the last mutation.
+  Budget after session 19: **7 sessions remaining** (20–26). Deliverable-first
+  reporting; a bookkeeping-only session is a FAILED session; every checkpoint
+  carries the `accelerated_mode` block.
+- Completed and verified: BOOT-000..004, EXT-001..011, REBASE-000, AUDIT-011,
+  FRAME-001, DISC-001, FRAME-002, REGEN-001, DISC-002 (ALL discovery layers:
+  signal pool, dossier-extension classification, dossier v2), DISP-001
+  (dispositions).
+- Framework: 708/708 tests at session end (663 at start + 45 new); sources
+  byte-identical 276/276 + 333/333 at start AND end.
 
-## Session 18 summary (evidence-backed)
+## Session 19 summary (evidence-backed)
 
-- Baseline verified: clean tree, HEAD == origin/main == 4361229; AI Course
-  276/276 and Master AI 333/333 byte-identical to committed manifests;
-  663/663 tests first-run.
-- Regenerated all six extension pair files (69,185 pairs; counts exactly
-  match the committed run reports). All pairs are cross-vault NEW-KU pairs
-  from the 59 regen batches (the original domain files live in ext batches
-  001–011 and are excluded from the regen pool by construction).
-- Tiering (scripts/s18_dext_tiering.py + state/term-maps/dext-tier-config-v1.json):
-  per-side verdicts — A1 auto-participate (domain folder + specific term via
-  STRONG alias), A2 auto-participate (specific term + heading/definition-
-  window evidence anywhere, session-16 cover evidence class), B1 broad-term-
-  only non-domain reject, B2 no-gloss-evidence non-domain reject, nav-file
-  reject; quiz/interview folders exempt from B2. CALIBRATION: C1-folder +
-  C2 zero-counter-example tests against the 164 hand-classified EXT-003..010
-  records and the six original pair pools — the engine exits non-zero on any
-  counter-example; calibration caught and fixed 3 real issues during design
-  (broad terms that anchored hand-accepted evidence were removed from the
-  broad lists; code-block-only matches moved from auto-reject to review).
-- Two ADR-0011 pull-backs after orchestrator sampling found wrong-class
-  members: (1) WEAK ALIASES (singular, default, ones, rotate, closed-form
-  solution, shrinks, decay, MAP, Bayes, …) pulled from auto-accept to review;
-  (2) CANONICAL HOMONYMS (compound, cycle, catastrophic, identity,
-  orthogonal, flat, spikes, gain, shrink for training-stability; L1/L2 for
-  generalization; precision for evaluation) pulled to review. Residual Tier A
-  noise after both: ~17% single-side over-inclusion, safe direction only
-  (documented in reports/dossier-ext/s18-dext-final-report.json; further
-  pull-backs were assessed and rejected as they would effectively reinstate
-  the universal review ADR-0011 removed).
-- Four review rounds (2,482 (file,term) combos / 4,893 (domain,file,term,ku)
-  verdicts): round 1 six domain subagents; round 2 five delta subagents +
-  orchestrator personal review of 9 tiny evaluation/clustering combos; round 3
-  three delta subagents; round 4 one micro-bundle subagent (251 KU-level
-  coverage gaps after the calibration iterations). Mechanical verification
-  after every round: completeness (every combo line, every ku_id exactly
-  once) + citation anchors (every reviewed-accept has the term/alias/
-  matched_text in the KU excerpt or match context; 0 failures).
-- Orchestrator sampling per ADR-0011 tier-(b): 179/539 reviewed-rejects (5%
-  min-30 per domain) personally re-reviewed — 99.4% agreement, 1
-  conservative reject→participate override; Tier A fresh 30-sample (~17%
-  safe over-inclusion); Tier B 20-sample (19/20, the one borderline was a
-  thin symptom line whose full treatment is in-domain); Tier B3 15-sample
-  (1 prose-definition miss overridden to participate). Both overrides are
-  recorded in scripts/s18_dext_assembly.py OVERRIDES and in the verdicts
-  file with round='orchestrator-override'.
-- Final assembly (scripts/s18_dext_assembly.py): review verdicts override
-  mechanical verdicts; pair participates iff BOTH sides participate; KU joins
-  the extension set iff ≥1 participate side verdict. Pre-written arithmetic
-  asserted first try: 69,185 = 9,211+10,833+10,603+6,672+11,275+20,591;
-  participate+reject-pair = total.
-- Final gates (scripts/s18_final_gates.py): G1 extension-record ku_ids all
-  exist in regen batches; G2 unique classification ids; G3 review-verdict
-  ku_ids exist; G4 69,185 decisions; G5 source manifests unchanged after ALL
-  operations; G6 verification evidence appended to the final report.
+- Baseline verified: clean tree, HEAD == origin/main == 0c9b31e; 663/663
+  tests first-run; manifests unchanged.
+- **F-0022 found and repaired** (would have been caught by the new batch
+  cross-check): session-18's assembly script wrote evidence `lines: []`
+  (field-name bug: `source_lines` vs `line_start`/`line_end`) in ALL 7,034
+  evidence entries of state/classifications/009..014. Narrow mechanical
+  repair (`scripts/s19_repair_ext_evidence.py`, idempotent, decision fields
+  byte-unchanged) + assembly script fixed + NEW validator
+  (`vu validate-registry --extension-classifications F [--ku-batch B ...]`)
+  with batch cross-checks (lines == KU span, source_path equality,
+  byte-exact quote). New record-class schema
+  `schemas/dossier-extension-classification.schema.json` (ADR-0013: term-level
+  extension records are NOT pair-level overlap classifications; ku_ids
+  minItems 1, no cross-vault requirement).
+- **Dossier v2 (EXT-011)**: six `<domain>-v2.json` dossiers = original
+  classification records + the 294 extension records + all 59 regen batches.
+  47/69/82/67/73/120 concepts; participating KUs 923/749/561/454/1,105/1,890
+  (= 514 originals + 5,168 per-domain extension participants = 5,682).
+  `scripts/ext006_dossiers.py --check`: 12/12 byte-identical (v1 untouched);
+  V6 acceptance block in `reports/extraction/ext006-dossier-coverage.json`.
+  Concept-dossier schema admissions (single-KU concepts; DX classification
+  ids) documented per ADR-0013.
+- **Canonical structure + file mapping (ADR-0014)**: 20-area unified backbone
+  (orchestrator design, learning progression) in
+  `state/synthesis/canonical-structure-v1.json` (544 planned canonical notes);
+  `state/synthesis/file-mapping-v1.jsonl` maps ALL 609 source files
+  (276 ai-course + 333 master-ai) to planned notes. Produced by 13 bounded
+  mapping subagents + one orchestrator-reviewed context group (area 20: the
+  17 source-vault construction/meta files, individually reviewed →
+  Contextualized archival layer). Mechanical verification:
+  `scripts/s19_verify_mapping.py` (0 problems) +
+  `scripts/s19_integrate_mapping.py` (609 asserted).
+- **Disposition assignment (DISP-001, ADR-0014)**: new framework command
+  `vu assign-dispositions` (rules: DISP-R1 dossier concept member →
+  Consolidated w/ concept source_refs; R2 multi-feeder note → Consolidated;
+  R3 sole feeder → Preserved; R4 archival context → Contextualized; X =
+  3 individually reviewed exceptions incl. the two F-0014 marker units →
+  Superseded). Ledger `state/dispositions/001-disp001-rule-driven.jsonl`
+  (27,536 records; deterministic double-run sha256 747caab2…748c00).
+  `vu kureg-apply-dispositions` applied it to the rebuilt registry
+  (applied=27,536; idempotent re-apply exit 0); `vu kureg-validate`:
+  valid=True, 0 errors, 0 warnings, Unaccounted=0.
+- **F-0023 found and fixed**: UNIQUE(path, heading) cannot dedupe NULL
+  headings → INSERT OR IGNORE created one destinations row per KU
+  (28,754 rows / 544 paths / 28,210 orphan warnings). New
+  `_upsert_destination` helper used by both kureg-load and
+  kureg-apply-dispositions; registry rebuilt clean (544 rows, 0 orphans).
+- Superseded is NEVER bulk-assigned (invariant 3 requires per-unit evidence);
+  the 2 Superseded units are the individually reviewed F-0014 markers whose
+  text is preserved verbatim in the registry record.
 
-## Committed session-18 artifacts (the durable state)
+## Committed session-19 artifacts (the durable state)
 
-- `state/classifications/008-disc002-dext-review-verdicts.jsonl` — 4,893
-  effective review decisions (domain, file, term, ku_id, verdict, round,
-  rationale, source). THE irreplaceable decision record.
-- `state/classifications/009..014-disc002-dext-<domain>-extension.jsonl` —
-  294 term-level extension classification records (topic "<term> — corpus
-  extension evidence", ku_ids, evidence quotes, overlap_type Complementary
-  Content, full method/rationale). Dossier-v2 input.
-- `state/term-maps/dext-tier-config-v1.json` — the calibrated tier config
-  (broad_terms, domain_folders, nav_rules, weak_aliases).
-- `scripts/s18_*.py` — tiering, bundle builder, verifiers, assembly, gates
-  (all deterministic; pair decisions replay from committed inputs).
-- `reports/dossier-ext/s18-tiering-report.json` and
-  `reports/dossier-ext/s18-dext-final-report.json`.
-- `state/checkpoints/checkpoint-2026-11-01-disc002-session18.json`.
+- `state/dispositions/001-disp001-rule-driven.jsonl` — THE disposition
+  ledger (27,536 records: ku_id, disposition, destinations, rule_id,
+  rationale, source_refs, assigned_by, date).
+- `state/synthesis/canonical-structure-v1.json` + 
+  `state/synthesis/file-mapping-v1.jsonl` — the synthesis plan (544 notes;
+  609 file mappings with per-file rationale and mapped_by).
+- `state/dossiers/*-v2.json` — dossier v2 (six files).
+- `schemas/dossier-extension-classification.schema.json` (new record class).
+- `src/vault_unification/dispositions.py`, `registry.py`
+  (validate_extension_classification_file), `kuregistry.py`
+  (apply_dispositions, _upsert_destination), `cli.py`
+  (assign-dispositions, kureg-apply-dispositions, --extension-classifications).
+- `scripts/s19_*.py` (area file lists, mapping verifier, integrator, F-0022
+  repair), fixed `scripts/s18_dext_assembly.py`, fixed
+  `scripts/ext006_dossiers.py` (v1+v2).
+- `tests/test_dispositions.py` (17), `tests/test_extension_classification.py`
+  (20), extended `tests/test_concept_dossier.py` (15) and `tests/test_cli.py`.
+- `reports/dispositions/disp001-*.json`,
+  `reports/dossier-ext/s19-f0022-repair-report.json`,
+  `reports/extraction/ext006-dossier-coverage.json` (v1+v2),
+  `reports/framework/session19-*-pytest.json`.
+- `state/checkpoints/checkpoint-2026-11-01-disp001-session19.json`;
+  ADR-0013 + ADR-0014 + F-0022 + F-0023 in `docs/RISKS_AND_DECISIONS.md` /
+  `state/findings.jsonl`; task queue: DISC-002 completed, EXT-011 + DISP-001
+  completed, SYNTH-001 queued.
 
-## Next task (in order, per the binding session budget — deadline: session 26)
+## Next task (SYNTH-001 — gated synthesis; MUST START by session 23)
 
-1. **DOSSIER V2 REGENERATION** (bounded, mechanical): extend
-   scripts/ext006_dossiers.py DOMAINS config per domain with (a) the regen
-   batches that cover the extension KUs (state/knowledge-units/012..070) and
-   (b) the new extension classification file (009..014). Emit NEW dossier
-   versions (dossier_id `<domain>-v2`, version "v2"); keep the committed v1
-   dossiers untouched and `--check`-able. V1–V5 validations must pass (every
-   extension ku_id resolves in the regen batches — note KUs come from ALL 59
-   regen batches, so the v2 domain config must include them or the loader
-   must be extended); add/extend tests; regenerate the coverage report.
-   Acceptance: v2 dossiers regenerate byte-identically on re-run; every
-   extension KU appears in ≥1 v2 concept; all 514 original participating KUs
-   still present; full suite green.
-2. **DISPOSITION ASSIGNMENT** (S21–22 target, currently ahead of schedule):
-   rule-driven dispositions for the 27,536 KUs from classification + dossier
-   membership + file-level synthesis mapping; exceptions to individual
-   review; Unaccounted → 0 (release blocker).
-3. **GATED SYNTHESIS** (MUST START by session 23): check-prompt → bounded
-   generation → lint-artifacts → assess-quality → quality-drift →
-   quality-gate → repair loop per batch. The three confirmed gaps (second
-   moment, bradley-terry, async def) get their dedicated treatments. Target:
-   final vault by end of session 26.
+1. **Read first**: AGENTS.md §12 → `docs/ACCELERATED_COMPLETION_POLICY.md`
+   → ADR-0011/0013/0014 (`docs/RISKS_AND_DECISIONS.md`) → this file.
+2. **Verify baseline** (policy §7): HEAD == origin/main, clean tree,
+   `python3 -m pip install -e .`, full suite green (708 expected),
+   manifests 276/276 + 333/333.
+3. **Rebuild the derived registry** (sandbox may be fresh):
+   `vu kureg-init --db state/registries/knowledge-registry.sqlite --force`
+   then `vu kureg-load --db … --kus <each of the 70 batches>` then
+   `vu kureg-apply-dispositions --db … --dispositions
+   state/dispositions/001-disp001-rule-driven.jsonl` then
+   `vu kureg-validate --db …` (expect Unaccounted=0, 0 errors, 0 warnings).
+4. **Synthesize the first area end-to-end** (suggested: 04 - Machine
+   Learning — 40 source files, 27 canonical notes, ~1,829 KUs) through the
+   FRAME-002 pipeline: check-prompt → bounded generation (evidence = the
+   v2 dossiers for the domain concepts + the note's mapped source files +
+   per-KU destinations from the ledger) → lint-artifacts → assess-quality →
+   quality-drift → quality-gate → repair loop. Then parallelize remaining
+   areas with subagents (session-16/18/19 patterns: bounded scopes,
+   mechanical verification of every citation, orchestrator sampling).
+5. **Per-batch acceptance**: `vu audit-output` against the KU batches and
+   the accepted manifest; destinations resolve to real notes; editorial
+   consistency across batches; the three confirmed gaps (second moment,
+   bradley-terry, async def) get dedicated treatments; F-0014 markers never
+   copied as knowledge headings.
+6. **Deadline arithmetic**: sessions 20–26 remain. Suggested: 20–24
+   synthesis batches (areas in parallel), 25 cross-batch consistency + gap
+   treatments, 26 final verification + delivery. Compress via parallelism,
+   never by weakening the floor (§5.5 of the policy: escalate instead).
 
-## Replay recipe (ADR-0010 decide chain — unchanged, SEVENTEEN rounds)
+## Replay recipes (deterministic from committed state)
 
-`vu discover-gaps` over all 70 batches (exact args in
-reports/discovery/disc002-full-corpus-run.json report_meta.args; ~5 min) then
-`vu discovery-decide` r1 (2026-10-28T00:45:00Z), r2 (01:30:00Z), batch2
-(02:30:00Z), batch3 (2026-10-28T05:30:00Z), batch4 (2026-10-30T13:05:00Z),
-batch5 (15:30:00Z), batch6 (16:30:00Z), batch7 (2026-10-31T00:30:00Z),
-batch8 (01:30:00Z), batch9 (03:00:00Z), batch10 (05:30:00Z), batch11
-(08:00:00Z), batch12 (10:30:00Z), batch13 (13:30:00Z), batch14
-(2026-11-01T03:30:00Z), batch15 (04:15:00Z), batch16 (2026-11-01T22:30:00Z),
-then `vu discovery-index`. Expected: 60,154 records; 46,978 provisional /
-7,893 already_covered / 5,278 rejected / 3 confirmed_gap / 1 merged / 1
-deferred. F-0019: compare PARSED CONTENT, not raw sha256.
-scripts/disc002_batch16_replay.py is the template.
+- Disposition ledger: `vu assign-dispositions --ku-batch <70 batches>
+  --dossier <6 v2 dossiers> --file-mapping
+  state/synthesis/file-mapping-v1.jsonl --out <path>` (byte-identical;
+  sha256 747caab21c8c2d1923724bc33752b9e3fc9c6c4d2570ac0d996c11253d748c00).
+- Dossiers v1+v2: `python3 scripts/ext006_dossiers.py --check` (12/12).
+- F-0022 repair state: `python3 scripts/s19_repair_ext_evidence.py --check`
+  (0 changed).
+- Extension file validation: `vu validate-registry
+  --extension-classifications <009..014 file> --ku-batch <70 batches>`
+  (exit 0 x6).
+- ADR-0010 decide chain (unchanged, SEVENTEEN rounds + index): see the
+  session-18 handoff section in git history (commit 02f373d) —
+  `vu discover-gaps` over all 70 batches then `vu discovery-decide` with the
+  recorded timestamps, then `vu discovery-index`. Expected: 60,154 records;
+  46,978 provisional / 7,893 already_covered / 5,278 rejected / 3
+  confirmed_gap / 1 merged / 1 deferred.
 
-Dossier-extension replay (session-18 layer): regenerate the six pair files
-via the commands in reports/dossier-ext/disc002-dext-<domain>-overlap-run.json
-(~40s per domain; the term map for tree is state/term-maps/tree-domain-v1.json),
-then `python3 scripts/s18_dext_tiering.py` (calibration must pass),
-`python3 scripts/s18_build_review_bundles.py`, then
-`python3 scripts/s18_dext_assembly.py` — the review verdicts are COMMITTED
-(008 file), so review rounds do NOT re-run; the assembly reproduces pair
-decisions and extension records deterministically from committed state.
-
-## Standing rules (enforced; ADR-0011 modifies the review tiering only)
+## Standing rules (enforced)
 
 - Never mark a task completed before its commit hash exists in the record.
 - Re-run the full suite after the LAST mutation of the session.
 - Sources are immutable; all outputs are evidence, never edits.
-- Machine locators for every line citation
-  (vault_unification.locators); F-0021-fixed fence_spans(struct,
-  total_lines) signature; LEVEL-EXACT '^### '-style heading patterns
-  with the startup guard that rejects '^#+'.
+- Machine locators for every line citation; F-0021-fixed fence_spans(struct,
+  total_lines) signature; LEVEL-EXACT '^### '-style heading patterns with
+  the startup guard that rejects '^#+'.
 - Every completion claim needs a report path or test run as evidence.
 - Update the README repository-status paragraph at session end.
-- Push to main before session end; record push verification; if a push
-  is rejected because a parallel session moved main: fetch, review,
-  MERGE (never rebase away history), reconcile, re-verify.
+- Push to main before session end; record push verification; if a push is
+  rejected because a parallel session moved main: fetch, review, MERGE
+  (never rebase away history), reconcile, re-verify.
 - ADR-0011 discipline: bulk classes need ZERO counter-examples in the
-  calibration set — CALIBRATE BEFORE APPLYING (session 18's own tiering
-  was caught by its calibration three times: broad terms anchoring
-  hand-accepted evidence; code-block-only matches; then the sampling
-  pull-backs for weak aliases and canonical homonyms — the failures were
-  caught by the calibration/sampling steps, which is the point).
-  confirm_gap is NEVER bulk-decided; every proposed gap keeps individual
-  verification with the full probe discipline (glossaries, quiz Group-B
-  lines, notation symbol glosses, operational definitions, spelling
-  variants, colon-glosses).
-- Subagent discipline: subagent decisions are verified, not trusted —
-  mechanically check completeness and citation anchors, sample the rejects
-  (~5%), personally re-verify every flagged borderline; session 18 measured
-  99.4% sample agreement with the disagreement in the safe direction.
-- Delta-verification discipline: write the arithmetic of expectations
-  down BEFORE running.
+  calibration set; confirm_gap is NEVER bulk-decided. Subagent decisions
+  are verified, not trusted (mechanical completeness/citation checks +
+  ~5% reject sampling + personal re-verification of flagged borderlines).
+- Delta-verification discipline: write the arithmetic of expectations down
+  BEFORE running.
 - Fresh-sandbox setup: `python3 -m pip install -e .` BEFORE the baseline
   pytest.
 - F-0016: long runs must fit one tool call (< 10 min). F-0018: old
-  pre-batch-4 scripts hardcode /home/z/my-project/obsidian-vault-
-  unification-docs. F-0020: invoke via `vu` or
-  `python -m vault_unification`. F-0014 (open): two ai-course files end
-  with 'END OF FILE / File Name' marker headings — synthesis must not
-  copy them as knowledge headings.
+  pre-batch-4 scripts hardcode the sandbox path. F-0020: invoke via `vu` or
+  `python -m vault_unification`. F-0023: any code inserting into registry
+  `destinations` MUST use `_upsert_destination` (NULL heading defeats
+  UNIQUE). F-0014 (open): two ai-course files end with 'END OF FILE / File
+  Name' marker headings — synthesis must not copy them as knowledge
+  headings.
 
 ## Explicit non-claims
 
 - The 46,978 low-signal provisional discovery candidates were NOT
   individually reviewed (documented exclusion under the batch-3..16
   signal-rule standard).
-- Dossier v2 has NOT been regenerated yet: the 294 extension records are
-  committed and ready, but the six dossiers on disk are still v1; extension
-  KUs are not yet inside any dossier JSON.
-- Disposition assignment has NOT started: all 27,536 KUs remain
-  Unaccounted by design (release blocker until S21–22 work).
-- The three confirmed gaps (second moment, bradley-terry, async def)
-  still need their dedicated treatments at synthesis time.
-- Tier A auto-accepts retain ~17% single-side over-inclusion (safe
-  direction, documented); B2 can miss prose definitions without
-  colon-gloss markers (measured ~1/35 in sampling; override mechanism
-  exists).
+- Dispositions are PLANNING statements with recorded destinations:
+  semantic verification that destination notes actually preserve each
+  KU's content happens at the SYNTHESIS gates (audit-output per batch),
+  not at assignment time (ADR-0014 rationale).
+- The three confirmed gaps (second moment, bradley-terry, async def) still
+  need their dedicated treatments at synthesis time.
+- Canonical note titles/folders (structure v1) may be refined at synthesis
+  start under EDITORIAL_STYLE_GUIDE change control with a versioned
+  migration of the file mapping — they are PLANNED destinations, not
+  written notes.
+- The final PRESENTATION of area 20 (archival context layer: source-vault
+  construction documents) is an open release-audit decision; ordinary notes
+  must never narrate merges (SOURCE_POLICY).
+- Zero notes have been synthesized yet: output/Unified-Vault/ does not
+  exist; SYNTH-001 is the first synthesis session's work.
+- Tier A dossier-extension auto-accepts retain ~17% single-side
+  over-inclusion (safe direction, documented in the session-18 report).

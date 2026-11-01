@@ -1120,6 +1120,63 @@ class TestOverlapCandidatesCLI:
             == 1
         )
 
+
+    def test_validate_registry_extension_classifications_flag(self, tmp_path):
+        """Session-19 ADR-0013: --extension-classifications with batch cross-checks."""
+        good = tmp_path / "ext.jsonl"
+        good.write_text(
+            json.dumps(
+                {
+                    "classification_id": "DX-test-0001",
+                    "task_id": "DISC-002",
+                    "topic": "term — corpus extension evidence",
+                    "overlap_type": "Complementary Content",
+                    "ku_ids": ["KU-a"],
+                    "rationale": "ok",
+                    "evidence": [
+                        {
+                            "ku_id": "KU-a",
+                            "quote": "q",
+                            "source_path": "a.md",
+                            "lines": [1],
+                        }
+                    ],
+                    "classified_by": "test",
+                    "date": "2026-11-01",
+                }
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        proc = run_cli(
+            "validate-registry", "--extension-classifications", str(good)
+        )
+        assert proc.returncode == 0, proc.stdout + proc.stderr
+        payload = json.loads(proc.stdout)
+        assert payload["valid"] is True
+
+        # empty evidence lines must be rejected (the F-0022 regression)
+        bad = tmp_path / "ext-bad.jsonl"
+        rec = json.loads(good.read_text(encoding="utf-8").splitlines()[0])
+        rec["evidence"][0]["lines"] = []
+        bad.write_text(json.dumps(rec) + "\n", encoding="utf-8")
+        proc = run_cli(
+            "validate-registry", "--extension-classifications", str(bad)
+        )
+        assert proc.returncode == 1
+        payload = json.loads(proc.stdout)
+        assert payload["valid"] is False
+
+        # a missing KU batch must fail visibly, not crash
+        proc = run_cli(
+            "validate-registry",
+            "--extension-classifications", str(good),
+            "--ku-batch", str(tmp_path / "missing.jsonl"),
+        )
+        assert proc.returncode == 1
+        payload = json.loads(proc.stdout)
+        assert payload["valid"] is False
+
     def test_validate_registry_still_requires_an_argument(self):
         proc = run_cli("validate-registry")
         assert proc.returncode == 1

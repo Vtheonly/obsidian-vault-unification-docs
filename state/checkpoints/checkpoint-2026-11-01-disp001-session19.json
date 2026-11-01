@@ -1,0 +1,113 @@
+{
+  "checkpoint_id": "checkpoint-2026-11-01-disp001-session19",
+  "date": "2026-11-01",
+  "session_number": 19,
+  "task": {
+    "task_id": "DISP-001",
+    "title": "Assign rule-driven dispositions to all knowledge units (Unaccounted -> 0)",
+    "status": "completed",
+    "completed_with": ["EXT-011 (dossier v2 regeneration)", "F-0022 repair", "ADR-0013", "ADR-0014", "F-0023 fix"]
+  },
+  "stage": "dispositions-complete-synthesis-next",
+  "baseline_verification": {
+    "git": "clean tree, HEAD == origin/main == 0c9b31e at session start",
+    "tests_first_run": "708 tests expected at end; 663/663 passed at session start (reports/framework/session19-start-pytest.json)",
+    "source_manifests": {
+      "ai-course": "276/276 unchanged (session start AND end)",
+      "master-ai": "333/333 unchanged (session start AND end)"
+    },
+    "editable_install": "python3 -m pip install -e . completed before baseline tests"
+  },
+  "work_completed": [
+    {
+      "item": "F-0022 repair: all 7,034 evidence entries in state/classifications/009..014 regenerated from committed KU batches (lines = inclusive [line_start..line_end], quote = full excerpt, source_path = KU source_path); classification ids/topics/ku_ids byte-unchanged; scripts/s19_repair_ext_evidence.py idempotent (--check: zero drift); scripts/s18_dext_assembly.py evidence construction fixed to match",
+      "evidence": "reports/dossier-ext/s19-f0022-repair-report.json; vu validate-registry --extension-classifications x6 with all 70 --ku-batch cross-checks: exit 0, 294/294 records"
+    },
+    {
+      "item": "New record class + validator: schemas/dossier-extension-classification.schema.json (ku_ids minItems 1, evidence lines non-empty); vu validate-registry --extension-classifications [--ku-batch ...] with batch cross-checks (the F-0022 guard); ADR-0013",
+      "evidence": "tests/test_extension_classification.py (20 tests); tests/test_cli.py extension flag test"
+    },
+    {
+      "item": "Dossier v2 (EXT-011): six <domain>-v2 dossiers built from original + extension classification records + all 59 regen batches; concept-dossier schema admissions (single-KU concepts, DX classification ids) documented; v1 dossiers untouched and --check-able",
+      "evidence": "state/dossiers/*-v2.json; scripts/ext006_dossiers.py --check: 12/12 byte-identical; reports/extraction/ext006-dossier-coverage.json (v2 acceptance: all 514 v1 participants present; all 5,168 per-domain extension participants covered; totals 5,682)"
+    },
+    {
+      "item": "Canonical structure + file mapping: 20-area unified backbone (orchestrator design), 544 planned canonical notes, 609-file mapping produced by 13 bounded subagents + one orchestrator-reviewed context group (area 20, 17 files individually reviewed)",
+      "evidence": "state/synthesis/canonical-structure-v1.json; state/synthesis/file-mapping-v1.jsonl; scripts/s19_verify_mapping.py (592 subagent records + 17 context records, 0 problems); scripts/s19_integrate_mapping.py (609 = 276 + 333 asserted)"
+    },
+    {
+      "item": "Disposition assignment (DISP-001, ADR-0014): vu assign-dispositions rule engine (DISP-R1/R2/R3/R4 + 3-entry exception table) -> state/dispositions/001-disp001-rule-driven.jsonl (27,536 records, deterministic: double-run sha256 747caab21c8c2d1923724bc33752b9e3fc9c6c4d2570ac0d996c11253d748c00); registry rebuilt + ledger applied (applied=27,536, unaccounted_after=0, idempotent re-apply exit 0); kureg-validate: valid=True, 0 errors, 0 warnings",
+      "evidence": "reports/dispositions/disp001-assignment-report.json; reports/dispositions/disp001-apply-report.json; reports/dispositions/disp001-registry-validate.json"
+    },
+    {
+      "item": "F-0023 found and fixed: registry destinations UNIQUE(path, heading) cannot dedupe NULL headings — INSERT OR IGNORE created one row per KU (28,754 rows for 544 paths); _upsert_destination helper now used by kureg-load and kureg-apply-dispositions; registry rebuilt clean (544 rows, 0 orphans)",
+      "evidence": "state/findings.jsonl F-0023; tests/test_dispositions.py test_f0023_null_heading_destinations_do_not_duplicate"
+    },
+    {
+      "item": "Framework: new commands assign-dispositions + kureg-apply-dispositions (CLI + module + tests); FRAMEWORK_SETUP.md command table updated; task queue: DISC-002 completed, EXT-011 + DISP-001 recorded completed, SYNTH-001 queued; current-state.json updated to the new stage",
+      "evidence": "state/task-queue.jsonl (validates green); state/current-state.json"
+    }
+  ],
+  "deliverable_metric": {
+    "metric": "KU dispositions assigned",
+    "before": 0,
+    "after": 27536,
+    "denominator": 27536,
+    "unaccounted": 0,
+    "by_disposition": {"Preserved": 18478, "Consolidated": 8106, "Contextualized": 950, "Superseded": 2},
+    "by_rule": {"DISP-R1": 4030, "DISP-R2": 4076, "DISP-R3": 18478, "DISP-R4": 949, "DISP-X1": 1, "DISP-X2": 2}
+  },
+  "verification_evidence": {
+    "full_suite_end": "708/708 passed in 238.71s (reports/framework/session19-end-pytest.json)",
+    "full_suite_start": "663/663 passed in 216.37s (reports/framework/session19-start-pytest.json)",
+    "source_manifests_end": {"ai-course": "276/276 unchanged", "master-ai": "333/333 unchanged"},
+    "dossier_check": "12/12 byte-identical (v1 + v2)",
+    "repair_idempotence": "s19_repair_ext_evidence.py --check: 0 changed",
+    "ledger_determinism": "double-run sha256 identical",
+    "registry_validate": "valid=True, errors=0, warnings=0, Unaccounted=0"
+  },
+  "accelerated_mode": {
+    "session_number": 19,
+    "budget_sessions_consumed": 4,
+    "budget_sessions_remaining": 7,
+    "deliverable_metric_moved": "KU dispositions assigned",
+    "before": 0,
+    "after": 27536,
+    "denominator": 27536,
+    "failed_session": false,
+    "cause_if_failed": null
+  },
+  "next_task": {
+    "task_id": "SYNTH-001",
+    "title": "Gated synthesis of the unified vault (first batches)",
+    "why_next": "All pre-synthesis phases are complete: framework foundation + omission pilot (historical), full extraction/accounting (27,536 KUs), discovery (signal pool + dossier-extension complete), dossiers v2, disposition assignment (Unaccounted=0). ADR-0012 anti-stall: synthesis MUST START by session 23.",
+    "dependencies": ["DISP-001"],
+    "inputs": [
+      "state/synthesis/canonical-structure-v1.json (20 areas, 544 planned notes)",
+      "state/synthesis/file-mapping-v1.jsonl (609 files -> notes)",
+      "state/dispositions/001-disp001-rule-driven.jsonl (per-KU destinations)",
+      "six v2 dossiers (concept evidence packs)",
+      "three confirmed gaps (second moment, bradley-terry, async def) for dedicated treatment"
+    ],
+    "outputs": [
+      "output/Unified-Vault/<area>/<note>.md batches passing the FRAME-002 pipeline (check-prompt -> generation -> lint-artifacts -> assess-quality -> quality-drift -> quality-gate -> repair loop)"
+    ],
+    "acceptance_criteria": [
+      "every batch passes audit-output (KU accounting, disposition/destination resolution, marker retention, link integrity, editorial lint)",
+      "machine-verified citations for every accepted note",
+      "the three confirmed gaps receive dedicated treatments",
+      "no early-polished/late-thin drift across batches",
+      "registry destinations resolve to real notes"
+    ],
+    "forbidden_side_effects": [
+      "never modify source vaults",
+      "never weaken the quality floor to hit the deadline (escalate instead)",
+      "no merge narration in ordinary notes"
+    ],
+    "suggested_first_batch": "One full area end-to-end (e.g. 04 - Machine Learning: 40 source files, 27 canonical notes, 1,829 KUs) to calibrate the pipeline, then parallel area batches."
+  },
+  "scratch_regenerable": {
+    "note": "scratch/ is git-ignored and disposable. The committed state/synthesis/file-mapping-v1.jsonl and canonical-structure-v1.json ARE the durable mapping record (the subagent intermediates in scratch/s19-mapping/ are redundant). The disposition ledger regenerates deterministically via vu assign-dispositions from committed inputs. The registry DB rebuilds via kureg-init --force + kureg-load x70 + kureg-apply-dispositions."
+  },
+  "git_state_at_checkpoint": "uncommitted changes staged for the single session-19 work commit (to be created immediately after this checkpoint is written); push to main follows, then the push-verification record commit"
+}
