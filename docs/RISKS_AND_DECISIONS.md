@@ -475,3 +475,19 @@ src/vault_unification/cli.py (assign-dispositions,
 kureg-apply-dispositions), scripts/s19_area_filelists.py,
 scripts/s19_verify_mapping.py, scripts/s19_integrate_mapping.py,
 reports/dispositions/*, tests/test_dispositions.py, this register.
+
+
+### ADR-0015 — Continuous commit-and-push persistence across sessions
+**Status:** accepted (2026-11-02, explicit user directive)
+
+**Context:** The user requires repository progress to be visible on GitHub throughout a working session and recoverable if a GLM 5.3 session, subagent, or execution environment is interrupted. The prior handoff said to push before session end, while the accelerated policy constrained work to one work commit per session plus a push-verification record. That cadence can leave substantial verified work stranded locally and is insufficient for interruption recovery.
+
+**Options considered:** (1) retain session-end pushes (rejected: interruption can lose all unpushed progress); (2) commit every tiny operation and create a separate verification commit after every push (rejected: excessive noise and recursive bookkeeping); (3) commit each bounded, coherent, checked unit, push immediately, verify the remote ref, and record evidence in existing session artifacts (selected).
+
+**Decision:** Option 3. Each bounded coherent unit is committed once its applicable checks pass and pushed immediately to the canonical `main` branch. Long tasks use intermediate recovery checkpoints. The unpushed window is kept as close to zero as possible. Every push is verified by inspecting the remote ref and recording the commit SHA, branch, result, and evidence in the existing checkpoint/handoff. If direct pushes to `main` are blocked, the active head branch is pushed immediately and merged into `main` as soon as permitted. Concurrent changes are reconciled by fetching and merging; force-pushes and history destruction are prohibited.
+
+**Credential security:** PATs and other credentials must never appear in prompts or tracked files. Authentication uses secure Git credentials, a GitHub App connection, or environment/secret storage. If authentication is unavailable, the agent reports the blocker and does not ask for a token to be pasted into repository content.
+
+**Consequences:** The former one-work-commit-per-session cadence in policy §4.4 is superseded. This does not require a separate verification-only commit and does not authorize broken commits, weakened tests, or bookkeeping-only sessions. A local commit without a verified remote push is not considered durable progress.
+
+**Affected artifacts:** `AGENTS.md` §13; `ENTRY_PROMPT.md`; `docs/ACCELERATED_COMPLETION_POLICY.md` §4.4 and §10; this decision log.
