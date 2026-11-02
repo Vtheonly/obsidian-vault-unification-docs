@@ -1,10 +1,10 @@
 {
   "command": "kureg-init",
   "result": {
-    "db_path": "/home/z/my-project/repo/scratch/s22-registry.db",
+    "db_path": "/home/z/my-project/obsidian-vault-unification-docs/scratch/s22-registry.db",
     "registry_schema_version": 2,
     "id_namespace": "vault_unification-ku-v1",
-    "created_utc": "2026-11-02T10:32:24+00:00",
+    "created_utc": "2026-11-02T21:03:51+00:00",
     "force_used": true
   },
   "report_meta": {
@@ -17,9 +17,9 @@
       "db": "scratch/s22-registry.db",
       "force": true,
       "protected_root": null,
-      "report": "/home/z/my-project/repo/reports/synthesis/s22-kureg-init.json"
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s22-kureg-init.json"
     },
-    "utc_timestamp": "2026-11-02T10:32:24+00:00",
-    "git_commit": "45c9da7"
+    "utc_timestamp": "2026-11-02T21:03:51+00:00",
+    "git_commit": "6f7730e"
   }
 }

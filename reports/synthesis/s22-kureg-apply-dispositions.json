@@ -29,7 +29,7 @@
       "protected_root": null,
       "report": "reports/synthesis/s22-kureg-apply-dispositions.json"
     },
-    "utc_timestamp": "2026-11-02T10:34:16+00:00",
-    "git_commit": "45c9da7"
+    "utc_timestamp": "2026-11-02T21:05:44+00:00",
+    "git_commit": "6f7730e"
   }
 }
