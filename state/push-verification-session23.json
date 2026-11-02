@@ -1,0 +1,34 @@
+{
+ "session": 23,
+ "pushes": [
+  {
+   "purpose": "pipeline prep unit (AREA_CONFIG 10-14, s23 link rules, inputs + checkprompts 69/69, baseline evidence)",
+   "range": "6f7730e..6084a39",
+   "verified_remote_head": "6084a39aa348d536d4369e06ddf606c8f80bf651"
+  },
+  {
+   "purpose": "waves A+B content notes (27/69 on disk: area 10 x6, area 12 x11, area 13 x10) + wave scripts",
+   "range": "6084a39..1773652",
+   "verified_remote_head": "1773652d15a5703398281d56bbdb64b8a83afc90"
+  },
+  {
+   "purpose": "waves C+D content notes (63/69 on disk: area 11 x11, area 14 x25)",
+   "range": "1773652..f7b4854",
+   "verified_remote_head": "f7b4854d7cdd2e182932125698aacfdddd235986"
+  },
+  {
+   "purpose": "all 69 notes + repairs + all five audits valid=true 0 findings + lint 0 errors",
+   "range": "f7b4854..0cbc983",
+   "verified_remote_head": "0cbc983df02dc40bb47734f0134df6fc899f4236"
+  },
+  {
+   "purpose": "gates 5/5 pass with evidence-backed waivers + checkpoint + ledger row 23 + handoff + README",
+   "range": "0cbc983..d1f86d4",
+   "verified_remote_head": "d1f86d496a30fa4d4d8691b6074b681d3ea6d696"
+  }
+ ],
+ "final_verification": {
+  "method": "git fetch origin; git rev-parse origin/main; git rev-parse HEAD — both equal d1f86d496a30fa4d4d8691b6074b681d3ea6d696; working tree clean after commit",
+  "date": "2026-11-03"
+ }
+}
