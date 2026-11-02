@@ -1,0 +1,29 @@
+{
+ "area": "06 - Computer Vision",
+ "slug": "area06",
+ "notes": 79,
+ "source_files": 84,
+ "kus": 4983,
+ "kus_by_disposition": {
+  "Preserved": 4392,
+  "Consolidated": 591
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 172,
+ "total_source_words": 231141,
+ "scratch_dir": "scratch/synth/area06",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "at least one area-root orientation note (CNN Course Overview for CNN-side subfamilies, Image Processing Global Index for classical image-processing subfamilies, CNN Mastery Roadmap for either)",
+  "colliding": "Activation and Pooling Layers, Backpropagation and Gradient Flow in CNNs, Common Mistakes and How to Fix Them, Core Architecture and Philosophy, Evolution of CNN Architectures, Inception Architecture Deep Dive, Introduction and Foundations of CNNs, PyTorch Advanced - VGG16 and Pre-trained Models, PyTorch Implementation Basics, ResNet Bottleneck Blocks and Architectural Variants, The Degradation Problem and Residual Connections, The Full Training Pipeline End-to-End Checklist, Transfer Learning and Fine-Tuning, VGG16 Architecture Deep Dive",
+  "explicit_types": 21
+ }
+}

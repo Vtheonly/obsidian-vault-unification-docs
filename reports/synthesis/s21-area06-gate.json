@@ -1,0 +1,53 @@
+{
+  "result": {
+    "passed": true,
+    "criteria": [
+      "every expected note assessed or explicitly unresolved",
+      "every note lint-error clean (allowed: 0)",
+      "every measured dimension within its type band or explicitly waived with reason",
+      "no unexplained systematic quality drift"
+    ],
+    "failures": [],
+    "notes_assessed": 79,
+    "waivers_applied": [
+      [
+        "drift::concept",
+        "Content-family artifact, not editorial thinning: the 58 concept notes span two source families \u2014 first-third notes are the CNN-course subfamilies (code-rich PyTorch walkthroughs, e.g. VGG16 Deep Dive, ResNet Bottleneck Blocks), last-third notes are the classical image-processing subfamilies (Morphological, Spatial Filtering \u2014 prose-rich, formula-light sources of 300-1,100 words). Evidence: (1) all 79 area-06 notes individually within band (0 dimensions below band across all 127 assessed notes, reports/synthesis/s21-area06-assess.json); (2) audit-output valid=true with 0 findings over all 4,983 area-06 KUs (reports/synthesis/s21-area06-audit.json) \u2014 every source equation, code block and rare term preserved; (3) the examples/math_rigor deltas track the sources' code/math density, which the audit proves was preserved verbatim."
+      ],
+      [
+        "drift::example",
+        "Content-family artifact: the 5 example notes span CNN Solved Exercises (first, code-rich: 21 code fences, 37 display-math blocks from the engineering exercise source) versus the four classical quizzes (last: pure Q&A banks whose sources contain no code and only inline math \u2014 verified verbatim-preserved by audit-output 0 findings over all 313 quiz KUs, incl. every question and answer). All notes individually within band (0 dimensions below band)."
+      ],
+      [
+        "drift::overview",
+        "Content-family artifact: the 3 overview notes are the area-root orientation notes; CNN Course Overview (first) carries the CNN-side advice text with example markers, while Image Processing Global Index (last) is a pure link index whose source has no example markers and no math \u2014 preserved faithfully (audit-output 0 findings; all 13 KUs verified). All notes individually within band."
+      ],
+      [
+        "drift::tutorial",
+        "Content-family artifact: the 3 tutorial notes differ in source math density \u2014 PyTorch Advanced (first) carries formula-heavy worked examples (display math throughout), Transfer Learning and Fine-Tuning (last) is a workflow/strategy treatment whose math is predominantly inline. The last-third note's 55 KUs are all verified preserved (audit-output 0 findings), and all notes are individually within band (0 dimensions below band)."
+      ]
+    ],
+    "verdict": "pass"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-gate",
+    "args": {
+      "command": "quality-gate",
+      "assessments": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area06/gates/assessments.jsonl",
+      "expected": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area06/expected-notes.txt",
+      "drift_report": "reports/synthesis/s21-area06-drift.json",
+      "waivers": [
+        "drift::concept=Content-family artifact, not editorial thinning: the 58 concept notes span two source families \u2014 first-third notes are the CNN-course subfamilies (code-rich PyTorch walkthroughs, e.g. VGG16 Deep Dive, ResNet Bottleneck Blocks), last-third notes are the classical image-processing subfamilies (Morphological, Spatial Filtering \u2014 prose-rich, formula-light sources of 300-1,100 words). Evidence: (1) all 79 area-06 notes individually within band (0 dimensions below band across all 127 assessed notes, reports/synthesis/s21-area06-assess.json); (2) audit-output valid=true with 0 findings over all 4,983 area-06 KUs (reports/synthesis/s21-area06-audit.json) \u2014 every source equation, code block and rare term preserved; (3) the examples/math_rigor deltas track the sources' code/math density, which the audit proves was preserved verbatim.",
+        "drift::example=Content-family artifact: the 5 example notes span CNN Solved Exercises (first, code-rich: 21 code fences, 37 display-math blocks from the engineering exercise source) versus the four classical quizzes (last: pure Q&A banks whose sources contain no code and only inline math \u2014 verified verbatim-preserved by audit-output 0 findings over all 313 quiz KUs, incl. every question and answer). All notes individually within band (0 dimensions below band).",
+        "drift::overview=Content-family artifact: the 3 overview notes are the area-root orientation notes; CNN Course Overview (first) carries the CNN-side advice text with example markers, while Image Processing Global Index (last) is a pure link index whose source has no example markers and no math \u2014 preserved faithfully (audit-output 0 findings; all 13 KUs verified). All notes individually within band.",
+        "drift::tutorial=Content-family artifact: the 3 tutorial notes differ in source math density \u2014 PyTorch Advanced (first) carries formula-heavy worked examples (display math throughout), Transfer Learning and Fine-Tuning (last) is a workflow/strategy treatment whose math is predominantly inline. The last-third note's 55 KUs are all verified preserved (audit-output 0 findings), and all notes are individually within band (0 dimensions below band)."
+      ],
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s21-area06-gate.json"
+    },
+    "utc_timestamp": "2026-11-02T01:07:38+00:00",
+    "git_commit": "cbaed73"
+  }
+}

@@ -332,3 +332,77 @@ def test_scaffold_plus_content_still_counts_as_code():
 
     text = "```\n---\n### File 2: x.md\nprint('real code')\n```\n"
     assert _code_bodies(text) == ["---\n### File 2: x.md\nprint('real code')"]
+
+
+# F-0031: code fingerprints are indentation-insensitive (common leading
+# whitespace stripped): source fences indented by their list-item context
+# match the same code dedented in the output note.
+
+
+def test_code_fingerprint_dedents_common_indentation():
+    from vault_unification.omission import _code_bodies
+
+    indented = "```python\n    transforms.Normalize(\n        mean=[0.485, 0.456, 0.406],\n    )\n```"
+    dedented = "```python\ntransforms.Normalize(\n    mean=[0.485, 0.456, 0.406],\n)\n```"
+    assert _code_bodies(indented) == _code_bodies(dedented)
+    assert _code_bodies(dedented) == ["transforms.Normalize(\n    mean=[0.485, 0.456, 0.406],\n)"]
+
+
+def test_code_fingerprint_keeps_relative_indentation():
+    from vault_unification.omission import _code_bodies
+
+    # inner (relative) indentation must survive the dedent
+    text = "```python\ndef f():\n    return 1\n```"
+    assert _code_bodies(text) == ["def f():\n    return 1"]
+
+
+def test_code_fingerprint_zero_indent_unchanged():
+    from vault_unification.omission import _code_bodies
+
+    text = "```text\n01 - Prerequisites/\n    1. Derivatives\n```"
+    assert _code_bodies(text) == ["01 - Prerequisites/\n    1. Derivatives"]
+
+
+# F-0030: a LEADING YAML frontmatter block in a KU excerpt is source-note
+# provenance metadata (its own sources: wikilist), not knowledge — its tokens
+# (wikilink basenames like 'objectives.md') are not term markers.
+
+
+def test_frontmatter_terms_are_not_markers():
+    from vault_unification.omission import markers_for_record
+
+    record = {
+        "excerpt": (
+            "---\nsources:\n  - \"[[Course Objectives.md]]\"\n  - \"[[2.0 Image Noise and Degradation.md]]\"\n---\n\n"
+            "# Question 1\n\nWhat is the Nyquist sampling theorem?"
+        )
+    }
+    freq = {"objectives.md": 1, "degradation.md": 1, "nyquist": 1, "sampling": 1, "theorem": 1}
+    markers = markers_for_record(record, freq)
+    terms = markers["terms"]
+    assert "objectives.md" not in terms
+    assert "degradation.md" not in terms
+    # body terms are still markers
+    assert "nyquist" in terms
+
+
+def test_frontmatter_math_and_code_still_markers():
+    from vault_unification.omission import markers_for_record
+
+    # frontmatter never carries math/code, but a mid-excerpt hr must not
+    # disable term extraction for the text after it
+    record = {
+        "excerpt": "---\ntags: [quiz]\n---\n\nBody with raresupercalifragilistic term.\n\n---\n\nMore text."
+    }
+    freq = {"raresupercalifragilistic": 1}
+    markers = markers_for_record(record, freq)
+    assert "raresupercalifragilistic" in markers["terms"]
+
+
+def test_no_frontmatter_excerpt_unchanged():
+    from vault_unification.omission import markers_for_record
+
+    record = {"excerpt": "Plain excerpt with an uncommonterm inside."}
+    freq = {"uncommonterm": 1, "excerpt": 1}
+    markers = markers_for_record(record, freq)
+    assert "uncommonterm" in markers["terms"]

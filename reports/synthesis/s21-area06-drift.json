@@ -1,0 +1,307 @@
+{
+  "result": {
+    "standards_version": "1.0.0",
+    "thresholds": {
+      "rel_drop": 0.15,
+      "abs_drop": 0.1
+    },
+    "drifted_types": [
+      {
+        "type": "concept",
+        "notes": 58,
+        "first_third": [
+          "06 - Computer Vision/Advanced Operators/Advanced Convolutional Operators - Depthwise, Dilated, Transposed, Grouped.md",
+          "06 - Computer Vision/Architecture and Connectivity/Evolution of CNN Architectures.md",
+          "06 - Computer Vision/Architecture and Connectivity/Hierarchical Feature Extraction.md",
+          "06 - Computer Vision/Architecture and Connectivity/Inception Architecture Deep Dive.md",
+          "06 - Computer Vision/Architecture and Connectivity/Local Connectivity and Parameter Sharing.md",
+          "06 - Computer Vision/Architecture and Connectivity/ResNet Bottleneck Blocks and Architectural Variants.md",
+          "06 - Computer Vision/Architecture and Connectivity/The Degradation Problem and Residual Connections.md",
+          "06 - Computer Vision/Architecture and Connectivity/The Fully Connected Layer and Flattening.md",
+          "06 - Computer Vision/Architecture and Connectivity/VGG16 Architecture Deep Dive.md",
+          "06 - Computer Vision/CNN Foundations and Philosophy/Core Architecture and Philosophy.md",
+          "06 - Computer Vision/CNN Foundations and Philosophy/Demystifying Tensors - Volumes, Depth, and Data Formats.md",
+          "06 - Computer Vision/CNN Foundations and Philosophy/From Basic Convolution to Learned Weights.md",
+          "06 - Computer Vision/CNN Foundations and Philosophy/Introduction and Foundations of CNNs.md",
+          "06 - Computer Vision/CNN Foundations and Philosophy/Processing 3D Volumes, Depth Summation, and Biases.md",
+          "06 - Computer Vision/Core Operators and Geometry/Activation and Pooling Layers.md",
+          "06 - Computer Vision/Core Operators and Geometry/Advanced Pooling and Global Average Pooling.md",
+          "06 - Computer Vision/Core Operators and Geometry/Padding - Mathematics, Edge Effects, and Valid vs Same.md",
+          "06 - Computer Vision/Core Operators and Geometry/Receptive Fields and 1x1 Convolutions.md",
+          "06 - Computer Vision/Core Operators and Geometry/Strides - Skipping Pixels and Downsampling.md"
+        ],
+        "last_third": [
+          "06 - Computer Vision/Morphological Processing and Segmentation/Erosion and Dilation.md",
+          "06 - Computer Vision/Morphological Processing and Segmentation/Mathematical Morphology Basics.md",
+          "06 - Computer Vision/Morphological Processing and Segmentation/Morphological Algorithms.md",
+          "06 - Computer Vision/Morphological Processing and Segmentation/Opening and Closing.md",
+          "06 - Computer Vision/Morphological Processing and Segmentation/Thresholding and Otsu's Method.md",
+          "06 - Computer Vision/Morphological Processing and Segmentation/Watershed Segmentation.md",
+          "06 - Computer Vision/Pipeline Evaluation and Interpretability/CNN Interpretability.md",
+          "06 - Computer Vision/Pipeline Evaluation and Interpretability/Common Mistakes and How to Fix Them.md",
+          "06 - Computer Vision/Spatial Filtering/Canny and LoG Edge Detection.md",
+          "06 - Computer Vision/Spatial Filtering/Edge Preserving Filters.md",
+          "06 - Computer Vision/Spatial Filtering/Feature Descriptors - SIFT, SURF, ORB, HOG.md",
+          "06 - Computer Vision/Spatial Filtering/Gabor Filters.md",
+          "06 - Computer Vision/Spatial Filtering/Geometric Transformations and Interpolation.md",
+          "06 - Computer Vision/Spatial Filtering/Image Pyramids and Multi-Scale Representation.md",
+          "06 - Computer Vision/Spatial Filtering/Linear Smoothing Filters.md",
+          "06 - Computer Vision/Spatial Filtering/Non-Linear Smoothing Filters.md",
+          "06 - Computer Vision/Spatial Filtering/Sharpening and Edge Detection.md",
+          "06 - Computer Vision/Spatial Filtering/The Hough Transform.md",
+          "06 - Computer Vision/Spatial Filtering/The Mechanics of Spatial Filtering.md"
+        ],
+        "overall_first_third_mean": 0.9134,
+        "overall_last_third_mean": 0.9034,
+        "drifted_dimensions": [
+          {
+            "dimension": "examples",
+            "first_third_mean": 0.9789,
+            "last_third_mean": 0.6526,
+            "delta": -0.3263,
+            "relative_drop": 0.3333,
+            "first_notes": [
+              "06 - Computer Vision/Advanced Operators/Advanced Convolutional Operators - Depthwise, Dilated, Transposed, Grouped.md",
+              "06 - Computer Vision/Architecture and Connectivity/Evolution of CNN Architectures.md",
+              "06 - Computer Vision/Architecture and Connectivity/Hierarchical Feature Extraction.md",
+              "06 - Computer Vision/Architecture and Connectivity/Inception Architecture Deep Dive.md",
+              "06 - Computer Vision/Architecture and Connectivity/Local Connectivity and Parameter Sharing.md",
+              "06 - Computer Vision/Architecture and Connectivity/ResNet Bottleneck Blocks and Architectural Variants.md",
+              "06 - Computer Vision/Architecture and Connectivity/The Degradation Problem and Residual Connections.md",
+              "06 - Computer Vision/Architecture and Connectivity/The Fully Connected Layer and Flattening.md",
+              "06 - Computer Vision/Architecture and Connectivity/VGG16 Architecture Deep Dive.md",
+              "06 - Computer Vision/CNN Foundations and Philosophy/Core Architecture and Philosophy.md",
+              "06 - Computer Vision/CNN Foundations and Philosophy/Demystifying Tensors - Volumes, Depth, and Data Formats.md",
+              "06 - Computer Vision/CNN Foundations and Philosophy/From Basic Convolution to Learned Weights.md",
+              "06 - Computer Vision/CNN Foundations and Philosophy/Introduction and Foundations of CNNs.md",
+              "06 - Computer Vision/CNN Foundations and Philosophy/Processing 3D Volumes, Depth Summation, and Biases.md",
+              "06 - Computer Vision/Core Operators and Geometry/Activation and Pooling Layers.md",
+              "06 - Computer Vision/Core Operators and Geometry/Advanced Pooling and Global Average Pooling.md",
+              "06 - Computer Vision/Core Operators and Geometry/Padding - Mathematics, Edge Effects, and Valid vs Same.md",
+              "06 - Computer Vision/Core Operators and Geometry/Receptive Fields and 1x1 Convolutions.md",
+              "06 - Computer Vision/Core Operators and Geometry/Strides - Skipping Pixels and Downsampling.md"
+            ],
+            "last_notes": [
+              "06 - Computer Vision/Morphological Processing and Segmentation/Erosion and Dilation.md",
+              "06 - Computer Vision/Morphological Processing and Segmentation/Mathematical Morphology Basics.md",
+              "06 - Computer Vision/Morphological Processing and Segmentation/Morphological Algorithms.md",
+              "06 - Computer Vision/Morphological Processing and Segmentation/Opening and Closing.md",
+              "06 - Computer Vision/Morphological Processing and Segmentation/Thresholding and Otsu's Method.md",
+              "06 - Computer Vision/Morphological Processing and Segmentation/Watershed Segmentation.md",
+              "06 - Computer Vision/Pipeline Evaluation and Interpretability/CNN Interpretability.md",
+              "06 - Computer Vision/Pipeline Evaluation and Interpretability/Common Mistakes and How to Fix Them.md",
+              "06 - Computer Vision/Spatial Filtering/Canny and LoG Edge Detection.md",
+              "06 - Computer Vision/Spatial Filtering/Edge Preserving Filters.md",
+              "06 - Computer Vision/Spatial Filtering/Feature Descriptors - SIFT, SURF, ORB, HOG.md",
+              "06 - Computer Vision/Spatial Filtering/Gabor Filters.md",
+              "06 - Computer Vision/Spatial Filtering/Geometric Transformations and Interpolation.md",
+              "06 - Computer Vision/Spatial Filtering/Image Pyramids and Multi-Scale Representation.md",
+              "06 - Computer Vision/Spatial Filtering/Linear Smoothing Filters.md",
+              "06 - Computer Vision/Spatial Filtering/Non-Linear Smoothing Filters.md",
+              "06 - Computer Vision/Spatial Filtering/Sharpening and Edge Detection.md",
+              "06 - Computer Vision/Spatial Filtering/The Hough Transform.md",
+              "06 - Computer Vision/Spatial Filtering/The Mechanics of Spatial Filtering.md"
+            ]
+          },
+          {
+            "dimension": "math_rigor",
+            "first_third_mean": 0.7711,
+            "last_third_mean": 0.5684,
+            "delta": -0.2026,
+            "relative_drop": 0.2628,
+            "first_notes": [
+              "06 - Computer Vision/Advanced Operators/Advanced Convolutional Operators - Depthwise, Dilated, Transposed, Grouped.md",
+              "06 - Computer Vision/Architecture and Connectivity/Evolution of CNN Architectures.md",
+              "06 - Computer Vision/Architecture and Connectivity/Hierarchical Feature Extraction.md",
+              "06 - Computer Vision/Architecture and Connectivity/Inception Architecture Deep Dive.md",
+              "06 - Computer Vision/Architecture and Connectivity/Local Connectivity and Parameter Sharing.md",
+              "06 - Computer Vision/Architecture and Connectivity/ResNet Bottleneck Blocks and Architectural Variants.md",
+              "06 - Computer Vision/Architecture and Connectivity/The Degradation Problem and Residual Connections.md",
+              "06 - Computer Vision/Architecture and Connectivity/The Fully Connected Layer and Flattening.md",
+              "06 - Computer Vision/Architecture and Connectivity/VGG16 Architecture Deep Dive.md",
+              "06 - Computer Vision/CNN Foundations and Philosophy/Core Architecture and Philosophy.md",
+              "06 - Computer Vision/CNN Foundations and Philosophy/Demystifying Tensors - Volumes, Depth, and Data Formats.md",
+              "06 - Computer Vision/CNN Foundations and Philosophy/From Basic Convolution to Learned Weights.md",
+              "06 - Computer Vision/CNN Foundations and Philosophy/Introduction and Foundations of CNNs.md",
+              "06 - Computer Vision/CNN Foundations and Philosophy/Processing 3D Volumes, Depth Summation, and Biases.md",
+              "06 - Computer Vision/Core Operators and Geometry/Activation and Pooling Layers.md",
+              "06 - Computer Vision/Core Operators and Geometry/Advanced Pooling and Global Average Pooling.md",
+              "06 - Computer Vision/Core Operators and Geometry/Padding - Mathematics, Edge Effects, and Valid vs Same.md",
+              "06 - Computer Vision/Core Operators and Geometry/Receptive Fields and 1x1 Convolutions.md",
+              "06 - Computer Vision/Core Operators and Geometry/Strides - Skipping Pixels and Downsampling.md"
+            ],
+            "last_notes": [
+              "06 - Computer Vision/Morphological Processing and Segmentation/Erosion and Dilation.md",
+              "06 - Computer Vision/Morphological Processing and Segmentation/Mathematical Morphology Basics.md",
+              "06 - Computer Vision/Morphological Processing and Segmentation/Morphological Algorithms.md",
+              "06 - Computer Vision/Morphological Processing and Segmentation/Opening and Closing.md",
+              "06 - Computer Vision/Morphological Processing and Segmentation/Thresholding and Otsu's Method.md",
+              "06 - Computer Vision/Morphological Processing and Segmentation/Watershed Segmentation.md",
+              "06 - Computer Vision/Pipeline Evaluation and Interpretability/CNN Interpretability.md",
+              "06 - Computer Vision/Pipeline Evaluation and Interpretability/Common Mistakes and How to Fix Them.md",
+              "06 - Computer Vision/Spatial Filtering/Canny and LoG Edge Detection.md",
+              "06 - Computer Vision/Spatial Filtering/Edge Preserving Filters.md",
+              "06 - Computer Vision/Spatial Filtering/Feature Descriptors - SIFT, SURF, ORB, HOG.md",
+              "06 - Computer Vision/Spatial Filtering/Gabor Filters.md",
+              "06 - Computer Vision/Spatial Filtering/Geometric Transformations and Interpolation.md",
+              "06 - Computer Vision/Spatial Filtering/Image Pyramids and Multi-Scale Representation.md",
+              "06 - Computer Vision/Spatial Filtering/Linear Smoothing Filters.md",
+              "06 - Computer Vision/Spatial Filtering/Non-Linear Smoothing Filters.md",
+              "06 - Computer Vision/Spatial Filtering/Sharpening and Edge Detection.md",
+              "06 - Computer Vision/Spatial Filtering/The Hough Transform.md",
+              "06 - Computer Vision/Spatial Filtering/The Mechanics of Spatial Filtering.md"
+            ]
+          }
+        ],
+        "verdict": "drift_detected"
+      },
+      {
+        "type": "example",
+        "notes": 5,
+        "first_third": [
+          "06 - Computer Vision/Quizzes/CNN Solved Exercises.md"
+        ],
+        "last_third": [
+          "06 - Computer Vision/Quizzes/Spatial Filtering and Convolution Quiz.md"
+        ],
+        "overall_first_third_mean": 0.9179,
+        "overall_last_third_mean": 0.7609,
+        "drifted_dimensions": [
+          {
+            "dimension": "examples",
+            "first_third_mean": 1.0,
+            "last_third_mean": 0.6,
+            "delta": -0.4,
+            "relative_drop": 0.4,
+            "first_notes": [
+              "06 - Computer Vision/Quizzes/CNN Solved Exercises.md"
+            ],
+            "last_notes": [
+              "06 - Computer Vision/Quizzes/Spatial Filtering and Convolution Quiz.md"
+            ]
+          },
+          {
+            "dimension": "math_rigor",
+            "first_third_mean": 1.0,
+            "last_third_mean": 0.2,
+            "delta": -0.8,
+            "relative_drop": 0.8,
+            "first_notes": [
+              "06 - Computer Vision/Quizzes/CNN Solved Exercises.md"
+            ],
+            "last_notes": [
+              "06 - Computer Vision/Quizzes/Spatial Filtering and Convolution Quiz.md"
+            ]
+          }
+        ],
+        "verdict": "drift_detected"
+      },
+      {
+        "type": "overview",
+        "notes": 3,
+        "first_third": [
+          "06 - Computer Vision/CNN Course Overview.md"
+        ],
+        "last_third": [
+          "06 - Computer Vision/Image Processing Global Index.md"
+        ],
+        "overall_first_third_mean": 0.9631,
+        "overall_last_third_mean": 0.933,
+        "drifted_dimensions": [
+          {
+            "dimension": "examples",
+            "first_third_mean": 0.6,
+            "last_third_mean": 0.0,
+            "delta": -0.6,
+            "relative_drop": 1.0,
+            "first_notes": [
+              "06 - Computer Vision/CNN Course Overview.md"
+            ],
+            "last_notes": [
+              "06 - Computer Vision/Image Processing Global Index.md"
+            ]
+          },
+          {
+            "dimension": "math_rigor",
+            "first_third_mean": 0.2,
+            "last_third_mean": 0.0,
+            "delta": -0.2,
+            "relative_drop": 1.0,
+            "first_notes": [
+              "06 - Computer Vision/CNN Course Overview.md"
+            ],
+            "last_notes": [
+              "06 - Computer Vision/Image Processing Global Index.md"
+            ]
+          }
+        ],
+        "verdict": "drift_detected"
+      },
+      {
+        "type": "tutorial",
+        "notes": 3,
+        "first_third": [
+          "06 - Computer Vision/Training and Transfer Learning/PyTorch Advanced - VGG16 and Pre-trained Models.md"
+        ],
+        "last_third": [
+          "06 - Computer Vision/Training and Transfer Learning/Transfer Learning and Fine-Tuning.md"
+        ],
+        "overall_first_third_mean": 0.9272,
+        "overall_last_third_mean": 0.8948,
+        "drifted_dimensions": [
+          {
+            "dimension": "math_rigor",
+            "first_third_mean": 0.7,
+            "last_third_mean": 0.35,
+            "delta": -0.35,
+            "relative_drop": 0.5,
+            "first_notes": [
+              "06 - Computer Vision/Training and Transfer Learning/PyTorch Advanced - VGG16 and Pre-trained Models.md"
+            ],
+            "last_notes": [
+              "06 - Computer Vision/Training and Transfer Learning/Transfer Learning and Fine-Tuning.md"
+            ]
+          }
+        ],
+        "verdict": "drift_detected"
+      }
+    ],
+    "clean_types": [
+      {
+        "type": "reference",
+        "notes": 10,
+        "first_third": [
+          "06 - Computer Vision/Architecture and Connectivity/VGG and Classic Architectures Summary.md",
+          "06 - Computer Vision/CNN Foundations and Philosophy/Foundations and Philosophy Summary.md",
+          "06 - Computer Vision/Core Operators and Geometry/Core Operators and Geometry Summary.md"
+        ],
+        "last_third": [
+          "06 - Computer Vision/Training and Transfer Learning/Hyperparameters and Basic PyTorch Summary.md",
+          "06 - Computer Vision/Training and Transfer Learning/Normalization, Regularization, and Augmentation Summary.md",
+          "06 - Computer Vision/Training and Transfer Learning/Transfer Learning and ResNet Summary.md"
+        ],
+        "overall_first_third_mean": 0.9396,
+        "overall_last_third_mean": 0.9431,
+        "drifted_dimensions": [],
+        "verdict": "no_systematic_drift"
+      }
+    ],
+    "verdict": "drift_detected",
+    "caveat": "tertile-mean comparison on deterministic dimensions; investigate flagged evidence, do not treat as final judgment"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-drift",
+    "args": {
+      "command": "quality-drift",
+      "assessments": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area06/gates/assessments.jsonl",
+      "rel_drop": 0.15,
+      "abs_drop": 0.1,
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s21-area06-drift.json"
+    },
+    "utc_timestamp": "2026-11-02T01:07:37+00:00",
+    "git_commit": "cbaed73"
+  }
+}

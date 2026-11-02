@@ -27,7 +27,7 @@ loop in :mod:`vault_unification.repair`):
                NOT a full mermaid AST)
 - truncation:  TRUNCATION_OPEN_CONSTRUCT, TRUNCATION_MID_SENTENCE,
                PLACEHOLDER_TEXT, BRACKET_UNBALANCED, EMPTY_SECTION
-- frontmatter: FRONTMATTER_INVALID
+- frontmatter: FRONTMATTER_INVALID, FRONTMATTER_FIELD_TYPE
 
 SEVERITY MODEL:
 - ``error``   — the artifact cannot render as written (unclosed fence/math,
@@ -415,6 +415,84 @@ def _validate_mermaid(body: str, start_line: int) -> list[dict]:
 # core per-file lint
 
 
+# Frontmatter fields whose values are expected to be lists (or at worst a
+# bracket-free scalar). A PLAIN (unquoted) scalar containing '[' or ']' is the
+# clear signature of a hand-typed list with a missing/stray bracket (e.g.
+# ``tags: a, b]``), which YAML silently parses into a weird string instead of
+# a list. Quoted scalars (``sources: "[[Some Note]]"``) are deliberate
+# string values and are NOT flagged.
+_FM_LIST_FIELDS = ("tags", "aliases", "sources")
+_FM_KEY_LINE_RE = re.compile(r"^\s*([A-Za-z0-9_-]+):\s*(.*)$")
+
+
+def _frontmatter_field_defects(
+    fm_data: object, fm_text: str, start_line: int, line_at: "Callable[[int], str]"
+) -> list[dict]:
+    """Shape-check parsed frontmatter; return FRONTMATTER_FIELD_TYPE defects.
+
+    Narrow by design: only clear defect signatures are flagged (plain-scalar
+    brackets, non-scalar list members, non-mapping frontmatter). Quoted
+    scalars, bracket-free scalars and missing keys are NOT flagged — they are
+    not proven defects.
+    """
+    defects: list[dict] = []
+
+    def add(check: str, severity: str, line: int, message: str) -> None:
+        defects.append(
+            {
+                "check": check,
+                "severity": severity,
+                "line": line,
+                "message": message,
+                "excerpt": line_at(line)[:160],
+            }
+        )
+
+    # raw first line of each frontmatter key -> used to detect quoted scalars
+    raw_values: dict[str, str] = {}
+    for raw in fm_text.split("\n"):
+        m = _FM_KEY_LINE_RE.match(raw)
+        if m and m.group(2) != "":
+            raw_values.setdefault(m.group(1), m.group(2).strip())
+
+    if fm_data is None:
+        return defects
+    if not isinstance(fm_data, dict):
+        add(
+            "FRONTMATTER_FIELD_TYPE",
+            "error",
+            start_line,
+            f"frontmatter must be a YAML mapping, got {type(fm_data).__name__}",
+        )
+        return defects
+    for key, value in fm_data.items():
+        if key not in _FM_LIST_FIELDS or value is None:
+            continue
+        line = start_line  # exact member lines are not tracked; block start is close enough
+        if isinstance(value, str):
+            raw = raw_values.get(key, "")
+            quoted = raw[:1] in ('"', "'")
+            if not quoted and ("[" in value or "]" in value):
+                add(
+                    "FRONTMATTER_FIELD_TYPE",
+                    "error",
+                    line,
+                    f"frontmatter field '{key}' is a plain scalar containing brackets: {value!r} "
+                    "(a hand-typed list with a missing opening/closing bracket?)",
+                )
+        elif isinstance(value, list):
+            for member in value:
+                if not isinstance(member, (str, int, float, bool)):
+                    add(
+                        "FRONTMATTER_FIELD_TYPE",
+                        "error",
+                        line,
+                        f"frontmatter field '{key}' has a non-scalar member: {member!r}",
+                    )
+        # other scalar types (int/bool) are left alone: not a proven defect
+    return defects
+
+
 def lint_text(text: str, *, path: str = "<text>") -> dict:
     """Lint one Markdown document; return a defect report (never raises on
     note content — only on invalid arguments)."""
@@ -442,9 +520,15 @@ def lint_text(text: str, *, path: str = "<text>") -> dict:
             import yaml  # optional at runtime, available in the project env
 
             fm_text = "\n".join(text.split("\n")[fm_lines[0] : fm_lines[1] - 1])
-            yaml.safe_load(fm_text)
+            fm_data = yaml.safe_load(fm_text)
         except Exception as exc:  # noqa: BLE001 - report, don't crash
             add("FRONTMATTER_INVALID", "error", int(fm_lines[0]), f"frontmatter YAML failed to parse: {exc}")
+        else:
+            defects.extend(
+                _frontmatter_field_defects(
+                    fm_data, fm_text, int(fm_lines[0]), lambda i: lines[i - 1] if 1 <= i <= len(lines) else ""
+                )
+            )
 
     # -- code fences ------------------------------------------------------
     fence_spans: list[tuple[int, int]] = []

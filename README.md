@@ -10,23 +10,26 @@ universal per-unit dual review is removed in favor of ADR-0011 tiered
 verification; the quality floor (source immutability, full test suite,
 machine-verified citations, release gates) is inviolate.
 
-GATED SYNTHESIS IS UNDERWAY (session 20, 2026-11-02 — SYNTH-001). Area
-04 - Machine Learning is synthesized end-to-end and GREEN through the full
-FRAME-002 gate chain: 27/27 canonical notes (26 written by 13 bounded
-subagents + the MOC by the orchestrator; 87,300 words), lint 0 errors /
-0 warnings, assess-quality 0 dimensions below band, quality-gate PASS
-(one documented drift waiver: a 4-note reference-type ordering artifact),
-and `vu audit-output` valid=true with ZERO findings over all 8 checks for
-all 1,829 area-04 KUs (rare-term, equation and code fingerprints of every
-KU verified present). Deliverable metric: canonical notes verified
-0 → 27/544. The reusable area pipeline is committed
-(`scripts/s20_build_synthesis_inputs.py` → `s20_check_prompts.py` →
-subagent generation → lint/assess/drift/gate → audit-output), editorial
-conventions v1 are recorded in `docs/EDITORIAL_STYLE_GUIDE.md`, and the
-French MNIST lab is preserved verbatim as an appendix inside Linear
-Regression. The first real batch surfaced and fixed six framework defects
-(F-0024..F-0029, 708 → 725 tests, omission pilot re-verified 12/12).
-REMAINING: 15 areas / 517 notes (sessions 21–24), cross-batch consistency
+GATED SYNTHESIS IN PROGRESS (session 21, 2026-11-02 — SYNTH-001). Areas
+04, 05 and 06 are synthesized end-to-end and GREEN through the full gate
+chain: **127/544 canonical notes** (04 - Machine Learning 27; 05 - Neural
+Network Foundations 21; 06 - Computer Vision 79). Session 21 generated all
+100 new notes (99 via 26 bounded subagent groups + the area-05 MOC by the
+orchestrator), ran both audits to **valid=true with 0 findings** (area 05:
+2,411 KUs / 3,975 markers; area 06: 4,983 KUs / 8,958 markers — every
+equation, code block and rare term verified present), lint 0 errors (6
+warnings documented as verbatim-source artifacts: quiz `a) b) c) d)`
+options, `[0,∞)` intervals, a literal `$10` price), gates pass (4
+evidence-backed drift waivers on area 06: content-family artifact, all
+notes individually within band). Framework: F-0030 (source frontmatter in
+KU excerpts is not term-knowledge) + F-0031 (code fingerprints
+dedent-normalized per the contract's "verbatim whitespace-insensitive") +
+FRONTMATTER_FIELD_TYPE lint check; 740/740 tests; omission pilot
+re-verified 12/12 after each marker change. The pipeline is generalized
+(`AREA_CONFIG` in scripts/s20_build_synthesis_inputs.py; reusable
+scripts/s21_run_gates.py) and repair discipline is anchored/idempotent
+(scripts/s21_marker_repairs{,_area06}.py, scripts/s21_lint_repairs.py).
+REMAINING: 13 areas / 417 notes (sessions 22–24), cross-batch consistency
 + the three confirmed-gap treatments (session 25), final verification and
 delivery (session 26).
 

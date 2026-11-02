@@ -1,0 +1,87 @@
+{
+ "checkpoint_id": "checkpoint-2026-11-02-synth001-session21",
+ "date": "2026-11-02",
+ "session_number": 21,
+ "task": {
+  "task_id": "SYNTH-001",
+  "title": "Gated synthesis of the unified vault (area waves)",
+  "status": "in_progress",
+  "completed_this_session": "areas 05 - Neural Network Foundations (21 notes) and 06 - Computer Vision (79 notes) end-to-end through all gates; 100/100 notes generated, both audits valid=true with 0 findings"
+ },
+ "stage": "synthesis-in-progress-areas-04-06-complete",
+ "accelerated_mode": {
+  "session_number": 21,
+  "budget_sessions_consumed": 6,
+  "budget_sessions_remaining": 5,
+  "deliverable_metric_moved": "canonical notes generated and verified (area batch through full gate chain)",
+  "before": 27,
+  "after": 127,
+  "denominator": 544,
+  "failed_session": false,
+  "cause_if_failed": null
+ },
+ "baseline_verification": {
+  "git": "clean tree, HEAD == origin/main == cbaed73 at session start",
+  "tests_first_run": "725/725 passed at session start (first run after editable install)",
+  "source_manifests": {
+   "ai-course": "276/276 unchanged at session start AND end (reports/synthesis/s21-immutable-ai-course{,-final}.json)",
+   "master-ai": "333/333 unchanged at session start AND end (reports/synthesis/s21-immutable-master-ai{,-final}.json)"
+  },
+  "editable_install": "python3 -m pip install -e . completed before baseline tests",
+  "registry_rebuild": "kureg-init + kureg-load x71 + kureg-apply-dispositions (applied=27,536, unaccounted_after=0) + kureg-validate (valid=true, 0 errors, 0 warnings) — exactly as the session-20 checkpoint records"
+ },
+ "work_completed": [
+  {
+   "item": "Synthesis inputs for both areas via the s20 pipeline, now generalized: scripts/s20_build_synthesis_inputs.py carries a per-area AREA_CONFIG (note types, MOC link target, colliding basenames); area-04 rebuild regression-verified byte-identical (bundles identical; reports equal modulo the added area_config field)",
+   "evidence": "reports/synthesis/s21-area05-inputs-report.json (21 notes, 31 files, 2,411 KUs, 0 problems); reports/synthesis/s21-area06-inputs-report.json (79 notes, 84 files, 4,983 KUs, 0 problems); reports/synthesis/s21-area05-checkprompt.json (21/21 ok); s21-area06-checkprompt.json (79/79 ok)"
+  },
+  {
+   "item": "Generation of all 100 notes: 99 by 26 bounded subagent groups (AREA_CONFIG-driven prompts: full evidence bundles + KU checklists + colliding-basename link rules; groups capped at ~4 notes / ~12K source words after two context-deadline retries landed their files anyway) + the area-05 MOC written by the orchestrator; area-06's three orientation notes written last with the full sibling list",
+   "evidence": "output/Unified-Vault/05 - Neural Network Foundations/** (21 notes) and output/Unified-Vault/06 - Computer Vision/** (79 notes); scratch/synth/s21-launch-manifest.json + scripts/s21_pack_waves.py (wave plan, git-ignored scratch is regenerable)"
+  },
+  {
+   "item": "Lint gate: initial 4 errors + 6 warnings; the 4 errors repaired via anchored idempotent scripts/s21_lint_repairs.py (3 unquoted-colon YAML aliases; 1 indented python fence dedented); the 6 warnings documented as verbatim-source artifacts (quiz a) b) c) d) option format x4, [0,∞) interval, literal $10 price) and left untouched per the preservation contract; new FRONTMATTER_FIELD_TYPE lint check added with 9 tests (caught the 3 alias errors itself)",
+   "evidence": "reports/synthesis/s21-lint-vault.json (127 files, 0 errors, 6 documented warnings); src/vault_unification/artifactlint.py + tests/test_artifactlint.py"
+  },
+  {
+   "item": "Quality gates: area 05 assess 21/21 notes 0 dimensions below band (across all 127 assessed notes), drift none, gate PASS; area 06 assess 79/79 notes 0 dimensions below band, drift on 4 types waived with evidence (content-family artifact: CNN-engineering vs classical-image-processing source families; every note individually within band + audit-verified preservation), gate PASS",
+   "evidence": "reports/synthesis/s21-area05-{assess,drift,gate}.json (verdict pass, 0 failures); reports/synthesis/s21-area06-{assess,drift,gate}.json (verdict pass, 0 failures, 4 documented waivers); reusable chain script scripts/s21_run_gates.py"
+  },
+  {
+   "item": "Audit-output GREEN for both areas after root-caused repairs: area 05 40 findings -> 0 (verbatim-form equation/code/term repairs via scripts/s21_marker_repairs.py: 31 repairs + fixups incl. the README directory tree and lesson-file table restored as a historical note); area 06 66 findings -> 0 (52 repairs via scripts/s21_marker_repairs_area06.py) after framework fixes F-0030/F-0031 removed the two systematic false-positive classes",
+   "evidence": "reports/synthesis/s21-area05-audit.json (valid=true, 0 findings, markers 1,521 terms + 2,292 math + 162 code all present over 2,411 KUs); reports/synthesis/s21-area06-audit.json (valid=true, 0 findings, markers 4,165 terms + 4,401 math + 392 code all present over 4,983 KUs)"
+  },
+  {
+   "item": "Framework fixes F-0030 (source frontmatter in KU excerpts is not term-knowledge) and F-0031 (code fingerprints dedent-normalized to match the contract's 'verbatim (whitespace-insensitive)'); each with regression tests; omission pilot re-verified after both: 12/12 detection, 12/12 localization, 0 false positives",
+   "evidence": "state/findings.jsonl F-0030/F-0031; reports/synthesis/s21-omission-pilot-f0030-f0031.json; tests 725 -> 740"
+  },
+  {
+   "item": "Orchestrator independent review: 8/8 semantic probes across 8 notes (receptive-field recurrence, Gabor dual localization, label-smoothing dual reading, Otsu between-class variance, N4/D4/D8 arithmetic verified in code, Xavier element-notation compromise, Canny 5-step pipeline, LSTM additive cell-state gradient highway); F-0014 marker headings confirmed absent from output; every anchored repair was personally verified against its source excerpt",
+   "evidence": "session record (this checkpoint); the 83 anchored repair edits in scripts/s21_marker_repairs{,_area06}.py each cite their source KU"
+  }
+ ],
+ "verification": {
+  "tests_final": "740/740 passed after the last mutation (python3 -m pytest tests/ -q)",
+  "audit": "area 05: valid=true 0 findings over 2,411 KUs; area 06: valid=true 0 findings over 4,983 KUs (7,394 KU memberships total this session; both areas verified self-contained: 0 cross-area destinations)",
+  "gate": "both areas verdict=pass with 0 failures (area 06 carries 4 evidence-backed drift waivers)",
+  "lint": "127 files, 0 errors, 6 warnings (all verbatim-source artifacts, documented)",
+  "independent_review": "8/8 semantic probes passed; F-0014 confirmed absent; the area-05 MOC was orchestrator-written"
+ },
+ "explicit_non_claims": [
+  "99 of the 100 notes were subagent-written; the GATES (not subagent self-reports) are the acceptance evidence; the orchestrator verified every repair edit against its source and probed 8 semantic details across 8 notes.",
+  "Marker retention proves lexical/formula preservation of every KU excerpt; full semantic-fidelity review of the rewritten prose remains the session-25 cross-batch consistency layer plus the release audit.",
+  "Cross-area wikilinks still do not exist by design (areas 04-06 only); they are added in the cross-batch consistency pass once all areas are generated.",
+  "The 6 lint warnings are TRUE observations of faithful source text (quiz option format, interval notation, a literal price), intentionally not 'fixed' — altering them would violate verbatim preservation; the vault's first-session (area-04) record of 0 warnings reflects that area-04 sources contained no such patterns.",
+  "Areas 01-03 and 07-20 are NOT synthesized yet; the unified vault currently contains areas 04, 05 and 06 (127/544 notes).",
+  "The four area-06 drift waivers are documented artifacts with evidence (0 dimensions below band + audit 0 findings), never a hiding of regression; they must be re-checked in the session-25 corpus-wide drift re-audit.",
+  "Tool-output display artifact noted: the IM tool channel strips the two-character sequence '[' + 'm' from displayed text; all suspicious content was verified byte-level via hex dumps (the area-04 MOC 'tags' frontmatter is VALID — an early suspected defect was a display illusion; the FRONTMATTER_FIELD_TYPE check was kept as cheap protection for hand-typed frontmatter)."
+ ],
+ "next_task": {
+  "task_id": "SYNTH-001 (continue)",
+  "what": "areas 07 (Sequence Models, 14 notes) + 08 (Attention and Transformers, 38 notes) + 09 (NLP and Language Models, 11 notes) = 63 notes via the s21 pipeline: s20_build_synthesis_inputs --area/--slug (AREA_CONFIG entries needed for 07/08/09) -> s20_check_prompts -> subagent waves (cap ~4 notes / ~12K source words per agent) -> scripts/s21_run_gates.py <slug> (add --waiver only with evidence) -> vu audit-output; root-cause findings like session 21 (anchored repairs + framework fixes with tests)",
+  "budget_arithmetic": "5 sessions remain (22-26); 417/544 notes remain; suggested: 22: areas 07+08+09 (63); 23: areas 10+11+12 (7+13+12=32) + 13+14 (11+26=37) if capacity allows; 24: areas 15+16+17 (41+31+56=128) + 18+19 (25+48=73); 25: cross-batch consistency + gap treatments + cross-area links; 26: final verification + delivery. Sessions 22-24 must average ~139 notes/session — widen subagent waves (more parallel groups), never the floor.",
+  "resume": "see docs/agent-handoff/next-agent.md"
+ },
+ "commit": "PENDING (this checkpoint is committed with the session work)",
+ "push_verification": "PENDING (recorded in state/push-verification-session21.json after push)"
+}

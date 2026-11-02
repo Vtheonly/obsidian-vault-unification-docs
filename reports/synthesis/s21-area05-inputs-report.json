@@ -1,0 +1,30 @@
+{
+ "area": "05 - Neural Network Foundations",
+ "slug": "area05",
+ "notes": 21,
+ "source_files": 31,
+ "kus": 2411,
+ "kus_by_disposition": {
+  "Preserved": 862,
+  "Consolidated": 1548,
+  "Superseded": 1
+ },
+ "kus_multi_destination_within_area": 514,
+ "concepts_anchored": 434,
+ "total_source_words": 119512,
+ "scratch_dir": "scratch/synth/area05",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "Neural Network Foundations MOC",
+  "colliding": "Batch Normalization, Data Augmentation, Dropout and Regularization, Hyperparameters and Network Configuration, Vanishing and Exploding Gradients, Weight Initialization",
+  "explicit_types": 8
+ }
+}

@@ -194,6 +194,7 @@ last, if at all.
 | 18 | 2026-11-01 | dossier-extension pairs classified | 69,185/69,185 (5,441 participate / 63,744 reject-pair; 5,168 participant KUs; 294 extension records; tiered ADR-0011 pipeline, 2 calibration pull-backs, 4 review rounds) | 8 |
 | 19 | 2026-11-01 | KU dispositions assigned | 27,536/27,536; Unaccounted = 0 (Preserved 18,478 / Consolidated 8,106 / Contextualized 950 / Superseded 2; ADR-0014 rule engine + synthesis mapping 609 files / 544 notes + dossier v2 + F-0022 repair + F-0023 fix) | 7 |
 | 20 | 2026-11-02 | canonical notes generated + verified (area 04 end-to-end) | 27/544 notes green through lint/assess/drift/gate + audit-output 0 findings over 1,829 KUs; framework F-0024..F-0029 fixed (708→725 tests, pilot re-verified 12/12); editorial conventions v1 recorded | 6 |
+| 21 | 2026-11-02 | canonical notes generated + verified (areas 05 + 06 end-to-end) | 127/544 notes (21 + 79); both audits valid=true 0 findings over 7,394 KU memberships (5,686 math + 3,929 term + 554 code markers verified present); gates pass (4 evidence-backed drift waivers); lint 0 errors/6 documented source-format warnings; F-0030/F-0031 fixed (725→740 tests, pilot re-verified 12/12); pipeline generalized (AREA_CONFIG) + reusable s21_run_gates.py | 5 |
 
 ## 9. Amendment
 

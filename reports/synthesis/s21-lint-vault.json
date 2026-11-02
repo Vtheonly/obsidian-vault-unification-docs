@@ -1,0 +1,2552 @@
+{
+  "result": {
+    "root": "output/Unified-Vault",
+    "summary": {
+      "files": 127,
+      "defects": 171,
+      "errors": 0,
+      "warnings": 6,
+      "infos": 165,
+      "files_with_errors": 0
+    },
+    "counts_by_check": {
+      "info:EMPTY_SECTION": 165,
+      "warning:BRACKET_UNBALANCED": 5,
+      "warning:MATH_INLINE_ODD": 1
+    },
+    "files": [
+      {
+        "file": "04 - Machine Learning/Clustering and Dimensionality Reduction/Clustering.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Clustering and Dimensionality Reduction/Principal Component Analysis.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Clustering and Dimensionality Reduction/t-SNE and UMAP.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Generalization and Regularization/Bias Variance Tradeoff.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 206,
+            "message": "section 'Double descent and modern practice' has no content before the next heading",
+            "excerpt": "## Double descent and modern practice"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 276,
+            "message": "section 'Detection and remedies' has no content before the next heading",
+            "excerpt": "## Detection and remedies"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Generalization and Regularization/Regularization Techniques.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 139,
+            "message": "section 'Related techniques' has no content before the next heading",
+            "excerpt": "## Related techniques"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 176,
+            "message": "section 'Choosing a regularization strategy' has no content before the next heading",
+            "excerpt": "## Choosing a regularization strategy"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Machine Learning MOC.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 59,
+            "message": "section 'Reading order recommendation' has no content before the next heading",
+            "excerpt": "## Reading order recommendation"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Model Evaluation/Clustering Evaluation Metrics.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 40,
+            "message": "section 'Intrinsic metrics (no ground truth)' has no content before the next heading",
+            "excerpt": "## Intrinsic metrics (no ground truth)"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Model Evaluation/Computer Vision Evaluation Metrics.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 35,
+            "message": "section 'Object detection metrics' has no content before the next heading",
+            "excerpt": "## Object detection metrics"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 85,
+            "message": "section 'Segmentation metrics' has no content before the next heading",
+            "excerpt": "## Segmentation metrics"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 127,
+            "message": "section 'Common pitfalls' has no content before the next heading",
+            "excerpt": "## Common pitfalls"
+          }
+        ],
+        "defect_count": 3,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 3,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 3
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Model Evaluation/Model Evaluation Metrics.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 358,
+            "message": "section 'Probabilistic metrics and calibration' has no content before the next heading",
+            "excerpt": "## Probabilistic metrics and calibration"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Model Evaluation/Regression Evaluation Metrics.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 80,
+            "message": "section 'R\u00b2, the coefficient of determination' has no content before the next heading",
+            "excerpt": "## R\u00b2, the coefficient of determination"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 192,
+            "message": "section 'Evaluation practice' has no content before the next heading",
+            "excerpt": "## Evaluation practice"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Nearest Neighbors/K-Nearest Neighbors.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Optimization Algorithms/Gradient Descent.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 26,
+            "message": "section 'What is gradient descent' has no content before the next heading",
+            "excerpt": "## What is gradient descent"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 69,
+            "message": "section 'The update rule' has no content before the next heading",
+            "excerpt": "## The update rule"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 335,
+            "message": "section 'Convergence and pathologies' has no content before the next heading",
+            "excerpt": "## Convergence and pathologies"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 486,
+            "message": "section 'Practical guidance' has no content before the next heading",
+            "excerpt": "## Practical guidance"
+          }
+        ],
+        "defect_count": 4,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 4,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 4
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Optimization Algorithms/Loss Functions.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 59,
+            "message": "section 'From raw error to a training objective' has no content before the next heading",
+            "excerpt": "## From raw error to a training objective"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 576,
+            "message": "section 'Loss landscapes and the optimization interface' has no content before the next heading",
+            "excerpt": "## Loss landscapes and the optimization interface"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Optimization Algorithms/Optimizers and Learning Rate Schedulers.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 136,
+            "message": "section 'Hyperparameters and tuning' has no content before the next heading",
+            "excerpt": "## Hyperparameters and tuning"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 171,
+            "message": "section 'Learning rate schedulers' has no content before the next heading",
+            "excerpt": "## Learning rate schedulers"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Regression/Linear Regression.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 269,
+            "message": "section 'Vectorization and the matrix formulation' has no content before the next heading",
+            "excerpt": "## Vectorization and the matrix formulation"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Regression/Logistic Regression.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 207,
+            "message": "section 'Practice' has no content before the next heading",
+            "excerpt": "## Practice"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Regression/Regression Fundamentals.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Reinforcement Learning/Markov Decision Processes and Bellman Equations.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Reinforcement Learning/Policy Gradients and Actor Critic.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Reinforcement Learning/Proximal Policy Optimization.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Reinforcement Learning/Q-Learning and Deep Q Networks.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 125,
+            "message": "section 'Convergence: what is proven and what is not' has no content before the next heading",
+            "excerpt": "## Convergence: what is proven and what is not"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Support Vector Machines/Kernel Trick.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Support Vector Machines/SVM Lagrangian Dual.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Support Vector Machines/Support Vector Machines.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "04 - Machine Learning/Tree-Based Models/Decision Trees.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 74,
+            "message": "section 'Splitting criteria for classification' has no content before the next heading",
+            "excerpt": "## Splitting criteria for classification"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Tree-Based Models/Gradient Boosting.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 44,
+            "message": "section 'The gradient boosting algorithm' has no content before the next heading",
+            "excerpt": "## The gradient boosting algorithm"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 109,
+            "message": "section 'XGBoost, LightGBM, CatBoost: the three implementations' has no content before the next heading",
+            "excerpt": "## XGBoost, LightGBM, CatBoost: the three implementations"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "04 - Machine Learning/Tree-Based Models/Random Forests and Bagging.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "05 - Neural Network Foundations/Architectures/Convolutional Neural Networks.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "05 - Neural Network Foundations/Architectures/Recurrent Neural Networks.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "05 - Neural Network Foundations/Architectures/Seq2Seq and the Information Bottleneck.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "05 - Neural Network Foundations/Backpropagation/Backpropagation and Gradient Flow in CNNs.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 59,
+            "message": "section 'The chain rule' has no content before the next heading",
+            "excerpt": "## The chain rule"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 217,
+            "message": "section 'How PyTorch autograd implements backpropagation' has no content before the next heading",
+            "excerpt": "## How PyTorch autograd implements backpropagation"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 415,
+            "message": "section 'The computational graph and `torch.no_grad()`' has no content before the next heading",
+            "excerpt": "## The computational graph and `torch.no_grad()`"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 576,
+            "message": "section 'The concept of a \"gradient highway\"' has no content before the next heading",
+            "excerpt": "## The concept of a \"gradient highway\""
+          }
+        ],
+        "defect_count": 4,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 4,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 4
+        }
+      },
+      {
+        "file": "05 - Neural Network Foundations/Backpropagation/Backpropagation.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 94,
+            "message": "section 'The network being trained' has no content before the next heading",
+            "excerpt": "## The network being trained"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 304,
+            "message": "section 'Measuring error' has no content before the next heading",
+            "excerpt": "## Measuring error"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 356,
+            "message": "section 'Backpropagating to the output layer' has no content before the next heading",
+            "excerpt": "## Backpropagating to the output layer"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 886,
+            "message": "section 'Backpropagation through specific operations' has no content before the next heading",
+            "excerpt": "## Backpropagation through specific operations"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 920,
+            "message": "section 'Gradient flow through depth' has no content before the next heading",
+            "excerpt": "## Gradient flow through depth"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 1180,
+            "message": "section 'Residual networks (ResNet)' has no content before the next heading",
+            "excerpt": "## Residual networks (ResNet)"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 1463,
+            "message": "section 'Practical training considerations' has no content before the next heading",
+            "excerpt": "## Practical training considerations"
+          }
+        ],
+        "defect_count": 7,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 7,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 7
+        }
+      },
+      {
+        "file": "05 - Neural Network Foundations/Backpropagation/Matrix Implementation of Backpropagation.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 92,
+            "message": "section 'Matrix transposition' has no content before the next heading",
+            "excerpt": "## Matrix transposition"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 173,
+            "message": "section 'Backpropagating the error in code' has no content before the next heading",
+            "excerpt": "## Backpropagating the error in code"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "05 - Neural Network Foundations/Labs/Data Cleaning and Encoding Lab.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "05 - Neural Network Foundations/Labs/Formal Neuron Lab.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "05 - Neural Network Foundations/Neural Network Basics/Activation Functions.md",
+        "defects": [
+          {
+            "check": "BRACKET_UNBALANCED",
+            "severity": "warning",
+            "line": 0,
+            "message": "unbalanced (), [] or {} outside code/math blocks (counts: (:-1, [:1)",
+            "excerpt": ""
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 54,
+            "message": "section 'Classical activations' has no content before the next heading",
+            "excerpt": "## Classical activations"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 90,
+            "message": "section 'The ReLU family' has no content before the next heading",
+            "excerpt": "## The ReLU family"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 136,
+            "message": "section 'Smooth modern activations' has no content before the next heading",
+            "excerpt": "## Smooth modern activations"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 198,
+            "message": "section 'Mathematical properties' has no content before the next heading",
+            "excerpt": "## Mathematical properties"
+          }
+        ],
+        "defect_count": 5,
+        "error_count": 0,
+        "warning_count": 1,
+        "info_count": 4,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 4,
+          "warning:BRACKET_UNBALANCED": 1
+        }
+      },
+      {
+        "file": "05 - Neural Network Foundations/Neural Network Basics/Artificial Neural Networks.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 53,
+            "message": "section 'The formal neuron' has no content before the next heading",
+            "excerpt": "## The formal neuron"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 121,
+            "message": "section 'Network architecture' has no content before the next heading",
+            "excerpt": "## Network architecture"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 207,
+            "message": "section 'Activation functions' has no content before the next heading",
+            "excerpt": "## Activation functions"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 541,
+            "message": "section 'ANNs for classification' has no content before the next heading",
+            "excerpt": "## ANNs for classification"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 758,
+            "message": "section 'The vanishing gradient problem' has no content before the next heading",
+            "excerpt": "## The vanishing gradient problem"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 849,
+            "message": "section 'Residual networks (ResNet)' has no content before the next heading",
+            "excerpt": "## Residual networks (ResNet)"
+          }
+        ],
+        "defect_count": 6,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 6,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 6
+        }
+      },
+      {
+        "file": "05 - Neural Network Foundations/Neural Network Basics/Data Preparation for Neural Networks.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "05 - Neural Network Foundations/Neural Network Basics/Forward Propagation.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 54,
+            "message": "section 'Forward propagation mathematics (2-input network)' has no content before the next heading",
+            "excerpt": "## Forward propagation mathematics (2-input network)"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 86,
+            "message": "section 'The drug dosage network worked example' has no content before the next heading",
+            "excerpt": "## The drug dosage network worked example"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 185,
+            "message": "section 'Activation functions in the forward pass' has no content before the next heading",
+            "excerpt": "## Activation functions in the forward pass"
+          }
+        ],
+        "defect_count": 3,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 3,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 3
+        }
+      },
+      {
+        "file": "05 - Neural Network Foundations/Neural Network Basics/Neural Network Architecture and Notation.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 315,
+            "message": "section 'Supervised learning and data strategy' has no content before the next heading",
+            "excerpt": "## Supervised learning and data strategy"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "05 - Neural Network Foundations/Neural Network Basics/Perceptrons and Multi-Layer Perceptrons.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 318,
+            "message": "section 'MLP notation and deep backpropagation' has no content before the next heading",
+            "excerpt": "## MLP notation and deep backpropagation"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 414,
+            "message": "section 'Worked examples' has no content before the next heading",
+            "excerpt": "## Worked examples"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "05 - Neural Network Foundations/Neural Network Foundations MOC.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "05 - Neural Network Foundations/Training Dynamics and Stability/Batch Normalization.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 27,
+            "message": "section 'The problem: internal covariate shift' has no content before the next heading",
+            "excerpt": "## The problem: internal covariate shift"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 271,
+            "message": "section 'PyTorch implementation' has no content before the next heading",
+            "excerpt": "## PyTorch implementation"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "05 - Neural Network Foundations/Training Dynamics and Stability/Data Augmentation.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 32,
+            "message": "section 'Why data augmentation works' has no content before the next heading",
+            "excerpt": "## Why data augmentation works"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 472,
+            "message": "section 'Normalize: formula and why ImageNet statistics are mandatory' has no content before the next heading",
+            "excerpt": "## Normalize: formula and why ImageNet statistics are mandatory"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "05 - Neural Network Foundations/Training Dynamics and Stability/Dropout and Regularization.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 35,
+            "message": "section 'Overfitting: the central problem' has no content before the next heading",
+            "excerpt": "## Overfitting: the central problem"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 78,
+            "message": "section 'Data splits and preparation' has no content before the next heading",
+            "excerpt": "## Data splits and preparation"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 114,
+            "message": "section 'Dropout: the technique' has no content before the next heading",
+            "excerpt": "## Dropout: the technique"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 213,
+            "message": "section 'Implementing dropout in PyTorch' has no content before the next heading",
+            "excerpt": "## Implementing dropout in PyTorch"
+          }
+        ],
+        "defect_count": 4,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 4,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 4
+        }
+      },
+      {
+        "file": "05 - Neural Network Foundations/Training Dynamics and Stability/Hyperparameters and Network Configuration.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "05 - Neural Network Foundations/Training Dynamics and Stability/Vanishing and Exploding Gradients.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 709,
+            "message": "section 'Exploding gradients' has no content before the next heading",
+            "excerpt": "## Exploding gradients"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 748,
+            "message": "section 'Diagnosing gradient problems' has no content before the next heading",
+            "excerpt": "## Diagnosing gradient problems"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 1873,
+            "message": "section 'Practical guidance' has no content before the next heading",
+            "excerpt": "## Practical guidance"
+          }
+        ],
+        "defect_count": 3,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 3,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 3
+        }
+      },
+      {
+        "file": "05 - Neural Network Foundations/Training Dynamics and Stability/Weight Initialization.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 29,
+            "message": "section 'Why initialization matters' has no content before the next heading",
+            "excerpt": "## Why initialization matters"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Advanced Operators/Advanced Convolutional Operators - Depthwise, Dilated, Transposed, Grouped.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 33,
+            "message": "section 'Depthwise separable convolutions' has no content before the next heading",
+            "excerpt": "## Depthwise separable convolutions"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 78,
+            "message": "section 'Dilated (atrous) convolutions' has no content before the next heading",
+            "excerpt": "## Dilated (atrous) convolutions"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 126,
+            "message": "section 'Transposed convolutions' has no content before the next heading",
+            "excerpt": "## Transposed convolutions"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 155,
+            "message": "section 'Grouped convolutions' has no content before the next heading",
+            "excerpt": "## Grouped convolutions"
+          }
+        ],
+        "defect_count": 4,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 4,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 4
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Architecture and Connectivity/Evolution of CNN Architectures.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 33,
+            "message": "section 'LeNet-5 (1998): the proof of concept' has no content before the next heading",
+            "excerpt": "## LeNet-5 (1998): the proof of concept"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 62,
+            "message": "section 'AlexNet (2012): the breakthrough' has no content before the next heading",
+            "excerpt": "## AlexNet (2012): the breakthrough"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 109,
+            "message": "section 'VGG-16 (2014): deep and simple' has no content before the next heading",
+            "excerpt": "## VGG-16 (2014): deep and simple"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 126,
+            "message": "section 'GoogLeNet / Inception-v1 (2014): parallel filters and efficiency' has no content before the next heading",
+            "excerpt": "## GoogLeNet / Inception-v1 (2014): parallel filters and efficiency"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 175,
+            "message": "section 'ResNet (2015): solving the degradation problem' has no content before the next heading",
+            "excerpt": "## ResNet (2015): solving the degradation problem"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 226,
+            "message": "section 'DenseNet (2017): dense connections and feature reuse' has no content before the next heading",
+            "excerpt": "## DenseNet (2017): dense connections and feature reuse"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 249,
+            "message": "section 'MobileNet (2018): depthwise separable convolutions' has no content before the next heading",
+            "excerpt": "## MobileNet (2018): depthwise separable convolutions"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 273,
+            "message": "section 'EfficientNet (2019): compound scaling' has no content before the next heading",
+            "excerpt": "## EfficientNet (2019): compound scaling"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 301,
+            "message": "section 'ConvNeXt (2022): ViT-inspired modernization' has no content before the next heading",
+            "excerpt": "## ConvNeXt (2022): ViT-inspired modernization"
+          }
+        ],
+        "defect_count": 9,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 9,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 9
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Architecture and Connectivity/Hierarchical Feature Extraction.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 27,
+            "message": "section 'Level-by-level abstraction' has no content before the next heading",
+            "excerpt": "## Level-by-level abstraction"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Architecture and Connectivity/Inception Architecture Deep Dive.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Architecture and Connectivity/Local Connectivity and Parameter Sharing.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Architecture and Connectivity/ResNet Bottleneck Blocks and Architectural Variants.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Architecture and Connectivity/The Degradation Problem and Residual Connections.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Architecture and Connectivity/The Fully Connected Layer and Flattening.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Architecture and Connectivity/VGG and Classic Architectures Summary.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 194,
+            "message": "section 'VGG-16: the philosophy of uniformity' has no content before the next heading",
+            "excerpt": "## VGG-16: the philosophy of uniformity"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 494,
+            "message": "section 'Inception: multi-scale parallel processing' has no content before the next heading",
+            "excerpt": "## Inception: multi-scale parallel processing"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 739,
+            "message": "section 'ResNet and the architectural successors' has no content before the next heading",
+            "excerpt": "## ResNet and the architectural successors"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 1102,
+            "message": "section 'Practical pipelines and transfer learning' has no content before the next heading",
+            "excerpt": "## Practical pipelines and transfer learning"
+          }
+        ],
+        "defect_count": 4,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 4,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 4
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Architecture and Connectivity/VGG16 Architecture Deep Dive.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 30,
+            "message": "section 'The philosophy of \"simple is beautiful\"' has no content before the next heading",
+            "excerpt": "## The philosophy of \"simple is beautiful\""
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 60,
+            "message": "section 'The receptive field proof: why two 3\u00d73 equal one 5\u00d75' has no content before the next heading",
+            "excerpt": "## The receptive field proof: why two 3\u00d73 equal one 5\u00d75"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 311,
+            "message": "section 'Parameter count analysis' has no content before the next heading",
+            "excerpt": "## Parameter count analysis"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 340,
+            "message": "section 'VGG16 versus VGG16_BN' has no content before the next heading",
+            "excerpt": "## VGG16 versus VGG16_BN"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 369,
+            "message": "section 'Why FC layers are a bottleneck: the transition to global average pooling' has no content before the next heading",
+            "excerpt": "## Why FC layers are a bottleneck: the transition to global average pooling"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 398,
+            "message": "section 'Legacy: feature extraction, style transfer, and perceptual loss' has no content before the next heading",
+            "excerpt": "## Legacy: feature extraction, style transfer, and perceptual loss"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 427,
+            "message": "section 'PyTorch implementation from scratch' has no content before the next heading",
+            "excerpt": "## PyTorch implementation from scratch"
+          }
+        ],
+        "defect_count": 7,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 7,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 7
+        }
+      },
+      {
+        "file": "06 - Computer Vision/CNN Course Overview.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/CNN Foundations and Philosophy/Core Architecture and Philosophy.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/CNN Foundations and Philosophy/Demystifying Tensors - Volumes, Depth, and Data Formats.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 160,
+            "message": "section 'Common student traps' has no content before the next heading",
+            "excerpt": "## Common student traps"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "06 - Computer Vision/CNN Foundations and Philosophy/Foundations and Philosophy Summary.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/CNN Foundations and Philosophy/From Basic Convolution to Learned Weights.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/CNN Foundations and Philosophy/Introduction and Foundations of CNNs.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 223,
+            "message": "section 'End-to-end learning' has no content before the next heading",
+            "excerpt": "## End-to-end learning"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 304,
+            "message": "section 'Modern solutions to the spatial context problem' has no content before the next heading",
+            "excerpt": "## Modern solutions to the spatial context problem"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "06 - Computer Vision/CNN Foundations and Philosophy/Processing 3D Volumes, Depth Summation, and Biases.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/CNN Mastery Roadmap.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Core Operators and Geometry/Activation and Pooling Layers.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 91,
+            "message": "section 'ReLU: the rectified linear unit' has no content before the next heading",
+            "excerpt": "## ReLU: the rectified linear unit"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 128,
+            "message": "section 'ReLU variants' has no content before the next heading",
+            "excerpt": "## ReLU variants"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 242,
+            "message": "section 'Sigmoid and tanh: the classical activations' has no content before the next heading",
+            "excerpt": "## Sigmoid and tanh: the classical activations"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 301,
+            "message": "section 'Max pooling: complete mechanics' has no content before the next heading",
+            "excerpt": "## Max pooling: complete mechanics"
+          }
+        ],
+        "defect_count": 4,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 4,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 4
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Core Operators and Geometry/Advanced Pooling and Global Average Pooling.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 31,
+            "message": "section 'Average pooling vs. max pooling' has no content before the next heading",
+            "excerpt": "## Average pooling vs. max pooling"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 113,
+            "message": "section 'Global average pooling: the complete mechanism' has no content before the next heading",
+            "excerpt": "## Global average pooling: the complete mechanism"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 189,
+            "message": "section 'Why GAP is revolutionary' has no content before the next heading",
+            "excerpt": "## Why GAP is revolutionary"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 231,
+            "message": "section 'Historical context: from NiN to ResNet' has no content before the next heading",
+            "excerpt": "## Historical context: from NiN to ResNet"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 263,
+            "message": "section 'GAP vs. global max pooling' has no content before the next heading",
+            "excerpt": "## GAP vs. global max pooling"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 290,
+            "message": "section 'How GAP enables class activation maps' has no content before the next heading",
+            "excerpt": "## How GAP enables class activation maps"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 333,
+            "message": "section 'Complete PyTorch implementation' has no content before the next heading",
+            "excerpt": "## Complete PyTorch implementation"
+          }
+        ],
+        "defect_count": 7,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 7,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 7
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Core Operators and Geometry/Core Operators and Geometry Summary.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Core Operators and Geometry/Padding - Mathematics, Edge Effects, and Valid vs Same.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Core Operators and Geometry/Receptive Fields and 1x1 Convolutions.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 370,
+            "message": "section 'The role of 1\u00d71 convolutions in Inception and ResNet' has no content before the next heading",
+            "excerpt": "## The role of 1\u00d71 convolutions in Inception and ResNet"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Core Operators and Geometry/Strides - Skipping Pixels and Downsampling.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Core Operators and Geometry/The Convolution Operation.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 186,
+            "message": "section 'Weight sharing, translation equivariance, and parameter savings' has no content before the next heading",
+            "excerpt": "## Weight sharing, translation equivariance, and parameter savings"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 238,
+            "message": "section 'Padding and edge effects' has no content before the next heading",
+            "excerpt": "## Padding and edge effects"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Core Operators and Geometry/The Output Spatial Dimension Formula.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Frequency Domain and Restoration/Frequency Domain Filtering.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Frequency Domain and Restoration/Image Degradation and Noise Models.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 79,
+            "message": "section 'Blur models (the $H$ in $g = Hf + n$)' has no content before the next heading",
+            "excerpt": "## Blur models (the $H$ in $g = Hf + n$)"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 93,
+            "message": "section 'Restoration methods' has no content before the next heading",
+            "excerpt": "## Restoration methods"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Frequency Domain and Restoration/Image Quality Metrics.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Frequency Domain and Restoration/Introduction to the Frequency Domain.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Frequency Domain and Restoration/The Fourier Transform.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Image Fundamentals/Color Spaces and Models.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Image Fundamentals/Image File Formats.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Image Fundamentals/Image Representation Types.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Image Fundamentals/Pixel Relationships and Distance Metrics.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Image Fundamentals/Resolution and Bit Depth.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Image Fundamentals/The Color Image Processing Pipeline.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Image Fundamentals/What is a Digital Image.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Image Processing Global Index.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Intensity Transformations and Histograms/Advanced Histogram Techniques.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 31,
+            "message": "section 'Adaptive histogram equalization (AHE)' has no content before the next heading",
+            "excerpt": "## Adaptive histogram equalization (AHE)"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Intensity Transformations and Histograms/Contrast Stretching.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Intensity Transformations and Histograms/Histogram Equalization.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Intensity Transformations and Histograms/Point Processing Operations.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Intensity Transformations and Histograms/The Image Histogram.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Modern Computer Vision Tasks/Deep Learning for Imaging.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Modern Computer Vision Tasks/Detection and Segmentation.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 50,
+            "message": "section 'Object detection' has no content before the next heading",
+            "excerpt": "## Object detection"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 106,
+            "message": "section 'Semantic segmentation' has no content before the next heading",
+            "excerpt": "## Semantic segmentation"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Morphological Processing and Segmentation/Connected Components and Region Properties.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Morphological Processing and Segmentation/Erosion and Dilation.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Morphological Processing and Segmentation/Mathematical Morphology Basics.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Morphological Processing and Segmentation/Morphological Algorithms.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Morphological Processing and Segmentation/Opening and Closing.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Morphological Processing and Segmentation/Thresholding and Otsu's Method.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Morphological Processing and Segmentation/Watershed Segmentation.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 42,
+            "message": "section 'The marker-controlled watershed algorithm' has no content before the next heading",
+            "excerpt": "## The marker-controlled watershed algorithm"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Pipeline Evaluation and Interpretability/CNN Interpretability.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 31,
+            "message": "section 'Why interpretability matters' has no content before the next heading",
+            "excerpt": "## Why interpretability matters"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 47,
+            "message": "section 'Grad-CAM: gradient-weighted class activation mapping' has no content before the next heading",
+            "excerpt": "## Grad-CAM: gradient-weighted class activation mapping"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 98,
+            "message": "section 'The COVID-19 X-ray example: a cautionary tale' has no content before the next heading",
+            "excerpt": "## The COVID-19 X-ray example: a cautionary tale"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 159,
+            "message": "section 'Practical Grad-CAM implementation in PyTorch' has no content before the next heading",
+            "excerpt": "## Practical Grad-CAM implementation in PyTorch"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 496,
+            "message": "section 'Using interpretability for debugging' has no content before the next heading",
+            "excerpt": "## Using interpretability for debugging"
+          }
+        ],
+        "defect_count": 5,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 5,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 5
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Pipeline Evaluation and Interpretability/Common Mistakes and How to Fix Them.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Pipeline Evaluation and Interpretability/Scaling, Pipeline, and Interpretability Summary.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 34,
+            "message": "section 'Advanced pooling mechanisms' has no content before the next heading",
+            "excerpt": "## Advanced pooling mechanisms"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 124,
+            "message": "section 'Global average pooling' has no content before the next heading",
+            "excerpt": "## Global average pooling"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 273,
+            "message": "section 'Evaluation metrics beyond accuracy' has no content before the next heading",
+            "excerpt": "## Evaluation metrics beyond accuracy"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 565,
+            "message": "section 'The full training pipeline end to end' has no content before the next heading",
+            "excerpt": "## The full training pipeline end to end"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 1160,
+            "message": "section 'CNN interpretability' has no content before the next heading",
+            "excerpt": "## CNN interpretability"
+          }
+        ],
+        "defect_count": 5,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 5,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 5
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Pipeline Evaluation and Interpretability/The Full Training Pipeline End-to-End Checklist.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Quizzes/CNN Solved Exercises.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 34,
+            "message": "section 'Exercise 1: calculating CNN output dimensions' has no content before the next heading",
+            "excerpt": "## Exercise 1: calculating CNN output dimensions"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 65,
+            "message": "section 'Step-by-step calculation' has no content before the next heading",
+            "excerpt": "### Step-by-step calculation"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 207,
+            "message": "section 'Exercise 2: parameter counting' has no content before the next heading",
+            "excerpt": "## Exercise 2: parameter counting"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 220,
+            "message": "section 'Parameter formulas \u2014 derived from first principles' has no content before the next heading",
+            "excerpt": "### Parameter formulas \u2014 derived from first principles"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 241,
+            "message": "section 'Step-by-step calculation' has no content before the next heading",
+            "excerpt": "### Step-by-step calculation"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 401,
+            "message": "section 'Exercise 3: CIFAR-10 CNN complete end-to-end' has no content before the next heading",
+            "excerpt": "## Exercise 3: CIFAR-10 CNN complete end-to-end"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 910,
+            "message": "section 'Exercise 4: transfer learning with VGG16 on a custom dataset' has no content before the next heading",
+            "excerpt": "## Exercise 4: transfer learning with VGG16 on a custom dataset"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 1332,
+            "message": "section 'Exercise 5: debugging a dimension mismatch' has no content before the next heading",
+            "excerpt": "## Exercise 5: debugging a dimension mismatch"
+          }
+        ],
+        "defect_count": 8,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 8,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 8
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Quizzes/Image Fundamentals and Histograms Quiz.md",
+        "defects": [
+          {
+            "check": "BRACKET_UNBALANCED",
+            "severity": "warning",
+            "line": 0,
+            "message": "unbalanced (), [] or {} outside code/math blocks (counts: (:-308)",
+            "excerpt": ""
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 1,
+        "info_count": 0,
+        "counts_by_check": {
+          "warning:BRACKET_UNBALANCED": 1
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Quizzes/Image Processing Comprehensive Quiz.md",
+        "defects": [
+          {
+            "check": "BRACKET_UNBALANCED",
+            "severity": "warning",
+            "line": 0,
+            "message": "unbalanced (), [] or {} outside code/math blocks (counts: (:-406)",
+            "excerpt": ""
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 1,
+        "info_count": 0,
+        "counts_by_check": {
+          "warning:BRACKET_UNBALANCED": 1
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Quizzes/Noise Degradation and Frequency Domain Quiz.md",
+        "defects": [
+          {
+            "check": "BRACKET_UNBALANCED",
+            "severity": "warning",
+            "line": 0,
+            "message": "unbalanced (), [] or {} outside code/math blocks (counts: (:-146)",
+            "excerpt": ""
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 1,
+        "info_count": 0,
+        "counts_by_check": {
+          "warning:BRACKET_UNBALANCED": 1
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Quizzes/Spatial Filtering and Convolution Quiz.md",
+        "defects": [
+          {
+            "check": "BRACKET_UNBALANCED",
+            "severity": "warning",
+            "line": 0,
+            "message": "unbalanced (), [] or {} outside code/math blocks (counts: (:-191)",
+            "excerpt": ""
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 1,
+        "info_count": 0,
+        "counts_by_check": {
+          "warning:BRACKET_UNBALANCED": 1
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Spatial Filtering/Canny and LoG Edge Detection.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Spatial Filtering/Edge Preserving Filters.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Spatial Filtering/Feature Descriptors - SIFT, SURF, ORB, HOG.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Spatial Filtering/Gabor Filters.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Spatial Filtering/Geometric Transformations and Interpolation.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 150,
+            "message": "section 'Practical applications' has no content before the next heading",
+            "excerpt": "## Practical applications"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Spatial Filtering/Image Pyramids and Multi-Scale Representation.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Spatial Filtering/Linear Smoothing Filters.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Spatial Filtering/Non-Linear Smoothing Filters.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Spatial Filtering/Sharpening and Edge Detection.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Spatial Filtering/The Hough Transform.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Spatial Filtering/The Mechanics of Spatial Filtering.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "06 - Computer Vision/Training and Transfer Learning/Hyperparameters and Basic PyTorch Summary.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 37,
+            "message": "section 'Network architecture hyperparameters' has no content before the next heading",
+            "excerpt": "## Network architecture hyperparameters"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 71,
+            "message": "section 'Filter size: why 3\u00d73 dominates' has no content before the next heading",
+            "excerpt": "### Filter size: why 3\u00d73 dominates"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 160,
+            "message": "section 'Loss functions' has no content before the next heading",
+            "excerpt": "## Loss functions"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 254,
+            "message": "section 'Optimization algorithms' has no content before the next heading",
+            "excerpt": "## Optimization algorithms"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 359,
+            "message": "section 'Training dynamics and convergence hyperparameters' has no content before the next heading",
+            "excerpt": "## Training dynamics and convergence hyperparameters"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 440,
+            "message": "section 'Practical tuning strategies' has no content before the next heading",
+            "excerpt": "## Practical tuning strategies"
+          }
+        ],
+        "defect_count": 6,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 6,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 6
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Training and Transfer Learning/Normalization, Regularization, and Augmentation Summary.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 40,
+            "message": "section 'Generalization and overfitting principles' has no content before the next heading",
+            "excerpt": "## Generalization and overfitting principles"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 91,
+            "message": "section 'Dropout' has no content before the next heading",
+            "excerpt": "## Dropout"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 219,
+            "message": "section 'Other core regularization methods' has no content before the next heading",
+            "excerpt": "## Other core regularization methods"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 356,
+            "message": "section 'Batch normalization' has no content before the next heading",
+            "excerpt": "## Batch normalization"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 433,
+            "message": "section 'Advanced normalization dynamics and alternatives' has no content before the next heading",
+            "excerpt": "## Advanced normalization dynamics and alternatives"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 529,
+            "message": "section 'Data augmentation: principles and geometric transforms' has no content before the next heading",
+            "excerpt": "## Data augmentation: principles and geometric transforms"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 588,
+            "message": "section 'Pixel-level and advanced augmentation techniques' has no content before the next heading",
+            "excerpt": "## Pixel-level and advanced augmentation techniques"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 651,
+            "message": "section 'Integrated PyTorch pipelines and implementation' has no content before the next heading",
+            "excerpt": "## Integrated PyTorch pipelines and implementation"
+          }
+        ],
+        "defect_count": 8,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 8,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 8
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Training and Transfer Learning/PyTorch Advanced - VGG16 and Pre-trained Models.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 31,
+            "message": "section 'Loading pre-trained models' has no content before the next heading",
+            "excerpt": "## Loading pre-trained models"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 99,
+            "message": "section 'model.eval() and why it matters' has no content before the next heading",
+            "excerpt": "## model.eval() and why it matters"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 131,
+            "message": "section 'Building VGG16 from scratch: the config list approach' has no content before the next heading",
+            "excerpt": "## Building VGG16 from scratch: the config list approach"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 387,
+            "message": "section 'Accessing and replacing layers' has no content before the next heading",
+            "excerpt": "## Accessing and replacing layers"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 465,
+            "message": "section 'Freezing vs. unfreezing layers' has no content before the next heading",
+            "excerpt": "## Freezing vs. unfreezing layers"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 530,
+            "message": "section 'model.state_dict(): saving and loading' has no content before the next heading",
+            "excerpt": "## model.state_dict(): saving and loading"
+          }
+        ],
+        "defect_count": 6,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 6,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 6
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Training and Transfer Learning/PyTorch Implementation Basics.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 88,
+            "message": "section 'Data loading: the MNIST dataset' has no content before the next heading",
+            "excerpt": "## Data loading: the MNIST dataset"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 196,
+            "message": "section 'Model definition: subclassing nn.Module' has no content before the next heading",
+            "excerpt": "## Model definition: subclassing nn.Module"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 376,
+            "message": "section 'Using nn.Sequential for cleaner code' has no content before the next heading",
+            "excerpt": "## Using nn.Sequential for cleaner code"
+          }
+        ],
+        "defect_count": 3,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 3,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 3
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Training and Transfer Learning/Transfer Learning and Fine-Tuning.md",
+        "defects": [
+          {
+            "check": "MATH_INLINE_ODD",
+            "severity": "warning",
+            "line": 0,
+            "message": "odd number of unescaped '$' characters outside code/math blocks (37); an inline formula is probably unclosed",
+            "excerpt": ""
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 86,
+            "message": "section 'Strategy 1: feature extraction (freeze everything)' has no content before the next heading",
+            "excerpt": "## Strategy 1: feature extraction (freeze everything)"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 198,
+            "message": "section 'Strategy 2: fine-tuning (unfreeze selectively)' has no content before the next heading",
+            "excerpt": "## Strategy 2: fine-tuning (unfreeze selectively)"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 347,
+            "message": "section 'Strategy 3: training from scratch' has no content before the next heading",
+            "excerpt": "## Strategy 3: training from scratch"
+          }
+        ],
+        "defect_count": 4,
+        "error_count": 0,
+        "warning_count": 1,
+        "info_count": 3,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 3,
+          "warning:MATH_INLINE_ODD": 1
+        }
+      },
+      {
+        "file": "06 - Computer Vision/Training and Transfer Learning/Transfer Learning and ResNet Summary.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 78,
+            "message": "section 'The chain rule and the mechanics of backpropagation' has no content before the next heading",
+            "excerpt": "## The chain rule and the mechanics of backpropagation"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 519,
+            "message": "section 'Weight initialization' has no content before the next heading",
+            "excerpt": "## Weight initialization"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 1031,
+            "message": "section 'Bottleneck blocks and ResNet variants' has no content before the next heading",
+            "excerpt": "## Bottleneck blocks and ResNet variants"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 1170,
+            "message": "section 'Gradient clipping and safe training' has no content before the next heading",
+            "excerpt": "## Gradient clipping and safe training"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 1278,
+            "message": "section 'Transfer learning and fine-tuning' has no content before the next heading",
+            "excerpt": "## Transfer learning and fine-tuning"
+          }
+        ],
+        "defect_count": 5,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 5,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 5
+        }
+      }
+    ],
+    "caveat": "syntax/reference validation only: a passing lint is necessary, never sufficient \u2014 semantic correctness requires review"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "lint-artifacts",
+    "args": {
+      "command": "lint-artifacts",
+      "path": "output/Unified-Vault",
+      "no_links": false,
+      "skip_dirs": [
+        ".git",
+        ".obsidian"
+      ],
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s21-lint-vault.json"
+    },
+    "utc_timestamp": "2026-11-02T01:05:49+00:00",
+    "git_commit": "cbaed73"
+  }
+}

@@ -38,17 +38,95 @@ VAULT_ROOTS = {
     "master-ai": REPO / "source-vaults" / "AI " / "Master AI",
 }
 
-# Explicit note-type assignments (drives the per-type quality standard).
-# Unlisted notes default to "concept". Recorded in the session-20 style-guide
-# conventions section; changing a type requires regenerating its spec.
-NOTE_TYPES: dict[str, str] = {
-    "04 - Machine Learning/Machine Learning MOC.md": "overview",
-    "04 - Machine Learning/Model Evaluation/Model Evaluation Metrics.md": "reference",
-    "04 - Machine Learning/Model Evaluation/Regression Evaluation Metrics.md": "reference",
-    "04 - Machine Learning/Model Evaluation/Clustering Evaluation Metrics.md": "reference",
-    "04 - Machine Learning/Model Evaluation/Computer Vision Evaluation Metrics.md": "reference",
-    "04 - Machine Learning/Support Vector Machines/SVM Lagrangian Dual.md": "derivation",
+# Per-area synthesis configuration. Keys not covered default to "concept".
+# Every area running through this pipeline MUST have an entry with:
+#   note_types  - explicit type assignments for non-concept notes (drives the
+#                 per-type quality standard in specs and assess-quality)
+#   moc_target  - what "link to the area MOC" means for this area (the exact
+#                 wording embedded in the spec wikilink requirement)
+#   colliding   - the vault-wide colliding basenames that links FROM this
+#                 area's notes must write path-based (see the 32-basename list
+#                 in docs/EDITORIAL_STYLE_GUIDE.md conventions v1 #7)
+# Recorded per the session-20 conventions; changing a type or link rule
+# requires regenerating the affected specs and documenting the change.
+AREA_CONFIG: dict[str, dict[str, object]] = {
+    "04 - Machine Learning": {
+        "note_types": {
+            "04 - Machine Learning/Machine Learning MOC.md": "overview",
+            "04 - Machine Learning/Model Evaluation/Model Evaluation Metrics.md": "reference",
+            "04 - Machine Learning/Model Evaluation/Regression Evaluation Metrics.md": "reference",
+            "04 - Machine Learning/Model Evaluation/Clustering Evaluation Metrics.md": "reference",
+            "04 - Machine Learning/Model Evaluation/Computer Vision Evaluation Metrics.md": "reference",
+            "04 - Machine Learning/Support Vector Machines/SVM Lagrangian Dual.md": "derivation",
+        },
+        "moc_target": "Machine Learning MOC",
+        "colliding": "Linear Regression and Logistic Regression",
+    },
+    "05 - Neural Network Foundations": {
+        "note_types": {
+            "05 - Neural Network Foundations/Neural Network Foundations MOC.md": "overview",
+            "05 - Neural Network Foundations/Architectures/Convolutional Neural Networks.md": "reference",
+            "05 - Neural Network Foundations/Architectures/Recurrent Neural Networks.md": "reference",
+            "05 - Neural Network Foundations/Architectures/Seq2Seq and the Information Bottleneck.md": "reference",
+            "05 - Neural Network Foundations/Backpropagation/Backpropagation.md": "derivation",
+            "05 - Neural Network Foundations/Backpropagation/Matrix Implementation of Backpropagation.md": "derivation",
+            "05 - Neural Network Foundations/Labs/Data Cleaning and Encoding Lab.md": "tutorial",
+            "05 - Neural Network Foundations/Labs/Formal Neuron Lab.md": "tutorial",
+        },
+        "moc_target": "Neural Network Foundations MOC",
+        "colliding": (
+            "Batch Normalization, Data Augmentation, Dropout and Regularization, "
+            "Hyperparameters and Network Configuration, Vanishing and Exploding "
+            "Gradients, Weight Initialization"
+        ),
+    },
+    "06 - Computer Vision": {
+        "note_types": {
+            "06 - Computer Vision/CNN Course Overview.md": "overview",
+            "06 - Computer Vision/CNN Mastery Roadmap.md": "overview",
+            "06 - Computer Vision/Image Processing Global Index.md": "overview",
+            "06 - Computer Vision/Architecture and Connectivity/VGG and Classic Architectures Summary.md": "reference",
+            "06 - Computer Vision/CNN Foundations and Philosophy/Foundations and Philosophy Summary.md": "reference",
+            "06 - Computer Vision/Core Operators and Geometry/Core Operators and Geometry Summary.md": "reference",
+            "06 - Computer Vision/Pipeline Evaluation and Interpretability/Scaling, Pipeline, and Interpretability Summary.md": "reference",
+            "06 - Computer Vision/Training and Transfer Learning/Hyperparameters and Basic PyTorch Summary.md": "reference",
+            "06 - Computer Vision/Training and Transfer Learning/Normalization, Regularization, and Augmentation Summary.md": "reference",
+            "06 - Computer Vision/Training and Transfer Learning/Transfer Learning and ResNet Summary.md": "reference",
+            "06 - Computer Vision/Frequency Domain and Restoration/Image Quality Metrics.md": "reference",
+            "06 - Computer Vision/Image Fundamentals/Image File Formats.md": "reference",
+            "06 - Computer Vision/Pipeline Evaluation and Interpretability/The Full Training Pipeline End-to-End Checklist.md": "reference",
+            "06 - Computer Vision/Quizzes/CNN Solved Exercises.md": "example",
+            "06 - Computer Vision/Quizzes/Image Fundamentals and Histograms Quiz.md": "example",
+            "06 - Computer Vision/Quizzes/Image Processing Comprehensive Quiz.md": "example",
+            "06 - Computer Vision/Quizzes/Noise Degradation and Frequency Domain Quiz.md": "example",
+            "06 - Computer Vision/Quizzes/Spatial Filtering and Convolution Quiz.md": "example",
+            "06 - Computer Vision/Training and Transfer Learning/PyTorch Implementation Basics.md": "tutorial",
+            "06 - Computer Vision/Training and Transfer Learning/PyTorch Advanced - VGG16 and Pre-trained Models.md": "tutorial",
+            "06 - Computer Vision/Training and Transfer Learning/Transfer Learning and Fine-Tuning.md": "tutorial",
+        },
+        # area 06 has three area-root orientation notes instead of one MOC
+        "moc_target": (
+            "at least one area-root orientation note (CNN Course Overview for "
+            "CNN-side subfamilies, Image Processing Global Index for classical "
+            "image-processing subfamilies, CNN Mastery Roadmap for either)"
+        ),
+        "colliding": (
+            "Activation and Pooling Layers, Backpropagation and Gradient Flow in "
+            "CNNs, Common Mistakes and How to Fix Them, Core Architecture and "
+            "Philosophy, Evolution of CNN Architectures, Inception Architecture Deep "
+            "Dive, Introduction and Foundations of CNNs, PyTorch Advanced - VGG16 "
+            "and Pre-trained Models, PyTorch Implementation Basics, ResNet Bottleneck "
+            "Blocks and Architectural Variants, The Degradation Problem and Residual "
+            "Connections, The Full Training Pipeline End-to-End Checklist, Transfer "
+            "Learning and Fine-Tuning, VGG16 Architecture Deep Dive"
+        ),
+    },
 }
+
+# Kept for backwards compatibility with the session-20 records: the area-04
+# entries above are the authoritative copy.
+NOTE_TYPES: dict[str, str] = AREA_CONFIG["04 - Machine Learning"]["note_types"]  # type: ignore[assignment]
+
 
 
 def slugify(text: str) -> str:
@@ -77,6 +155,15 @@ def main() -> int:
 
     area = args.area
     prefix = area + "/"
+    config = AREA_CONFIG.get(area)
+    if config is None:
+        raise SystemExit(
+            f"no AREA_CONFIG entry for {area!r}: add note_types/moc_target/colliding "
+            "before synthesizing it (see scripts/s20_build_synthesis_inputs.py)"
+        )
+    note_types: dict[str, str] = config["note_types"]  # type: ignore[assignment]
+    moc_target: str = config["moc_target"]  # type: ignore[assignment]
+    colliding: str = config["colliding"]  # type: ignore[assignment]
     out_dir = SCRATCH / args.slug
     bundles = out_dir / "bundles"
     specs = out_dir / "specs"
@@ -166,7 +253,7 @@ def main() -> int:
     notes_meta = []
     for idx, p in enumerate(sorted(note_paths), start=1):
         meta_note = next(n for n in notes if n["path"] == p)
-        ntype = NOTE_TYPES.get(p, "concept")
+        ntype = note_types.get(p, "concept")
         fmap = files_by_note[p]
         ku_ids = sorted(kus_by_note[p])
         bundle_name = f"{idx:02d}-{slugify(p)}.md"
@@ -227,7 +314,7 @@ def main() -> int:
             "Reproduce every equation and every fenced code block from the source material verbatim (whitespace-insensitive), using $...$ inline and $$...$$ display math and language-labelled fences.",
             "Preserve rare or one-off details: historical distinctions, API/version caveats, project-specific lessons, interview distinctions, edge cases and failure modes.",
             "Write flowing explanatory prose for concepts; use lists and tables only where they genuinely aid lookup or comparison; never leave a section as a bare bullet list.",
-            "Link related notes with Obsidian wikilinks that resolve inside this area batch ([[Note Name]] for unique basenames; [[path/to/Note|Note]] for the colliding basenames Linear Regression and Logistic Regression); every note links to Machine Learning MOC and at least two topical siblings.",
+            f"Link related notes with Obsidian wikilinks that resolve inside this area batch ([[Note Name]] for unique basenames; [[path/to/Note|Note]] for the colliding basenames {colliding}); every note links to {moc_target} and at least two topical siblings.",
             "Keep the note self-contained: no references to source vaults, merge history, file paths of sources, or this bundle; provenance lives in frontmatter sources only.",
             "Match the depth of the evidence: do not shorten, summarize away, or pad; the note ends with a See also section of wikilinks when siblings exist.",
         ]
@@ -342,6 +429,11 @@ def main() -> int:
             "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
             "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
             "dossiers": "state/dossiers/*-v2.json (6 files)",
+        },
+        "area_config": {
+            "moc_target": moc_target,
+            "colliding": colliding,
+            "explicit_types": len(note_types),
         },
     }
     Path(args.report).parent.mkdir(parents=True, exist_ok=True)

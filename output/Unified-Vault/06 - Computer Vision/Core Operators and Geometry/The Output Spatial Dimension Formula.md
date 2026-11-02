@@ -1,0 +1,141 @@
+---
+title: The Output Spatial Dimension Formula
+type: concept
+aliases:
+  - Output Spatial Dimension Formula
+  - The Master Spatial Formula
+  - Output Size Formula
+  - Convolution Output Dimension Formula
+tags:
+  - cnn
+  - convolution
+  - output-dimensions
+  - tensor-shapes
+  - stride
+  - padding
+  - kernel-size
+  - floor-function
+  - shape-tracking
+  - pooling
+sources:
+  - "05. The Output Spatial Dimension Formula"
+created_index: 26
+---
+
+When architecting a CNN, determining exactly how large your output tensor will be after a convolutional or pooling layer is a mandatory requirement: the shape of every tensor at every point in the network must be known in advance — not guessed, not approximated, but calculated with mathematical certainty — because a single pixel off in your calculations will cascade through the network and cause runtime shape mismatch errors that are notoriously difficult to debug. If you cannot track your tensor shape at all times, building complex architectures or interfacing correctly with a final fully connected classification layer is entirely impossible. To compute this flawlessly, deep learning universally relies on a single master spatial formula, which applies equally to convolutional and pooling layers — any operation that slides a window over the spatial dimensions of a tensor follows the same mathematical law; master it once, and you can compute output shapes for any architecture. This note presents the formula, decodes each variable in detail, works through five standard examples plus the fractional floor edge cases, and draws out the practical implications for architecture design, anchoring the [[CNN Course Overview]] alongside [[The Convolution Operation]], [[Padding - Mathematics, Edge Effects, and Valid vs Same]], and [[Strides - Skipping Pixels and Downsampling]].
+
+## The foundational formula
+
+The exact formula for calculating the resultant spatial length along one dimension (e.g., computing the new output width $O_W$ derived from the original input width $W_W$) is defined as:
+
+$$O = \left\lfloor \frac{W - K + 2P}{S} \right\rfloor + 1$$
+
+This formula is applied **independently** to both the height and width dimensions. If the input is not square (e.g., $W_H \neq W_W$), or if the kernel is not square, or if asymmetric padding is used, you simply run the formula separately for each spatial dimension.
+
+## Decoding every variable
+
+Each variable in this formula has a precise meaning and a specific domain. Understanding each one deeply is essential for applying the formula correctly in all situations.
+
+### $O$ — output size
+
+The final resulting dimension length along the axis being computed. This value is always a positive integer (you cannot have a fractional or zero-dimensional output). If this formula produces a value of zero or a negative number, it means your configuration is invalid — the kernel is too large for the input, or the stride is too aggressive, and no valid convolution positions exist. In practice, deep learning frameworks will throw an error in this case.
+
+### $W$ — input size
+
+The incoming dimension length (input width or input height) along the axis being computed. For the very first convolutional layer, this is simply the spatial resolution of the input image (e.g., $W = 224$ for a $224 \times 224$ image). For subsequent layers, this is the output size of the previous layer, which was itself computed using this same formula. This cascading dependency is why you must compute shapes layer by layer, in order, from input to output.
+
+### $K$ — kernel size
+
+The spatial reach or footprint length of the sliding filter along the axis being computed. For a $3 \times 3$ filter, $K = 3$ for both the height and width calculations. For a $5 \times 7$ filter (non-square), $K_H = 5$ and $K_W = 7$. Note that $K$ refers only to the spatial dimensions of the filter — the channel depth dimension is irrelevant for this formula because the depth is entirely consumed by the summation process described in [[Processing 3D Volumes, Depth Summation, and Biases]].
+
+### $P$ — padding
+
+The number of symmetrical zero-pixel rings added externally across **one side** of the image perimeter. The formula uses $2P$ because padding is applied symmetrically — if $P = 1$, one ring of zeros is added to the left side and one ring to the right side (for the width dimension), for a total of $2P = 2$ extra columns. Similarly, $P = 1$ adds one ring of zeros to the top and one to the bottom for the height dimension. This symmetric addition means the image grows by $2P$ pixels along each dimension.
+
+### $S$ — stride
+
+The fixed integer distance dictating how far the sliding filter steps forward after every extraction. A stride of $S = 1$ means the filter moves one pixel at a time, producing the maximum possible output size. A stride of $S = 2$ means the filter skips every other pixel, cutting the output size roughly in half. The stride applies identically in both horizontal and vertical directions unless explicitly specified otherwise (asymmetric strides are rare but possible in some frameworks).
+
+### $\lfloor ... \rfloor$ — the floor operation
+
+The mathematical directive to round down any resulting decimal to the nearest valid integer. The floor operation ensures that the output dimension is always a whole number, which is a physical requirement — you cannot have a fractional number of pixels. The floor operation also silently discards any "remainder" pixels at the boundary of the input that cannot be fully covered by the sliding window, as explained in the fractional edge cases section below.
+
+## Standard calculation walkthrough
+
+Let's work through the most common configuration step by step. Suppose you process an image with width $W = 64$, deploying a standard $K=3$ kernel, a base stride $S=1$, and zero padding $P=0$:
+
+$$O = \frac{64 - 3 + 2(0)}{1} + 1 = \frac{61}{1} + 1 = 62$$
+
+The output width drops cleanly to $62$. The feature map is now $62 \times 62$ (assuming square input and kernel).
+
+**Interpretation:** with no padding and a stride of 1, the $3 \times 3$ filter can be placed at $62$ valid positions along a 64-pixel-wide image. The first position covers columns 1–3, the second covers columns 2–4, and so on, until the last position covers columns 62–64. Each position produces one output pixel, giving us 62 output pixels total.
+
+## Worked examples
+
+To build fluency with this formula, let's work through several configurations with different parameter combinations.
+
+**Example 1: standard 3×3 convolution with no padding.** With $W = 32$, $K = 3$, $P = 0$, $S = 1$: $O = \lfloor (32 - 3 + 0) / 1 \rfloor + 1 = 29 + 1 = 30$. **Result:** $32 \times 32 \rightarrow 30 \times 30$.
+
+**Example 2: 5×5 convolution with no padding.** With $W = 32$, $K = 5$, $P = 0$, $S = 1$: $O = \lfloor (32 - 5 + 0) / 1 \rfloor + 1 = 27 + 1 = 28$. **Result:** $32 \times 32 \rightarrow 28 \times 28$. **Observation:** larger kernels cause more shrinkage — a $5 \times 5$ kernel removes 4 pixels per dimension vs. only 2 for a $3 \times 3$ kernel.
+
+**Example 3: 3×3 convolution with same padding.** With $W = 32$, $K = 3$, $P = 1$, $S = 1$: $O = \lfloor (32 - 3 + 2) / 1 \rfloor + 1 = 31 + 1 = 32$. **Result:** $32 \times 32 \rightarrow 32 \times 32$ (dimensions preserved!). **Observation:** with $P = (K-1)/2 = 1$, the output size matches the input size — the "same padding" strategy explored in detail in [[Padding - Mathematics, Edge Effects, and Valid vs Same]].
+
+**Example 4: 3×3 convolution with stride 2.** With $W = 64$, $K = 3$, $P = 1$, $S = 2$: $O = \lfloor (64 - 3 + 2) / 2 \rfloor + 1 = \lfloor 63 / 2 \rfloor + 1 = 31 + 1 = 32$. **Result:** $64 \times 64 \rightarrow 32 \times 32$ (exactly halved!). **Observation:** stride 2 with appropriate padding halves the spatial dimensions, discarding 75% of the spatial data — the common downsampling strategy explored in [[Strides - Skipping Pixels and Downsampling]].
+
+**Example 5: 7×7 convolution in the first layer of a network.** With $W = 224$, $K = 7$, $P = 3$, $S = 2$ (as used in ResNet's first layer): $O = \lfloor (224 - 7 + 6) / 2 \rfloor + 1 = \lfloor 223 / 2 \rfloor + 1 = 111 + 1 = 112$. **Result:** $224 \times 224 \rightarrow 112 \times 112$. **Observation:** this aggressive initial downsampling reduces the computational cost of all subsequent layers. The padding of $P = 3$ (which is $\lfloor 7/2 \rfloor$) prevents excessive shrinkage beyond what the stride already causes — the architecture this belongs to is dissected in [[06 - Computer Vision/Architecture and Connectivity/ResNet Bottleneck Blocks and Architectural Variants|ResNet Bottleneck Blocks and Architectural Variants]].
+
+## Fractional edge cases: the floor function in action
+
+What happens if the sliding geometry does not resolve perfectly evenly? This situation arises frequently when using strides greater than 1, especially with odd-dimensional inputs.
+
+Suppose you pass in an uneven image width $W=5$, with stride $S=2$, kernel $K=2$, and no padding $P=0$:
+
+$$O = \left\lfloor \frac{5 - 2 + 0}{2} \right\rfloor + 1 = \left\lfloor \frac{3}{2} \right\rfloor + 1 = \lfloor 1.5 \rfloor + 1 = 1 + 1 = 2$$
+
+The final valid output shape registers as strictly $2 \times 2$.
+
+**What happens to the discarded decimal structurally?** Because the required stride of 2 forced the sliding $2 \times 2$ kernel "off the edge" into non-existent space while trying to process the absolute 5th final pixel column, modern deep learning frameworks standardly choose to completely **ignore and drop** that final unsymmetrical jagged edge spatial column from computation altogether to preserve tensor alignment. Let's trace this geometrically to see exactly what is discarded:
+
+| Filter Position | Columns Covered | Valid? |
+|---|---|---|
+| Position 1 | Columns 1–2 |  Fully within image |
+| Position 2 | Columns 3–4 |  Fully within image |
+| Position 3 | Columns 5–6 |  Column 6 does not exist! |
+
+The filter at position 3 would need to access column 6, which is outside the image boundary. Since we have no padding ($P=0$), this position is invalid and is simply skipped. The single pixel in column 5 that was never covered by any valid filter position is permanently lost — it contributes nothing to the output feature map.
+
+> [!warning] Discarded Pixels Are Silently Lost
+> This floor behavior means that when designing architectures, you should be mindful of odd-dimension inputs combined with strided operations, as a small amount of border information may be silently discarded. This is usually negligible for large feature maps (losing 1 pixel from a 224-pixel-wide image is immaterial), but it can become significant for small feature maps deep in the network. If you have a $7 \times 7$ feature map and apply a stride of 2, the output is $3 \times 3$ (not $3.5 \times 3.5$), and the extra column/row of information is simply dropped.
+
+## Practical implications for architecture design
+
+The output dimension formula has several important practical consequences for how you design CNN architectures.
+
+First, **layer-by-layer shape tracking is mandatory**. You cannot skip computing the shape at any intermediate layer, because each layer's output becomes the next layer's input. A spreadsheet or a simple script that computes shapes layer by layer is an essential design tool.
+
+Second, **the transition to fully connected layers requires exact shape knowledge**. Before the classification head, the 4D tensor must be flattened into a 1D vector. The length of this vector is $N \times C_{final} \times H_{final} \times W_{final}$, and you must know this exact number to define the first fully connected layer's input dimension. Even a one-pixel error will cause a runtime crash — the flattening step where this bites is covered in [[The Fully Connected Layer and Flattening]].
+
+Third, **architectural symmetry is a design choice**. Most architectures use square kernels ($K_H = K_W$), symmetric padding ($P_H = P_W$), and equal strides ($S_H = S_W$) to keep the spatial dimensions square. This simplifies reasoning about shapes and is almost universally followed in practice.
+
+Fourth, **the formula works for pooling layers too**. Max pooling and average pooling with a window size of $K$ and stride $S$ follow the exact same formula. For example, a $2 \times 2$ max pooling with stride 2 applied to a $64 \times 64$ input gives $O = \lfloor(64 - 2 + 0)/2\rfloor + 1 = 32$; the pooling operators themselves are covered in [[06 - Computer Vision/Core Operators and Geometry/Activation and Pooling Layers|Activation and Pooling Layers]] and [[Advanced Pooling and Global Average Pooling]].
+
+> [!tip] Quick Mental Math for Common Configurations
+> For the most common configuration ($K=3$, $S=1$, $P=0$), the output size is simply $W - 2$. This is because a $3 \times 3$ filter removes one pixel from each side of the dimension. For $K=5$, $S=1$, $P=0$, the output is $W - 4$. The general rule for stride-1, no-padding convolution: the output shrinks by $K - 1$ pixels per dimension.
+
+## Summary
+
+The output spatial dimension formula $O = \lfloor(W - K + 2P)/S\rfloor + 1$ is the single most important equation in CNN architecture design. It allows you to compute the exact size of every tensor at every point in the network. The five variables — input size $W$, kernel size $K$, padding $P$, stride $S$, and the floor operation — each play a distinct role in determining the output. The floor operation handles cases where the sliding window does not fit perfectly by silently discarding boundary pixels. Mastery of this formula, and the ability to apply it quickly and correctly, is a non-negotiable prerequisite for building any CNN architecture.
+
+## See also
+
+- [[CNN Course Overview]]
+- [[Core Operators and Geometry Summary]]
+- [[The Convolution Operation]]
+- [[Padding - Mathematics, Edge Effects, and Valid vs Same]]
+- [[Strides - Skipping Pixels and Downsampling]]
+- [[Receptive Fields and 1x1 Convolutions]]
+- [[Processing 3D Volumes, Depth Summation, and Biases]]
+- [[The Fully Connected Layer and Flattening]]
+- [[06 - Computer Vision/Core Operators and Geometry/Activation and Pooling Layers|Activation and Pooling Layers]]
+- [[Advanced Pooling and Global Average Pooling]]
+- [[06 - Computer Vision/Architecture and Connectivity/ResNet Bottleneck Blocks and Architectural Variants|ResNet Bottleneck Blocks and Architectural Variants]]

@@ -232,6 +232,63 @@ def test_invalid_frontmatter_detected():
 
 
 # ---------------------------------------------------------------------------
+# frontmatter field-shape (FRONTMATTER_FIELD_TYPE, F-0030)
+
+
+def test_frontmatter_stray_bracket_tag_flagged():
+    report = lint_text("---\ntitle: X\ntags: oc, machine-learning]\n---\n\nbody text.\n")
+    hits = _checks(report, "FRONTMATTER_FIELD_TYPE")
+    assert len(hits) == 1 and hits[0]["severity"] == "error"
+    assert "tags" in hits[0]["message"]
+
+
+def test_frontmatter_missing_open_bracket_alias_flagged():
+    report = lint_text("---\ntitle: X\naliases: [a, b]\nsources: S1]\n---\n\nbody text.\n")
+    hits = _checks(report, "FRONTMATTER_FIELD_TYPE")
+    assert len(hits) == 1 and "sources" in hits[0]["message"]
+
+
+def test_frontmatter_flow_list_ok():
+    report = lint_text("---\ntitle: X\ntags: [oc, machine-learning]\n---\n\nbody text.\n")
+    assert not _checks(report, "FRONTMATTER_FIELD_TYPE")
+
+
+def test_frontmatter_block_list_ok():
+    report = lint_text("---\ntitle: X\ntags:\n  - oc\n  - machine-learning\n---\n\nbody text.\n")
+    assert not _checks(report, "FRONTMATTER_FIELD_TYPE")
+
+
+def test_frontmatter_bracket_free_scalar_ok():
+    # a scalar without brackets is not a proven defect (Obsidian accepts it)
+    report = lint_text("---\ntitle: X\naliases: single alias\n---\n\nbody text.\n")
+    assert not _checks(report, "FRONTMATTER_FIELD_TYPE")
+
+
+def test_frontmatter_quoted_wikilink_scalar_ok():
+    # quoted scalars are deliberate string values (e.g. a single wikilink
+    # source), not hand-typed list typos
+    report = lint_text('---\ntitle: X\nsources: "[[AI Course 03.1]]"\n---\n\nbody text.\n')
+    assert not _checks(report, "FRONTMATTER_FIELD_TYPE")
+
+
+def test_frontmatter_non_scalar_member_flagged():
+    report = lint_text("---\ntitle: X\ntags:\n  - [nested, list]\n---\n\nbody text.\n")
+    hits = _checks(report, "FRONTMATTER_FIELD_TYPE")
+    assert len(hits) == 1 and "non-scalar member" in hits[0]["message"]
+
+
+def test_frontmatter_non_mapping_flagged():
+    report = lint_text("---\n- just\n- a list\n---\n\nbody text.\n")
+    hits = _checks(report, "FRONTMATTER_FIELD_TYPE")
+    assert len(hits) == 1 and "mapping" in hits[0]["message"]
+
+
+def test_frontmatter_empty_ok():
+    report = lint_text("Just body text with no frontmatter at all.\n")
+    assert not _checks(report, "FRONTMATTER_FIELD_TYPE")
+
+
+# ---------------------------------------------------------------------------
 # link integration + file/tree level
 
 

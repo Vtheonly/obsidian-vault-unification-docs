@@ -568,7 +568,7 @@ def _math_markers(text: str) -> list[str]:
 
 
 def _code_bodies(text: str) -> list[str]:
-    """Normalized fenced-code bodies (trailing whitespace stripped per line).
+    """Normalized fenced-code bodies (dedented, trailing whitespace stripped).
 
     F-0029: fences labelled ``markdown`` (or ``md``) are the source vaults'
     QUOTATION convention — overview notes embed verbatim copies of sibling
@@ -583,6 +583,14 @@ def _code_bodies(text: str) -> list[str]:
     (e.g. ``---\\n\\n### File 2: 5. Distance Metrics.md``). A body whose
     every non-empty line is such scaffolding carries no code and no
     knowledge; it is exempt too. Any other content keeps the fingerprint.
+
+    F-0031: the fingerprint is now INDENTATION-INSENSITIVE: the common
+    leading whitespace of the body is stripped (after per-line rstrip).
+    Source fences are often indented by their list-item context while the
+    synthesized note dedents the same code so the fence parses (a python
+    block whose body is uniformly indented fails ``ast.parse``); the code is
+    verbatim modulo that indentation, which the editorial contract already
+    calls "verbatim (whitespace-insensitive)".
     """
     bodies = []
     for info, body in _FENCE_LANG_RE.findall(text):
@@ -590,8 +598,20 @@ def _code_bodies(text: str) -> list[str]:
             continue
         normalized = "\n".join(line.rstrip() for line in body.split("\n")).strip("\n")
         if normalized and not _is_scaffold_body(normalized):
-            bodies.append(normalized)
+            bodies.append(_dedent_block(normalized))
     return bodies
+
+
+def _dedent_block(block: str) -> str:
+    """Strip the common leading whitespace of a code block body (F-0031)."""
+    lines = block.split("\n")
+    indents = [len(line) - len(line.lstrip(" \t")) for line in lines if line.strip()]
+    if not indents:
+        return block
+    common = min(indents)
+    if common == 0:
+        return block
+    return "\n".join(line[common:] if line.strip() else line for line in lines)
 
 
 _SCAFFOLD_LINE_RE = re.compile(
@@ -622,15 +642,27 @@ def _term_frequency(source_texts: list[str]) -> dict[str, int]:
     return freq
 
 
+_FRONTMATTER_RE = re.compile(r"\A---\n.*?\n---(?:\n|\Z)", re.S)
+
+
 def markers_for_record(record: dict, freq: dict[str, int], *, max_count: int = RARE_TERM_MAX_COUNT) -> dict:
     """Markers a KU excerpt contributes to the retention checks.
 
     - ``terms``: casefolded tokens that are rare in the source corpus;
     - ``math``: normalized equation strings (LaTeX preserved, whitespace collapsed);
     - ``code``: normalized fenced-code bodies.
+
+    F-0030: a LEADING YAML frontmatter block in a KU excerpt is provenance
+    metadata of the SOURCE note (its own ``sources:`` wikilist, tags, dates),
+    not note knowledge — the same class as the F-0029 scaffolding exemption.
+    Its tokens (wikilink basenames like ``objectives.md``) are therefore
+    excluded from TERM markers. Math and code markers are unaffected (a
+    frontmatter block contains neither). The excerpt itself is untouched:
+    excerpt hashes and KU fidelity are computed elsewhere from the raw text.
     """
     excerpt = record.get("excerpt") or ""
-    terms = sorted({t for t in _term_tokens(excerpt) if freq.get(t, 0) <= max_count})
+    term_source = _FRONTMATTER_RE.sub("", excerpt, count=1)
+    terms = sorted({t for t in _term_tokens(term_source) if freq.get(t, 0) <= max_count})
     return {"terms": terms, "math": _math_markers(excerpt), "code": _code_bodies(excerpt)}
 
 
