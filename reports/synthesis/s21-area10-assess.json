@@ -19221,9 +19221,9 @@
             "weight": 0.05
           },
           "depth": {
-            "score": 0.6423063063063064,
+            "score": 0.640847972972973,
             "evidence": [
-              "2096 words (band 40..1200, target 180)",
+              "2106 words (band 40..1200, target 180)",
               "74 paragraphs, 18 with >=3 sentences (ratio 0.24)",
               "115 sentences"
             ],
@@ -19285,7 +19285,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9183148863148864,
+        "overall": 0.9181759974259976,
         "overall_measured_weight": 1.0499999999999998,
         "lint_error_count": 0,
         "lint_defect_count": 1,
@@ -19421,11 +19421,11 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.5810715210355987,
+            "score": 0.5789715210355987,
             "evidence": [
-              "3518 words (band 80..1500, target 350)",
+              "3536 words (band 80..1500, target 350)",
               "103 paragraphs, 40 with >=3 sentences (ratio 0.39)",
-              "217 sentences"
+              "218 sentences"
             ],
             "band": "within_band",
             "weight": 0.2
@@ -19485,7 +19485,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.8582993373401141,
+        "overall": 0.857899337340114,
         "overall_measured_weight": 1.05,
         "lint_error_count": 0,
         "lint_defect_count": 0,
@@ -19516,15 +19516,15 @@
           "definitions": {
             "score": 1.0,
             "evidence": [
-              "12 definition-pattern matches"
+              "13 definition-pattern matches"
             ],
             "band": "within_band",
             "weight": 0.2
           },
           "depth": {
-            "score": 0.6994685654008439,
+            "score": 0.6990018987341771,
             "evidence": [
-              "2123 words (band 80..1500, target 350)",
+              "2127 words (band 80..1500, target 350)",
               "79 paragraphs, 19 with >=3 sentences (ratio 0.24)",
               "130 sentences"
             ],
@@ -19586,10 +19586,10 @@
             "weight": 0.05
           }
         },
-        "overall": 0.928470202933494,
+        "overall": 0.9283813140446052,
         "overall_measured_weight": 1.05,
         "lint_error_count": 0,
-        "lint_defect_count": 1,
+        "lint_defect_count": 2,
         "caveat": "deterministic measurement only; semantic adequacy is a review decision",
         "sequence_hint": [
           0,
@@ -19623,9 +19623,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.7978602836879432,
+            "score": 0.7979769503546099,
             "evidence": [
-              "1646 words (band 80..1500, target 350)",
+              "1645 words (band 80..1500, target 350)",
               "47 paragraphs, 18 with >=3 sentences (ratio 0.38)",
               "85 sentences"
             ],
@@ -19686,7 +19686,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.8550800630417651,
+        "overall": 0.8551059889676912,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 4,
@@ -19823,9 +19823,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.7098689054726368,
+            "score": 0.7094022388059701,
             "evidence": [
-              "2183 words (band 80..1500, target 350)",
+              "2187 words (band 80..1500, target 350)",
               "67 paragraphs, 20 with >=3 sentences (ratio 0.30)",
               "119 sentences"
             ],
@@ -19886,7 +19886,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.8799708678828081,
+        "overall": 0.8798671641791044,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 2,
@@ -19923,9 +19923,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.6371772727272726,
+            "score": 0.6368272727272727,
             "evidence": [
-              "2769 words (band 80..1500, target 350)",
+              "2772 words (band 80..1500, target 350)",
               "88 paragraphs, 25 with >=3 sentences (ratio 0.28)",
               "154 sentences"
             ],
@@ -19986,7 +19986,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9193727272727272,
+        "overall": 0.9192949494949495,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 4,
@@ -21024,7 +21024,7 @@
           "depth": {
             "score": 0.763157894736842,
             "evidence": [
-              "1300 words (band 80..1500, target 350)",
+              "1306 words (band 80..1500, target 350)",
               "38 paragraphs, 8 with >=3 sentences (ratio 0.21)",
               "59 sentences"
             ],
@@ -21214,7 +21214,7 @@
           "definitions": {
             "score": 1.0,
             "evidence": [
-              "14 definition-pattern matches"
+              "15 definition-pattern matches"
             ],
             "band": "within_band",
             "weight": 0.2
@@ -21222,9 +21222,9 @@
           "depth": {
             "score": 0.8153846153846154,
             "evidence": [
-              "1400 words (band 80..1500, target 350)",
+              "1424 words (band 80..1500, target 350)",
               "39 paragraphs, 15 with >=3 sentences (ratio 0.38)",
-              "77 sentences"
+              "78 sentences"
             ],
             "band": "within_band",
             "weight": 0.2
@@ -21718,7 +21718,7 @@
           "depth": {
             "score": 0.8153846153846154,
             "evidence": [
-              "1218 words (band 80..1500, target 350)",
+              "1221 words (band 80..1500, target 350)",
               "39 paragraphs, 15 with >=3 sentences (ratio 0.38)",
               "72 sentences"
             ],
@@ -22114,9 +22114,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.8192301886792451,
+            "score": 0.8174801886792452,
             "evidence": [
-              "1788 words (band 80..1500, target 350)",
+              "1803 words (band 80..1500, target 350)",
               "53 paragraphs, 27 with >=3 sentences (ratio 0.51)",
               "113 sentences"
             ],
@@ -22177,7 +22177,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9153844863731655,
+        "overall": 0.9149955974842766,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 1,
@@ -22216,7 +22216,7 @@
           "depth": {
             "score": 0.7608108108108108,
             "evidence": [
-              "1689 words (band 150..2500, target 550)",
+              "1694 words (band 150..2500, target 550)",
               "74 paragraphs, 15 with >=3 sentences (ratio 0.20)",
               "106 sentences"
             ],
@@ -22414,9 +22414,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.6132822429906541,
+            "score": 0.6123489096573208,
             "evidence": [
-              "2772 words (band 80..1500, target 350)",
+              "2780 words (band 80..1500, target 350)",
               "107 paragraphs, 22 with >=3 sentences (ratio 0.21)",
               "148 sentences"
             ],
@@ -22477,7 +22477,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9057293873312564,
+        "overall": 0.905521979923849,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 2,
@@ -22516,9 +22516,9 @@
           "depth": {
             "score": 0.7795918367346938,
             "evidence": [
-              "1438 words (band 80..1500, target 350)",
+              "1447 words (band 80..1500, target 350)",
               "49 paragraphs, 13 with >=3 sentences (ratio 0.27)",
-              "75 sentences"
+              "76 sentences"
             ],
             "band": "within_band",
             "weight": 0.2
@@ -22714,11 +22714,11 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.7100032520325203,
+            "score": 0.7100451219512194,
             "evidence": [
-              "1916 words (band 80..1500, target 350)",
-              "82 paragraphs, 16 with >=3 sentences (ratio 0.20)",
-              "115 sentences"
+              "1947 words (band 80..1500, target 350)",
+              "82 paragraphs, 17 with >=3 sentences (ratio 0.21)",
+              "117 sentences"
             ],
             "band": "within_band",
             "weight": 0.2
@@ -22777,7 +22777,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.8800007226738934,
+        "overall": 0.8800100271002709,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 4,
@@ -23012,9 +23012,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.7076490196078431,
+            "score": 0.7077656862745098,
             "evidence": [
-              "2342 words (band 80..1500, target 350)",
+              "2341 words (band 80..1500, target 350)",
               "85 paragraphs, 30 with >=3 sentences (ratio 0.35)",
               "161 sentences"
             ],
@@ -23075,7 +23075,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.8794775599128539,
+        "overall": 0.8795034858387798,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 0,
@@ -23211,9 +23211,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.7231228070175438,
+            "score": 0.7228894736842105,
             "evidence": [
-              "2080 words (band 80..1500, target 350)",
+              "2082 words (band 80..1500, target 350)",
               "76 paragraphs, 23 with >=3 sentences (ratio 0.30)",
               "134 sentences"
             ],
@@ -23274,7 +23274,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.8384717348927875,
+        "overall": 0.8384198830409355,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 4,
@@ -23711,9 +23711,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.7657115384615385,
+            "score": 0.7655948717948718,
             "evidence": [
-              "1695 words (band 80..1500, target 350)",
+              "1696 words (band 80..1500, target 350)",
               "78 paragraphs, 23 with >=3 sentences (ratio 0.29)",
               "118 sentences"
             ],
@@ -23774,7 +23774,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9118247863247863,
+        "overall": 0.9117988603988603,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 6,
@@ -23913,7 +23913,7 @@
           "depth": {
             "score": 0.7839999999999999,
             "evidence": [
-              "1325 words (band 80..1500, target 350)",
+              "1327 words (band 80..1500, target 350)",
               "50 paragraphs, 14 with >=3 sentences (ratio 0.28)",
               "80 sentences"
             ],
@@ -24011,9 +24011,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.7240499999999999,
+            "score": 0.7245166666666666,
             "evidence": [
-              "2151 words (band 80..1500, target 350)",
+              "2147 words (band 80..1500, target 350)",
               "84 paragraphs, 28 with >=3 sentences (ratio 0.33)",
               "194 sentences"
             ],
@@ -24074,7 +24074,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.8831222222222221,
+        "overall": 0.8832259259259259,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 3,
@@ -24110,9 +24110,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.7776166666666666,
+            "score": 0.7751666666666666,
             "evidence": [
-              "1709 words (band 80..1500, target 350)",
+              "1730 words (band 80..1500, target 350)",
               "50 paragraphs, 17 with >=3 sentences (ratio 0.34)",
               "91 sentences"
             ],
@@ -24123,7 +24123,7 @@
             "score": 0.2,
             "evidence": [
               "0 display math blocks",
-              "24 inline math",
+              "26 inline math",
               "0 derivation markers"
             ],
             "band": "within_band",
@@ -24173,7 +24173,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.906137037037037,
+        "overall": 0.9055925925925925,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 0,
@@ -24210,11 +24210,11 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.7808981481481481,
+            "score": 0.7796148148148148,
             "evidence": [
-              "1505 words (band 80..1500, target 350)",
+              "1516 words (band 80..1500, target 350)",
               "81 paragraphs, 22 with >=3 sentences (ratio 0.27)",
-              "117 sentences"
+              "118 sentences"
             ],
             "band": "within_band",
             "weight": 0.2
@@ -24273,7 +24273,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9068662551440329,
+        "overall": 0.9065810699588476,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 4,
@@ -24610,9 +24610,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.7501806451612903,
+            "score": 0.7500639784946237,
             "evidence": [
-              "1692 words (band 80..1500, target 350)",
+              "1693 words (band 80..1500, target 350)",
               "62 paragraphs, 15 with >=3 sentences (ratio 0.24)",
               "110 sentences"
             ],
@@ -24673,7 +24673,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9000401433691755,
+        "overall": 0.9000142174432496,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 2,
@@ -25502,17 +25502,17 @@
           "definitions": {
             "score": 1.0,
             "evidence": [
-              "16 definition-pattern matches"
+              "17 definition-pattern matches"
             ],
             "band": "within_band",
             "weight": 0.2
           },
           "depth": {
-            "score": 0.6401055555555555,
+            "score": 0.6370722222222222,
             "evidence": [
-              "2561 words (band 80..1500, target 350)",
+              "2587 words (band 80..1500, target 350)",
               "108 paragraphs, 23 with >=3 sentences (ratio 0.21)",
-              "143 sentences"
+              "144 sentences"
             ],
             "band": "within_band",
             "weight": 0.2
@@ -25571,7 +25571,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.8644679012345678,
+        "overall": 0.8637938271604938,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 2,
@@ -25867,7 +25867,7 @@
       "out": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area10/gates/assessments-all.jsonl",
       "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s21-area10-assess.json"
     },
-    "utc_timestamp": "2026-11-02T22:37:22+00:00",
-    "git_commit": "f7b4854"
+    "utc_timestamp": "2026-11-02T22:51:24+00:00",
+    "git_commit": "0cbc983"
   }
 }

@@ -1,0 +1,38 @@
+{
+  "result": {
+    "passed": true,
+    "criteria": [
+      "every expected note assessed or explicitly unresolved",
+      "every note lint-error clean (allowed: 0)",
+      "every measured dimension within its type band or explicitly waived with reason",
+      "no unexplained systematic quality drift"
+    ],
+    "failures": [],
+    "notes_assessed": 12,
+    "waivers_applied": [
+      [
+        "drift::concept",
+        "content-family artifact: first-third sources (The Autoencoder 2 display + 17 inline; Score-Based and Latent Diffusion 1 display + 14 inline) are equation-carrying; last-third GAN-family sources (The Adversarial Game: 0 display, 39 inline) carry inline math without display blocks or derivation vocabulary. Every note preserves its source's math verbatim (audit valid=true 0 findings over 315 KUs; 0 dimensions below band). Re-check corpus-wide at session 25."
+      ]
+    ],
+    "verdict": "pass"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-gate",
+    "args": {
+      "command": "quality-gate",
+      "assessments": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area12/gates/assessments.jsonl",
+      "expected": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area12/expected-notes.txt",
+      "drift_report": "reports/synthesis/s21-area12-drift.json",
+      "waivers": [
+        "drift::concept=content-family artifact: first-third sources (The Autoencoder 2 display + 17 inline; Score-Based and Latent Diffusion 1 display + 14 inline) are equation-carrying; last-third GAN-family sources (The Adversarial Game: 0 display, 39 inline) carry inline math without display blocks or derivation vocabulary. Every note preserves its source's math verbatim (audit valid=true 0 findings over 315 KUs; 0 dimensions below band). Re-check corpus-wide at session 25."
+      ],
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s21-area12-gate.json"
+    },
+    "utc_timestamp": "2026-11-02T22:59:40+00:00",
+    "git_commit": "0cbc983"
+  }
+}

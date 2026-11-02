@@ -2,191 +2,129 @@
 
 ## Project state
 
-- Current milestone: **SYNTHESIS IN PROGRESS — AREAS 04–09 COMPLETE**.
-  Session 22 (2026-11-02) drove three full areas end-to-end: **area 07 -
-  Sequence Models (14 notes), area 08 - Attention and Transformers (38
-  notes), and area 09 - NLP and Language Models (11 notes)**, all GREEN
-  through the complete gate chain (lint 0 errors → assess 0 dimensions
-  below band → drift explained → quality-gate PASS → audit-output
-  **valid=true, 0 findings** over 370 + 1,771 + 551 = 2,692 KUs; 9,979
-  markers verified present). Deliverable metric: canonical notes verified
-  **127 → 190/544**.
+- Current milestone: **SYNTHESIS IN PROGRESS — AREAS 04–14 COMPLETE**.
+  Session 23 (2026-11-03) drove five full areas end-to-end: **area 10 -
+  Large Language Models (7 notes), area 11 - Foundation Models and Multimodal
+  (13 notes), area 12 - Generative Models (12 notes), area 13 - Training and
+  Adaptation (11 notes), and area 14 - Inference and Production (26 notes)**,
+  all GREEN through the complete gate chain (lint 0 errors → assess 0
+  dimensions below band → drift explained → quality-gate PASS → audit-output
+  **valid=true, 0 findings** over 397 + 632 + 315 + 552 + 1,356 = 3,252 KUs;
+  15,538 markers verified present: 14,521 term + 838 math + 179 code).
+  Deliverable metric: canonical notes verified **190 → 259/544**.
 - USER DIRECTIVE IN FORCE (2026-11-01): BINDING POLICY (ADR-0012): read
-  `docs/ACCELERATED_COMPLETION_POLICY.md` and AGENTS.md §12 BEFORE planning.
-  Budget after session 22: **4 sessions remaining (23–26)**. Deliverable-first
+  `docs/ACCELERATED_COMPLETION_POLICY.md` and AGENTS.md §12–13 BEFORE planning.
+  Budget after session 23: **3 sessions remaining (24–26)**. Deliverable-first
   reporting; a bookkeeping-only session is a FAILED session; every checkpoint
-  carries the `accelerated_mode` block.
+  carries the `accelerated_mode` block; continuous commit-and-push (§13).
 - Completed and verified: BOOT-000..004, EXT-001..011, REBASE-000, AUDIT-011,
   FRAME-001, DISC-001, FRAME-002, REGEN-001, DISC-002, DISP-001. SYNTH-001 is
-  in_progress (areas 04–09 done; 14 areas / 354 notes remain).
-- Framework: 744/744 tests at session end (740 at start + 4 F-0032 marker
-  tests); sources byte-identical 276/276 + 333/333 at start AND end;
-  omission pilot re-verified 12/12 after the F-0032 marker-machinery change.
+  in_progress (areas 04–14 done; 9 areas / 285 notes remain).
+- Framework: 744/744 tests at session start AND end; sources byte-identical
+  276/276 + 333/333 at start AND end; registry rebuilt exactly as the
+  session-20/21/22 checkpoints record (applied=27,536, Unaccounted=0, valid).
 
-## Session 21 summary (previous session's record — kept for the pipeline lessons)
+## Session 23 summary (evidence-backed; the pipeline recipe, now battle-tested on 259 notes)
 
-- Baseline verified: clean tree, HEAD == origin/main == cbaed73; 725/725
-  first-run; manifests unchanged; derived registry rebuilt exactly as the
-  session-20 checkpoint records (applied=27,536, Unaccounted=0, valid).
-- **Pipeline generalized**: `scripts/s20_build_synthesis_inputs.py` now carries
-  a per-area `AREA_CONFIG` (note types, MOC link target, colliding basenames);
-  the area-04 rebuild was regression-verified byte-identical. New reusable
-  chain script `scripts/s21_run_gates.py <slug>` (assess over the whole vault
-  → deterministic filter to the area's expected notes → drift → gate).
-- **Generation pattern that worked** (100 notes, 26 subagent groups): groups
-  capped at ~4 notes / ~12K source words (TWO over-merged groups hit the
-  context deadline — their files still landed, but keep groups small);
-  orientation/MOC notes written LAST with the full sibling list
-  (`expected-notes.txt`); every prompt carried the full editorial contract +
-  the area's colliding-basename list (path-form links) + the Superseded-KU
-  rule. The area MOC may be orchestrator-written (session-20/21 pattern).
-- **Repairs are anchored, asserted, idempotent** scripts citing their source
-  KUs: `scripts/s21_lint_repairs.py` (4 lint errors), `scripts/s21_marker_
-  repairs.py` (area 05: 40 audit findings → 0), `scripts/s21_marker_repairs_
-  area06.py` (area 06: 66 → 0). Repair root-cause classes this session:
-  verbatim-form equation/code/term gaps; source-voice sentences (stacked
-  adverbs); source-spelling quirks preserved verbatim per the preservation
-  contract (`breakthroughths`, `presving`, `deegradation`, `zisseran`,
-  `trigggs`, `downsampleing`, `un-padded`); underscore-emphasis formatting
-  variants; source section cross-references kept as historical context
-  (Section 13.5.3 / 13.9.1 / 14.4 / Ch. 05.07); the label-smoothing source
-  self-correction preserved with both values contextualized.
-- **Framework fixes (all with regression tests + pilot re-verification)**:
-  FRONTMATTER_FIELD_TYPE lint check (plain-scalar brackets / non-scalar
-  alias members — caught 3 real subagent frontmatter errors); F-0030
-  (source-note frontmatter inside KU excerpts is provenance metadata, not
-  term-knowledge); F-0031 (code fingerprints dedent-normalized — the
-  contract already says code is verbatim "whitespace-insensitive").
-- **Known tooling artifact (do not chase phantom defects)**: this IM channel
-  strips the two-character sequence `[` + `m` from DISPLAYED tool output
-  (e.g. `tags: [moc, x]` renders as `tags: oc, x]`). Verify suspected
-  frontmatter/link defects byte-level (hex) before acting — session 21
-  nearly "repaired" a phantom tags defect that was display-only.
-- **Lint warnings policy applied**: 6 warnings remain INTENTIONALLY
-  (verbatim source text: quiz `a) b) c) d)` option format ×4, `[0,∞)`
-  interval, literal `$10` price). Fixing them would violate verbatim
-  preservation; they are documented in `reports/synthesis/s21-lint-vault.json`
-  and the session-21 checkpoint.
-- **Drift waivers (area 06, 4 types)**: content-family artifact (CNN
-  engineering vs classical image-processing source families), each with
-  three-part evidence (0 dimensions below band; audit 0 findings; first/last
-  thirds split along source-family lines). Recorded verbatim in
-  `reports/synthesis/s21-area06-gate.json` — re-check in the session-25
-  corpus-wide drift re-audit.
-- Orchestrator independent review: 8/8 semantic probes across 8 notes;
-  F-0014 marker headings confirmed absent; every repair edit personally
-  verified against its source excerpt.
-
-## Committed session-22 artifacts (the durable state)
-
-- `output/Unified-Vault/07 - Sequence Models/**` (14 notes),
-  `output/Unified-Vault/08 - Attention and Transformers/**` (38 notes) and
-  `output/Unified-Vault/09 - NLP and Language Models/**` (11 notes) — THE
-  deliverable this session (with areas 04-06 from sessions 20-21).
-- `scripts/s22_registry_rebuild.sh`, `scripts/s22_link_rules.py`,
-  `scripts/s22_pack_waves.py`, `scripts/s22_launch_manifest.py`,
-  `scripts/s22_lint_repairs.py`, `scripts/s22_marker_repairs_area07.py`,
-  `scripts/s22_marker_repairs_area08.py`,
-  `scripts/s22_marker_repairs_area08_round2.py`,
-  `scripts/s22_marker_repairs_area09.py` — the replayable pipeline +
-  repairs (scratch/ bundles/specs/editorial contract are git-ignored and
-  regenerable; reports are committed).
-- `state/checkpoints/checkpoint-2026-11-02-synth001-session22.json` (with
-  the `accelerated_mode` block); `state/findings.jsonl` F-0032;
-  session-ledger row 22 in `docs/ACCELERATED_COMPLETION_POLICY.md`.
-- `reports/synthesis/s22-*` (inputs ×3, checkprompt ×3 under s20- prefix,
-  lint-vault, kureg ×3, assess/drift/gate ×3 under s21- prefix, audit ×3,
-  omission-pilot-f0032, immutable ×4).
-- Framework fix in `src/vault_unification/omission.py` (F-0032) +
-  `tests/test_omission.py` (744 total).
-
-## Session 22 summary (evidence-backed)
-
-- Baseline verified: clean tree, HEAD == origin/main == 45c9da7; 740/740
+- Baseline verified: clean tree, HEAD == origin/main == 6f7730e; 744/744
   first-run; manifests unchanged; derived registry rebuilt exactly as
-  recorded (applied=27,536, Unaccounted=0, valid=true) via
-  `scripts/s22_registry_rebuild.sh`.
-- **Pipeline additions**: per-area `AREA_CONFIG` entries for 07/08/09;
-  `scripts/s22_link_rules.py` (deterministic colliding-basename path forms —
-  6 in-batch + 22 generated + 5 future — no `.md` suffix, matching the
-  areas-04-06 convention); `scripts/s22_pack_waves.py`,
-  `scripts/s22_launch_manifest.py`; the binding editorial contract at
-  `scratch/synth/s22-editorial-contract.md` (regenerable; every subagent
-  prompt references it).
-- **63 notes by 22 bounded subagent groups** (groups ≤ ~4 notes / ~12K
-  source words; orientation/MOC notes LAST with the full sibling list).
-  One IM-channel server shutdown interrupted 3 parallel groups after area
-  07 — zero committed state lost, all relaunched and completed.
-- **Repairs are anchored, asserted, idempotent scripts citing finding ids
-  and source locators**: `scripts/s22_lint_repairs.py` (1 real lint defect:
-  a dropped inline-code backtick); `scripts/s22_marker_repairs_area07.py`
-  (4 findings → 0: source-voice transition sentences — formalizes /
-  confront / flesh — plus the source's 07.x chapter checklist restored as
-  historical context); `scripts/s22_marker_repairs_area08.py` + `_round2.py`
-  (39 → 4 → 0: source-verbatim equation forms restored alongside the notes'
-  variants, See-also glosses, note-ID cross-references, hyphenation/dash
-  variants; ROUND 2 LESSON: when a source carries the same content twice
-  with different wording/equation spacing (main text + recap), BOTH
-  treatments must survive — a repair that swaps one for the other just
-  moves the finding to the other KU); `scripts/s22_marker_repairs_area09.py`
-  (13 → 0: en-dash→hyphen source forms, list-item labels, production-ops
-  glosses, the BM25 inline slash form).
-- **Framework fix F-0032** (year-initial timeline headings misread as
-  numbered headings → 51 false mixed-numbering findings): `_is_year_like`
-  excludes leading 4-digit years 1000-2999 from numbering classification;
-  dash-style numbering unaffected (1,307 source headings verified); 4
-  regression tests; pilot re-verified 12/12.
-- **Drift waivers (concept type, 1 per area, three-part evidence)**: content
-  family artifacts — area 07: the Bottleneck source contains zero
-  example-marker vocabulary while its concrete illustrations are
-  verbatim-preserved; area 08: first-third master-ai math-dense sources vs
-  last-third ai-course conceptual sources (The Full Transformer source: 0
-  display math; Inductive Bias source: no math at all); area 09: embeddings/
-  LM are mathematical topics, tokenization is algorithmic (WordPiece note
-  matches its source exactly: 0 display, 4 inline math). All recorded
-  verbatim in the gate reports; re-check corpus-wide at session 25 together
-  with the four area-06 waivers.
-- Orchestrator independent review: 10/10 semantic probes across 10 notes;
-  F-0014 marker headings confirmed absent; self-contamination greps clean;
-  every anchored repair personally verified against its source.
+  recorded via `scripts/s22_registry_rebuild.sh`.
+- **Pipeline additions**: AREA_CONFIG entries for areas 10–14 in
+  `scripts/s20_build_synthesis_inputs.py` (types: 6 MOC/roots overview, LLM
+  Benchmarks reference, Multimodal AI Overview subfamily overview, 3
+  derivations — Reparameterization Trick, KL Divergence Loss, DPO);
+  `scripts/s23_link_rules.py` (deterministic colliding-basename path forms —
+  4 in-batch: Chapter Overview→area 12 path form, LoRA, vLLM, TensorRT-LLM +
+  28 generated + 2 future: Applications of Deep Learning, Jacobians and
+  Hessians); `scripts/s23_pack_waves.py` + `scripts/s23_launch_manifest.py`;
+  the binding editorial contract regenerated at
+  `scratch/synth/s23-editorial-contract.md` (scratch is git-ignored and was
+  recycled — regenerating it from `docs/EDITORIAL_STYLE_GUIDE.md` conventions
+  v1 is the recorded procedure, see §"Standing rules").
+- **69 notes by 33 bounded subagent groups in 5 waves** (cap 4 notes / 12K
+  source words; orientation/MOC notes LAST with the full sibling list; waves
+  sized 8/8/7/5/5 parallel agents — zero interruptions this session).
+- **Lint**: 0 errors after 2 anchored fence-label repairs
+  (`scripts/s23_lint_repairs.py`: the pgvector source embeds a mixed
+  SQL+Python fence and the Guardrails source labels a Colang DSL fence as
+  `python`; relabelled `python`→`text` with bodies byte-identical — F-0031
+  precedent, the audit fingerprints bodies not labels). 17 warnings all
+  documented verbatim-source artifacts: 7 pre-existing + 9 new (literal
+  dollar prices: Reasoning Models cost table, Vision Foundation Models
+  `$0.0001-0.001`, Multimodal AI Overview `$0.002`, Inference and Production
+  MOC `$10k+/month`, LLM-as-Judge `$5–50`…, Failure Modes `$0.50`, LLM
+  Security `> $X`; bracket artifacts: the `$130M…$100/H100` double-price
+  line in Pretraining Objectives, the inline-code `{"name":` brace in
+  Constrained Decoding) + 1 PLACEHOLDER_TEXT from the restored verbatim
+  source marker `(TODO: cite, 2024)` in Sampling Strategies.
+- **Audits**: 28 round-1 findings → 0 via anchored, asserted, idempotent
+  scripts `scripts/s23_marker_repairs_area{10,11,12,13,14}.py` (each repair
+  cites finding id + source locator; classes: dropped capstone/see-also
+  glosses with dead links, source-spelling quirks preserved verbatim
+  (`preill`), note-ID cross-references restored as historical context
+  (`03.8`, `05.5`, chapter roadmap `de-duplication`), source-verbatim ASCII
+  vs typographic variants (`2-10x` vs `2-10×`, `English-training`), dollar
+  price-run math fingerprints, exact inline-math forms); 4 residual round-2
+  findings → 0 via `scripts/s23_marker_repairs_round2.py` — **the round-2
+  keep-both lesson re-confirmed: when a source carries the same content twice
+  with different wording (main text + interview answer), BOTH treatments must
+  survive; a repair that swaps one form for the other just moves the finding
+  to the other KU** (2-10×/2-10x, `\alpha = 0.7, k = 4`/`acceptance rate
+  $\alpha = 0.7$ gives ~2.5x`, hedge/hedges, `interview prep` spaced form —
+  the tokenizer keeps hyphens inside tokens, so hyphenated vs spaced forms
+  are DIFFERENT markers).
+- **Gates**: areas 13 and 14 pass clean (no waiver); areas 10/11/12 each
+  carry one evidence-backed concept-type drift waiver (content-family
+  artifacts, three-part evidence: 0 dimensions below band + audit 0 findings
+  + source math-density measurements — e.g. LLaVA/Whisper sources are
+  math-free surveys while Embedding Model Training carries the InfoNCE
+  math). Recorded verbatim in the gate reports; **10 total waivers now
+  pending the session-25 corpus-wide drift re-audit** (4 area-06 + 3
+  sessions-22 + 3 session-23).
+- Orchestrator independent review: 10/10 semantic probes across 10 notes
+  (two probe strings initially mismatched the SOURCE's own form — plain
+  commas in the KV-cache arithmetic, code-block InfoNCE in CLIP — and were
+  hand-verified against the sources); F-0014 marker headings confirmed
+  absent; self-contamination greps clean.
 
-## Next task (SYNTH-001 continue — sessions 23–25)
+## Next task (SYNTH-001 continue — sessions 24–25)
 
-1. **Read first**: AGENTS.md §12 → `docs/ACCELERATED_COMPLETION_POLICY.md` →
-   this file → the session-22 checkpoint (the pipeline recipe is
-   battle-tested on 190 notes now).
+1. **Read first**: AGENTS.md §12–13 → `docs/ACCELERATED_COMPLETION_POLICY.md`
+   → this file → the session-23 checkpoint (the pipeline recipe is
+   battle-tested on 259 notes).
 2. **Verify baseline** (policy §7): HEAD == origin/main, clean tree,
    `python3 -m pip install -e .`, full suite green (**744 expected**),
-   manifests 276/276 + 333/333. Rebuild the derived registry exactly as the
-   session-20/21/22 checkpoints record (`scripts/s22_registry_rebuild.sh`).
-3. **Run the remaining areas in waves** (suggested):
-   - 23: areas 10 - Large Language Models (7) + 11 - Foundation Models and
-     Multimodal (13) + 12 - Generative Models (12) + 13 - Training and
-     Adaptation (11) + 14 - Inference and Production (26) — 69 notes.
-   - 24: areas 15 - Agents and Tooling (41) + 16 - Interpretability and
-     Research (31) + 17 - Papers (56) + 18 - Projects (25) + 19 - Reference
-     and Practice (48) + 01–03 (20+18+29) + 20 (17, the Contextualized
-     archival layer — presentation decided at release audit) — 285 notes;
-     widen subagent waves (many small parallel groups), never the floor.
-   - Per area: add the `AREA_CONFIG` entry (note types from the canonical
-     structure rationales; MOC target; compute the area's colliding basenames
-     against the 544-note structure — NOTE: LoRA, vLLM, TensorRT-LLM collide
-     across areas 13/14 and 17) → `python3 scripts/s22_link_rules.py` after
-     extending it → build inputs → check prompts → generate (groups ≤ ~4
-     notes / ~12K source words; orientation notes last) →
-     `python3 scripts/s21_run_gates.py <slug>` → `vu audit-output
-     --source-root "source-vaults/AI /AI Course" --output-root
-     output/Unified-Vault --ku-batch scratch/synth/<slug>/audit-kus.jsonl
-     --report reports/synthesis/s2N-<slug>-audit.json` → root-cause
-     findings (anchored idempotent repair scripts; framework fixes with
-     tests + pilot re-run for systematic classes; keep BOTH duplicate
-     source treatments when a source repeats content).
-4. **Session 25 (planned)**: remaining areas if 24 could not finish;
-   cross-batch consistency (terminology, cross-area wikilinks once all notes
-   exist, corpus-wide drift re-audit incl. ALL 7 waivers from areas 06-09) +
-   the three confirmed-gap dedicated treatments (second moment,
-   bradley-terry, async def) + area-20 presentation decision.
-5. **Session 26 (planned)**: final verification and delivery — release-gate
+   manifests 276/276 + 333/333. Rebuild the derived registry via
+   `scripts/s22_registry_rebuild.sh`.
+3. **Session 24 (the bulk session — 200+ notes)**: areas 15 - Agents and
+   Tooling (41), 16 - Interpretability and Research (31), 17 - Papers (56),
+   18 - Projects (25), 19 - Reference and Practice (48), 01 - Foundations
+   (20), 02 - Mathematics (18), 03 - Python and Data Tooling (29) — 268
+   notes; leave area 20 (17, the Contextualized archival layer —
+   presentation decided at release audit) plus any spillover for session 25.
+   Widen subagent waves (more parallel groups, still ≤ 4 notes / ~12K source
+   words — the cap is a context-budget safety, not a floor to break).
+4. Per area: add the `AREA_CONFIG` entry (note types from the canonical
+   structure rationales; MOC target; colliding basenames — for area 17 the
+   LoRA/vLLM/TensorRT-LLM notes are the PAPER copies: links from area-17
+   notes to the topical area-13/14 copies use the area-13/14 path forms;
+   Applications of Deep Learning (areas 01/19) and Jacobians and Hessians
+   (areas 01/02) become in-batch collisions) → `python3
+   scripts/s23_link_rules.py` after extending it (or a new s24 variant) →
+   build inputs → check prompts → generate (orientation notes last) →
+   `python3 scripts/s21_run_gates.py <slug>` (waivers only with three-part
+   evidence) → `vu audit-output --source-root "source-vaults/AI /AI Course"
+   --output-root output/Unified-Vault --ku-batch scratch/synth/<slug>/
+   audit-kus.jsonl --report reports/synthesis/s24-<slug>-audit.json` →
+   root-cause findings with anchored idempotent repair scripts (keep BOTH
+   duplicate source treatments; hyphenated vs spaced forms are different
+   markers).
+5. **Session 25 (planned)**: area 20 + any spillover; cross-batch
+   consistency (terminology, cross-area wikilinks now that all notes exist,
+   corpus-wide drift re-audit incl. ALL 10 waivers from areas 06–12) + the
+   three confirmed-gap dedicated treatments (second moment, bradley-terry,
+   async def) + area-20 presentation decision.
+6. **Session 26 (planned)**: final verification and delivery — release-gate
    predicates from `docs/MILESTONES_AND_ACCEPTANCE.md`, final audit-output
    over ALL 27,536 KUs, final report with denominators.
 
@@ -197,39 +135,41 @@
 - Sources are immutable; all outputs are evidence, never edits.
 - Every completion claim needs a report path or test run as evidence.
 - Marker-retention repairs go through anchored, asserted, idempotent scripts
-  citing their source KUs — never hand-edits without a record.
+  citing their source KUs — never hand-edits without a record. When a source
+  carries content twice (main text + interview/recap), keep BOTH forms.
 - Drift waivers are for EXPLAINED artifacts with evidence (0 below band +
-  audit 0 findings), never for hiding a real regression; re-check the
-  arithmetic before waiving; re-audit corpus-wide at session 25.
+  audit 0 findings + source math-density measurement), never for hiding a
+  real regression; re-check the arithmetic before waiving; re-audit
+  corpus-wide at session 25 (10 waivers now pending).
 - **Continuous persistence (ADR-0015 / AGENTS.md §13):** after every bounded,
   coherent unit passes its applicable checks, commit and push it immediately
-  to `origin/main`; do not wait until session end. Keep the unpushed window
+  to `origin/main`; do not wait for session end. Keep the unpushed window
   near zero, verify the remote ref after each push, and record the SHA/result
-  in the existing checkpoint or handoff. For long batches, push recovery
-  checkpoints before risky work/delegation and after each recoverable batch.
-  If `main` rejects a push because another session advanced it: fetch, inspect,
-  merge/reconcile (never force-push or discard history), rerun affected checks,
-  push, and verify. If branch protection requires a head branch, push it
-  immediately and merge into `main` as soon as permitted.
+  in the existing checkpoint or handoff. This session ran 4 verified pushes
+  (6084a39 pipeline prep → 1773652 waves A+B → f7b4854 waves C+D → final).
 - ADR-0011 discipline stands; subagent outputs are verified (gates +
-  sampling), never trusted.
+  audits + sampling), never trusted.
 - Delta-verification discipline: write the arithmetic of expectations down
   BEFORE running.
 - Fresh-sandbox setup: `python3 -m pip install -e .` BEFORE the baseline
   pytest. F-0016: long runs must fit one tool call (< 10 min). F-0020:
   invoke via `vu`. F-0014 (open): marker headings must never be copied as
-  knowledge — verified absent in areas 04–06; re-check per area.
+  knowledge — verified absent in areas 04–14; re-check per area.
+- Scratch (editorial contract, link rules, bundles, wave plans) is
+  git-ignored and regenerable: rerun `scripts/s23_link_rules.py`,
+  `scripts/s23_pack_waves.py`, `scripts/s23_launch_manifest.py` and the s20
+  input builders after a sandbox recycle — never hand-rebuild.
 - Display artifact: the IM channel strips `[m` from displayed output —
-  verify suspected defects byte-level before acting (see above).
+  verify suspected defects byte-level (hex) before acting.
 
 ## Explicit non-claims
 
-- 62 of the 63 session-22 notes were subagent-written; the GATES (not
+- 68 of the 69 session-23 notes were subagent-written; the GATES (not
   subagent self-reports) are the acceptance evidence.
 - Marker retention proves lexical/formula preservation of every KU excerpt;
   the semantic-fidelity layer for the rewritten prose is the session-25
   cross-batch consistency pass plus the release audit.
-- Cross-area wikilinks beyond areas 04-09 do not exist yet by design; they
+- Cross-area wikilinks beyond areas 04–14 do not exist yet by design; they
   are added once all areas are generated (session 25).
 - The 46,978 low-signal provisional discovery candidates remain a documented
   exclusion (not silently resolved).
@@ -237,5 +177,5 @@
   need their dedicated treatments at synthesis time.
 - Tier A dossier-extension auto-accepts retain ~17% single-side
   over-inclusion (safe direction, documented in the session-18 report).
-- Areas 01–03 and 10–20 are NOT synthesized yet; the unified vault currently
-  contains areas 04–09 (190/544 notes) only.
+- Areas 01–03 and 15–20 are NOT synthesized yet; the unified vault currently
+  contains areas 04–14 (259/544 notes) only.

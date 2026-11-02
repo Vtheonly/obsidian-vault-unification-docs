@@ -10,28 +10,25 @@ universal per-unit dual review is removed in favor of ADR-0011 tiered
 verification; the quality floor (source immutability, full test suite,
 machine-verified citations, release gates) is inviolate.
 
-GATED SYNTHESIS IN PROGRESS (session 21, 2026-11-02 — SYNTH-001). Areas
-04, 05 and 06 are synthesized end-to-end and GREEN through the full gate
-chain: **127/544 canonical notes** (04 - Machine Learning 27; 05 - Neural
-Network Foundations 21; 06 - Computer Vision 79). Session 21 generated all
-100 new notes (99 via 26 bounded subagent groups + the area-05 MOC by the
-orchestrator), ran both audits to **valid=true with 0 findings** (area 05:
-2,411 KUs / 3,975 markers; area 06: 4,983 KUs / 8,958 markers — every
-equation, code block and rare term verified present), lint 0 errors (6
-warnings documented as verbatim-source artifacts: quiz `a) b) c) d)`
-options, `[0,∞)` intervals, a literal `$10` price), gates pass (4
-evidence-backed drift waivers on area 06: content-family artifact, all
-notes individually within band). Framework: F-0030 (source frontmatter in
-KU excerpts is not term-knowledge) + F-0031 (code fingerprints
-dedent-normalized per the contract's "verbatim whitespace-insensitive") +
-FRONTMATTER_FIELD_TYPE lint check; 740/740 tests; omission pilot
-re-verified 12/12 after each marker change. The pipeline is generalized
-(`AREA_CONFIG` in scripts/s20_build_synthesis_inputs.py; reusable
-scripts/s21_run_gates.py) and repair discipline is anchored/idempotent
-(scripts/s21_marker_repairs{,_area06}.py, scripts/s21_lint_repairs.py).
-REMAINING: 13 areas / 417 notes (sessions 22–24), cross-batch consistency
-+ the three confirmed-gap treatments (session 25), final verification and
-delivery (session 26).
+GATED SYNTHESIS IN PROGRESS (session 23, 2026-11-03 — SYNTH-001). Areas
+04–14 are synthesized end-to-end and GREEN through the full gate chain:
+**259/544 canonical notes** (04 - Machine Learning 27; 05 - Neural Network
+Foundations 21; 06 - Computer Vision 79; 07 - Sequence Models 14; 08 -
+Attention and Transformers 38; 09 - NLP and Language Models 11; 10 - Large
+Language Models 7; 11 - Foundation Models and Multimodal 13; 12 - Generative
+Models 12; 13 - Training and Adaptation 11; 14 - Inference and Production
+26). Session 23 generated all 69 new notes via 33 bounded subagent groups,
+ran all five audits to **valid=true with 0 findings** (3,252 KUs / 15,538
+markers verified present: 14,521 term + 838 math + 179 code), lint 0 errors /
+17 documented verbatim-source warnings, gates pass (3 evidence-backed
+concept-type drift waivers with source math-density measurements; areas
+13–14 clean). 28 + 5 round-2 anchored marker repairs (keep-both rule for
+duplicated source content) + 2 lint fence-label repairs (F-0031 precedent).
+744/744 tests; sources immutable 276/333 at start and end. REMAINING: 9
+areas / 285 notes (sessions 24–25: areas 15–19, 01–03, 20), cross-batch
+consistency + the three confirmed-gap treatments + corpus-wide drift
+re-audit of all 10 waivers (session 25), final verification and delivery
+(session 26).
 
 DISPOSITION ASSIGNMENT IS COMPLETE (session 19, 2026-11-01 — the S21–22
 phase target finished two sessions early). All 27,536/27,536 KUs received

@@ -1,22 +1,21 @@
 {
   "result": {
-    "passed": false,
+    "passed": true,
     "criteria": [
       "every expected note assessed or explicitly unresolved",
       "every note lint-error clean (allowed: 0)",
       "every measured dimension within its type band or explicitly waived with reason",
       "no unexplained systematic quality drift"
     ],
-    "failures": [
-      {
-        "criterion": "no_unexplained_quality_drift",
-        "note": "(type: concept)",
-        "detail": "math_rigor: 0.85 -> 0.7 (rel drop 0.1765)"
-      }
-    ],
+    "failures": [],
     "notes_assessed": 7,
-    "waivers_applied": [],
-    "verdict": "fail"
+    "waivers_applied": [
+      [
+        "drift::concept",
+        "content-family artifact: first-third Decoder-Only Architecture source (master-ai) carries 3 display + 71 inline math spans (chain-rule derivation prose); last-third Sampling Strategies source carries 6 display + 43 inline (formula catalog without derivation vocabulary). Both notes preserve their sources' math verbatim (audit valid=true 0 findings over 397 KUs; 0 dimensions below band). Re-check corpus-wide at session 25."
+      ]
+    ],
+    "verdict": "pass"
   },
   "report_meta": {
     "framework": "vault_unification",
@@ -28,10 +27,12 @@
       "assessments": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area10/gates/assessments.jsonl",
       "expected": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area10/expected-notes.txt",
       "drift_report": "reports/synthesis/s21-area10-drift.json",
-      "waivers": null,
+      "waivers": [
+        "drift::concept=content-family artifact: first-third Decoder-Only Architecture source (master-ai) carries 3 display + 71 inline math spans (chain-rule derivation prose); last-third Sampling Strategies source carries 6 display + 43 inline (formula catalog without derivation vocabulary). Both notes preserve their sources' math verbatim (audit valid=true 0 findings over 397 KUs; 0 dimensions below band). Re-check corpus-wide at session 25."
+      ],
       "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s21-area10-gate.json"
     },
-    "utc_timestamp": "2026-11-02T22:37:25+00:00",
-    "git_commit": "f7b4854"
+    "utc_timestamp": "2026-11-02T22:59:25+00:00",
+    "git_commit": "0cbc983"
   }
 }

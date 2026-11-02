@@ -1,0 +1,62 @@
+{
+  "result": {
+    "standards_version": "1.0.0",
+    "thresholds": {
+      "rel_drop": 0.15,
+      "abs_drop": 0.1
+    },
+    "drifted_types": [],
+    "clean_types": [
+      {
+        "type": "concept",
+        "notes": 25,
+        "first_third": [
+          "14 - Inference and Production/AI Infrastructure/GPU Infrastructure and Sizing.md",
+          "14 - Inference and Production/AI Infrastructure/Messaging with Kafka and Celery.md",
+          "14 - Inference and Production/AI Infrastructure/Observability Stack.md",
+          "14 - Inference and Production/AI Infrastructure/Production AI Stack.md",
+          "14 - Inference and Production/AI Infrastructure/Vector Storage with pgvector.md",
+          "14 - Inference and Production/Inference/Constrained Decoding.md",
+          "14 - Inference and Production/Inference/Continuous Batching.md",
+          "14 - Inference and Production/Inference/PagedAttention.md"
+        ],
+        "last_third": [
+          "14 - Inference and Production/LLMOps and MLOps/Production Monitoring.md",
+          "14 - Inference and Production/LLMOps and MLOps/Prompt Management.md",
+          "14 - Inference and Production/Production AI/Failure Modes and Graceful Degradation.md",
+          "14 - Inference and Production/Production AI/Gateway and Router Patterns.md",
+          "14 - Inference and Production/Production AI/Guardrails.md",
+          "14 - Inference and Production/Production AI/LLM Security and Prompt Injection.md",
+          "14 - Inference and Production/Production AI/PII and Data Leakage.md",
+          "14 - Inference and Production/Production AI/Reference Production Architectures.md"
+        ],
+        "overall_first_third_mean": 0.8939,
+        "overall_last_third_mean": 0.8978,
+        "drifted_dimensions": [],
+        "verdict": "no_systematic_drift"
+      },
+      {
+        "type": "overview",
+        "notes": 1,
+        "verdict": "too_few_notes_to_compare"
+      }
+    ],
+    "verdict": "no_systematic_drift",
+    "caveat": "tertile-mean comparison on deterministic dimensions; investigate flagged evidence, do not treat as final judgment"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-drift",
+    "args": {
+      "command": "quality-drift",
+      "assessments": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area14/gates/assessments.jsonl",
+      "rel_drop": 0.15,
+      "abs_drop": 0.1,
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s21-area14-drift.json"
+    },
+    "utc_timestamp": "2026-11-02T22:58:41+00:00",
+    "git_commit": "0cbc983"
+  }
+}
