@@ -1,0 +1,22 @@
+{
+ "session": 21,
+ "work_commit": "2c312c3dd89451fe477b2e2609c7a3282d2b98e1",
+ "range": "cbaed73..2c312c3",
+ "remote": "origin/main",
+ "verified": true,
+ "method": "git fetch origin after push; git rev-parse HEAD == origin/main == 2c312c3dd89451fe477b2e2609c7a3282d2b98e1; working tree clean (0 modified files)",
+ "recorded": "2026-11-02",
+ "deliverable_metric": {
+  "canonical_notes_verified": "27 -> 127 / 544",
+  "audit_findings": {
+   "area05": 0,
+   "area06": 0
+  },
+  "gate_verdicts": {
+   "area05": "pass",
+   "area06": "pass (4 documented drift waivers)"
+  },
+  "tests": "740/740",
+  "source_manifests": "276/276 + 333/333 unchanged (start and end)"
+ }
+}
