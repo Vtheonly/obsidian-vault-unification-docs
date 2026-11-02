@@ -97,9 +97,7 @@ contract.
    accumulated, (ii) discovery/extraction code changed structurally, or
    (iii) a regression is suspected. The **source-vault manifest check remains
    every session** (cheap; immutability is a floor item, §6).
-4. **One work commit per session**, plus the push-verification record commit.
-   No separate bookkeeping commits (no "record that I pushed", "record that I
-   recorded", style chains beyond the single verification record).
+4. **Continuous commit-and-push is mandatory** (AGENTS.md §13): commit each bounded, coherent, checked unit and push it immediately; do not wait until session end. Keep the unpushed window near zero and verify the remote ref after every push. This replaces the former one-work-commit-per-session cadence. Do not create recursive bookkeeping commits merely to record a push; record verification in the existing checkpoint/handoff.
 5. **Checkpoints are lightweight JSON every session; full handoff rewrites
    only at phase boundaries** (or on user-directed course changes). Mid-phase
    sessions update only the handoff's session-ledger row and next-task
@@ -206,3 +204,20 @@ last, if at all.
   needs explicit user approval.
 - This policy self-expires at delivery: after the final vault passes its
   release gates, normal change control resumes.
+
+
+## 10. Continuous commit-and-push persistence (USER DIRECTIVE — BINDING)
+
+The user explicitly requires that progress be pushed continuously so it is visible and recoverable if a session is interrupted or terminated. This is a persistence requirement, not an optional workflow preference.
+
+- **Commit after each bounded, coherent unit of work**, once its applicable checks pass, and **push that commit immediately**. Do not wait for session end, a phase boundary, or the final handoff.
+- Keep at most one newly created commit unpushed whenever technically possible. Push before creating the next commit.
+- For long-running tasks, create recovery boundaries before risky/long operations and delegation, and after each independently recoverable batch. Push each checkpoint immediately.
+- The canonical destination is `origin/main`. If direct pushes are prohibited by branch protection, push the active head branch immediately and merge it into `main` as soon as checks and approvals permit. Do not leave completed work stranded on a feature branch.
+- After every push, fetch/inspect the remote ref and verify that the intended commit is reachable from it. Record SHA, branch, result, and verification evidence in the existing checkpoint/session record or handoff.
+- On rejection or concurrent remote movement: fetch, inspect, merge/reconcile without discarding either side, rerun affected tests, push, and verify. **Never force-push** to make the remote match a local branch.
+- A local commit is not durable progress until the remote contains it. If authentication or connectivity prevents pushing, stop accumulating changes, preserve a safe local checkpoint if possible, and report the precise blocker.
+- Never embed PATs or other credentials in prompts, tracked files, logs, or command history. Use secure authenticated Git credentials or environment/secret storage. Never ask the user to paste a token into a tracked file.
+- Do not create recursive bookkeeping commits just to record that a push-verification record was itself pushed. Verify the remote ref and record evidence in the existing session artifacts.
+
+**Precedence:** This section and AGENTS.md §13 supersede §4.4's former one-work-commit-per-session cadence and any older session-end-only push wording. They do not authorize committing known-broken work, weakening tests, or adding bookkeeping-only sessions. The accelerated deliverable and quality-floor rules remain binding.
