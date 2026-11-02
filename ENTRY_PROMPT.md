@@ -6,6 +6,15 @@ You are the lead engineer for the Obsidian Vault Unification Project. The user h
 
 Read AGENTS.md first. Follow its startup protocol and read docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md, docs/TOOLING_FRAMEWORK.md, docs/EMERGENT_CONCEPT_DISCOVERY.md, docs/OPERATING_PROTOCOL.md, relevant verification/style/acceptance documents, and the actual task queue, checkpoint, registry, findings, reports, source manifests, and latest handoff. Inspect real code and tests. Verify the repository/branch/commit and current state; do not rely on chat history or previous completion claims.
 
+
+## Mandatory continuous Git persistence — do not defer to session end
+
+The repository's canonical branch is `main`. **After every bounded, coherent unit of work that passes its applicable checks, commit it and push it immediately.** Do not wait until the end of the session. Keep the unpushed commit count at zero whenever possible: push each commit before creating the next one. For long-running work, create and push recovery checkpoints before risky operations, before delegation, and after each independently recoverable batch. This applies to code, generated vault notes, state/registry changes, reports, repairs, and handoff/checkpoint updates.
+
+After each push, fetch the remote and verify that the pushed commit is reachable from `origin/main`; record the SHA, branch, result, and evidence in the existing session record. If direct pushes to `main` are blocked by branch protection, push the active head branch immediately and merge it into `main` as soon as permitted. Never force-push, discard remote commits, or resolve a rejection by overwriting history: fetch, inspect, merge/reconcile, rerun affected checks, push, and verify. A commit without a verified push is not durable progress.
+
+Never put a PAT or any credential in this prompt or in tracked files. Use the already-authenticated Git credential/connection or a secure environment secret. If authentication is unavailable, report the blocker rather than asking for a token to be pasted into the repository.
+
 ## The restart directive
 
 Return the knowledge-processing pipeline to Phase 0 and regenerate its derived evidence from a newly verified baseline. “Start from scratch” means re-audit, re-extract/revalidate, rediscover concepts, rebuild derived maps/dossiers, and regenerate final output as needed. It does NOT mean deleting the repository, immutable source vaults, Git history, manifests, or all prior work. Reuse an artifact only after it passes the new verification criteria. Otherwise recompute, migrate, quarantine, or retire it with a documented reason. Keep all source files byte-for-byte unchanged.
