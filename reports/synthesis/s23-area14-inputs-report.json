@@ -1,0 +1,29 @@
+{
+ "area": "14 - Inference and Production",
+ "slug": "area14",
+ "notes": 26,
+ "source_files": 29,
+ "kus": 1356,
+ "kus_by_disposition": {
+  "Preserved": 1145,
+  "Consolidated": 211
+ },
+ "kus_multi_destination_within_area": 40,
+ "concepts_anchored": 76,
+ "total_source_words": 48631,
+ "scratch_dir": "scratch/synth/area14",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "Inference and Production MOC",
+  "colliding": "vLLM (link as [[14 - Inference and Production/Inference/vLLM|vLLM]] — the basename also exists later in area 15), TensorRT-LLM (link as [[14 - Inference and Production/Inference/TensorRT-LLM|TensorRT-LLM]] — same), plus any other basename on the binding link-rules list",
+  "explicit_types": 1
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "area": "13 - Training and Adaptation",
+ "slug": "area13",
+ "notes": 11,
+ "source_files": 12,
+ "kus": 552,
+ "kus_by_disposition": {
+  "Consolidated": 223,
+  "Preserved": 329
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 170,
+ "total_source_words": 20867,
+ "scratch_dir": "scratch/synth/area13",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "Training and Adaptation MOC",
+  "colliding": "LoRA (link as [[13 - Training and Adaptation/Fine-Tuning/LoRA|LoRA]] — the basename also exists later as a Papers-area note), plus any other basename on the binding link-rules list",
+  "explicit_types": 2
+ }
+}

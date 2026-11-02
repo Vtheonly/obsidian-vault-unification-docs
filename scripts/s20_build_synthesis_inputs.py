@@ -170,6 +170,83 @@ AREA_CONFIG: dict[str, dict[str, object]] = {
             "a Papers-area note)"
         ),
     },
+    "10 - Large Language Models": {
+        "note_types": {
+            "10 - Large Language Models/Large Language Models MOC.md": "overview",
+            "10 - Large Language Models/Evaluation/LLM Benchmarks.md": "reference",
+        },
+        "moc_target": "Large Language Models MOC",
+        "colliding": (
+            "BERT (link the area-08 copy in path form as [[08 - Attention and "
+            "Transformers/Transformer Architecture/BERT|BERT]] — the basename "
+            "also exists later as a Papers-area note), FlashAttention (link as "
+            "[[08 - Attention and Transformers/Efficient Attention/"
+            "FlashAttention|FlashAttention]]), plus any other basename on the "
+            "binding link-rules list"
+        ),
+    },
+    "11 - Foundation Models and Multimodal": {
+        "note_types": {
+            "11 - Foundation Models and Multimodal/Foundation Models and Multimodal MOC.md": "overview",
+            "11 - Foundation Models and Multimodal/Multimodal AI/Multimodal AI Overview.md": "overview",
+        },
+        # two orientation notes: the area MOC (unifies the 09 + 23 source MOCs)
+        # and the multimodal-subfamily survey note
+        "moc_target": (
+            "the area MOC [[Foundation Models and Multimodal MOC]] (multimodal "
+            "subfamily notes may additionally link [[Multimodal AI Overview]])"
+        ),
+        "colliding": (
+            "BERT (link the area-08 copy in path form as [[08 - Attention and "
+            "Transformers/Transformer Architecture/BERT|BERT]] — the basename "
+            "also exists later as a Papers-area note), plus any other basename "
+            "on the binding link-rules list"
+        ),
+    },
+    "12 - Generative Models": {
+        "note_types": {
+            "12 - Generative Models/Chapter Overview.md": "overview",
+            "12 - Generative Models/Variational Autoencoders/The Reparameterization Trick.md": "derivation",
+            "12 - Generative Models/Variational Autoencoders/The KL Divergence Loss.md": "derivation",
+        },
+        # the area-root note's basename collides with 07 - Sequence Models'
+        # Chapter Overview, so links to it must be path-based
+        "moc_target": (
+            "the area-root overview note, linked in path form as "
+            "[[12 - Generative Models/Chapter Overview|Chapter Overview]] "
+            "(the basename collides with the area-07 Chapter Overview)"
+        ),
+        "colliding": (
+            "Chapter Overview (link as [[12 - Generative Models/Chapter "
+            "Overview|Chapter Overview]] — the basename also exists in area 07), "
+            "plus any other basename on the binding link-rules list"
+        ),
+    },
+    "13 - Training and Adaptation": {
+        "note_types": {
+            "13 - Training and Adaptation/Training and Adaptation MOC.md": "overview",
+            "13 - Training and Adaptation/Fine-Tuning/DPO Derivation.md": "derivation",
+        },
+        "moc_target": "Training and Adaptation MOC",
+        "colliding": (
+            "LoRA (link as [[13 - Training and Adaptation/Fine-Tuning/LoRA|LoRA]] "
+            "— the basename also exists later as a Papers-area note), plus any "
+            "other basename on the binding link-rules list"
+        ),
+    },
+    "14 - Inference and Production": {
+        "note_types": {
+            "14 - Inference and Production/Inference and Production MOC.md": "overview",
+        },
+        "moc_target": "Inference and Production MOC",
+        "colliding": (
+            "vLLM (link as [[14 - Inference and Production/Inference/vLLM|vLLM]] "
+            "— the basename also exists later in area 15), TensorRT-LLM (link as "
+            "[[14 - Inference and Production/Inference/TensorRT-LLM|"
+            "TensorRT-LLM]] — same), plus any other basename on the binding "
+            "link-rules list"
+        ),
+    },
 }
 
 # Kept for backwards compatibility with the session-20 records: the area-04

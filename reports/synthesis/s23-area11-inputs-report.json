@@ -1,0 +1,29 @@
+{
+ "area": "11 - Foundation Models and Multimodal",
+ "slug": "area11",
+ "notes": 13,
+ "source_files": 14,
+ "kus": 632,
+ "kus_by_disposition": {
+  "Preserved": 556,
+  "Consolidated": 76
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 66,
+ "total_source_words": 23660,
+ "scratch_dir": "scratch/synth/area11",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "the area MOC [[Foundation Models and Multimodal MOC]] (multimodal subfamily notes may additionally link [[Multimodal AI Overview]])",
+  "colliding": "BERT (link the area-08 copy in path form as [[08 - Attention and Transformers/Transformer Architecture/BERT|BERT]] — the basename also exists later as a Papers-area note), plus any other basename on the binding link-rules list",
+  "explicit_types": 2
+ }
+}

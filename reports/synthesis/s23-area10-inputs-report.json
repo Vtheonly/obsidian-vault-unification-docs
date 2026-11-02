@@ -1,0 +1,29 @@
+{
+ "area": "10 - Large Language Models",
+ "slug": "area10",
+ "notes": 7,
+ "source_files": 7,
+ "kus": 397,
+ "kus_by_disposition": {
+  "Preserved": 318,
+  "Consolidated": 79
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 68,
+ "total_source_words": 16485,
+ "scratch_dir": "scratch/synth/area10",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "Large Language Models MOC",
+  "colliding": "BERT (link the area-08 copy in path form as [[08 - Attention and Transformers/Transformer Architecture/BERT|BERT]] — the basename also exists later as a Papers-area note), FlashAttention (link as [[08 - Attention and Transformers/Efficient Attention/FlashAttention|FlashAttention]]), plus any other basename on the binding link-rules list",
+  "explicit_types": 2
+ }
+}

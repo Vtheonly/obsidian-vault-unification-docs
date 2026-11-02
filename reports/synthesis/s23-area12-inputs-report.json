@@ -1,0 +1,29 @@
+{
+ "area": "12 - Generative Models",
+ "slug": "area12",
+ "notes": 12,
+ "source_files": 12,
+ "kus": 315,
+ "kus_by_disposition": {
+  "Preserved": 294,
+  "Consolidated": 21
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 14,
+ "total_source_words": 11227,
+ "scratch_dir": "scratch/synth/area12",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "the area-root overview note, linked in path form as [[12 - Generative Models/Chapter Overview|Chapter Overview]] (the basename collides with the area-07 Chapter Overview)",
+  "colliding": "Chapter Overview (link as [[12 - Generative Models/Chapter Overview|Chapter Overview]] — the basename also exists in area 07), plus any other basename on the binding link-rules list",
+  "explicit_types": 3
+ }
+}
