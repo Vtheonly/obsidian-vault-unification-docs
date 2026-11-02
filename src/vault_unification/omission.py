@@ -542,7 +542,19 @@ _FENCE_LANG_RE = re.compile(r"```([^\n]*)\n(.*?)```", re.S)
 _DISPLAY_MATH_RE = re.compile(r"\$\$(.+?)\$\$", re.S)
 _INLINE_MATH_RE = re.compile(r"(?<!\$)\$([^$\n]+?)\$(?!\$)")
 _NUMBERED_HEADING_RE = re.compile(r"^(\d+(?:\.\d+)*)[.)]?\s+\S")
+# A leading 4-digit number in 1000..2999 is a YEAR ("2014 (Sept): Seq2Seq",
+# "2018+: Modern Attention") or a quantity ("2048-Token Context") — never a
+# section number. Treating such headings as numbering made the
+# heading-convention check flag every contract-compliant unnumbered heading
+# in timeline-style notes (F-0032).
+_YEAR_LIKE_HEADING_RE = re.compile(r"^(\d{4})\b")
 _LIST_LINE_RE = re.compile(r"^(?:[-*+]\s|\d+[.)]\s)")
+
+
+def _is_year_like(text: str) -> bool:
+    """True when a heading starts with a plausible year (1000-2999)."""
+    m = _YEAR_LIKE_HEADING_RE.match(text)
+    return bool(m and 1000 <= int(m.group(1)) <= 2999)
 
 RARE_TERM_MAX_COUNT = 4  # a term occurring <= this often in the source corpus is a marker
 MIN_PROSE_WORDS = 30  # sections receiving KU destinations must carry at least this much prose
@@ -684,6 +696,9 @@ def _iter_markdown_files(root: str | Path):
 
 
 def _heading_number_stripped(text: str) -> str:
+    if _is_year_like(text):
+        # year-initial headings keep their year (it is content, not numbering)
+        return text.strip().casefold()
     return _NUMBERED_HEADING_RE.sub("", text).strip().casefold()
 
 
@@ -1408,8 +1423,8 @@ def audit_output(
         section_headings = [h for h in structures[relpath]["headings"] if h["level"] >= 2]
         if len(section_headings) < 2:
             continue
-        numbered = [h for h in section_headings if _NUMBERED_HEADING_RE.match(h["text"])]
-        unnumbered = [h for h in section_headings if not _NUMBERED_HEADING_RE.match(h["text"])]
+        numbered = [h for h in section_headings if _NUMBERED_HEADING_RE.match(h["text"]) and not _is_year_like(h["text"])]
+        unnumbered = [h for h in section_headings if not (_NUMBERED_HEADING_RE.match(h["text"]) and not _is_year_like(h["text"]))]
         if numbered and unnumbered:
             for heading in unnumbered:
                 ku_ids = [

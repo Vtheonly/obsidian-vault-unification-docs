@@ -406,3 +406,70 @@ def test_no_frontmatter_excerpt_unchanged():
     freq = {"uncommonterm": 1, "excerpt": 1}
     markers = markers_for_record(record, freq)
     assert "uncommonterm" in markers["terms"]
+
+
+# ---------------------------------------------------------------------------
+# F-0032: year-initial headings are content (timelines), not numbering
+# ---------------------------------------------------------------------------
+
+
+class TestYearHeadingsNotNumbering:
+    def test_is_year_like_predicate(self):
+        assert omission._is_year_like("2014 (Sept): Seq2Seq (Sutskever et al.)")
+        assert omission._is_year_like("2018+: Modern Attention")
+        assert omission._is_year_like("2020 and beyond: sentence transformers")
+        assert omission._is_year_like("2048-Token Context")
+        assert not omission._is_year_like("1. The setup")
+        assert not omission._is_year_like("1) The setup")
+        assert not omission._is_year_like("07.1 - Motivation and Recurrence")
+        assert not omission._is_year_like("13 — Inference MOC")
+        assert not omission._is_year_like("The unrolled graph")
+        assert not omission._is_year_like("12345 tokens")  # 5 digits: not a year
+
+    def test_heading_number_stripped_keeps_years(self):
+        assert omission._heading_number_stripped("2015: Luong attention") == "2015: luong attention"
+        # real numbering is still stripped for destination matching (the
+        # trailing \S of the regex consumes the first title char: pre-existing
+        # behavior, applied identically to both sides of every comparison)
+        assert omission._heading_number_stripped("1. The setup") == "he setup"
+        assert omission._heading_number_stripped("07.1 - Motivation") == "motivation"
+        assert omission._heading_number_stripped("04 - vLLM") == "vllm"
+
+    def test_year_timeline_note_not_flagged_as_mixed(self, fixture_dir, tmp_path):
+        out = tmp_path / "out"
+        shutil.copytree(fixture_dir["output_root"], out)
+        target = out / "Neural Networks" / "Backpropagation.md"
+        text = target.read_text(encoding="utf-8")
+        # make the note uniformly unnumbered, like the real generated notes
+        # (the editorial contract mandates unnumbered section headings) ...
+        import re as _re
+
+        text = _re.sub(r"^(#{2,3})\s+\d+(?:\.\d+)*[.)]?\s+", r"\1 ", text, flags=_re.M)
+        # ... then append a source-style timeline: year headings
+        text += (
+            "\n## The historical timeline\n\nProse introducing the timeline.\n\n"
+            "### 2014 (Sept): Seq2Seq (Sutskever et al.)\n\nThe bottleneck appears.\n\n"
+            "### 2015: Bahdanau attention\n\nAttention fixes it.\n\n"
+            "### 2018 and after: modern attention\n\nEverything is attention now.\n"
+        )
+        target.write_text(text, encoding="utf-8")
+        result = audit_output(fixture_dir["sources_root"], out, fixture_dir["ku_batch_path"])
+        mixed = [f for f in result["findings"] if f["category"] == "mixed-numbering-scheme"]
+        assert mixed == [], json.dumps(mixed, indent=1)
+
+    def test_genuine_numbering_mix_still_flagged(self, fixture_dir, tmp_path):
+        out = tmp_path / "out"
+        shutil.copytree(fixture_dir["output_root"], out)
+        target = out / "Neural Networks" / "Backpropagation.md"
+        text = target.read_text(encoding="utf-8")
+        # genuinely mixed scheme: numbered + unnumbered section headings
+        text += (
+            "\n## 1. Numbered section\n\nProse one.\n\n"
+            "## Unnumbered section\n\nProse two.\n"
+        )
+        target.write_text(text, encoding="utf-8")
+        result = audit_output(fixture_dir["sources_root"], out, fixture_dir["ku_batch_path"])
+        mixed = [f for f in result["findings"] if f["category"] == "mixed-numbering-scheme"]
+        assert any(
+            f["destination"]["path"] == "Neural Networks/Backpropagation.md" for f in mixed
+        ), json.dumps(mixed, indent=1)

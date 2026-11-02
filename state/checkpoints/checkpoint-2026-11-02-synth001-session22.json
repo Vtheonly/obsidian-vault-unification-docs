@@ -1,0 +1,87 @@
+{
+ "checkpoint_id": "checkpoint-2026-11-02-synth001-session22",
+ "date": "2026-11-02",
+ "session_number": 22,
+ "task": {
+  "task_id": "SYNTH-001",
+  "title": "Gated synthesis of the unified vault (area waves)",
+  "status": "in_progress",
+  "completed_this_session": "areas 07 - Sequence Models (14 notes), 08 - Attention and Transformers (38 notes) and 09 - NLP and Language Models (11 notes) end-to-end through all gates; 63/63 notes generated, all three audits valid=true with 0 findings"
+ },
+ "stage": "synthesis-in-progress-areas-04-09-complete",
+ "accelerated_mode": {
+  "session_number": 22,
+  "budget_sessions_consumed": 7,
+  "budget_sessions_remaining": 4,
+  "deliverable_metric_moved": "canonical notes generated and verified (area batch through full gate chain)",
+  "before": 127,
+  "after": 190,
+  "denominator": 544,
+  "failed_session": false,
+  "cause_if_failed": null
+ },
+ "baseline_verification": {
+  "git": "clean tree, HEAD == origin/main == 45c9da7 at session start",
+  "tests_first_run": "740/740 passed at session start (first run after editable install)",
+  "source_manifests": {
+   "ai-course": "276/276 unchanged at session start AND end (reports/synthesis/s22-immutable-ai-course{,-final}.json)",
+   "master-ai": "333/333 unchanged at session start AND end (reports/synthesis/s22-immutable-master-ai{,-final}.json)"
+  },
+  "editable_install": "python3 -m pip install -e . completed before baseline tests",
+  "registry_rebuild": "scripts/s22_registry_rebuild.sh: kureg-init + kureg-load x71 + kureg-apply-dispositions (applied=27,536, unaccounted_after=0) + kureg-validate (valid=true, 0 errors, 0 warnings) — exactly as the session-20/21 checkpoints record"
+ },
+ "work_completed": [
+  {
+   "item": "Synthesis inputs for all three areas via the generalized s20 pipeline: AREA_CONFIG entries added for areas 07/08/09 (note types, MOC targets, per-area colliding-basename guidance); deterministic link-rules file generated from the canonical structure (scripts/s22_link_rules.py: 6 in-batch + 22 generated + 5 future colliding basenames, path forms without .md suffix per the areas-04-06 convention)",
+   "evidence": "reports/synthesis/s22-area07-inputs-report.json (14 notes, 370 KUs, 0 problems); s22-area08-inputs-report.json (38 notes, 46 files, 1,771 KUs, 0 problems); s22-area09-inputs-report.json (11 notes, 551 KUs, 0 problems); checkprompt reports 14/14 + 38/38 + 11/11 ok"
+  },
+  {
+   "item": "Generation of all 63 notes by 22 bounded subagent groups (wave plan: scripts/s22_pack_waves.py, cap 4 notes/12K source words, orientation/MOC notes written LAST with the full sibling list; one IM-channel server shutdown interrupted 3 parallel groups mid-flight — all three relaunched and completed; area-08 g06+g07 merged into one 5-note agent). Editorial contract + link rules + sibling list delivered as binding files to every agent",
+   "evidence": "output/Unified-Vault/07 - Sequence Models/** (14 notes), 08 - Attention and Transformers/** (38 notes), 09 - NLP and Language Models/** (11 notes); scratch/synth/s22-launch-manifest.json + scripts/s22_launch_manifest.py"
+  },
+  {
+   "item": "Lint gate: 0 errors across 190 files; 1 REAL defect repaired via anchored script (Transformer Decoder Block Step-3 line: inline-code closing backtick restored — the source of the MATH_INLINE_ODD warning); 7 warnings remain, ALL verbatim-source artifacts documented per the session-21 policy (6 pre-existing + the new Tokenization Overview literal dollar prices $0.13/$0.07/$1-2, verified verbatim in the master-ai source lines 151-153)",
+   "evidence": "reports/synthesis/s22-lint-vault.json (190 files, 0 errors, 7 documented warnings); scripts/s22_lint_repairs.py (anchored, asserted, idempotent, cites source line 117)"
+  },
+  {
+   "item": "Framework fix F-0032: the heading-convention check treated year-initial timeline headings ('### 2014 (Sept): Seq2Seq') as numbered headings, flagging every contract-compliant unnumbered heading in two notes (51 false findings). Fixed with _is_year_like (leading 4-digit 1000-2999 excluded from numbering; dash-style numbering unaffected — 1,307 source headings verified); 4 regression tests added; omission pilot re-verified 12/12 detection + 12/12 localization + 0 false positives",
+   "evidence": "state/findings.jsonl F-0032; reports/synthesis/s22-omission-pilot-f0032.json; tests 740 -> 744; src/vault_unification/omission.py"
+  },
+  {
+   "item": "Audit-output GREEN for all three areas after root-caused anchored repairs: area 07 4 findings -> 0 (scripts/s22_marker_repairs_area07.py: source-voice transition sentences restored — formalizes/confront/flesh + the source's 07.x chapter checklist); area 08 39 findings -> 4 -> 0 (scripts/s22_marker_repairs_area08.py + _round2.py: 28 repairs covering source-verbatim equation forms restored alongside note variants, See-also glosses, note-ID cross-references as historical context, hyphenation variants; round 2 restored the earlier-KU treatments the first round displaced — sources carry the same content twice with different equation spacing); area 09 13 findings -> 0 (scripts/s22_marker_repairs_area09.py: 9 repairs — en-dash->hyphen source forms, list-item labels, production-ops glosses, the BM25 inline slash form)",
+   "evidence": "reports/synthesis/s22-area07-audit.json (valid=true, 0 findings, 496 terms + 425 math + 5 code markers over 370 KUs); s22-area08-audit.json (valid=true, 0 findings, 4,483 terms + 1,429 math + 79 code over 1,771 KUs); s22-area09-audit.json (valid=true, 0 findings, 2,814 terms + 219 math + 29 code over 551 KUs)"
+  },
+  {
+   "item": "Quality gates PASS for all three areas (assess 190-note vault, 0 dimensions below band everywhere; drift explained and waived with three-part evidence on the concept type per area: content-family artifacts — area 07: the Bottleneck source has zero example-marker vocabulary while its concrete illustrations are verbatim-preserved; area 08: first-third master-ai math-dense sources vs last-third ai-course conceptual sources (The Full Transformer source: 0 display math; Inductive Bias source: no math at all); area 09: embeddings/LM are mathematical topics, tokenization is algorithmic (WordPiece note matches its source exactly: 0 display, 4 inline))",
+   "evidence": "reports/synthesis/s21-area07-{assess,drift,gate}.json, s21-area08-{assess,drift,gate}.json, s21-area09-{assess,drift,gate}.json (all verdict=pass, waivers recorded verbatim in the gate reports)"
+  },
+  {
+   "item": "Orchestrator independent review: 10/10 semantic probes across 10 notes (LSTM constant-error-carousel + f_t=1,i_t=1 residual special case; BPTT Jacobian product; sqrt(d_k) CLT argument; RoPE relative-position identity; MLA absorb-the-projection chain; BPE 256/50,257; king-man+woman; perplexity effective-vocabulary derivation; BM25 saturation + length norm; encoder-decoder fixed-vector bottleneck); F-0014 marker headings and bundle artifacts confirmed absent; self-contamination greps clean; every anchored repair verified against its source excerpt",
+   "evidence": "session record (this checkpoint); the 45 anchored repair edits in scripts/s22_marker_repairs_area{07,08,08_round2,09}.py each cite their finding id and source locator"
+  }
+ ],
+ "verification": {
+  "tests_final": "744/744 passed after the last mutation (python3 -m pytest tests/ -q)",
+  "audit": "area 07: valid=true 0 findings over 370 KUs; area 08: valid=true 0 findings over 1,771 KUs; area 09: valid=true 0 findings over 551 KUs (2,692 KU memberships this session; 9,979 markers verified present: 7,793 terms + 2,073 math + 113 code; all three areas verified self-contained: 0 cross-area destinations)",
+  "gate": "all three areas verdict=pass with 0 failures (each carries 1 evidence-backed concept-type drift waiver, recorded verbatim in the gate reports)",
+  "lint": "190 files, 0 errors, 7 warnings (all verbatim-source artifacts, documented)",
+  "independent_review": "10/10 semantic probes passed; F-0014 confirmed absent; all 22 subagent groups' outputs verified by gates + audits, never by self-report"
+ },
+ "explicit_non_claims": [
+  "62 of the 63 notes were subagent-written (the area MOCs and Chapter Overview were also subagent-written this session); the GATES (not subagent self-reports) are the acceptance evidence.",
+  "Marker retention proves lexical/formula preservation of every KU excerpt; full semantic-fidelity review of the rewritten prose remains the session-25 cross-batch consistency layer plus the release audit.",
+  "Cross-area wikilinks beyond areas 04-09 still do not exist by design; they are added in the cross-batch consistency pass once all areas are generated.",
+  "The three concept-type drift waivers (one per area) are documented content-family artifacts with evidence (0 dimensions below band + audit 0 findings + source math-density measurements); they must be re-checked in the session-25 corpus-wide drift re-audit alongside the four area-06 waivers.",
+  "The 7 lint warnings are TRUE observations of faithful source text (6 pre-existing + literal dollar prices), intentionally not 'fixed' per the verbatim-preservation policy.",
+  "Areas 01-03 and 10-20 are NOT synthesized yet; the unified vault currently contains areas 04-09 (190/544 notes).",
+  "One mid-session infrastructure event: an IM-channel server shutdown interrupted 3 parallel subagent groups after area-07 completion; the interruption lost no committed state (area-07 files were already on disk and verified), the groups were relaunched, and all 63 notes landed. Recorded for honesty; no data was lost."
+ ],
+ "next_task": {
+  "task_id": "SYNTH-001 (continue)",
+  "what": "areas 10 - Large Language Models (7 notes) + 11 - Foundation Models and Multimodal (13) + 12 - Generative Models (12) + 13 - Training and Adaptation (11) + 14 - Inference and Production (26) = 69 notes via the s22 pipeline: add AREA_CONFIG entries for areas 10-14 -> s20_build_synthesis_inputs --area/--slug -> s20_check_prompts -> subagent waves (cap ~4 notes / ~12K source words; orientation notes last) -> scripts/s21_run_gates.py <slug> (waivers only with three-part evidence) -> vu audit-output; root-cause findings with anchored idempotent repair scripts; compute per-area colliding basenames against the 544-note structure (LoRA, vLLM, TensorRT-LLM colliding basenames live in these areas and their future counterparts)",
+  "budget_arithmetic": "4 sessions remain (23-26); 354/544 notes remain; suggested: 23: areas 10-14 (69 notes); 24: areas 15+16+17 (41+31+56=128) + 18+19 (25+48=73) + 01-03 (20+18+29=67) if capacity allows, else split across 24-25; 25: remaining areas + cross-batch consistency + gap treatments + cross-area links + corpus-wide drift re-audit; 26: final verification + delivery. Sessions 23-24 must average ~150 notes/session — widen subagent waves (more parallel groups), never the floor.",
+  "resume": "see docs/agent-handoff/next-agent.md"
+ },
+ "commit": "PENDING (this checkpoint is committed with the session work)",
+ "push_verification": "PENDING (recorded in state/push-verification-session22.json after push)"
+}

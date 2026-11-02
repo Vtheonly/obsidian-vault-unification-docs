@@ -1,0 +1,91 @@
+{
+ "specs_total": 14,
+ "ok": 14,
+ "failed": 0,
+ "results": [
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area07/specs/01-chapter-overview.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area07/specs/02-gru.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area07/specs/03-lstm-vs-gru.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area07/specs/04-lstm.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area07/specs/05-backpropagation-through-time.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area07/specs/06-the-recurrent-neuron.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area07/specs/07-vanishing-and-exploding-gradients.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area07/specs/08-why-sequence-models.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area07/specs/09-from-rnns-to-attention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area07/specs/10-long-range-dependencies.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area07/specs/11-the-bottleneck-problem.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area07/specs/12-beam-search-and-decoding-strategies.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area07/specs/13-teacher-forcing-and-exposure-bias.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area07/specs/14-the-encoder-decoder-pattern.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  }
+ ]
+}

@@ -1,0 +1,141 @@
+{
+  "result": {
+    "standards_version": "1.0.0",
+    "thresholds": {
+      "rel_drop": 0.15,
+      "abs_drop": 0.1
+    },
+    "drifted_types": [
+      {
+        "type": "concept",
+        "notes": 35,
+        "first_third": [
+          "08 - Attention and Transformers/Attention Mechanism/ALiBi.md",
+          "08 - Attention and Transformers/Attention Mechanism/Bahdanau Attention.md",
+          "08 - Attention and Transformers/Attention Mechanism/Luong Attention.md",
+          "08 - Attention and Transformers/Attention Mechanism/Multi-Head Attention.md",
+          "08 - Attention and Transformers/Attention Mechanism/Origins of Attention.md",
+          "08 - Attention and Transformers/Attention Mechanism/Positional Encoding.md",
+          "08 - Attention and Transformers/Attention Mechanism/Queries Keys and Values.md",
+          "08 - Attention and Transformers/Attention Mechanism/RoPE.md",
+          "08 - Attention and Transformers/Attention Mechanism/Sinusoidal and Learned Positional Encodings.md",
+          "08 - Attention and Transformers/Attention Mechanism/YaRN and NTK-Aware Scaling.md",
+          "08 - Attention and Transformers/Efficient Attention/FlashAttention.md"
+        ],
+        "last_third": [
+          "08 - Attention and Transformers/Transformer Architecture/Normalization Layers.md",
+          "08 - Attention and Transformers/Transformer Architecture/Pre-Norm vs Post-Norm.md",
+          "08 - Attention and Transformers/Transformer Architecture/Residual Connections.md",
+          "08 - Attention and Transformers/Transformer Architecture/T5 and BART.md",
+          "08 - Attention and Transformers/Transformer Architecture/The Transformer.md",
+          "08 - Attention and Transformers/Transformer Architecture/Transformer Block.md",
+          "08 - Attention and Transformers/Transformer Architecture/Transformer Decoder Block.md",
+          "08 - Attention and Transformers/Vision Transformers/CLS Token.md",
+          "08 - Attention and Transformers/Vision Transformers/Inductive Bias.md",
+          "08 - Attention and Transformers/Vision Transformers/Patch Tokenization.md",
+          "08 - Attention and Transformers/Vision Transformers/ViT Architecture.md"
+        ],
+        "overall_first_third_mean": 0.9389,
+        "overall_last_third_mean": 0.9124,
+        "drifted_dimensions": [
+          {
+            "dimension": "examples",
+            "first_third_mean": 0.9636,
+            "last_third_mean": 0.8,
+            "delta": -0.1636,
+            "relative_drop": 0.1698,
+            "first_notes": [
+              "08 - Attention and Transformers/Attention Mechanism/ALiBi.md",
+              "08 - Attention and Transformers/Attention Mechanism/Bahdanau Attention.md",
+              "08 - Attention and Transformers/Attention Mechanism/Luong Attention.md",
+              "08 - Attention and Transformers/Attention Mechanism/Multi-Head Attention.md",
+              "08 - Attention and Transformers/Attention Mechanism/Origins of Attention.md",
+              "08 - Attention and Transformers/Attention Mechanism/Positional Encoding.md",
+              "08 - Attention and Transformers/Attention Mechanism/Queries Keys and Values.md",
+              "08 - Attention and Transformers/Attention Mechanism/RoPE.md",
+              "08 - Attention and Transformers/Attention Mechanism/Sinusoidal and Learned Positional Encodings.md",
+              "08 - Attention and Transformers/Attention Mechanism/YaRN and NTK-Aware Scaling.md",
+              "08 - Attention and Transformers/Efficient Attention/FlashAttention.md"
+            ],
+            "last_notes": [
+              "08 - Attention and Transformers/Transformer Architecture/Normalization Layers.md",
+              "08 - Attention and Transformers/Transformer Architecture/Pre-Norm vs Post-Norm.md",
+              "08 - Attention and Transformers/Transformer Architecture/Residual Connections.md",
+              "08 - Attention and Transformers/Transformer Architecture/T5 and BART.md",
+              "08 - Attention and Transformers/Transformer Architecture/The Transformer.md",
+              "08 - Attention and Transformers/Transformer Architecture/Transformer Block.md",
+              "08 - Attention and Transformers/Transformer Architecture/Transformer Decoder Block.md",
+              "08 - Attention and Transformers/Vision Transformers/CLS Token.md",
+              "08 - Attention and Transformers/Vision Transformers/Inductive Bias.md",
+              "08 - Attention and Transformers/Vision Transformers/Patch Tokenization.md",
+              "08 - Attention and Transformers/Vision Transformers/ViT Architecture.md"
+            ]
+          },
+          {
+            "dimension": "math_rigor",
+            "first_third_mean": 0.8227,
+            "last_third_mean": 0.5182,
+            "delta": -0.3045,
+            "relative_drop": 0.3702,
+            "first_notes": [
+              "08 - Attention and Transformers/Attention Mechanism/ALiBi.md",
+              "08 - Attention and Transformers/Attention Mechanism/Bahdanau Attention.md",
+              "08 - Attention and Transformers/Attention Mechanism/Luong Attention.md",
+              "08 - Attention and Transformers/Attention Mechanism/Multi-Head Attention.md",
+              "08 - Attention and Transformers/Attention Mechanism/Origins of Attention.md",
+              "08 - Attention and Transformers/Attention Mechanism/Positional Encoding.md",
+              "08 - Attention and Transformers/Attention Mechanism/Queries Keys and Values.md",
+              "08 - Attention and Transformers/Attention Mechanism/RoPE.md",
+              "08 - Attention and Transformers/Attention Mechanism/Sinusoidal and Learned Positional Encodings.md",
+              "08 - Attention and Transformers/Attention Mechanism/YaRN and NTK-Aware Scaling.md",
+              "08 - Attention and Transformers/Efficient Attention/FlashAttention.md"
+            ],
+            "last_notes": [
+              "08 - Attention and Transformers/Transformer Architecture/Normalization Layers.md",
+              "08 - Attention and Transformers/Transformer Architecture/Pre-Norm vs Post-Norm.md",
+              "08 - Attention and Transformers/Transformer Architecture/Residual Connections.md",
+              "08 - Attention and Transformers/Transformer Architecture/T5 and BART.md",
+              "08 - Attention and Transformers/Transformer Architecture/The Transformer.md",
+              "08 - Attention and Transformers/Transformer Architecture/Transformer Block.md",
+              "08 - Attention and Transformers/Transformer Architecture/Transformer Decoder Block.md",
+              "08 - Attention and Transformers/Vision Transformers/CLS Token.md",
+              "08 - Attention and Transformers/Vision Transformers/Inductive Bias.md",
+              "08 - Attention and Transformers/Vision Transformers/Patch Tokenization.md",
+              "08 - Attention and Transformers/Vision Transformers/ViT Architecture.md"
+            ]
+          }
+        ],
+        "verdict": "drift_detected"
+      }
+    ],
+    "clean_types": [
+      {
+        "type": "derivation",
+        "notes": 2,
+        "verdict": "too_few_notes_to_compare"
+      },
+      {
+        "type": "overview",
+        "notes": 1,
+        "verdict": "too_few_notes_to_compare"
+      }
+    ],
+    "verdict": "drift_detected",
+    "caveat": "tertile-mean comparison on deterministic dimensions; investigate flagged evidence, do not treat as final judgment"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-drift",
+    "args": {
+      "command": "quality-drift",
+      "assessments": "/home/z/my-project/repo/scratch/synth/area08/gates/assessments.jsonl",
+      "rel_drop": 0.15,
+      "abs_drop": 0.1,
+      "report": "/home/z/my-project/repo/reports/synthesis/s21-area08-drift.json"
+    },
+    "utc_timestamp": "2026-11-02T13:34:53+00:00",
+    "git_commit": "45c9da7"
+  }
+}

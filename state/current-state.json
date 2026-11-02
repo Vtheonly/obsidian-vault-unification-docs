@@ -1,272 +1,287 @@
 {
- "corpus_statistics": {
-  "evidence": "reports/bootstrap/boot-002-inventory-summary.json",
-  "files_total": 609,
-  "headings_total": 12785,
-  "markdown_files": 609,
-  "per_vault": {
-   "AI Course": {
-    "files": 276,
-    "files_with_errors": 14,
-    "headings": 4175,
-    "tokens_estimate": 882863,
-    "words_total": 519933
-   },
-   "Master AI": {
-    "files": 333,
-    "files_with_errors": 0,
-    "headings": 8610,
-    "tokens_estimate": 1144484,
-    "words_total": 638004
-   }
-  },
-  "tokens_estimate_chars_div_4": 2027347,
-  "words_outside_fences": 990007,
-  "words_total": 1157937
- },
- "current_task_id": "SYNTH-001",
- "execution_environment": "Z AI / GLM 5.3 with available subagents",
- "framework_evidence": {
-  "capabilities": "reports/bootstrap/boot-004-capabilities.json",
-  "setup_doc": "docs/FRAMEWORK_SETUP.md",
-  "test_run": "reports/bootstrap/boot-004-pytest-report.json",
-  "test_summary": "285 passed, 0 failed, 0 skipped"
- },
- "framework_foundation_built": true,
- "framework_foundation_evidence": {
-  "capabilities": "reports/extraction/ext004-capabilities.json",
-  "setup_doc": "docs/FRAMEWORK_SETUP.md",
-  "test_run": "reports/extraction/ext004-pytest-report.json",
-  "test_summary": "407 passed, 0 failed, 0 skipped"
- },
- "framework_foundation_tested": true,
- "framework_version": "0.9.0",
- "knowledge_registry": {
-  "canonical_store": "state/knowledge-units/ (committed JSONL batches; ADR-0007)",
-  "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records) + 002-ext004-tree-based-overlap.jsonl (28 records) + 003-ext005-evaluation-overlap.jsonl (29 records) + 004-ext007-evaluation-addendum.jsonl (4 records) + 005-ext008-clustering-dimreduction-overlap.jsonl (27 records) + 006-ext009-generalization-overlap.jsonl (26 records) + 007-ext010-training-stability-overlap.jsonl (36 records, EXT-010; ADR-0009 pair-level overlay)",
-  "commands": "vu kureg-init / kureg-load / kureg-apply-overlap / kureg-query / kureg-validate",
-  "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load x70 + kureg-apply-dispositions)",
-  "dossiers": {
-   "v1": {
-    "files": {
-     "regression-v1.json": "14 concepts / 61 KUs",
-     "tree-based-v1.json": "28 concepts / 82 KUs",
-     "evaluation-v1.json": "33 concepts / 97 KUs",
-     "clustering-v1.json": "27 concepts / 64 KUs",
-     "generalization-v1.json": "26 concepts / 68 KUs",
-     "training-stability-v1.json": "36 concepts / 142 KUs"
+    "corpus_statistics": {
+        "evidence": "reports/bootstrap/boot-002-inventory-summary.json",
+        "files_total": 609,
+        "headings_total": 12785,
+        "markdown_files": 609,
+        "per_vault": {
+            "AI Course": {
+                "files": 276,
+                "files_with_errors": 14,
+                "headings": 4175,
+                "tokens_estimate": 882863,
+                "words_total": 519933
+            },
+            "Master AI": {
+                "files": 333,
+                "files_with_errors": 0,
+                "headings": 8610,
+                "tokens_estimate": 1144484,
+                "words_total": 638004
+            }
+        },
+        "tokens_estimate_chars_div_4": 2027347,
+        "words_outside_fences": 990007,
+        "words_total": 1157937
     },
-    "participating_kus": 514,
-    "concepts_total": 164
-   },
-   "v2": {
-    "files": {
-     "regression-v2.json": "47 concepts / 923 KUs (originals + session-18 extension records)",
-     "tree-based-v2.json": "69 concepts / 749 KUs (originals + session-18 extension records)",
-     "evaluation-v2.json": "82 concepts / 561 KUs (originals + session-18 extension records)",
-     "clustering-v2.json": "67 concepts / 454 KUs (originals + session-18 extension records)",
-     "generalization-v2.json": "73 concepts / 1105 KUs (originals + session-18 extension records)",
-     "training-stability-v2.json": "120 concepts / 1890 KUs (originals + session-18 extension records)"
+    "current_task_id": "SYNTH-001",
+    "execution_environment": "Z AI / GLM 5.3 with available subagents",
+    "framework_evidence": {
+        "capabilities": "reports/bootstrap/boot-004-capabilities.json",
+        "setup_doc": "docs/FRAMEWORK_SETUP.md",
+        "test_run": "reports/bootstrap/boot-004-pytest-report.json",
+        "test_summary": "285 passed, 0 failed, 0 skipped"
     },
-    "per_domain_participating_kus": 5682,
-    "concepts_total": 458,
-    "evidence": "reports/extraction/ext006-dossier-coverage.json (v2 acceptance block)"
-   },
-   "extension_classification_records": "state/classifications/009..014 (294 term-level records, ADR-0013; F-0022 repaired)"
-  },
-  "records": 27536,
-  "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)",
-  "dispositions": {
-   "ledger": "state/dispositions/001-disp001-rule-driven.jsonl (27,536 records; ADR-0014)",
-   "by_disposition": {
-    "Preserved": 18478,
-    "Consolidated": 8106,
-    "Contextualized": 950,
-    "Superseded": 2,
-    "Unaccounted": 0
-   },
-   "commands": "vu assign-dispositions / vu kureg-apply-dispositions",
-   "evidence": "reports/dispositions/disp001-assignment-report.json + disp001-apply-report.json + disp001-registry-validate.json"
-  },
-  "synthesis_mapping": {
-   "canonical_structure": "state/synthesis/canonical-structure-v1.json (20 areas, 544 planned notes)",
-   "file_mapping": "state/synthesis/file-mapping-v1.jsonl (609 records: 276 ai-course + 333 master-ai)",
-   "verification": "scripts/s19_verify_mapping.py (0 problems) + scripts/s19_integrate_mapping.py (arithmetic asserted)"
-  }
- },
- "knowledge_registry_initialized": true,
- "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-02-synth001-session20.json",
- "notes": "Session 20 (2026-11-02): SYNTH-001 started and area 04 - Machine Learning completed end-to-end: 27/27 canonical notes green through lint/assess/drift/gate/audit-output (0 findings, 1,829/1,829 KUs accounted). Editorial conventions v1 recorded. Framework fixes F-0024..F-0029 (708->725 tests; pilot re-verified 12/12). French lab preserved verbatim as an appendix. Next: remaining 15 areas (517 notes) via the same s20 pipeline, then gap treatments + cross-batch consistency + final verification by session 26.",
- "output_synthesis_started": true,
- "phase_zero_rebaseline": {
-  "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
-  "disc002_full_corpus_discovery": {
-   "candidates": 60154,
-   "confirmed_gaps": [
-    "second moment",
-    "bradley-terry",
-    "async def"
-   ],
-   "coverage": "609/609 complete",
-   "decisions_chain": [
-    "state/concept-candidates/002a-disc002-decisions-r1.jsonl (1153)",
-    "state/concept-candidates/002b-disc002-decisions-r2.jsonl (44)",
-    "state/concept-candidates/002-disc002-decisions-batch2.jsonl (86)",
-    "state/concept-candidates/002-disc002-decisions-batch3.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch4.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch5.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch6.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch7.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch8.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch9.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch10.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch11.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch12.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch13.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch14.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch15.jsonl (60)",
-    "state/concept-candidates/002-disc002-decisions-batch16.jsonl (4,274)"
-   ],
-   "dossier_ext_mechanical": "reports/dossier-ext/disc002-dext-summary.json (6 domains, 69185 candidate pairs, classification pending)",
-   "dossier_gap": "reports/discovery/disc002-dossier-reconciliation-gap.json",
-   "equivalence": "reports/discovery/disc002-f0015-equivalence.json",
-   "final_statuses": {
-    "provisional_candidate": 46978,
-    "already_covered": 7893,
-    "rejected": 5278,
-    "confirmed_gap": 3,
-    "merged": 1,
-    "deferred": 1
-   },
-   "full_file": "state/concept-candidates/002-disc002-full-corpus.jsonl (git-ignored, ADR-0010 replayable)",
-   "index": "state/concept-candidates/002-disc002-full-corpus.index.jsonl (committed)",
-   "replay_decided_utc": {
-    "r1": "2026-10-28T00:45:00Z",
-    "r2": "2026-10-28T01:30:00Z",
-    "batch2": "2026-10-28T02:30:00Z",
-    "batch3": "2026-10-28T05:30:00Z",
-    "batch4": "2026-10-30T13:05:00Z",
-    "batch5": "2026-10-30T15:30:00Z",
-    "batch6": "2026-10-30T16:30:00Z",
-    "batch7": "2026-10-31T00:30:00Z",
-    "batch8": "2026-10-31T01:30:00Z",
-    "batch9": "2026-10-31T03:00:00Z",
-    "batch10": "2026-10-31T05:30:00Z",
-    "batch11": "2026-10-31T08:00:00Z",
-    "batch12": "2026-10-31T10:30:00Z",
-    "batch13": "2026-10-31T13:30:00Z",
-    "batch14": "2026-11-01T03:30:00Z",
-    "batch15": "2026-11-01T04:15:00Z",
-    "batch16": "2026-11-01T22:30:00Z"
-   },
-   "sessions_merged": [
-    "A: 3d2ff8b..e2914e9",
-    "B: merge commit",
-    "session 4: fresh-clone verification + batch-4 tranche (f83125a -> this session)",
-    "session 5: fresh-clone verification + F-0020 fix + batch-5 tranche",
-    "session 6: six-round replay re-verification + batch-6 tranche",
-    "session 7: seven-round replay re-verification + batch-7 tranche (15 covers + 1 new confirmed gap async def + 1 merge + 43 rejects)",
-    "session 8: eight-round replay re-verification + batch-8 tranche (29 covers + 31 rejects, no new gap)",
-    "session 9: session-8 push blocker resolved + nine-round replay re-verification + batch-9 tranche (35 covers + 25 rejects, no new gap)",
-    "session 10: ten-round replay re-verification + fence-aware probe + batch-10 tranche (30 covers + 30 rejects, no new gap)",
-    "session 11: eleven-round replay re-verification + batch-11 tranche (27 covers + 33 rejects, no new gap)",
-    "session 12: twelve-round replay re-verification + batch-12 tranche (25 covers + 35 rejects, no new gap; cifar10 gap claim corrected to cover via the term-separated Q11:182 definition)",
-    "session 13: thirteen-round replay re-verification + batch-13 tranche (30 covers + 30 rejects, no new gap; subagent cross-check 60/60 first-pass AGREE, 2 errata re-verified: 1 accepted, 1 rejected)"
-   ],
-   "task": "DISC-002",
-   "validation": "reports/discovery/disc002-validate-merged.json (60,154 records, 0 errors)",
-   "replay_writer_note": "recorded 88a538eb sha256 is script-writer-specific (ensure_ascii=False); CLI replay is byte-different but content-identical — compare parsed content (F-0019)",
-   "signal_pool": "EXHAUSTED (session 16): 0 unreviewed candidates match the signal rule; 46,978 low-signal provisional remain as the documented exclusion"
-  },
-  "discovery_full_corpus": {
-   "candidates": 60154,
-   "coverage_complete": true,
-   "decide_r1": "reports/discovery/disc002-decide-r1.json",
-   "decide_r2": "reports/discovery/disc002-decide-r2.json",
-   "dossier_reconciliation": "reports/discovery/disc002-dossier-reconciliation.json",
-   "perf": "reports/discovery/disc002-full-corpus-perf.json",
-   "run_report": "reports/discovery/disc002-full-corpus-run.json",
-   "task": "DISC-002 (in progress)",
-   "tests": "620/620",
-   "triage": "reports/discovery/disc002-triage.json",
-   "validate": "reports/discovery/disc002-validate.json"
-  },
-  "discovery_partial_corpus_run": "state/concept-candidates/001-disc001-partial-corpus.jsonl (6340 candidates, coverage-gated)",
-  "framework_audit": "reports/rebaseline/framework-audit.json",
-  "full_corpus_extraction": {
-   "accounting": "reports/regen/regen001-accounting.json",
-   "batches": 70,
-   "completed_utc": "2026-10-28",
-   "extraction": "reports/regen/regen001-extraction.json",
-   "files_extracted": 609,
-   "kus": 27536,
-   "plan": "reports/regen/regen001-plan.json",
-   "registry": "reports/regen/regen001-registry.json",
-   "revalidation": "reports/regen/regen001-revalidation.json",
-   "task": "REGEN-001",
-   "tests": "604/604 (reports/regen/regen001-final-pytest.json)"
-  },
-  "known_limitations": "reports/rebaseline/known-limitations.json (13; 8 fixed FRAME-001, 1 DISC-001, 4 accepted)",
-  "quality_toolkit_baseline_lint": [
-   "reports/rebaseline/frame002-lint-ai-course.json (276 files, 164 errors)",
-   "reports/rebaseline/frame002-lint-master-ai.json (333 files, 371 errors)"
-  ],
-  "rebaseline_baseline_report": "reports/rebaseline/phase-zero-baseline.json",
-  "retrospective": "reports/rebaseline/iteration-retrospective.md",
-  "tests": "563/563 (reports/rebaseline/frame002-final-pytest.json)"
- },
- "project": "Obsidian Vault Unification",
- "quality_gates_for_synthesis": "every generation batch: check-prompt -> bounded generation -> lint-artifacts -> assess-quality -> quality-drift -> quality-gate -> repair loop; batch complete only when the gate passes or exceptions are explicitly waived with reasons",
- "source_inventory_complete": true,
- "source_vaults": [
-  {
-   "baseline_manifest": "state/manifests/master-ai.jsonl",
-   "bytes": 4601557,
-   "file_classes": {
-    "markdown": 333
-   },
-   "files": 333,
-   "name": "Master AI",
-   "note": "path contains a trailing space in parent directory 'AI ' (finding F-0001); always quote",
-   "path": "source-vaults/AI /Master AI",
-   "source_location_record": "reports/bootstrap/boot-001-source-location.json"
-  },
-  {
-   "baseline_manifest": "state/manifests/ai-course.jsonl",
-   "bytes": 3546362,
-   "file_classes": {
-    "markdown": 276
-   },
-   "files": 276,
-   "name": "AI Course",
-   "note": "path contains a trailing space in parent directory 'AI ' (finding F-0001); always quote",
-   "path": "source-vaults/AI /AI Course",
-   "source_location_record": "reports/bootstrap/boot-001-source-location.json"
-  }
- ],
- "source_vaults_located": true,
- "stage": "synthesis-in-progress-area04-complete",
- "status": "in_progress",
- "verification_pilot_evidence": {
-  "defect_classes": 12,
-  "detection_rate": "12/12",
-  "false_negatives": 0,
-  "false_positives_on_clean_baseline": 0,
-  "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)",
-  "localization_rate": "12/12",
-  "pilot_report": "reports/bootstrap/boot-004-omission-pilot.json",
-  "run_summary": "reports/bootstrap/boot-004-run-summary.json",
-  "verdict": "pass"
- },
- "verification_pilot_passed": true,
- "synthesis_progress": {
-  "areas_complete": [
-   "04 - Machine Learning"
-  ],
-  "notes_verified": 27,
-  "notes_planned": 544,
-  "kus_audited": 1829,
-  "audit_findings": 0,
-  "evidence": "reports/synthesis/s20-area04-{inputs-report,checkprompt,lint,assess,drift,gate,audit}.json"
- }
+    "framework_foundation_built": true,
+    "framework_foundation_evidence": {
+        "capabilities": "reports/extraction/ext004-capabilities.json",
+        "setup_doc": "docs/FRAMEWORK_SETUP.md",
+        "test_run": "reports/extraction/ext004-pytest-report.json",
+        "test_summary": "407 passed, 0 failed, 0 skipped"
+    },
+    "framework_foundation_tested": true,
+    "framework_version": "0.9.0",
+    "knowledge_registry": {
+        "canonical_store": "state/knowledge-units/ (committed JSONL batches; ADR-0007)",
+        "classifications": "state/classifications/001-ext003-regression-overlap.jsonl (14 records) + 002-ext004-tree-based-overlap.jsonl (28 records) + 003-ext005-evaluation-overlap.jsonl (29 records) + 004-ext007-evaluation-addendum.jsonl (4 records) + 005-ext008-clustering-dimreduction-overlap.jsonl (27 records) + 006-ext009-generalization-overlap.jsonl (26 records) + 007-ext010-training-stability-overlap.jsonl (36 records, EXT-010; ADR-0009 pair-level overlay)",
+        "commands": "vu kureg-init / kureg-load / kureg-apply-overlap / kureg-query / kureg-validate",
+        "derived_index": "state/registries/ (git-ignored SQLite; rebuild via kureg-init + kureg-load x70 + kureg-apply-dispositions)",
+        "dossiers": {
+            "v1": {
+                "files": {
+                    "regression-v1.json": "14 concepts / 61 KUs",
+                    "tree-based-v1.json": "28 concepts / 82 KUs",
+                    "evaluation-v1.json": "33 concepts / 97 KUs",
+                    "clustering-v1.json": "27 concepts / 64 KUs",
+                    "generalization-v1.json": "26 concepts / 68 KUs",
+                    "training-stability-v1.json": "36 concepts / 142 KUs"
+                },
+                "participating_kus": 514,
+                "concepts_total": 164
+            },
+            "v2": {
+                "files": {
+                    "regression-v2.json": "47 concepts / 923 KUs (originals + session-18 extension records)",
+                    "tree-based-v2.json": "69 concepts / 749 KUs (originals + session-18 extension records)",
+                    "evaluation-v2.json": "82 concepts / 561 KUs (originals + session-18 extension records)",
+                    "clustering-v2.json": "67 concepts / 454 KUs (originals + session-18 extension records)",
+                    "generalization-v2.json": "73 concepts / 1105 KUs (originals + session-18 extension records)",
+                    "training-stability-v2.json": "120 concepts / 1890 KUs (originals + session-18 extension records)"
+                },
+                "per_domain_participating_kus": 5682,
+                "concepts_total": 458,
+                "evidence": "reports/extraction/ext006-dossier-coverage.json (v2 acceptance block)"
+            },
+            "extension_classification_records": "state/classifications/009..014 (294 term-level records, ADR-0013; F-0022 repaired)"
+        },
+        "records": 27536,
+        "schema_version": "1.1 (ADR-0008: overlap_type + superseded_rationale)",
+        "dispositions": {
+            "ledger": "state/dispositions/001-disp001-rule-driven.jsonl (27,536 records; ADR-0014)",
+            "by_disposition": {
+                "Preserved": 18478,
+                "Consolidated": 8106,
+                "Contextualized": 950,
+                "Superseded": 2,
+                "Unaccounted": 0
+            },
+            "commands": "vu assign-dispositions / vu kureg-apply-dispositions",
+            "evidence": "reports/dispositions/disp001-assignment-report.json + disp001-apply-report.json + disp001-registry-validate.json"
+        },
+        "synthesis_mapping": {
+            "canonical_structure": "state/synthesis/canonical-structure-v1.json (20 areas, 544 planned notes)",
+            "file_mapping": "state/synthesis/file-mapping-v1.jsonl (609 records: 276 ai-course + 333 master-ai)",
+            "verification": "scripts/s19_verify_mapping.py (0 problems) + scripts/s19_integrate_mapping.py (arithmetic asserted)"
+        }
+    },
+    "knowledge_registry_initialized": true,
+    "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-02-synth001-session22.json",
+    "notes": "Session 20 (2026-11-02): SYNTH-001 started and area 04 - Machine Learning completed end-to-end: 27/27 canonical notes green through lint/assess/drift/gate/audit-output (0 findings, 1,829/1,829 KUs accounted). Editorial conventions v1 recorded. Framework fixes F-0024..F-0029 (708->725 tests; pilot re-verified 12/12). French lab preserved verbatim as an appendix. Next: remaining 15 areas (517 notes) via the same s20 pipeline, then gap treatments + cross-batch consistency + final verification by session 26.",
+    "output_synthesis_started": true,
+    "phase_zero_rebaseline": {
+        "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
+        "disc002_full_corpus_discovery": {
+            "candidates": 60154,
+            "confirmed_gaps": [
+                "second moment",
+                "bradley-terry",
+                "async def"
+            ],
+            "coverage": "609/609 complete",
+            "decisions_chain": [
+                "state/concept-candidates/002a-disc002-decisions-r1.jsonl (1153)",
+                "state/concept-candidates/002b-disc002-decisions-r2.jsonl (44)",
+                "state/concept-candidates/002-disc002-decisions-batch2.jsonl (86)",
+                "state/concept-candidates/002-disc002-decisions-batch3.jsonl (60)",
+                "state/concept-candidates/002-disc002-decisions-batch4.jsonl (60)",
+                "state/concept-candidates/002-disc002-decisions-batch5.jsonl (60)",
+                "state/concept-candidates/002-disc002-decisions-batch6.jsonl (60)",
+                "state/concept-candidates/002-disc002-decisions-batch7.jsonl (60)",
+                "state/concept-candidates/002-disc002-decisions-batch8.jsonl (60)",
+                "state/concept-candidates/002-disc002-decisions-batch9.jsonl (60)",
+                "state/concept-candidates/002-disc002-decisions-batch10.jsonl (60)",
+                "state/concept-candidates/002-disc002-decisions-batch11.jsonl (60)",
+                "state/concept-candidates/002-disc002-decisions-batch12.jsonl (60)",
+                "state/concept-candidates/002-disc002-decisions-batch13.jsonl (60)",
+                "state/concept-candidates/002-disc002-decisions-batch14.jsonl (60)",
+                "state/concept-candidates/002-disc002-decisions-batch15.jsonl (60)",
+                "state/concept-candidates/002-disc002-decisions-batch16.jsonl (4,274)"
+            ],
+            "dossier_ext_mechanical": "reports/dossier-ext/disc002-dext-summary.json (6 domains, 69185 candidate pairs, classification pending)",
+            "dossier_gap": "reports/discovery/disc002-dossier-reconciliation-gap.json",
+            "equivalence": "reports/discovery/disc002-f0015-equivalence.json",
+            "final_statuses": {
+                "provisional_candidate": 46978,
+                "already_covered": 7893,
+                "rejected": 5278,
+                "confirmed_gap": 3,
+                "merged": 1,
+                "deferred": 1
+            },
+            "full_file": "state/concept-candidates/002-disc002-full-corpus.jsonl (git-ignored, ADR-0010 replayable)",
+            "index": "state/concept-candidates/002-disc002-full-corpus.index.jsonl (committed)",
+            "replay_decided_utc": {
+                "r1": "2026-10-28T00:45:00Z",
+                "r2": "2026-10-28T01:30:00Z",
+                "batch2": "2026-10-28T02:30:00Z",
+                "batch3": "2026-10-28T05:30:00Z",
+                "batch4": "2026-10-30T13:05:00Z",
+                "batch5": "2026-10-30T15:30:00Z",
+                "batch6": "2026-10-30T16:30:00Z",
+                "batch7": "2026-10-31T00:30:00Z",
+                "batch8": "2026-10-31T01:30:00Z",
+                "batch9": "2026-10-31T03:00:00Z",
+                "batch10": "2026-10-31T05:30:00Z",
+                "batch11": "2026-10-31T08:00:00Z",
+                "batch12": "2026-10-31T10:30:00Z",
+                "batch13": "2026-10-31T13:30:00Z",
+                "batch14": "2026-11-01T03:30:00Z",
+                "batch15": "2026-11-01T04:15:00Z",
+                "batch16": "2026-11-01T22:30:00Z"
+            },
+            "sessions_merged": [
+                "A: 3d2ff8b..e2914e9",
+                "B: merge commit",
+                "session 4: fresh-clone verification + batch-4 tranche (f83125a -> this session)",
+                "session 5: fresh-clone verification + F-0020 fix + batch-5 tranche",
+                "session 6: six-round replay re-verification + batch-6 tranche",
+                "session 7: seven-round replay re-verification + batch-7 tranche (15 covers + 1 new confirmed gap async def + 1 merge + 43 rejects)",
+                "session 8: eight-round replay re-verification + batch-8 tranche (29 covers + 31 rejects, no new gap)",
+                "session 9: session-8 push blocker resolved + nine-round replay re-verification + batch-9 tranche (35 covers + 25 rejects, no new gap)",
+                "session 10: ten-round replay re-verification + fence-aware probe + batch-10 tranche (30 covers + 30 rejects, no new gap)",
+                "session 11: eleven-round replay re-verification + batch-11 tranche (27 covers + 33 rejects, no new gap)",
+                "session 12: twelve-round replay re-verification + batch-12 tranche (25 covers + 35 rejects, no new gap; cifar10 gap claim corrected to cover via the term-separated Q11:182 definition)",
+                "session 13: thirteen-round replay re-verification + batch-13 tranche (30 covers + 30 rejects, no new gap; subagent cross-check 60/60 first-pass AGREE, 2 errata re-verified: 1 accepted, 1 rejected)"
+            ],
+            "task": "DISC-002",
+            "validation": "reports/discovery/disc002-validate-merged.json (60,154 records, 0 errors)",
+            "replay_writer_note": "recorded 88a538eb sha256 is script-writer-specific (ensure_ascii=False); CLI replay is byte-different but content-identical — compare parsed content (F-0019)",
+            "signal_pool": "EXHAUSTED (session 16): 0 unreviewed candidates match the signal rule; 46,978 low-signal provisional remain as the documented exclusion"
+        },
+        "discovery_full_corpus": {
+            "candidates": 60154,
+            "coverage_complete": true,
+            "decide_r1": "reports/discovery/disc002-decide-r1.json",
+            "decide_r2": "reports/discovery/disc002-decide-r2.json",
+            "dossier_reconciliation": "reports/discovery/disc002-dossier-reconciliation.json",
+            "perf": "reports/discovery/disc002-full-corpus-perf.json",
+            "run_report": "reports/discovery/disc002-full-corpus-run.json",
+            "task": "DISC-002 (in progress)",
+            "tests": "620/620",
+            "triage": "reports/discovery/disc002-triage.json",
+            "validate": "reports/discovery/disc002-validate.json"
+        },
+        "discovery_partial_corpus_run": "state/concept-candidates/001-disc001-partial-corpus.jsonl (6340 candidates, coverage-gated)",
+        "framework_audit": "reports/rebaseline/framework-audit.json",
+        "full_corpus_extraction": {
+            "accounting": "reports/regen/regen001-accounting.json",
+            "batches": 70,
+            "completed_utc": "2026-10-28",
+            "extraction": "reports/regen/regen001-extraction.json",
+            "files_extracted": 609,
+            "kus": 27536,
+            "plan": "reports/regen/regen001-plan.json",
+            "registry": "reports/regen/regen001-registry.json",
+            "revalidation": "reports/regen/regen001-revalidation.json",
+            "task": "REGEN-001",
+            "tests": "604/604 (reports/regen/regen001-final-pytest.json)"
+        },
+        "known_limitations": "reports/rebaseline/known-limitations.json (13; 8 fixed FRAME-001, 1 DISC-001, 4 accepted)",
+        "quality_toolkit_baseline_lint": [
+            "reports/rebaseline/frame002-lint-ai-course.json (276 files, 164 errors)",
+            "reports/rebaseline/frame002-lint-master-ai.json (333 files, 371 errors)"
+        ],
+        "rebaseline_baseline_report": "reports/rebaseline/phase-zero-baseline.json",
+        "retrospective": "reports/rebaseline/iteration-retrospective.md",
+        "tests": "563/563 (reports/rebaseline/frame002-final-pytest.json)"
+    },
+    "project": "Obsidian Vault Unification",
+    "quality_gates_for_synthesis": "every generation batch: check-prompt -> bounded generation -> lint-artifacts -> assess-quality -> quality-drift -> quality-gate -> repair loop; batch complete only when the gate passes or exceptions are explicitly waived with reasons",
+    "source_inventory_complete": true,
+    "source_vaults": [
+        {
+            "baseline_manifest": "state/manifests/master-ai.jsonl",
+            "bytes": 4601557,
+            "file_classes": {
+                "markdown": 333
+            },
+            "files": 333,
+            "name": "Master AI",
+            "note": "path contains a trailing space in parent directory 'AI ' (finding F-0001); always quote",
+            "path": "source-vaults/AI /Master AI",
+            "source_location_record": "reports/bootstrap/boot-001-source-location.json"
+        },
+        {
+            "baseline_manifest": "state/manifests/ai-course.jsonl",
+            "bytes": 3546362,
+            "file_classes": {
+                "markdown": 276
+            },
+            "files": 276,
+            "name": "AI Course",
+            "note": "path contains a trailing space in parent directory 'AI ' (finding F-0001); always quote",
+            "path": "source-vaults/AI /AI Course",
+            "source_location_record": "reports/bootstrap/boot-001-source-location.json"
+        }
+    ],
+    "source_vaults_located": true,
+    "stage": "synthesis-in-progress-area04-complete",
+    "status": "in_progress",
+    "verification_pilot_evidence": {
+        "defect_classes": 12,
+        "detection_rate": "12/12",
+        "false_negatives": 0,
+        "false_positives_on_clean_baseline": 0,
+        "immutability": "both vaults verified unchanged before and after (exit 0, four manifest reports)",
+        "localization_rate": "12/12",
+        "pilot_report": "reports/bootstrap/boot-004-omission-pilot.json",
+        "run_summary": "reports/bootstrap/boot-004-run-summary.json",
+        "verdict": "pass"
+    },
+    "verification_pilot_passed": true,
+    "synthesis_progress": {
+        "areas_complete": [
+            "04 - Machine Learning",
+            "05 - Neural Network Foundations",
+            "06 - Computer Vision",
+            "07 - Sequence Models",
+            "08 - Attention and Transformers",
+            "09 - NLP and Language Models"
+        ],
+        "notes_verified": 190,
+        "notes_planned": 544,
+        "kus_audited_cumulative_sessions": 11915,
+        "audit_findings": 0,
+        "session_22": {
+            "notes_verified": 63,
+            "kus_audited": 2692,
+            "markers_verified": {
+                "terms": 7793,
+                "math": 2073,
+                "code": 113
+            },
+            "evidence": "reports/synthesis/s22-area0{7,8,9}-audit.json (all valid=true, 0 findings); s21-area0{7,8,9}-gate.json (all pass)"
+        },
+        "evidence": "reports/synthesis/s20-area04-*, s21-area05/06-*, s22-area07/08/09-* (inputs, checkprompt, assess, drift, gate, audit)"
+    }
 }

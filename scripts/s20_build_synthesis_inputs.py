@@ -121,6 +121,55 @@ AREA_CONFIG: dict[str, dict[str, object]] = {
             "Learning and Fine-Tuning, VGG16 Architecture Deep Dive"
         ),
     },
+    "07 - Sequence Models": {
+        "note_types": {
+            "07 - Sequence Models/Chapter Overview.md": "overview",
+            "07 - Sequence Models/Motivation and Recurrence/Backpropagation Through Time.md": "derivation",
+        },
+        # the area-root note's basename collides with 12 - Generative Models'
+        # Chapter Overview, so links to it must be path-based
+        "moc_target": (
+            "the area-root overview note, linked in path form as "
+            "[[07 - Sequence Models/Chapter Overview|Chapter Overview]] "
+            "(the basename collides with the future area-12 Chapter Overview)"
+        ),
+        "colliding": (
+            "Chapter Overview (link as [[07 - Sequence Models/Chapter Overview|"
+            "Chapter Overview]]), Vanishing and Exploding Gradients (link as "
+            "[[07 - Sequence Models/Motivation and Recurrence/Vanishing and "
+            "Exploding Gradients|Vanishing and Exploding Gradients]] — the "
+            "basename also exists in area 05)"
+        ),
+    },
+    "08 - Attention and Transformers": {
+        "note_types": {
+            "08 - Attention and Transformers/Attention and Transformers MOC.md": "overview",
+            "08 - Attention and Transformers/Attention Mechanism/Scaled Dot-Product Attention.md": "derivation",
+            "08 - Attention and Transformers/Attention Mechanism/Self-Attention.md": "derivation",
+        },
+        "moc_target": "Attention and Transformers MOC",
+        "colliding": (
+            "BERT, Bahdanau Attention, Luong Attention, FlashAttention (each "
+            "also exists later as a Papers-area note — link the area-08 copy in "
+            "path form, e.g. [[08 - Attention and Transformers/Transformer "
+            "Architecture/BERT|BERT]]), plus the already-generated CNN-side "
+            "colliding basenames Introduction and Foundations of CNNs, Evolution "
+            "of CNN Architectures, Activation and Pooling Layers (area 06) and "
+            "Data Augmentation (area 05) — always path-based"
+        ),
+    },
+    "09 - NLP and Language Models": {
+        "note_types": {
+            "09 - NLP and Language Models/NLP and Language Models MOC.md": "overview",
+        },
+        "moc_target": "NLP and Language Models MOC",
+        "colliding": (
+            "BERT (the area-08 copy is the topical sibling for NLP notes; link it "
+            "in path form as [[08 - Attention and Transformers/Transformer "
+            "Architecture/BERT|BERT]] because the basename also exists later as "
+            "a Papers-area note)"
+        ),
+    },
 }
 
 # Kept for backwards compatibility with the session-20 records: the area-04

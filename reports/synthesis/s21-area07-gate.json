@@ -1,0 +1,38 @@
+{
+  "result": {
+    "passed": true,
+    "criteria": [
+      "every expected note assessed or explicitly unresolved",
+      "every note lint-error clean (allowed: 0)",
+      "every measured dimension within its type band or explicitly waived with reason",
+      "no unexplained systematic quality drift"
+    ],
+    "failures": [],
+    "notes_assessed": 14,
+    "waivers_applied": [
+      [
+        "drift::concept",
+        "content-family artifact: the examples-dimension drop (0.6->0.45) is driven by one note (The Bottleneck Problem) whose SOURCE contains no example-marker vocabulary (example/for instance/e.g.) at all - grep confirms 0 markers in both source and note - while its concrete illustrations (40-word sentence, fluent last-15/garbled first-15 translation) are preserved verbatim; every note individually within band (0 dimensions below band across all 14); audit valid=true 0 findings over 370 KUs (reports/synthesis/s22-area07-audit.json); the dimension measures marker phrases, not illustration presence"
+      ]
+    ],
+    "verdict": "pass"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-gate",
+    "args": {
+      "command": "quality-gate",
+      "assessments": "/home/z/my-project/repo/scratch/synth/area07/gates/assessments.jsonl",
+      "expected": "/home/z/my-project/repo/scratch/synth/area07/expected-notes.txt",
+      "drift_report": "reports/synthesis/s21-area07-drift.json",
+      "waivers": [
+        "drift::concept=content-family artifact: the examples-dimension drop (0.6->0.45) is driven by one note (The Bottleneck Problem) whose SOURCE contains no example-marker vocabulary (example/for instance/e.g.) at all - grep confirms 0 markers in both source and note - while its concrete illustrations (40-word sentence, fluent last-15/garbled first-15 translation) are preserved verbatim; every note individually within band (0 dimensions below band across all 14); audit valid=true 0 findings over 370 KUs (reports/synthesis/s22-area07-audit.json); the dimension measures marker phrases, not illustration presence"
+      ],
+      "report": "/home/z/my-project/repo/reports/synthesis/s21-area07-gate.json"
+    },
+    "utc_timestamp": "2026-11-02T13:19:18+00:00",
+    "git_commit": "45c9da7"
+  }
+}

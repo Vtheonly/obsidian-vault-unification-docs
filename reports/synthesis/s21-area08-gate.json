@@ -1,0 +1,38 @@
+{
+  "result": {
+    "passed": true,
+    "criteria": [
+      "every expected note assessed or explicitly unresolved",
+      "every note lint-error clean (allowed: 0)",
+      "every measured dimension within its type band or explicitly waived with reason",
+      "no unexplained systematic quality drift"
+    ],
+    "failures": [],
+    "notes_assessed": 38,
+    "waivers_applied": [
+      [
+        "drift::concept",
+        "content-family artifact: the last-third notes (Transformer Architecture + Vision Transformers subfamilies) are drawn from math-light source families - the ai-course 'The Full Transformer' source has 0 display-math blocks (24 inline only) and the 'Inductive Bias' source has no math at all, so their notes faithfully carry little display math; first-third (Attention Mechanism) notes come from math/code-dense master-ai sources (mr 0.7-1.0). Every note individually within band (0 dimensions below band across all 38); audit valid=true 0 findings over 1,771 KUs with 0 missing math markers (every source equation IS present); the examples dimension drop (0.96->0.80) tracks the same source-family split (marker-phrase density, e.g. Residual Connections 0.4 whose source lacks example-marker vocabulary). Evidence: reports/synthesis/s22-area08-audit.json + s21-area08-assess.json"
+      ]
+    ],
+    "verdict": "pass"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-gate",
+    "args": {
+      "command": "quality-gate",
+      "assessments": "/home/z/my-project/repo/scratch/synth/area08/gates/assessments.jsonl",
+      "expected": "/home/z/my-project/repo/scratch/synth/area08/expected-notes.txt",
+      "drift_report": "reports/synthesis/s21-area08-drift.json",
+      "waivers": [
+        "drift::concept=content-family artifact: the last-third notes (Transformer Architecture + Vision Transformers subfamilies) are drawn from math-light source families - the ai-course 'The Full Transformer' source has 0 display-math blocks (24 inline only) and the 'Inductive Bias' source has no math at all, so their notes faithfully carry little display math; first-third (Attention Mechanism) notes come from math/code-dense master-ai sources (mr 0.7-1.0). Every note individually within band (0 dimensions below band across all 38); audit valid=true 0 findings over 1,771 KUs with 0 missing math markers (every source equation IS present); the examples dimension drop (0.96->0.80) tracks the same source-family split (marker-phrase density, e.g. Residual Connections 0.4 whose source lacks example-marker vocabulary). Evidence: reports/synthesis/s22-area08-audit.json + s21-area08-assess.json"
+      ],
+      "report": "/home/z/my-project/repo/reports/synthesis/s21-area08-gate.json"
+    },
+    "utc_timestamp": "2026-11-02T13:34:54+00:00",
+    "git_commit": "45c9da7"
+  }
+}

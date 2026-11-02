@@ -1,0 +1,235 @@
+{
+ "specs_total": 38,
+ "ok": 38,
+ "failed": 0,
+ "results": [
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/01-alibi.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/02-bahdanau-attention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/03-luong-attention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/04-multi-head-attention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/05-origins-of-attention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/06-positional-encoding.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/07-queries-keys-and-values.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/08-rope.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/09-scaled-dot-product-attention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/10-self-attention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/11-sinusoidal-and-learned-positional-encodings.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/12-yarn-and-ntk-aware-scaling.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/13-attention-and-transformers-moc.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/14-flashattention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/15-gqa-mqa-and-mla.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/16-linear-attention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/17-sliding-window-attention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/18-sparse-attention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/19-autoregressive-vs-parallel-encoding.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/20-bert-vs-gpt-vs-t5.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/21-choosing-the-right-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/22-information-bottleneck-and-latent-space.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/23-bert.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/24-embedding-layer.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/25-feed-forward-network.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/26-gpt-family.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/27-mixture-of-experts.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/28-normalization-layers.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/29-pre-norm-vs-post-norm.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/30-residual-connections.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/31-t5-and-bart.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/32-the-transformer.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/33-transformer-block.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/34-transformer-decoder-block.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/35-cls-token.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/36-inductive-bias.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/37-patch-tokenization.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area08/specs/38-vit-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  }
+ ]
+}

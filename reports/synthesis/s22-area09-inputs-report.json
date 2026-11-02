@@ -1,0 +1,29 @@
+{
+ "area": "09 - NLP and Language Models",
+ "slug": "area09",
+ "notes": 11,
+ "source_files": 11,
+ "kus": 551,
+ "kus_by_disposition": {
+  "Preserved": 445,
+  "Consolidated": 106
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 90,
+ "total_source_words": 25226,
+ "scratch_dir": "scratch/synth/area09",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "NLP and Language Models MOC",
+  "colliding": "BERT (the area-08 copy is the topical sibling for NLP notes; link it in path form as [[08 - Attention and Transformers/Transformer Architecture/BERT|BERT]] because the basename also exists later as a Papers-area note)",
+  "explicit_types": 1
+ }
+}

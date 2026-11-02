@@ -1,0 +1,29 @@
+{
+ "area": "07 - Sequence Models",
+ "slug": "area07",
+ "notes": 14,
+ "source_files": 14,
+ "kus": 370,
+ "kus_by_disposition": {
+  "Preserved": 366,
+  "Consolidated": 4
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 5,
+ "total_source_words": 15862,
+ "scratch_dir": "scratch/synth/area07",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "the area-root overview note, linked in path form as [[07 - Sequence Models/Chapter Overview|Chapter Overview]] (the basename collides with the future area-12 Chapter Overview)",
+  "colliding": "Chapter Overview (link as [[07 - Sequence Models/Chapter Overview|Chapter Overview]]), Vanishing and Exploding Gradients (link as [[07 - Sequence Models/Motivation and Recurrence/Vanishing and Exploding Gradients|Vanishing and Exploding Gradients]] — the basename also exists in area 05)",
+  "explicit_types": 2
+ }
+}

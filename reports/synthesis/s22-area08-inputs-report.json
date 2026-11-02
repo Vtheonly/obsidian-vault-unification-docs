@@ -1,0 +1,29 @@
+{
+ "area": "08 - Attention and Transformers",
+ "slug": "area08",
+ "notes": 38,
+ "source_files": 46,
+ "kus": 1771,
+ "kus_by_disposition": {
+  "Preserved": 945,
+  "Consolidated": 826
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 289,
+ "total_source_words": 71660,
+ "scratch_dir": "scratch/synth/area08",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "Attention and Transformers MOC",
+  "colliding": "BERT, Bahdanau Attention, Luong Attention, FlashAttention (each also exists later as a Papers-area note — link the area-08 copy in path form, e.g. [[08 - Attention and Transformers/Transformer Architecture/BERT|BERT]]), plus the already-generated CNN-side colliding basenames Introduction and Foundations of CNNs, Evolution of CNN Architectures, Activation and Pooling Layers (area 06) and Data Augmentation (area 05) — always path-based",
+  "explicit_types": 3
+ }
+}

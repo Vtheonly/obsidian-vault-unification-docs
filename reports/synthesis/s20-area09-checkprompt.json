@@ -1,0 +1,73 @@
+{
+ "specs_total": 11,
+ "ok": 11,
+ "failed": 0,
+ "results": [
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area09/specs/01-contextual-embeddings-elmo-to-bert.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area09/specs/02-word2vec-glove-and-fasttext.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area09/specs/03-n-gram-language-models.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area09/specs/04-perplexity.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area09/specs/05-nlp-and-language-models-moc.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area09/specs/06-bm25.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area09/specs/07-tf-idf.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area09/specs/08-bpe.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area09/specs/09-sentencepiece.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area09/specs/10-tokenization-overview.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area09/specs/11-wordpiece.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  }
+ ]
+}

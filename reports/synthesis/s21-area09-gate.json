@@ -1,0 +1,38 @@
+{
+  "result": {
+    "passed": true,
+    "criteria": [
+      "every expected note assessed or explicitly unresolved",
+      "every note lint-error clean (allowed: 0)",
+      "every measured dimension within its type band or explicitly waived with reason",
+      "no unexplained systematic quality drift"
+    ],
+    "failures": [],
+    "notes_assessed": 11,
+    "waivers_applied": [
+      [
+        "drift::concept",
+        "content-family artifact: the math_rigor drop (0.8->0.5) tracks the topical split between the first third (Embeddings + Language Modeling: Word2Vec source has 6 display + 32 inline math, N-Gram source 7 display + 42 inline) and the last third (Tokenization: BPE 0 display/16 inline, WordPiece 0/4, SentencePiece 0/5, Overview 1/0 - tokenization is an algorithmic topic whose sources carry no display math). The WordPiece note matches its source exactly (0 display, 4 inline) - faithful synthesis. All other dimensions stable (examples 1.0 everywhere, definitions 1.0, depth 0.70-0.77 both thirds); every note individually within band (0 dimensions below band); audit valid=true 0 findings over 551 KUs with 0 missing math markers. Evidence: reports/synthesis/s22-area09-audit.json + s21-area09-assess.json"
+      ]
+    ],
+    "verdict": "pass"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-gate",
+    "args": {
+      "command": "quality-gate",
+      "assessments": "/home/z/my-project/repo/scratch/synth/area09/gates/assessments.jsonl",
+      "expected": "/home/z/my-project/repo/scratch/synth/area09/expected-notes.txt",
+      "drift_report": "reports/synthesis/s21-area09-drift.json",
+      "waivers": [
+        "drift::concept=content-family artifact: the math_rigor drop (0.8->0.5) tracks the topical split between the first third (Embeddings + Language Modeling: Word2Vec source has 6 display + 32 inline math, N-Gram source 7 display + 42 inline) and the last third (Tokenization: BPE 0 display/16 inline, WordPiece 0/4, SentencePiece 0/5, Overview 1/0 - tokenization is an algorithmic topic whose sources carry no display math). The WordPiece note matches its source exactly (0 display, 4 inline) - faithful synthesis. All other dimensions stable (examples 1.0 everywhere, definitions 1.0, depth 0.70-0.77 both thirds); every note individually within band (0 dimensions below band); audit valid=true 0 findings over 551 KUs with 0 missing math markers. Evidence: reports/synthesis/s22-area09-audit.json + s21-area09-assess.json"
+      ],
+      "report": "/home/z/my-project/repo/reports/synthesis/s21-area09-gate.json"
+    },
+    "utc_timestamp": "2026-11-02T13:37:11+00:00",
+    "git_commit": "45c9da7"
+  }
+}
