@@ -202,7 +202,7 @@ Don't select models solely on benchmarks — run your own eval on your specific 
 
 ### Building a custom evaluation set
 
-The recipe: (1) sample 50-200 examples from real production traffic; (2) label each with expected output; (3) run the model at temperature=0, the standard benchmark setting (see [[Sampling Strategies]]); (4) compute accuracy, or use LLM-as-judge for open-ended tasks; (5) track the score over time and alert on regressions; (6) update quarterly. The eval set is your regression test for model changes. The same approach extends to custom eval implementations, such as building a RAG evaluation harness. When comparing two models, the statistical significance of benchmark differences is what separates a real improvement from noise, and once a candidate wins offline, [[A-B Testing and Shadow Deployment]] is the production-grade way to confirm it on live traffic.
+The recipe: (1) sample 50-200 examples from real production traffic; (2) label each with expected output; (3) run the model at temperature=0, the standard benchmark setting (see [[Sampling Strategies]]); (4) compute accuracy, or use LLM-as-judge for open-ended tasks; (5) track the score over time and alert on regressions; (6) update quarterly. The eval set is your regression test for model changes. The same approach extends to custom eval implementations, such as building a RAG evaluation harness — the course treats that build as a capstone project. When comparing two models, the statistical significance of benchmark differences is what separates a real improvement from noise, and once a candidate wins offline, [[A-B Testing and Shadow Deployment]] is the production-grade way to confirm it on live traffic.
 
 ## Why this matters
 

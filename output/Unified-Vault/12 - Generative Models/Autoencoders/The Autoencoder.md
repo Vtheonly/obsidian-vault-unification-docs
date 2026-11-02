@@ -59,7 +59,7 @@ Because the decoder mirrors the encoder, the one central hyperparameter is the l
 
 ## What the latent space looks like
 
-If you train an autoencoder on MNIST and visualize the latent space (via the dimensionality reduction tools t-SNE or UMAP — see [[t-SNE and UMAP]]), you find that the latent vectors cluster by digit class — even though the autoencoder was never given the labels. The compression forced the encoder to discover digit identity as a meaningful factor of variation, because identity is what most determines pixel values.
+If you train an autoencoder on MNIST and visualize the latent space (via t-SNE or UMAP — see [[t-SNE and UMAP]]; in the course's numbering this is note 03.8, Dimensionality Reduction), you find that the latent vectors cluster by digit class — even though the autoencoder was never given the labels. The compression forced the encoder to discover digit identity as a meaningful factor of variation, because identity is what most determines pixel values.
 
 This is the autoencoder's superpower: **unsupervised structure discovery.** By training only on reconstruction, the model learns a representation that captures the data's intrinsic structure. This representation can then be used for downstream tasks (classification, clustering, visualization) without labels.
 

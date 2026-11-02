@@ -222,6 +222,6 @@ These models descend from the static-embedding tradition (Word2Vec, GloVe, FastT
 - [[Multimodal Foundation Models]] — the multimodal family.
 - [[Multimodal AI Overview]] — where image-text retrieval fits.
 - [[08 - Attention and Transformers/Transformer Architecture/BERT|BERT]] — the backbone architecture.
-- [[Contextual Embeddings ELMo to BERT]] — the encoder lineage.
+- [[Contextual Embeddings ELMo to BERT]] — the pre-BERT history of the encoder lineage.
 - [[Word2Vec GloVe and FastText]] — the static-embedding ancestors.
 - [[Vector Storage with pgvector]] — the storage layer for these embeddings.

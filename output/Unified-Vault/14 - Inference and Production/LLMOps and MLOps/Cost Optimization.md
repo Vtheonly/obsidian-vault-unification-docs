@@ -134,7 +134,7 @@ You cannot optimize what you cannot measure. A cost monitoring stack should trac
 - **Cost trends** — is daily cost increasing? Why?
 - **Cost per successful outcome** — not just per request. If a feature has 50% retry rate, the cost per successful answer is 2× the per-request cost.
 
-The alerting side matters just as much. Alert when daily cost exceeds budget, when per-request cost exceeds a threshold (often a bug), and when cost per tenant spikes (often abuse or a tenant-side bug).
+The alerting side matters just as much. Alert when daily cost exceeds budget, when per-request cost exceeds a threshold (often a bug), and when cost per tenant is spiking (often abuse or a tenant-side bug).
 
 ## Common pitfalls
 

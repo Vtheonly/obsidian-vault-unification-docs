@@ -107,7 +107,7 @@ Algorithmic problem-solving is the headline strength: top models solve 90%+ of H
 
 ### Limitations
 
-The limitations are just as consistent. Models hallucinate APIs — suggesting APIs that don't exist or have wrong signatures — a code-specific face of [[Hallucination]]. Library knowledge goes stale: libraries evolve, and models trained a year ago may not know current APIs. Language coverage is uneven: models are strong on Python/JavaScript/Java but weaker on Rust, Zig, and niche DSLs. Debugging ability is limited: models can write code but struggle to systematically diagnose bugs in unfamiliar codebases. And security remains a live risk: models produce code with common vulnerabilities (SQL injection, XSS) unless explicitly trained not to.
+The limitations are just as consistent. Models hallucinate APIs — suggesting APIs that don't exist or have wrong signatures — a code-specific face of [[Hallucination]]. Outdated library knowledge: libraries evolve, and models trained a year ago may not know current APIs. Language coverage is uneven: models are strong on Python/JavaScript/Java but weaker on Rust, Zig, and niche DSLs. Debugging ability is limited: models can write code but struggle to systematically diagnose bugs in unfamiliar codebases. And security remains a live risk: models produce code with common vulnerabilities (SQL injection, XSS) unless explicitly trained not to.
 
 ## Future directions
 

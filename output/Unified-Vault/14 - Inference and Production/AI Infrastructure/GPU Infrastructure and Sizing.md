@@ -38,7 +38,7 @@ AMD's MI300X offers 192 GB HBM3 and is competitive with the H100 for inference. 
 
 ### TPUs and specialized accelerators
 
-Google's TPU v5e, v5p, and v6 are custom ASICs for matrix multiplication — competitive for training and inference, but they tie you to Google Cloud. The Groq LPU is specialized for fast inference, delivering very high tokens/sec for some models, though with limited model support. Cerebras and SambaNova build specialized AI hardware for niche use cases.
+Google's TPU v5e, v5p, and v6 use a custom ASIC design for matrix multiplication — competitive for training and inference, but they tie you to Google Cloud. The Groq LPU is specialized for fast inference, delivering very high tokens/sec for some models, though with limited model support. Cerebras and SambaNova build specialized AI hardware for niche use cases.
 
 For most teams, NVIDIA GPUs remain the default — the software ecosystem (CUDA, PyTorch, vLLM, TensorRT-LLM) is mature and well-supported, which is worth more than raw hardware comparisons suggest.
 

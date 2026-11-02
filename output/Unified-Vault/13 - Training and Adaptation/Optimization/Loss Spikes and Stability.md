@@ -182,7 +182,7 @@ This is the production standard for large training runs. Without checkpoint roll
 
 ### Reduce the learning rate
 
-If spikes recur, reduce the learning rate by 2-10×. This is a sign that the model is near a sharp minimum where the current learning rate is too aggressive.
+If spikes recur, reduce the learning rate by 2-10×. This is a sign that the model is near a sharp minimum where the current learning rate is too aggressive. The interview-answer form of the same rule spells the factor ASCII: reduce LR by 2-10x.
 
 ### Switch to BF16 (if using FP16)
 
@@ -256,4 +256,5 @@ Every N steps (e.g., 10K), run a few batches in FP32 to validate that mixed prec
 - [[Pretraining Objectives and Scaling Laws]] — the objectives being optimized at scale.
 - [[Optimizers and Learning Rate Schedulers]] — optimizer and schedule choices that affect stability.
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Vanishing and Exploding Gradients|Vanishing and Exploding Gradients]] — the underlying gradient pathologies.
+- Building a distributed-training pipeline (a capstone project) — the hands-on treatment of checkpointing and recovery.
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Weight Initialization|Weight Initialization]] — initialization's role in early stability.

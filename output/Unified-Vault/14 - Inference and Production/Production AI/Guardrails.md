@@ -96,7 +96,7 @@ NeMo Guardrails is an open-source framework for adding programmable guardrails t
 
 A minimal Colang config recognizes two phrasings of a medical-advice request and answers with a fixed refusal:
 
-```python
+```text
 # Example NeMo Guardrails config
 define user ask medical advice
   "How should I treat my illness?"

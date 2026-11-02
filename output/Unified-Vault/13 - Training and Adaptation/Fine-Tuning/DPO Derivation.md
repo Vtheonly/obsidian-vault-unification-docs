@@ -111,7 +111,7 @@ The training loop runs as follows:
 3. Forward pass through the frozen reference model to get $\log \pi_{\text{ref}}(y_w | x)$ and $\log \pi_{\text{ref}}(y_l | x)$.
 4. Compute the DPO loss and backprop into $\theta$.
 
-A related coding exercise is implementing the GRPO loss.
+A related coding exercise from the interview prep track is implementing the GRPO loss.
 
 ## Why DPO replaced PPO
 

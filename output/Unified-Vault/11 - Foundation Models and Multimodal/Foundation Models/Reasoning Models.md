@@ -220,7 +220,7 @@ Train a smaller, faster model (Llama 3 8B) on the outputs of a reasoning model (
 
 ## Relationship to other concepts
 
-Reasoning models sit at the intersection of several threads. Test-time compute scaling is the formal scaling law behind the accuracy gains above. The underlying RL method is RLHF with PPO, and PPO itself is the policy gradient algorithm that GRPO simplifies. Chain-of-thought prompting is the technique that reasoning models internalize; self-consistency is a non-RL approach to similar problems (sample several CoTs and vote). Reasoning models extend in-context learning with explicit thinking (see [[In-Context Learning]]). LoRA is used for distillation of reasoning models — the fine-tuning in pattern 4 is typically parameter-efficient — and DPO is a common follow-up when distilling (see [[DPO Derivation]] and [[13 - Training and Adaptation/Fine-Tuning/LoRA|LoRA]]).
+Reasoning models sit at the intersection of several threads. Test-time compute scaling is the formal scaling law behind the accuracy gains above. The underlying RL method is RLHF with PPO, and PPO itself is the policy gradient algorithm that GRPO simplifies. Chain-of-thought prompting is the technique that reasoning models internalize; tree-of-thoughts search with self-consistency is the non-RL approach to similar problems (sample several thoughts and vote). Reasoning models extend in-context learning with explicit thinking (see [[In-Context Learning]]). LoRA is used for distillation of reasoning models — the fine-tuning in pattern 4 is typically parameter-efficient — and DPO is a common follow-up when distilling (see [[DPO Derivation]] and [[13 - Training and Adaptation/Fine-Tuning/LoRA|LoRA]]).
 
 ## Interview questions
 

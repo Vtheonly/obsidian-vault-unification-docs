@@ -100,7 +100,7 @@ Diffusion has unified generative AI across modalities, just as Transformers unif
 
 **Score-based formulation** unified diffusion theory: the denoiser approximates the score (gradient of log-density), and generation follows the score via reverse SDE — this enabled continuous-time sampling and fast samplers. **Latent diffusion** moves the process into a VAE-compressed latent space, reducing computational cost by ~48× and making high-resolution diffusion practical; Stable Diffusion is a latent diffusion model. **Text-to-image** uses cross-attention from the U-Net to text embeddings, guiding denoising by the text prompt, and classifier-free guidance amplifies the text's influence, producing prompt-faithful images. Diffusion is the state of the art for image, video, audio, 3D, and molecular generation — it has unified generative AI across modalities — and the combination of diffusion (for generation) and Transformers (for understanding) is the foundation of modern AI.
 
-With diffusion, the four major families of generative models are complete: autoencoders (compression), VAEs (probabilistic generation), GANs (adversarial generation), and diffusion (iterative denoising).
+With diffusion, the four major families of generative models are complete: autoencoders (compression), VAEs (probabilistic generation), GANs (adversarial generation), and diffusion (iterative denoising). In the source course's reading order, the next steps after generative models are the expansion phases: evaluation metrics, math foundations, classical ML, and de-duplication.
 
 ## See also
 

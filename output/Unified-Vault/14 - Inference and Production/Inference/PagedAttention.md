@@ -104,7 +104,7 @@ For a workload with variable-length sequences (typical chatbot traffic):
 | Naive (max-size alloc)| 20–40%                    |
 | PagedAttention        | 95%+                       |
 
-The 2–4x effective memory increase translates directly to 2–4x larger batches and 2–4x higher throughput. Overall, PagedAttention gives 2-4x throughput vs naive serving (which pre-allocates max-size per request), and the improvement comes from three sources: (1) 95%+ memory efficiency (vs 20-40% with naive); (2) larger batch sizes (more concurrent requests); (3) prefix caching (shared system prompts). Fragmentation itself is nearly gone: internal fragmentation is limited to the last partial block (<16 tokens), and external fragmentation is eliminated entirely.
+The 2–4x effective memory increase translates directly to 2–4x larger batches and 2–4x higher throughput. Overall, PagedAttention gives 2-4x throughput vs naive serving (which works by pre-allocating max-size per request), and the improvement comes from three sources: (1) 95%+ memory efficiency (vs 20-40% with naive); (2) larger batch sizes (more concurrent requests); (3) prefix caching (shared system prompts). Fragmentation itself is nearly gone: internal fragmentation is limited to the last partial block (<16 tokens), and external fragmentation is eliminated entirely.
 
 ## Worked throughput example
 

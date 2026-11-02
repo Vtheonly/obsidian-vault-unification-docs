@@ -304,7 +304,7 @@ Periodically resets $\mathbf{A}, \mathbf{B}$ and merges into $\mathbf{W}$. This 
 
 ### PiSSA
 
-Initializes $\mathbf{A}, \mathbf{B}$ from the SVD of $\mathbf{W}$ rather than randomly. The adapter starts as the principal components of the original weight, leading to faster convergence and slightly better final quality.
+Initializes $\mathbf{A}, \mathbf{B}$ from the SVD of $\mathbf{W}$ — the matrix decomposition that inspires PiSSA — rather than randomly. The adapter starts as the principal components of the original weight, leading to faster convergence and slightly better final quality.
 
 ### LoRA+
 

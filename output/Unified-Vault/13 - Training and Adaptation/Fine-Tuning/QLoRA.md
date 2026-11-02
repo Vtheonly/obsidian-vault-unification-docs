@@ -104,7 +104,7 @@ Then train with the standard HuggingFace `Trainer`.
 
 ## Why this matters for AI
 
-QLoRA **democratized LLM fine-tuning**. Before QLoRA, fine-tuning a 65B model required 8x A100 80GB (~$30k/month on cloud); after QLoRA, it requires a single 48GB GPU (~$2k/month or even a workstation). The "fine-tune a model on your laptop" use case is real — QLoRA lets you fine-tune 7B models on a single RTX 4090. QLoRA-based adapters can be **merged into the base model** for inference just like regular LoRA; the merged model can then be served normally, because the 4-bit quantization was only for training and the merged inference model can be any precision. QLoRA is the basis for most open-source fine-tuning today — custom models on HuggingFace are typically trained with QLoRA, including hands-on projects such as building a reasoning-model fine-tune.
+QLoRA **democratized LLM fine-tuning**. Before QLoRA, fine-tuning a 65B model required 8x A100 80GB (~$30k/month on cloud). After QLoRA, it requires a single 48GB GPU (~$2k/month or even a workstation). The "fine-tune a model on your laptop" use case is real — QLoRA lets you fine-tune 7B models on a single RTX 4090. QLoRA-based adapters can be **merged into the base model** for inference just like regular LoRA; the merged model can then be served normally, because the 4-bit quantization was only for training and the merged inference model can be any precision. QLoRA is the basis for most open-source fine-tuning today — custom models on HuggingFace are typically trained with QLoRA, including hands-on projects such as building a reasoning-model fine-tune — one of the course's capstones that uses QLoRA.
 
 ## Production implications
 

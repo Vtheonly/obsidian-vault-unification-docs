@@ -483,3 +483,4 @@ Three signals: (1) input classifier alerts (Llama Guard flags), (2) anomaly dete
 - [[Gateway and Router Patterns]] — where rate limits, auth, and policy layers live.
 - [[Production Monitoring]] — detecting injection attempts in production.
 - [[Reference Production Architectures]] — full-stack context for these layers.
+- Agent autonomy — agents that act on the world need extra security layers beyond plain LLM apps; human-in-the-loop approval is the mitigation for destructive actions.

@@ -164,7 +164,7 @@ A single Postgres instance handles ~100–1000 queries per second on vector sear
 
 Store embeddings alongside the data they describe, but compute them asynchronously:
 
-```python
+```text
 # On insert, just store the text
 INSERT INTO documents (title, content) VALUES (?, ?) RETURNING id;
 

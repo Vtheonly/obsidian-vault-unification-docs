@@ -124,7 +124,7 @@ LLM inference has two phases:
 - **Prefill**: process the prompt, computing attention over all prompt tokens. This is compute-bound (large matrix multiplies).
 - **Decode**: generate one token at a time, attending to the prompt + previously generated tokens. This is memory-bound (small matrix multiplies, but reads the full KV cache each step).
 
-Continuous batching must handle both phases. A new request starts in prefill; after prefill it transitions to decode. Mixing prefill and decode in the same iteration is possible but tricky (prefill requests need lots of compute; decode requests need lots of memory bandwidth).
+Continuous batching must handle both phases. A new request starts in prefill; after preill, it transitions to decode. Mixing prefill and decode in the same iteration is possible but tricky (prefill requests need lots of compute; decode requests need lots of memory bandwidth).
 
 Two scheduling strategies exist for the mix:
 

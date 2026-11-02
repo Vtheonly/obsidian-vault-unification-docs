@@ -54,7 +54,7 @@ If the draft model has acceptance rate $\alpha$ (fraction of tokens accepted) an
 - If $\alpha = 0.5, k = 4$: ~1.94 tokens per target pass — ~2x speedup.
 - If $\alpha = 0.9, k = 7$: ~4.5 tokens per target pass — **4.5x speedup**.
 
-The same arithmetic extended downward shows where the technique stops paying: with $k=4$ draft tokens, $\alpha = 0.3$ gives ~1.3x (barely worth it). Below 30% acceptance, the draft overhead exceeds the verification savings. A good draft model (same family, smaller) typically achieves 60-80% acceptance. The key is having a good draft model — high acceptance rate is what drives speedup.
+The same arithmetic extended downward shows where the technique stops paying: with $k=4$ draft tokens, acceptance rate $\alpha = 0.7$ gives ~2.5x speedup, $\alpha = 0.5$ gives ~2x, and $\alpha = 0.3$ gives ~1.3x (barely worth it). Below 30% acceptance, the draft overhead exceeds the verification savings. A good draft model (same family, smaller) typically achieves 60-80% acceptance. The key is having a good draft model — high acceptance rate is what drives speedup.
 
 ## Draft model choices
 
@@ -99,7 +99,7 @@ Tree:
   y_3  y_3'  y_3''
 ```
 
-The linear case proposes one sequence $y_1 \to y_2 \to y_3 \to y_4$; if $y_2$ is rejected, $y_3$ and $y_4$ are wasted. A tree proposes multiple branches at each position, so if one branch is rejected, another may succeed — the draft hedges its bets, and the target's forward pass handles all branches via a custom attention mask. This is much more efficient, and it is why EAGLE-2/3 achieve 3-5x speedup vs 2-3x for linear.
+The linear case proposes one sequence $y_1 \to y_2 \to y_3 \to y_4$; if $y_2$ is rejected, $y_3$ and $y_4$ are wasted. A tree proposes multiple branches at each position, so if one branch is rejected, another may succeed — the draft can hedge its bets, and the target's forward pass handles all branches via a custom attention mask. This hedges bets in one verification pass — much more efficient, and it is why EAGLE-2/3 achieve 3-5x speedup vs 2-3x for linear.
 
 ## Implementation sketch
 

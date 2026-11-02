@@ -73,7 +73,7 @@ Even after HTML stripping, pages contain boilerplate: cookie notices, navigation
 
 ### Language identification
 
-Use **fastText's language identification model** to tag each document with its language. Documents below a confidence threshold (e.g., 0.7) are discarded. This is essential for multilingual models — you don't want English training to be polluted by misclassified non-English text.
+Use **fastText's language identification model** to tag each document with its language. Documents below a confidence threshold (e.g., 0.7) are discarded. This is essential for multilingual models — you don't want English-training to be polluted by misclassified non-English text.
 
 ## Filtering
 

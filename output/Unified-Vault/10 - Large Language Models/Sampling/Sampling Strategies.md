@@ -81,7 +81,7 @@ It is adaptive — a small set when the distribution is sharp, a large set when 
 
 ## Min-p sampling
 
-Min-P (Minimum-P) sampling, a newer (2024) alternative to top-p, sets a minimum probability threshold relative to the top token:
+Min-P (Minimum-P) sampling (TODO: cite, 2024) is a newer alternative to top-p that sets a minimum probability threshold relative to the top token:
 
 $$
 \text{threshold} = p_{\text{min}} \cdot \max_i p_i

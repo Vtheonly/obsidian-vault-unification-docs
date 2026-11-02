@@ -158,7 +158,7 @@ For token-level decoding, this is trickier because tokens span multiple characte
 
 ### Compiled state machines
 
-For JSON schemas, compile the schema into a state machine. Each state represents "what we're expecting next" (key, value, comma, end-of-object). Transitions are triggered by token patterns. This is the approach used by `lm-format-enforcer` and `outlines`.
+For JSON schemas, compile the schema into a precompiled state machine. Each state represents "what we're expecting next" (key, value, comma, end-of-object). Transitions are triggered by token patterns. This is the approach used by `lm-format-enforcer` and `outlines`.
 
 The compiled state machine enables $O(1)$ validity checks per token. This is the production-grade approach.
 

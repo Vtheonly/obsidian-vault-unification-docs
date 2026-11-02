@@ -87,7 +87,7 @@ Beyond the surface forms above, hallucinations are classified along three axes t
 
 ### Intrinsic versus extrinsic
 
-**Intrinsic** hallucinations contradict the source — in a RAG setting, the retrieved context. They are easier to detect because you can simply compare the output to the context. **Extrinsic** hallucinations produce content not supported by the source; it might be true, might be false — you can't verify from context alone. Extrinsic hallucinations are harder to detect and require external verification.
+**Intrinsic** hallucinations contradict the source: the output contradicts it — in a RAG setting, the retrieved context. They are easier to detect because you can simply compare the output to the context. **Extrinsic** hallucinations produce content not supported by the source; it might be true, might be false — you can't verify from context alone. Extrinsic hallucinations are harder to detect and require external verification.
 
 ### Open-domain versus closed-domain
 
@@ -300,3 +300,4 @@ Each step adds cost and latency but reduces hallucination. The right trade-off d
 - [[RLHF with PPO]] — preference training that rewards honest refusals.
 - [[DPO Derivation]] — direct preference optimization used for refusal training.
 - [[Constrained Decoding]] — forcing structured output with validatable citation fields.
+- Agent reflection — agents that self-critique their own outputs; this helps reduce hallucination.

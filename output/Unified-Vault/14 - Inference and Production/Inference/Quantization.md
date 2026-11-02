@@ -92,7 +92,7 @@ RTN is the baseline; everything else improves on it. At INT8, RTN is often accep
 How it works:
 
 1. For each layer, compute the Hessian of the loss with respect to the weights (using a calibration dataset).
-2. Quantize weights one column at a time, using the Hessian to predict and compensate for the quantization error.
+2. Quantize weights column-by-column, using the Hessian to predict and compensate for the quantization error.
 3. The compensation updates the remaining (not-yet-quantized) weights to offset the error introduced.
 
 Properties: one-shot quantization (no training needed); excellent quality at INT4 — near-FP16 perplexity; supported by AutoGPTQ, vLLM, HuggingFace; slow to apply (~hours for 70B).

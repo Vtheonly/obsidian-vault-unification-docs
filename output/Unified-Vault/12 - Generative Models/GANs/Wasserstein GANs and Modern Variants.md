@@ -72,7 +72,7 @@ CycleGAN (Zhu et al. 2017) performs **unpaired image-to-image translation** — 
 
 ### pix2pix
 
-pix2pix (Isola et al. 2017) performs **paired** image-to-image translation (edges → photos, day → night, sketch → photo) using a conditional GAN with paired training data. The generator is a U-Net (see [[Deep Learning for Imaging]]); the discriminator judges pairs (input, output).
+pix2pix (Isola et al. 2017) performs **paired** image-to-image translation (edges → photos, day → night, sketch → photo) using a conditional GAN with paired training data. The generator is a U-Net (see [[Deep Learning for Imaging]], course note 05.5); the discriminator judges pairs (input, output).
 
 ## The current status of GANs
 
