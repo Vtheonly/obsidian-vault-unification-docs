@@ -201,9 +201,16 @@
 - Drift waivers are for EXPLAINED artifacts with evidence (0 below band +
   audit 0 findings), never for hiding a real regression; re-check the
   arithmetic before waiving; re-audit corpus-wide at session 25.
-- Push to main before session end; record push verification; if a push is
-  rejected because a parallel session moved main: fetch, review, MERGE
-  (never rebase away history), reconcile, re-verify.
+- **Continuous persistence (ADR-0015 / AGENTS.md §13):** after every bounded,
+  coherent unit passes its applicable checks, commit and push it immediately
+  to `origin/main`; do not wait until session end. Keep the unpushed window
+  near zero, verify the remote ref after each push, and record the SHA/result
+  in the existing checkpoint or handoff. For long batches, push recovery
+  checkpoints before risky work/delegation and after each recoverable batch.
+  If `main` rejects a push because another session advanced it: fetch, inspect,
+  merge/reconcile (never force-push or discard history), rerun affected checks,
+  push, and verify. If branch protection requires a head branch, push it
+  immediately and merge into `main` as soon as permitted.
 - ADR-0011 discipline stands; subagent outputs are verified (gates +
   sampling), never trusted.
 - Delta-verification discipline: write the arithmetic of expectations down
