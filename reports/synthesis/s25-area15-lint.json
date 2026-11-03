@@ -1,0 +1,2716 @@
+{
+  "result": {
+    "root": "output/Unified-Vault/15 - Agents and Tooling",
+    "summary": {
+      "files": 41,
+      "defects": 308,
+      "errors": 188,
+      "warnings": 5,
+      "infos": 115,
+      "files_with_errors": 32
+    },
+    "counts_by_check": {
+      "error:CODE_JSON_INVALID": 1,
+      "error:LINK_BROKEN": 187,
+      "info:EMPTY_SECTION": 115,
+      "warning:MATH_INLINE_ODD": 5
+    },
+    "files": [
+      {
+        "file": "AI Agents/Agent vs Workflow vs LLM Application.md",
+        "defects": [],
+        "defect_count": 0,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {}
+      },
+      {
+        "file": "AI Agents/Autonomous Agent Lifecycles.md",
+        "defects": [
+          {
+            "check": "MATH_INLINE_ODD",
+            "severity": "warning",
+            "line": 0,
+            "message": "odd number of unescaped '$' characters outside code/math blocks (3); an inline formula is probably unclosed",
+            "excerpt": ""
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 29,
+            "message": "section 'The lifecycle phases' has no content before the next heading",
+            "excerpt": "## The lifecycle phases"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 159,
+            "message": "section 'Production concerns' has no content before the next heading",
+            "excerpt": "## Production concerns"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 210,
+            "message": "unresolved internal link 'Production Monitoring'",
+            "excerpt": "Production Monitoring"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 222,
+            "message": "unresolved internal link 'LLM Security and Prompt Injection'",
+            "excerpt": "LLM Security and Prompt Injection"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 224,
+            "message": "section 'Long-running agent patterns' has no content before the next heading",
+            "excerpt": "## Long-running agent patterns"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 298,
+            "message": "unresolved internal link 'Build a Multi-Agent System'",
+            "excerpt": "Build a Multi-Agent System"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 300,
+            "message": "unresolved internal link 'Production Monitoring'",
+            "excerpt": "Production Monitoring"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 301,
+            "message": "unresolved internal link 'Failure Modes and Graceful Degradation'",
+            "excerpt": "Failure Modes and Graceful Degradation"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 302,
+            "message": "unresolved internal link 'LLM Security and Prompt Injection'",
+            "excerpt": "LLM Security and Prompt Injection"
+          }
+        ],
+        "defect_count": 10,
+        "error_count": 6,
+        "warning_count": 1,
+        "info_count": 3,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 6,
+          "info:EMPTY_SECTION": 3,
+          "warning:MATH_INLINE_ODD": 1
+        }
+      },
+      {
+        "file": "AI Agents/Chain of Thought.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 30,
+            "message": "section 'Variants' has no content before the next heading",
+            "excerpt": "## Variants"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 70,
+            "message": "unresolved internal link 'Test-Time Compute Scaling'",
+            "excerpt": "Test-Time Compute Scaling"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 82,
+            "message": "unresolved internal link 'Probing'",
+            "excerpt": "Probing"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 111,
+            "message": "unresolved internal link 'Reasoning Models'",
+            "excerpt": "Reasoning Models"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 111,
+            "message": "unresolved internal link 'Test-Time Compute Scaling'",
+            "excerpt": "Test-Time Compute Scaling"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 139,
+            "message": "unresolved internal link 'Entropy Cross-Entropy and KL Divergence'",
+            "excerpt": "Entropy Cross-Entropy and KL Divergence"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 139,
+            "message": "unresolved internal link 'Graph of Thoughts'",
+            "excerpt": "Graph of Thoughts"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 139,
+            "message": "unresolved internal link 'In-Context Learning'",
+            "excerpt": "In-Context Learning"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 139,
+            "message": "unresolved internal link 'Self-Consistency'",
+            "excerpt": "Self-Consistency"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 139,
+            "message": "unresolved internal link 'Tree of Thoughts'",
+            "excerpt": "Tree of Thoughts"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 171,
+            "message": "unresolved internal link 'Reasoning Models'",
+            "excerpt": "Reasoning Models"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 172,
+            "message": "unresolved internal link 'Test-Time Compute Scaling'",
+            "excerpt": "Test-Time Compute Scaling"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 173,
+            "message": "unresolved internal link 'In-Context Learning'",
+            "excerpt": "In-Context Learning"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 174,
+            "message": "unresolved internal link 'Probing'",
+            "excerpt": "Probing"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 175,
+            "message": "unresolved internal link 'Self-Consistency'",
+            "excerpt": "Self-Consistency"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 176,
+            "message": "unresolved internal link 'Tree of Thoughts'",
+            "excerpt": "Tree of Thoughts"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 177,
+            "message": "unresolved internal link 'Graph of Thoughts'",
+            "excerpt": "Graph of Thoughts"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 178,
+            "message": "unresolved internal link 'Entropy Cross-Entropy and KL Divergence'",
+            "excerpt": "Entropy Cross-Entropy and KL Divergence"
+          }
+        ],
+        "defect_count": 18,
+        "error_count": 17,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 17,
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "AI Agents/Function Calling.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 12,
+            "message": "section 'The two eras of tool calls' has no content before the next heading",
+            "excerpt": "## The two eras of tool calls"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 185,
+            "message": "section 'Implementation patterns' has no content before the next heading",
+            "excerpt": "## Implementation patterns"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "AI Agents/Human-in-the-Loop Patterns.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 29,
+            "message": "section 'The four HiTL patterns' has no content before the next heading",
+            "excerpt": "## The four HiTL patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 155,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 185,
+            "message": "section 'Common pitfalls' has no content before the next heading",
+            "excerpt": "## Common pitfalls"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 244,
+            "message": "unresolved internal link 'LLM Security and Prompt Injection'",
+            "excerpt": "LLM Security and Prompt Injection"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 245,
+            "message": "unresolved internal link 'Gateway and Router Patterns'",
+            "excerpt": "Gateway and Router Patterns"
+          }
+        ],
+        "defect_count": 5,
+        "error_count": 2,
+        "warning_count": 0,
+        "info_count": 3,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 2,
+          "info:EMPTY_SECTION": 3
+        }
+      },
+      {
+        "file": "AI Agents/Planner-Executor Pattern.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 37,
+            "message": "section 'The pattern' has no content before the next heading",
+            "excerpt": "## The pattern"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 124,
+            "message": "section 'Variations' has no content before the next heading",
+            "excerpt": "## Variations"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 170,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 182,
+            "message": "unresolved internal link 'Constrained Decoding'",
+            "excerpt": "Constrained Decoding"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 244,
+            "message": "unresolved internal link 'Build a Multi-Agent System'",
+            "excerpt": "Build a Multi-Agent System"
+          }
+        ],
+        "defect_count": 5,
+        "error_count": 2,
+        "warning_count": 0,
+        "info_count": 3,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 2,
+          "info:EMPTY_SECTION": 3
+        }
+      },
+      {
+        "file": "AI Agents/ReAct Pattern.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 34,
+            "message": "section 'The four components' has no content before the next heading",
+            "excerpt": "## The four components"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 65,
+            "message": "section 'Implementation' has no content before the next heading",
+            "excerpt": "## Implementation"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 244,
+            "message": "section 'Variants and extensions' has no content before the next heading",
+            "excerpt": "## Variants and extensions"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 260,
+            "message": "unresolved internal link 'Reflexion'",
+            "excerpt": "Reflexion"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 496,
+            "message": "unresolved internal link 'Reflexion'",
+            "excerpt": "Reflexion"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 505,
+            "message": "unresolved internal link 'Reflexion'",
+            "excerpt": "Reflexion"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 513,
+            "message": "unresolved internal link 'Build a Mini Agent'",
+            "excerpt": "Build a Mini Agent"
+          }
+        ],
+        "defect_count": 7,
+        "error_count": 4,
+        "warning_count": 0,
+        "info_count": 3,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 4,
+          "info:EMPTY_SECTION": 3
+        }
+      },
+      {
+        "file": "AI Agents/Reflection.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 79,
+            "message": "section 'Variants' has no content before the next heading",
+            "excerpt": "## Variants"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 152,
+            "message": "unresolved internal link 'Constitutional AI'",
+            "excerpt": "Constitutional AI"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 152,
+            "message": "unresolved internal link 'Reflexion'",
+            "excerpt": "Reflexion"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 152,
+            "message": "unresolved internal link 'Self-Refine'",
+            "excerpt": "Self-Refine"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 184,
+            "message": "unresolved internal link 'LLM-as-Judge Evaluation'",
+            "excerpt": "LLM-as-Judge Evaluation"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 185,
+            "message": "unresolved internal link 'Reflexion'",
+            "excerpt": "Reflexion"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 186,
+            "message": "unresolved internal link 'Self-Refine'",
+            "excerpt": "Self-Refine"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 187,
+            "message": "unresolved internal link 'Constitutional AI'",
+            "excerpt": "Constitutional AI"
+          }
+        ],
+        "defect_count": 8,
+        "error_count": 7,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 7,
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "AI Agents/Tree of Thoughts and Self Consistency.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 79,
+            "message": "section 'Other variants' has no content before the next heading",
+            "excerpt": "## Other variants"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 144,
+            "message": "unresolved internal link 'Graph of Thoughts'",
+            "excerpt": "Graph of Thoughts"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 144,
+            "message": "unresolved internal link 'Sampling Strategies'",
+            "excerpt": "Sampling Strategies"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 144,
+            "message": "unresolved internal link 'Self-Consistency'",
+            "excerpt": "Self-Consistency"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 144,
+            "message": "unresolved internal link 'Test-Time Compute Scaling'",
+            "excerpt": "Test-Time Compute Scaling"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 144,
+            "message": "unresolved internal link 'Tree of Thoughts'",
+            "excerpt": "Tree of Thoughts"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 174,
+            "message": "unresolved internal link 'Sampling Strategies'",
+            "excerpt": "Sampling Strategies"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 175,
+            "message": "unresolved internal link 'Test-Time Compute Scaling'",
+            "excerpt": "Test-Time Compute Scaling"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 176,
+            "message": "unresolved internal link 'Self-Consistency'",
+            "excerpt": "Self-Consistency"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 177,
+            "message": "unresolved internal link 'Tree of Thoughts'",
+            "excerpt": "Tree of Thoughts"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 178,
+            "message": "unresolved internal link 'Graph of Thoughts'",
+            "excerpt": "Graph of Thoughts"
+          }
+        ],
+        "defect_count": 11,
+        "error_count": 10,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 10,
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "Agents and Tooling MOC.md",
+        "defects": [
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 127,
+            "message": "unresolved internal link 'Inference and Production MOC'",
+            "excerpt": "Inference and Production MOC"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 133,
+            "message": "unresolved internal link 'BM25'",
+            "excerpt": "BM25"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 133,
+            "message": "unresolved internal link 'Embedding Models for Retrieval'",
+            "excerpt": "Embedding Models for Retrieval"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 186,
+            "message": "unresolved internal link 'LLM Security and Prompt Injection'",
+            "excerpt": "LLM Security and Prompt Injection"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 192,
+            "message": "unresolved internal link 'Vector Storage with pgvector'",
+            "excerpt": "Vector Storage with pgvector"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 234,
+            "message": "unresolved internal link 'Inference and Production MOC'",
+            "excerpt": "Inference and Production MOC"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 240,
+            "message": "unresolved internal link 'Papers MOC'",
+            "excerpt": "Papers MOC"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 263,
+            "message": "unresolved internal link 'BM25'",
+            "excerpt": "BM25"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 263,
+            "message": "unresolved internal link 'Embedding Models for Retrieval'",
+            "excerpt": "Embedding Models for Retrieval"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 266,
+            "message": "unresolved internal link 'Attention and Transformers MOC'",
+            "excerpt": "Attention and Transformers MOC"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 266,
+            "message": "unresolved internal link 'Inference and Production MOC'",
+            "excerpt": "Inference and Production MOC"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 266,
+            "message": "unresolved internal link 'LLM Security and Prompt Injection'",
+            "excerpt": "LLM Security and Prompt Injection"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 266,
+            "message": "unresolved internal link 'Papers MOC'",
+            "excerpt": "Papers MOC"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 270,
+            "message": "unresolved internal link 'Attention and Transformers MOC'",
+            "excerpt": "Attention and Transformers MOC"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 271,
+            "message": "unresolved internal link 'Inference and Production MOC'",
+            "excerpt": "Inference and Production MOC"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 272,
+            "message": "unresolved internal link 'Embedding Models for Retrieval'",
+            "excerpt": "Embedding Models for Retrieval"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 273,
+            "message": "unresolved internal link 'BM25'",
+            "excerpt": "BM25"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 274,
+            "message": "unresolved internal link 'LLM Security and Prompt Injection'",
+            "excerpt": "LLM Security and Prompt Injection"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 275,
+            "message": "unresolved internal link 'Vector Storage with pgvector'",
+            "excerpt": "Vector Storage with pgvector"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 276,
+            "message": "unresolved internal link 'Papers MOC'",
+            "excerpt": "Papers MOC"
+          }
+        ],
+        "defect_count": 20,
+        "error_count": 20,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 20
+        }
+      },
+      {
+        "file": "Frameworks and Tools/AutoGen.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 29,
+            "message": "section 'Core concepts' has no content before the next heading",
+            "excerpt": "## Core concepts"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 115,
+            "message": "section 'Common patterns' has no content before the next heading",
+            "excerpt": "## Common patterns"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 131,
+            "message": "unresolved internal link 'Build a Multi-Agent System'",
+            "excerpt": "Build a Multi-Agent System"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 153,
+            "message": "section 'Strengths' has no content before the next heading",
+            "excerpt": "## Strengths"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 171,
+            "message": "section 'Weaknesses' has no content before the next heading",
+            "excerpt": "## Weaknesses"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 189,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 211,
+            "message": "section 'When to use AutoGen' has no content before the next heading",
+            "excerpt": "## When to use AutoGen"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 238,
+            "message": "unresolved internal link 'Build a Multi-Agent System'",
+            "excerpt": "Build a Multi-Agent System"
+          }
+        ],
+        "defect_count": 8,
+        "error_count": 2,
+        "warning_count": 0,
+        "info_count": 6,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 2,
+          "info:EMPTY_SECTION": 6
+        }
+      },
+      {
+        "file": "Frameworks and Tools/CrewAI.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 31,
+            "message": "section 'Core concepts' has no content before the next heading",
+            "excerpt": "## Core concepts"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 137,
+            "message": "section 'Common patterns' has no content before the next heading",
+            "excerpt": "## Common patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 175,
+            "message": "section 'Strengths' has no content before the next heading",
+            "excerpt": "## Strengths"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 193,
+            "message": "section 'Weaknesses' has no content before the next heading",
+            "excerpt": "## Weaknesses"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 215,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 241,
+            "message": "section 'When to use CrewAI' has no content before the next heading",
+            "excerpt": "## When to use CrewAI"
+          }
+        ],
+        "defect_count": 6,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 6,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 6
+        }
+      },
+      {
+        "file": "Frameworks and Tools/DSPy.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 25,
+            "message": "section 'Core concepts' has no content before the next heading",
+            "excerpt": "## Core concepts"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 110,
+            "message": "unresolved internal link 'LLM-as-Judge Evaluation'",
+            "excerpt": "LLM-as-Judge Evaluation"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 133,
+            "message": "section 'Why it worked' has no content before the next heading",
+            "excerpt": "## Why it worked"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 159,
+            "message": "section 'Strengths' has no content before the next heading",
+            "excerpt": "## Strengths"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 181,
+            "message": "section 'Weaknesses' has no content before the next heading",
+            "excerpt": "## Weaknesses"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 203,
+            "message": "section 'When to use DSPy' has no content before the next heading",
+            "excerpt": "## When to use DSPy"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 232,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 263,
+            "message": "unresolved internal link 'LLM-as-Judge Evaluation'",
+            "excerpt": "LLM-as-Judge Evaluation"
+          }
+        ],
+        "defect_count": 8,
+        "error_count": 2,
+        "warning_count": 0,
+        "info_count": 6,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 2,
+          "info:EMPTY_SECTION": 6
+        }
+      },
+      {
+        "file": "Frameworks and Tools/Framework Selection Guide.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 15,
+            "message": "section 'Decision tree' has no content before the next heading",
+            "excerpt": "## Decision tree"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "Frameworks and Tools/Haystack.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 31,
+            "message": "section 'Core concepts' has no content before the next heading",
+            "excerpt": "## Core concepts"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 189,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 244,
+            "message": "unresolved internal link 'Build a Mini RAG Pipeline'",
+            "excerpt": "Build a Mini RAG Pipeline"
+          }
+        ],
+        "defect_count": 3,
+        "error_count": 1,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 1,
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "Frameworks and Tools/LangChain.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 174,
+            "message": "section 'When to use LangChain' has no content before the next heading",
+            "excerpt": "## When to use LangChain"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 190,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 212,
+            "message": "section 'Common patterns' has no content before the next heading",
+            "excerpt": "## Common patterns"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 345,
+            "message": "unresolved internal link 'Inference and Production MOC'",
+            "excerpt": "Inference and Production MOC"
+          }
+        ],
+        "defect_count": 4,
+        "error_count": 1,
+        "warning_count": 0,
+        "info_count": 3,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 1,
+          "info:EMPTY_SECTION": 3
+        }
+      },
+      {
+        "file": "Frameworks and Tools/LangGraph.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 31,
+            "message": "section 'Core concepts' has no content before the next heading",
+            "excerpt": "## Core concepts"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 103,
+            "message": "section 'Key features' has no content before the next heading",
+            "excerpt": "## Key features"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 140,
+            "message": "section 'Common patterns' has no content before the next heading",
+            "excerpt": "## Common patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 170,
+            "message": "section 'Strengths' has no content before the next heading",
+            "excerpt": "## Strengths"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 192,
+            "message": "section 'Weaknesses' has no content before the next heading",
+            "excerpt": "## Weaknesses"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 210,
+            "message": "section 'When to use LangGraph' has no content before the next heading",
+            "excerpt": "## When to use LangGraph"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 220,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          }
+        ],
+        "defect_count": 7,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 7,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 7
+        }
+      },
+      {
+        "file": "Frameworks and Tools/LlamaIndex.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 23,
+            "message": "section 'Core abstractions' has no content before the next heading",
+            "excerpt": "## Core abstractions"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 107,
+            "message": "section 'Advanced features' has no content before the next heading",
+            "excerpt": "## Advanced features"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 141,
+            "message": "section 'Strengths' has no content before the next heading",
+            "excerpt": "## Strengths"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 163,
+            "message": "section 'Weaknesses' has no content before the next heading",
+            "excerpt": "## Weaknesses"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 181,
+            "message": "section 'When to use LlamaIndex' has no content before the next heading",
+            "excerpt": "## When to use LlamaIndex"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 202,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          }
+        ],
+        "defect_count": 6,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 6,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 6
+        }
+      },
+      {
+        "file": "Frameworks and Tools/Ollama and llama.cpp.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 19,
+            "message": "section 'llama.cpp' has no content before the next heading",
+            "excerpt": "## llama.cpp"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 81,
+            "message": "section 'Ollama' has no content before the next heading",
+            "excerpt": "## Ollama"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 149,
+            "message": "unresolved internal link '13 - Training and Adaptation/Fine-Tuning/LoRA'",
+            "excerpt": "13 - Training and Adaptation/Fine-Tuning/LoRA"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 193,
+            "message": "section 'Performance considerations' has no content before the next heading",
+            "excerpt": "## Performance considerations"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 237,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 270,
+            "message": "unresolved internal link 'Quantization'",
+            "excerpt": "Quantization"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 271,
+            "message": "unresolved internal link 'GPU Infrastructure and Sizing'",
+            "excerpt": "GPU Infrastructure and Sizing"
+          }
+        ],
+        "defect_count": 7,
+        "error_count": 3,
+        "warning_count": 0,
+        "info_count": 4,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 3,
+          "info:EMPTY_SECTION": 4
+        }
+      },
+      {
+        "file": "Frameworks and Tools/OpenAI SDK and Agents SDK.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 15,
+            "message": "section 'The OpenAI Python SDK' has no content before the next heading",
+            "excerpt": "## The OpenAI Python SDK"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 132,
+            "message": "section 'The OpenAI Agents SDK' has no content before the next heading",
+            "excerpt": "## The OpenAI Agents SDK"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 248,
+            "message": "section 'When to use the OpenAI stack' has no content before the next heading",
+            "excerpt": "## When to use the OpenAI stack"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 268,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          }
+        ],
+        "defect_count": 4,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 4,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 4
+        }
+      },
+      {
+        "file": "Frameworks and Tools/PydanticAI.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 29,
+            "message": "section 'Core concepts' has no content before the next heading",
+            "excerpt": "## Core concepts"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 142,
+            "message": "section 'Common patterns' has no content before the next heading",
+            "excerpt": "## Common patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 234,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          }
+        ],
+        "defect_count": 3,
+        "error_count": 0,
+        "warning_count": 0,
+        "info_count": 3,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 3
+        }
+      },
+      {
+        "file": "Frameworks and Tools/SGLang.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 35,
+            "message": "section 'Core concepts' has no content before the next heading",
+            "excerpt": "## Core concepts"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 57,
+            "message": "unresolved internal link 'KV Cache Mechanics'",
+            "excerpt": "KV Cache Mechanics"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 57,
+            "message": "unresolved internal link 'PagedAttention'",
+            "excerpt": "PagedAttention"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 97,
+            "message": "unresolved internal link 'Constrained Decoding'",
+            "excerpt": "Constrained Decoding"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 133,
+            "message": "section 'Common patterns' has no content before the next heading",
+            "excerpt": "## Common patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 220,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 246,
+            "message": "section 'When to use SGLang' has no content before the next heading",
+            "excerpt": "## When to use SGLang"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 268,
+            "message": "unresolved internal link 'Continuous Batching'",
+            "excerpt": "Continuous Batching"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 269,
+            "message": "unresolved internal link 'KV Cache Mechanics'",
+            "excerpt": "KV Cache Mechanics"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 270,
+            "message": "unresolved internal link 'PagedAttention'",
+            "excerpt": "PagedAttention"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 271,
+            "message": "unresolved internal link 'Constrained Decoding'",
+            "excerpt": "Constrained Decoding"
+          }
+        ],
+        "defect_count": 11,
+        "error_count": 7,
+        "warning_count": 0,
+        "info_count": 4,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 7,
+          "info:EMPTY_SECTION": 4
+        }
+      },
+      {
+        "file": "Frameworks and Tools/Semantic Kernel.md",
+        "defects": [
+          {
+            "check": "MATH_INLINE_ODD",
+            "severity": "warning",
+            "line": 0,
+            "message": "odd number of unescaped '$' characters outside code/math blocks (3); an inline formula is probably unclosed",
+            "excerpt": ""
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 25,
+            "message": "section 'Core concepts' has no content before the next heading",
+            "excerpt": "## Core concepts"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 173,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          }
+        ],
+        "defect_count": 3,
+        "error_count": 0,
+        "warning_count": 1,
+        "info_count": 2,
+        "counts_by_check": {
+          "info:EMPTY_SECTION": 2,
+          "warning:MATH_INLINE_ODD": 1
+        }
+      },
+      {
+        "file": "Frameworks and Tools/TGI.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 30,
+            "message": "section 'Core concepts' has no content before the next heading",
+            "excerpt": "## Core concepts"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 50,
+            "message": "unresolved internal link '08 - Attention and Transformers/Efficient Attention/FlashAttention'",
+            "excerpt": "08 - Attention and Transformers/Efficient Attention/FlashAttention"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 55,
+            "message": "unresolved internal link 'Continuous Batching'",
+            "excerpt": "Continuous Batching"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 59,
+            "message": "unresolved internal link 'PagedAttention'",
+            "excerpt": "PagedAttention"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 74,
+            "message": "unresolved internal link 'Quantization'",
+            "excerpt": "Quantization"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 109,
+            "message": "unresolved internal link 'Constrained Decoding'",
+            "excerpt": "Constrained Decoding"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 111,
+            "message": "section 'Common deployment patterns' has no content before the next heading",
+            "excerpt": "## Common deployment patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 181,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 235,
+            "message": "unresolved internal link 'Continuous Batching'",
+            "excerpt": "Continuous Batching"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 236,
+            "message": "unresolved internal link 'PagedAttention'",
+            "excerpt": "PagedAttention"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 237,
+            "message": "unresolved internal link 'Quantization'",
+            "excerpt": "Quantization"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 238,
+            "message": "unresolved internal link 'Constrained Decoding'",
+            "excerpt": "Constrained Decoding"
+          }
+        ],
+        "defect_count": 12,
+        "error_count": 9,
+        "warning_count": 0,
+        "info_count": 3,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 9,
+          "info:EMPTY_SECTION": 3
+        }
+      },
+      {
+        "file": "Frameworks and Tools/TensorRT-LLM.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 30,
+            "message": "section 'Core concepts' has no content before the next heading",
+            "excerpt": "## Core concepts"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 76,
+            "message": "unresolved internal link 'Continuous Batching'",
+            "excerpt": "Continuous Batching"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 80,
+            "message": "unresolved internal link 'PagedAttention'",
+            "excerpt": "PagedAttention"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 84,
+            "message": "unresolved internal link 'Quantization'",
+            "excerpt": "Quantization"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 102,
+            "message": "section 'Common deployment patterns' has no content before the next heading",
+            "excerpt": "## Common deployment patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 155,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 206,
+            "message": "unresolved internal link 'Quantization'",
+            "excerpt": "Quantization"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 207,
+            "message": "unresolved internal link 'Continuous Batching'",
+            "excerpt": "Continuous Batching"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 208,
+            "message": "unresolved internal link 'PagedAttention'",
+            "excerpt": "PagedAttention"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 209,
+            "message": "unresolved internal link 'KV Cache Mechanics'",
+            "excerpt": "KV Cache Mechanics"
+          }
+        ],
+        "defect_count": 10,
+        "error_count": 7,
+        "warning_count": 0,
+        "info_count": 3,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 7,
+          "info:EMPTY_SECTION": 3
+        }
+      },
+      {
+        "file": "Frameworks and Tools/vLLM.md",
+        "defects": [
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 23,
+            "message": "unresolved internal link 'PagedAttention and vLLM'",
+            "excerpt": "PagedAttention and vLLM"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 25,
+            "message": "section 'Core features' has no content before the next heading",
+            "excerpt": "## Core features"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 35,
+            "message": "unresolved internal link 'PagedAttention and vLLM'",
+            "excerpt": "PagedAttention and vLLM"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 35,
+            "message": "unresolved internal link 'PagedAttention'",
+            "excerpt": "PagedAttention"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 39,
+            "message": "unresolved internal link 'Continuous Batching'",
+            "excerpt": "Continuous Batching"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 58,
+            "message": "unresolved internal link 'Quantization'",
+            "excerpt": "Quantization"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 69,
+            "message": "unresolved internal link '13 - Training and Adaptation/Fine-Tuning/LoRA'",
+            "excerpt": "13 - Training and Adaptation/Fine-Tuning/LoRA"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 79,
+            "message": "section 'Usage' has no content before the next heading",
+            "excerpt": "## Usage"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 152,
+            "message": "section 'Strengths' has no content before the next heading",
+            "excerpt": "## Strengths"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 176,
+            "message": "unresolved internal link 'Speculative Decoding'",
+            "excerpt": "Speculative Decoding"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 178,
+            "message": "section 'Weaknesses' has no content before the next heading",
+            "excerpt": "## Weaknesses"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 212,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 249,
+            "message": "unresolved internal link 'PagedAttention and vLLM'",
+            "excerpt": "PagedAttention and vLLM"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 250,
+            "message": "unresolved internal link 'PagedAttention'",
+            "excerpt": "PagedAttention"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 251,
+            "message": "unresolved internal link 'Continuous Batching'",
+            "excerpt": "Continuous Batching"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 256,
+            "message": "unresolved internal link 'Quantization'",
+            "excerpt": "Quantization"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 257,
+            "message": "unresolved internal link 'Speculative Decoding'",
+            "excerpt": "Speculative Decoding"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 258,
+            "message": "unresolved internal link '13 - Training and Adaptation/Fine-Tuning/LoRA'",
+            "excerpt": "13 - Training and Adaptation/Fine-Tuning/LoRA"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 259,
+            "message": "unresolved internal link 'GPU Infrastructure and Sizing'",
+            "excerpt": "GPU Infrastructure and Sizing"
+          }
+        ],
+        "defect_count": 19,
+        "error_count": 14,
+        "warning_count": 0,
+        "info_count": 5,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 14,
+          "info:EMPTY_SECTION": 5
+        }
+      },
+      {
+        "file": "Memory Systems/MemGPT and Letta.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 24,
+            "message": "section 'The architecture' has no content before the next heading",
+            "excerpt": "## The architecture"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 94,
+            "message": "section 'Why it worked' has no content before the next heading",
+            "excerpt": "## Why it worked"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 128,
+            "message": "section 'Comparison with alternatives' has no content before the next heading",
+            "excerpt": "## Comparison with alternatives"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 142,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 164,
+            "message": "section 'Common pitfalls' has no content before the next heading",
+            "excerpt": "## Common pitfalls"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 186,
+            "message": "section 'Modern developments (2024\u20132026)' has no content before the next heading",
+            "excerpt": "## Modern developments (2024\u20132026)"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 280,
+            "message": "unresolved internal link 'KV Cache Mechanics'",
+            "excerpt": "KV Cache Mechanics"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 280,
+            "message": "unresolved internal link 'Reflexion'",
+            "excerpt": "Reflexion"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 296,
+            "message": "unresolved internal link 'Reflexion'",
+            "excerpt": "Reflexion"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 297,
+            "message": "unresolved internal link 'KV Cache Mechanics'",
+            "excerpt": "KV Cache Mechanics"
+          }
+        ],
+        "defect_count": 10,
+        "error_count": 4,
+        "warning_count": 0,
+        "info_count": 6,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 4,
+          "info:EMPTY_SECTION": 6
+        }
+      },
+      {
+        "file": "Memory Systems/Memory Operations.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 88,
+            "message": "section 'Implementation patterns' has no content before the next heading",
+            "excerpt": "## Implementation patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 149,
+            "message": "section 'Modern developments (2024\u20132026)' has no content before the next heading",
+            "excerpt": "## Modern developments (2024\u20132026)"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 246,
+            "message": "section 'Common pitfalls' has no content before the next heading",
+            "excerpt": "## Common pitfalls"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 314,
+            "message": "unresolved internal link 'Entropy Cross-Entropy and KL Divergence'",
+            "excerpt": "Entropy Cross-Entropy and KL Divergence"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 314,
+            "message": "unresolved internal link 'Estimators and Bias'",
+            "excerpt": "Estimators and Bias"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 314,
+            "message": "unresolved internal link 'PII and Data Leakage'",
+            "excerpt": "PII and Data Leakage"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 314,
+            "message": "unresolved internal link 'Production Monitoring'",
+            "excerpt": "Production Monitoring"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 328,
+            "message": "unresolved internal link 'PII and Data Leakage'",
+            "excerpt": "PII and Data Leakage"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 329,
+            "message": "unresolved internal link 'Production Monitoring'",
+            "excerpt": "Production Monitoring"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 330,
+            "message": "unresolved internal link 'Entropy Cross-Entropy and KL Divergence'",
+            "excerpt": "Entropy Cross-Entropy and KL Divergence"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 331,
+            "message": "unresolved internal link 'Estimators and Bias'",
+            "excerpt": "Estimators and Bias"
+          }
+        ],
+        "defect_count": 11,
+        "error_count": 8,
+        "warning_count": 0,
+        "info_count": 3,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 8,
+          "info:EMPTY_SECTION": 3
+        }
+      },
+      {
+        "file": "Memory Systems/Memory Types.md",
+        "defects": [
+          {
+            "check": "MATH_INLINE_ODD",
+            "severity": "warning",
+            "line": 0,
+            "message": "odd number of unescaped '$' characters outside code/math blocks (1); an inline formula is probably unclosed",
+            "excerpt": ""
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 418,
+            "message": "unresolved internal link 'PII and Data Leakage'",
+            "excerpt": "PII and Data Leakage"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 1,
+        "warning_count": 1,
+        "info_count": 0,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 1,
+          "warning:MATH_INLINE_ODD": 1
+        }
+      },
+      {
+        "file": "Memory Systems/Vector Memory Backends.md",
+        "defects": [
+          {
+            "check": "MATH_INLINE_ODD",
+            "severity": "warning",
+            "line": 0,
+            "message": "odd number of unescaped '$' characters outside code/math blocks (3); an inline formula is probably unclosed",
+            "excerpt": ""
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 152,
+            "message": "section 'Production considerations' has no content before the next heading",
+            "excerpt": "## Production considerations"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 170,
+            "message": "section 'Common pitfalls' has no content before the next heading",
+            "excerpt": "## Common pitfalls"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 196,
+            "message": "section 'Modern developments (2024\u20132026)' has no content before the next heading",
+            "excerpt": "## Modern developments (2024\u20132026)"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 200,
+            "message": "unresolved internal link 'BLIP-2'",
+            "excerpt": "BLIP-2"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 373,
+            "message": "unresolved internal link 'Embedding Model Training'",
+            "excerpt": "Embedding Model Training"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 373,
+            "message": "unresolved internal link 'Embedding Models for Retrieval'",
+            "excerpt": "Embedding Models for Retrieval"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 373,
+            "message": "unresolved internal link 'PII and Data Leakage'",
+            "excerpt": "PII and Data Leakage"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 373,
+            "message": "unresolved internal link 'Quantization'",
+            "excerpt": "Quantization"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 384,
+            "message": "unresolved internal link 'Embedding Models for Retrieval'",
+            "excerpt": "Embedding Models for Retrieval"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 385,
+            "message": "unresolved internal link 'Embedding Model Training'",
+            "excerpt": "Embedding Model Training"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 386,
+            "message": "unresolved internal link 'Quantization'",
+            "excerpt": "Quantization"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 387,
+            "message": "unresolved internal link 'PII and Data Leakage'",
+            "excerpt": "PII and Data Leakage"
+          }
+        ],
+        "defect_count": 13,
+        "error_count": 9,
+        "warning_count": 1,
+        "info_count": 3,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 9,
+          "info:EMPTY_SECTION": 3,
+          "warning:MATH_INLINE_ODD": 1
+        }
+      },
+      {
+        "file": "Model Context Protocol/MCP Components.md",
+        "defects": [
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 373,
+            "message": "unresolved internal link 'Gateway and Router Patterns'",
+            "excerpt": "Gateway and Router Patterns"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 374,
+            "message": "unresolved internal link 'LLM Security and Prompt Injection'",
+            "excerpt": "LLM Security and Prompt Injection"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 377,
+            "message": "unresolved internal link 'Build an MCP Server'",
+            "excerpt": "Build an MCP Server"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 378,
+            "message": "unresolved internal link 'Build an MCP Marketplace'",
+            "excerpt": "Build an MCP Marketplace"
+          }
+        ],
+        "defect_count": 4,
+        "error_count": 4,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 4
+        }
+      },
+      {
+        "file": "Model Context Protocol/MCP Enterprise Integration.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 67,
+            "message": "section 'Gateway components' has no content before the next heading",
+            "excerpt": "## Gateway components"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 101,
+            "message": "section 'Server lifecycle management' has no content before the next heading",
+            "excerpt": "## Server lifecycle management"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 119,
+            "message": "section 'Integration with enterprise systems' has no content before the next heading",
+            "excerpt": "## Integration with enterprise systems"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 139,
+            "message": "unresolved internal link 'Gateway and Router Patterns'",
+            "excerpt": "Gateway and Router Patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 141,
+            "message": "section 'Deployment patterns' has no content before the next heading",
+            "excerpt": "## Deployment patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 155,
+            "message": "section 'Common pitfalls' has no content before the next heading",
+            "excerpt": "## Common pitfalls"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 187,
+            "message": "section 'Modern developments (2025\u20132026)' has no content before the next heading",
+            "excerpt": "## Modern developments (2025\u20132026)"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 375,
+            "message": "unresolved internal link 'Gateway and Router Patterns'",
+            "excerpt": "Gateway and Router Patterns"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 376,
+            "message": "unresolved internal link 'Guardrails'",
+            "excerpt": "Guardrails"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 377,
+            "message": "unresolved internal link 'Reference Production Architectures'",
+            "excerpt": "Reference Production Architectures"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 378,
+            "message": "unresolved internal link 'Production Monitoring'",
+            "excerpt": "Production Monitoring"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 379,
+            "message": "unresolved internal link 'Cost Optimization'",
+            "excerpt": "Cost Optimization"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 380,
+            "message": "unresolved internal link 'Build an MCP Server'",
+            "excerpt": "Build an MCP Server"
+          }
+        ],
+        "defect_count": 13,
+        "error_count": 7,
+        "warning_count": 0,
+        "info_count": 6,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 7,
+          "info:EMPTY_SECTION": 6
+        }
+      },
+      {
+        "file": "Model Context Protocol/MCP Overview.md",
+        "defects": [
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 391,
+            "message": "unresolved internal link 'Build an MCP Server'",
+            "excerpt": "Build an MCP Server"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 455,
+            "message": "unresolved internal link 'Build an MCP Server'",
+            "excerpt": "Build an MCP Server"
+          }
+        ],
+        "defect_count": 2,
+        "error_count": 2,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 2
+        }
+      },
+      {
+        "file": "Model Context Protocol/MCP Security.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 23,
+            "message": "section 'The four security concerns' has no content before the next heading",
+            "excerpt": "## The four security concerns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 94,
+            "message": "section 'Production patterns' has no content before the next heading",
+            "excerpt": "## Production patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 120,
+            "message": "section 'Common pitfalls' has no content before the next heading",
+            "excerpt": "## Common pitfalls"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 152,
+            "message": "section 'Modern developments (2024\u20132026)' has no content before the next heading",
+            "excerpt": "## Modern developments (2024\u20132026)"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 345,
+            "message": "unresolved internal link 'LLM Security and Prompt Injection'",
+            "excerpt": "LLM Security and Prompt Injection"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 346,
+            "message": "unresolved internal link 'Guardrails'",
+            "excerpt": "Guardrails"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 347,
+            "message": "unresolved internal link 'PII and Data Leakage'",
+            "excerpt": "PII and Data Leakage"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 348,
+            "message": "unresolved internal link 'Reflexion'",
+            "excerpt": "Reflexion"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 349,
+            "message": "unresolved internal link 'Build an MCP Server'",
+            "excerpt": "Build an MCP Server"
+          }
+        ],
+        "defect_count": 9,
+        "error_count": 5,
+        "warning_count": 0,
+        "info_count": 4,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 5,
+          "info:EMPTY_SECTION": 4
+        }
+      },
+      {
+        "file": "Multi-Agent Systems/Communication Patterns.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 28,
+            "message": "section 'The four canonical patterns' has no content before the next heading",
+            "excerpt": "## The four canonical patterns"
+          },
+          {
+            "check": "CODE_JSON_INVALID",
+            "severity": "error",
+            "line": 137,
+            "message": "json code block fails to parse: Expecting property name enclosed in double quotes",
+            "excerpt": "```json"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 180,
+            "message": "section 'Frameworks and implementation' has no content before the next heading",
+            "excerpt": "## Frameworks and implementation"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 223,
+            "message": "unresolved internal link 'Build a Multi-Agent System'",
+            "excerpt": "Build a Multi-Agent System"
+          }
+        ],
+        "defect_count": 4,
+        "error_count": 2,
+        "warning_count": 0,
+        "info_count": 2,
+        "counts_by_check": {
+          "error:CODE_JSON_INVALID": 1,
+          "error:LINK_BROKEN": 1,
+          "info:EMPTY_SECTION": 2
+        }
+      },
+      {
+        "file": "Multi-Agent Systems/Coordination and Consensus.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 27,
+            "message": "section 'Task allocation' has no content before the next heading",
+            "excerpt": "## Task allocation"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 92,
+            "message": "unresolved internal link 'Self-Consistency'",
+            "excerpt": "Self-Consistency"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 190,
+            "message": "unresolved internal link 'Self-Consistency'",
+            "excerpt": "Self-Consistency"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 195,
+            "message": "unresolved internal link 'Build a Multi-Agent System'",
+            "excerpt": "Build a Multi-Agent System"
+          }
+        ],
+        "defect_count": 4,
+        "error_count": 3,
+        "warning_count": 0,
+        "info_count": 1,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 3,
+          "info:EMPTY_SECTION": 1
+        }
+      },
+      {
+        "file": "Multi-Agent Systems/Enterprise Multi-Agent Architectures.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 65,
+            "message": "section 'The control plane' has no content before the next heading",
+            "excerpt": "## The control plane"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 87,
+            "message": "section 'The data plane' has no content before the next heading",
+            "excerpt": "## The data plane"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 113,
+            "message": "section 'Cross-cutting concerns' has no content before the next heading",
+            "excerpt": "## Cross-cutting concerns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 133,
+            "message": "section 'Common architectures' has no content before the next heading",
+            "excerpt": "## Common architectures"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 151,
+            "message": "section 'Reliability patterns' has no content before the next heading",
+            "excerpt": "## Reliability patterns"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 195,
+            "message": "unresolved internal link 'Build a Multi-Agent System'",
+            "excerpt": "Build a Multi-Agent System"
+          }
+        ],
+        "defect_count": 6,
+        "error_count": 1,
+        "warning_count": 0,
+        "info_count": 5,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 1,
+          "info:EMPTY_SECTION": 5
+        }
+      },
+      {
+        "file": "Multi-Agent Systems/Multi-Agent Architectures.md",
+        "defects": [
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 26,
+            "message": "section 'Common patterns' has no content before the next heading",
+            "excerpt": "## Common patterns"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 108,
+            "message": "section 'Frameworks' has no content before the next heading",
+            "excerpt": "## Frameworks"
+          },
+          {
+            "check": "EMPTY_SECTION",
+            "severity": "info",
+            "line": 155,
+            "message": "section 'Worked examples' has no content before the next heading",
+            "excerpt": "## Worked examples"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 355,
+            "message": "unresolved internal link 'Build a Multi-Agent System'",
+            "excerpt": "Build a Multi-Agent System"
+          }
+        ],
+        "defect_count": 4,
+        "error_count": 1,
+        "warning_count": 0,
+        "info_count": 3,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 1,
+          "info:EMPTY_SECTION": 3
+        }
+      },
+      {
+        "file": "Retrieval Augmented Generation/Advanced RAG Patterns.md",
+        "defects": [
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 167,
+            "message": "unresolved internal link 'Build a Knowledge-Graph Construction Pipeline'",
+            "excerpt": "Build a Knowledge-Graph Construction Pipeline"
+          }
+        ],
+        "defect_count": 1,
+        "error_count": 1,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 1
+        }
+      },
+      {
+        "file": "Retrieval Augmented Generation/Chunking, Hybrid Search, and Reranking.md",
+        "defects": [
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 140,
+            "message": "unresolved internal link 'BM25'",
+            "excerpt": "BM25"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 170,
+            "message": "unresolved internal link 'Vector Storage with pgvector'",
+            "excerpt": "Vector Storage with pgvector"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 196,
+            "message": "unresolved internal link 'ColPali'",
+            "excerpt": "ColPali"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 327,
+            "message": "unresolved internal link 'RAG'",
+            "excerpt": "RAG"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 339,
+            "message": "unresolved internal link 'BM25'",
+            "excerpt": "BM25"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 340,
+            "message": "unresolved internal link 'TF-IDF'",
+            "excerpt": "TF-IDF"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 341,
+            "message": "unresolved internal link 'Cosine Similarity'",
+            "excerpt": "Cosine Similarity"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 342,
+            "message": "unresolved internal link 'Embedding Models for Retrieval'",
+            "excerpt": "Embedding Models for Retrieval"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 343,
+            "message": "unresolved internal link 'Embedding Model Training'",
+            "excerpt": "Embedding Model Training"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 344,
+            "message": "unresolved internal link 'Word2Vec GloVe and FastText'",
+            "excerpt": "Word2Vec GloVe and FastText"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 346,
+            "message": "unresolved internal link 'Vector Storage with pgvector'",
+            "excerpt": "Vector Storage with pgvector"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 348,
+            "message": "unresolved internal link 'ColPali'",
+            "excerpt": "ColPali"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 349,
+            "message": "unresolved internal link 'Build a Mini RAG Pipeline'",
+            "excerpt": "Build a Mini RAG Pipeline"
+          }
+        ],
+        "defect_count": 13,
+        "error_count": 13,
+        "warning_count": 0,
+        "info_count": 0,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 13
+        }
+      },
+      {
+        "file": "Retrieval Augmented Generation/RAG Pipeline Overview.md",
+        "defects": [
+          {
+            "check": "MATH_INLINE_ODD",
+            "severity": "warning",
+            "line": 0,
+            "message": "odd number of unescaped '$' characters outside code/math blocks (9); an inline formula is probably unclosed",
+            "excerpt": ""
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 17,
+            "message": "unresolved internal link 'Hallucination'",
+            "excerpt": "Hallucination"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 213,
+            "message": "unresolved internal link 'Embedding Models for Retrieval'",
+            "excerpt": "Embedding Models for Retrieval"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 309,
+            "message": "unresolved internal link 'LLM-as-Judge Evaluation'",
+            "excerpt": "LLM-as-Judge Evaluation"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 402,
+            "message": "unresolved internal link 'RAG'",
+            "excerpt": "RAG"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 417,
+            "message": "unresolved internal link 'Embedding Models for Retrieval'",
+            "excerpt": "Embedding Models for Retrieval"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 418,
+            "message": "unresolved internal link 'Embedding Model Training'",
+            "excerpt": "Embedding Model Training"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 419,
+            "message": "unresolved internal link 'Word2Vec GloVe and FastText'",
+            "excerpt": "Word2Vec GloVe and FastText"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 420,
+            "message": "unresolved internal link 'Cosine Similarity'",
+            "excerpt": "Cosine Similarity"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 421,
+            "message": "unresolved internal link 'LLM-as-Judge Evaluation'",
+            "excerpt": "LLM-as-Judge Evaluation"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 422,
+            "message": "unresolved internal link 'Build a Mini RAG Pipeline'",
+            "excerpt": "Build a Mini RAG Pipeline"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 423,
+            "message": "unresolved internal link 'Build a RAG Evaluation Harness'",
+            "excerpt": "Build a RAG Evaluation Harness"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 424,
+            "message": "unresolved internal link 'Build a Multimodal RAG Pipeline'",
+            "excerpt": "Build a Multimodal RAG Pipeline"
+          },
+          {
+            "check": "LINK_BROKEN",
+            "severity": "error",
+            "line": 425,
+            "message": "unresolved internal link 'RAG'",
+            "excerpt": "RAG"
+          }
+        ],
+        "defect_count": 14,
+        "error_count": 13,
+        "warning_count": 1,
+        "info_count": 0,
+        "counts_by_check": {
+          "error:LINK_BROKEN": 13,
+          "warning:MATH_INLINE_ODD": 1
+        }
+      }
+    ],
+    "caveat": "syntax/reference validation only: a passing lint is necessary, never sufficient \u2014 semantic correctness requires review"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "lint-artifacts",
+    "args": {
+      "command": "lint-artifacts",
+      "path": "output/Unified-Vault/15 - Agents and Tooling",
+      "no_links": false,
+      "skip_dirs": [
+        ".git",
+        ".obsidian"
+      ],
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s25-area15-lint.json"
+    },
+    "utc_timestamp": "2026-11-03T07:22:46+00:00",
+    "git_commit": "e00d049"
+  }
+}

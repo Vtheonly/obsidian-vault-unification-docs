@@ -1,0 +1,77 @@
+{
+  "result": {
+    "standards_version": "1.0.0",
+    "thresholds": {
+      "rel_drop": 0.15,
+      "abs_drop": 0.1
+    },
+    "drifted_types": [],
+    "clean_types": [
+      {
+        "type": "concept",
+        "notes": 39,
+        "first_third": [
+          "15 - Agents and Tooling/AI Agents/Agent vs Workflow vs LLM Application.md",
+          "15 - Agents and Tooling/AI Agents/Autonomous Agent Lifecycles.md",
+          "15 - Agents and Tooling/AI Agents/Chain of Thought.md",
+          "15 - Agents and Tooling/AI Agents/Function Calling.md",
+          "15 - Agents and Tooling/AI Agents/Human-in-the-Loop Patterns.md",
+          "15 - Agents and Tooling/AI Agents/Planner-Executor Pattern.md",
+          "15 - Agents and Tooling/AI Agents/ReAct Pattern.md",
+          "15 - Agents and Tooling/AI Agents/Reflection.md",
+          "15 - Agents and Tooling/AI Agents/Tree of Thoughts and Self Consistency.md",
+          "15 - Agents and Tooling/Frameworks and Tools/AutoGen.md",
+          "15 - Agents and Tooling/Frameworks and Tools/CrewAI.md",
+          "15 - Agents and Tooling/Frameworks and Tools/DSPy.md",
+          "15 - Agents and Tooling/Frameworks and Tools/Haystack.md"
+        ],
+        "last_third": [
+          "15 - Agents and Tooling/Memory Systems/Memory Types.md",
+          "15 - Agents and Tooling/Memory Systems/Vector Memory Backends.md",
+          "15 - Agents and Tooling/Model Context Protocol/MCP Components.md",
+          "15 - Agents and Tooling/Model Context Protocol/MCP Enterprise Integration.md",
+          "15 - Agents and Tooling/Model Context Protocol/MCP Overview.md",
+          "15 - Agents and Tooling/Model Context Protocol/MCP Security.md",
+          "15 - Agents and Tooling/Multi-Agent Systems/Communication Patterns.md",
+          "15 - Agents and Tooling/Multi-Agent Systems/Coordination and Consensus.md",
+          "15 - Agents and Tooling/Multi-Agent Systems/Enterprise Multi-Agent Architectures.md",
+          "15 - Agents and Tooling/Multi-Agent Systems/Multi-Agent Architectures.md",
+          "15 - Agents and Tooling/Retrieval Augmented Generation/Advanced RAG Patterns.md",
+          "15 - Agents and Tooling/Retrieval Augmented Generation/Chunking, Hybrid Search, and Reranking.md",
+          "15 - Agents and Tooling/Retrieval Augmented Generation/RAG Pipeline Overview.md"
+        ],
+        "overall_first_third_mean": 0.896,
+        "overall_last_third_mean": 0.8929,
+        "drifted_dimensions": [],
+        "verdict": "no_systematic_drift"
+      },
+      {
+        "type": "overview",
+        "notes": 1,
+        "verdict": "too_few_notes_to_compare"
+      },
+      {
+        "type": "reference",
+        "notes": 1,
+        "verdict": "too_few_notes_to_compare"
+      }
+    ],
+    "verdict": "no_systematic_drift",
+    "caveat": "tertile-mean comparison on deterministic dimensions; investigate flagged evidence, do not treat as final judgment"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-drift",
+    "args": {
+      "command": "quality-drift",
+      "assessments": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/gates/assessments.jsonl",
+      "rel_drop": 0.15,
+      "abs_drop": 0.1,
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s21-area15-drift.json"
+    },
+    "utc_timestamp": "2026-11-03T07:25:14+00:00",
+    "git_commit": "e00d049"
+  }
+}
