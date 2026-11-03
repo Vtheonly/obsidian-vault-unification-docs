@@ -1,0 +1,31 @@
+{
+ "area": "01 - Foundations",
+ "slug": "area01",
+ "partial_batch": false,
+ "only_filter": null,
+ "notes": 20,
+ "source_files": 31,
+ "kus": 1058,
+ "kus_by_disposition": {
+  "Consolidated": 732,
+  "Preserved": 326
+ },
+ "kus_multi_destination_within_area": 174,
+ "concepts_anchored": 181,
+ "total_source_words": 42290,
+ "scratch_dir": "scratch/synth/area01",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "Foundations MOC",
+  "colliding": "Jacobians and Hessians — BOTH copies are generated in this session's batch (this area's [[01 - Foundations/Mathematical Foundations/Jacobians and Hessians|Jacobians and Hessians]] and area 02's [[02 - Mathematics/Calculus/Jacobians and Hessians|Jacobians and Hessians]]); always path-based. Applications of Deep Learning (link as [[01 - Foundations/AI ML and DL Hierarchy/Applications of Deep Learning|Applications of Deep Learning]] — the area-19 quiz copy is future). Plus any other basename on the binding link-rules list.",
+  "explicit_types": 1
+ }
+}

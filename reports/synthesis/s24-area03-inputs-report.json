@@ -1,0 +1,31 @@
+{
+ "area": "03 - Python and Data Tooling",
+ "slug": "area03",
+ "partial_batch": false,
+ "only_filter": null,
+ "notes": 29,
+ "source_files": 29,
+ "kus": 398,
+ "kus_by_disposition": {
+  "Preserved": 376,
+  "Consolidated": 22
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 22,
+ "total_source_words": 9953,
+ "scratch_dir": "scratch/synth/area03",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "Python Language Overview (the area-root overview note — area 03 has no separate MOC)",
+  "colliding": "no area-03 basename collides vault-wide; apply the binding link-rules list for any generated-set collision (e.g. linking the area-04/05 topical copies of shared basenames)",
+  "explicit_types": 5
+ }
+}

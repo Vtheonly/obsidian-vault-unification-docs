@@ -1,0 +1,33 @@
+{
+ "area": "17 - Papers",
+ "slug": "area17swin",
+ "partial_batch": true,
+ "only_filter": [
+  "17 - Papers/Attention and Transformers/Swin Transformer.md"
+ ],
+ "notes": 1,
+ "source_files": 1,
+ "kus": 45,
+ "kus_by_disposition": {
+  "Consolidated": 10,
+  "Preserved": 35
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 5,
+ "total_source_words": 1601,
+ "scratch_dir": "scratch/synth/area17swin",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "[[Attention and Transformers MOC]] as the topical hub (the area-17 Papers MOC is not generated yet; per conventions v1 #7 links resolve within the generated set — Papers-area sibling links are added at the cross-batch consistency pass)",
+  "colliding": "BERT, Bahdanau Attention, Luong Attention (each links the area-08 copy in path form, e.g. [[08 - Attention and Transformers/Transformer Architecture/BERT|BERT]]), FlashAttention (link as [[08 - Attention and Transformers/Efficient Attention/FlashAttention|FlashAttention]]), Evolution of CNN Architectures and the other area-06 CNN basenames (path form), plus any other basename on the binding link-rules list",
+  "explicit_types": 1
+ }
+}

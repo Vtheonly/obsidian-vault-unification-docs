@@ -1,0 +1,13 @@
+{
+ "specs_total": 1,
+ "ok": 1,
+ "failed": 0,
+ "results": [
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17swin/specs/01-swin-transformer.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  }
+ ]
+}

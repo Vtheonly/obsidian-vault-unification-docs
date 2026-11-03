@@ -247,6 +247,82 @@ AREA_CONFIG: dict[str, dict[str, object]] = {
             "link-rules list"
         ),
     },
+    # ---- session 24 (user-directed: chapters/areas 01-03 + Swin pull-forward) ----
+    "01 - Foundations": {
+        "note_types": {
+            "01 - Foundations/Foundations MOC.md": "overview",
+        },
+        "moc_target": "Foundations MOC",
+        "colliding": (
+            "Jacobians and Hessians — BOTH copies are generated in this session's "
+            "batch (this area's [[01 - Foundations/Mathematical Foundations/"
+            "Jacobians and Hessians|Jacobians and Hessians]] and area 02's "
+            "[[02 - Mathematics/Calculus/Jacobians and Hessians|Jacobians and "
+            "Hessians]]); always path-based. Applications of Deep Learning (link "
+            "as [[01 - Foundations/AI ML and DL Hierarchy/Applications of Deep "
+            "Learning|Applications of Deep Learning]] — the area-19 quiz copy is "
+            "future). Plus any other basename on the binding link-rules list."
+        ),
+    },
+    "02 - Mathematics": {
+        "note_types": {
+            "02 - Mathematics/Mathematics MOC.md": "overview",
+            "02 - Mathematics/Optimization/Adam Optimizer Derivation.md": "derivation",
+            "02 - Mathematics/Optimization/Optimization Essentials.md": "reference",
+        },
+        "moc_target": "Mathematics MOC",
+        "colliding": (
+            "Jacobians and Hessians — BOTH copies are generated in this session's "
+            "batch (this area's [[02 - Mathematics/Calculus/Jacobians and "
+            "Hessians|Jacobians and Hessians]] and area 01's [[01 - Foundations/"
+            "Mathematical Foundations/Jacobians and Hessians|Jacobians and "
+            "Hessians]]); always path-based. Plus any other basename on the "
+            "binding link-rules list."
+        ),
+    },
+    "03 - Python and Data Tooling": {
+        "note_types": {
+            "03 - Python and Data Tooling/Python Language Overview.md": "overview",
+            "03 - Python and Data Tooling/Data Cleaning and Preprocessing/Exercise - Medical Dataset Pipeline.md": "tutorial",
+            "03 - Python and Data Tooling/Python Environment Setup/Exercise - Hospital Data Project Setup.md": "tutorial",
+            "03 - Python and Data Tooling/Python Libraries/Exercise - Temperature and Grade Analysis.md": "tutorial",
+            "03 - Python and Data Tooling/Python Programming/Exercise - Sales Project Logic and OOP.md": "tutorial",
+        },
+        # area 03 has no separate MOC note; the area-root overview is the hub
+        "moc_target": (
+            "Python Language Overview (the area-root overview note — area 03 has "
+            "no separate MOC)"
+        ),
+        "colliding": (
+            "no area-03 basename collides vault-wide; apply the binding "
+            "link-rules list for any generated-set collision (e.g. linking the "
+            "area-04/05 topical copies of shared basenames)"
+        ),
+    },
+    # Partial-batch config for the user-directed Swin Transformer pull-forward
+    # (session 24). Selected via: --area "17 - Papers" --slug area17swin
+    # --only "17 - Papers/Attention and Transformers/Swin Transformer.md".
+    # The FULL area-17 entry (moc_target "Papers MOC") is added by the session
+    # that synthesizes the rest of area 17 — do not reuse this key for that run.
+    "17 - Papers :: area17swin": {
+        "note_types": {
+            "17 - Papers/Attention and Transformers/Swin Transformer.md": "concept",
+        },
+        "moc_target": (
+            "[[Attention and Transformers MOC]] as the topical hub (the area-17 "
+            "Papers MOC is not generated yet; per conventions v1 #7 links resolve "
+            "within the generated set — Papers-area sibling links are added at "
+            "the cross-batch consistency pass)"
+        ),
+        "colliding": (
+            "BERT, Bahdanau Attention, Luong Attention (each links the area-08 "
+            "copy in path form, e.g. [[08 - Attention and Transformers/Transformer "
+            "Architecture/BERT|BERT]]), FlashAttention (link as [[08 - Attention "
+            "and Transformers/Efficient Attention/FlashAttention|FlashAttention]]), "
+            "Evolution of CNN Architectures and the other area-06 CNN basenames "
+            "(path form), plus any other basename on the binding link-rules list"
+        ),
+    },
 }
 
 # Kept for backwards compatibility with the session-20 records: the area-04
@@ -277,15 +353,32 @@ def main() -> int:
     ap.add_argument("--area", required=True, help="area folder name, e.g. '04 - Machine Learning'")
     ap.add_argument("--slug", required=True, help="scratch dir slug, e.g. area04")
     ap.add_argument("--report", required=True, help="committed JSON report path")
+    ap.add_argument(
+        "--only",
+        default="",
+        help=(
+            "comma-separated canonical note paths restricting the batch to a "
+            "partial-area subset (e.g. the Swin Transformer pull-forward). "
+            "Requires a '<area> :: <slug>' AREA_CONFIG entry so the partial "
+            "batch gets its own explicit types/link rules."
+        ),
+    )
     args = ap.parse_args()
 
     area = args.area
     prefix = area + "/"
-    config = AREA_CONFIG.get(area)
+    only = {p.strip() for p in args.only.split(",") if p.strip()} or None
+    config_key = f"{area} :: {args.slug}" if only else area
+    config = AREA_CONFIG.get(config_key)
     if config is None:
         raise SystemExit(
-            f"no AREA_CONFIG entry for {area!r}: add note_types/moc_target/colliding "
+            f"no AREA_CONFIG entry for {config_key!r}: add note_types/moc_target/colliding "
             "before synthesizing it (see scripts/s20_build_synthesis_inputs.py)"
+        )
+    if only and config_key == area:
+        raise SystemExit(
+            f"partial batch (--only) for area {area!r} needs a dedicated "
+            f"'{area} :: {args.slug}' AREA_CONFIG entry, not the full-area one"
         )
     note_types: dict[str, str] = config["note_types"]  # type: ignore[assignment]
     moc_target: str = config["moc_target"]  # type: ignore[assignment]
@@ -312,21 +405,35 @@ def main() -> int:
 
     # ---- area scoping ----------------------------------------------------
     notes = [n for n in structure["notes"] if n["area"] == area]
+    if only:
+        notes = [n for n in notes if n["path"] in only]
+        missing = only - {n["path"] for n in notes}
+        if missing:
+            raise SystemExit(f"--only paths not found in area {area!r}: {sorted(missing)}")
     area_files = [r for r in file_mapping if any(p.startswith(prefix) for p in r["canonical_paths"])]
     note_paths = sorted(n["path"] for n in notes)
+    note_path_set = set(note_paths)
+    if only:
+        # keep only files that feed at least one filtered note
+        area_files = [
+            r for r in area_files if any(cp in note_path_set for cp in r["canonical_paths"])
+        ]
 
     # files feeding each note
     files_by_note: dict[str, list[dict]] = {p: [] for p in note_paths}
     for r in area_files:
         for cp in r["canonical_paths"]:
-            if cp.startswith(prefix):
+            if cp in files_by_note:
                 files_by_note[cp].append(r)
     # KUs per note (from the ledger — the authoritative overlay)
     kus_by_note: dict[str, list[str]] = {p: [] for p in note_paths}
-    area_kus = [r for r in ledger if any(d["path"].startswith(prefix) for d in r["destinations"])]
+    if only:
+        area_kus = [r for r in ledger if any(d["path"] in note_path_set for d in r["destinations"])]
+    else:
+        area_kus = [r for r in ledger if any(d["path"].startswith(prefix) for d in r["destinations"])]
     for r in area_kus:
         for d in r["destinations"]:
-            if d["path"].startswith(prefix):
+            if d["path"] in kus_by_note:
                 kus_by_note[d["path"]].append(r["ku_id"])
 
     # dossier concepts per note (concepts with >= 1 KU destined to the note)
@@ -516,7 +623,7 @@ def main() -> int:
         problems.append("note path collision inside area")
     # per-note membership arithmetic: sum over notes == KUs + extra memberships
     # (a KU destined to n notes in this area contributes n memberships)
-    if sum(len(v) for v in kus_by_note.values()) != len(area_kus) + multi_dest_extra(kus_by_note, area_kus, prefix):
+    if sum(len(v) for v in kus_by_note.values()) != len(area_kus) + multi_dest_extra(kus_by_note, area_kus, note_path_set, prefix):
         problems.append("per-note KU membership arithmetic failed")
     for p in note_paths:
         if not kus_by_note[p]:
@@ -524,14 +631,17 @@ def main() -> int:
     for rec in audit_records:
         if rec["excerpt_hash"] != ku_by_id[rec["knowledge_unit_id"]]["excerpt_hash"]:
             problems.append(f"audit record hash drift: {rec['knowledge_unit_id']}")
-    cross = [r for r in area_kus if any(not d["path"].startswith(prefix) for d in r["destinations"])]
+    if only:
+        cross = [r for r in area_kus if any(d["path"] not in note_path_set for d in r["destinations"])]
+    else:
+        cross = [r for r in area_kus if any(not d["path"].startswith(prefix) for d in r["destinations"])]
     if cross:
-        problems.append(f"{len(cross)} KUs have destinations outside the area (batch not self-contained)")
+        problems.append(f"{len(cross)} KUs have destinations outside the batch (batch not self-contained)")
 
     by_disp: dict[str, int] = {}
     for r in area_kus:
         by_disp[r["disposition"]] = by_disp.get(r["disposition"], 0) + 1
-    multi_dest = multi_dest_extra(kus_by_note, area_kus, prefix)  # extra memberships
+    multi_dest = multi_dest_extra(kus_by_note, area_kus, note_path_set, prefix)  # extra memberships
     shared_kus = sum(
         1 for r in area_kus if len([d for d in r["destinations"] if d["path"].startswith(prefix)]) > 1
     )
@@ -539,6 +649,8 @@ def main() -> int:
     report = {
         "area": area,
         "slug": args.slug,
+        "partial_batch": bool(only),
+        "only_filter": sorted(only) if only else None,
         "notes": len(note_paths),
         "source_files": len(area_files),
         "kus": len(area_kus),
@@ -571,10 +683,13 @@ def main() -> int:
     return 0
 
 
-def multi_dest_extra(kus_by_note: dict[str, list[str]], area_kus: list[dict], prefix: str) -> int:
+def multi_dest_extra(kus_by_note: dict[str, list[str]], area_kus: list[dict], note_path_set: set[str], prefix: str) -> int:
+    # note_path_set is the batch's note paths (== all area note paths for an
+    # unfiltered run; every ledger destination is a valid canonical note path,
+    # verified against the structure with 0 invalid)
     extra = 0
     for r in area_kus:
-        n = len([d for d in r["destinations"] if d["path"].startswith(prefix)])
+        n = len([d for d in r["destinations"] if d["path"] in note_path_set])
         extra += n - 1
     return extra
 

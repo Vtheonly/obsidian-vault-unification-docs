@@ -1,0 +1,31 @@
+{
+ "area": "02 - Mathematics",
+ "slug": "area02",
+ "partial_batch": false,
+ "only_filter": null,
+ "notes": 18,
+ "source_files": 18,
+ "kus": 1354,
+ "kus_by_disposition": {
+  "Preserved": 652,
+  "Consolidated": 702
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 700,
+ "total_source_words": 52188,
+ "scratch_dir": "scratch/synth/area02",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "Mathematics MOC",
+  "colliding": "Jacobians and Hessians — BOTH copies are generated in this session's batch (this area's [[02 - Mathematics/Calculus/Jacobians and Hessians|Jacobians and Hessians]] and area 01's [[01 - Foundations/Mathematical Foundations/Jacobians and Hessians|Jacobians and Hessians]]); always path-based. Plus any other basename on the binding link-rules list.",
+  "explicit_types": 3
+ }
+}
