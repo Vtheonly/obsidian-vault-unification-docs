@@ -1,0 +1,68 @@
+{
+  "checkpoint_id": "checkpoint-2026-11-03-synth001-session24",
+  "date": "2026-11-03",
+  "session_number": 24,
+  "task": {
+    "task_id": "SYNTH-001",
+    "title": "Gated synthesis of the unified vault (user-directed batch: chapters 0-4 / areas 01-03 + Swin pull-forward)",
+    "status": "in_progress",
+    "completed_this_session": "areas 01 - Foundations (20 notes), 02 - Mathematics (18 notes), 03 - Python and Data Tooling (29 notes) and the 17 - Papers Swin Transformer pull-forward (1 note) synthesized end-to-end through the full gate chain and audit; 327/544 canonical notes now verified. Session 24 was started by an interrupted predecessor (64 notes on disk, pipeline prep committed as 732e8f6); this session verified the inherited notes, generated the 4 remaining notes (3 orientation/MOC + Swin), and drove all gates/audits/repairs to green."
+  },
+  "stage": "synthesis-in-progress-areas-01-03-and-04-14-complete",
+  "accelerated_mode": {
+    "session_number": 24,
+    "budget_sessions_consumed": 9,
+    "budget_sessions_remaining": 2,
+    "deliverable_metric_moved": "canonical notes generated and verified (area batch through full gate chain + audit-output)",
+    "before": 259,
+    "after": 327,
+    "denominator": 544,
+    "failed_session": false,
+    "cause_if_failed": null
+  },
+  "baseline_verification": {
+    "git": "HEAD == origin/main == 732e8f6 at session start; working tree carried the interrupted session-24 outputs (64 uncommitted notes + 2 untracked scripts + 3 registry-rebuild report refreshes) which were validated, not discarded",
+    "tests_first_run": "744/744 passed (2026-11-03, first run after editable install)",
+    "source_manifests": "AI Course 276/276 unchanged, Master AI 333/333 unchanged (reports/synthesis/s24-immutable-ai-course-recheck.json + s24-immutable-master-ai-recheck.json)",
+    "editable_install": "python3 -m pip install -e . (exit 0)",
+    "registry_rebuild": "inherited from the interrupted session: s22_registry_rebuild.sh re-run (kureg-init/load/apply-dispositions reports refreshed with timestamp/commit fields only; applied=27,536, Unaccounted=0, valid)"
+  },
+  "work_completed": [
+    "Verified the 64 inherited uncommitted notes (completeness signals: all with YAML frontmatter, 445-5447 words, no truncations; format consistent with areas 04-14)",
+    "Generated the 4 remaining notes: Foundations MOC (area01, index 14), Mathematics MOC (area02, index 10), Python Language Overview (area03, index 13), Swin Transformer (area17swin, index 1 — covers BOTH Swin V1 and the Swin Transformer V2 successor section per the user directive)",
+    "User directive coverage check: chapters 0-4 = areas 01-03 (67 notes); Swin + Swin V2 = the Swin Transformer paper note (mermaid, stage table, results table, cyclic shift, relative position bias, Swin V2 section with arXiv:2111.09883); AdamW = the Adam Optimizer Derivation note (dedicated 'AdamW: decoupled weight decay' section, 19 AdamW mentions, on disk since the interrupted session)",
+    "Lint: 0 errors over the whole vault; 20 warnings = 17 pre-existing (s23-documented) + 3 new verbatim-source dollar-price artifacts (AI vs ML vs DL '$0.04/$0.001-$0.06' from master-ai '02 - AI vs ML vs DL...' line 263; Introduction to Machine Learning + Types of Learning '($350,000)' from ai-course '08. Foundations of Machine Learning (Summary)' line 90)",
+    "Lint repairs (scripts/s24_lint_repairs.py, anchored+asserted+idempotent): escaped unescaped pipes inside table-cell math (Outlier z-score rule; Cosine Manhattan/Jaccard cells) with keep-both prose carrying the source-verbatim unescaped forms (KU-a91cd91, KU-9384b7f); converted NumPy prose '[0, 1)' inline-code to math",
+    "Gate repairs (scripts/s24_gate_repairs_area03.py): 5 grounded discourse-marker restorations in the 4 Exercise notes (examples/definitions bands; all anchored on content already in the note or its source, e.g. the messy-Gender values from the source data fence)",
+    "Marker repairs: scripts/s24_marker_repairs_area01.py (28 findings -> 0; classes: underscore-emphasis tokens _faster/r-cnn_/_farabet/al._/pixel_/vehicle._/_example/_could_, ASCII-vs-typographic dashes 1950s-1980s/1980s-2000s, dropped words discussions/knowledge-based/unparalleled/backprops, mermaid label whitespace + 1 dropped Caution mermaid restored verbatim, the 5-filename series restored as historical context, math-span granularity $y, z$, the second-biggest-gap claim restored as course accounting); scripts/s24_marker_repairs_area02.py (30 findings -> 0; classes: 19 bare-fence equations restored as ```text fences per the in-batch Adam/Tensors precedent — which also restores the _map/argmin_/_unbiased/n_tests tokens, 1 python-fence blank line, the dropped LLM-MLE autoregressive-likelihood example with token_/token_i, the uncertainty-related pointer, 2 See-also annotations Brier/z-tests); scripts/s24_marker_repairs_area03.py (5 findings -> 0; dropped source words adhere/skews/zooms/clicking/envs)",
+    "One repair-tooling incident, root-caused and fully repaired: the area01 script's first idempotency check was substring-unsafe for insertion repairs, causing 3 insertions to apply 4x during iterative fixing (Caution mermaid x4, five-part-series sentence x4, 'discussionssss'); all three corruptions removed byte-exactly, the script rewritten with probe-based idempotency, and both re-runs verified as complete no-ops before the final audit",
+    "Gates: 4/4 PASS with ZERO waivers (area01 20 notes, area02 18, area03 29, area17swin 1; 0 dimensions below band across all 327 vault notes, no drift)",
+    "Audits: 4/4 valid=true, 0 findings over 2,855 KUs (1,058 + 1,354 + 398 + 45); 4,983 markers verified present (2,538 term + 2,221 math + 224 code)",
+    "Orchestrator independent review: 15/15 semantic probes (Swin cyclic shift, Swin V2 log-spaced bias + 3B + arXiv id, (2M-1) table size, AdamW decoupled decay, beta2 0.95, Path A duration, whiteboard test, Python 2 EOL date, Guido van Rossum, James-Stein, Frobenius norm, cosine schedules); F-0014 marker headings absent from all 68 note bodies (all matches inside verbatim fences); self-contamination greps clean (no source-vault/bundle/project references); no H1 in any body"
+  ],
+  "verification": {
+    "tests_final": "744/744 passed (2026-11-03, after the last mutation)",
+    "audit": "reports/synthesis/s24-area01-audit.json + s24-area02-audit.json + s24-area03-audit.json + s24-area17swin-audit.json (all valid=true, findings=0; source-root 'source-vaults/AI ' = both vaults as the term-frequency corpus, matching the s20/s21 construction)",
+    "gate": "reports/synthesis/s21-area01-gate.json + s21-area02-gate.json + s21-area03-gate.json + s21-area17swin-gate.json (all verdict=pass, waivers=0)",
+    "lint": "reports/synthesis/s24-lint-vault.json (0 errors, 20 warnings: 17 pre-existing + 3 new documented verbatim-source dollar-price artifacts)",
+    "independent_review": "15/15 semantic probes + F-0014 + contamination greps (see work_completed)"
+  },
+  "explicit_non_claims": [
+    "The 63 content notes among the 68 were written by the interrupted predecessor session's subagents; the 4 notes generated this session (3 MOC/overview + Swin) were orchestrator-written; the GATES and AUDITS (not authorship) are the acceptance evidence for all 68",
+    "Marker retention proves lexical/formula preservation of every KU excerpt; the semantic-fidelity layer for the rewritten prose remains the session-25 cross-batch consistency pass plus the release audit",
+    "Cross-area wikilinks to areas 15-20 do not exist yet by design (areas not generated); the Foundations MOC's reading-path links target only existing areas (01-14) and mention future-area topics as plain text",
+    "The area-17 Swin note is a PARTIAL batch (--only pull-forward with its own AREA_CONFIG entry '17 - Papers :: area17swin'); the remaining 55 area-17 notes still need the full-area entry and must NOT reuse the partial one",
+    "Areas 15, 16, 17 (rest), 18, 19, 20 are NOT synthesized yet; the unified vault currently contains areas 01-14 (327/544 notes)",
+    "The 46,978 low-signal provisional discovery candidates remain a documented exclusion (not silently resolved)",
+    "The three confirmed gaps (second moment, bradley-terry, async def) still need their dedicated treatments at synthesis time",
+    "The 10 accumulated drift waivers from sessions 21-23 remain pending the session-25 corpus-wide drift re-audit (this session added ZERO new waivers)"
+  ],
+  "next_task": {
+    "task_id": "SYNTH-001",
+    "what": "Session 25 (bulk session 2): areas 15 - Agents and Tooling (41), 16 - Interpretability and Research (31), 17 - Papers minus Swin (55), 18 - Projects (25), 19 - Reference and Practice (48) = 200 notes, plus any spillover; then session 26: area 20 (17) + cross-batch consistency (terminology, cross-area wikilinks, corpus-wide drift re-audit incl. ALL 10 waivers) + the three confirmed-gap treatments + final verification and delivery. If the 200-note session-25 target does not fit, prioritize areas 15-19 in canonical order and push what is green; never weaken the floor.",
+    "budget_arithmetic": "sessions 25-26 remain of the 16-26 budget; 544 - 327 = 217 notes remain (200 in areas 15-19 + 17 in area 20)",
+    "resume": "1) Read AGENTS.md sections 12-13, docs/ACCELERATED_COMPLETION_POLICY.md, docs/agent-handoff/next-agent.md, this checkpoint. 2) Verify baseline: HEAD == origin/main, clean tree, pip install -e ., full suite green (744 expected), manifests 276/276 + 333/333. 3) For each area: add the full-area AREA_CONFIG entry (note types from canonical-structure rationales; MOC target; colliding basenames — for area 17 the LoRA/vLLM/TensorRT-LLM paper copies link the area-13/14 path forms, and the Swin note already exists: do NOT regenerate it, add the remaining 55), extend/re-run scripts/s23_link_rules.py (or an s25 variant), build inputs (s20_build_synthesis_inputs.py), check prompts, generate in waves (cap 4 notes / 12K source words; orientation notes LAST), run scripts/s21_run_gates.py <slug>, run vu audit-output with --source-root 'source-vaults/AI ' (both vaults — the construction this session validated), root-cause findings with anchored idempotent repair scripts (probe-based idempotency; keep BOTH duplicate source treatments; hyphenated vs spaced forms are different markers; NFKC merges superscripts into tokens — reference such tokens in prose when the fence form cannot carry them). 4) Commit and push each green area immediately (AGENTS.md section 13)."
+  },
+  "commit": "PENDING (committed with the session work)",
+  "push_verification": "PENDING (recorded after push)"
+}

@@ -1,0 +1,34 @@
+{
+  "result": {
+    "standards_version": "1.0.0",
+    "thresholds": {
+      "rel_drop": 0.15,
+      "abs_drop": 0.1
+    },
+    "drifted_types": [],
+    "clean_types": [
+      {
+        "type": "concept",
+        "notes": 1,
+        "verdict": "too_few_notes_to_compare"
+      }
+    ],
+    "verdict": "no_systematic_drift",
+    "caveat": "tertile-mean comparison on deterministic dimensions; investigate flagged evidence, do not treat as final judgment"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-drift",
+    "args": {
+      "command": "quality-drift",
+      "assessments": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17swin/gates/assessments.jsonl",
+      "rel_drop": 0.15,
+      "abs_drop": 0.1,
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s21-area17swin-drift.json"
+    },
+    "utc_timestamp": "2026-11-03T04:09:53+00:00",
+    "git_commit": "732e8f6"
+  }
+}

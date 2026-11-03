@@ -1,0 +1,58 @@
+{
+  "result": {
+    "standards_version": "1.0.0",
+    "thresholds": {
+      "rel_drop": 0.15,
+      "abs_drop": 0.1
+    },
+    "drifted_types": [],
+    "clean_types": [
+      {
+        "type": "concept",
+        "notes": 19,
+        "first_third": [
+          "01 - Foundations/AI Engineering/The Modern AI Stack.md",
+          "01 - Foundations/AI Engineering/What Is AI Engineering.md",
+          "01 - Foundations/AI ML and DL Hierarchy/AI vs ML vs DL.md",
+          "01 - Foundations/AI ML and DL Hierarchy/Applications of Deep Learning.md",
+          "01 - Foundations/AI ML and DL Hierarchy/History and Evolution of AI.md",
+          "01 - Foundations/AI ML and DL Hierarchy/Introduction to Machine Learning.md"
+        ],
+        "last_third": [
+          "01 - Foundations/Mathematical Foundations/Derivatives and the Chain Rule.md",
+          "01 - Foundations/Mathematical Foundations/Gradients and Gradient Descent.md",
+          "01 - Foundations/Mathematical Foundations/Jacobians and Hessians.md",
+          "01 - Foundations/Mathematical Foundations/Linear Algebra Fundamentals.md",
+          "01 - Foundations/Mathematical Foundations/Mathematical Notation.md",
+          "01 - Foundations/Mathematical Foundations/Probability and Statistics for ML.md"
+        ],
+        "overall_first_third_mean": 0.8668,
+        "overall_last_third_mean": 0.9213,
+        "drifted_dimensions": [],
+        "verdict": "no_systematic_drift"
+      },
+      {
+        "type": "overview",
+        "notes": 1,
+        "verdict": "too_few_notes_to_compare"
+      }
+    ],
+    "verdict": "no_systematic_drift",
+    "caveat": "tertile-mean comparison on deterministic dimensions; investigate flagged evidence, do not treat as final judgment"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-drift",
+    "args": {
+      "command": "quality-drift",
+      "assessments": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area01/gates/assessments.jsonl",
+      "rel_drop": 0.15,
+      "abs_drop": 0.1,
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s21-area01-drift.json"
+    },
+    "utc_timestamp": "2026-11-03T04:03:15+00:00",
+    "git_commit": "732e8f6"
+  }
+}

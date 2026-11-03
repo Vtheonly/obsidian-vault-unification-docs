@@ -95,8 +95,8 @@
         }
     },
     "knowledge_registry_initialized": true,
-    "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-02-synth001-session22.json",
-    "notes": "Session 20 (2026-11-02): SYNTH-001 started and area 04 - Machine Learning completed end-to-end: 27/27 canonical notes green through lint/assess/drift/gate/audit-output (0 findings, 1,829/1,829 KUs accounted). Editorial conventions v1 recorded. Framework fixes F-0024..F-0029 (708->725 tests; pilot re-verified 12/12). French lab preserved verbatim as an appendix. Next: remaining 15 areas (517 notes) via the same s20 pipeline, then gap treatments + cross-batch consistency + final verification by session 26.",
+    "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-03-synth001-session24.json",
+    "notes": "Session 24 (2026-11-03, continuation of an interrupted start): SYNTH-001 user-directed batch complete — areas 01 - Foundations (20 notes), 02 - Mathematics (18), 03 - Python and Data Tooling (29) + the 17 - Papers Swin Transformer pull-forward (1, covering Swin V1 + Swin V2); AdamW covered by the area-02 Adam Optimizer Derivation note. 327/544 canonical notes verified. Gates 4/4 pass with ZERO waivers; audits 4/4 valid=true 0 findings over 2,855 KUs (4,983 markers); lint 0 errors/20 documented warnings (17 pre-existing + 3 verbatim-source dollar prices); 53 findings repaired via 4 anchored probe-idempotent scripts; 15/15 semantic probes; 744/744 tests; sources immutable. Next: session 25 bulk batch (areas 15-19, ~200 notes), session 26 area 20 + cross-batch consistency + 3 gap treatments + final verification.",
     "output_synthesis_started": true,
     "phase_zero_rebaseline": {
         "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
@@ -245,7 +245,7 @@
         }
     ],
     "source_vaults_located": true,
-    "stage": "synthesis-in-progress-area04-complete",
+    "stage": "synthesis-in-progress-areas-01-14-complete",
     "status": "in_progress",
     "verification_pilot_evidence": {
         "defect_classes": 12,
@@ -261,27 +261,36 @@
     "verification_pilot_passed": true,
     "synthesis_progress": {
         "areas_complete": [
+            "01 - Foundations",
+            "02 - Mathematics",
+            "03 - Python and Data Tooling",
             "04 - Machine Learning",
             "05 - Neural Network Foundations",
             "06 - Computer Vision",
             "07 - Sequence Models",
             "08 - Attention and Transformers",
-            "09 - NLP and Language Models"
+            "09 - NLP and Language Models",
+            "10 - Large Language Models",
+            "11 - Foundation Models and Multimodal",
+            "12 - Generative Models",
+            "13 - Training and Adaptation",
+            "14 - Inference and Production"
         ],
-        "notes_verified": 190,
+        "notes_verified": 327,
         "notes_planned": 544,
         "kus_audited_cumulative_sessions": 11915,
         "audit_findings": 0,
-        "session_22": {
-            "notes_verified": 63,
-            "kus_audited": 2692,
+        "evidence": "reports/synthesis/s20-area04-*, s21-area05/06-*, s22-area07/08/09-*, s23-area10..14-*, s24-area01/02/03-* + s24-area17swin-* (inputs, lint, gate, audit, immutable start+final)",
+        "session_24": {
+            "notes_verified": 68,
+            "kus_audited": 2855,
+            "waivers": 0,
             "markers_verified": {
-                "terms": 7793,
-                "math": 2073,
-                "code": 113
+                "terms": 2538,
+                "math": 2221,
+                "code": 224
             },
-            "evidence": "reports/synthesis/s22-area0{7,8,9}-audit.json (all valid=true, 0 findings); s21-area0{7,8,9}-gate.json (all pass)"
-        },
-        "evidence": "reports/synthesis/s20-area04-*, s21-area05/06-*, s22-area07/08/09-* (inputs, checkprompt, assess, drift, gate, audit)"
+            "evidence": "reports/synthesis/s24-area0{1,2,3}-audit.json + s24-area17swin-audit.json (all valid=true, 0 findings); s21-area0{1,2,3}-gate.json + s21-area17swin-gate.json (all pass, 0 waivers)"
+        }
     }
 }

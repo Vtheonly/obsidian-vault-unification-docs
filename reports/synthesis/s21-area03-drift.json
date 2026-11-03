@@ -1,0 +1,76 @@
+{
+  "result": {
+    "standards_version": "1.0.0",
+    "thresholds": {
+      "rel_drop": 0.15,
+      "abs_drop": 0.1
+    },
+    "drifted_types": [],
+    "clean_types": [
+      {
+        "type": "concept",
+        "notes": 24,
+        "first_third": [
+          "03 - Python and Data Tooling/Data Cleaning and Preprocessing/Categorical Encoding and Text Normalization.md",
+          "03 - Python and Data Tooling/Data Cleaning and Preprocessing/Duplicate Detection and Record Linkage.md",
+          "03 - Python and Data Tooling/Data Cleaning and Preprocessing/Feature Scaling and Normalization.md",
+          "03 - Python and Data Tooling/Data Cleaning and Preprocessing/Missing Data and Imputation.md",
+          "03 - Python and Data Tooling/Data Cleaning and Preprocessing/Outlier Detection and Treatment.md",
+          "03 - Python and Data Tooling/Python Environment Setup/IDEs and Development Environments.md",
+          "03 - Python and Data Tooling/Python Environment Setup/Installation and Distributions.md",
+          "03 - Python and Data Tooling/Python Environment Setup/Project Structure and Best Practices.md"
+        ],
+        "last_third": [
+          "03 - Python and Data Tooling/Python Programming/Control Flow and Loops.md",
+          "03 - Python and Data Tooling/Python Programming/Dictionaries.md",
+          "03 - Python and Data Tooling/Python Programming/Error Handling and Exceptions.md",
+          "03 - Python and Data Tooling/Python Programming/Functions and Lambda Expressions.md",
+          "03 - Python and Data Tooling/Python Programming/Iterators and Generators.md",
+          "03 - Python and Data Tooling/Python Programming/Lists Tuples and Sets.md",
+          "03 - Python and Data Tooling/Python Programming/Object Oriented Programming.md",
+          "03 - Python and Data Tooling/Python Programming/Variables Operators and Type Casting.md"
+        ],
+        "overall_first_third_mean": 0.8809,
+        "overall_last_third_mean": 0.9089,
+        "drifted_dimensions": [],
+        "verdict": "no_systematic_drift"
+      },
+      {
+        "type": "overview",
+        "notes": 1,
+        "verdict": "too_few_notes_to_compare"
+      },
+      {
+        "type": "tutorial",
+        "notes": 4,
+        "first_third": [
+          "03 - Python and Data Tooling/Data Cleaning and Preprocessing/Exercise - Medical Dataset Pipeline.md"
+        ],
+        "last_third": [
+          "03 - Python and Data Tooling/Python Programming/Exercise - Sales Project Logic and OOP.md"
+        ],
+        "overall_first_third_mean": 0.8428,
+        "overall_last_third_mean": 0.8451,
+        "drifted_dimensions": [],
+        "verdict": "no_systematic_drift"
+      }
+    ],
+    "verdict": "no_systematic_drift",
+    "caveat": "tertile-mean comparison on deterministic dimensions; investigate flagged evidence, do not treat as final judgment"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-drift",
+    "args": {
+      "command": "quality-drift",
+      "assessments": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area03/gates/assessments.jsonl",
+      "rel_drop": 0.15,
+      "abs_drop": 0.1,
+      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s21-area03-drift.json"
+    },
+    "utc_timestamp": "2026-11-03T04:07:42+00:00",
+    "git_commit": "732e8f6"
+  }
+}
