@@ -1,0 +1,157 @@
+{
+ "specs_total": 25,
+ "ok": 25,
+ "failed": 0,
+ "results": [
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/01-build-a-code-agent.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/02-build-a-distributed-training-pipeline.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/03-build-a-fine-tuning-pipeline-with-lora-and-dpo.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/04-build-a-knowledge-graph-construction-pipeline.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/05-build-a-long-context-evaluation-harness.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/06-build-a-model-distillation-pipeline.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/07-build-a-multi-agent-system.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/08-build-a-multimodal-agent.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/09-build-a-multimodal-rag-pipeline.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/10-build-a-quantization-toolkit.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/11-build-a-rag-evaluation-harness.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/12-build-a-reasoning-model-fine-tune.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/13-build-a-speculative-decoding-server.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/14-build-a-vision-language-model.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/15-build-an-agent-observability-platform.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/16-build-an-mcp-marketplace.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/17-build-an-mcp-server.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/18-build-an-rlhf-pipeline-with-ppo.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/19-build-attention-and-transformer-from-scratch.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/20-build-a-mini-moe.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/21-build-a-mini-ssm.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/22-build-a-tiny-llm-trainer.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/23-build-a-mini-agent.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/24-build-a-mini-rag-pipeline.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area18/specs/25-projects-moc.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  }
+ ]
+}

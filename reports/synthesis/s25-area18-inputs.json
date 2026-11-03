@@ -1,0 +1,32 @@
+{
+ "area": "18 - Projects",
+ "slug": "area18",
+ "partial_batch": false,
+ "only_filter": null,
+ "notes": 25,
+ "source_files": 25,
+ "kus": 1004,
+ "kus_by_disposition": {
+  "Preserved": 858,
+  "Consolidated": 146
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 156,
+ "total_source_words": 69749,
+ "scratch_dir": "scratch/synth/area18",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "Projects MOC",
+  "colliding": "no area-18 basename collides vault-wide; apply the binding link-rules list for any generated-set collision (e.g. LoRA/vLLM/BERT topical copies link their area-13/14/08 forms in path form)",
+  "explicit_types": 1,
+  "default_note_type": "tutorial"
+ }
+}

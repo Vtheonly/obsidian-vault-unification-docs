@@ -1,0 +1,33 @@
+{
+ "area": "19 - Reference and Practice",
+ "slug": "area19",
+ "partial_batch": false,
+ "only_filter": null,
+ "notes": 48,
+ "source_files": 54,
+ "kus": 1691,
+ "kus_by_disposition": {
+  "Preserved": 1064,
+  "Consolidated": 626,
+  "Contextualized": 1
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 237,
+ "total_source_words": 88520,
+ "scratch_dir": "scratch/synth/area19",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "the relevant subarea MOC: [[Glossary MOC]] for glossary notes and [[Interview Prep MOC]] for interview-prep notes; quiz notes have no in-area MOC (area 19 has no area-root note) — link at least two same-chapter quiz siblings plus the topical concept notes they practice (path-based for colliding basenames, e.g. [[05 - Neural Network Foundations/Training Dynamics and Stability/Batch Normalization|Batch Normalization]])",
+  "colliding": "the quiz-copy basenames (each links its topical concept copy in path form, e.g. [[05 - Neural Network Foundations/Training Dynamics and Stability/Batch Normalization|Batch Normalization]] or [[06 - Computer Vision/Architecture and Connectivity/Evolution of CNN Architectures|Evolution of CNN Architectures]]; links to the quiz copies themselves use the area-19 path form, e.g. [[19 - Reference and Practice/Quizzes/Deep Learning Chapter 2 CNN/Batch Normalization|Batch Normalization]]), plus any other basename on the binding link-rules list",
+  "explicit_types": 8,
+  "default_note_type": "example"
+ }
+}

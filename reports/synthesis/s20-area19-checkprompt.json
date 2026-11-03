@@ -1,0 +1,295 @@
+{
+ "specs_total": 48,
+ "ok": 48,
+ "failed": 0,
+ "results": [
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/01-a-z-terms.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/02-acronyms-index.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/03-glossary-moc.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/04-notation-conventions.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/05-coding-interview-questions.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/06-conceptual-interview-questions.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/07-interview-prep-moc.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/08-system-design-interview-questions.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/09-activation-functions-in-deep-learning.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/10-applications-of-deep-learning.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/11-data-preparation-and-mlp-implementation.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/12-deep-learning-definition-and-context.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/13-evolution-and-history-of-deep-learning.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/14-gradient-descent-optimization.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/15-linear-regression.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/16-logistic-regression.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/17-loss-functions-and-cost-optimization.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/18-machine-learning-vs-deep-learning.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/19-multi-layer-perceptron-and-backpropagation.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/20-the-perceptron-and-the-chain-rule.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/21-activation-and-pooling-layers.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/22-advanced-pooling-mechanisms-and-global-average-pooling.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/23-backpropagation-and-gradient-flow-in-cnns.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/24-batch-normalization.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/25-common-mistakes-and-how-to-fix-them.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/26-core-architecture-and-philosophy.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/27-data-augmentation.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/28-demystifying-the-black-box-cnn-interpretability.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/29-dropout-and-regularization.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/30-evolution-of-cnn-architectures.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/31-exercises-solved-and-explained.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/32-hyperparameters-and-network-configuration.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/33-inception-architecture-deep-dive.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/34-introduction-and-foundations-of-cnns.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/35-loss-functions-and-optimizers-deep-dive.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/36-model-evaluation-metrics-beyond-accuracy.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/37-pytorch-advanced-vgg16-and-pre-trained-models.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/38-pytorch-implementation-basics.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/39-resnet-bottleneck-blocks-and-architectural-variants.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/40-the-convolution-operation-deep-dive.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/41-the-degradation-problem-and-residual-connections.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/42-the-full-training-pipeline-end-to-end-checklist.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/43-the-mathematics-of-receptive-fields-and-1x1-convolutions.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/44-the-vanishing-and-exploding-gradient-problems.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/45-transfer-learning-and-fine-tuning.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/46-vgg16-architecture-deep-dive.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/47-weight-initialization.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area19/specs/48-conceptual-questions-on-neural-network-fundamentals.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  }
+ ]
+}

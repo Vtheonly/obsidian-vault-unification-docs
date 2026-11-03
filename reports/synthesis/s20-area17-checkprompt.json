@@ -1,0 +1,343 @@
+{
+ "specs_total": 56,
+ "ok": 56,
+ "failed": 0,
+ "results": [
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/01-rag.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/02-reflexion.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/03-self-refine.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/04-constitutional-ai.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/05-dpo.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/06-instructgpt.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/07-process-reward-models.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/08-verifiable-rewards-vs-prms.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/09-attention-is-all-you-need.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/10-bert.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/11-bahdanau-attention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/12-deit-v2.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/13-gpt-1.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/14-luong-attention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/15-swin-transformer.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/16-t5.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/17-vision-transformer.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/18-bigbird.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/19-eagle-3.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/20-flashattention-2-and-flashattention-3.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/21-flashattention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/22-gqa.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/23-linformer.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/24-longformer.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/25-medusa-and-eagle.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/26-multi-token-prediction.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/27-pagedattention-and-vllm.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/28-performer.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/29-reformer.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/30-transformer-xl.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/31-deepseek-v2-and-v3.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/32-gpt-2.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/33-gpt-3.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/34-gpt-4-technical-report.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/35-llama.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/36-mistral-7b.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/37-blip-2.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/38-colpali.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/39-flamingo.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/40-perceiver.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/41-siglip-2.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/42-papers-moc.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/43-deepseek-r1.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/44-graph-of-thoughts.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/45-self-consistency.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/46-tree-of-thoughts.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/47-lora.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/48-scaling-laws-kaplan-and-chinchilla.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/49-based.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/50-h3.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/51-jamba.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/52-kimi-linear.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/53-mamba-2.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/54-mamba.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/55-minimax-01.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area17/specs/56-titans.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  }
+ ]
+}

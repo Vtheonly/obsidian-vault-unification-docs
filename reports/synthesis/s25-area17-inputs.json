@@ -1,0 +1,32 @@
+{
+ "area": "17 - Papers",
+ "slug": "area17",
+ "partial_batch": false,
+ "only_filter": null,
+ "notes": 56,
+ "source_files": 56,
+ "kus": 2304,
+ "kus_by_disposition": {
+  "Preserved": 2045,
+  "Consolidated": 259
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 227,
+ "total_source_words": 94072,
+ "scratch_dir": "scratch/synth/area17",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "Papers MOC",
+  "colliding": "BERT, Bahdanau Attention, Luong Attention, FlashAttention (the area-08 topical copies are the concept targets — link them in path form, e.g. [[08 - Attention and Transformers/Transformer Architecture/BERT|BERT]]); links to the area-17 paper copies themselves use the area-17 path form, e.g. [[17 - Papers/Attention and Transformers/BERT|BERT]]; LoRA (concept target: [[13 - Training and Adaptation/Fine-Tuning/LoRA|LoRA]]; paper copy: [[17 - Papers/Scaling and Training/LoRA|LoRA]]); vLLM (concept target: [[14 - Inference and Production/Inference/vLLM|vLLM]]; the paper note 'PagedAttention and vLLM' has a unique basename); TensorRT-LLM (concept target: [[14 - Inference and Production/Inference/TensorRT-LLM|TensorRT-LLM]] — the area-15 copy shares the basename so every link to it is path-based); plus any other basename on the binding link-rules list",
+  "explicit_types": 1,
+  "default_note_type": "concept"
+ }
+}

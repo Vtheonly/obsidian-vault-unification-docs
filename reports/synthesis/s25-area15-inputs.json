@@ -1,0 +1,32 @@
+{
+ "area": "15 - Agents and Tooling",
+ "slug": "area15",
+ "partial_batch": false,
+ "only_filter": null,
+ "notes": 41,
+ "source_files": 46,
+ "kus": 2342,
+ "kus_by_disposition": {
+  "Preserved": 2172,
+  "Consolidated": 170
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 82,
+ "total_source_words": 87598,
+ "scratch_dir": "scratch/synth/area15",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "Agents and Tooling MOC",
+  "colliding": "vLLM and TensorRT-LLM (each also exists as an area-14 note — links from this area's notes use THIS area's copy in path form, e.g. [[15 - Agents and Tooling/Frameworks and Tools/vLLM|vLLM]]), plus any other basename on the binding link-rules list (BERT/FlashAttention/LoRA topical copies etc. link their area-08/13 forms in path form)",
+  "explicit_types": 2,
+  "default_note_type": "concept"
+ }
+}

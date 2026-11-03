@@ -1,0 +1,32 @@
+{
+ "area": "16 - Interpretability and Research",
+ "slug": "area16",
+ "partial_batch": false,
+ "only_filter": null,
+ "notes": 31,
+ "source_files": 33,
+ "kus": 1269,
+ "kus_by_disposition": {
+  "Consolidated": 239,
+  "Preserved": 1030
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 142,
+ "total_source_words": 46306,
+ "scratch_dir": "scratch/synth/area16",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "Interpretability and Research MOC",
+  "colliding": "no area-16 basename collides vault-wide; apply the binding link-rules list for any generated-set collision (e.g. BERT/FlashAttention/LoRA topical copies link their area-08/13 forms in path form)",
+  "explicit_types": 3,
+  "default_note_type": "concept"
+ }
+}

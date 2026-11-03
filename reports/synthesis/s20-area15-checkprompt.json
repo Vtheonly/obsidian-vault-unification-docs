@@ -1,0 +1,253 @@
+{
+ "specs_total": 41,
+ "ok": 41,
+ "failed": 0,
+ "results": [
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/01-agent-vs-workflow-vs-llm-application.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/02-autonomous-agent-lifecycles.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/03-chain-of-thought.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/04-function-calling.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/05-human-in-the-loop-patterns.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/06-planner-executor-pattern.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/07-react-pattern.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/08-reflection.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/09-tree-of-thoughts-and-self-consistency.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/10-agents-and-tooling-moc.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/11-autogen.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/12-crewai.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/13-dspy.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/14-framework-selection-guide.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/15-haystack.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/16-langchain.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/17-langgraph.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/18-llamaindex.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/19-ollama-and-llama-cpp.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/20-openai-sdk-and-agents-sdk.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/21-pydanticai.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/22-sglang.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/23-semantic-kernel.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/24-tgi.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/25-tensorrt-llm.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/26-vllm.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/27-memgpt-and-letta.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/28-memory-operations.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/29-memory-types.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/30-vector-memory-backends.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/31-mcp-components.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/32-mcp-enterprise-integration.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/33-mcp-overview.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/34-mcp-security.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/35-communication-patterns.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/36-coordination-and-consensus.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/37-enterprise-multi-agent-architectures.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/38-multi-agent-architectures.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/39-advanced-rag-patterns.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/40-chunking-hybrid-search-and-reranking.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/specs/41-rag-pipeline-overview.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  }
+ ]
+}

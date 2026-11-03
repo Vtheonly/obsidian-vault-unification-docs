@@ -1,0 +1,193 @@
+{
+ "specs_total": 31,
+ "ok": 31,
+ "failed": 0,
+ "results": [
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/01-interpretability-and-research-moc.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/02-activation-patching-and-causal-tracing.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/03-logit-lens-and-tuned-lens.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/04-mechanistic-interpretability.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/05-probing.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/06-sparse-autoencoders.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/07-claude-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/08-fable-5-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/09-gpt-4-inferred-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/10-gemini-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/11-kimi-k3-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/12-mythos-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/13-opus-5-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/14-frontier-model-synthesis-2026.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/15-deepseek-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/16-glm-5-2-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/17-gemma-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/18-llama-family-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/19-llama-mistral-qwen-comparison.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/20-minimax-3-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/21-mistral-and-mixtral-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/22-qwen-3-8-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/23-qwen-family-architecture.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/24-hyena-and-long-convolutions.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/25-rwkv-and-retnet.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/26-long-context-architectures.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/27-test-time-compute-scaling.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/28-research-frontier-update-2026.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/29-deltanet-and-titans.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/30-mamba-2-and-structured-attention.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area16/specs/31-ssms-mamba-and-frontiers.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  }
+ ]
+}

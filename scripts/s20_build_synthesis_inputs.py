@@ -302,8 +302,8 @@ AREA_CONFIG: dict[str, dict[str, object]] = {
     # Partial-batch config for the user-directed Swin Transformer pull-forward
     # (session 24). Selected via: --area "17 - Papers" --slug area17swin
     # --only "17 - Papers/Attention and Transformers/Swin Transformer.md".
-    # The FULL area-17 entry (moc_target "Papers MOC") is added by the session
-    # that synthesizes the rest of area 17 — do not reuse this key for that run.
+    # The FULL area-17 entry below is authoritative for the session-25 run;
+    # never reuse this partial key for it.
     "17 - Papers :: area17swin": {
         "note_types": {
             "17 - Papers/Attention and Transformers/Swin Transformer.md": "concept",
@@ -321,6 +321,110 @@ AREA_CONFIG: dict[str, dict[str, object]] = {
             "and Transformers/Efficient Attention/FlashAttention|FlashAttention]]), "
             "Evolution of CNN Architectures and the other area-06 CNN basenames "
             "(path form), plus any other basename on the binding link-rules list"
+        ),
+    },
+    # ---- session 25 (bulk batch 2: areas 15-19, ~200 notes) ----
+    "15 - Agents and Tooling": {
+        "note_types": {
+            "15 - Agents and Tooling/Agents and Tooling MOC.md": "overview",
+            "15 - Agents and Tooling/Frameworks and Tools/Framework Selection Guide.md": "reference",
+        },
+        "moc_target": "Agents and Tooling MOC",
+        "colliding": (
+            "vLLM and TensorRT-LLM (each also exists as an area-14 note — links "
+            "from this area's notes use THIS area's copy in path form, e.g. "
+            "[[15 - Agents and Tooling/Frameworks and Tools/vLLM|vLLM]]), plus "
+            "any other basename on the binding link-rules list (BERT/FlashAttention/"
+            "LoRA topical copies etc. link their area-08/13 forms in path form)"
+        ),
+    },
+    "16 - Interpretability and Research": {
+        "note_types": {
+            "16 - Interpretability and Research/Interpretability and Research MOC.md": "overview",
+            "16 - Interpretability and Research/Model Architecture Research/Frontier Model Synthesis 2026.md": "reference",
+            "16 - Interpretability and Research/Research Frontiers/Research Frontier Update 2026.md": "reference",
+        },
+        "moc_target": "Interpretability and Research MOC",
+        "colliding": (
+            "no area-16 basename collides vault-wide; apply the binding "
+            "link-rules list for any generated-set collision (e.g. BERT/"
+            "FlashAttention/LoRA topical copies link their area-08/13 forms in "
+            "path form)"
+        ),
+    },
+    # FULL area-17 entry (session 25): synthesizes the remaining 55 paper notes;
+    # the Swin Transformer note already exists on disk (s24) and is NEVER
+    # regenerated — it is only re-assessed/re-audited as part of the complete
+    # area batch. The wave plan excludes it from generation groups.
+    "17 - Papers": {
+        "note_types": {
+            "17 - Papers/Papers MOC.md": "overview",
+        },
+        "moc_target": "Papers MOC",
+        "colliding": (
+            "BERT, Bahdanau Attention, Luong Attention, FlashAttention (the "
+            "area-08 topical copies are the concept targets — link them in path "
+            "form, e.g. [[08 - Attention and Transformers/Transformer "
+            "Architecture/BERT|BERT]]); links to the area-17 paper copies "
+            "themselves use the area-17 path form, e.g. [[17 - Papers/Attention "
+            "and Transformers/BERT|BERT]]; LoRA (concept target: [[13 - Training "
+            "and Adaptation/Fine-Tuning/LoRA|LoRA]]; paper copy: [[17 - Papers/"
+            "Scaling and Training/LoRA|LoRA]]); vLLM (concept target: [[14 - "
+            "Inference and Production/Inference/vLLM|vLLM]]; the paper note "
+            "'PagedAttention and vLLM' has a unique basename); TensorRT-LLM "
+            "(concept target: [[14 - Inference and Production/Inference/"
+            "TensorRT-LLM|TensorRT-LLM]] — the area-15 copy shares the basename "
+            "so every link to it is path-based); plus any other basename on the "
+            "binding link-rules list"
+        ),
+    },
+    "18 - Projects": {
+        "note_types": {
+            "18 - Projects/Projects MOC.md": "overview",
+        },
+        # all 24 project notes are build guides -> tutorial (the area-03
+        # exercise-note precedent); types are the default map below
+        "default_note_type": "tutorial",
+        "moc_target": "Projects MOC",
+        "colliding": (
+            "no area-18 basename collides vault-wide; apply the binding "
+            "link-rules list for any generated-set collision (e.g. LoRA/vLLM/"
+            "BERT topical copies link their area-13/14/08 forms in path form)"
+        ),
+    },
+    "19 - Reference and Practice": {
+        "note_types": {
+            "19 - Reference and Practice/Glossary/Glossary MOC.md": "overview",
+            "19 - Reference and Practice/Glossary/A-Z Terms.md": "reference",
+            "19 - Reference and Practice/Glossary/Acronyms Index.md": "reference",
+            "19 - Reference and Practice/Glossary/Notation Conventions.md": "reference",
+            "19 - Reference and Practice/Interview Prep/Interview Prep MOC.md": "overview",
+            "19 - Reference and Practice/Interview Prep/Coding Interview Questions.md": "reference",
+            "19 - Reference and Practice/Interview Prep/Conceptual Interview Questions.md": "reference",
+            "19 - Reference and Practice/Interview Prep/System Design Interview Questions.md": "reference",
+        },
+        # every untyped quiz/question-series note defaults to example (the
+        # area-06 quiz precedent)
+        "default_note_type": "example",
+        "moc_target": (
+            "the relevant subarea MOC: [[Glossary MOC]] for glossary notes and "
+            "[[Interview Prep MOC]] for interview-prep notes; quiz notes have no "
+            "in-area MOC (area 19 has no area-root note) — link at least two "
+            "same-chapter quiz siblings plus the topical concept notes they "
+            "practice (path-based for colliding basenames, e.g. [[05 - Neural "
+            "Network Foundations/Training Dynamics and Stability/Batch "
+            "Normalization|Batch Normalization]])"
+        ),
+        "colliding": (
+            "the quiz-copy basenames (each links its topical concept copy in "
+            "path form, e.g. [[05 - Neural Network Foundations/Training Dynamics "
+            "and Stability/Batch Normalization|Batch Normalization]] or [[06 - "
+            "Computer Vision/Architecture and Connectivity/Evolution of CNN "
+            "Architectures|Evolution of CNN Architectures]]; links to the quiz "
+            "copies themselves use the area-19 path form, e.g. [[19 - Reference "
+            "and Practice/Quizzes/Deep Learning Chapter 2 CNN/Batch "
+            "Normalization|Batch Normalization]]), plus any other basename on "
+            "the binding link-rules list"
         ),
     },
 }
@@ -381,6 +485,10 @@ def main() -> int:
             f"'{area} :: {args.slug}' AREA_CONFIG entry, not the full-area one"
         )
     note_types: dict[str, str] = config["note_types"]  # type: ignore[assignment]
+    # optional per-area default for untyped notes (session 25: projects ->
+    # tutorial, quizzes/question series -> example); areas without the key
+    # keep the historical "concept" default
+    default_type: str = config.get("default_note_type", "concept")  # type: ignore[assignment]
     moc_target: str = config["moc_target"]  # type: ignore[assignment]
     colliding: str = config["colliding"]  # type: ignore[assignment]
     out_dir = SCRATCH / args.slug
@@ -486,7 +594,7 @@ def main() -> int:
     notes_meta = []
     for idx, p in enumerate(sorted(note_paths), start=1):
         meta_note = next(n for n in notes if n["path"] == p)
-        ntype = note_types.get(p, "concept")
+        ntype = note_types.get(p, default_type)
         fmap = files_by_note[p]
         ku_ids = sorted(kus_by_note[p])
         bundle_name = f"{idx:02d}-{slugify(p)}.md"
@@ -672,6 +780,7 @@ def main() -> int:
             "moc_target": moc_target,
             "colliding": colliding,
             "explicit_types": len(note_types),
+            "default_note_type": default_type,
         },
     }
     Path(args.report).parent.mkdir(parents=True, exist_ok=True)
