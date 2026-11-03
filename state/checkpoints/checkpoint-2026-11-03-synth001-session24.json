@@ -63,6 +63,12 @@
     "budget_arithmetic": "sessions 25-26 remain of the 16-26 budget; 544 - 327 = 217 notes remain (200 in areas 15-19 + 17 in area 20)",
     "resume": "1) Read AGENTS.md sections 12-13, docs/ACCELERATED_COMPLETION_POLICY.md, docs/agent-handoff/next-agent.md, this checkpoint. 2) Verify baseline: HEAD == origin/main, clean tree, pip install -e ., full suite green (744 expected), manifests 276/276 + 333/333. 3) For each area: add the full-area AREA_CONFIG entry (note types from canonical-structure rationales; MOC target; colliding basenames — for area 17 the LoRA/vLLM/TensorRT-LLM paper copies link the area-13/14 path forms, and the Swin note already exists: do NOT regenerate it, add the remaining 55), extend/re-run scripts/s23_link_rules.py (or an s25 variant), build inputs (s20_build_synthesis_inputs.py), check prompts, generate in waves (cap 4 notes / 12K source words; orientation notes LAST), run scripts/s21_run_gates.py <slug>, run vu audit-output with --source-root 'source-vaults/AI ' (both vaults — the construction this session validated), root-cause findings with anchored idempotent repair scripts (probe-based idempotency; keep BOTH duplicate source treatments; hyphenated vs spaced forms are different markers; NFKC merges superscripts into tokens — reference such tokens in prose when the fence form cannot carry them). 4) Commit and push each green area immediately (AGENTS.md section 13)."
   },
-  "commit": "PENDING (committed with the session work)",
-  "push_verification": "PENDING (recorded after push)"
+  "commit": "306a2537f9526f59d63147ef3e101dbb296dda62 (feat(SYNTH-001): s24 user-directed batch complete — areas 01-03 + Swin pull-forward, 327/544 notes green; 104 files, +156,295/-151)",
+  "push_verification": {
+    "pushed": "2026-11-03",
+    "branch": "main",
+    "remote_update": "732e8f6..306a253  main -> main",
+    "verification": "git fetch origin; git rev-parse HEAD origin/main -> both 306a2537f9526f59d63147ef3e101dbb296dda62; git branch -r --contains HEAD -> origin/main; git log origin/main -1 -> 306a253",
+    "result": "verified"
+  }
 }
