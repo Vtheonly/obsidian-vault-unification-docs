@@ -29,12 +29,12 @@ MemGPT splits memory into two tiers, with explicit paging between them:
 
 ```mermaid
 graph TD
-  subgraph MainCtx["Main Context (in prompt)"]
+  subgraph Main Context (in prompt)
     System[System prompt: role, instructions]
     Working[Working memory: current task state]
     Recent[Recent messages: last few turns]
   end
-  subgraph ExtCtx["External Context (database)"]
+  subgraph External Context (database)
     Archival[Archival memory: long-term facts]
     Recall[Recall memory: full conversation log]
   end

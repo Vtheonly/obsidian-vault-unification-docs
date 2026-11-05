@@ -1,7 +1,7 @@
 {
   "command": "audit-output",
   "result": {
-    "valid": false,
+    "valid": true,
     "checks_run": [
       "ku-batch",
       "output-drift",
@@ -12,33 +12,7 @@
       "heading-convention",
       "prose-quality"
     ],
-    "findings": [
-      {
-        "finding_id": "AF-001",
-        "check": "marker-retention",
-        "category": "code-omission",
-        "severity": "critical",
-        "ku_ids": [
-          "KU-47c3b4153c90e05e"
-        ],
-        "destination": {
-          "path": "18 - Projects/Capstones/Build an MCP Server.md",
-          "heading": null
-        },
-        "expected": "code block fingerprint retained in the output",
-        "observed": "code block not found (omitted or altered)",
-        "evidence": {
-          "marker_type": "code",
-          "code_head": "graph LR",
-          "source_path": "27 - Projects/Capstones/08 - Build an MCP Server.md",
-          "source_lines": [
-            37,
-            45
-          ]
-        },
-        "repair_hint": "restore the missing/corrupted material at the destination"
-      }
-    ],
+    "findings": [],
     "stats": {
       "kus_total": 1004,
       "output_files_total": 527,
@@ -48,20 +22,18 @@
         "code": 195,
         "missing_terms": 0,
         "missing_math": 0,
-        "missing_code": 1
+        "missing_code": 0
       },
       "links_checked": 0,
       "links_broken": 0,
-      "findings_total": 1,
-      "findings_blocking": 1,
+      "findings_total": 0,
+      "findings_blocking": 0,
       "findings_by_severity": {
-        "critical": 1,
+        "critical": 0,
         "major": 0,
         "minor": 0
       },
-      "findings_by_check": {
-        "marker-retention": 1
-      }
+      "findings_by_check": {}
     },
     "limitations": [
       "term markers are frequency-based (rare in the source corpus): claims carried only by common vocabulary are not covered by term markers; equation/code fingerprints, destination anchors, link and lint checks provide the remaining nets",
@@ -87,7 +59,7 @@
       "ku_schema": "/home/z/my-project/repo/schemas/knowledge-unit.schema.json",
       "report": "/home/z/my-project/repo/reports/synthesis/s25-area18-audit.json"
     },
-    "utc_timestamp": "2026-11-05T22:30:27+00:00",
-    "git_commit": "4f5c6b9"
+    "utc_timestamp": "2026-11-05T22:40:29+00:00",
+    "git_commit": "9ddf5f2"
   }
 }

@@ -1,0 +1,38 @@
+{
+  "result": {
+    "passed": true,
+    "criteria": [
+      "every expected note assessed or explicitly unresolved",
+      "every note lint-error clean (allowed: 0)",
+      "every measured dimension within its type band or explicitly waived with reason",
+      "no unexplained systematic quality drift"
+    ],
+    "failures": [],
+    "notes_assessed": 56,
+    "waivers_applied": [
+      [
+        "drift::concept",
+        "content-family artifact: the examples dimension tracks the sources' code-fence density. First-third sources (2014-2020 attention/alignment papers, 29,241 words) carry 15 labeled fences across 18 notes; last-third sources (2023-2026 hybrid/reasoning papers, 33,000 words) carry 8 across 18 \u2014 a 2.1x source-side drop (marker density is identical at 1.33/1k words both groups). Every note preserves its source's profile: the 0-score notes (BERT, DeiT v2, Based) have 0-marker 0-fence sources, and the audit is valid=true 0 findings over 2,304 KUs / 2,828 markers with 0 dimensions below band. Re-check corpus-wide at the final verification pass."
+      ]
+    ],
+    "verdict": "pass"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-gate",
+    "args": {
+      "command": "quality-gate",
+      "assessments": "/home/z/my-project/repo/scratch/synth/area17/gates/assessments.jsonl",
+      "expected": "/home/z/my-project/repo/scratch/synth/area17/expected-notes.txt",
+      "drift_report": "reports/synthesis/s21-area17-drift.json",
+      "waivers": [
+        "drift::concept=content-family artifact: the examples dimension tracks the sources' code-fence density. First-third sources (2014-2020 attention/alignment papers, 29,241 words) carry 15 labeled fences across 18 notes; last-third sources (2023-2026 hybrid/reasoning papers, 33,000 words) carry 8 across 18 \u2014 a 2.1x source-side drop (marker density is identical at 1.33/1k words both groups). Every note preserves its source's profile: the 0-score notes (BERT, DeiT v2, Based) have 0-marker 0-fence sources, and the audit is valid=true 0 findings over 2,304 KUs / 2,828 markers with 0 dimensions below band. Re-check corpus-wide at the final verification pass."
+      ],
+      "report": "/home/z/my-project/repo/reports/synthesis/s21-area17-gate.json"
+    },
+    "utc_timestamp": "2026-11-05T22:48:53+00:00",
+    "git_commit": "9ddf5f2"
+  }
+}

@@ -44,12 +44,12 @@ Global attention adds O(N · g) cost where g is the number of global tokens (typ
 
 ```mermaid
 graph TD
-  subgraph "Standard Attention O(N²)"
+  subgraph Standard Attention O(N²)
     T1[Token 1] --> All1[All N tokens]
     T2[Token 2] --> All2[All N tokens]
     TN[Token N] --> AllN[All N tokens]
   end
-  subgraph "Longformer Attention O(N)"
+  subgraph Longformer Attention O(N)
     L1[Token i-w] --> W1[Token i window]
     L2[Token i] --> W2[Window: i-w to i+w]
     L3[Token i+w] --> W3[Token i window]

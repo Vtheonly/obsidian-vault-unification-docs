@@ -75,7 +75,10 @@ The result: the logit lens works (you can see predictions forming), but the inte
 
 The tuned lens (Belrose et al., 2023) adds a learned affine transformation $T_l$ per layer:
 
-$$\text{logits}_l = W_U \cdot (T_l(h_l)) = W_U \cdot (A_l \cdot h_l + b_l)$$
+```text
+logits_l = W_U · (T_l(h_l))
+         = W_U · (A_l · h_l + b_l)
+```
 
 where $A_l$ (shape `(d, d)`) and $b_l$ (shape `(d,)`) are learned per layer. The transformation "tunes" the intermediate hidden state to be more compatible with the unembedding matrix.
 

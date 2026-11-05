@@ -64,7 +64,9 @@ The function takes:
 
 #### Math
 
-$$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}(Q K^T / \sqrt{d_k}) V$$
+```text
+Attention(Q, K, V) = softmax(Q K^T / sqrt(d_k)) V
+```
 
 #### Solution
 
@@ -348,9 +350,10 @@ Positional-encoding questions test whether you understand how Transformers injec
 
 For position $m$ and dimension pair $(2i, 2i+1)$:
 
-$$q'_{2i} = q_{2i} \cos(m \theta_i) - q_{2i+1} \sin(m \theta_i)$$
-
-$$q'_{2i+1} = q_{2i} \sin(m \theta_i) + q_{2i+1} \cos(m \theta_i)$$
+```text
+q'_2i   = q_2i * cos(m * θ_i) - q_2i+1 * sin(m * θ_i)
+q'_2i+1 = q_2i * sin(m * θ_i) + q_2i+1 * cos(m * θ_i)
+```
 
 where $\theta_i = 10000^{-2i/d}$.
 

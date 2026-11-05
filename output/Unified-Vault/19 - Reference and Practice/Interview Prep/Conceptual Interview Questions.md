@@ -166,7 +166,7 @@ RLVR (Reinforcement Learning with Verifiable Rewards) beats PRM (Process Reward 
 See [[Reasoning Models]].
 
 **Why are reasoning models 10–100× more expensive than standard LLMs?**
-Because they generate 10–50K thinking tokens per query. At $60/1M output tokens (o1), 30K CoT = $1.80 per query just for thinking. Standard LLMs generate 500–1000 output tokens. The cost ratio is (30K / 1K) × (output_token_price_ratio) ≈ 30–100×. Mitigations: spec decoding (4–6× cost reduction), distillation (10× cost reduction), adaptive thinking (5–10× cost reduction for mixed workloads). See [[Reasoning Models]].
+Because they generate 10-50K thinking tokens per query. At $60/1M output tokens (o1), 30K CoT = $1.80 per query just for thinking. Standard LLMs generate 500-1000 output tokens. The cost ratio is (30K / 1K) × (output_token_price_ratio) ≈ 30–100×. Mitigations: spec decoding (4–6× cost reduction), distillation (10× cost reduction), adaptive thinking (5–10× cost reduction for mixed workloads). See [[Reasoning Models]].
 
 **How do you serve a reasoning model cost-effectively?**
 Three techniques. (1) **Speculative decoding** (EAGLE-3): the model's CoT is highly predictable (it's repetitive, structured). EAGLE-3 spec decoding gives 4–6× speedup on R1-style models. (2) **Adaptive thinking**: route easy queries to a non-reasoning model; only use the reasoning model for hard queries. Saves 5–10× cost. (3) **Distillation**: distill the reasoning model into a smaller student (DeepSeek's R1-Distill series). The student inherits ~85% of the reasoning capability at 10× lower cost. See [[EAGLE-3]] and [[Build a Model Distillation Pipeline]].

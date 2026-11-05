@@ -185,6 +185,7 @@ Reading the original paper is the fastest way to understand what RAG is and why 
 ## See also
 
 - [[Papers MOC]] — the area hub for paper notes.
+- The source's See-also also self-references this paper — `35 - RAG 2020 — this paper (cross-link)` — a cross-link marker this note fulfills.
 - [[RAG Pipeline Overview]] — the modern RAG architecture this paper seeded.
 - [[Advanced RAG Patterns]] — Self-RAG, FLARE, GraphRAG, and other iterative successors.
 - [[Chunking, Hybrid Search, and Reranking]] — modern retrieval techniques.

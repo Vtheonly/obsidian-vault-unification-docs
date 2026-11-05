@@ -139,7 +139,7 @@ LoRA is arguably the most consequential PEFT method ever published:
 3. **Custom models as a service**. Together with quantization, LoRA made it possible to serve thousands of custom fine-tunes from one base model — the foundation of businesses like Together, Anyscale, and Replicate's model-hosting offerings.
 4. **Diffusion models**. The same technique was adopted for fine-tuning Stable Diffusion, where LoRA adapters are now the standard way to add characters, styles, or concepts to a base model.
 
-The community fine-tunes ecosystem of Stable Diffusion — where users trade LoRA files for specific art styles, characters, and concepts — is the most visible consumer-facing application of the technique. See [[Score-Based and Latent Diffusion]] for the underlying diffusion-model family.
+The community fine-tunes ecosystem of Stable Diffusion — where users trade LoRA files for specific art styles, characters, and concepts — is the most visible consumer-facing application of the technique (the source writes this as 'communityfine-tunes'). See [[Score-Based and Latent Diffusion]] for the underlying diffusion-model family.
 
 ## Further reading
 

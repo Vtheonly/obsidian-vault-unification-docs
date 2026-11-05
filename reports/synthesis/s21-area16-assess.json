@@ -32861,9 +32861,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.740220588235294,
+            "score": 0.7399872549019607,
             "evidence": [
-              "2025 words (band 80..1500, target 350)",
+              "2027 words (band 80..1500, target 350)",
               "68 paragraphs, 23 with >=3 sentences (ratio 0.34)",
               "118 sentences"
             ],
@@ -32924,7 +32924,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.895049019607843,
+        "overall": 0.8949971677559911,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 3,
@@ -33360,11 +33360,11 @@
             "weight": 0.05
           },
           "depth": {
-            "score": 0.6612619047619047,
+            "score": 0.6540285714285713,
             "evidence": [
-              "2730 words (band 100..1500, target 400)",
+              "2792 words (band 100..1500, target 400)",
               "63 paragraphs, 22 with >=3 sentences (ratio 0.35)",
-              "124 sentences"
+              "125 sentences"
             ],
             "band": "within_band",
             "weight": 0.1
@@ -33423,7 +33423,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9327644110275689,
+        "overall": 0.932003007518797,
         "overall_measured_weight": 0.9500000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 0,
@@ -35160,9 +35160,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.6315519607843137,
+            "score": 0.6314352941176471,
             "evidence": [
-              "2843 words (band 80..1500, target 350)",
+              "2844 words (band 80..1500, target 350)",
               "85 paragraphs, 25 with >=3 sentences (ratio 0.29)",
               "159 sentences"
             ],
@@ -35223,7 +35223,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.8820115468409586,
+        "overall": 0.8819856209150326,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 3,
@@ -35558,9 +35558,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.5743095709570957,
+            "score": 0.5744262376237623,
             "evidence": [
-              "3112 words (band 80..1500, target 350)",
+              "3111 words (band 80..1500, target 350)",
               "101 paragraphs, 21 with >=3 sentences (ratio 0.21)",
               "130 sentences"
             ],
@@ -35621,7 +35621,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.8498465713237989,
+        "overall": 0.8498724972497249,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 6,
@@ -36454,9 +36454,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.5810974226804123,
+            "score": 0.581214089347079,
             "evidence": [
-              "3447 words (band 80..1500, target 350)",
+              "3446 words (band 80..1500, target 350)",
               "97 paragraphs, 35 with >=3 sentences (ratio 0.36)",
               "232 sentences"
             ],
@@ -36517,7 +36517,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.8902438717067582,
+        "overall": 0.8902697976326842,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 1,
@@ -36665,9 +36665,9 @@
             "weight": 0.2
           },
           "math_rigor": {
-            "score": 0.7,
+            "score": 0.2,
             "evidence": [
-              "1 display math blocks",
+              "0 display math blocks",
               "23 inline math",
               "0 derivation markers"
             ],
@@ -36678,7 +36678,7 @@
             "score": 1.0,
             "evidence": [
               "3 example markers",
-              "1 labeled code blocks"
+              "2 labeled code blocks"
             ],
             "band": "within_band",
             "weight": 0.1
@@ -36719,7 +36719,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9342857142857144,
+        "overall": 0.9104761904761905,
         "overall_measured_weight": 1.05,
         "lint_error_count": 0,
         "lint_defect_count": 4,
@@ -36755,9 +36755,9 @@
             "weight": 0.2
           },
           "depth": {
-            "score": 0.7093333333333334,
+            "score": 0.70735,
             "evidence": [
-              "2420 words (band 80..1500, target 350)",
+              "2437 words (band 80..1500, target 350)",
               "72 paragraphs, 28 with >=3 sentences (ratio 0.39)",
               "161 sentences"
             ],
@@ -36768,7 +36768,7 @@
             "score": 0.7,
             "evidence": [
               "4 display math blocks",
-              "35 inline math",
+              "37 inline math",
               "0 derivation markers"
             ],
             "band": "within_band",
@@ -36819,7 +36819,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9303492063492064,
+        "overall": 0.9299714285714286,
         "overall_measured_weight": 1.05,
         "lint_error_count": 0,
         "lint_defect_count": 0,
@@ -37260,7 +37260,7 @@
           "depth": {
             "score": 0.7999999999999999,
             "evidence": [
-              "891 words (band 80..1500, target 350)",
+              "911 words (band 80..1500, target 350)",
               "21 paragraphs, 7 with >=3 sentences (ratio 0.33)",
               "46 sentences"
             ],
@@ -38881,9 +38881,9 @@
             "weight": 0.2
           },
           "math_rigor": {
-            "score": 0.7,
+            "score": 0.2,
             "evidence": [
-              "1 display math blocks",
+              "0 display math blocks",
               "15 inline math",
               "0 derivation markers"
             ],
@@ -38894,7 +38894,7 @@
             "score": 1.0,
             "evidence": [
               "2 example markers",
-              "1 labeled code blocks"
+              "2 labeled code blocks"
             ],
             "band": "within_band",
             "weight": 0.1
@@ -38935,7 +38935,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9402332361516035,
+        "overall": 0.9164237123420796,
         "overall_measured_weight": 1.05,
         "lint_error_count": 0,
         "lint_defect_count": 1,
@@ -38982,9 +38982,9 @@
             "weight": 0.2
           },
           "math_rigor": {
-            "score": 0.7,
+            "score": 0.2,
             "evidence": [
-              "5 display math blocks",
+              "0 display math blocks",
               "20 inline math",
               "0 derivation markers"
             ],
@@ -38992,10 +38992,10 @@
             "weight": 0.05
           },
           "examples": {
-            "score": 0.0,
+            "score": 0.4,
             "evidence": [
               "0 example markers",
-              "0 labeled code blocks"
+              "4 labeled code blocks"
             ],
             "band": "within_band",
             "weight": 0.1
@@ -39036,7 +39036,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.8461412151067325,
+        "overall": 0.8604269293924467,
         "overall_measured_weight": 1.05,
         "lint_error_count": 0,
         "lint_defect_count": 2,
@@ -39681,9 +39681,9 @@
           "depth": {
             "score": 0.7805970149253731,
             "evidence": [
-              "1412 words (band 80..1500, target 350)",
+              "1436 words (band 80..1500, target 350)",
               "67 paragraphs, 18 with >=3 sentences (ratio 0.27)",
-              "100 sentences"
+              "101 sentences"
             ],
             "band": "within_band",
             "weight": 0.2
@@ -40089,9 +40089,9 @@
             "weight": 0.2
           },
           "math_rigor": {
-            "score": 1.0,
+            "score": 0.5,
             "evidence": [
-              "5 display math blocks",
+              "0 display math blocks",
               "11 inline math",
               "8 derivation markers"
             ],
@@ -40102,7 +40102,7 @@
             "score": 1.0,
             "evidence": [
               "3 example markers",
-              "2 labeled code blocks"
+              "7 labeled code blocks"
             ],
             "band": "within_band",
             "weight": 0.1
@@ -40142,7 +40142,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9459119496855345,
+        "overall": 0.9181341719077567,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 2,
@@ -40189,9 +40189,9 @@
             "weight": 0.2
           },
           "math_rigor": {
-            "score": 1.0,
+            "score": 0.5,
             "evidence": [
-              "2 display math blocks",
+              "0 display math blocks",
               "6 inline math",
               "2 derivation markers"
             ],
@@ -40202,7 +40202,7 @@
             "score": 1.0,
             "evidence": [
               "2 example markers",
-              "1 labeled code blocks"
+              "3 labeled code blocks"
             ],
             "band": "within_band",
             "weight": 0.1
@@ -40242,7 +40242,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9530604938271604,
+        "overall": 0.9252827160493826,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 2,
@@ -40489,9 +40489,9 @@
             "weight": 0.2
           },
           "math_rigor": {
-            "score": 0.85,
+            "score": 0.35,
             "evidence": [
-              "6 display math blocks",
+              "0 display math blocks",
               "1 inline math",
               "1 derivation markers"
             ],
@@ -40502,7 +40502,7 @@
             "score": 0.4,
             "evidence": [
               "0 example markers",
-              "1 labeled code blocks"
+              "4 labeled code blocks"
             ],
             "band": "within_band",
             "weight": 0.1
@@ -40542,7 +40542,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.8773809523809523,
+        "overall": 0.8496031746031745,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 2,
@@ -40689,9 +40689,9 @@
             "weight": 0.2
           },
           "math_rigor": {
-            "score": 0.85,
+            "score": 0.35,
             "evidence": [
-              "8 display math blocks",
+              "0 display math blocks",
               "15 inline math",
               "1 derivation markers"
             ],
@@ -40702,7 +40702,7 @@
             "score": 1.0,
             "evidence": [
               "1 example markers",
-              "1 labeled code blocks"
+              "7 labeled code blocks"
             ],
             "band": "within_band",
             "weight": 0.1
@@ -40742,7 +40742,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9457407407407405,
+        "overall": 0.9179629629629628,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 1,
@@ -40889,9 +40889,9 @@
             "weight": 0.2
           },
           "math_rigor": {
-            "score": 1.0,
+            "score": 0.5,
             "evidence": [
-              "1 display math blocks",
+              "0 display math blocks",
               "2 inline math",
               "2 derivation markers"
             ],
@@ -40902,7 +40902,7 @@
             "score": 1.0,
             "evidence": [
               "6 example markers",
-              "1 labeled code blocks"
+              "2 labeled code blocks"
             ],
             "band": "within_band",
             "weight": 0.1
@@ -40942,7 +40942,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.9239243386243386,
+        "overall": 0.8961465608465607,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 2,
@@ -40989,9 +40989,9 @@
             "weight": 0.2
           },
           "math_rigor": {
-            "score": 1.0,
+            "score": 0.5,
             "evidence": [
-              "8 display math blocks",
+              "0 display math blocks",
               "19 inline math",
               "5 derivation markers"
             ],
@@ -41002,7 +41002,7 @@
             "score": 1.0,
             "evidence": [
               "2 example markers",
-              "3 labeled code blocks"
+              "10 labeled code blocks"
             ],
             "band": "within_band",
             "weight": 0.1
@@ -41042,7 +41042,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.945679012345679,
+        "overall": 0.9179012345679011,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 1,
@@ -44276,7 +44276,7 @@
           "depth": {
             "score": 0.7941176470588235,
             "evidence": [
-              "1442 words (band 80..1500, target 350)",
+              "1448 words (band 80..1500, target 350)",
               "51 paragraphs, 16 with >=3 sentences (ratio 0.31)",
               "103 sentences"
             ],
@@ -44576,7 +44576,7 @@
           "depth": {
             "score": 0.823076923076923,
             "evidence": [
-              "1341 words (band 80..1500, target 350)",
+              "1353 words (band 80..1500, target 350)",
               "39 paragraphs, 16 with >=3 sentences (ratio 0.41)",
               "79 sentences"
             ],
@@ -45572,7 +45572,7 @@
           "depth": {
             "score": 0.7866666666666666,
             "evidence": [
-              "1735 words (band 200..2500, target 700)",
+              "1743 words (band 200..2500, target 700)",
               "45 paragraphs, 13 with >=3 sentences (ratio 0.29)",
               "122 sentences"
             ],
@@ -45590,12 +45590,12 @@
             "weight": 0.1
           },
           "examples": {
-            "score": 0.4,
+            "score": 1.0,
             "evidence": [
-              "0 example markers",
+              "1 example markers",
               "8 labeled code blocks"
             ],
-            "band": "below_band",
+            "band": "within_band",
             "weight": 0.2
           },
           "source_coverage": {
@@ -45633,7 +45633,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.7081481481481482,
+        "overall": 0.8414814814814815,
         "overall_measured_weight": 0.9000000000000001,
         "lint_error_count": 0,
         "lint_defect_count": 1,
@@ -48166,9 +48166,9 @@
             "weight": 0.1
           },
           "math_rigor": {
-            "score": 1.0,
+            "score": 0.5,
             "evidence": [
-              "3 display math blocks",
+              "0 display math blocks",
               "21 inline math",
               "9 derivation markers"
             ],
@@ -48179,7 +48179,7 @@
             "score": 1.0,
             "evidence": [
               "13 example markers",
-              "20 labeled code blocks"
+              "22 labeled code blocks"
             ],
             "band": "within_band",
             "weight": 0.1
@@ -48219,7 +48219,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.931702786377709,
+        "overall": 0.9022910216718267,
         "overall_measured_weight": 0.85,
         "lint_error_count": 0,
         "lint_defect_count": 0,
@@ -48453,11 +48453,11 @@
             "weight": 0.05
           },
           "depth": {
-            "score": 0.44219512195121946,
+            "score": 0.44174757281553395,
             "evidence": [
-              "6379 words (band 40..1200, target 180)",
-              "205 paragraphs, 63 with >=3 sentences (ratio 0.31)",
-              "409 sentences"
+              "6377 words (band 40..1200, target 180)",
+              "206 paragraphs, 63 with >=3 sentences (ratio 0.31)",
+              "410 sentences"
             ],
             "band": "within_band",
             "weight": 0.1
@@ -48516,7 +48516,7 @@
             "weight": 0.05
           }
         },
-        "overall": 0.8873170731707317,
+        "overall": 0.8872644203312394,
         "overall_measured_weight": 0.85,
         "lint_error_count": 0,
         "lint_defect_count": 0,
@@ -52573,7 +52573,7 @@
       "out": "/home/z/my-project/repo/scratch/synth/area16/gates/assessments-all.jsonl",
       "report": "/home/z/my-project/repo/reports/synthesis/s21-area16-assess.json"
     },
-    "utc_timestamp": "2026-11-05T22:06:14+00:00",
-    "git_commit": "4f5c6b9"
+    "utc_timestamp": "2026-11-05T22:44:36+00:00",
+    "git_commit": "9ddf5f2"
   }
 }

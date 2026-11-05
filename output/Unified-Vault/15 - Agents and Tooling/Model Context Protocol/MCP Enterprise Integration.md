@@ -216,7 +216,7 @@ Enterprises don't want to rely on public marketplaces for security reasons. The 
 
 ### Cost allocation and chargeback
 
-For enterprises running MCP at scale, cost attribution matters. The gateway tags every tool call with `user_id`, `tenant_id`, and `team_id` (from SSO groups), a `cost_usd` estimate based on the LLM tokens consumed by the call (if sampling was used) plus the underlying API cost, and a `project_id` declared by the user at session start. Chargeback reports allocate costs to teams monthly. This pattern is essential for cost-sensitive enterprises (banks, healthcare) where MCP usage can balloon if unmonitored.
+For enterprises running MCP at scale, cost attribution matters. The gateway tags every tool call with `user_id`, `tenant_id`, and `team_id` (from SSO groups), a `cost_usd` estimate based on the LLM tokens consumed by the call (if sampling was used) plus the underlying API cost, and a `project_id` that is user-declared at session start. Chargeback reports allocate costs to teams monthly. This pattern is essential for cost-sensitive enterprises (banks, healthcare) where MCP usage can balloon if unmonitored.
 
 ## Reference architecture — enterprise MCP deployment
 

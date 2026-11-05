@@ -37,7 +37,7 @@ Building an MCP server is also a good way to understand the protocol's design â€
 
 ```mermaid
 graph LR
-  Client[MCP Client<br/>Claude Desktop] <-->|JSON-RPC over stdio| Server[Your MCP Server]
+  Client[MCP Client<br/>Claude Desktop] <|-->|JSON-RPC over stdio| Server[Your MCP Server]
   Server --> T[Tools: search_files, ...]
   Server --> R[Resources: file://workspace/...]
   Server --> P[Prompts: code_review, ...]

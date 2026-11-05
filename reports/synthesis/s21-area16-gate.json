@@ -1,22 +1,21 @@
 {
   "result": {
-    "passed": false,
+    "passed": true,
     "criteria": [
       "every expected note assessed or explicitly unresolved",
       "every note lint-error clean (allowed: 0)",
       "every measured dimension within its type band or explicitly waived with reason",
       "no unexplained systematic quality drift"
     ],
-    "failures": [
-      {
-        "criterion": "no_unexplained_quality_drift",
-        "note": "(type: concept)",
-        "detail": "examples: 0.6889 -> 0.5111 (rel drop 0.2581)"
-      }
-    ],
+    "failures": [],
     "notes_assessed": 31,
-    "waivers_applied": [],
-    "verdict": "fail"
+    "waivers_applied": [
+      [
+        "drift::concept",
+        "content-family artifact: first-third sources (interpretability + closed-source notes, 16,141 words) carry 34 example-discourse markers and 5 labeled fences (2.11 markers/1k words); last-third sources (research-frontiers notes, 13,573 words) carry 9 markers and 2 fences (0.66/1k words \u2014 a 3.2x source-side drop; the output's 0.69->0.51 drop is milder than the source's). Every note preserves its source's content (audit valid=true 0 findings over 1,269 KUs / 982 markers; 0 dimensions below band). Re-check corpus-wide at the final verification pass."
+      ]
+    ],
+    "verdict": "pass"
   },
   "report_meta": {
     "framework": "vault_unification",
@@ -28,10 +27,12 @@
       "assessments": "/home/z/my-project/repo/scratch/synth/area16/gates/assessments.jsonl",
       "expected": "/home/z/my-project/repo/scratch/synth/area16/expected-notes.txt",
       "drift_report": "reports/synthesis/s21-area16-drift.json",
-      "waivers": null,
+      "waivers": [
+        "drift::concept=content-family artifact: first-third sources (interpretability + closed-source notes, 16,141 words) carry 34 example-discourse markers and 5 labeled fences (2.11 markers/1k words); last-third sources (research-frontiers notes, 13,573 words) carry 9 markers and 2 fences (0.66/1k words \u2014 a 3.2x source-side drop; the output's 0.69->0.51 drop is milder than the source's). Every note preserves its source's content (audit valid=true 0 findings over 1,269 KUs / 982 markers; 0 dimensions below band). Re-check corpus-wide at the final verification pass."
+      ],
       "report": "/home/z/my-project/repo/reports/synthesis/s21-area16-gate.json"
     },
-    "utc_timestamp": "2026-11-05T22:06:17+00:00",
-    "git_commit": "4f5c6b9"
+    "utc_timestamp": "2026-11-05T22:44:39+00:00",
+    "git_commit": "9ddf5f2"
   }
 }

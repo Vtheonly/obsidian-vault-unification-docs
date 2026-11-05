@@ -155,7 +155,7 @@ $$
 \mathbf{a} \approx \sum_i f_i(\mathbf{a}) \cdot \mathbf{d}_i
 $$
 
-where $\mathbf{a} \in \mathbb{R}^d$ is the activation, $f_i(\mathbf{a}) = \text{ReLU}(\mathbf{w}_i^T \mathbf{a} + b_i)$ is a sparse feature activation (most are 0), and $\mathbf{d}_i \in \mathbb{R}^d$ is a learned feature direction. Each feature tends to be monosemantic — it activates for one concept.
+where $\mathbf{a} \in \mathbb{R}^d$ is the activation, $f_i(\mathbf{a}) = \text{ReLU}(\mathbf{w}_i^T \mathbf{a} + b_i)$ is a sparse feature activation (most are 0), and $\mathbf{d}_i \in \mathbb{R}^d$ is a learned feature direction. The source's summary is plainer: $f_i$ are sparse (most are 0) and $\mathbf{d}_i$ are learned "feature directions." Each feature tends to be monosemantic — it activates for one concept.
 
 Training: minimize $\|\mathbf{a} - \text{decoder}(\text{encoder}(\mathbf{a}))\|^2 + \lambda \|\text{encoder}(\mathbf{a})\|_1$. The L1 penalty enforces sparsity.
 

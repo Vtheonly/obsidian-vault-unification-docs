@@ -321,7 +321,9 @@ graph TD
 
 #### Key decisions
 
-**Query routing**: classify queries by difficulty. Easy queries (factual lookups, simple Q&A) go to a fast, cheap model: Llama-3.1-8B, ~5s, $0.001. Hard queries (math, code, multi-step reasoning) go to the reasoning model: ~60–300s, $0.10–$0.60. Routing runs via a small classifier or the 8B model itself with a "can you answer this in 5 seconds?" prompt. This is critical: sending every query to the reasoning model would cost $0.30 average (10× the budget). Routing 70% to the fast model and 30% to the reasoning model brings average cost to $0.10.
+**Query routing**: classify queries by difficulty. Easy queries (factual lookups, simple Q&A) go to a fast, cheap model (Llama-3.1-8B, ~5s, $0.001). Hard queries (math, code, multi-step reasoning) go to the reasoning model (~60-300s, $0.10-$0.60). Routing runs via a small classifier or the 8B model itself with a "can you answer this in 5 seconds?" prompt.
+
+This is critical: sending every query to the reasoning model would cost $0.30 average (10× the budget). Routing 70% to the fast model and 30% to the reasoning model brings average cost to $0.10.
 
 **Streaming with progress indicators**: the reasoning model's chain-of-thought is streamed via SSE (Server-Sent Events). Don't show the raw CoT (it's verbose and confusing to users); instead, show progress indicators like "Thinking... 30s elapsed, 2K tokens of reasoning". When the final answer is ready, stream it normally.
 
@@ -352,7 +354,7 @@ For 50K queries/day: $4,500/day = $135K/month. Significant but feasible.
 
 - **1K users/day**: single vLLM instance with 4 GPUs. $5K/month.
 - **10K users/day**: 4 vLLM instances with autoscaling. $135K/month.
-- **100K users/day**: dedicated GPU cluster (32+ GPUs), model distillation (train a smaller model to mimic the reasoning model's outputs on common query types). $500K–$1M/month.
+- **100K users/day**: dedicated GPU cluster (32+ GPUs), model distillation (train a smaller model to mimic the reasoning model's outputs on common query types). $500K-$1M/month.
 - **1M users/day**: requires distillation or a custom-trained smaller reasoning model. The full reasoning model is too expensive at this scale; you need a distilled version that's 10× cheaper with similar quality on common queries — see [[Build a Model Distillation Pipeline]] and [[Test-Time Compute Scaling]].
 
 #### Interview tips
@@ -406,9 +408,9 @@ graph TD
 
 #### Key decisions
 
-**Modality routing**: classify documents by complexity. Simple documents (receipts, IDs, single-field forms) go to OCR + regex extraction (~$0.001/page, 1s); complex documents (contracts, multi-column tables, handwritten notes) go to the VLM (~$0.05/page, 5–30s). Routing runs via a small classifier on the first page image. This is critical: sending every document to the VLM would cost $0.05 × 20K × avg 50 pages = $50K/day. Routing 70% to OCR and 30% to VLM brings cost to $5K/day.
+**Modality routing**: classify documents by complexity. Simple documents (receipts, IDs, single-field forms) go to OCR + regex extraction (~$0.001/page, 1s). Complex documents (contracts, multi-column tables, handwritten notes) go to the VLM (~$0.05/page, 5-30s). Routing runs via a small classifier on the first page image. This is critical: sending every document to the VLM would cost $0.05 × 20K × avg_50_pages = $50K/day. Routing 70% to OCR and 30% to VLM brings cost to $5K/day.
 
-**Self-hosted VLM**: documents contain PII, so GPT-4V is off the table. Self-host LLaVA-NeXT (or Qwen-VL) on enterprise GPUs. This also gives better cost control ($0.01–0.02/page at scale vs. $0.05 for GPT-4V).
+**Self-hosted VLM**: documents contain PII, so GPT-4V is off the table. Self-host LLaVA-NeXT (or Qwen-VL) on enterprise GPUs. This also gives better cost control ($0.01-0.02/page at scale vs. $0.05 for GPT-4V).
 
 **Document chunking**: for long documents (50+ pages), don't feed the whole thing to the VLM at once (context window limits + cost). Chunk by page or section, process each chunk, then aggregate. Use a text LLM for aggregation (cheaper than VLM).
 
@@ -438,8 +440,8 @@ For 20K documents × avg 10 pages = 200K pages/day: $3,200/day = $96K/month. Fea
 
 - **1K documents/day**: single VLM instance with 2 GPUs. $5K/month.
 - **20K documents/day**: 4 VLM instances with autoscaling. $96K/month.
-- **100K documents/day**: dedicated GPU cluster (16+ GPUs), model fine-tuning (fine-tune LLaVA on your specific document types for better accuracy and lower cost). $300K–$500K/month.
-- **1M documents/day**: requires distillation (train a smaller VLM to mimic the large one on common document types) or specialized models (e.g., LayoutLM for forms). $1M–$3M/month.
+- **100K documents/day**: dedicated GPU cluster (16+ GPUs), model fine-tuning (fine-tune LLaVA on your specific document types for better accuracy and lower cost). $300K-$500K/month.
+- **1M documents/day**: requires distillation (train a smaller VLM to mimic the large one on common document types) or specialized models (e.g., LayoutLM for forms). $1M-$3M/month.
 
 #### Interview tips
 
@@ -548,7 +550,7 @@ For 1K runs/day: $70/day = $2,100/month. Very feasible.
 - **50 agents, 1K runs/day**: single server with Docker, 2 GPUs for LLM serving. $5K/month.
 - **500 agents, 10K runs/day**: Kubernetes cluster with autoscaling, 8 GPUs. $50K/month.
 - **5K agents, 100K runs/day**: dedicated cluster (32+ GPUs), multi-region for HA. $500K/month.
-- **50K agents, 1M runs/day**: requires significant infrastructure (100+ GPUs), custom tool gateway, advanced caching. $3M–$5M/month.
+- **50K agents, 1M runs/day**: requires significant infrastructure (100+ GPUs), custom tool gateway, advanced caching. $3M-$5M/month.
 
 #### Interview tips
 
@@ -655,7 +657,7 @@ For 50 tasks/day: $50/day = $1,500/month. Very feasible.
 - **50 tasks/day**: single server, 2 GPUs. $5K/month.
 - **500 tasks/day**: Kubernetes cluster, 8 GPUs. $15K/month.
 - **5K tasks/day**: dedicated cluster (32+ GPUs), model fine-tuning (fine-tune the coder agent on your codebase for better quality and lower cost). $100K/month.
-- **50K tasks/day**: requires significant infrastructure, model distillation, and specialized agents. $500K–$1M/month.
+- **50K tasks/day**: requires significant infrastructure, model distillation, and specialized agents. $500K-$1M/month.
 
 #### Interview tips
 

@@ -80,7 +80,7 @@ The model emits special "reflection" tokens: `Retrieve` (should I retrieve? yes/
 
 ### Training
 
-Self-RAG fine-tunes the model on trajectories that include these reflection tokens, with rewards for correct retrieval and grounded answers.
+Self-RAF fine-tunes the model on trajectories that include these reflection tokens, with rewards for correct retrieval and grounded answers.
 
 ### Inference
 

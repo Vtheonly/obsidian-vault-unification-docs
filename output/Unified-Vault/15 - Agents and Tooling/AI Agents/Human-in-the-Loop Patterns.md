@@ -168,7 +168,7 @@ Binary approve/reject is limiting. Often the human wants to modify the action ("
 
 ### Set timeouts on pauses
 
-A pause that waits forever is a stuck agent. Set timeouts: a short timeout (5 minutes) rejects automatically and tells the user; a long timeout (24 hours) terminates the agent and reschedules. The right timeout depends on the use case — real-time chat needs short timeouts; batch processing can wait longer.
+A pause that waits forever is a stuck agent. Set timeouts: a short timeout (5 minutes) rejects automatically and tells the user; a long timeout (24 hours) terminates the agent and triggers a reschedule. The right timeout depends on the use case — real-time chat needs short timeouts; batch processing can wait longer.
 
 ### Audit all HiTL decisions
 

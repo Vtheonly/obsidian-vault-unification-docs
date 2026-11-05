@@ -43,11 +43,15 @@ A bidirectional RNN (typically BiLSTM or BiGRU — see [[LSTM]] and [[GRU]]) rea
 
 At decoding step `t`, given the previous decoder hidden state $s_{t-1}$ and the previous predicted token $y_{t-1}$, the model computes an **alignment score** for each encoder position `j`:
 
-$$e_{t,j} = a(s_{t-1}, h_j)$$
+```text
+e_{t,j} = a(s_{t-1}, h_j)
+```
 
 where `a` is a small feed-forward network with a single hidden layer:
 
-$$a(s_{t-1}, h_j) = v_a^T \cdot \tanh(W_a \cdot s_{t-1} + U_a \cdot h_j)$$
+```text
+a(s_{t-1}, h_j) = v_a^T · tanh(W_a · s_{t-1} + U_a · h_j)
+```
 
 Here $v_a$, $W_a$, $U_a$ are learned parameters. This is called **additive attention** (or *concat attention*) because the two vectors are projected into a shared space and combined additively before the nonlinearity.
 
@@ -55,7 +59,9 @@ Here $v_a$, $W_a$, $U_a$ are learned parameters. This is called **additive atten
 
 The scores are normalized with a softmax over all source positions:
 
-$$\alpha_{t,j} = softmax_j(e_{t,j}) = exp(e_{t,j}) / \sum_k exp(e_{t,k})$$
+```text
+α_{t,j} = softmax_j(e_{t,j}) = exp(e_{t,j}) / Σ_k exp(e_{t,k})
+```
 
 These $\alpha$ values are the attention weights — they sum to 1 and indicate how much the decoder "attends to" each source position at step `t`.
 
@@ -63,7 +69,9 @@ These $\alpha$ values are the attention weights — they sum to 1 and indicate h
 
 A position-dependent context vector is computed:
 
-$$c_t = \sum_j \alpha_{t,j} \cdot h_j$$
+```text
+c_t = Σ_j α_{t,j} · h_j
+```
 
 This is a weighted sum of encoder annotations, with weights chosen by the alignment model. The decoder now conditions on $c_t$ instead of a fixed `c`.
 
@@ -102,15 +110,17 @@ The qualitative alignment visualizations were equally important. The paper showe
 
 The full decoder probability is:
 
-$$p(y_t | y_{<t}, x) = softmax(g(s_t, y_{t-1}, c_t))$$
+```text
+p(y_t | y_<t, x) = softmax(g(s_t, y_{t-1}, c_t))
+```
 
 where:
 
-$$s_t = RNN(s_{t-1}, [y_{t-1}; c_t])$$
-
-$$c_t = \sum_j \alpha_{t,j} h_j$$
-
-$$\alpha_{t,j} = softmax_j(a(s_{t-1}, h_j))$$
+```text
+s_t = RNN(s_{t-1}, [y_{t-1}; c_t])
+c_t = Σ_j α_{t,j} h_j
+α_{t,j} = softmax_j(a(s_{t-1}, h_j))
+```
 
 Training is end-to-end by maximizing the log-likelihood of the training corpus. The alignment model `a` is trained jointly with the encoder and decoder — no separate alignment supervision is required.
 

@@ -47,11 +47,11 @@ Same residual + LayerNorm wrapping.
 
 Instead of one attention operation with `d_model`-dimensional vectors, the model runs `h=8` attention "heads" in parallel, each with `d_k = d_v = d_model / h = 64` dimensions. The outputs are concatenated and linearly projected back to `d_model`:
 
-$$\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h) W^O$$
-
-$$\text{head}_i = \text{Attention}(Q W_i^Q, K W_i^K, V W_i^V)$$
-
-$$\text{Attention}(Q, K, V) = \text{softmax}(Q K^T / \sqrt{d_k}) V$$
+```text
+MultiHead(Q, K, V) = Concat(head_1, ..., head_h) W^O
+head_i = Attention(Q W_i^Q, K W_i^K, V W_i^V)
+Attention(Q, K, V) = softmax(Q K^T / sqrt(d_k)) V
+```
 
 Multi-head attention lets the model attend to different relations simultaneously — one head might track syntactic dependencies, another coreference, another lexical similarity. See [[Multi-Head Attention]].
 
@@ -59,7 +59,9 @@ Multi-head attention lets the model attend to different relations simultaneously
 
 The scoring function is the dot product, scaled by $1/\sqrt{d_k}$:
 
-$$\text{Attention}(Q, K, V) = \text{softmax}(Q K^T / \sqrt{d_k}) V$$
+```text
+Attention(Q, K, V) = softmax(Q K^T / sqrt(d_k)) V
+```
 
 The scaling prevents the dot products from growing large in high dimensions, which would push softmax into regions with vanishing gradients. See [[Scaled Dot-Product Attention]] and [[Self-Attention]] for the full derivation.
 
@@ -67,9 +69,10 @@ The scaling prevents the dot products from growing large in high dimensions, whi
 
 Because attention is permutation-invariant, the model needs explicit position information. The paper uses **sinusoidal** encodings of dimension `d_model`:
 
-$$PE(pos, 2i) = \sin(pos / 10000^{2i/d_{model}})$$
-
-$$PE(pos, 2i+1) = \cos(pos / 10000^{2i/d_{model}})$$
+```text
+PE(pos, 2i)   = sin(pos / 10000^{2i/d_model})
+PE(pos, 2i+1) = cos(pos / 10000^{2i/d_model})
+```
 
 Different frequencies across dimensions let the model attend to relative positions via linear combinations. See [[Sinusoidal and Learned Positional Encodings]] — modern LLMs typically use [[RoPE]] instead.
 

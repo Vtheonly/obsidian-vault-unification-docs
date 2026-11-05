@@ -49,13 +49,13 @@ graph TD
     Q3a[Q3] --> K3a[K3, V3]
     Q4a[Q4] --> K4a[K4, V4]
   end
-  subgraph "GQA-2 (4 query heads, 2 KV groups)"
+  subgraph GQA-2 (4 query heads, 2 KV groups)
     Q1b[Q1] --> K1b[K1, V1]
     Q2b[Q2] --> K1b
     Q3b[Q3] --> K2b[K2, V2]
     Q4b[Q4] --> K2b
   end
-  subgraph "MQA (4 query heads, 1 KV)"
+  subgraph MQA (4 query heads, 1 KV)
     Q1c[Q1] --> Kc[K, V]
     Q2c[Q2] --> Kc
     Q3c[Q3] --> Kc

@@ -31,7 +31,9 @@ The community wanted a method that used the *same* preference data as RLHF but s
 
 InstructGPT optimizes:
 
-$$max_π E_{x ~ D, y ~ π(·|x)} [r(x, y)] - β · KL(π || π_ref)$$
+```text
+max_π E_{x ~ D, y ~ π(·|x)} [r(x, y)] - β · KL(π || π_ref)
+```
 
 where $r(x, y)$ is the reward model's score for response $y$ to prompt $x$, $π_ref$ is the reference (SFT) policy, and $β$ is the KL penalty coefficient. The KL term keeps the policy close to the reference, preventing reward hacking.
 
@@ -39,7 +41,9 @@ where $r(x, y)$ is the reward model's score for response $y$ to prompt $x$, $π_
 
 This is a standard KL-constrained reward maximization problem, and it has a closed-form solution:
 
-$$π*(y|x) = π_ref(y|x) · exp(r(x, y) / β) / Z(x)$$
+```text
+π*(y|x) = π_ref(y|x) · exp(r(x, y) / β) / Z(x)
+```
 
 where $Z(x) = Σ_y π_ref(y|x) · exp(r(x, y) / β)$ is a partition function (normalizing constant).
 
@@ -49,7 +53,9 @@ This says: the optimal policy is the reference policy reweighted by $exp(reward 
 
 Rearranging the closed-form solution to solve for the reward in terms of the policy:
 
-$$r(x, y) = β · log(π(y|x) / π_ref(y|x)) + β · log Z(x)$$
+```text
+r(x, y) = β · log(π(y|x) / π_ref(y|x)) + β · log Z(x)
+```
 
 This is the key insight: **the reward is implicit in the log-probability ratio between the policy and the reference**. You do not need a separate reward model — the policy *is* the reward model (in a sense).
 
@@ -57,11 +63,15 @@ This is the key insight: **the reward is implicit in the log-probability ratio b
 
 Substitute this expression for $r$ into the Bradley-Terry preference loss (the standard RM training loss):
 
-$$L_BT = -log σ(r(x, y_w) - r(x, y_l))$$
+```text
+L_BT = -log σ(r(x, y_w) - r(x, y_l))
+```
 
 After substitution, $log Z(x)$ cancels (it appears in both terms), and you get:
 
-$$L_DPO = -log σ( β · log(π(y_w|x) / π_ref(y_w|x)) - β · log(π(y_l|x) / π_ref(y_l|x)) )$$
+```text
+L_DPO = -log σ( β · log(π(y_w|x) / π_ref(y_w|x)) - β · log(π(y_l|x) / π_ref(y_l|x)) )
+```
 
 This is the DPO loss. It is a **binary classification loss on preference pairs**, where the model's "logit" is $β · (log π(y_w) - log π_ref(y_w)) - β · (log π(y_l) - log π_ref(y_l))$.
 

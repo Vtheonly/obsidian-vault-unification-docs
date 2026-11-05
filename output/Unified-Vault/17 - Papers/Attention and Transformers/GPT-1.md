@@ -45,7 +45,9 @@ The architecture is the standard Transformer decoder from [[Attention Is All You
 
 Train on a large unlabeled corpus using the causal language modeling objective:
 
-$$L_1(\theta) = \sum_{i} \log P(u_i | u_{i-k}, ..., u_{i-1}; \theta)$$
+```text
+L1(θ) = Σ_{i} log P(u_i | u_{i-k}, ..., u_{i-1}; θ)
+```
 
 where $u_i$ is the i-th token and $k$ is the context window size.
 

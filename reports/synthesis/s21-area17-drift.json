@@ -1,0 +1,131 @@
+{
+  "result": {
+    "standards_version": "1.0.0",
+    "thresholds": {
+      "rel_drop": 0.15,
+      "abs_drop": 0.1
+    },
+    "drifted_types": [
+      {
+        "type": "concept",
+        "notes": 55,
+        "first_third": [
+          "17 - Papers/Agents and RAG/RAG.md",
+          "17 - Papers/Attention and Transformers/Swin Transformer.md",
+          "17 - Papers/Agents and RAG/Reflexion.md",
+          "17 - Papers/Agents and RAG/Self-Refine.md",
+          "17 - Papers/Alignment and RLHF/Constitutional AI.md",
+          "17 - Papers/Alignment and RLHF/DPO.md",
+          "17 - Papers/Alignment and RLHF/InstructGPT.md",
+          "17 - Papers/Alignment and RLHF/Process Reward Models.md",
+          "17 - Papers/Alignment and RLHF/Verifiable Rewards vs PRMs.md",
+          "17 - Papers/Attention and Transformers/Attention Is All You Need.md",
+          "17 - Papers/Attention and Transformers/BERT.md",
+          "17 - Papers/Attention and Transformers/Bahdanau Attention.md",
+          "17 - Papers/Attention and Transformers/DeiT v2.md",
+          "17 - Papers/Attention and Transformers/GPT-1.md",
+          "17 - Papers/Attention and Transformers/Luong Attention.md",
+          "17 - Papers/Attention and Transformers/T5.md",
+          "17 - Papers/Attention and Transformers/Vision Transformer.md",
+          "17 - Papers/Efficiency/BigBird.md"
+        ],
+        "last_third": [
+          "17 - Papers/Multimodal/ColPali.md",
+          "17 - Papers/Multimodal/Flamingo.md",
+          "17 - Papers/Multimodal/Perceiver.md",
+          "17 - Papers/Multimodal/SigLIP-2.md",
+          "17 - Papers/Reasoning/DeepSeek-R1.md",
+          "17 - Papers/Reasoning/Graph of Thoughts.md",
+          "17 - Papers/Reasoning/Self-Consistency.md",
+          "17 - Papers/Reasoning/Tree of Thoughts.md",
+          "17 - Papers/Scaling and Training/LoRA.md",
+          "17 - Papers/Scaling and Training/Scaling Laws (Kaplan and Chinchilla).md",
+          "17 - Papers/State Space Models and Linear Attention/Based.md",
+          "17 - Papers/State Space Models and Linear Attention/H3.md",
+          "17 - Papers/State Space Models and Linear Attention/Jamba.md",
+          "17 - Papers/State Space Models and Linear Attention/Kimi Linear.md",
+          "17 - Papers/State Space Models and Linear Attention/Mamba-2.md",
+          "17 - Papers/State Space Models and Linear Attention/Mamba.md",
+          "17 - Papers/State Space Models and Linear Attention/MiniMax-01.md",
+          "17 - Papers/State Space Models and Linear Attention/Titans.md"
+        ],
+        "overall_first_third_mean": 0.9031,
+        "overall_last_third_mean": 0.8971,
+        "drifted_dimensions": [
+          {
+            "dimension": "examples",
+            "first_third_mean": 0.8111,
+            "last_third_mean": 0.6556,
+            "delta": -0.1556,
+            "relative_drop": 0.1918,
+            "first_notes": [
+              "17 - Papers/Agents and RAG/RAG.md",
+              "17 - Papers/Attention and Transformers/Swin Transformer.md",
+              "17 - Papers/Agents and RAG/Reflexion.md",
+              "17 - Papers/Agents and RAG/Self-Refine.md",
+              "17 - Papers/Alignment and RLHF/Constitutional AI.md",
+              "17 - Papers/Alignment and RLHF/DPO.md",
+              "17 - Papers/Alignment and RLHF/InstructGPT.md",
+              "17 - Papers/Alignment and RLHF/Process Reward Models.md",
+              "17 - Papers/Alignment and RLHF/Verifiable Rewards vs PRMs.md",
+              "17 - Papers/Attention and Transformers/Attention Is All You Need.md",
+              "17 - Papers/Attention and Transformers/BERT.md",
+              "17 - Papers/Attention and Transformers/Bahdanau Attention.md",
+              "17 - Papers/Attention and Transformers/DeiT v2.md",
+              "17 - Papers/Attention and Transformers/GPT-1.md",
+              "17 - Papers/Attention and Transformers/Luong Attention.md",
+              "17 - Papers/Attention and Transformers/T5.md",
+              "17 - Papers/Attention and Transformers/Vision Transformer.md",
+              "17 - Papers/Efficiency/BigBird.md"
+            ],
+            "last_notes": [
+              "17 - Papers/Multimodal/ColPali.md",
+              "17 - Papers/Multimodal/Flamingo.md",
+              "17 - Papers/Multimodal/Perceiver.md",
+              "17 - Papers/Multimodal/SigLIP-2.md",
+              "17 - Papers/Reasoning/DeepSeek-R1.md",
+              "17 - Papers/Reasoning/Graph of Thoughts.md",
+              "17 - Papers/Reasoning/Self-Consistency.md",
+              "17 - Papers/Reasoning/Tree of Thoughts.md",
+              "17 - Papers/Scaling and Training/LoRA.md",
+              "17 - Papers/Scaling and Training/Scaling Laws (Kaplan and Chinchilla).md",
+              "17 - Papers/State Space Models and Linear Attention/Based.md",
+              "17 - Papers/State Space Models and Linear Attention/H3.md",
+              "17 - Papers/State Space Models and Linear Attention/Jamba.md",
+              "17 - Papers/State Space Models and Linear Attention/Kimi Linear.md",
+              "17 - Papers/State Space Models and Linear Attention/Mamba-2.md",
+              "17 - Papers/State Space Models and Linear Attention/Mamba.md",
+              "17 - Papers/State Space Models and Linear Attention/MiniMax-01.md",
+              "17 - Papers/State Space Models and Linear Attention/Titans.md"
+            ]
+          }
+        ],
+        "verdict": "drift_detected"
+      }
+    ],
+    "clean_types": [
+      {
+        "type": "overview",
+        "notes": 1,
+        "verdict": "too_few_notes_to_compare"
+      }
+    ],
+    "verdict": "drift_detected",
+    "caveat": "tertile-mean comparison on deterministic dimensions; investigate flagged evidence, do not treat as final judgment"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-drift",
+    "args": {
+      "command": "quality-drift",
+      "assessments": "/home/z/my-project/repo/scratch/synth/area17/gates/assessments.jsonl",
+      "rel_drop": 0.15,
+      "abs_drop": 0.1,
+      "report": "/home/z/my-project/repo/reports/synthesis/s21-area17-drift.json"
+    },
+    "utc_timestamp": "2026-11-05T22:48:52+00:00",
+    "git_commit": "9ddf5f2"
+  }
+}

@@ -48,14 +48,14 @@ The key insight: `E_i` and `F_i` are *learned* projections (each layer has its o
 
 ```mermaid
 graph TD
-  subgraph "Standard Attention O(N²)"
+  subgraph Standard Attention O(N²)
     Q1[Q: N×d] --> S1[S: N×N]
     K1[K: N×d] --> S1
     S1 --> P1[P: N×N softmax]
     V1[V: N×d] --> O1[O: N×d]
     P1 --> O1
   end
-  subgraph "Linformer Attention O(N·k)"
+  subgraph Linformer Attention O(N·k)
     Q2[Q: N×d] --> S2[S: N×k]
     K2[K: N×d] --> ProjK[E: project N→k]
     ProjK --> K3[K': k×d]

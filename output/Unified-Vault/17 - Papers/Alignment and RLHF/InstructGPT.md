@@ -51,7 +51,9 @@ For each prompt, sample K responses (typically K=4 to 9) from the SFT model. Hav
 
 Train a reward model to predict which response a human would prefer. The RM is initialized from the SFT model (with the unembedding head replaced by a scalar output). The loss is the Bradley-Terry cross-entropy:
 
-$$\text{loss} = -\log \sigma(r(x, y_w) - r(x, y_l))$$
+```text
+loss = -log σ(r(x, y_w) - r(x, y_l))
+```
 
 where $r(x, y)$ is the RM's scalar reward for response $y$ to prompt $x$, and $y_w$, $y_l$ are the preferred and dispreferred responses.
 
@@ -67,7 +69,9 @@ Initialize the policy from the SFT model. For each prompt:
 
 A **KL penalty** term keeps the policy close to the SFT model, preventing reward hacking:
 
-$$\text{objective} = E[r(x, y)] - \beta \cdot KL(\pi \| \pi_{SFT})$$
+```text
+objective = E[r(x, y)] - β · KL(π || π_SFT)
+```
 
 The KL coefficient $\beta$ is typically 0.01–0.1. Without it, the policy exploits the RM (e.g., produces sycophantic or repetitive text that scores high but is useless).
 

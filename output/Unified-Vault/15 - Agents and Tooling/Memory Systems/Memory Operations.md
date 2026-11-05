@@ -56,7 +56,7 @@ Consolidation is typically run as a background job (every N turns, or nightly) r
 
 ### Decay
 
-Decay reduces the priority or confidence of memories over time. **Time-based decay** lowers confidence with age — a fact from 6 months ago has lower confidence than one from yesterday. **Access-based decay** deprioritizes memories that haven't been retrieved in a long time, similar to LRU cache eviction. **Reinforcement** works in the opposite direction: when a memory is retrieved and used, its confidence is boosted (it's clearly still relevant). A common functional form is **exponential decay**: `confidence *= 0.99^days_since_write` — smooth and gradual.
+Decay reduces the priority or confidence of memories over time. **Time-based decay** lowers confidence with age — a fact from 6 months ago has lower confidence than one from yesterday. **Access-based decay**: memories that haven't been retrieved in a long time are deprioritized, similar to LRU cache eviction. **Reinforcement** works in the opposite direction: when a memory is retrieved and used, its confidence is boosted (it's clearly still relevant). A common functional form is **exponential decay**: `confidence *= 0.99^days_since_write` — smooth and gradual.
 
 Decay does not delete memories — it just affects retrieval ranking. A decayed memory is still retrievable if explicitly searched for, but it ranks lower in semantic search.
 

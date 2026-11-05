@@ -152,7 +152,7 @@ The [[Gemini Architecture]], [[Claude Architecture]], [[GPT-4 Inferred Architect
 ### Production guidance for 2026
 
 - Up to 128K: standard attention + [[FlashAttention-2 and FlashAttention-3|FlashAttention-3]] (Llama 3.1, Qwen 2.5).
-- 128K–1M: YaRN-extended RoPE (Llama 3.1 extended, Qwen 2.5).
+- 128K-1M: YaRN-extended RoPE (Llama 3.1 extended, Qwen 2.5).
 - 1M+: Gemini 2.5 (proprietary), Ring Attention (research), or accept SSM hybrid limitations.
 
 ## Titans and neural memory

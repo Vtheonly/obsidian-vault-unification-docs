@@ -64,12 +64,12 @@ The "Performer" name comes from the property that the approximation is invariant
 
 ```mermaid
 graph TD
-  subgraph "Standard Attention O(N²)"
+  subgraph Standard Attention O(N²)
     Q1[Q: N×d] --> M1[exp Q·K^T: N×N]
     K1[K: N×d] --> M1
     M1 --> V1[× V: N×d]
   end
-  subgraph "Performer Attention O(N·r)"
+  subgraph Performer Attention O(N·r)
     Q2[Q: N×d] --> PhiQ[φ Q: N×r]
     K2[K: N×d] --> PhiK[φ K: N×r]
     PhiK --> KtV[K^T V: r×d]

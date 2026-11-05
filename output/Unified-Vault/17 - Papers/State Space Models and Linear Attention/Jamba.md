@@ -196,7 +196,7 @@ A: Jamba's KV cache is ~8× smaller than a pure Transformer's at the same contex
 - [[H3]], [[Based]] — the wider SSM and linear-attention family this note belongs to.
 - [[Mixture of Experts]] — the routing technique stacked on the hybrid backbone.
 - [[Decoder-Only Architecture]] — Jamba is decoder-only.
-- [[SSMs Mamba and Frontiers]] — the research-frontier overview of this model family.
+- [[SSMs Mamba and Frontiers]] — the chapter-24 overview of this model family.
 - [[Mamba-2 and Structured Attention]] — the SSM/attention unification that followed.
 - [[RWKV and RetNet]] — other hybrid and linear-time approaches.
 - [[14 - Inference and Production/Inference/vLLM|vLLM]] — serving tooling with maturing hybrid support.

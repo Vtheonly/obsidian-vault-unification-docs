@@ -304,7 +304,7 @@ These three techniques are **the** difference between a mediocre RAG system and 
 - **Forgetting to deduplicate** — same content in multiple chunks wastes context.
 - **Not tuning hybrid weights** — default 50/50 may not be optimal for your data.
 - **Wrong reranker for the domain** — a general reranker may underperform a domain-specific one.
-- **Reranking too many candidates** — reranking 1000 candidates is slow. Rerank top 100–150.
+- **Reranking too many candidates** — reranking 1000 candidates is slow. Rerank top 100-150.
 - **Not using metadata** — metadata enables filtering and better citation. Don't ignore it.
 - **Mixing embedding models** — query and doc must use the same embedding model. Don't mix.
 - **Stale indexes** — documents change but indexes don't get updated. Set up incremental indexing.
@@ -318,7 +318,7 @@ These three techniques are **the** difference between a mediocre RAG system and 
 
 **How does RRF work, and why use it over score fusion?** RRF combines rankings instead of scores: $\sum 1/(k + \text{rank})$. It's robust to scale differences between BM25 and vector scores, and doesn't require normalization. Production standard.
 
-**What chunk size should I use?** 200–500 tokens for most use cases. Too small loses context; too large loses specificity. Use overlap (50–100 tokens) to avoid splitting key info. Test empirically on your data.
+**What chunk size should I use?** 200-500 tokens for most use cases. Too small loses context; too large loses specificity. Use overlap (50–100 tokens) to avoid splitting key info. Test empirically on your data.
 
 **Why is chunking the #1 RAG quality lever?** Because the embedding encodes the whole chunk into one vector. If the chunk covers multiple topics, the vector averages over them, making it less specific. Bad chunking produces bad embeddings, which produce bad retrieval, which produces bad answers — regardless of the model.
 

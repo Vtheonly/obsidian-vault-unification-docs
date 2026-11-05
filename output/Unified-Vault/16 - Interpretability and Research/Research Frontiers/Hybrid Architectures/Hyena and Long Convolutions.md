@@ -21,7 +21,9 @@ Convolutions are a natural candidate — they're $O(N \cdot k)$ for kernel size 
 
 Hyena replaces attention with a sequence of operations:
 
-$$y = (x \cdot h_1) \cdot h_2 \cdot h_3 \cdot \ldots$$
+```text
+y = (x · h_1) · h_2 · h_3 · ...
+```
 
 where $\cdot$ is an element-wise (position-wise) multiplication and the $h_i$ are "filters" computed via two steps: a small neural network (an MLP) generates the filter coefficients, and the filter is applied as a long convolution via FFT.
 

@@ -216,7 +216,7 @@ A: The 6ND rule: training a model with $N$ parameters on $D$ tokens requires ~$6
 ## See also
 
 - [[Papers MOC]] — the papers hub for this note.
-- [[Pretraining Objectives and Scaling Laws]] — the training-side deep dive.
+- [[Pretraining Objectives and Scaling Laws]] — the chapter-11 deep dive.
 - [[GPT-3]] — the undertrained model Chinchilla corrected.
 - [[LLaMA]] — the family that adopted the Chinchilla recipe and then overtrained it.
 - [[Mistral 7B]] — a heavily overtrained small model.

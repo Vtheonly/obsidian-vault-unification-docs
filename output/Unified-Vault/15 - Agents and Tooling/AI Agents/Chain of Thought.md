@@ -112,7 +112,7 @@ In 2024–2025, models like OpenAI o1/o3, DeepSeek-R1, and Claude "extended thin
 
 ## Why this matters
 
-CoT is the single most impactful prompting technique — almost every production LLM feature uses CoT in some form. The discovery of CoT (Wei et al. 2022) was a turning point: it showed that prompting alone could unlock new capabilities, leading to the prompt-engineering field. Reasoning models (o1, R1) are essentially CoT at training time — they learn to produce CoT chains as part of training, not just from prompting. And for agents, CoT is the foundation: every agent reasoning pattern (ReAct, ToT, GoT, reflection) builds on CoT.
+CoT is the single most impactful prompting technique — almost every production LLM feature uses CoT in some form. The discovery of CoT (Wei et al. 2022) was a turning point: it showed that prompting alone could unlock new capabilities, leading to the prompting-engineering field. Reasoning models (o1, R1) are essentially CoT at training time — they learn to produce CoT chains as part of training, not just from prompting. And for agents, CoT is the foundation: every agent reasoning pattern (ReAct, ToT, GoT, reflection) builds on CoT.
 
 ## Production implications
 

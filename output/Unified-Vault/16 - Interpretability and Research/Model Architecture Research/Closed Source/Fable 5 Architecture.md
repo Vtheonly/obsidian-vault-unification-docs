@@ -66,9 +66,9 @@ Two editorial rules govern a note like this one: never fabricate, and never dest
 
 1. **Document the gap** — knowing that "Fable 5" was listed but unverifiable is itself useful state.
 2. **Not invent architectural details** to fill the gap.
-3. **Provide a verification target** so future work knows what to look for.
+3. **Provide a verification target** so future work knows what to look for: future iterations should re-check the Research Queue entry for "Fable 5" and update this note when a public source appears.
 
-Every claim carries an explicit evidence-status label, per the source-labelling convention used across these architecture notes. The note is therefore mostly a research-queue entry dressed as a stub note: when verifiable sources emerge, it will be expanded with the same depth as the other per-model architecture notes — the inference-based treatments of [[GPT-4 Inferred Architecture]] and [[Claude Architecture]] for closed models, and [[DeepSeek Architecture]] as the 2026 reference open-weights frontier.
+Every claim carries an explicit evidence-status label, per the source-labelling convention used across these architecture notes. The note is therefore mostly a research-queue entry dressed as a stub note: when verifiable sources emerge, it will be expanded with the same depth as the other chapter-10 architecture notes — the inference-based treatments of [[GPT-4 Inferred Architecture]] and [[Claude Architecture]] for closed models, and [[DeepSeek Architecture]] as the 2026 reference open-weights frontier.
 
 ## See also
 

@@ -17,17 +17,22 @@ RWKV was introduced in *RWKV: Reinventing RNNs for the Transformer Era* (Peng, B
 
 The key idea is to recast attention as a recurrence. Standard attention is:
 
-$$y_t = \sum_j \text{softmax}(q_t \cdot k_j) \cdot v_j$$
+```text
+y_t = Σ_j softmax(q_t · k_j) · v_j
+```
 
 RWKV replaces the softmax with a linear (exponential) weighting:
 
-$$y_t = \sum_j w_{t,j} \cdot k_j \cdot v_j$$
+```text
+y_t = Σ_j w_{t,j} · k_j · v_j
+```
 
 where $w_{t,j}$ is a decay factor that depends on the relative position $(t - j)$. This linearization allows the sum to be computed recurrently:
 
-$$h_t = a_t \cdot h_{t-1} + k_t \cdot v_t^T$$
-
-$$y_t = R_t \cdot h_t$$
+```text
+h_t = a_t · h_{t-1} + k_t · v_t^T    # state update (like an RNN)
+y_t = R_t · h_t                       # output
+```
 
 The first equation is the state update (like an RNN) and the second is the output. The state $h$ accumulates past K·V products, weighted by position-dependent decay. This is $O(1)$ per token at inference (just update the state and read the output), but it can be parallelized during training, with all positions computed simultaneously using the attention-like formulation. This "linear attention as RNN" framing places RWKV in the same family as [[Linear Attention]], with the recurrence made explicit.
 
@@ -62,7 +67,9 @@ RetNet was introduced in *Retentive Network: A Successor to Transformer for Larg
 
 RetNet introduces "retention" — a mechanism that retains information across positions with a decay factor:
 
-$$\text{Retention}(Q, K, V) = (Q \cdot D \cdot K^T) \cdot V$$
+```text
+Retention(Q, K, V) = (Q · D · K^T) · V
+```
 
 where $D$ is a decay matrix: $D_{i,j} = \gamma^{i-j}$ for $i \geq j$ (lower triangular), 0 otherwise. This is similar to RWKV's decay but formulated as a matrix operation.
 

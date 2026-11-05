@@ -225,7 +225,7 @@ A: SC is for tasks with a unique correct answer that can be reached by many path
 - [[Tree of Thoughts]] — the predecessor; GoT generalizes ToT.
 - [[Self-Consistency]] — the sampling-based alternative to graph search.
 - [[Chain of Thought]] — the foundation.
-- [[Tree of Thoughts and Self Consistency]] — the agent-side deep dive on this reasoning family.
+- [[Tree of Thoughts and Self Consistency]] — the chapter-15 deep dive on this reasoning family.
 - [[Reflection]] — GoT's refinement operation is a reflection loop.
 - [[Multi-Agent Architectures]] — multi-agent systems often have GoT-like graph structure.
 - [[LangGraph]] — where GoT-style merge/refine workflows get hand-coded in production.

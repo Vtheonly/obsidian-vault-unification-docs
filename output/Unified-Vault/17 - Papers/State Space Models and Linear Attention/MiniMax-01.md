@@ -215,12 +215,12 @@ A: Two things. (1) **Linear attention is production-viable at scale** — prior 
 - [[Kimi Linear]] — the successor pushing to 2M+ context.
 - [[Mamba]] — the SSM alternative to linear attention.
 - [[Mamba-2]], [[H3]], [[Based]] — the wider SSM and linear-attention family this note belongs to.
-- [[Linear Attention]] — the topical deep dive on linear attention.
+- [[Linear Attention]] — the chapter-06 deep dive on linear attention.
 - [[Performer]] — the earlier pure linear-attention model that underperformed on ICL and recall.
 - [[Mixture of Experts]] — the routing technique stacked on top of the hybrid backbone.
 - [[Long-Context Architectures]] — MiniMax-01 is a key example.
 - [[RWKV and RetNet]] — other linear-time approaches.
-- [[SSMs Mamba and Frontiers]] — the research-frontier overview of this model family.
+- [[SSMs Mamba and Frontiers]] — the chapter-24 overview of this model family.
 - [[RAG]] — long-document retrieval without chunking.
 - [[DeepSeek-R1]] — the stronger math-reasoning alternative referenced in use-case comparisons.
 - [[MiniMax 3 Architecture]] — later generations from the same lab.

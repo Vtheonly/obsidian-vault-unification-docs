@@ -26,19 +26,24 @@ The answer was yes — and the simplification turned out to be more than just a 
 
 Luong et al. proposed several scoring functions, of which the most influential is the **general** (dot-product) form:
 
-$$score(s_t, h_j) = s_t^T \cdot W_a \cdot h_j$$
+```text
+score(s_t, h_j) = s_t^T · W_a · h_j
+```
 
 or, with $W_a = I$ (the simplest variant, "dot" form):
 
-$$score(s_t, h_j) = s_t^T \cdot h_j$$
+```text
+score(s_t, h_j) = s_t^T · h_j
+```
 
 where $s_t$ is the decoder hidden state and $h_j$ is the encoder hidden state.
 
 The full attention mechanism is then:
 
-$$\alpha_{t,j} = softmax_j(score(s_t, h_j))$$
-
-$$c_t = \sum_j \alpha_{t,j} \cdot h_j$$
+```text
+α_{t,j} = softmax_j(score(s_t, h_j))
+c_t = Σ_j α_{t,j} · h_j
+```
 
 This is mathematically identical to Bahdanau attention except for the scoring function. The simplification removes the small feed-forward network and the `tanh` nonlinearity, replacing them with a single matrix multiplication.
 
@@ -48,25 +53,33 @@ The paper systematically compared four scoring functions.
 
 ### Dot product
 
-$$score(s_t, h_j) = s_t^T \cdot h_j$$
+```text
+score(s_t, h_j) = s_t^T · h_j
+```
 
 Simplest form. Requires $s_t$ and $h_j$ to have the same dimension. No parameters to learn.
 
 ### General
 
-$$score(s_t, h_j) = s_t^T \cdot W_a \cdot h_j$$
+```text
+score(s_t, h_j) = s_t^T · W_a · h_j
+```
 
 Adds a learned matrix $W_a$. Allows $s_t$ and $h_j$ to have different dimensions. The matrix learns to project the two vectors into a shared space where dot product is meaningful.
 
 ### Concat (Bahdanau-style)
 
-$$score(s_t, h_j) = v_a^T \cdot \tanh(W_a \cdot [s_t; h_j])$$
+```text
+score(s_t, h_j) = v_a^T · tanh(W_a · [s_t; h_j])
+```
 
 Bahdanau's original formulation. The paper included it for comparison.
 
 ### Location-aware (Location)
 
-$$score(s_t, h_j) = w_a^T \cdot \tanh(W_a \cdot s_t + U_a \cdot h_j + b_a)$$
+```text
+score(s_t, h_j) = w_a^T · tanh(W_a · s_t + U_a · h_j + b_a)
+```
 
 A hybrid that adds a learned bias $b_a$ to the Bahdanau formulation. Helps the model learn position-specific attention patterns (e.g., "attend to the previous token").
 

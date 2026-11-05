@@ -206,7 +206,7 @@ Most of a RAG system's quality comes from a handful of decisions: chunk size, em
 
 Chunks that are **too small** (50–100 tokens) lose context, and answers lack coherence: the model retrieves fragments without enough surrounding text to interpret them. Chunks that are **too large** (2000+ tokens) make each chunk cover too many topics, so retrieval precision drops — the embedding averages over too many concepts. The **sweet spot** is 200–500 tokens for most use cases, with overlap (50–100 tokens) to avoid splitting key information across chunk boundaries.
 
-Chunking should also match the document type: technical docs chunk by section (semantic chunking); legal docs chunk by paragraph (preserving argument structure); code chunks by function or class; and tables should be kept intact — never split rows.
+Chunking should also be document-type specific: technical docs chunk by section (semantic chunking); legal docs chunk by paragraph (preserving argument structure); code chunks by function or class; and tables should be kept intact — never split rows.
 
 ### Embedding model
 
@@ -318,13 +318,13 @@ A typical RAG query breaks down into four stages, each with its own cost and lat
 
 | Stage | Typical cost | Typical latency |
 |---|---|---|
-| Embed query | ~$0.0001 (1K tokens at OpenAI text-embedding-3 prices) | 50–100ms |
-| Vector search | ~$0.0001 (depends on DB and index size) | 20–50ms (HNSW index, sublinear) |
-| Reranking | ~$0.001 (cross-encoder on 20 chunks) | 100–300ms |
-| LLM generation | ~$0.01–0.05 (depending on context size and model) | 500–3000ms (depends on context and output length) |
-| **Total** | **~$0.011–0.051 per query** | **700–3500ms** |
+| Embed query | ~$0.0001 (1K tokens at OpenAI text-embedding-3 prices) | 50-100ms |
+| Vector search | ~$0.0001 (depends on DB and index size) | 20-50ms (HNSW index, sublinear) |
+| Reranking | ~$0.001 (cross-encoder on 20 chunks) | 100-300ms |
+| LLM generation | ~$0.01-0.05 (depending on context size and model) | 500-3000ms (depends on context and output length) |
+| **Total** | **~$0.011-0.051 per query** | **700-3500ms** |
 
-Both cost and latency are dominated by LLM generation. At 1M queries/month, ~$0.011–0.051 per query works out to roughly $11K–51K/month.
+Both cost and latency are dominated by LLM generation. At 1M queries/month, ~$0.011–0.051 per query works out to roughly $11K-51K/month.
 
 ### Latency optimization
 
@@ -373,7 +373,7 @@ Ingest: export all docs to markdown, using document-aware chunking (split by hea
 
 ### Phase 2: hybrid search and reranking (1 week)
 
-Add BM25: index chunks with BM25 (Elasticsearch, or PostgreSQL's `tsvector`). Switch to hybrid retrieval — vector + BM25, merged with RRF. Add a reranker: `bge-reranker-large` (open-source) or Cohere Rerank. Re-evaluate. Expected: ~75–80% faithfulness, ~80% hit rate. The reranker is the biggest win.
+Add BM25: index chunks with BM25 (Elasticsearch, or PostgreSQL's `tsvector`). Switch to hybrid retrieval — vector + BM25, merged with RRF. Add a reranker: `bge-reranker-large` (open-source) or Cohere Rerank. Re-evaluate. Expected: ~75-80% faithfulness, ~80% hit rate. The reranker is the biggest win.
 
 ### Phase 3: query rewriting and multi-tenancy (1 week)
 

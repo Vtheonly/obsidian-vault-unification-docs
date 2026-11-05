@@ -31,15 +31,15 @@
           "16 - Interpretability and Research/Research Frontiers/State Space Models/Mamba-2 and Structured Attention.md",
           "16 - Interpretability and Research/Research Frontiers/State Space Models/SSMs Mamba and Frontiers.md"
         ],
-        "overall_first_third_mean": 0.8833,
-        "overall_last_third_mean": 0.8724,
+        "overall_first_third_mean": 0.8806,
+        "overall_last_third_mean": 0.8713,
         "drifted_dimensions": [
           {
             "dimension": "examples",
             "first_third_mean": 0.6889,
-            "last_third_mean": 0.5111,
-            "delta": -0.1778,
-            "relative_drop": 0.2581,
+            "last_third_mean": 0.5556,
+            "delta": -0.1333,
+            "relative_drop": 0.1935,
             "first_notes": [
               "16 - Interpretability and Research/Interpretability/Activation Patching and Causal Tracing.md",
               "16 - Interpretability and Research/Interpretability/Logit Lens and Tuned Lens.md",
@@ -94,7 +94,7 @@
       "abs_drop": 0.1,
       "report": "/home/z/my-project/repo/reports/synthesis/s21-area16-drift.json"
     },
-    "utc_timestamp": "2026-11-05T22:06:15+00:00",
-    "git_commit": "4f5c6b9"
+    "utc_timestamp": "2026-11-05T22:44:38+00:00",
+    "git_commit": "9ddf5f2"
   }
 }
