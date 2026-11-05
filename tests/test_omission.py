@@ -363,6 +363,81 @@ def test_code_fingerprint_zero_indent_unchanged():
     assert _code_bodies(text) == ["01 - Prerequisites/\n    1. Derivatives"]
 
 
+# F-0033: bare/text fences quoting prose + markdown headings (orphaned
+# closers captured by the KU extractor) are the unlabelled QUOTATION
+# convention, not code fingerprints.
+
+
+def test_quotation_prose_with_heading_is_not_code_marker():
+    from vault_unification.omission import _code_bodies
+
+    text = (
+        "```\nWhen a client invokes the prompt, the server returns a message.\n\n"
+        "## Step 5: Package Configuration\n\nFor the server to be installable.\n```"
+    )
+    assert _code_bodies(text) == [], _code_bodies(text)
+
+
+def test_text_labelled_quotation_with_heading_is_not_code_marker():
+    from vault_unification.omission import _code_bodies
+
+    text = "```text\nIntro prose.\n\n### File 2: quoted.md\n\nMore prose.\n```"
+    assert _code_bodies(text) == []
+
+
+def test_labelled_code_with_heading_line_still_counts():
+    from vault_unification.omission import _code_bodies
+
+    # python fence containing a markdown-heading-generating f-string is REAL code
+    text = '```python\ndef report():\n    return f"## Method"\n```'
+    assert _code_bodies(text) == ['def report():\n    return f"## Method"']
+
+
+def test_pseudocode_single_hash_comments_still_count():
+    from vault_unification.omission import _code_bodies
+
+    # single-hash comment lines are code comments, never markdown headings
+    text = "```\n# For each token:\nrouter_scores = softmax(router(token))\n```"
+    assert _code_bodies(text) == ["# For each token:\nrouter_scores = softmax(router(token))"]
+
+
+def test_quotation_with_nested_fence_not_exempt():
+    from vault_unification.omission import _code_bodies
+
+    # a TILDE body carrying a heading AND a nested backtick fence is real
+    # nested-fence content (e.g. quoted code with markdown structure), not a
+    # simple prose quotation — it must remain a code fingerprint
+    text = "~~~\nSome prose.\n\n## Section\n\n```python\nx = 1\n```\n~~~"
+    bodies = _code_bodies(text)
+    assert bodies, "nested-fence body must remain a code fingerprint"
+    assert "```python" in bodies[0]
+
+
+# F-0034: tilde fences are extracted like backtick fences.
+
+
+def test_tilde_fences_are_code_markers():
+    from vault_unification.omission import _code_bodies
+
+    text = "~~~python\nx = 1\n~~~"
+    assert _code_bodies(text) == ["x = 1"]
+
+
+def test_tilde_fence_with_nested_backticks_extracted_whole():
+    from vault_unification.omission import _code_bodies
+
+    text = "~~~python\ntext = f\"\"\"See:\n\n```python\n{code}\n```\n\nDone.\"\"\"\n~~~"
+    bodies = _code_bodies(text)
+    assert bodies == ['text = f"""See:\n\n```python\n{code}\n```\n\nDone."""']
+
+
+def test_quotation_exemption_applies_to_tilde_fences_too():
+    from vault_unification.omission import _code_bodies
+
+    text = "~~~\nProse only.\n\n## A Heading\n\nMore prose.\n~~~"
+    assert _code_bodies(text) == []
+
+
 # F-0030: a LEADING YAML frontmatter block in a KU excerpt is source-note
 # provenance metadata (its own sources: wikilist), not knowledge — its tokens
 # (wikilink basenames like 'objectives.md') are not term markers.

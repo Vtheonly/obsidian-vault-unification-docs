@@ -539,6 +539,9 @@ _TOKEN_RE = re.compile(r"[A-Za-z0-9_][A-Za-z0-9_.\-]*")
 _FENCE_RE = re.compile(r"```[^\n]*\n.*?```", re.S)
 _FENCE_BODY_RE = re.compile(r"```[^\n]*\n(.*?)```", re.S)
 _FENCE_LANG_RE = re.compile(r"```([^\n]*)\n(.*?)```", re.S)
+_TILDE_FENCE_BODY_RE = re.compile(r"~~~[^\n]*\n(.*?)~~~", re.S)
+_TILDE_FENCE_FULL_RE = re.compile(r"~~~[^\n]*\n.*?~~~", re.S)
+_MD_HEADING_LINE_RE = re.compile(r"^#{2,6} \S", re.M)
 _DISPLAY_MATH_RE = re.compile(r"\$\$(.+?)\$\$", re.S)
 _INLINE_MATH_RE = re.compile(r"(?<!\$)\$([^$\n]+?)\$(?!\$)")
 _NUMBERED_HEADING_RE = re.compile(r"^(\d+(?:\.\d+)*)[.)]?\s+\S")
@@ -603,14 +606,43 @@ def _code_bodies(text: str) -> list[str]:
     block whose body is uniformly indented fails ``ast.parse``); the code is
     verbatim modulo that indentation, which the editorial contract already
     calls "verbatim (whitespace-insensitive)".
+
+    F-0033: a BARE or ``text``-labelled fence whose body carries a markdown
+    heading (two or more hashes) plus blank-line paragraph structure and no
+    nested fence is the source vaults' UNLABELLED QUOTATION convention (the
+    same role ```markdown fences play): an orphaned closer or a bare fence
+    around prose + a section heading is prose evidence, not code. Labelled
+    code fences (python/json/toml/…) are never exempt, real pseudocode's
+    single-hash ``#`` comment lines never trigger this, and bodies without
+    blank-line paragraph structure (e.g. scaffold fragments with code) stay
+    fingerprints. Corpus survey at adoption: exactly one KU fingerprint is
+    affected (KU-85a25daae621d707, master-ai '27 - Projects/Capstones/
+    08 - Build an MCP Server.md' L246-268); every other matching body was
+    already exempt as F-0029b scaffolding.
+
+    F-0034: TILDE fences (``~~~``) are extracted with the same semantics as
+    backtick fences, and take PRECEDENCE over backtick fences nested inside
+    them (the nested delimiters are masked before backtick extraction).
+    Notes legitimately use tilde fences for code containing nested
+    triple-backtick fences (e.g. a python f-string embedding a ```python
+    block); the backtick-only extractor made such content invisible to the
+    code-fingerprint check.
     """
     bodies = []
-    for info, body in _FENCE_LANG_RE.findall(text):
+    # F-0034: extract tilde fences first, then mask their spans so nested
+    # backtick fences are not double-extracted as fragments.
+    masked = _TILDE_FENCE_FULL_RE.sub("\n", text)
+    fences = list(_FENCE_LANG_RE.findall(masked))
+    fences += [("", body) for body in _TILDE_FENCE_BODY_RE.findall(text)]
+    for info, body in fences:
         if info.strip().lower() in ("markdown", "md"):
             continue
         normalized = "\n".join(line.rstrip() for line in body.split("\n")).strip("\n")
-        if normalized and not _is_scaffold_body(normalized):
-            bodies.append(_dedent_block(normalized))
+        if not normalized or _is_scaffold_body(normalized):
+            continue
+        if _is_quotation_body(info, normalized):
+            continue
+        bodies.append(_dedent_block(normalized))
     return bodies
 
 
@@ -635,6 +667,28 @@ def _is_scaffold_body(normalized_body: str) -> bool:
     """True when every non-empty line is an hr or a 'File …​.md' heading."""
     lines = [ln.strip() for ln in normalized_body.split("\n") if ln.strip()]
     return bool(lines) and all(_SCAFFOLD_LINE_RE.match(ln) for ln in lines)
+
+
+def _is_quotation_body(info: str, normalized_body: str) -> bool:
+    """F-0033: True for bare/``text`` fences whose body is a markdown
+    quotation (a two-plus-hash heading line present, blank-line paragraph
+    structure, no nested fence).
+
+    Mirrors the ```markdown quotation exemption (F-0029) for sources that
+    quote prose + section headings inside UNLABELLED fences (typically an
+    orphaned closer captured by the KU extractor). Labelled code is never
+    exempt, single-hash python/pseudocode comment lines never trigger the
+    heading pattern, and bodies without blank-line paragraph structure
+    (scaffold fragments with real code) stay fingerprints.
+    """
+    label = info.strip().lower()
+    if label not in ("", "text"):
+        return False
+    if "```" in normalized_body or "~~~" in normalized_body:
+        return False
+    if "\n\n" not in normalized_body:
+        return False
+    return bool(_MD_HEADING_LINE_RE.search(normalized_body))
 
 
 def _clean_token(token: str) -> str:
@@ -1309,9 +1363,12 @@ def audit_output(
     output_tokens = set(_term_tokens(normalized_corpus))
     output_math = set()
     output_code = set()
+    output_code_list: list[str] = []
     for text in output_texts.values():
         output_math.update(_math_markers(text))
-        output_code.update(_code_bodies(text))
+        bodies = _code_bodies(text)
+        output_code.update(bodies)
+        output_code_list.extend(bodies)
     stats["markers"] = {"terms": 0, "math": 0, "code": 0, "missing_terms": 0, "missing_math": 0, "missing_code": 0}
     for record in records:
         ku = record["knowledge_unit_id"]
@@ -1372,7 +1429,16 @@ def audit_output(
                     },
                 )
         for code in markers["code"]:
-            if code not in output_code:
+            # F-0034b: exact set membership OR contiguous containment. A KU
+            # excerpt truncated mid-block (tangled nested fencing in the
+            # source) yields a strict PREFIX of the note's preserved fence;
+            # the source code is verbatim-present inside the output body, so
+            # the retention intent is satisfied. Containment never accepts
+            # an output body that is a FRAGMENT of the source marker.
+            code_retained = code in output_code or any(
+                code in body for body in output_code_list
+            )
+            if not code_retained:
                 stats["markers"]["missing_code"] += 1
                 _add(
                     "marker-retention",

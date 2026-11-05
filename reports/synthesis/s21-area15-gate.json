@@ -1,132 +1,16 @@
 {
   "result": {
-    "passed": false,
+    "passed": true,
     "criteria": [
       "every expected note assessed or explicitly unresolved",
       "every note lint-error clean (allowed: 0)",
       "every measured dimension within its type band or explicitly waived with reason",
       "no unexplained systematic quality drift"
     ],
-    "failures": [
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/AI Agents/Autonomous Agent Lifecycles.md",
-        "detail": "1 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/AI Agents/Chain of Thought.md",
-        "detail": "11 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/AI Agents/Planner-Executor Pattern.md",
-        "detail": "1 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/AI Agents/ReAct Pattern.md",
-        "detail": "4 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/AI Agents/Reflection.md",
-        "detail": "6 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/AI Agents/Tree of Thoughts and Self Consistency.md",
-        "detail": "8 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Agents and Tooling MOC.md",
-        "detail": "3 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Frameworks and Tools/AutoGen.md",
-        "detail": "2 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Frameworks and Tools/Haystack.md",
-        "detail": "1 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Frameworks and Tools/vLLM.md",
-        "detail": "3 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Memory Systems/MemGPT and Letta.md",
-        "detail": "2 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Memory Systems/Vector Memory Backends.md",
-        "detail": "1 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Model Context Protocol/MCP Components.md",
-        "detail": "2 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Model Context Protocol/MCP Enterprise Integration.md",
-        "detail": "1 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Model Context Protocol/MCP Overview.md",
-        "detail": "2 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Model Context Protocol/MCP Security.md",
-        "detail": "2 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Multi-Agent Systems/Communication Patterns.md",
-        "detail": "2 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Multi-Agent Systems/Coordination and Consensus.md",
-        "detail": "3 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Multi-Agent Systems/Enterprise Multi-Agent Architectures.md",
-        "detail": "1 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Multi-Agent Systems/Multi-Agent Architectures.md",
-        "detail": "1 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Retrieval Augmented Generation/Advanced RAG Patterns.md",
-        "detail": "1 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Retrieval Augmented Generation/Chunking, Hybrid Search, and Reranking.md",
-        "detail": "4 lint errors (allowed: 0)"
-      },
-      {
-        "criterion": "artifact_lint_clean",
-        "note": "15 - Agents and Tooling/Retrieval Augmented Generation/RAG Pipeline Overview.md",
-        "detail": "5 lint errors (allowed: 0)"
-      }
-    ],
+    "failures": [],
     "notes_assessed": 41,
     "waivers_applied": [],
-    "verdict": "fail"
+    "verdict": "pass"
   },
   "report_meta": {
     "framework": "vault_unification",
@@ -135,13 +19,13 @@
     "command": "quality-gate",
     "args": {
       "command": "quality-gate",
-      "assessments": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/gates/assessments.jsonl",
-      "expected": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area15/expected-notes.txt",
+      "assessments": "/home/z/my-project/repo/scratch/synth/area15/gates/assessments.jsonl",
+      "expected": "/home/z/my-project/repo/scratch/synth/area15/expected-notes.txt",
       "drift_report": "reports/synthesis/s21-area15-drift.json",
       "waivers": null,
-      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s21-area15-gate.json"
+      "report": "/home/z/my-project/repo/reports/synthesis/s21-area15-gate.json"
     },
-    "utc_timestamp": "2026-11-03T07:25:15+00:00",
-    "git_commit": "e00d049"
+    "utc_timestamp": "2026-11-05T22:02:42+00:00",
+    "git_commit": "4f5c6b9"
   }
 }

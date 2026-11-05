@@ -96,7 +96,7 @@ def ingest_documents(doc_path: str) -> list:
 
 ## Entity and relation extraction
 
-This is the core GraphRAG step: for each chunk, an LLM extracts entities and relations. The prompt defines a JSON schema with typed entities (person, organization, location, event, concept, other) and directed relations, lists the common relation types to look for, and instructs the model to be conservative — only extract relations explicitly stated or strongly implied in the text:
+This is the core GraphRAG step: for each chunk, an LLM extracts entities and relations. The prompt defines a JSON schema with typed entities (person, organization, location, event, concept, other) and directed relations, lists the common relation types to look for — WORKS_FOR, FOUNDED_BY, and LOCATED_IN, for instance — and instructs the model to be conservative — only extract relations explicitly stated or strongly implied in the text:
 
 ```python
 import json

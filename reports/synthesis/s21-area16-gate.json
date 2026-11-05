@@ -1,0 +1,37 @@
+{
+  "result": {
+    "passed": false,
+    "criteria": [
+      "every expected note assessed or explicitly unresolved",
+      "every note lint-error clean (allowed: 0)",
+      "every measured dimension within its type band or explicitly waived with reason",
+      "no unexplained systematic quality drift"
+    ],
+    "failures": [
+      {
+        "criterion": "no_unexplained_quality_drift",
+        "note": "(type: concept)",
+        "detail": "examples: 0.6889 -> 0.5111 (rel drop 0.2581)"
+      }
+    ],
+    "notes_assessed": 31,
+    "waivers_applied": [],
+    "verdict": "fail"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-gate",
+    "args": {
+      "command": "quality-gate",
+      "assessments": "/home/z/my-project/repo/scratch/synth/area16/gates/assessments.jsonl",
+      "expected": "/home/z/my-project/repo/scratch/synth/area16/expected-notes.txt",
+      "drift_report": "reports/synthesis/s21-area16-drift.json",
+      "waivers": null,
+      "report": "/home/z/my-project/repo/reports/synthesis/s21-area16-gate.json"
+    },
+    "utc_timestamp": "2026-11-05T22:06:17+00:00",
+    "git_commit": "4f5c6b9"
+  }
+}

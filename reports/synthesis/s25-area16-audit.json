@@ -1,0 +1,343 @@
+{
+  "command": "audit-output",
+  "result": {
+    "valid": false,
+    "checks_run": [
+      "ku-batch",
+      "output-drift",
+      "ku-accounting",
+      "destination",
+      "marker-retention",
+      "link-integrity",
+      "heading-convention",
+      "prose-quality"
+    ],
+    "findings": [
+      {
+        "finding_id": "AF-001",
+        "check": "marker-retention",
+        "category": "code-omission",
+        "severity": "critical",
+        "ku_ids": [
+          "KU-0b8743f381e42803"
+        ],
+        "destination": {
+          "path": "16 - Interpretability and Research/Research Frontiers/Hybrid Architectures/RWKV and RetNet.md",
+          "heading": null
+        },
+        "expected": "code block fingerprint retained in the output",
+        "observed": "code block not found (omitted or altered)",
+        "evidence": {
+          "marker_type": "code",
+          "code_head": "h_t = a_t \u00b7 h_{t-1} + k_t \u00b7 v_t^T    # state update (like an RNN)",
+          "source_path": "24 - Research Frontiers/Hybrid Architectures/03 - RWKV and RetNet.md",
+          "source_lines": [
+            34,
+            37
+          ]
+        },
+        "repair_hint": "restore the missing/corrupted material at the destination"
+      },
+      {
+        "finding_id": "AF-002",
+        "check": "marker-retention",
+        "category": "code-omission",
+        "severity": "critical",
+        "ku_ids": [
+          "KU-2132c1a0347704f8"
+        ],
+        "destination": {
+          "path": "16 - Interpretability and Research/Research Frontiers/Hybrid Architectures/RWKV and RetNet.md",
+          "heading": null
+        },
+        "expected": "code block fingerprint retained in the output",
+        "observed": "code block not found (omitted or altered)",
+        "evidence": {
+          "marker_type": "code",
+          "code_head": "Retention(Q, K, V) = (Q \u00b7 D \u00b7 K^T) \u00b7 V",
+          "source_path": "24 - Research Frontiers/Hybrid Architectures/03 - RWKV and RetNet.md",
+          "source_lines": [
+            74,
+            76
+          ]
+        },
+        "repair_hint": "restore the missing/corrupted material at the destination"
+      },
+      {
+        "finding_id": "AF-003",
+        "check": "marker-retention",
+        "category": "unique-detail-omission",
+        "severity": "major",
+        "ku_ids": [
+          "KU-3226530cecaefe55"
+        ],
+        "destination": {
+          "path": "16 - Interpretability and Research/Research Frontiers/State Space Models/SSMs Mamba and Frontiers.md",
+          "heading": null
+        },
+        "expected": "rare source term '128k-1m' retained in the output",
+        "observed": "term not found anywhere in the output vault",
+        "evidence": {
+          "marker_type": "term",
+          "term": "128k-1m",
+          "source_path": "24 - Research Frontiers/State Space Models/01 - SSMs Mamba and Frontiers.md",
+          "source_lines": [
+            232,
+            234
+          ]
+        },
+        "repair_hint": "restore the missing/corrupted material at the destination"
+      },
+      {
+        "finding_id": "AF-004",
+        "check": "marker-retention",
+        "category": "code-omission",
+        "severity": "critical",
+        "ku_ids": [
+          "KU-4c4c47fcf6f30fee"
+        ],
+        "destination": {
+          "path": "16 - Interpretability and Research/Research Frontiers/Hybrid Architectures/Hyena and Long Convolutions.md",
+          "heading": null
+        },
+        "expected": "code block fingerprint retained in the output",
+        "observed": "code block not found (omitted or altered)",
+        "evidence": {
+          "marker_type": "code",
+          "code_head": "y = (x \u00b7 h_1) \u00b7 h_2 \u00b7 h_3 \u00b7 ...",
+          "source_path": "24 - Research Frontiers/Hybrid Architectures/04 - Hyena and Long Convolutions.md",
+          "source_lines": [
+            30,
+            32
+          ]
+        },
+        "repair_hint": "restore the missing/corrupted material at the destination"
+      },
+      {
+        "finding_id": "AF-005",
+        "check": "marker-retention",
+        "category": "unique-detail-omission",
+        "severity": "major",
+        "ku_ids": [
+          "KU-4ff382bf769ef410"
+        ],
+        "destination": {
+          "path": "16 - Interpretability and Research/Research Frontiers/Reasoning/Test-Time Compute Scaling.md",
+          "heading": null
+        },
+        "expected": "rare source term 'trade-able' retained in the output",
+        "observed": "term not found anywhere in the output vault",
+        "evidence": {
+          "marker_type": "term",
+          "term": "trade-able",
+          "source_path": "24 - Research Frontiers/Reasoning/06 - Test-Time Compute Scaling.md",
+          "source_lines": [
+            155,
+            155
+          ]
+        },
+        "repair_hint": "restore the missing/corrupted material at the destination"
+      },
+      {
+        "finding_id": "AF-006",
+        "check": "marker-retention",
+        "category": "code-omission",
+        "severity": "critical",
+        "ku_ids": [
+          "KU-7a144fe9ae358667"
+        ],
+        "destination": {
+          "path": "16 - Interpretability and Research/Research Frontiers/Hybrid Architectures/RWKV and RetNet.md",
+          "heading": null
+        },
+        "expected": "code block fingerprint retained in the output",
+        "observed": "code block not found (omitted or altered)",
+        "evidence": {
+          "marker_type": "code",
+          "code_head": "y_t = \u03a3_j w_{t,j} \u00b7 k_j \u00b7 v_j",
+          "source_path": "24 - Research Frontiers/Hybrid Architectures/03 - RWKV and RetNet.md",
+          "source_lines": [
+            28,
+            30
+          ]
+        },
+        "repair_hint": "restore the missing/corrupted material at the destination"
+      },
+      {
+        "finding_id": "AF-007",
+        "check": "marker-retention",
+        "category": "unique-detail-omission",
+        "severity": "major",
+        "ku_ids": [
+          "KU-7c25fd422ef616fd"
+        ],
+        "destination": {
+          "path": "16 - Interpretability and Research/Model Architecture Research/Closed Source/Fable 5 Architecture.md",
+          "heading": null
+        },
+        "expected": "rare source term 'chapter-10' retained in the output",
+        "observed": "term not found anywhere in the output vault",
+        "evidence": {
+          "marker_type": "term",
+          "term": "chapter-10",
+          "source_path": "10 - Model Architecture Research/Closed Source/10 - Fable 5 Architecture.md",
+          "source_lines": [
+            75,
+            75
+          ]
+        },
+        "repair_hint": "restore the missing/corrupted material at the destination"
+      },
+      {
+        "finding_id": "AF-008",
+        "check": "marker-retention",
+        "category": "code-omission",
+        "severity": "critical",
+        "ku_ids": [
+          "KU-8624cc4284196dda"
+        ],
+        "destination": {
+          "path": "16 - Interpretability and Research/Research Frontiers/Hybrid Architectures/RWKV and RetNet.md",
+          "heading": null
+        },
+        "expected": "code block fingerprint retained in the output",
+        "observed": "code block not found (omitted or altered)",
+        "evidence": {
+          "marker_type": "code",
+          "code_head": "y_t = \u03a3_j softmax(q_t \u00b7 k_j) \u00b7 v_j",
+          "source_path": "24 - Research Frontiers/Hybrid Architectures/03 - RWKV and RetNet.md",
+          "source_lines": [
+            23,
+            25
+          ]
+        },
+        "repair_hint": "restore the missing/corrupted material at the destination"
+      },
+      {
+        "finding_id": "AF-009",
+        "check": "marker-retention",
+        "category": "code-omission",
+        "severity": "critical",
+        "ku_ids": [
+          "KU-89f60ab1488ceabd"
+        ],
+        "destination": {
+          "path": "16 - Interpretability and Research/Interpretability/Logit Lens and Tuned Lens.md",
+          "heading": null
+        },
+        "expected": "code block fingerprint retained in the output",
+        "observed": "code block not found (omitted or altered)",
+        "evidence": {
+          "marker_type": "code",
+          "code_head": "logits_l = W_U \u00b7 (T_l(h_l))",
+          "source_path": "14 - Interpretability/Mechanistic/02 - Logit Lens and Tuned Lens.md",
+          "source_lines": [
+            80,
+            83
+          ]
+        },
+        "repair_hint": "restore the missing/corrupted material at the destination"
+      },
+      {
+        "finding_id": "AF-010",
+        "check": "marker-retention",
+        "category": "equation-omission",
+        "severity": "critical",
+        "ku_ids": [
+          "KU-8c4d8ad0c0819233"
+        ],
+        "destination": {
+          "path": "16 - Interpretability and Research/Interpretability/Mechanistic Interpretability.md",
+          "heading": null
+        },
+        "expected": "equation fingerprint retained verbatim in the output",
+        "observed": "equation not found (omitted or altered)",
+        "evidence": {
+          "marker_type": "math",
+          "math": "\\mathbf{d}_i",
+          "source_path": "14 - Interpretability/Mechanistic/01 - Mechanistic Interpretability.md",
+          "source_lines": [
+            85,
+            85
+          ]
+        },
+        "repair_hint": "restore the missing/corrupted material at the destination"
+      },
+      {
+        "finding_id": "AF-011",
+        "check": "marker-retention",
+        "category": "unique-detail-omission",
+        "severity": "major",
+        "ku_ids": [
+          "KU-9368c025cbcd9b33"
+        ],
+        "destination": {
+          "path": "16 - Interpretability and Research/Model Architecture Research/Closed Source/Fable 5 Architecture.md",
+          "heading": null
+        },
+        "expected": "rare source term 're-check' retained in the output",
+        "observed": "term not found anywhere in the output vault",
+        "evidence": {
+          "marker_type": "term",
+          "term": "re-check",
+          "source_path": "10 - Model Architecture Research/Closed Source/10 - Fable 5 Architecture.md",
+          "source_lines": [
+            66,
+            66
+          ]
+        },
+        "repair_hint": "restore the missing/corrupted material at the destination"
+      }
+    ],
+    "stats": {
+      "kus_total": 1269,
+      "output_files_total": 527,
+      "markers": {
+        "terms": 841,
+        "math": 110,
+        "code": 31,
+        "missing_terms": 4,
+        "missing_math": 1,
+        "missing_code": 6
+      },
+      "links_checked": 0,
+      "links_broken": 0,
+      "findings_total": 11,
+      "findings_blocking": 11,
+      "findings_by_severity": {
+        "critical": 7,
+        "major": 4,
+        "minor": 0
+      },
+      "findings_by_check": {
+        "marker-retention": 11
+      }
+    },
+    "limitations": [
+      "term markers are frequency-based (rare in the source corpus): claims carried only by common vocabulary are not covered by term markers; equation/code fingerprints, destination anchors, link and lint checks provide the remaining nets",
+      "no stemming and no grammar-level matching: legitimately reworded claims are caught only through shared distinctive vocabulary; semantic verification remains a separate, human/AI evidence class (VERIFICATION_SPECIFICATION.md section 5)",
+      "equation matching compares normalized LaTeX source strings; mathematically equivalent reformatting (e.g. \\frac vs \\dfrac) counts as a different marker",
+      "the heading-convention check detects mixed numbered/unnumbered schemes per note; it does not validate numbering sequences or cross-note ordering",
+      "prose-quality is a word-count heuristic for bullet-only degradation; it cannot judge argument quality or depth",
+      "drift detection requires an accepted manifest; pre-acceptance changes rely on the content checks above",
+      "link findings attribute KU ownership by destination note plus wikilink presence in the excerpt, which is broader than the exact originating link"
+    ]
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "audit-output",
+    "args": {
+      "command": "audit-output",
+      "source_root": "source-vaults/AI ",
+      "output_root": "output/Unified-Vault",
+      "ku_batch": "scratch/synth/area16/audit-kus.jsonl",
+      "accepted_manifest": null,
+      "ku_schema": "/home/z/my-project/repo/schemas/knowledge-unit.schema.json",
+      "report": "/home/z/my-project/repo/reports/synthesis/s25-area16-audit.json"
+    },
+    "utc_timestamp": "2026-11-05T22:29:56+00:00",
+    "git_commit": "4f5c6b9"
+  }
+}
