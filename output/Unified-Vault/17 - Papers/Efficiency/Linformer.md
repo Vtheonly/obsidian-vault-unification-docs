@@ -26,7 +26,7 @@ The empirical observation: attention matrices in trained Transformers are low-ra
 
 Standard attention:
 
-```python
+```text
 S = Q K^T              # (N, N) — the expensive part
 P = softmax(S)         # (N, N)
 O = P V                # (N, d)
@@ -34,7 +34,7 @@ O = P V                # (N, d)
 
 Linformer projects K and V from N tokens to k tokens *before* the attention computation:
 
-```python
+```text
 K' = E_i K              # (k, d)  — E_i is a learned N×k projection
 V' = F_i V              # (k, d)  — F_i is a learned N×k projection
 S = Q K'^T              # (N, k)  — linear in N

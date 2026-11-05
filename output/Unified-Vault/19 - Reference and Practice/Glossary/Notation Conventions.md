@@ -235,8 +235,10 @@ The same symbol is routinely overloaded across the literature; the table lists t
 | $\sigma$ | Sigmoid                | Standard deviation               | Use $s$ for std; $\sigma_X$ if needed.     |
 | $N$    | Number of samples        | Sequence length (some papers)    | Use $T$ for sequence length.               |
 | $K$    | Number of classes        | Number of attention heads (rare) | Use $h$ for heads; $K$ for classes.        |
-| $V$    | Value matrix             | Vocabulary size (some papers)    | Use $|V|$ for vocab size.                   |
+| $V$    | Value matrix             | Vocabulary size (some papers)    | Use $\|V\|$ for vocab size.                   |
 | $D$    | Dataset                  | Dimension                        | Use $d$ for dimension; $\mathcal{D}$ for dataset. |
+
+One resolution deserves a spelling outside the grid: the $V$ row's rule keeps the cardinality notation for the vocabulary size exactly as the source writes it, $|V|$ — the table cell escapes those pipes only so the row renders with four columns.
 
 ## Code conventions
 

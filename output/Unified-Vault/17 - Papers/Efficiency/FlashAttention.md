@@ -30,7 +30,7 @@ FlashAttention's key insight: **you can compute exact attention while minimizing
 
 Standard attention:
 
-```python
+```text
 S = Q K^T            # (N, N) matrix in HBM
 P = softmax(S)       # (N, N) matrix in HBM
 O = P V              # (N, N) @ (N, d) → (N, d)

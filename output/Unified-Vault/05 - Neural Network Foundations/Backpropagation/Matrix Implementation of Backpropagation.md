@@ -392,6 +392,6 @@ This function is called repeatedly in a training loop, once for each training ex
 - [[Activation Functions]]
 - [[Neural Network Architecture and Notation]]
 - [[Perceptrons and Multi-Layer Perceptrons]]
-- [[Backpropagation and Gradient Flow in CNNs]]
+- [[05 - Neural Network Foundations/Backpropagation/Backpropagation and Gradient Flow in CNNs|Backpropagation and Gradient Flow in CNNs]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Hyperparameters and Network Configuration|Hyperparameters and Network Configuration]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Vanishing and Exploding Gradients|Vanishing and Exploding Gradients]]

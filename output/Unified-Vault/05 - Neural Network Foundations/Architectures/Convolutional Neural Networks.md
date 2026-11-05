@@ -118,7 +118,7 @@ class SimpleCNN(nn.Module):
         return self.fc(x)
 ```
 
-The shape comments carry the lesson: pooling halves the spatial dimensions (28→14→7), the channel count grows (1→32→64), and the flatten before the fully connected head produces the $(B, 64 \cdot 7 \cdot 7)$ tensor the linear layer expects. Forgetting that flatten is one of the most common shape bugs in CNN code. How gradients flow backward through each of these layer types — convolution, pooling, normalization, ReLU — is dissected in [[Backpropagation and Gradient Flow in CNNs]].
+The shape comments carry the lesson: pooling halves the spatial dimensions (28→14→7), the channel count grows (1→32→64), and the flatten before the fully connected head produces the $(B, 64 \cdot 7 \cdot 7)$ tensor the linear layer expects. Forgetting that flatten is one of the most common shape bugs in CNN code. How gradients flow backward through each of these layer types — convolution, pooling, normalization, ReLU — is dissected in [[05 - Neural Network Foundations/Backpropagation/Backpropagation and Gradient Flow in CNNs|Backpropagation and Gradient Flow in CNNs]].
 
 ## Depthwise separable convolutions
 
@@ -303,7 +303,7 @@ The canonical references are LeCun et al. (1998), *Gradient-Based Learning Appli
 - [[Artificial Neural Networks]]
 - [[Activation Functions]]
 - [[Backpropagation]]
-- [[Backpropagation and Gradient Flow in CNNs]]
+- [[05 - Neural Network Foundations/Backpropagation/Backpropagation and Gradient Flow in CNNs|Backpropagation and Gradient Flow in CNNs]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Batch Normalization|Batch Normalization]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Weight Initialization|Weight Initialization]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Data Augmentation|Data Augmentation]]

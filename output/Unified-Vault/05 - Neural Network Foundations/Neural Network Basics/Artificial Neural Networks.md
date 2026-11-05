@@ -1148,7 +1148,7 @@ The one-line summary: ResNet = skip connections let gradients flow → train 100
 - [[Neural Network Architecture and Notation]]
 - [[Backpropagation]]
 - [[Matrix Implementation of Backpropagation]]
-- [[Backpropagation and Gradient Flow in CNNs]]
+- [[05 - Neural Network Foundations/Backpropagation/Backpropagation and Gradient Flow in CNNs|Backpropagation and Gradient Flow in CNNs]]
 - [[05 - Neural Network Foundations/Architectures/Convolutional Neural Networks|Convolutional Neural Networks]]
 - [[Recurrent Neural Networks]]
 - [[Data Preparation for Neural Networks]]

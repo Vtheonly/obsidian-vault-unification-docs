@@ -1181,7 +1181,7 @@ The mirror image is just as real: when you multiply many large numbers (> 1), th
 
 ### What ResNet is
 
-**ResNet** (Residual Network) is a family of deep convolutional neural network architectures introduced to make very deep networks trainable by using **skip connections** (also called shortcut connections). It solved the problem that simply stacking more layers often made training **worse** (not better), due to vanishing/exploding gradients and optimization difficulties. ResNet is the canonical architectural answer to the gradient-flow problems above; the broader CNN family is covered in [[Convolutional Neural Networks]] and its gradient specifics in [[Backpropagation and Gradient Flow in CNNs]].
+**ResNet** (Residual Network) is a family of deep convolutional neural network architectures introduced to make very deep networks trainable by using **skip connections** (also called shortcut connections). It solved the problem that simply stacking more layers often made training **worse** (not better), due to vanishing/exploding gradients and optimization difficulties. ResNet is the canonical architectural answer to the gradient-flow problems above; the broader CNN family is covered in [[Convolutional Neural Networks]] and its gradient specifics in [[05 - Neural Network Foundations/Backpropagation/Backpropagation and Gradient Flow in CNNs|Backpropagation and Gradient Flow in CNNs]].
 
 ```mermaid
 flowchart TB
@@ -1515,7 +1515,7 @@ The canonical references are Goodfellow et al., *Deep Learning*, Chapter 6.5; Ru
 - [[Neural Network Foundations MOC]]
 - [[Forward Propagation]]
 - [[Matrix Implementation of Backpropagation]]
-- [[Backpropagation and Gradient Flow in CNNs]]
+- [[05 - Neural Network Foundations/Backpropagation/Backpropagation and Gradient Flow in CNNs|Backpropagation and Gradient Flow in CNNs]]
 - [[Activation Functions]]
 - [[Artificial Neural Networks]]
 - [[Perceptrons and Multi-Layer Perceptrons]]

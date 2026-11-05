@@ -22,7 +22,7 @@ This map of content organizes the neural network foundations area: the building 
 | 06 | [[Data Preparation for Neural Networks]] | Basics | Cleaning, scaling, splits and the practical MLP-implementation guide. |
 | 07 | [[Backpropagation]] | Backpropagation | The algorithm that trains every network — full derivation from output layer to hidden layers. |
 | 08 | [[Matrix Implementation of Backpropagation]] | Backpropagation | The matrix form and the delta-weight formula that make backprop practical. |
-| 09 | [[Backpropagation and Gradient Flow in CNNs]] | Backpropagation | How gradients flow through convolutional and pooling layers. |
+| 09 | [[05 - Neural Network Foundations/Backpropagation/Backpropagation and Gradient Flow in CNNs\|Backpropagation and Gradient Flow in CNNs]] | Backpropagation | How gradients flow through convolutional and pooling layers. |
 | 10 | [[Formal Neuron Lab]] | Labs | Hands-on: implement the formal neuron and visualize activation functions. |
 | 11 | [[Data Cleaning and Encoding Lab]] | Labs | Hands-on: clean, normalize and encode a raw dataset for training. |
 | 12 | [[Convolutional Neural Networks]] | Architectures | Convolutions, locality, translation invariance, ResNet — the vision foundation. |

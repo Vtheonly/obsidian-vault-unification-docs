@@ -22,7 +22,7 @@ Liu, Z., Lin, Y., Cao, Y., Hu, H., Wei, Y., Zhang, Z., Lin, S., & Guo, B. (2021)
 
 2. **Global attention cost**: ViT computes attention over all patches, which is O(N²) in the number of patches. For high-resolution images (e.g., 800×1333 for COCO detection), this is prohibitively expensive.
 
-CNNs solve both problems via hierarchical architectures (ResNet, FPN) that produce features at multiple resolutions — see [[Evolution of CNN Architectures]] for how that hierarchy evolved. Swin Transformer brings this hierarchical structure to Transformers, with a key innovation that enables local attention to flow across windows.
+CNNs solve both problems via hierarchical architectures (ResNet, FPN) that produce features at multiple resolutions — see [[06 - Computer Vision/Architecture and Connectivity/Evolution of CNN Architectures|Evolution of CNN Architectures]] for how that hierarchy evolved. Swin Transformer brings this hierarchical structure to Transformers, with a key innovation that enables local attention to flow across windows.
 
 ## Key ideas
 
@@ -187,4 +187,4 @@ For AI engineers working on vision tasks, Swin remains a strong choice for dense
 - [[Scaled Dot-Product Attention]] — the base attention rule Swin extends with a position bias.
 - [[ViT Architecture]] and [[Patch Tokenization]] — the flat vision-Transformer design Swin departs from.
 - [[Inductive Bias]] — the CNN-versus-ViT inductive-bias discussion that motivates hierarchical designs.
-- [[Evolution of CNN Architectures]] — the CNN lineage whose multi-scale habits Swin imports.
+- [[06 - Computer Vision/Architecture and Connectivity/Evolution of CNN Architectures|Evolution of CNN Architectures]] — the CNN lineage whose multi-scale habits Swin imports.
