@@ -1,0 +1,66 @@
+{
+  "session": "27",
+  "date": "2026-11-06",
+  "task_id": "SYNTH-001",
+  "phase": "gated-synthesis",
+  "accelerated_mode": {
+    "session_number": 27,
+    "budget_sessions_consumed": 12,
+    "budget_sessions_remaining": 0,
+    "deliverable_metric_moved": "canonical notes generated and verified (gates + audits) / planned notes",
+    "before": 327,
+    "after": 527,
+    "denominator": 544,
+    "failed_session": false,
+    "cause_if_failed": null,
+    "deadline_position": "OVERRUN — the ADR-0012 hard deadline was end of session 26; sessions 25-26 generated areas 15-19 but left gates+audits pending, and session 27 (this session) completed them. The deadline conflict is recorded per policy section 5.5: the quality floor was never weakened to hit the date; only the user may extend or re-baseline the deadline. Remaining scope: area 20 (17 notes) + cross-batch consistency + 3 gap treatments + final verification."
+  },
+  "work_completed": [
+    "Verified the inherited s25/s26 state against repository evidence: 201/201 area 15-19 notes on disk (527/544 total), zero unplanned files; s25/s26 claims checked against canonical structure, git history, and reports",
+    "Baseline verified at session start: HEAD==origin/main==368b737, clean tree, editable install, 744/744 tests, sources immutable 276/276 + 333/333",
+    "Regenerated scratch inputs for areas 15-19 deterministically (byte-identical committed s25 inputs reports)",
+    "Lint driven to 0 errors over all 527 notes: 3 F-0031 fence-label repairs (FlashAttention/Linformer pseudocode), 14 ambiguous links converged to path form (area-19 quiz basename collisions), Notation Conventions |V| table cell escaped with keep-both carrier, MOC table alias-pipe escaped; 84 warnings classified verbatim-source (quiz option markers 101/101 measured, dollar prices verified in sources, source TODO/TBD)",
+    "Framework F-0033/F-0034 (marker machinery): tilde-fence extraction with nested-fence precedence, unlabelled-quotation exemption (corpus survey: exactly 1 KU affected), contiguous-containment matching for code markers; 8 new unit tests; 744->752 tests",
+    "All five audits driven to valid=true 0 findings: 91 findings root-caused, 90 repaired via 5 anchored probe-idempotent scripts (s27_marker_repairs_area15..19), 2 resolved by the framework fixes; 11,394 markers verified over 8,610 KUs",
+    "All five gates pass: areas 15/18/19 with zero waivers; areas 16/17 with evidence-backed content-family drift waivers (source measurements recorded in gate reports)",
+    "1 gate repair: KG Pipeline tutorial examples band restored via grounded source-verbatim relation-type instance markers",
+    "Full suite re-run after last mutation: 752/752; sources re-verified immutable 276/276 + 333/333 at session end"
+  ],
+  "changed_paths": [
+    "output/Unified-Vault/ (27 notes repaired: lint + marker + gate repairs; areas 15-19 now fully verified)",
+    "src/vault_unification/omission.py (F-0033/F-0034)",
+    "tests/test_omission.py (+8 tests)",
+    "scripts/s27_lint_repairs.py, s27_gate_repairs.py, s27_marker_repairs_area15.py .. area19.py",
+    "reports/synthesis/s27-*.json, s21-area1[5-9]-{assess,drift,gate}.json, s25-area1[5-9]-audit.json"
+  ],
+  "tests_run": [
+    {"command": "python3 -m pytest tests/ -q (session start, after editable install)", "result": "744 passed, 0 failed", "evidence": "reports/synthesis/s27-baseline-pytest.json"},
+    {"command": "python3 -m pytest tests/ -q (after framework change)", "result": "752 passed, 0 failed", "evidence": "commit 9ddf5f2"},
+    {"command": "python3 -m pytest tests/ -q (after last mutation)", "result": "752 passed, 0 failed", "evidence": "commit dcea8fb"},
+    {"command": "vu verify-manifest both vaults (start, mid, end)", "result": "276/276 + 333/333 unchanged throughout", "evidence": "reports/synthesis/s27-immutable-*.json"},
+    {"command": "vu lint-artifacts output/Unified-Vault (final)", "result": "0 errors / 84 documented warnings", "evidence": "reports/synthesis/s27-lint-vault-final.json"},
+    {"command": "vu audit-output areas 15-19 (final)", "result": "5x valid=true 0 findings; 8,610 KUs; 11,394 markers", "evidence": "reports/synthesis/s25-area1[5-9]-audit.json"},
+    {"command": "python3 scripts/s21_run_gates.py area15..area19 (final)", "result": "5x pass; 201 notes; 2 evidence-backed waivers", "evidence": "reports/synthesis/s21-area1[5-9]-gate.json"}
+  ],
+  "git_state": {
+    "head": "dcea8fb342b663e8fc449ad4c38583363f1e6422",
+    "origin_main": "dcea8fb342b663e8fc449ad4c38583363f1e6422",
+    "working_tree": "clean",
+    "pushes_this_session": ["4f5c6b9 (lint repairs)", "9ddf5f2 (F-0033/F-0034)", "dcea8fb (areas 15-19 complete)"],
+    "push_verification": "git fetch + rev-parse HEAD origin/main equal after every push"
+  },
+  "open_findings": [
+    "F-0014 (open): marker headings must never be copied as knowledge — verified absent areas 01-14 at s24; RE-CHECK for areas 15-19 was not separately run this session (the audits' term-marker machinery does not flag heading copies; do a grep pass at the final verification)",
+    "2 drift waivers recorded this session (area16 examples, area17 examples/fences) + 10 waivers from sessions 21-23 — ALL 12 re-check corpus-wide at the final verification pass",
+    "The three confirmed gaps (second moment, bradley-terry, async def) still need their dedicated treatments",
+    "46,978 low-signal provisional discovery candidates remain a documented exclusion",
+    "Tier A dossier-extension auto-accepts retain ~17% single-side over-inclusion (documented, session-18 report)"
+  ],
+  "next_task": {
+    "task_id": "SYNTH-001 (final phase)",
+    "title": "Area 20 (Vault and Project Context, 17 notes) + cross-batch consistency + 3 gap treatments + final verification and delivery",
+    "dependencies": "areas 01-19 complete (this session); none blocking",
+    "inputs": "state/synthesis/canonical-structure-v1.json (area 20 notes); state/synthesis/file-mapping-v1.jsonl; ledger; dossiers; the s21 pipeline (AREA_CONFIG entry for area 20 needed in scripts/s20_build_synthesis_inputs.py)",
+    "acceptance_criteria": "area 20 notes through the full gate chain + audit; corpus-wide drift re-audit incl. all 12 waivers; F-0014 grep pass; 3 gap treatments; release-gate predicates from docs/MILESTONES_AND_ACCEPTANCE.md; final audit over ALL 27,536 KUs; final report with denominators"
+  }
+}
