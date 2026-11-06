@@ -1,0 +1,1509 @@
+Understood. You want a complete AI concept taxonomy: main concepts, sub-concepts, and their associated techniques. No lengthy explanations.
+1. SynPath — Protein-Based Molecular Generation
+Repository: 3d-syntree / 3d-synV2
+1.1 Geometric Deep Learning
+- Geometric Deep Learning
+- 3D Graph Neural Networks
+- Molecular Graph Representation
+- Protein Graph Representation
+- Bipartite Graph Neural Networks
+- Union Graph Representation
+- Radius Graph Construction
+- Message Passing Neural Networks
+- PaiNN Architecture
+- Scalar Features
+- Vector Features
+- Equivariant Representations
+- Invariant Representations
+- SE(3) Equivariance
+- SE(3) Invariance
+- Geometric Feature Learning
+- Atom-Level Representation Learning
+- Graph Pooling
+1.2 Geometric Feature Encoding
+- Geometric Feature Encoding
+- Gaussian Radial Basis Functions (RBF)
+- Radial Distance Encoding
+- Continuous Cosine Cutoff
+- Spatial Neighbourhood Encoding
+- Interatomic Distance Representation
+- Directional Vector Encoding
+- Safe Norm
+- Safe Unit Vector
+- Coordinate-Based Features
+- Relative Position Encoding
+1.3 Attention Mechanisms
+- Attention Mechanisms
+- Scaled Dot-Product Attention
+- Multi-Head Attention
+- Query-Key-Value Architecture
+- Cross-Attention
+- Hierarchical Cross-Attention
+- Handle Selection Attention
+- Spatial Attention
+- Graph Attention
+- Segment-Grouped Attention
+- Attention Weight Normalization
+- Softmax Attention
+- Log-Softmax
+- Residual Attention
+- Pre-Layer Normalization
+- Feed-Forward Networks
+1.4 Attention Masking and Spatial Masking
+- Attention Masking
+- Padding Masking
+- Key Padding Mask
+- Hard Attention Masking
+- Additive Attention Masking
+- Multiplicative Attention Masking
+- Spatial Distance Bias
+- Distance-Based Attention Bias
+- Incompatible-Atom Masking
+- Chemical Legality Masking
+- Reaction Legality Mask
+- Reaction Family Mask
+- Reaction Support Mask
+- Synthon Legality Mask
+- Building Block Compatibility Mask
+- Handle Availability Mask
+- Seed Selection Mask
+- Anchor Selection Mask
+- Stereochemical Parity Mask
+- Torsion Bin Mask
+- Forced STOP Mask
+- Categorical Action Mask
+- Logit Masking
+- Hierarchical Action Masking
+- Geometric Masking
+- Radius Neighbour Mask
+- Spatial Cutoff Mask
+- Pocket–Ligand Interaction Mask
+- Distance-Based Edge Selection
+- Self-Loop Exclusion
+1.5 Molecular Generation
+- Molecular Generation
+- Structure-Based Molecular Generation
+- 3D Molecular Generation
+- Reaction-Constrained Generation
+- Fragment-Based Molecular Generation
+- Synthon-Based Generation
+- Building Block Assembly
+- Seed Fragment Selection
+- Pocket Anchor Selection
+- Iterative Molecular Growth
+- Molecular Construction Trajectories
+- Retrosynthesis-Aware Generation
+- Reaction Graph Generation
+- Molecular Assembly MDP
+- Derivation DAG
+- Forward Reaction Replay
+- Reaction-Constrained Decoding
+1.6 Hierarchical Policy Learning
+- Hierarchical Policy Networks
+- STOP Policy
+- Reaction Family Policy
+- Reaction Selection Policy
+- Synthon Selection Policy
+- Handle Selection Policy
+- Seed Selection Policy
+- Anchor Selection Policy
+- Stereochemical Parity Policy
+- Torsion Selection Policy
+- Conditional Probability Factorization
+- Categorical Action Distributions
+- Action Sampling
+- Policy Rollouts
+1.7 Chemical AI and Reaction Learning
+- Chemical Informatics
+- Reaction SMARTS
+- Reaction Templates
+- Reaction Classification
+- Reaction Family Taxonomy
+- Reaction-Aware Generation
+- Chemoselectivity
+- Functional Group Recognition
+- Reactive Handle Recognition
+- Building Block Compatibility
+- Retrosynthetic Decomposition
+- Forward Reaction Validation
+- Atom Mapping
+- Stereochemical Retention
+- Deprotection Transformations
+- Molecular Graph Reconstruction
+1.8 Molecular Geometry and Stereochemistry
+- Molecular Geometry
+- Conformer Generation
+- ETKDG
+- Molecular Coordinate Generation
+- Rigid Body Transformations
+- Torsion Angle Prediction
+- Dihedral Angle Representation
+- Circular Statistics
+- SO(2) Representation
+- Discrete Torsion Binning
+- 36-Bin Torsion Prediction
+- von Mises Distribution
+- Chirality Prediction
+- Stereochemical Parity
+- Resonance-Locked Torsions
+- Amide Planarity
+- Junction Geometry
+1.9 Generative Reinforcement Learning
+- Reinforcement Learning
+- Generative Flow Networks (GFlowNets)
+- Trajectory Balance
+- Forward Policy
+- Backward Policy
+- Reward-Conditioned Generation
+- Partition Function Learning
+- Log-Partition Function
+- On-Policy Learning
+- On-Policy Rollouts
+- Trajectory Probability
+- Backward Leaf Deletion
+- Multi-Path Generation
+- Terminal State Sampling
+- Reward-Based Molecular Sampling
+- MDP-Based Generation
+- DAG-Based Construction
+1.10 Molecular Optimization and Physics
+- Molecular Mechanics
+- MMFF94
+- Molecular Energy Minimization
+- Conformer Relaxation
+- Scaffold-Constrained Optimization
+- Torsion Refinement
+- Soft-Core Lennard-Jones Potential
+- Van der Waals Interactions
+- Coulomb Interactions
+- Steric Clash Detection
+- Molecular Volume Constraints
+- Pocket Cavity Volume
+- Heavy-Atom Constraints
+- Molecular Evaluation
+- Molecular Docking
+- Docking Energy
+- Protein–Ligand Interaction Scoring
+- Hydrogen Bond Detection
+- Salt Bridge Detection
+- Pharmacophore Matching
+- Quantitative Estimate of Drug-likeness (QED)
+- Fraction of sp³ Carbons (Fsp3)
+- Molecular Property Scoring
+- Multi-Objective Reward Evaluation
+1.11 Model Training and Optimization
+- Supervised Learning
+- Supervised Trajectory Learning
+- Reaction Grammar Pretraining
+- 3D Fine-Tuning
+- Seed Selection Supervision
+- Anchor Selection Supervision
+- Curriculum Learning
+- Difficulty-Based Sampling
+- Quantile-Based Difficulty Levels
+- Nine-Level Curriculum
+- Validation-Guided Curriculum Progression
+- Data Augmentation
+- Coordinate Jittering
+- Rigid Rotation Augmentation
+- Torsion Perturbation
+- Stereo-Preserving Augmentation
+- Exposure Bias Augmentation
+- Molecular Geometry Perturbation
+- Training Optimization
+- Backpropagation
+- Automatic Differentiation
+- Vector-Jacobian Products (VJP)
+- Gradient Clipping
+- Activation Checkpointing
+- FP32 Training
+- Numerical Stability
+- Gradient Stability
+- NaN Detection
+- Checkpoint-Based Training Recovery
+
+2. Map Digitizer v2
+Repository: map_digitizer_v2
+2.1 Computer Vision
+- Computer Vision
+- Image Registration
+- Image Alignment
+- Feature Extraction
+- Feature Matching
+- Local Feature Matching
+- Feature Descriptors
+- Keypoint Detection
+- Geometric Transformation
+- Homography Estimation
+- RANSAC
+- USAC-MAGSAC
+- ECC Image Refinement
+2.2 Feature Extraction and Matching Models
+- Feature Matching
+- SIFT
+- ORB
+- XFeat
+- ALIKED
+- LightGlue
+- LoFTR
+- Detector-Based Feature Matching
+- Detector-Free Feature Matching
+- Dense Feature Matching
+- Learned Feature Descriptors
+2.3 Image Segmentation
+- Image Segmentation
+- Semantic Segmentation
+- Instance Segmentation
+- Promptable Segmentation
+- Interactive Segmentation
+- Automatic Segmentation
+- Pixel-Level Classification
+- Region Segmentation
+- Boundary Detection
+2.4 Segmentation Models and Algorithms
+- Deep Learning Segmentation
+- Segment Anything Model 2.1 (SAM 2)
+- SAM-HQ
+- Point-Prompt Segmentation
+- Box-Prompt Segmentation
+- Automatic Grid Prompting
+- Classical Segmentation
+- K-Means Clustering
+- Watershed Segmentation
+- Canny Edge Detection
+- Distance Transform
+- Connected Component Analysis
+- Bilateral Filtering
+- Colour-Based Clustering
+2.5 Segmentation Fusion
+- Multi-Model Fusion
+- STAPLE
+- Expectation-Maximization (EM)
+- Probabilistic Consensus Fusion
+- Majority Voting
+- Label Map Fusion
+- Confidence-Based Fusion
+- Multi-Image Consensus
+2.6 Segmentation Refinement
+- Boundary Refinement
+- SegRefiner
+- Diffusion-Based Segmentation Refinement
+- Morphological Opening
+- Morphological Closing
+- Boundary Correction
+- Region Cleanup
+- Connected Component Filtering
+2.7 Additional Documented Techniques
+- Visual Representation Learning
+  - DINOv2
+  - Feature-Based Label Transfer
+  - Florence-2
+  - Mask2Former
+- Visual Feature Extraction
+  - Vision Transformer Features
+  - Self-Supervised Visual Features
+These additional model names are documented as optional ecosystem/backends; they should not all be interpreted as active inference components in the default pipeline.
+2.8 Spatial and Topological Processing
+- Vectorization
+- Raster-to-Polygon Conversion
+- Polygon Extraction
+- Region Boundary Extraction
+- Topological Simplification
+- TopoJSON
+- Shared-Arc Representation
+- Visvalingam–Whyatt Simplification
+- Coverage Simplification
+- Gap Detection
+- Overlap Detection
+
+3. Math Solver
+Repository: math_solver
+3.1 Mathematical Recognition
+- Mathematical OCR
+- Handwritten Mathematical Expression Recognition (HMER)
+- Image-to-LaTeX
+- Mathematical Symbol Recognition
+- Mathematical Structure Recognition
+- Formula Recognition
+- Two-Dimensional Mathematical Layout Recognition
+- LaTeX Sequence Generation
+3.2 Vision Encoder
+- Vision Transformers
+- Swin Transformer V2
+- Hierarchical Feature Extraction
+- Patch Embedding
+- Patch Merging
+- Window-Based Self-Attention
+- Shifted Window Attention
+- Relative Position Bias
+- 2D Positional Encoding
+- Multi-Scale Feature Extraction
+- Pretrained Visual Backbones
+3.3 Transformer Decoder
+- Transformer Architecture
+- Autoregressive Transformer
+- Transformer Decoder
+- Multi-Head Self-Attention
+- Cross-Attention
+- Query-Key-Value Projections
+- Feed-Forward Networks
+- Residual Connections
+- Layer Normalization
+- Sinusoidal Positional Encoding
+- Token Embeddings
+- KV Caching
+- Scaled Dot-Product Attention
+- Flash/SDPA Attention
+3.4 Attention Masking
+- Sequence Masking
+- Causal Masking
+- Autoregressive Masking
+- Encoder Padding Masking
+- Cross-Attention Memory Masking
+- Padding Token Masking
+- Attention Logit Suppression
+3.5 Sequence Generation
+- Autoregressive Generation
+- Greedy Decoding
+- Beam Search
+- Token-by-Token Generation
+- Start-of-Sequence Tokens
+- End-of-Sequence Tokens
+- Vocabulary-Based Prediction
+- Token Probability Distributions
+3.6 Tokenization and Language Representation
+- LaTeX Tokenization
+- Domain-Specific Tokenization
+- Symbol-Level Tokenization
+- Digit-Level Tokenization
+- Structural Token Recognition
+- Special Tokens
+- Vocabulary Construction
+- Token Encoding
+- Token Decoding
+- Sequence Padding
+3.7 Training and Loss Functions
+- Deep Learning Optimization
+- Teacher Forcing
+- Autoregressive Sequence Training
+- Cross-Entropy Loss
+- Label-Smoothing Cross-Entropy
+- Structure-Aware Loss
+- Structural Token Weighting
+- Data Augmentation
+- Curriculum Learning
+- Transfer Learning
+- Pretrained Encoder Fine-Tuning
+3.8 Model Evaluation
+- OCR Evaluation
+- Exact Match Rate
+- Edit Distance
+- Levenshtein Distance
+- Token-Level Accuracy
+- Structural Accuracy
+- Symbol Error Rate
+- Sequence-Level Evaluation
+3.9 Mathematical Solving — Non-Neural AI/Computation
+- Symbolic Computation
+- Symbolic Algebra
+- Equation Parsing
+- Mathematical Expression Trees
+- Rule-Based Equation Classification
+- Polynomial Classification
+- Rational Equation Classification
+- Trigonometric Equation Classification
+- Logarithmic Equation Classification
+- Exponential Equation Classification
+- Equation Strategy Selection
+- Numerical Solving
+- Mathematical Simplification
+- Solution Verification
+Important distinction: Your equation-solving engine uses symbolic computation and rule-based classification. That classifier is not a neural-network classifier. The major deep-learning component is the TAMER mathematical OCR system connected through the GPU worker.
+
+4. Weather — Solar and Wind Forecasting
+Repository: Weather
+4.1 Time-Series Forecasting
+- Time-Series Machine Learning
+- Sequential Data Modeling
+- Multivariate Time-Series Forecasting
+- Historical Window Modeling
+- Multi-Step Forecasting
+- 48-Hour Forecasting
+- Differential Prediction
+- Residual Prediction
+- Anchor-Based Prediction
+- Temporal Feature Extraction
+4.2 Convolutional Neural Networks
+- CNNs
+- One-Dimensional CNN (Conv1D)
+- Temporal Convolution
+- Local Pattern Extraction
+- Feature Maps
+- Max Pooling
+- Batch Normalization
+4.3 Recurrent Neural Networks
+- RNNs
+- Long Short-Term Memory (LSTM)
+- Bidirectional LSTM
+- Multi-Layer LSTM
+- Temporal Dependencies
+- Sequence Representation
+- Residual LSTM
+- Dropout Regularization
+4.4 Hybrid Machine Learning
+- Hybrid Models
+- XGBoost
+- Gradient Boosted Decision Trees
+- XGBoost Regression
+- LSTM Residual Correction
+- Hybrid XGBoost–LSTM
+- Residual Learning
+- Prediction Correction
+- Uncertainty-Related Output Estimation
+4.5 Physics-Informed Machine Learning
+- Physics-Informed Feature Engineering
+- Physics-Based Feature Extraction
+- Wind Vector Decomposition
+- Wind Energy Flux
+- Wind Momentum
+- Differential Features
+- Non-Negative Power Constraints
+- Physics-Based Reconstruction
+- Physics-Conditioned Forecasting
+4.6 Temporal Feature Engineering
+- Time-Series Features
+- Lag Features
+- Rolling Mean
+- Rolling Statistics
+- Cyclical Time Encoding
+- Sine/Cosine Temporal Encoding
+- Historical Residuals
+- Feature Scaling
+- Min-Max Scaling
+4.7 Signal Processing and Fault Detection
+- Digital Signal Processing
+- Discrete Wavelet Transform (DWT)
+- Multi-Resolution Analysis
+- Wavelet Decomposition
+- Approximation Coefficients
+- Detail Coefficients
+- Wavelet Energy Spectrum
+- Frequency-Band Analysis
+- Noise Filtering
+- Signal Windowing
+- Energy-Based Fault Detection
+4.8 Fault Classification
+- Fault Diagnosis
+- Rule-Based Fault Classification
+- Threshold-Based Detection
+- Pattern Recognition
+- Energy-Level Classification
+- Fault Probability Scoring
+- Confidence Scoring
+- Historical Trend Analysis
+- Variance-Based Anomaly Detection
+- Multi-Cause Fault Ranking
+- Sensor Failure Detection
+- Arc Fault Detection
+- Short-Circuit Detection
+- Voltage Sag Detection
+- Noise/EMI Detection
+Important distinction: The microgrid fault classifier is currently rule-based on DWT energy patterns, not a trained neural classifier.
+
+5. InfiniChatbot — Neural Latent Memory Engine
+Repository: infiniChatbot
+
+The repository contains a detailed technical architecture document for the Neural Latent Memory Engine (NLME).
+5.1 Large Language Models
+- Large Language Models (LLMs)
+- Decoder-Only Transformers
+- LLaMA 3
+- Mistral
+- Pretrained Language Models
+- Frozen Foundation Models
+- Autoregressive Language Modeling
+- Long-Context Modeling
+5.2 Transformer Attention
+- Attention Mechanisms
+- Self-Attention
+- Causal Attention
+- Multi-Head Attention
+- Grouped-Query Attention (GQA)
+- FlashAttention
+- FlashAttention-2
+- Rotary Positional Embeddings (RoPE)
+- KV Cache
+- Local Attention
+- Linear Attention
+- Kernelized Attention
+- Infini-Attention
+5.3 Linear and Associative Memory
+- Neural Associative Memory
+- Continuous Associative Memory
+- Linear Attention Memory
+- Fast Weights
+- Associative Memory Matrix
+- Memory Read Operations
+- Memory Write Operations
+- Outer-Product Memory Updates
+- Recurrent Memory
+- Fixed-Size Latent Memory
+- Memory Normalization
+- Memory State Representation
+5.4 Delta Rule Learning
+- Delta Rule
+- Online Gradient Updates
+- Error-Correcting Memory Updates
+- Surprise-Driven Learning
+- Prediction Residuals
+- Value Prediction
+- Delta Memory Updates
+- Associative Memory Correction
+- Error-Based Learning
+5.5 Neural Gating Mechanisms
+- Gating Networks
+- Sparse Write Gate
+- Token-Level Write Gating
+- Local-versus-Memory Mixing Gate
+- Sigmoid Gating
+- Learnable Gate Parameters
+- Gate Initialization
+- Gate Sparsity
+- L1 Gate Regularization
+- Adaptive Memory Decay
+5.6 Memory Management
+- Neural Memory Management
+- Neural Memory Bank
+- External Memory State
+- Memory Snapshots
+- Memory State Switching
+- Memory Hot-Swapping
+- Memory Branching
+- Memory Merging
+- Memory Decay
+- Memory Forgetting
+- Memory Normalization
+- Persistent Latent State
+- Discrete Memory Anchors
+- Hybrid Latent-Pointer Anchors
+5.7 Parameter-Efficient Model Adaptation
+- Parameter-Efficient Fine-Tuning
+- LoRA
+- Frozen Model Parameters
+- Trainable Adapters
+- Selective Parameter Training
+- Attention Module Replacement
+- Neural Network Surgery
+- Computational Graph Modification
+- Zero-Destruction Initialization
+5.8 Training and Optimization
+- Training
+- Next-Token Prediction
+- Cross-Entropy Loss
+- Knowledge Distillation
+- Forward KL Divergence
+- Sparse Gate Regularization
+- Truncated Backpropagation Through Time
+- Segmented Recurrence Training
+- AdamW
+- Learning Rate Warmup
+- Cosine Learning Rate Decay
+- Gradient Management
+- FP32 Memory Updates
+5.9 Evaluation
+- Long-Context Evaluation
+- Needle-in-a-Haystack
+- Passkey Retrieval
+- Memory Retention
+- Context Compression
+- MMLU
+- GSM8K
+- Ablation Studies
+- Memory Interference Evaluation
+- Long-Horizon Recall
+Status note: these concepts are described in the repository's architecture specification. The repository tree currently exposes the README rather than the corresponding complete executable model implementation.
+
+6. Additional AI concepts in your Obsidian AI Projects vault
+Obsidian — AI Projects
+
+These are additional concepts found in your SynPath technical and foundational notes. They should be distinguished from what is already present in the current code branch.
+6.1 Equivariant Protein Backbones
+- Equivariant Transformers
+- Equiformer
+- Equiformer-Light
+- Equivariant Graph Attention
+- SE(3)-Equivariant Representations
+- Receptor Conformational Ensembles
+- Ensemble-Conditioned Pocket Encoding
+- Self-Supervised Pretraining
+- Masked Residue Recovery
+- Coordinate Denoising
+6.2 Advanced Structural Attention
+- Structural Attention
+- Invariant Point Attention (IPA)
+- Spatial Cross-Attention
+- Additive Distance Bias
+- Multiplicative Attention Bias
+- Spatial Distance Bias
+- Geometric Attention
+- Rigid-Frame Invariance
+- Relative Coordinate Encoding
+6.3 Advanced Mathematical Learning
+- Differentiable Computing
+- Reverse-Mode Automatic Differentiation
+- Vector-Jacobian Products
+- Computational Graphs
+- Gradient Propagation
+- Differentiable Geometry
+- Numerical Integration
+- Riemannian Geometry
+- Optimal Transport Vector Fields
+
+7. Consolidated master index
+This is the list of the principal AI fields represented across your projects, without repeating every implementation-specific sub-concept.
+#	Main AI field	Principal concepts
+1	Geometric Deep Learning	GNNs, PaiNN, Equiformer
+2	Equivariant AI	SE(3), invariance, equivariance
+3	Graph Learning	Bipartite graphs, message passing
+4	Attention Mechanisms	Self-attention, cross-attention, multi-head attention
+5	Attention Masking	Padding, causal, spatial, legality masks
+6	Generative AI	Molecular generation, GFlowNets
+7	Reinforcement Learning	Policies, trajectories, rewards
+8	Hierarchical Learning	Conditional policies, action factorization
+9	Chemical AI	Reaction templates, synthons, chemoselectivity
+10	Molecular Modeling	Conformers, torsions, stereochemistry
+11	Physics-Informed AI	Energy functions, physical constraints
+12	Computer Vision	Registration, segmentation, feature matching
+13	Visual Foundation Models	SAM 2, SAM-HQ, DINOv2
+14	Image Feature Learning	SIFT, XFeat, ALIKED, LoFTR
+15	Image Fusion	STAPLE, EM, consensus fusion
+16	Transformers	Swin Transformer, Transformer Decoder
+17	Sequence Modeling	Autoregressive generation, LSTM
+18	Mathematical OCR	HMER, Image-to-LaTeX
+19	Symbolic AI	Symbolic algebra, rule-based classification
+20	Time-Series AI	Forecasting, temporal modeling
+21	Deep Learning	CNNs, LSTMs, Transformers
+22	Ensemble Learning	XGBoost–LSTM hybrid models
+23	Signal Processing	DWT, multiresolution analysis
+24	Anomaly Detection	Threshold detection, statistical patterns
+25	Large Language Models	LLaMA, Mistral
+26	Efficient Attention	Infini-Attention, linear attention
+27	Neural Memory	Associative memory, latent memory
+28	Online Learning	Delta Rule, error-correcting updates
+29	Parameter-Efficient Learning	LoRA, selective fine-tuning
+30	Knowledge Distillation	KL divergence, teacher–student learning
+31	Curriculum Learning	Difficulty-based sampling
+32	Self-Supervised Learning	Masked recovery, coordinate denoising
+33	Differentiable Computing	Autograd, VJPs
+34	Numerical Optimization	Gradient clipping, stable training
+35	Data Augmentation	Geometric and temporal perturbations
+
+One important distinction: Your strongest implemented AI architecture is currently in SynPath, while Map Digitizer and Weather combine trained models with substantial classical algorithms. The InfiniChatbot repository is currently an architecture specification, not a verified executable implementation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TAHT ISNTA L ALL THE RPROEJCT WHAT ANOUT THE MEIDCLA ONE THE ONE WITH SECINNES AN SEICNES NAMED AND THE CONEDPET USED IN IT 
+
+https://github.com/Vtheonly/Obsidian_Notes/tree/main/AI/AI%20Projects/Medical-NLP-Reconstructed
+
+https://github.com/Vtheonly/Obsidian_Notes/tree/main/AI/AI%20Projects/2D3D
+
+
+I WANT THE NAMED OF THE CONEPTS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Worked for 6m 2s
+
+I’ll inspect both Obsidian project folders directly, including their nested note files, then return only the named concepts and sub-concepts—especially the medical/science project you pointed out.
+
+
+
+
+
+
+
+
+
+Planned repository search
+
+
+
+
+
+Reviewed named concepts
+
+
+
+
+
+Inspected medical NLP repository directories and recursively retrieved notes
+
+
+
+
+
+
+I found the medical project’s full structure. It is not just “medical NLP”: it has dedicated sections for ClinicalBERT/PubMedBERT/SapBERT, BioBERT, UMLS identifiers, disease ontologies, clinical entity extraction, knowledge graphs, and neural ranking. I’m checking the actual notes now so I can include the named diseases, standards, models, and algorithms rather than just the folder headings.
+
+
+
+
+
+
+
+
+
+Cataloged medical terms and grouped project concepts
+
+
+
+
+
+Compiled comprehensive medical NLP and 2D/3D vision concepts
+
+
+
+
+
+
+
+
+
+
+
+
+
+You're right. I missed two major project folders. I inspected both, including their nested notes. Here are the named concepts and sub-concepts, without explanations.
+1. Medical NLP — Unified Medical Knowledge Architecture
+Open Medical-NLP-Reconstructed · Master Index
+1.1. Medical NLP and Clinical Text Processing
+- Natural Language Processing (NLP)
+- Clinical Natural Language Processing
+- Biomedical NLP
+- Clinical Text Mining
+- Medical Terminology
+- Domain Adaptation
+- Semantic Gap
+- Medical Vocabulary Mismatch
+- Latin and Greek Medical Morphology
+- Clinical Abbreviations
+- Clinical Shorthand
+- Negation Detection
+- Negation Scope Resolution
+- Assertion Classification
+- Temporality Detection
+- Experiencer Attribution
+- Certainty Classification
+- Contextual Ambiguity
+- Word-Sense Disambiguation (WSD)
+- Coreference Resolution
+- Clinical Entity Recognition
+- Medical Synonym Normalization
+- Sentiment Polarity Inversion
+- Subword Tokenization
+- Out-of-Vocabulary (OOV) Handling
+1.2. Classical NLP Representations
+- Bag of Words (BoW)
+- TF-IDF
+- Word2Vec
+- FastText
+- Contextual Word Embeddings
+- Static Embeddings
+- Subword Embeddings
+- WordPiece
+- Sentence Embeddings
+- Token Embeddings
+1.3. Transformer Architectures
+- Transformer Architecture
+- BERT
+- GPT
+- Encoder-only Transformers
+- Decoder-only Transformers
+- Bidirectional Attention
+- Causal Attention
+- Self-Attention
+- Query-Key-Value (QKV)
+- Scaled Dot-Product Attention
+- Multi-Head Attention
+- Output Projection (\(W^O\))
+- Softmax
+- Attention Masking
+- Padding Masking
+- Causal Masking
+- Positional Encoding
+- Sinusoidal Positional Encoding
+- Learned Positional Embeddings
+- Relative Positional Encoding
+- Rotary Positional Embeddings (RoPE)
+- [CLS] Token
+- [SEP] Token
+- Pre-training
+- Fine-tuning
+- Masked Language Modeling (MLM)
+- Next Sentence Prediction (NSP)
+- Knowledge Distillation
+- Key-Value Caching (KV Cache)
+1.4. Medical and Biomedical Language Models
+- BERT-Base
+- BioBERT
+- ClinicalBERT
+- PubMedBERT
+- SapBERT
+- MiniLM
+- Domain-Specific BERT
+- Medical Language Models
+- Biomedical Language Models
+- Contrastive Learning
+- Metric Learning
+- Multi-Similarity Loss
+- Synonym Alignment
+- Entity-Level Embeddings
+- Sentence-Level Embeddings
+- Cased Tokenization
+- Uncased Tokenization
+- Catastrophic Forgetting
+- Parameter-Efficient Fine-Tuning (PEFT)
+- LoRA
+1.5. Vector Embeddings and Mathematics
+- 768-Dimensional Embeddings
+- High-Dimensional Vector Spaces
+- Vector Geometry
+- Manifold Hypothesis
+- Intrinsic Dimension
+- Representation Anisotropy
+- Representation Degeneration
+- Narrow-Cone Phenomenon
+- BERT-Whitening
+- Cosine Similarity
+- L2 Normalization
+- Euclidean Distance
+- Dot Product
+- Length Invariance
+- Curse of Dimensionality
+- t-SNE
+- UMAP
+1.6. Medical Knowledge Systems and Vocabularies
+- Unified Medical Language System (UMLS)
+- UMLS Metathesaurus
+- UMLS Semantic Network
+- UMLS SPECIALIST Lexicon
+- MetaMap
+- Concept Unique Identifier (CUI)
+- Atom Unique Identifier (AUI)
+- Lexical Unique Identifier (LUI)
+- Semantic Types
+- Semantic Relations
+- Biomedical Vocabulary Mapping
+- Cross-Vocabulary Mapping
+- Clinical Terminology Mapping
+- Medical Concept Linking
+Named medical vocabularies and databases:
+- Human Phenotype Ontology (HPO)
+- Orphanet
+- MONDO Disease Ontology
+- OMIM
+- MeSH
+- SNOMED-CT
+- ICD-10
+- ICD-11
+- RxNorm
+- LOINC
+- MedlinePlus
+- HGNC
+- UniProt
+1.7. Diseases, Syndromes and Medical Conditions Named in the Notes
+- Oculocutaneous Albinism Type 1
+- Oculocutaneous Albinism Type 1A
+- Oculocutaneous Albinism Type 1B
+- Oculocutaneous Albinism Type 2
+- Oculocutaneous Albinism Type 3
+- Oculocutaneous Albinism Type 4
+- Ocular Albinism
+- Hermansky–Pudlak Syndrome
+- Chediak–Higashi Syndrome
+- Marfan Syndrome
+- Huntington Disease
+- Hypertrophic Cardiomyopathy
+- Congestive Heart Failure
+- Hypertension
+- Essential (Primary) Hypertension
+- Sepsis
+1.8. Phenotypes, Symptoms and Clinical Findings Named
+- Nystagmus
+- Albinism
+- Hypopigmentation
+- Oculocutaneous Hypopigmentation
+- Sensorineural Hearing Loss
+- Hepatosplenomegaly
+- Pancytopenia
+- Dyspnea
+- Melena
+- Sialorrhea
+- Photophobia
+- Chest Pain
+- Palpitations
+- Nausea
+- Chorea
+- Seizure
+- Fever
+- Pain
+- Abnormal Eye Movement
+- Abnormal Voluntary Eye Movements
+- Eye Abnormality
+- Short Distal Phalanges of Finger
+- Short Middle Phalanges of the Hand
+1.9. Genes, Proteins, Drugs and Procedures Named
+- Genes: HTT, FBN1, TYR, APC
+- Proteins: Activated Protein C, Tyrosinase
+- Drugs: Lisinopril, Furosemide
+- Drug Brand Names: Lasix
+- Procedures: Argon Plasma Coagulation
+The notes also use APC as an example of an ambiguous abbreviation:
+- Adenomatous Polyposis Coli — gene
+- Activated Protein C — protein
+- Argon Plasma Coagulation — procedure
+1.10. Clinical Information Extraction
+- Named Entity Recognition (NER)
+- Clinical Entity Extraction
+- Phenotype Extraction
+- Gene Extraction
+- Protein Extraction
+- LLM-Based Information Extraction
+- Medical Prompt Engineering
+- Zero-Shot Prompting
+- Few-Shot Prompting
+- Chain-of-Thought (CoT)
+- Structured Generation
+- Pydantic
+- JSON Schema Validation
+- Outlines
+- Instructor
+- Robust JSON Parsing
+- Hallucination Detection
+- Retry-on-Failure
+- Temperature Scaling
+- Top-P Sampling
+- Nucleus Sampling
+- Deterministic Generation
+1.11. Clinical Retrieval
+- Retrieve-then-Rank
+- Top-K Candidate Retrieval
+- Recall@K
+- Dense Vector Retrieval
+- Approximate Nearest Neighbour (ANN)
+- FAISS
+- FlatL2
+- FlatIP
+- IVF-Flat
+- IVF-PQ
+- Product Quantization (PQ)
+- HNSW
+- Hierarchical Navigable Small World
+- Multi-Model Retrieval
+- Cosine-Based Retrieval
+- Candidate Ranking
+1.12. Medical Ontologies and Semantic Hierarchies
+- Medical Ontologies
+- Taxonomies
+- Ontology Hierarchies
+- Directed Acyclic Graphs (DAGs)
+- Multiple Inheritance
+- Is-A Relationships
+- Transitive Closure
+- Ancestor Lookup
+- Descendant Lookup
+- Common-Ancestor Computation
+- Cycle Detection
+- Ontology Versioning
+- Concept Drift
+- Term Deprecation
+- Term Replacement
+- Term Splitting
+- Term Merging
+- Semantic Normalization
+- Acronym Expansion
+- Exact Ontology Matching
+- Fuzzy Ontology Matching
+- owl:sameAs
+- owl:equivalentClass
+- owl:deprecated
+- owl:replacedBy
+- skos:exactMatch
+1.13. Knowledge Graphs and Biological Reasoning
+- Knowledge Graphs (KG)
+- Unified Knowledge Graphs
+- Biological Knowledge Graphs
+- RDF (Resource Description Framework)
+- Subject-Predicate-Object (SPO)
+- Turtle Serialization
+- Uniform Resource Identifiers (URIs)
+- RDF Reification
+- Named Graphs
+- RDF-star
+- Edge Metadata
+- RDF-to-NetworkX Conversion
+- Directed Graphs
+- MultiDiGraphs
+- Graph Traversal
+- Graph Search
+- SPARQL
+- OWL Reasoning
+- Logical Inference
+- Biological Verification
+- Disease-Phenotype Associations
+- Gene-Phenotype Associations
+- Graph Explainability
+- Path-Based Reasoning
+Graph libraries and systems:
+- RDFLib
+- NetworkX
+- GraphDB
+- Apache Jena
+- Stardog
+- Virtuoso
+- Neo4j
+- JanusGraph
+- DGraph
+- NebulaGraph
+1.14. Graph Similarity and Information Theory
+- Jaccard Similarity
+- Overlap Coefficient
+- Information Content (IC)
+- Resnik Similarity
+- Lin Similarity
+- Jiang-Conrath Similarity
+- Hierarchical Similarity
+- Asymmetric Similarity
+- Semantic Similarity
+- IDF Weighting
+- Hub-Node Suppression
+- Common Ancestor Similarity
+- Ontology-Based Similarity
+1.15. Graph Algorithms and Explainability
+- Breadth-First Search (BFS)
+- Depth-First Search (DFS)
+- Dijkstra's Algorithm
+- Bellman-Ford Algorithm
+- Shortest-Path Search
+- Multi-Hop Traversal
+- Path-Constrained Random Walks
+- IDF-Weighted Paths
+- Degree Centrality
+- Betweenness Centrality
+- Path Enumeration
+- Explainable AI (XAI)
+- Evidence Paths
+- Hub Nodes
+- Branching Factor
+1.16. Graph Neural Networks and Knowledge Graph Learning
+- Graph Neural Networks (GNNs)
+- Message Passing
+- GraphSAGE
+- Graph Attention Networks (GAT)
+- GraphConv
+- Relational Graph Convolutional Networks (R-GCN)
+- CompGCN
+- Knowledge Graph Embeddings
+- TransE
+- RotatE
+- DistMult
+- Link Prediction
+- Node Classification
+- Edge Prediction
+- KG-GNN Hybrid Architectures
+- Symbolic Reasoning
+- Statistical Graph Reasoning
+1.17. Neural Ranking
+- Learning-to-Rank (LTR)
+- Pointwise Ranking
+- Pairwise Ranking
+- Listwise Ranking
+- Neural Ranker
+- PyTorch MLP
+- Binary Cross-Entropy (BCE) Loss
+- Interaction Features
+- Vector Difference
+- Hadamard Product
+- Global Cosine Features
+- Pairwise Dataset Construction
+- Group-Aware Splitting
+- Data Leakage Prevention
+- All-Pairs Tournament
+- Non-Transitive Ranking
+- Condorcet Paradox
+- Bradley-Terry Model
+- Copeland's Method
+- PageRank
+- Active Candidate Elimination
+- LambdaMART
+1.18. Statistical Validation and Evaluation
+- Precision
+- Recall
+- F1 Score
+- Micro-F1
+- Macro-F1
+- Weighted-F1
+- Strict Entity Matching
+- Loose Entity Matching
+- Type-Level Matching
+- Mean Reciprocal Rank (MRR)
+- Top-K Accuracy
+- Recall@K
+- Discounted Cumulative Gain (DCG)
+- Ideal DCG (IDCG)
+- Normalized DCG (NDCG)
+- Mann–Whitney U-Test
+- Rank-Sum Test
+- Z-Score
+- Statistical Significance
+- P-Value
+- Effect Size
+- Bootstrap Confidence Intervals
+- Error Bars
+- Cohen's Kappa
+- Inter-Annotator Agreement
+- Patient-Stratified Splitting
+- Reproducible Experiments
+- Random Seed Control
+- Training/Validation/Test Splits
+
+2. 2D3D — Computer Vision and 3D Reconstruction
+Open the 2D3D project folder
+2.1. Camera Models and Geometry
+- Computer Vision
+- 2D-to-3D Reconstruction
+- Pinhole Camera Model
+- Perspective Projection
+- Optical Center
+- Principal Axis
+- Optical Axis
+- Focal Length
+- Intrinsic Camera Parameters
+- Extrinsic Camera Parameters
+- Camera Calibration
+- Checkerboard Calibration
+- Coordinate Systems
+- Coordinate Transformations
+- Homogeneous Coordinates
+- Projection Matrices
+- Rotation Matrices
+- Translation Vectors
+- Radial Distortion
+- Tangential Distortion
+- Perspective Foreshortening
+- Scale Ambiguity
+- Lens Undistortion
+2.2. Epipolar and Multi-View Geometry
+- Multi-View Geometry
+- Epipolar Geometry
+- Epipolar Plane
+- Epipolar Line
+- Epipole
+- Baseline
+- Epipolar Constraint
+- Essential Matrix
+- Fundamental Matrix
+- Eight-Point Algorithm
+- Camera Pose Estimation
+- Relative Rotation
+- Relative Translation
+- Geometric Correspondence
+- Multi-Camera Geometry
+2.3. Structure from Motion (SfM)
+- Structure from Motion
+- Feature Detection
+- Feature Matching
+- Keypoint Detection
+- Local Feature Descriptors
+- Scale-Invariant Feature Transform (SIFT)
+- ORB
+- SuperPoint
+- SuperGlue
+- Brute-Force Matching
+- BFMatcher
+- Euclidean Descriptor Distance
+- Lowe's Ratio Test
+- K-Nearest Neighbour Matching
+- RANSAC
+- Random Sample Consensus
+- Outlier Rejection
+- Feature Tracking
+- Image Pair Matching
+- Camera Pose Estimation
+- Sparse Reconstruction
+2.4. Bundle Adjustment and Optimization
+- Bundle Adjustment
+- Reprojection Error
+- Non-Linear Least Squares
+- Levenberg–Marquardt Algorithm
+- Gauss–Newton Method
+- Gradient Descent
+- Jacobian Matrices
+- Sparse Matrix Optimization
+- Global Camera Optimization
+- COLMAP
+- Ceres Solver
+2.5. Triangulation and Point Clouds
+- Triangulation
+- Ray Intersection
+- Direct Linear Transformation (DLT)
+- Homogeneous 3D Coordinates
+- Sparse Point Clouds
+- Dense Point Clouds
+- Point Cloud Generation
+- Point Cloud Normals
+- 3D Coordinate Estimation
+- Sparse-to-Dense Reconstruction
+2.6. Classical Multi-View Stereo (MVS)
+- Multi-View Stereo (MVS)
+- Dense Depth Estimation
+- Depth Maps
+- Photometric Consistency
+- Patch Matching
+- Epipolar Patch Search
+- Epipolar Sweeping
+- Depth Hypotheses
+- Normalized Cross-Correlation (NCC)
+- Sum of Absolute Differences (SAD)
+- PatchMatch Stereo
+- PMVS
+- Multi-View Depth Estimation
+- Reference View Selection
+- Source View Selection
+2.7. Neural Depth Estimation
+- Monocular Depth Estimation
+- Neural Depth Estimation
+- Depth Foundation Models
+- Depth Anything V3
+- MiDaS
+- Dense Prediction Transformer (DPT)
+- Vision Transformer (ViT)
+- Convolutional Neural Networks (CNNs)
+- Semantic Depth Estimation
+- Occlusion Reasoning
+- Shading-Based Depth Inference
+- Perspective-Based Depth Inference
+- Monocular Depth Priors
+- Depth Generalization
+- High-Resolution Depth Estimation
+- Pseudo-Labeling
+- Depth Model Training
+2.8. Deep Learning Multi-View Stereo
+- MVSNet
+- R-MVSNet
+- CasMVSNet
+- Cascade-Attention MVS
+- Reference-Source View Architecture
+- Feature Extraction
+- Shared-Weight CNN
+- Feature Pyramids
+- Cost Volume
+- 3D Cost Volume
+- Differentiable Homography Warping
+- Depth Plane Sweeping
+- Multi-Scale Cost Volume
+- Coarse-to-Fine Estimation
+- Cascade Refinement
+- ECA-Net
+- Efficient Channel Attention
+- CBAM
+- 3D U-Net
+- Group Normalization
+- LeakyReLU
+- Soft Argmin
+- Softmax Probability Distribution
+- Edge-Aware Refinement
+- ResNet Blocks
+- Cascaded Loss Functions
+- Multi-Scale Training
+2.9. Depth Fusion and Volumetric Reconstruction
+- Depth Map Fusion
+- Multi-Scale Depth Fusion
+- Truncated Signed Distance Function (TSDF)
+- Signed Distance Function (SDF)
+- Signed Distance Fields
+- Volumetric Reconstruction
+- Voxel Grids
+- Voxel Hashing
+- Sparse Voxel Hashing
+- Weighted Distance Fusion
+- Confidence-Weighted Fusion
+- Surface Integration
+- Fuhrmann Fusion
+- Floating Scale Surface Reconstruction (FSSR)
+- Point-Based Implicit Functions
+- Gaussian Basis Functions
+- Scale-Aware Reconstruction
+- Poisson Surface Reconstruction
+- Point Density Estimation
+- Surface Normal Integration
+2.10. Mesh Generation and Topology
+- Surface Reconstruction
+- Mesh Generation
+- Mesh Topology
+- Vertices
+- Edges
+- Faces
+- Triangle Meshes
+- Marching Cubes
+- Zero-Crossing Extraction
+- Lookup Tables (LUT)
+- Connected Components
+- Region of Interest (ROI)
+- Mesh Cleanup
+- Mesh Validation
+- Mesh Decimation
+- Quadric Error Metrics
+- Laplacian Smoothing
+- Taubin Smoothing
+- Surface Simplification
+- Watertight Meshes
+- Mesh Density Control
+2.11. Neural 3D Representations
+- Neural Radiance Fields (NeRF)
+- Multi-Layer Perceptron (MLP)
+- Implicit Neural Representations
+- Radiance Fields
+- Volume Density
+- View-Dependent Rendering
+- Ray Marching
+- Volume Rendering
+- Alpha Compositing
+- Novel View Synthesis
+- Specular Reflection Modelling
+- 3D Gaussian Splatting (3DGS)
+- 3D Gaussian Ellipsoids
+- Gaussian Mean
+- Covariance Matrix
+- Gaussian Opacity
+- Spherical Harmonics
+- Gaussian Rasterization
+- CUDA Rasterization
+- Stochastic Gradient Descent
+- Per-Scene Optimization
+- Gaussian Densification
+- Gaussian Splitting
+- Gaussian Pruning
+2.12. Disentangled Learning and Primitive-Based Reconstruction
+Additional research direction in the notes
+- Disentangled Learning
+- Disentangled Representation Learning
+- Compositional 3D Scene Representation Learning
+- Neural Primitive-Based Scene Decomposition
+- Primitive-Based 3D Reconstruction
+- Geometric Primitives
+- Cuboids
+- Cubes
+- Cylinders
+- Superquadrics
+- Parametric Shapes
+- Differentiable Blocks World
+- Slot Attention
+- Object-Centric Learning
+- Latent Slots
+- Neural Implicit Representations
+- Structured 3D Representations
+- CAD-Like Reconstruction
+- Neural CAD
+- Parametric Geometry
+- Compositional Geometry
+- Coarse-to-Fine Reconstruction
+2.13. Semantic and Structural Building Decomposition
+Additional research direction in the notes
+- Semantic Scene Understanding
+- 3D Scene Understanding
+- Architectural Scene Parsing
+- Building Parsing
+- Semantic Segmentation
+- Structural Segmentation
+- Semantic 3D Reconstruction
+- Structural 3D Reconstruction
+- Building Component Recognition
+- Structural Scene Graphs
+- 3D Scene Graphs
+- Neural Scene Graphs
+- Semantic Scene Graph Generation
+- Floorplan Reconstruction
+- Layout Estimation
+- Parametric Building Reconstruction
+- Procedural Building Modelling
+- Architectural CAD Reconstruction
+- Semantic NeRF
+- Semantic 3D Gaussian Splatting
+- Semantic 3D Maps
+Named architectural components:
+- Walls
+- Floors
+- Roofs
+- Windows
+- Doors
+- Ceilings
+- Rooms
+- Columns
+- Structural Planes
+- Building Openings
+Named datasets and research directions:
+- LayoutNet
+- FloorNet
+- DeepFloorplan
+- Scan2Plan
+- ScanNet
+- Structured3D
+2.14. Video-to-3D Reconstruction Pipeline
+- Video Ingestion
+- Video Downloading
+- Video Frame Extraction
+- Frame Sampling
+- Frame Resizing
+- Monocular Depth Inference
+- Batch Inference
+- Per-Image Inference
+- Error Recovery
+- Pipeline Orchestration
+- System Orchestrator
+- Multi-View Reconstruction
+- MVE Pipeline
+- Open3D Compatibility Layer
+- Point Cloud Primitives
+- Surface Reconstruction from Scratch
+2.15. Training and Data Engineering
+- Curriculum Learning
+- Synthetic Data Generation
+- Backward Warping
+- Data Augmentation
+- Training Data Requirements
+- Dataset Construction
+- Multi-Scale Training
+- Pseudo-Label Generation
+- Durable State Tracking
+- Checkpoint Storage
+- Hugging Face Cloud Sync
+- Google Colab
+- GPU Memory Management
+- Computational Feasibility
