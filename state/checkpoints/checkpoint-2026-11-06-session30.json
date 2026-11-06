@@ -1,0 +1,89 @@
+{
+ "session": "30",
+ "date": "2026-11-06",
+ "task_id": "AUDIT-012 + AUDIT-013 + VERIF-002 — ALL COMPLETED",
+ "phase": "post-delivery-verification",
+ "accelerated_mode": {
+  "session_number": 30,
+  "budget_sessions_consumed": 0,
+  "budget_sessions_remaining": 0,
+  "deliverable_metric_moved": "source See-Also pairs mechanically verified + corpus duplication defects remaining + KUs semantically verified (cumulative)",
+  "before": "1,537/1,773 See-Also pairs carried; 2 known dup stutters unscanned corpus; 246 KUs semantically verified",
+  "after": "1,739+34/1,773 See-Also pairs resolved (175 links repaired); 0 duplication findings (2 repaired); 488 KUs semantically verified (1.77%)",
+  "denominator": "1,773 See-Also pairs / 544 notes x 103,039 lines / 27,536 KUs",
+  "failed_session": false,
+  "cause_if_failed": null,
+  "deadline_position": "Project delivered at session 28 (deadline overrun closed under policy §5.5). Sessions 29-30 are post-delivery verification deepening outside the ADR-0012 budget; delivered metric unchanged (544/544 notes, all gates green)."
+ },
+ "work_completed": [
+  "Startup verification: baseline reproduced from 39a90b0 (HEAD==origin/main, clean): 752/752 tests, sources 276/276+333/333 byte-identical (verify-manifest x2)",
+  "AUDIT-012 (See-Also carry-over audit, closes the F-0035 remaining risk): new framework command vu see-also-audit (deterministic; 27 unit/CLI tests; frontmatter-alias phantom matching; --decisions mechanism with rationale+decided_by on every row) mechanically verified all 1,773 unique source See-Also pairs / 1,901 occurrences (314 Master AI heading blocks + 9 AI Course inline references; vault A has no heading convention — surveyed); found 177 dropped pairs (F-0042: scale generalization of the F-0035 root cause), repaired 175 path-aware links across 108 destination notes via anchored probe-idempotent s30_seealso_repairs.py (8/8 sampled pairs spot-verified by direct read); 62 orchestrator decisions recorded (19 semantic shorthand resolutions, 9 content-vs-paper ambiguity resolutions, 34 documented vault-management exclusions F-0043 with evidence: 0 content->area-20 links by design, archived Research Queue preserves its own 86 links, source queue has no topic links); post-repair audit 1,739 carried + 34 excluded = 1,773/1,773 exit 0",
+  "AUDIT-013 (duplicate-phrase/block scan, closes the F-0037/F-0038 remaining risk): new framework command vu dup-scan (deterministic; 20 unit/CLI tests incl. seeded F-0037/F-0038 regression shapes; exclusion rules calibrated on a corpus survey: 14 raw candidates = 2 real stutters + 12 legitimate math/pipeline/enumeration notation) scanned 544 notes / 103,039 lines + tandem block analysis: exactly 2 findings (both F-0037-class x3 intra-line stutters in K-Nearest Neighbors.md, both verified generation artifacts against sources) — repaired via anchored probe-idempotent s30_dup_repairs.py; 0 tandem block repeats vault-wide so no F-0038-class instance remains; fixed a line-offset reporting bug in dupscan (frontmatter lines not chars) caught by repair-anchor mismatch",
+  "VERIF-002 (semantic increment on the post-repair state): fresh deterministic non-overlapping 242-KU stratified sample (census cells exhausted by s29; Contextualized 42 / Consolidated 119 / Preserved 81 + area floor 20/20 areas; 0 overlap with the 246 s29 KUs; cumulative 488 = 1.77%); 17 bounded subagent groups judged every KU (group-13 first run degenerated without output and was relaunched cleanly — documented); mechanical validation PASSED 242/242 (every evidence quote a verbatim substring of its cited destination); result 239 present + 2 partial + 1 absent = 241/242 (99.6%) retained; orchestrator re-review 25/25 agreement (all 3 non-present direct-read verified + 22 even-spaced present, 3 deep-verified at full context); all 3 non-present verdicts traced to source-side dangling pointers (Non Academic/... and What to do.md — both targets nonexistent in either source vault, exhaustive search) or the F-0043 documented exclusion (F-0045); quality-flag triage of 26 flags vs sources: 2 synthesis-introduced defects repaired (F-0046: TRT-LLM stray '>'; Mech-Interp meta-reference connector — the first over-aggressive repair attempt was CAUGHT by the full-corpus marker audit (equation-omission of the \\mathbf{d}_i fingerprint), reverted same-session, connector-only repair applied), 10 source-inherited sic documented (F-0047), remainder accepted conventions/observations",
+  "Continuous commit-and-push: 3f5ef2f (registration), 950f62e (AUDIT-012), 2812539 (AUDIT-013), a7ceca2 (VERIF-002 sample), each remote-verified 0/0 divergence"
+ ],
+ "changed_paths": [
+  "src/vault_unification/seealsoaudit.py, dupscan.py, cli.py (new commands see-also-audit, dup-scan)",
+  "tests/test_seealsoaudit.py (27), tests/test_dupscan.py (20) — suite 752 -> 799",
+  "output/Unified-Vault/ (108 notes +1 See-Also link each [AUDIT-012]; K-Nearest Neighbors x2 stutter collapses [AUDIT-013]; TensorRT-LLM + Mechanistic Interpretability [VERIF-002])",
+  "state/synthesis/s30-seealso-decisions.jsonl, s30-semantic-sample.jsonl",
+  "reports/synthesis/s30-*.json(x5) + s30-semantic-judgments.jsonl",
+  "state/findings.jsonl (F-0042..F-0047), state/task-queue.jsonl (AUDIT-012/013/VERIF-002 completed), state/current-state.json"
+ ],
+ "tests_run": [
+  {
+   "command": "python3 -m pytest -q (baseline)",
+   "result": "752 passed"
+  },
+  {
+   "command": "vu see-also-audit (pre-repair, no decisions)",
+   "result": "1,773 pairs: 1,540 carried / 193 dropped / 19 absent / 21 ambiguous"
+  },
+  {
+   "command": "vu see-also-audit (with decisions, post-repair)",
+   "result": "1,739 carried + 34 excluded = 1,773/1,773, 0 dropped/ambiguous/unmapped/missing, exit 0"
+  },
+  {
+   "command": "vu dup-scan (pre/post repair)",
+   "result": "2 findings -> 0 findings (544 notes, 103,039 lines)"
+  },
+  {
+   "command": "scripts/s30_validate_judgments.py",
+   "result": "VALIDATION PASSED 242/242"
+  },
+  {
+   "command": "vu lint-artifacts (after every repair batch)",
+   "result": "0 errors / 85 warnings (baseline-identical every time)"
+  },
+  {
+   "command": "vu check-links (after every repair batch)",
+   "result": "12,177 links / 0 problems (+175 from AUDIT-012)"
+  },
+  {
+   "command": "scripts/s30_full_corpus_audit.py (after every repair batch)",
+   "result": "valid=true 0 findings 42,156 markers 0 missing (byte-identical stats to s28; intermediate over-reach repair caught and reverted — the audit working as designed)"
+  },
+  {
+   "command": "python3 -m pytest -q (final)",
+   "result": "799 passed (752 + 47 new)"
+  },
+  {
+   "command": "vu verify-manifest x2 (start + end)",
+   "result": "276/276 + 333/333 byte-identical"
+  }
+ ],
+ "git_state": "work committed and pushed continuously; all pushes remote-verified",
+ "open_findings": [
+  "F-0016 (open-operational, environment) and F-0018 (partially-fixed, historical) remain documented, not deliverable defects",
+  "F-0045..F-0047 recorded this session: 2 fixed (defect class), rest accepted/documented with evidence"
+ ],
+ "next_task": {
+  "candidates": [
+   "VERIF-003: another 246-KU non-overlapping semantic increment (sampler is deterministic; ~110 further sessions to full coverage at this rate — sampling remains the honest boundary)",
+   "non-consecutive duplication audit (GQA/Based consolidation overlaps observed by VERIF-002 quality flags; would need a new calibrated tool + scope decision, since the delivered vault intentionally allows cross-section overlap)",
+   "review of the 46,978 low-signal provisional discovery candidates (documented exclusion from s28)",
+   "presentation changes to the area-20 archival layer"
+  ],
+  "note": "none queued; register on user direction"
+ }
+}

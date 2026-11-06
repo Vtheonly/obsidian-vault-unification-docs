@@ -1,0 +1,20 @@
+{
+ "command": "s30-semantic-repairs",
+ "repairs_total": 3,
+ "applied": 0,
+ "already_applied": 3,
+ "mutations": [
+  {
+   "id": "R1-trt-llm-stray-quote",
+   "status": "already-applied (probe)"
+  },
+  {
+   "id": "R2a-mechint-revert-overreach",
+   "status": "already-applied (probe)"
+  },
+  {
+   "id": "R2b-mechint-meta-reference",
+   "status": "already-applied (probe)"
+  }
+ ]
+}

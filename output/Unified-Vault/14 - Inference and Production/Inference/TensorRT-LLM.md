@@ -10,7 +10,7 @@ created_index: 12
 TensorRT-LLM is NVIDIA's highest-performance LLM serving engine for NVIDIA hardware. Its defining characteristic is compilation: the model is built once into a TensorRT engine — a binary with fused kernels, FP8/INT8 support, and platform-specific optimizations — so you trade build-time complexity for runtime performance. This note covers the inference characteristics (latency, throughput, memory, cost per token), the feature set (in-flight batching, FP8, speculative decoding, quantization, constrained decoding, streaming), deployment patterns from Triton to multi-node, and the trade-offs that decide when to choose it over [[14 - Inference and Production/Inference/vLLM|vLLM]], TGI, or SGLang.
 
 > [!info] TL;DR
-> TensorRT-LLM is the **highest-performance LLM serving engine on NVIDIA hardware**. It compiles a model into a TensorRT engine — a binary with fused kernels, FP8/INT8 support, and platform-specific optimizations. > The compilation step is the key difference from vLLM/TGI: you trade build-time complexity for runtime performance. For the framework-perspective treatment, see the frameworks-and-tools coverage of TensorRT-LLM.
+> TensorRT-LLM is the **highest-performance LLM serving engine on NVIDIA hardware**. It compiles a model into a TensorRT engine — a binary with fused kernels, FP8/INT8 support, and platform-specific optimizations. The compilation step is the key difference from vLLM/TGI: you trade build-time complexity for runtime performance. For the framework-perspective treatment, see the frameworks-and-tools coverage of TensorRT-LLM.
 
 ## Why TensorRT-LLM for inference
 

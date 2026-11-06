@@ -1,0 +1,104 @@
+{
+ "task_id": "VERIF-002",
+ "purpose": "post-delivery semantic spot-verification increment on the post-AUDIT-012/013 state",
+ "sample": {
+  "drawn": 242,
+  "overlap_with_s29": 0,
+  "cumulative_judged": 488,
+  "cumulative_fraction": 0.01772,
+  "by_disposition": {
+   "Preserved": 81,
+   "Consolidated": 119,
+   "Contextualized": 42
+  },
+  "by_unit_type": {
+   "prose": 113,
+   "list": 73,
+   "code_block": 12,
+   "callout": 17,
+   "table": 6,
+   "math_block": 15,
+   "quote": 3,
+   "frontmatter": 3
+  },
+  "by_destination_area": {
+   "01": 10,
+   "02": 18,
+   "03": 4,
+   "04": 19,
+   "05": 19,
+   "06": 23,
+   "07": 3,
+   "08": 16,
+   "09": 3,
+   "10": 3,
+   "11": 2,
+   "12": 2,
+   "13": 5,
+   "14": 11,
+   "15": 5,
+   "16": 11,
+   "17": 13,
+   "18": 13,
+   "19": 20,
+   "20": 42
+  },
+  "method": "identical deterministic design to VERIF-001 over the remaining pool (see reports/synthesis/s30-semantic-sample.json)"
+ },
+ "judgment_execution": {
+  "groups": 17,
+  "judgments": 242,
+  "mechanical_validation": "PASSED 242/242 (schema, coverage, order, every evidence quote a whitespace-normalized substring of its cited destination note)",
+  "group_13_note": "first subagent run degenerated without writing output; relaunched cleanly (documented); final output validated"
+ },
+ "results": {
+  "present": 239,
+  "partial": 2,
+  "absent": 1,
+  "superseded_info_retained": 0,
+  "retained_including_partial": 241,
+  "retention_rate_including_partial": "241/242 (99.6%)"
+ },
+ "orchestrator_review": {
+  "non_present_rereviewed": 3,
+  "present_rereviewed_even_spaced": 22,
+  "total_rereviewed": 25,
+  "agreement": "25/25 (all 3 non-present verified by direct read; 22 even-spaced present verified, 3 deep-verified at full-context level)",
+  "non_present_analysis": {
+   "KU-83a89744b3f456e (absent)": "source line 691 is a provenance pointer to 'Non Academic/Machine Learning/05. K-Nearest Neighbors (KNN).md' — exhaustive path search confirms the target file does not exist in either source vault (dangling source pointer); no content was lost because there was no content behind the pointer",
+   "KU-838ebc0b32548b5f (partial)": "source A-Z Terms See Also carried [[MOC|Master Map of Content]]; the unified note dropped it — exactly the F-0043 documented-exclusion class (bare vault-management MOC target, area-20 archival isolation); 2 of 3 cross-references migrated",
+   "KU-21f6fda8f1a6bf6b (partial)": "source pointer 'per the protocol in Master AI/What to do.md' — the target file does not exist in either source vault (dangling source pointer); the unified note's generic 'following a written build protocol' is the correct treatment; core purpose knowledge retained"
+  }
+ },
+ "quality_flag_triage": {
+  "flags_on_kus": 26,
+  "synthesis_introduced_defects_repaired": 2,
+  "source_inherited_sic_documented": 10,
+  "accepted_conventions_or_observations": "remainder (established sic-annotation convention, honest provenance attribution, minor style, consolidation overlap within documented dup-scan scope limits)",
+  "repairs": [
+   "R1 TensorRT-LLM stray inline '>' removed (source clean; synthesis artifact)",
+   "R2 Mechanistic Interpretability meta-reference connector 'The source's summary is plainer:' -> 'In plainer terms:' (connector-only after the full-corpus audit caught the first over-aggressive attempt removing the source-verbatim sentence and its \\mathbf{d}_i marker fingerprint; revert + corrected repair, both documented in reports/synthesis/s30-semantic-repairs.json)"
+  ]
+ },
+ "post_repair_battery": {
+  "lint": "0 errors / 85 warnings (baseline-identical)",
+  "check_links": "12,177 links / 0 problems",
+  "full_corpus_audit": "valid=true 0 findings 42,156 markers 0 missing (stats identical to the s28 baseline)",
+  "dup_scan": "0 findings / 544 notes",
+  "see_also_audit": "1,739 carried + 34 excluded = 1,773/1,773, 0 dropped",
+  "tests": "799/799",
+  "sources": "276/276 + 333/333 byte-identical"
+ },
+ "limitations": [
+  "the 242-KU increment is a stratified sample (0.88% of the remaining pool; cumulative 1.77%), not a full per-unit semantic proof",
+  "reading-level judgments were made by subagent groups; the orchestrator re-reviewed 25/242 (10.3%)",
+  "quality flags cover only what the judging groups happened to observe while reading destination notes"
+ ],
+ "evidence_files": {
+  "judgments": "reports/synthesis/s30-semantic-judgments.jsonl",
+  "sample": "state/synthesis/s30-semantic-sample.jsonl",
+  "sample_report": "reports/synthesis/s30-semantic-sample.json",
+  "groups": "reports/synthesis/s30-semantic-groups.json",
+  "repairs": "reports/synthesis/s30-semantic-repairs.json"
+ }
+}
