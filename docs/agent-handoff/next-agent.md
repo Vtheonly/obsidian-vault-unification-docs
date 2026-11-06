@@ -3,77 +3,77 @@
 ## Project state
 
 **INTEGRATION CAMPAIGN IN PROGRESS (sessions 31–45, user directive commit
-`77cf6cf`); S31 (setup) and S32 (MEDNLP judgments) COMPLETE.** The unified
-vault (544 notes, delivered session 28, gates green) is being extended with
-the user's 1,233-item project taxonomy. **INTEG-003 (S33: 2D3D semantic
-coverage judgments, 291 items) is queued as the next bounded unit.**
+`77cf6cf`); S31 (setup), S32 (MEDNLP), S33 (2D3D) COMPLETE — 659/1,233
+items judged (53.4%).** The unified vault (544 notes, delivered session 28,
+gates green) is being extended with the user's 1,233-item project taxonomy.
+**INTEG-004 (S34: SYNPATH + VAULTX semantic judgments, 237 items) is queued
+as the next bounded unit.**
 
 - **Campaign plan (binding):** `docs/INTEGRATION_CAMPAIGN_PLAN.md` — A/B/C/D
   decisions, depth standard, 100%-coverage hard gate, per-wave mutation
   battery, session allocation S31–S45 with adaptive rules.
-- **S31 (complete, commit b451679):** deterministic inventory
-  (`state/integration/inventory-v1.jsonl`, 1,233 items / 9 clusters / 85
-  documented exclusions) + lexical coverage evidence
-  (`coverage-lexical-v1.jsonl`: title 73 / heading 46 / partial 484 /
-  body-multi 76 / body-single 18 / none 536 — evidence only, never
-  decisions) + `vu integ-inventory` / `vu integ-coverage` commands (37 new
-  tests; LaTeX-escaped alias bug fixed pre-generation; determinism probes
-  byte-identical).
-- **S32 (complete, INTEG-002):** MEDNLP cluster fully judged — **368/368
-  items, full census (no sampling), 28 subagent groups, all first-run
-  clean**. Result: **89 covered / 12 equivalent / 70 partial / 197 absent**.
-  Every covered/equivalent/partial judgment carries a verbatim quote
-  mechanically verified as a substring of its cited note
-  (`scripts/s32_validate_judgments.py`: PASSED 368/368). Orchestrator
-  re-review: stratified 41-item sample (11.1%) — **41/41 agreement**.
-  Artifacts: `state/integration/judgments-mednlp-v1.jsonl`,
-  `reports/integration/s32-mednlp-groups.json`,
-  `reports/integration/s32-mednlp-judgments.json`.
-- **S32 key findings:** the medical layer is ~54% genuinely missing — the
-  entire terminology stack (UMLS, SNOMED CT, ICD-10, RxNorm, LOINC, MeSH,
-  HGNC, OMIM, MONDO, HPO, Orphanet) has **zero vault occurrences**; likewise
-  clinical IE (negation/assertion/temporality), the clinical-BERT family,
-  RDF/OWL/SKOS + triple stores, the GNN/KG-embedding family, and
-  ontology-based similarity. General-ML items are largely covered
-  (attention, tokenization, embeddings, retrieval/ANN, metrics, sampling).
-  70 partial items define the decision-B expansion workload. 12
-  terminology-equivalence mappings recorded for the S36 decision ledger
-  (Explainable AI≡interpretability, Bootstrap CIs≡The bootstrap,
-  Retrieve-then-Rank≡Reranking, Deterministic Generation≡greedy decoding,
-  Neural Ranker≡cross-encoder reranker, Structured Generation≡constrained
-  decoding, …).
-- No vault mutations during judging; sources 276/276 + 333/333
-  byte-identical; 836/836 tests. Findings ledger F-0001..F-0047 unchanged.
-- Checkpoints: `checkpoint-2026-11-06-integ-session31.json`,
-  `checkpoint-2026-11-06-integ-session32.json` (accelerated_mode: INTEG
-  session 2/15, 13 remaining, no failed session).
+- **S31 (commit b451679):** deterministic inventory (1,233 items / 9
+  clusters / 85 documented exclusions) + lexical coverage evidence +
+  `vu integ-inventory` / `vu integ-coverage` commands (37 tests).
+- **S32 (commit 1616e7a, INTEG-002):** MEDNLP census **368/368 — 89
+  covered / 12 equivalent / 70 partial / 197 absent** (medical layer ~54%
+  missing: terminology stack, clinical IE, clinical-BERT family,
+  RDF/OWL/SKOS, triple stores, GNN/KG-embeddings, ontology similarity all
+  at zero occurrences). Validation: quotes verbatim-verified 368/368;
+  re-review 41/41.
+- **S33 (INTEG-003):** 2D3D census **291/291 — 28 covered / 8 equivalent /
+  64 partial / 191 absent** (3D-reconstruction layer ~66% missing: camera
+  models/calibration, epipolar+multi-view, MVS, bundle adjustment, point
+  clouds, neural depth, TSDF/fusion, meshes, NeRF/3DGS — "radiance" never
+  occurs —, building decomposition, primitives; general CV largely covered:
+  SIFT/ORB descriptors+matching, ViT/CNN, norm/activation/ResNet blocks).
+  Validation: quotes verbatim-verified 291/291; re-review 30/30.
+  Artifacts: `state/integration/judgments-{mednlp,2d3d}-v1.jsonl`,
+  `reports/integration/s3{2,3}-*-{groups,judgments}.json`.
+- **Judgment machinery (reusable):** `scripts/s32_pack_groups.py` /
+  `s33_pack_groups.py` (parameterize cluster id + paths),
+  `s32/s33_validate_judgments.py` (schema + exact set coverage + verbatim
+  quotes + absent discipline), closeout scripts. The judging prompt template
+  and evidence rules are embedded in the packer scripts' INSTRUCTIONS.
+- No vault mutations during judging in either session; sources 276/276 +
+  333/333 byte-identical; 836/836 tests. Findings ledger F-0001..F-0047
+  unchanged.
+- Checkpoints: `checkpoint-2026-11-06-integ-session{31,32,33}.json`
+  (accelerated_mode: INTEG sessions 1–3 of 15, 12 remaining, none failed).
+  Note: S32 and S33 ran in one wall-clock session under the plan §8
+  adaptive rule (audit sessions may absorb the next cluster when throughput
+  allows) — both recorded as separate budget sessions.
 
 ## If a future session runs
 
 1. Follow the startup protocol (AGENTS.md §2): verify this handoff against
-   repository evidence — the session-32 checkpoint, task-queue rows
-   INTEG-002/INTEG-003, the judgment file + aggregate, and the validation
-   script (re-runnable: `python3 scripts/s32_validate_judgments.py` must
-   print VALIDATION PASSED 368/368).
-2. **Next task (INTEG-003, S33):** 2D3D cluster semantic judgments (291
-   items). Reuse the S32 machinery: adapt `scripts/s32_pack_groups.py` (the
-   only cluster-specific parts are the cluster id, inventory filter, and
-   output paths — parameterize or copy the pattern), run bounded judgment
-   groups with the same instructions (grep surface + alternative terminology
-   before any absent verdict; verbatim quotes ≥12 words for
-   covered/equivalent), validate mechanically (same checks), re-review ≥10%,
-   aggregate, queue INTEG-004 (S34: SYNPATH + VAULTX, 237 items).
-3. Then S35 (MAPDIG + MATHSOLVER + WEATHER + NLME + MASTER-INDEX, 382
-   items) completes the audit phase; S36 decision ledger; S37–S43 execution
-   waves; S44 independent re-verification; S45 close.
-4. 2D3D expectations (from S31 lexical evidence): high absent rate on
-   3D-reconstruction vocabulary (NeRF/3DGS/MVS — the lexical none-band
-   concentrated in SYNPATH/2D3D), covered/partial on general CV (SIFT,
-   segmentation, camera geometry basics).
-5. **Project-context authority rule (plan §2):** never invent project usage;
-   the list's annotations are the only authoritative project context.
-6. Environment note: the sandbox venv may need `pip install -e .` before the
-   suite passes (environment artifact, not a regression).
+   repository evidence — the session-33 checkpoint, task-queue rows
+   INTEG-003/INTEG-004, the judgment files, and the re-runnable validators
+   (`python3 scripts/s33_validate_judgments.py` must print VALIDATION
+   PASSED 291/291).
+2. **Next task (INTEG-004, S34):** SYNPATH + VAULTX clusters (237 items:
+   SYNPATH 209 = geometric deep learning, equivariant architectures
+   (PaiNN/Equiformer), molecular generation, GFlowNets, protein
+   representation; VAULTX 28 = additional AI concepts). Reuse the S32/S33
+   machinery end-to-end: pack groups by section (≤18 items), run bounded
+   judgment groups (grep surface + alternative terminology before any
+   absent verdict; verbatim quotes ≥12 words for covered/equivalent),
+   validate mechanically, re-review ≥10%, aggregate, queue INTEG-005 (S35:
+   MAPDIG + MATHSOLVER + WEATHER + NLME + MASTER-INDEX, 382 items).
+3. Expected S34 profile (from S31 lexical evidence): high absent rate on
+   geometric/equivariant items (the vault has no GNN note; "geometric deep
+   learning" occurs nowhere), covered/partial on general deep-learning
+   items (attention variants, normalization, optimizers, diffusion if
+   present in SYNPATH's generative sections).
+4. Then S35 completes the audit phase; S36 decision ledger (A/B/C/D +
+   destinations for all 1,233 items, reusing the 20 recorded equivalence
+   mappings); S37–S43 execution waves; S44 independent re-verification;
+   S45 close.
+5. **Project-context authority rule (plan §2):** never invent project
+   usage; the list's annotations (Repository: lines, distinctions, status
+   notes) are the only authoritative project context.
+6. Environment note: the sandbox venv may need `pip install -e .` before
+   the suite passes (environment artifact, not a regression).
 7. Standing rules for any vault mutation: sources immutable; anchored
    probe-idempotent repair scripts; lint + links + full-corpus audit +
    dup-scan + see-also-audit + full suite after the last mutation;
@@ -81,14 +81,15 @@ coverage judgments, 291 items) is queued as the next bounded unit.**
 
 ## Explicit non-claims
 
-- Judgments exist for MEDNLP only (368/1,233 = 29.8% of the inventory);
-   2D3D, SYNPATH, VAULTX, MAPDIG, MATHSOLVER, WEATHER, NLME, MASTER-INDEX
-   are not yet semantically judged.
+- Judgments exist for MEDNLP + 2D3D only (659/1,233 = 53.4%); SYNPATH,
+  VAULTX, MAPDIG, MATHSOLVER, WEATHER, NLME, MASTER-INDEX are not yet
+  semantically judged.
 - "Covered/equivalent" means concept-level coverage at the depth standard;
    it does NOT include the user's project usage — project context is
-   integrated in the S37+ execution waves per the campaign plan.
-- The 70 partial and 197 absent MEDNLP items are findings about the vault,
-   not yet integration decisions; the A/B/C/D ledger opens at S36.
+   integrated in the S37+ execution waves.
+- The 134 partial and 388 absent verdicts (MEDNLP+2D3D) are findings about
+   the vault, not yet integration decisions; the A/B/C/D ledger opens at
+   S36.
 - Single-judge-per-item design is mitigated by mandatory multi-term search +
-   the 11.1% re-review (41/41); borderline calls carry judge-noted
-   uncertainty in the rationales.
+   the 10.3–11.1% re-reviews (41/41, 30/30); borderline calls carry
+   judge-noted uncertainty in the rationales.

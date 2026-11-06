@@ -1,0 +1,73 @@
+{
+  "session": 33,
+  "task_id": "INTEG-003",
+  "date": "2026-11-06",
+  "phase": "integration-campaign-audit",
+  "work_completed": [
+    "packed the 291 2D3D items into 24 bounded judgment groups (section-coherent, max 18 items; lexical hints attached) via scripts/s33_pack_groups.py",
+    "ran 24 independent subagent judgment groups (all completed cleanly on first run): each judge read candidate notes and grepped the vault for surface + alternative terminology before any absent verdict",
+    "mechanically validated all 291 judgments (schema, exact set coverage, verbatim-quote verification, absent discipline): VALIDATION PASSED 291/291",
+    "orchestrator re-review of a stratified 30-item sample (10.3%): 30/30 agreement",
+    "wrote the canonical judgment file + aggregate report; queued INTEG-004 (S34: SYNPATH+VAULTX); updated ledger/handoff/README",
+    "note: S32 and S33 were executed within the same wall-clock session under the campaign plan's adaptive rule (audit sessions may absorb the next cluster when throughput allows); both are recorded as separate budget sessions with separate checkpoints and task rows"
+  ],
+  "changed_paths": [
+    "scripts/s33_pack_groups.py (new)",
+    "scripts/s33_validate_judgments.py (new)",
+    "scripts/s33_closeout.py (new)",
+    "state/integration/judgments-2d3d-v1.jsonl (new; 291 records)",
+    "reports/integration/s33-2d3d-groups.json (new; committed manifest)",
+    "reports/integration/s33-2d3d-judgments.json (new; aggregate)",
+    "state/task-queue.jsonl (INTEG-003 completed; INTEG-004 queued)",
+    "state/current-state.json",
+    "state/checkpoints/checkpoint-2026-11-06-integ-session33.json",
+    "docs/ACCELERATED_COMPLETION_POLICY.md (ledger row 33)",
+    "docs/agent-handoff/next-agent.md (rewritten for session 34)",
+    "README.md (campaign progress)"
+  ],
+  "tests_run": [
+    {
+      "command": "python3 -m pytest -q (full suite at session end)",
+      "result": "836 passed"
+    },
+    {
+      "command": "vu verify-manifest x2 (sources)",
+      "result": "276/276 + 333/333 byte-identical"
+    },
+    {
+      "command": "python3 scripts/s33_validate_judgments.py",
+      "result": "VALIDATION PASSED 291/291"
+    }
+  ],
+  "git_state": {
+    "branch": "main",
+    "base_commit": "1616e7a (session-32 close)",
+    "session_commits": "recorded in the session commit message",
+    "push_verification": "per AGENTS.md section 13: push after commit and verify remote ref"
+  },
+  "open_findings": [
+    "2D3D absent-rate 66% (191/291): the 3D-reconstruction layer (camera geometry, epipolar/multi-view, MVS, bundle adjustment, point clouds, depth, fusion, meshes, NeRF/3DGS, building decomposition, primitives) must be built as cluster-domain notes (decision C/D) in the S37+ waves",
+    "64 partial items: the 2D/math core exists (RANSAC one-liner, homogeneous coordinates 2D-scope, NCC/SAD in non-MVS contexts, voxel grids as CNN input, Perceiver latents) — decision B expansions bridge 2D->3D",
+    "8 equivalence mappings recorded (Image Pair Matching≡keypoint matching, Shared-Weight CNN≡parameter sharing, Feature Pyramids≡FPN, Geometric Correspondence≡keypoint correspondence, Frame Resizing≡image scaling, Backward Warping≡inverse mapping, System Orchestrator≡multi-agent orchestrator, Feature Extraction≡hierarchical feature extraction)"
+  ],
+  "next_task": {
+    "task_id": "INTEG-004",
+    "title": "Semantic coverage judgments — SYNPATH + VAULTX clusters (237 items)",
+    "dependencies": [
+      "INTEG-003 (completed)"
+    ],
+    "resume": "Follow AGENTS.md section 2 startup; read docs/INTEGRATION_CAMPAIGN_PLAN.md and this checkpoint; reuse the S32/S33 machinery: adapt scripts/s33_pack_groups.py to the SYNPATH+VAULTX clusters (237 items), run bounded judgment groups, validate with the same mechanical checks, re-review >=10%, aggregate, and queue INTEG-005 (S35: the remaining clusters MAPDIG+MATHSOLVER+WEATHER+NLME+MASTER-INDEX, 382 items)."
+  },
+  "accelerated_mode": {
+    "session_number": 33,
+    "budget_sessions_consumed": 3,
+    "budget_sessions_remaining": 12,
+    "deliverable_metric_moved": "campaign items semantically judged (cumulative)",
+    "before": "368/1,233 items judged (MEDNLP complete; 29.8%)",
+    "after": "659/1,233 items judged (MEDNLP + 2D3D complete; 53.4%) — this session added 291 2D3D judgments: 28 covered / 8 equivalent / 64 partial / 191 absent",
+    "denominator": "1,233 unique inventory items; 291 2D3D items judged 291/291 (full census, no sampling)",
+    "failed_session": false,
+    "cause_if_failed": null,
+    "deadline_position": "INTEG campaign session 3 of 15 (S31-S45); ahead of plan (two audit clusters completed in one wall-clock session under the adaptive rule)"
+  }
+}

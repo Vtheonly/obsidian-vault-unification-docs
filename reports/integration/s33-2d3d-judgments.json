@@ -1,0 +1,176 @@
+{
+  "campaign": "INTEG-003",
+  "cluster": "2D3D",
+  "items_total": 291,
+  "verdict_counts": {
+    "partial": 64,
+    "covered": 28,
+    "equivalent": 8,
+    "absent": 191
+  },
+  "retained_or_existing": 100,
+  "genuinely_missing": 191,
+  "by_section": {
+    "Training and Data Engineering": {
+      "partial": 6,
+      "total": 13,
+      "covered": 3,
+      "equivalent": 1,
+      "absent": 3
+    },
+    "Camera Models and Geometry": {
+      "covered": 3,
+      "total": 23,
+      "partial": 6,
+      "absent": 14
+    },
+    "Deep Learning Multi-View Stereo": {
+      "equivalent": 3,
+      "total": 27,
+      "absent": 15,
+      "partial": 5,
+      "covered": 4
+    },
+    "Structure from Motion (SfM)": {
+      "covered": 8,
+      "total": 20,
+      "partial": 8,
+      "absent": 3,
+      "equivalent": 1
+    },
+    "Semantic and Structural Building Decomposition": {
+      "covered": 1,
+      "total": 37,
+      "absent": 36
+    },
+    "Epipolar and Multi-View Geometry": {
+      "absent": 13,
+      "total": 15,
+      "partial": 1,
+      "equivalent": 1
+    },
+    "Bundle Adjustment and Optimization": {
+      "absent": 8,
+      "total": 11,
+      "partial": 1,
+      "covered": 2
+    },
+    "Triangulation and Point Clouds": {
+      "absent": 9,
+      "total": 10,
+      "partial": 1
+    },
+    "Classical Multi-View Stereo (MVS)": {
+      "absent": 12,
+      "total": 15,
+      "partial": 3
+    },
+    "Neural Depth Estimation": {
+      "absent": 13,
+      "total": 17,
+      "partial": 2,
+      "covered": 2
+    },
+    "Depth Fusion and Volumetric Reconstruction": {
+      "absent": 17,
+      "total": 20,
+      "partial": 3
+    },
+    "Mesh Generation and Topology": {
+      "absent": 16,
+      "total": 21,
+      "partial": 3,
+      "covered": 2
+    },
+    "Neural 3D Representations": {
+      "partial": 6,
+      "total": 24,
+      "covered": 3,
+      "absent": 15
+    },
+    "Disentangled Learning and Primitive-Based Reconstruction": {
+      "partial": 10,
+      "total": 22,
+      "absent": 12
+    },
+    "Video-to-3D Reconstruction Pipeline": {
+      "partial": 9,
+      "total": 16,
+      "absent": 5,
+      "equivalent": 2
+    }
+  },
+  "method": {
+    "design": "full-cluster census (no sampling): all 291 2D3D items judged",
+    "groups": "24 bounded subagent groups (max 18 items; grouped by section, sections never merged)",
+    "judges": "24 independent general-purpose subagents reading destination notes and grepping the vault for surface forms + alternative terminology before any absent verdict",
+    "depth_standard": "campaign plan section 5 (what it is / why it exists / how it works conceptually / relations to other concepts; project usage not required for 'covered')",
+    "evidence_rule": "covered/equivalent/partial require a verbatim quote (>= 12 words for covered/equivalent) mechanically validated as a whitespace-normalized substring of the cited note (scripts/s33_validate_judgments.py, exit 0: 291/291 PASSED)",
+    "orchestrator_rereview": {
+      "method": "stratified even-spaced sample (every 10th record of the 291, 30 items = 10.3%): 20 absent verified by independent orchestrator greps of the agent search terms (all hits confirmed false positives: 'an 8-point improvement' in Process Reward Models is an accuracy delta not the epipolar algorithm; 'roof' hits are 'Proofread'/'proof' substrings); 10 partial/equivalent verified by reading the cited destination notes and judging the verdict + quote depth against the campaign depth standard",
+      "sample_size": 30,
+      "agreement": 30,
+      "disagreements": [],
+      "notes": "The 30-item sample spans 2D3D sections and the partial/equivalent/absent verdicts (0 covered in sample). Notable confirmed judgment calls: Image Pair Mapping EQUIVALENT via the keypoint-matching treatment (Lowe's ratio test, RANSAC verification) in the Feature Descriptors note; Shared-Weight CNN EQUIVALENT via parameter sharing in Local Connectivity and Parameter Sharing; Curriculum Learning PARTIAL (project-note recipe, not a dedicated concept explanation); Coordinate Systems PARTIAL (2D image-vs-math origins explained, no world/camera 3D chain); Latent Slots PARTIAL via the Perceiver latent-array machinery (slot semantics absent); Computational Feasibility PARTIAL (worked FLOPs-to-wall-clock estimates never framed as a concept). All 20 sampled absent verdicts confirmed: pinhole/undistortion/eight-point/SuperPoint/surface normals/depth foundation models/monocular depth/ECA-Net/watertight/alpha compositing/CUDA rasterization/scene parsing/floorplan/DeepFloorplan have zero genuine vault occurrences."
+    },
+    "limitations": [
+      "single-judge-per-item design mitigated by mandatory multi-term search before absent verdicts + the 10.3% orchestrator re-review; borderline covered/partial calls carry uncertainty noted by judges",
+      "judgments reflect the vault as of session 32 state (no vault mutations occurred during judging)",
+      "'covered' does not include project usage; project context integration happens in the S37+ execution waves"
+    ]
+  },
+  "destination_notes_cited": [
+    "01 - Foundations/AI Engineering/The Modern AI Stack.md",
+    "01 - Foundations/AI ML and DL Hierarchy/Applications of Deep Learning.md",
+    "02 - Mathematics/Calculus/Jacobians and Hessians.md",
+    "02 - Mathematics/Linear Algebra/Cosine Similarity.md",
+    "02 - Mathematics/Probability/Gaussian Distribution.md",
+    "04 - Machine Learning/Nearest Neighbors/K-Nearest Neighbors.md",
+    "04 - Machine Learning/Optimization Algorithms/Gradient Descent.md",
+    "04 - Machine Learning/Regression/Linear Regression.md",
+    "04 - Machine Learning/Support Vector Machines/Kernel Trick.md",
+    "05 - Neural Network Foundations/Architectures/Convolutional Neural Networks.md",
+    "05 - Neural Network Foundations/Neural Network Basics/Activation Functions.md",
+    "05 - Neural Network Foundations/Neural Network Basics/Perceptrons and Multi-Layer Perceptrons.md",
+    "05 - Neural Network Foundations/Training Dynamics and Stability/Batch Normalization.md",
+    "05 - Neural Network Foundations/Training Dynamics and Stability/Data Augmentation.md",
+    "06 - Computer Vision/Architecture and Connectivity/Hierarchical Feature Extraction.md",
+    "06 - Computer Vision/Architecture and Connectivity/Inception Architecture Deep Dive.md",
+    "06 - Computer Vision/Architecture and Connectivity/Local Connectivity and Parameter Sharing.md",
+    "06 - Computer Vision/Architecture and Connectivity/ResNet Bottleneck Blocks and Architectural Variants.md",
+    "06 - Computer Vision/CNN Foundations and Philosophy/Introduction and Foundations of CNNs.md",
+    "06 - Computer Vision/Core Operators and Geometry/Activation and Pooling Layers.md",
+    "06 - Computer Vision/Image Fundamentals/Image Representation Types.md",
+    "06 - Computer Vision/Image Fundamentals/What is a Digital Image.md",
+    "06 - Computer Vision/Modern Computer Vision Tasks/Detection and Segmentation.md",
+    "06 - Computer Vision/Morphological Processing and Segmentation/Connected Components and Region Properties.md",
+    "06 - Computer Vision/Spatial Filtering/Canny and LoG Edge Detection.md",
+    "06 - Computer Vision/Spatial Filtering/Edge Preserving Filters.md",
+    "06 - Computer Vision/Spatial Filtering/Feature Descriptors - SIFT, SURF, ORB, HOG.md",
+    "06 - Computer Vision/Spatial Filtering/Geometric Transformations and Interpolation.md",
+    "06 - Computer Vision/Spatial Filtering/Image Pyramids and Multi-Scale Representation.md",
+    "06 - Computer Vision/Spatial Filtering/The Hough Transform.md",
+    "06 - Computer Vision/Training and Transfer Learning/Transfer Learning and Fine-Tuning.md",
+    "08 - Attention and Transformers/Encoder Decoder Design Space/Information Bottleneck and Latent Space.md",
+    "08 - Attention and Transformers/Transformer Architecture/Embedding Layer.md",
+    "08 - Attention and Transformers/Vision Transformers/ViT Architecture.md",
+    "11 - Foundation Models and Multimodal/Foundation Models and Multimodal MOC.md",
+    "11 - Foundation Models and Multimodal/Foundation Models/Vision Foundation Models.md",
+    "13 - Training and Adaptation/Training Data/Data Pipelines and Deduplication.md",
+    "14 - Inference and Production/AI Infrastructure/GPU Infrastructure and Sizing.md",
+    "14 - Inference and Production/AI Infrastructure/Messaging with Kafka and Celery.md",
+    "15 - Agents and Tooling/Frameworks and Tools/LangGraph.md",
+    "15 - Agents and Tooling/Multi-Agent Systems/Enterprise Multi-Agent Architectures.md",
+    "15 - Agents and Tooling/Retrieval Augmented Generation/RAG Pipeline Overview.md",
+    "16 - Interpretability and Research/Research Frontiers/Hybrid Architectures/Hyena and Long Convolutions.md",
+    "17 - Papers/Multimodal/Perceiver.md",
+    "17 - Papers/Multimodal/SigLIP-2.md",
+    "18 - Projects/Capstones/Build a Code Agent.md",
+    "18 - Projects/Capstones/Build a Distributed Training Pipeline.md",
+    "18 - Projects/Capstones/Build a Fine-Tuning Pipeline with LoRA and DPO.md",
+    "18 - Projects/Capstones/Build a Model Distillation Pipeline.md",
+    "18 - Projects/Capstones/Build a Multimodal Agent.md",
+    "18 - Projects/Implementations/Build a Tiny LLM Trainer.md"
+  ],
+  "validation": "scripts/s33_validate_judgments.py: VALIDATION PASSED 291/291 (schema, exact set coverage, quotes verbatim-verified, absent discipline)"
+}

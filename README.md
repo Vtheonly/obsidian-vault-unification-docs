@@ -11,11 +11,14 @@ concepts from their real projects to be integrated into the delivered vault
 under a 100%-coverage hard gate, without duplication or disconnection.
 Binding methodology: `docs/INTEGRATION_CAMPAIGN_PLAN.md`. Session 31 (setup)
 completed the deterministic inventory (9 clusters, documented exclusions) and
-the lexical coverage mechanism; session 32 (S32) completed the MEDNLP
-semantic judgment census — 368/368 items: 89 covered / 12 equivalent /
-70 partial / 197 absent (the medical layer is ~54% genuinely missing; all
-quotes mechanically verified; 11.1% re-review 41/41). Next: S33 (2D3D, 291
-items), then the remaining audit clusters, decisions, and integration waves.
+the lexical coverage mechanism; sessions 32–33 completed the MEDNLP and
+2D3D semantic judgment censuses — 659/1,233 items judged (53.4%): MEDNLP
+368/368 (89 covered / 12 equivalent / 70 partial / 197 absent — the medical
+layer ~54% missing) and 2D3D 291/291 (28 covered / 8 equivalent / 64
+partial / 191 absent — the 3D-reconstruction layer ~66% missing); all
+quotes mechanically verified; re-review agreements 41/41 and 30/30. Next:
+S34 (SYNPATH+VAULTX, 237 items), S35 (remaining clusters), then decisions
+and integration waves.
 Campaign state: `state/integration/`; reports: `reports/integration/`.
 
 - **Knowledge accounting:** 27,536/27,536 KUs dispositioned (Preserved 18,478

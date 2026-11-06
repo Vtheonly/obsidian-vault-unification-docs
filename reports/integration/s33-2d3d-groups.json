@@ -1,0 +1,583 @@
+{
+  "campaign": "INTEG-003",
+  "cluster": "2D3D",
+  "items_total": 291,
+  "groups_total": 24,
+  "max_items_per_group": 18,
+  "grouping": "by 2D3D section (first-occurrence order), consecutive chunks at 18 items; sections never merged",
+  "lexical_hint_source": "state/integration/coverage-lexical-v1.jsonl",
+  "judgment_schema": {
+    "required": [
+      "item_id",
+      "verdict",
+      "destination_note",
+      "evidence_quote",
+      "equivalent_name",
+      "rationale",
+      "search_terms_tried"
+    ],
+    "verdicts": [
+      "covered",
+      "equivalent",
+      "partial",
+      "absent"
+    ]
+  },
+  "groups": [
+    {
+      "group_id": 1,
+      "sections": [
+        "Training and Data Engineering"
+      ],
+      "items": 13,
+      "item_ids": [
+        "INT-0187",
+        "INT-0192",
+        "INT-1223",
+        "INT-1224",
+        "INT-1225",
+        "INT-1226",
+        "INT-1227",
+        "INT-1228",
+        "INT-1229",
+        "INT-1230",
+        "INT-1231",
+        "INT-1232",
+        "INT-1233"
+      ],
+      "spec": "scratch/s33-integ/groups/group-01.json",
+      "output": "scratch/s33-integ/judgments/group-01.jsonl"
+    },
+    {
+      "group_id": 2,
+      "sections": [
+        "Camera Models and Geometry"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0210",
+        "INT-0952",
+        "INT-0953",
+        "INT-0954",
+        "INT-0955",
+        "INT-0956",
+        "INT-0957",
+        "INT-0958",
+        "INT-0959",
+        "INT-0960",
+        "INT-0961",
+        "INT-0962",
+        "INT-0963",
+        "INT-0964",
+        "INT-0965",
+        "INT-0966",
+        "INT-0967",
+        "INT-0968"
+      ],
+      "spec": "scratch/s33-integ/groups/group-02.json",
+      "output": "scratch/s33-integ/judgments/group-02.jsonl"
+    },
+    {
+      "group_id": 3,
+      "sections": [
+        "Camera Models and Geometry"
+      ],
+      "items": 5,
+      "item_ids": [
+        "INT-0969",
+        "INT-0970",
+        "INT-0971",
+        "INT-0972",
+        "INT-0973"
+      ],
+      "spec": "scratch/s33-integ/groups/group-03.json",
+      "output": "scratch/s33-integ/judgments/group-03.jsonl"
+    },
+    {
+      "group_id": 4,
+      "sections": [
+        "Deep Learning Multi-View Stereo"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0213",
+        "INT-1058",
+        "INT-1059",
+        "INT-1060",
+        "INT-1061",
+        "INT-1062",
+        "INT-1063",
+        "INT-1064",
+        "INT-1065",
+        "INT-1066",
+        "INT-1067",
+        "INT-1068",
+        "INT-1069",
+        "INT-1070",
+        "INT-1071",
+        "INT-1072",
+        "INT-1073",
+        "INT-1074"
+      ],
+      "spec": "scratch/s33-integ/groups/group-04.json",
+      "output": "scratch/s33-integ/judgments/group-04.jsonl"
+    },
+    {
+      "group_id": 5,
+      "sections": [
+        "Deep Learning Multi-View Stereo"
+      ],
+      "items": 9,
+      "item_ids": [
+        "INT-1075",
+        "INT-1076",
+        "INT-1077",
+        "INT-1078",
+        "INT-1079",
+        "INT-1080",
+        "INT-1081",
+        "INT-1082",
+        "INT-1083"
+      ],
+      "spec": "scratch/s33-integ/groups/group-05.json",
+      "output": "scratch/s33-integ/judgments/group-05.jsonl"
+    },
+    {
+      "group_id": 6,
+      "sections": [
+        "Structure from Motion (SfM)"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0214",
+        "INT-0217",
+        "INT-0220",
+        "INT-0224",
+        "INT-0989",
+        "INT-0990",
+        "INT-0991",
+        "INT-0992",
+        "INT-0993",
+        "INT-0994",
+        "INT-0995",
+        "INT-0996",
+        "INT-0997",
+        "INT-0998",
+        "INT-0999",
+        "INT-1000",
+        "INT-1001",
+        "INT-1002"
+      ],
+      "spec": "scratch/s33-integ/groups/group-06.json",
+      "output": "scratch/s33-integ/judgments/group-06.jsonl"
+    },
+    {
+      "group_id": 7,
+      "sections": [
+        "Structure from Motion (SfM)"
+      ],
+      "items": 2,
+      "item_ids": [
+        "INT-1003",
+        "INT-1004"
+      ],
+      "spec": "scratch/s33-integ/groups/group-07.json",
+      "output": "scratch/s33-integ/judgments/group-07.jsonl"
+    },
+    {
+      "group_id": 8,
+      "sections": [
+        "Semantic and Structural Building Decomposition"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0234",
+        "INT-1171",
+        "INT-1172",
+        "INT-1173",
+        "INT-1174",
+        "INT-1175",
+        "INT-1176",
+        "INT-1177",
+        "INT-1178",
+        "INT-1179",
+        "INT-1180",
+        "INT-1181",
+        "INT-1182",
+        "INT-1183",
+        "INT-1184",
+        "INT-1185",
+        "INT-1186",
+        "INT-1187"
+      ],
+      "spec": "scratch/s33-integ/groups/group-08.json",
+      "output": "scratch/s33-integ/judgments/group-08.jsonl"
+    },
+    {
+      "group_id": 9,
+      "sections": [
+        "Semantic and Structural Building Decomposition"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-1188",
+        "INT-1189",
+        "INT-1190",
+        "INT-1191",
+        "INT-1192",
+        "INT-1193",
+        "INT-1194",
+        "INT-1195",
+        "INT-1196",
+        "INT-1197",
+        "INT-1198",
+        "INT-1199",
+        "INT-1200",
+        "INT-1201",
+        "INT-1202",
+        "INT-1203",
+        "INT-1204",
+        "INT-1205"
+      ],
+      "spec": "scratch/s33-integ/groups/group-09.json",
+      "output": "scratch/s33-integ/judgments/group-09.jsonl"
+    },
+    {
+      "group_id": 10,
+      "sections": [
+        "Semantic and Structural Building Decomposition"
+      ],
+      "items": 1,
+      "item_ids": [
+        "INT-1206"
+      ],
+      "spec": "scratch/s33-integ/groups/group-10.json",
+      "output": "scratch/s33-integ/judgments/group-10.jsonl"
+    },
+    {
+      "group_id": 11,
+      "sections": [
+        "Epipolar and Multi-View Geometry"
+      ],
+      "items": 15,
+      "item_ids": [
+        "INT-0974",
+        "INT-0975",
+        "INT-0976",
+        "INT-0977",
+        "INT-0978",
+        "INT-0979",
+        "INT-0980",
+        "INT-0981",
+        "INT-0982",
+        "INT-0983",
+        "INT-0984",
+        "INT-0985",
+        "INT-0986",
+        "INT-0987",
+        "INT-0988"
+      ],
+      "spec": "scratch/s33-integ/groups/group-11.json",
+      "output": "scratch/s33-integ/judgments/group-11.jsonl"
+    },
+    {
+      "group_id": 12,
+      "sections": [
+        "Bundle Adjustment and Optimization"
+      ],
+      "items": 11,
+      "item_ids": [
+        "INT-1005",
+        "INT-1006",
+        "INT-1007",
+        "INT-1008",
+        "INT-1009",
+        "INT-1010",
+        "INT-1011",
+        "INT-1012",
+        "INT-1013",
+        "INT-1014",
+        "INT-1015"
+      ],
+      "spec": "scratch/s33-integ/groups/group-12.json",
+      "output": "scratch/s33-integ/judgments/group-12.jsonl"
+    },
+    {
+      "group_id": 13,
+      "sections": [
+        "Triangulation and Point Clouds"
+      ],
+      "items": 10,
+      "item_ids": [
+        "INT-1016",
+        "INT-1017",
+        "INT-1018",
+        "INT-1019",
+        "INT-1020",
+        "INT-1021",
+        "INT-1022",
+        "INT-1023",
+        "INT-1024",
+        "INT-1025"
+      ],
+      "spec": "scratch/s33-integ/groups/group-13.json",
+      "output": "scratch/s33-integ/judgments/group-13.jsonl"
+    },
+    {
+      "group_id": 14,
+      "sections": [
+        "Classical Multi-View Stereo (MVS)"
+      ],
+      "items": 15,
+      "item_ids": [
+        "INT-1026",
+        "INT-1027",
+        "INT-1028",
+        "INT-1029",
+        "INT-1030",
+        "INT-1031",
+        "INT-1032",
+        "INT-1033",
+        "INT-1034",
+        "INT-1035",
+        "INT-1036",
+        "INT-1037",
+        "INT-1038",
+        "INT-1039",
+        "INT-1040"
+      ],
+      "spec": "scratch/s33-integ/groups/group-14.json",
+      "output": "scratch/s33-integ/judgments/group-14.jsonl"
+    },
+    {
+      "group_id": 15,
+      "sections": [
+        "Neural Depth Estimation"
+      ],
+      "items": 17,
+      "item_ids": [
+        "INT-1041",
+        "INT-1042",
+        "INT-1043",
+        "INT-1044",
+        "INT-1045",
+        "INT-1046",
+        "INT-1047",
+        "INT-1048",
+        "INT-1049",
+        "INT-1050",
+        "INT-1051",
+        "INT-1052",
+        "INT-1053",
+        "INT-1054",
+        "INT-1055",
+        "INT-1056",
+        "INT-1057"
+      ],
+      "spec": "scratch/s33-integ/groups/group-15.json",
+      "output": "scratch/s33-integ/judgments/group-15.jsonl"
+    },
+    {
+      "group_id": 16,
+      "sections": [
+        "Depth Fusion and Volumetric Reconstruction"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-1084",
+        "INT-1085",
+        "INT-1086",
+        "INT-1087",
+        "INT-1088",
+        "INT-1089",
+        "INT-1090",
+        "INT-1091",
+        "INT-1092",
+        "INT-1093",
+        "INT-1094",
+        "INT-1095",
+        "INT-1096",
+        "INT-1097",
+        "INT-1098",
+        "INT-1099",
+        "INT-1100",
+        "INT-1101"
+      ],
+      "spec": "scratch/s33-integ/groups/group-16.json",
+      "output": "scratch/s33-integ/judgments/group-16.jsonl"
+    },
+    {
+      "group_id": 17,
+      "sections": [
+        "Depth Fusion and Volumetric Reconstruction"
+      ],
+      "items": 2,
+      "item_ids": [
+        "INT-1102",
+        "INT-1103"
+      ],
+      "spec": "scratch/s33-integ/groups/group-17.json",
+      "output": "scratch/s33-integ/judgments/group-17.jsonl"
+    },
+    {
+      "group_id": 18,
+      "sections": [
+        "Mesh Generation and Topology"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-1104",
+        "INT-1105",
+        "INT-1106",
+        "INT-1107",
+        "INT-1108",
+        "INT-1109",
+        "INT-1110",
+        "INT-1111",
+        "INT-1112",
+        "INT-1113",
+        "INT-1114",
+        "INT-1115",
+        "INT-1116",
+        "INT-1117",
+        "INT-1118",
+        "INT-1119",
+        "INT-1120",
+        "INT-1121"
+      ],
+      "spec": "scratch/s33-integ/groups/group-18.json",
+      "output": "scratch/s33-integ/judgments/group-18.jsonl"
+    },
+    {
+      "group_id": 19,
+      "sections": [
+        "Mesh Generation and Topology"
+      ],
+      "items": 3,
+      "item_ids": [
+        "INT-1122",
+        "INT-1123",
+        "INT-1124"
+      ],
+      "spec": "scratch/s33-integ/groups/group-19.json",
+      "output": "scratch/s33-integ/judgments/group-19.jsonl"
+    },
+    {
+      "group_id": 20,
+      "sections": [
+        "Neural 3D Representations"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-1125",
+        "INT-1126",
+        "INT-1127",
+        "INT-1128",
+        "INT-1129",
+        "INT-1130",
+        "INT-1131",
+        "INT-1132",
+        "INT-1133",
+        "INT-1134",
+        "INT-1135",
+        "INT-1136",
+        "INT-1137",
+        "INT-1138",
+        "INT-1139",
+        "INT-1140",
+        "INT-1141",
+        "INT-1142"
+      ],
+      "spec": "scratch/s33-integ/groups/group-20.json",
+      "output": "scratch/s33-integ/judgments/group-20.jsonl"
+    },
+    {
+      "group_id": 21,
+      "sections": [
+        "Neural 3D Representations"
+      ],
+      "items": 6,
+      "item_ids": [
+        "INT-1143",
+        "INT-1144",
+        "INT-1145",
+        "INT-1146",
+        "INT-1147",
+        "INT-1148"
+      ],
+      "spec": "scratch/s33-integ/groups/group-21.json",
+      "output": "scratch/s33-integ/judgments/group-21.jsonl"
+    },
+    {
+      "group_id": 22,
+      "sections": [
+        "Disentangled Learning and Primitive-Based Reconstruction"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-1149",
+        "INT-1150",
+        "INT-1151",
+        "INT-1152",
+        "INT-1153",
+        "INT-1154",
+        "INT-1155",
+        "INT-1156",
+        "INT-1157",
+        "INT-1158",
+        "INT-1159",
+        "INT-1160",
+        "INT-1161",
+        "INT-1162",
+        "INT-1163",
+        "INT-1164",
+        "INT-1165",
+        "INT-1166"
+      ],
+      "spec": "scratch/s33-integ/groups/group-22.json",
+      "output": "scratch/s33-integ/judgments/group-22.jsonl"
+    },
+    {
+      "group_id": 23,
+      "sections": [
+        "Disentangled Learning and Primitive-Based Reconstruction"
+      ],
+      "items": 4,
+      "item_ids": [
+        "INT-1167",
+        "INT-1168",
+        "INT-1169",
+        "INT-1170"
+      ],
+      "spec": "scratch/s33-integ/groups/group-23.json",
+      "output": "scratch/s33-integ/judgments/group-23.jsonl"
+    },
+    {
+      "group_id": 24,
+      "sections": [
+        "Video-to-3D Reconstruction Pipeline"
+      ],
+      "items": 16,
+      "item_ids": [
+        "INT-1207",
+        "INT-1208",
+        "INT-1209",
+        "INT-1210",
+        "INT-1211",
+        "INT-1212",
+        "INT-1213",
+        "INT-1214",
+        "INT-1215",
+        "INT-1216",
+        "INT-1217",
+        "INT-1218",
+        "INT-1219",
+        "INT-1220",
+        "INT-1221",
+        "INT-1222"
+      ],
+      "spec": "scratch/s33-integ/groups/group-24.json",
+      "output": "scratch/s33-integ/judgments/group-24.jsonl"
+    }
+  ]
+}
