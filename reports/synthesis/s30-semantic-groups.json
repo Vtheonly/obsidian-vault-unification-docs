@@ -1,0 +1,145 @@
+{
+ "task_id": "VERIF-002",
+ "purpose": "judgment group manifest (deterministic from committed s30 sample)",
+ "method": "KUs sorted by primary destination then ku_id; greedy grouping capped at 18 KUs and 300 KB of distinct destination-note text per group",
+ "groups_total": 17,
+ "kus_total": 242,
+ "groups": [
+  {
+   "group_id": 1,
+   "kus": 15,
+   "distinct_notes": 12,
+   "note_kb_total": 286.3,
+   "spec": "scratch/s30-verify/groups/group-01.json",
+   "output": "scratch/s30-verify/judgments/group-01.jsonl"
+  },
+  {
+   "group_id": 2,
+   "kus": 18,
+   "distinct_notes": 11,
+   "note_kb_total": 197.4,
+   "spec": "scratch/s30-verify/groups/group-02.json",
+   "output": "scratch/s30-verify/judgments/group-02.jsonl"
+  },
+  {
+   "group_id": 3,
+   "kus": 12,
+   "distinct_notes": 8,
+   "note_kb_total": 273.7,
+   "spec": "scratch/s30-verify/groups/group-03.json",
+   "output": "scratch/s30-verify/judgments/group-03.jsonl"
+  },
+  {
+   "group_id": 4,
+   "kus": 11,
+   "distinct_notes": 7,
+   "note_kb_total": 291.1,
+   "spec": "scratch/s30-verify/groups/group-04.json",
+   "output": "scratch/s30-verify/judgments/group-04.jsonl"
+  },
+  {
+   "group_id": 5,
+   "kus": 4,
+   "distinct_notes": 4,
+   "note_kb_total": 291.5,
+   "spec": "scratch/s30-verify/groups/group-05.json",
+   "output": "scratch/s30-verify/judgments/group-05.jsonl"
+  },
+  {
+   "group_id": 6,
+   "kus": 13,
+   "distinct_notes": 5,
+   "note_kb_total": 266.5,
+   "spec": "scratch/s30-verify/groups/group-06.json",
+   "output": "scratch/s30-verify/judgments/group-06.jsonl"
+  },
+  {
+   "group_id": 7,
+   "kus": 10,
+   "distinct_notes": 9,
+   "note_kb_total": 282.7,
+   "spec": "scratch/s30-verify/groups/group-07.json",
+   "output": "scratch/s30-verify/judgments/group-07.jsonl"
+  },
+  {
+   "group_id": 8,
+   "kus": 7,
+   "distinct_notes": 7,
+   "note_kb_total": 273.3,
+   "spec": "scratch/s30-verify/groups/group-08.json",
+   "output": "scratch/s30-verify/judgments/group-08.jsonl"
+  },
+  {
+   "group_id": 9,
+   "kus": 16,
+   "distinct_notes": 10,
+   "note_kb_total": 290.2,
+   "spec": "scratch/s30-verify/groups/group-09.json",
+   "output": "scratch/s30-verify/judgments/group-09.jsonl"
+  },
+  {
+   "group_id": 10,
+   "kus": 18,
+   "distinct_notes": 17,
+   "note_kb_total": 261.8,
+   "spec": "scratch/s30-verify/groups/group-10.json",
+   "output": "scratch/s30-verify/judgments/group-10.jsonl"
+  },
+  {
+   "group_id": 11,
+   "kus": 18,
+   "distinct_notes": 16,
+   "note_kb_total": 229.9,
+   "spec": "scratch/s30-verify/groups/group-11.json",
+   "output": "scratch/s30-verify/judgments/group-11.jsonl"
+  },
+  {
+   "group_id": 12,
+   "kus": 18,
+   "distinct_notes": 16,
+   "note_kb_total": 202.6,
+   "spec": "scratch/s30-verify/groups/group-12.json",
+   "output": "scratch/s30-verify/judgments/group-12.jsonl"
+  },
+  {
+   "group_id": 13,
+   "kus": 18,
+   "distinct_notes": 14,
+   "note_kb_total": 280.6,
+   "spec": "scratch/s30-verify/groups/group-13.json",
+   "output": "scratch/s30-verify/judgments/group-13.jsonl"
+  },
+  {
+   "group_id": 14,
+   "kus": 14,
+   "distinct_notes": 10,
+   "note_kb_total": 299.4,
+   "spec": "scratch/s30-verify/groups/group-14.json",
+   "output": "scratch/s30-verify/judgments/group-14.jsonl"
+  },
+  {
+   "group_id": 15,
+   "kus": 18,
+   "distinct_notes": 8,
+   "note_kb_total": 212.1,
+   "spec": "scratch/s30-verify/groups/group-15.json",
+   "output": "scratch/s30-verify/judgments/group-15.jsonl"
+  },
+  {
+   "group_id": 16,
+   "kus": 18,
+   "distinct_notes": 4,
+   "note_kb_total": 171.0,
+   "spec": "scratch/s30-verify/groups/group-16.json",
+   "output": "scratch/s30-verify/judgments/group-16.jsonl"
+  },
+  {
+   "group_id": 17,
+   "kus": 14,
+   "distinct_notes": 8,
+   "note_kb_total": 98.6,
+   "spec": "scratch/s30-verify/groups/group-17.json",
+   "output": "scratch/s30-verify/judgments/group-17.jsonl"
+  }
+ ]
+}

@@ -1,0 +1,252 @@
+{
+ "task_id": "VERIF-002",
+ "purpose": "fresh non-overlapping stratified semantic sample increment (extends VERIF-001 coverage)",
+ "population": {
+  "kus_total": 27536,
+  "previously_judged_s29": 246,
+  "remaining_pool": 27290,
+  "by_disposition": {
+   "Preserved": 18478,
+   "Contextualized": 950,
+   "Consolidated": 8106,
+   "Superseded": 2
+  },
+  "by_unit_type": {
+   "prose": 13450,
+   "math_block": 2037,
+   "callout": 2089,
+   "list": 7044,
+   "code_block": 1741,
+   "table": 645,
+   "frontmatter": 378,
+   "quote": 150,
+   "empty_section": 2
+  }
+ },
+ "sample": {
+  "drawn": 242,
+  "fraction_of_total": 0.00879,
+  "cumulative_judged": 488,
+  "cumulative_fraction": 0.01772,
+  "overlap_with_s29": 0,
+  "by_disposition": {
+   "Preserved": 81,
+   "Consolidated": 119,
+   "Contextualized": 42
+  },
+  "by_unit_type": {
+   "prose": 113,
+   "callout": 17,
+   "math_block": 15,
+   "code_block": 12,
+   "list": 73,
+   "table": 6,
+   "quote": 3,
+   "frontmatter": 3
+  },
+  "by_destination_area": {
+   "01 - Foundations": 10,
+   "02 - Mathematics": 18,
+   "03 - Python and Data Tooling": 4,
+   "04 - Machine Learning": 19,
+   "05 - Neural Network Foundations": 19,
+   "06 - Computer Vision": 23,
+   "07 - Sequence Models": 3,
+   "08 - Attention and Transformers": 16,
+   "09 - NLP and Language Models": 3,
+   "10 - Large Language Models": 3,
+   "11 - Foundation Models and Multimodal": 2,
+   "12 - Generative Models": 2,
+   "13 - Training and Adaptation": 5,
+   "14 - Inference and Production": 11,
+   "15 - Agents and Tooling": 5,
+   "16 - Interpretability and Research": 11,
+   "17 - Papers": 13,
+   "18 - Projects": 13,
+   "19 - Reference and Practice": 20,
+   "20 - Vault and Project Context": 42
+  },
+  "method": "identical design to VERIF-001 (s29) applied to the remaining pool after excluding the 246 previously judged KUs: census of (disposition x unit_type) cells with remaining population<=3; stratified allocation Contextualized 40 / Consolidated 118 / Preserved 80, proportional across unit_types by largest remainder, minimum 1 per non-empty cell; within-cell selection evenly spaced over ku_id-sorted remaining members (no RNG); area floor: every destination area >= 2 sampled KUs from the remaining pool"
+ },
+ "allocation_log": [
+  {
+   "disposition": "Consolidated",
+   "unit_type": "callout",
+   "population": 592,
+   "drawn": 9,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "code_block",
+   "population": 360,
+   "drawn": 5,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "frontmatter",
+   "population": 59,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "list",
+   "population": 2377,
+   "drawn": 35,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "math_block",
+   "population": 620,
+   "drawn": 9,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "prose",
+   "population": 3735,
+   "drawn": 55,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "quote",
+   "population": 53,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "table",
+   "population": 189,
+   "drawn": 3,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Contextualized",
+   "unit_type": "callout",
+   "population": 8,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Contextualized",
+   "unit_type": "code_block",
+   "population": 8,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Contextualized",
+   "unit_type": "frontmatter",
+   "population": 14,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Contextualized",
+   "unit_type": "list",
+   "population": 457,
+   "drawn": 20,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Contextualized",
+   "unit_type": "prose",
+   "population": 388,
+   "drawn": 17,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Contextualized",
+   "unit_type": "quote",
+   "population": 19,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Contextualized",
+   "unit_type": "table",
+   "population": 14,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "callout",
+   "population": 1472,
+   "drawn": 7,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "code_block",
+   "population": 1361,
+   "drawn": 6,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "frontmatter",
+   "population": 302,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "list",
+   "population": 4137,
+   "drawn": 18,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "math_block",
+   "population": 1402,
+   "drawn": 6,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "prose",
+   "population": 9212,
+   "drawn": 40,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "quote",
+   "population": 75,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "table",
+   "population": 436,
+   "drawn": 2,
+   "method": "stratified even-spaced by ku_id (remaining pool)"
+  }
+ ],
+ "area_floor_log": [
+  {
+   "area": "11 - Foundation Models and Multimodal",
+   "added_to_reach_floor": 1
+  }
+ ],
+ "areas_covered": 20,
+ "judgment_protocol": {
+  "verdicts": [
+   "present",
+   "partial",
+   "absent",
+   "superseded-info-retained (Superseded KUs only)"
+  ],
+  "evidence_rule": "every judgment must quote verbatim span(s) from the destination note that carry the knowledge; quotes are mechanically verified to appear in the note file",
+  "denominator": "sampled KUs with a completed judgment"
+ },
+ "sample_file": "state/synthesis/s30-semantic-sample.jsonl"
+}
