@@ -24,7 +24,7 @@ Rafailov et al. observed that the **RLHF objective has a closed-form optimal pol
 
 ## The derivation
 
-The derivation converts the RLHF objective into a supervised loss on preference pairs. Two assumptions do the work: that alignment means maximizing reward under a KL constraint to the reference policy, and that human preferences follow the Bradley-Terry model (a probability-theory staple; the KL divergence that appears throughout is the information-theoretic divergence). Five short steps take us from objective to loss.
+The derivation converts the RLHF objective into a supervised loss on preference pairs. Two assumptions do the work: that alignment means maximizing reward under a KL constraint to the reference policy, and that human preferences follow the Bradley-Terry model (a probability-theory staple, defined and derived under maximum likelihood in [[Probability Essentials]]; the KL divergence that appears throughout is the information-theoretic divergence). Five short steps take us from objective to loss.
 
 ### The RLHF objective
 

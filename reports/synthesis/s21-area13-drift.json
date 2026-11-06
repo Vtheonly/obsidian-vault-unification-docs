@@ -46,12 +46,12 @@
     "command": "quality-drift",
     "args": {
       "command": "quality-drift",
-      "assessments": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area13/gates/assessments.jsonl",
+      "assessments": "/home/z/my-project/repo/scratch/synth/area13/gates/assessments.jsonl",
       "rel_drop": 0.15,
       "abs_drop": 0.1,
-      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s21-area13-drift.json"
+      "report": "/home/z/my-project/repo/reports/synthesis/s21-area13-drift.json"
     },
-    "utc_timestamp": "2026-11-02T22:56:53+00:00",
-    "git_commit": "0cbc983"
+    "utc_timestamp": "2026-11-06T02:34:33+00:00",
+    "git_commit": "d1213a6"
   }
 }

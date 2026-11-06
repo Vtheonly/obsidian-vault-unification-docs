@@ -1,0 +1,37 @@
+{
+ "version": "1",
+ "date": "2026-11-06",
+ "session": "28",
+ "task": "SYNTH-001 final phase — confirmed-gap dedicated treatments",
+ "treatments": [
+  {
+   "candidate_id": "CG-fe05f71fc6ba",
+   "term": "second moment",
+   "treatment": "dedicated section '## First and second moments'",
+   "note": "04 - Machine Learning/Optimization Algorithms/Optimizers and Learning Rate Schedulers.md",
+   "decision_id": "D-DISC002-B17-0001",
+   "gap_kus_preserved_in": "ledger destinations (Loss Functions x5, Optimizers x5, Hyperparameters and Basic PyTorch Summary x3, Hyperparameters and Network Configuration x2, From Basic Convolution to Learned Weights, PyTorch Implementation Basics)"
+  },
+  {
+   "candidate_id": "CG-c8f6e1408dc2",
+   "term": "bradley-terry",
+   "treatment": "dedicated subsection '### MLE for preferences is the Bradley-Terry model' + DPO Derivation cross-link",
+   "note": "02 - Mathematics/Probability/Probability Essentials.md (+ 13 - Training and Adaptation/Fine-Tuning/DPO Derivation.md)",
+   "decision_id": "D-DISC002-B17-0002",
+   "gap_kus_preserved_in": "ledger destinations (DPO Derivation x4, Probability Essentials x3, Estimators and Bias x3, RLHF with PPO x2)"
+  },
+  {
+   "candidate_id": "CG-00366e34ee82",
+   "term": "async def",
+   "treatment": "dedicated section '## Asynchronous functions (async def)'",
+   "note": "03 - Python and Data Tooling/Python Programming/Functions and Lambda Expressions.md",
+   "decision_id": "D-DISC002-B17-0003",
+   "gap_kus_preserved_in": "ledger destinations (PydanticAI x3, Vector Memory Backends, MCP Overview, MCP Components, MCP Enterprise Integration, MCP Security, and the remaining area-15 uses)"
+  }
+ ],
+ "machinery": [
+  "phase A replay (scripts/s28_gap_replay.py): discover-gaps + 17 decision rounds, post-batch16 index byte-identical to the committed index",
+  "phase B (this script): anchored probe-idempotent insertions + batch17 accepts via vu discovery-decide + vu discovery-index (committed index updated: exactly the 3 records change confirmed_gap -> accepted) + vu discovery-validate green"
+ ],
+ "reverification": "lint + audits + gates for areas 02/03/04/13 re-run after insertions (see s28 reports); corpus-wide drift re-audit uses the union provenance"
+}

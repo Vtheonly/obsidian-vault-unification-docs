@@ -1,0 +1,27 @@
+{
+  "command": "discovery-index",
+  "result": {
+    "command": "discovery-index",
+    "candidates_path": "/home/z/my-project/repo/scratch/s28-gap/post-batch17.jsonl",
+    "index_path": "/home/z/my-project/repo/scratch/s28-gap/post-batch17.index.jsonl",
+    "records_indexed": 60154,
+    "dropped_payload": "evidence quotes (join via ku_ids against KU batches)",
+    "max_ku_ids": 12
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "discovery-index",
+    "args": {
+      "command": "discovery-index",
+      "candidates": "/home/z/my-project/repo/scratch/s28-gap/post-batch17.jsonl",
+      "out": "/home/z/my-project/repo/scratch/s28-gap/post-batch17.index.jsonl",
+      "max_ku_ids": 12,
+      "protected_root": null,
+      "report": "/home/z/my-project/repo/reports/discovery/s28-gap-batch17-index.json"
+    },
+    "utc_timestamp": "2026-11-06T02:44:00+00:00",
+    "git_commit": "d1213a6"
+  }
+}

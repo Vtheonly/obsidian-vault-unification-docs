@@ -1,0 +1,65 @@
+{
+  "command": "audit-output",
+  "result": {
+    "valid": true,
+    "checks_run": [
+      "ku-batch",
+      "output-drift",
+      "ku-accounting",
+      "destination",
+      "marker-retention",
+      "link-integrity",
+      "heading-convention",
+      "prose-quality"
+    ],
+    "findings": [],
+    "stats": {
+      "kus_total": 1354,
+      "output_files_total": 544,
+      "markers": {
+        "terms": 1122,
+        "math": 1561,
+        "code": 76,
+        "missing_terms": 0,
+        "missing_math": 0,
+        "missing_code": 0
+      },
+      "links_checked": 0,
+      "links_broken": 0,
+      "findings_total": 0,
+      "findings_blocking": 0,
+      "findings_by_severity": {
+        "critical": 0,
+        "major": 0,
+        "minor": 0
+      },
+      "findings_by_check": {}
+    },
+    "limitations": [
+      "term markers are frequency-based (rare in the source corpus): claims carried only by common vocabulary are not covered by term markers; equation/code fingerprints, destination anchors, link and lint checks provide the remaining nets",
+      "no stemming and no grammar-level matching: legitimately reworded claims are caught only through shared distinctive vocabulary; semantic verification remains a separate, human/AI evidence class (VERIFICATION_SPECIFICATION.md section 5)",
+      "equation matching compares normalized LaTeX source strings; mathematically equivalent reformatting (e.g. \\frac vs \\dfrac) counts as a different marker",
+      "the heading-convention check detects mixed numbered/unnumbered schemes per note; it does not validate numbering sequences or cross-note ordering",
+      "prose-quality is a word-count heuristic for bullet-only degradation; it cannot judge argument quality or depth",
+      "drift detection requires an accepted manifest; pre-acceptance changes rely on the content checks above",
+      "link findings attribute KU ownership by destination note plus wikilink presence in the excerpt, which is broader than the exact originating link"
+    ]
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "audit-output",
+    "args": {
+      "command": "audit-output",
+      "source_root": "source-vaults/AI ",
+      "output_root": "output/Unified-Vault",
+      "ku_batch": "scratch/synth/area02/audit-kus.jsonl",
+      "accepted_manifest": null,
+      "ku_schema": "/home/z/my-project/repo/schemas/knowledge-unit.schema.json",
+      "report": "/home/z/my-project/repo/reports/synthesis/s28-area02-reaudit.json"
+    },
+    "utc_timestamp": "2026-11-06T02:16:18+00:00",
+    "git_commit": "d1213a6"
+  }
+}

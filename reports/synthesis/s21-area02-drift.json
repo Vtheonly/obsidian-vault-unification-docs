@@ -25,7 +25,7 @@
           "02 - Mathematics/Statistics/Hypothesis Testing.md"
         ],
         "overall_first_third_mean": 0.9324,
-        "overall_last_third_mean": 0.9264,
+        "overall_last_third_mean": 0.9256,
         "drifted_dimensions": [],
         "verdict": "no_systematic_drift"
       },
@@ -55,12 +55,12 @@
     "command": "quality-drift",
     "args": {
       "command": "quality-drift",
-      "assessments": "/home/z/my-project/obsidian-vault-unification-docs/scratch/synth/area02/gates/assessments.jsonl",
+      "assessments": "/home/z/my-project/repo/scratch/synth/area02/gates/assessments.jsonl",
       "rel_drop": 0.15,
       "abs_drop": 0.1,
-      "report": "/home/z/my-project/obsidian-vault-unification-docs/reports/synthesis/s21-area02-drift.json"
+      "report": "/home/z/my-project/repo/reports/synthesis/s21-area02-drift.json"
     },
-    "utc_timestamp": "2026-11-03T04:05:29+00:00",
-    "git_commit": "732e8f6"
+    "utc_timestamp": "2026-11-06T02:20:41+00:00",
+    "git_commit": "d1213a6"
   }
 }

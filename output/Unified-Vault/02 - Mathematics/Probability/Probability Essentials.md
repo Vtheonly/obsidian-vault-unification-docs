@@ -166,6 +166,18 @@ This is exactly **cross-entropy loss**. See [[Entropy Cross-Entropy and KL Diver
 
 For Gaussian noise with fixed variance, MLE of the mean gives the mean-squared error loss. So training a network with MSE is implicitly assuming Gaussian residuals.
 
+### MLE for preferences is the Bradley-Terry model
+
+Maximum likelihood also covers a different kind of data: instead of numeric targets, you observe *comparisons* — which of two items won. The **Bradley-Terry model** assigns each item $i$ a strength parameter $s_i$ and says
+
+$$
+p(i \succ j) = \frac{e^{s_i}}{e^{s_i} + e^{s_j}} = \sigma(s_i - s_j),
+$$
+
+so the probability that $i$ beats $j$ depends only on the strength difference through a sigmoid. Fitting the strengths by maximum likelihood on observed pairwise outcomes maximizes $\sum \log \sigma(s_w - s_l)$ — the winner $w$ playing the role of the positive class, this is exactly the logistic-regression objective. The model is classical (Bradley and Terry, 1952) and is the standard statistical foundation for ranking from comparisons; Elo-style ratings are its online-update cousin.
+
+This is the probability model behind preference-based reward modeling in modern alignment. A reward $r(x, y)$ plays the role of the strength, human preference labels are the comparisons, and the reward model is trained by MLE on exactly this likelihood — see [[RLHF with PPO]]. [[DPO Derivation]] then substitutes its closed-form reward into the same sigmoid, eliminating the reward model entirely. What happens to the estimate when the preference data itself is biased (for example, labelers systematically preferring verbose answers) is treated in [[Estimators and Bias]]; the original alignment application is [[InstructGPT]].
+
 ## MAP and Bayesian inference
 
 **Maximum A Posteriori (MAP)** adds a prior:

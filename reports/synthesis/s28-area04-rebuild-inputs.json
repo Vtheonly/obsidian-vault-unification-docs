@@ -1,0 +1,33 @@
+{
+ "area": "04 - Machine Learning",
+ "slug": "area04",
+ "partial_batch": false,
+ "only_filter": null,
+ "notes": 27,
+ "source_files": 40,
+ "kus": 1829,
+ "kus_by_disposition": {
+  "Consolidated": 1525,
+  "Preserved": 303,
+  "Superseded": 1
+ },
+ "kus_multi_destination_within_area": 490,
+ "concepts_anchored": 416,
+ "total_source_words": 86278,
+ "scratch_dir": "scratch/synth/area04",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "Machine Learning MOC",
+  "colliding": "Linear Regression and Logistic Regression",
+  "explicit_types": 6,
+  "default_note_type": "concept"
+ }
+}

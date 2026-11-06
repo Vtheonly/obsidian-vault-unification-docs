@@ -103,6 +103,23 @@ squared = list(map(lambda x: x**2, nums))  # [1, 4, 9, 16]
 evens = list(filter(lambda x: x%2 == 0, nums)) # [2, 4]
 ```
 
+## Asynchronous functions (async def)
+
+The `def` keyword has an asynchronous variant: `async def` defines a *coroutine function*. Calling it does not run the body — it returns a coroutine object, a description of the computation that has not started yet. The body runs only when the coroutine is awaited or handed to a scheduler, which is what makes the pattern useful: many coroutines can be pending at once, each suspended wherever it is waiting.
+
+The second half of the pattern is `await`, usable only inside `async def` functions: it suspends the enclosing coroutine until its operand completes, and while one coroutine is suspended, the *event loop* — a single-threaded scheduler — runs whichever other coroutines have work ready. No threads are created; the concurrency comes from interleaving the waiting. This is the natural model for I/O-bound programs such as clients and servers: while one request waits on a network read, the loop serves the others. The typical shape, using the collection's own vocabulary from the agent and retrieval notes:
+
+```text
+async def fetch_documents(query):
+    results = await search(query)              # suspend until search returns
+    docs = [await load(r.id) for r in results]  # await each load in turn
+    return docs
+```
+
+The rest of the function-related syntax generalizes the same way: `async for` iterates an async iterator (one whose items arrive via `await`), and `async with` acquires and releases an async context manager. One caveat worth internalizing early: awaiting inside a loop runs the awaits one after another, which serializes I/O that could overlap — `asyncio.gather` exists to run awaitables concurrently.
+
+This vocabulary is load-bearing across the serving- and agent-side notes: every tool handler in an MCP server (see [[MCP Overview]]) is an `async def`, PydanticAI tools are async callables (see [[PydanticAI]]), and vector-store clients expose async APIs (see [[Vector Memory Backends]]). Plain generators — the non-async counterpart of this machinery — are covered in [[Iterators and Generators]].
+
 ## See also
 
 - [[Python Language Overview]]
