@@ -1,0 +1,109 @@
+{
+ "specs_total": 17,
+ "ok": 17,
+ "failed": 0,
+ "results": [
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/01-ai-course-master-index.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/02-ai-course-merge-report.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/03-architecture-decisions-log.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/04-completed-work-log.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/05-coverage-audit-log.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/06-current-iteration-log.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/07-learning-roadmap.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/08-master-ai-index.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/09-master-ai-moc.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/10-master-ai-readme.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/11-master-roadmap.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/12-next-iteration-log.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/13-reading-orders.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/14-remaining-work-log.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/15-research-queue.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/16-vault-management-readme.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  },
+  {
+   "spec": "/home/z/my-project/repo/scratch/synth/area20/specs/17-vault-status-log.json",
+   "exit": 0,
+   "ok": true,
+   "failures": 0
+  }
+ ]
+}

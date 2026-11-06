@@ -1,0 +1,38 @@
+{
+  "result": {
+    "passed": true,
+    "criteria": [
+      "every expected note assessed or explicitly unresolved",
+      "every note lint-error clean (allowed: 0)",
+      "every measured dimension within its type band or explicitly waived with reason",
+      "no unexplained systematic quality drift"
+    ],
+    "failures": [],
+    "notes_assessed": 17,
+    "waivers_applied": [
+      [
+        "drift::reference",
+        "tertile-composition artifact, source-measured: example-marker density drops 1.67->0.88 per 1k words (48% relative) across the SAME tertile split in the SOURCES (first tertile = example-rich long archival records: merge report 15/12940 words, decision log 25/7099, master index ASCII-graph note; last tertile = example-free terse management logs: reading order 0/449, research queue 0/2040, vault-mgmt README 0/415); per-note retention is 100 percent (every one of the 10 first/last-tertile notes keeps ALL its source example markers; lower output densities are added orienting prose only); audit valid=true 0 findings over 949 KUs; all 17 notes within band on every dimension; scorer note: the 3 source-verbatim blockquoted policy fences in Research Queue (audit-verified code fingerprints) are invisible to the examples scorer line-based fence scan"
+      ]
+    ],
+    "verdict": "pass"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-gate",
+    "args": {
+      "command": "quality-gate",
+      "assessments": "/home/z/my-project/repo/scratch/synth/area20/gates/assessments.jsonl",
+      "expected": "/home/z/my-project/repo/scratch/synth/area20/expected-notes.txt",
+      "drift_report": "reports/synthesis/s21-area20-drift.json",
+      "waivers": [
+        "drift::reference=tertile-composition artifact, source-measured: example-marker density drops 1.67->0.88 per 1k words (48% relative) across the SAME tertile split in the SOURCES (first tertile = example-rich long archival records: merge report 15/12940 words, decision log 25/7099, master index ASCII-graph note; last tertile = example-free terse management logs: reading order 0/449, research queue 0/2040, vault-mgmt README 0/415); per-note retention is 100 percent (every one of the 10 first/last-tertile notes keeps ALL its source example markers; lower output densities are added orienting prose only); audit valid=true 0 findings over 949 KUs; all 17 notes within band on every dimension; scorer note: the 3 source-verbatim blockquoted policy fences in Research Queue (audit-verified code fingerprints) are invisible to the examples scorer line-based fence scan"
+      ],
+      "report": "/home/z/my-project/repo/reports/synthesis/s21-area20-gate.json"
+    },
+    "utc_timestamp": "2026-11-06T01:53:14+00:00",
+    "git_commit": "1dc506e"
+  }
+}

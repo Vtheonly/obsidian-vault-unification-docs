@@ -1,0 +1,195 @@
+{
+ "mode": "probe",
+ "results": [
+  {
+   "file": "AI Course Merge Report.md",
+   "findings": "AF-001..AF-016",
+   "status": "already-applied"
+  },
+  {
+   "file": "AI Course Merge Report.md",
+   "findings": "AF-040",
+   "status": "already-applied"
+  },
+  {
+   "file": "AI Course Merge Report.md",
+   "findings": "AF-040 (fence-closer fixup)",
+   "status": "already-applied"
+  },
+  {
+   "file": "AI Course Master Index.md",
+   "findings": "AF-039",
+   "status": "already-applied"
+  },
+  {
+   "file": "Architecture Decisions Log.md",
+   "findings": "AF-041..AF-043",
+   "status": "already-applied"
+  },
+  {
+   "file": "Architecture Decisions Log.md",
+   "findings": "AF-044/AF-045",
+   "status": "already-applied"
+  },
+  {
+   "file": "Architecture Decisions Log.md",
+   "findings": "AF-046",
+   "status": "already-applied"
+  },
+  {
+   "file": "Remaining Work Log.md",
+   "findings": "AF-047/AF-048",
+   "status": "already-applied"
+  },
+  {
+   "file": "Research Queue.md",
+   "findings": "AF-027..AF-029",
+   "status": "already-applied"
+  },
+  {
+   "file": "Architecture Decisions Log.md",
+   "findings": "AF-030",
+   "status": "already-applied"
+  },
+  {
+   "file": "Master Roadmap.md",
+   "findings": "AF-024",
+   "status": "already-applied"
+  },
+  {
+   "file": "Master AI README.md",
+   "findings": "AF-020..AF-022",
+   "status": "already-applied"
+  },
+  {
+   "file": "Coverage Audit Log.md",
+   "findings": "AF-032",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-031 (ch10)",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-031 (ch10)",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-031 (ch10)",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-031 (ch10)",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-031 (ch10)",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-031 (ch10)",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-031 (ch10)",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-031",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-0xx (ch26)",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-037",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-038",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-035",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-036",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-019",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-0xx (ch27)",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-017",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-018",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-0xx (ch27)",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-025",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-026",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-023",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-034",
+   "status": "already-applied"
+  },
+  {
+   "file": "Completed Work Log.md",
+   "findings": "AF-033",
+   "status": "already-applied"
+  },
+  {
+   "file": "Master Roadmap.md",
+   "findings": "AF-049..AF-189 (141 MNS)",
+   "headings": 0,
+   "status": "already-applied"
+  }
+ ],
+ "applied": 0,
+ "pending": 0,
+ "already_applied": 37,
+ "failures": 0
+}

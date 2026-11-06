@@ -1,0 +1,73 @@
+{
+  "result": {
+    "standards_version": "1.0.0",
+    "thresholds": {
+      "rel_drop": 0.15,
+      "abs_drop": 0.1
+    },
+    "drifted_types": [
+      {
+        "type": "reference",
+        "notes": 17,
+        "first_third": [
+          "20 - Vault and Project Context/AI Course Master Index.md",
+          "20 - Vault and Project Context/AI Course Merge Report.md",
+          "20 - Vault and Project Context/Architecture Decisions Log.md",
+          "20 - Vault and Project Context/Completed Work Log.md",
+          "20 - Vault and Project Context/Coverage Audit Log.md"
+        ],
+        "last_third": [
+          "20 - Vault and Project Context/Reading Orders.md",
+          "20 - Vault and Project Context/Remaining Work Log.md",
+          "20 - Vault and Project Context/Research Queue.md",
+          "20 - Vault and Project Context/Vault Management README.md",
+          "20 - Vault and Project Context/Vault Status Log.md"
+        ],
+        "overall_first_third_mean": 0.8938,
+        "overall_last_third_mean": 0.8745,
+        "drifted_dimensions": [
+          {
+            "dimension": "examples",
+            "first_third_mean": 0.84,
+            "last_third_mean": 0.4,
+            "delta": -0.44,
+            "relative_drop": 0.5238,
+            "first_notes": [
+              "20 - Vault and Project Context/AI Course Master Index.md",
+              "20 - Vault and Project Context/AI Course Merge Report.md",
+              "20 - Vault and Project Context/Architecture Decisions Log.md",
+              "20 - Vault and Project Context/Completed Work Log.md",
+              "20 - Vault and Project Context/Coverage Audit Log.md"
+            ],
+            "last_notes": [
+              "20 - Vault and Project Context/Reading Orders.md",
+              "20 - Vault and Project Context/Remaining Work Log.md",
+              "20 - Vault and Project Context/Research Queue.md",
+              "20 - Vault and Project Context/Vault Management README.md",
+              "20 - Vault and Project Context/Vault Status Log.md"
+            ]
+          }
+        ],
+        "verdict": "drift_detected"
+      }
+    ],
+    "clean_types": [],
+    "verdict": "drift_detected",
+    "caveat": "tertile-mean comparison on deterministic dimensions; investigate flagged evidence, do not treat as final judgment"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "quality-drift",
+    "args": {
+      "command": "quality-drift",
+      "assessments": "/home/z/my-project/repo/scratch/synth/area20/gates/assessments.jsonl",
+      "rel_drop": 0.15,
+      "abs_drop": 0.1,
+      "report": "/home/z/my-project/repo/reports/synthesis/s21-area20-drift.json"
+    },
+    "utc_timestamp": "2026-11-06T01:53:13+00:00",
+    "git_commit": "1dc506e"
+  }
+}
