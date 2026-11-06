@@ -1,0 +1,490 @@
+{
+  "campaign": "INTEG-004",
+  "clusters": [
+    "SYNPATH",
+    "VAULTX"
+  ],
+  "items_total": 235,
+  "items_fresh_judged": 229,
+  "items_carried_over": 6,
+  "carry_over": {
+    "rule": "one item = one judgment: items already judged in a prior canonical judgment file are carried over verbatim (verdict, destination, quote, rationale) with carry_over_from provenance, not re-judged — the vault is byte-identical since those judgments, and the S36 decision ledger is keyed by item id (conflicting re-judgments would corrupt it)",
+    "items": [
+      {
+        "item_id": "INT-0031",
+        "name": "Scaled Dot-Product Attention",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0032",
+        "name": "Multi-Head Attention",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0046",
+        "name": "Attention Masking",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "partial"
+      },
+      {
+        "item_id": "INT-0047",
+        "name": "Padding Masking",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "partial"
+      },
+      {
+        "item_id": "INT-0187",
+        "name": "Curriculum Learning",
+        "prior_file": "judgments-2d3d-v1.jsonl",
+        "prior_verdict": "partial"
+      },
+      {
+        "item_id": "INT-0192",
+        "name": "Data Augmentation",
+        "prior_file": "judgments-2d3d-v1.jsonl",
+        "prior_verdict": "covered"
+      }
+    ]
+  },
+  "groups_total": 17,
+  "max_items_per_group": 18,
+  "grouping": "by cluster (SYNPATH then VAULTX) and section (first-occurrence order), consecutive chunks at 18 items; sections never merged",
+  "lexical_hint_source": "state/integration/coverage-lexical-v1.jsonl",
+  "judgment_schema": {
+    "required": [
+      "item_id",
+      "verdict",
+      "destination_note",
+      "evidence_quote",
+      "equivalent_name",
+      "rationale",
+      "search_terms_tried"
+    ],
+    "verdicts": [
+      "covered",
+      "equivalent",
+      "partial",
+      "absent"
+    ]
+  },
+  "groups": [
+    {
+      "group_id": 1,
+      "sections": [
+        "SYNPATH: Geometric Deep Learning"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0001",
+        "INT-0002",
+        "INT-0003",
+        "INT-0004",
+        "INT-0005",
+        "INT-0006",
+        "INT-0007",
+        "INT-0008",
+        "INT-0009",
+        "INT-0010",
+        "INT-0011",
+        "INT-0012",
+        "INT-0013",
+        "INT-0014",
+        "INT-0015",
+        "INT-0016",
+        "INT-0017",
+        "INT-0018"
+      ],
+      "spec": "scratch/s34-integ/groups/group-01.json",
+      "output": "scratch/s34-integ/judgments/group-01.jsonl"
+    },
+    {
+      "group_id": 2,
+      "sections": [
+        "SYNPATH: Geometric Feature Encoding"
+      ],
+      "items": 11,
+      "item_ids": [
+        "INT-0019",
+        "INT-0020",
+        "INT-0021",
+        "INT-0022",
+        "INT-0023",
+        "INT-0024",
+        "INT-0025",
+        "INT-0026",
+        "INT-0027",
+        "INT-0028",
+        "INT-0029"
+      ],
+      "spec": "scratch/s34-integ/groups/group-02.json",
+      "output": "scratch/s34-integ/judgments/group-02.jsonl"
+    },
+    {
+      "group_id": 3,
+      "sections": [
+        "SYNPATH: Attention Mechanisms"
+      ],
+      "items": 14,
+      "item_ids": [
+        "INT-0030",
+        "INT-0033",
+        "INT-0034",
+        "INT-0035",
+        "INT-0036",
+        "INT-0037",
+        "INT-0038",
+        "INT-0039",
+        "INT-0040",
+        "INT-0041",
+        "INT-0042",
+        "INT-0043",
+        "INT-0044",
+        "INT-0045"
+      ],
+      "spec": "scratch/s34-integ/groups/group-03.json",
+      "output": "scratch/s34-integ/judgments/group-03.jsonl"
+    },
+    {
+      "group_id": 4,
+      "sections": [
+        "SYNPATH: Attention Masking and Spatial Masking"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0048",
+        "INT-0049",
+        "INT-0050",
+        "INT-0051",
+        "INT-0052",
+        "INT-0053",
+        "INT-0054",
+        "INT-0055",
+        "INT-0056",
+        "INT-0057",
+        "INT-0058",
+        "INT-0059",
+        "INT-0060",
+        "INT-0061",
+        "INT-0062",
+        "INT-0063",
+        "INT-0064",
+        "INT-0065"
+      ],
+      "spec": "scratch/s34-integ/groups/group-04.json",
+      "output": "scratch/s34-integ/judgments/group-04.jsonl"
+    },
+    {
+      "group_id": 5,
+      "sections": [
+        "SYNPATH: Attention Masking and Spatial Masking"
+      ],
+      "items": 10,
+      "item_ids": [
+        "INT-0066",
+        "INT-0067",
+        "INT-0068",
+        "INT-0069",
+        "INT-0070",
+        "INT-0071",
+        "INT-0072",
+        "INT-0073",
+        "INT-0074",
+        "INT-0075"
+      ],
+      "spec": "scratch/s34-integ/groups/group-05.json",
+      "output": "scratch/s34-integ/judgments/group-05.jsonl"
+    },
+    {
+      "group_id": 6,
+      "sections": [
+        "SYNPATH: Molecular Generation"
+      ],
+      "items": 17,
+      "item_ids": [
+        "INT-0076",
+        "INT-0077",
+        "INT-0078",
+        "INT-0079",
+        "INT-0080",
+        "INT-0081",
+        "INT-0082",
+        "INT-0083",
+        "INT-0084",
+        "INT-0085",
+        "INT-0086",
+        "INT-0087",
+        "INT-0088",
+        "INT-0089",
+        "INT-0090",
+        "INT-0091",
+        "INT-0092"
+      ],
+      "spec": "scratch/s34-integ/groups/group-06.json",
+      "output": "scratch/s34-integ/judgments/group-06.jsonl"
+    },
+    {
+      "group_id": 7,
+      "sections": [
+        "SYNPATH: Hierarchical Policy Learning"
+      ],
+      "items": 14,
+      "item_ids": [
+        "INT-0093",
+        "INT-0094",
+        "INT-0095",
+        "INT-0096",
+        "INT-0097",
+        "INT-0098",
+        "INT-0099",
+        "INT-0100",
+        "INT-0101",
+        "INT-0102",
+        "INT-0103",
+        "INT-0104",
+        "INT-0105",
+        "INT-0106"
+      ],
+      "spec": "scratch/s34-integ/groups/group-07.json",
+      "output": "scratch/s34-integ/judgments/group-07.jsonl"
+    },
+    {
+      "group_id": 8,
+      "sections": [
+        "SYNPATH: Chemical AI and Reaction Learning"
+      ],
+      "items": 16,
+      "item_ids": [
+        "INT-0107",
+        "INT-0108",
+        "INT-0109",
+        "INT-0110",
+        "INT-0111",
+        "INT-0112",
+        "INT-0113",
+        "INT-0114",
+        "INT-0115",
+        "INT-0116",
+        "INT-0117",
+        "INT-0118",
+        "INT-0119",
+        "INT-0120",
+        "INT-0121",
+        "INT-0122"
+      ],
+      "spec": "scratch/s34-integ/groups/group-08.json",
+      "output": "scratch/s34-integ/judgments/group-08.jsonl"
+    },
+    {
+      "group_id": 9,
+      "sections": [
+        "SYNPATH: Molecular Geometry and Stereochemistry"
+      ],
+      "items": 17,
+      "item_ids": [
+        "INT-0123",
+        "INT-0124",
+        "INT-0125",
+        "INT-0126",
+        "INT-0127",
+        "INT-0128",
+        "INT-0129",
+        "INT-0130",
+        "INT-0131",
+        "INT-0132",
+        "INT-0133",
+        "INT-0134",
+        "INT-0135",
+        "INT-0136",
+        "INT-0137",
+        "INT-0138",
+        "INT-0139"
+      ],
+      "spec": "scratch/s34-integ/groups/group-09.json",
+      "output": "scratch/s34-integ/judgments/group-09.jsonl"
+    },
+    {
+      "group_id": 10,
+      "sections": [
+        "SYNPATH: Generative Reinforcement Learning"
+      ],
+      "items": 17,
+      "item_ids": [
+        "INT-0140",
+        "INT-0141",
+        "INT-0142",
+        "INT-0143",
+        "INT-0144",
+        "INT-0145",
+        "INT-0146",
+        "INT-0147",
+        "INT-0148",
+        "INT-0149",
+        "INT-0150",
+        "INT-0151",
+        "INT-0152",
+        "INT-0153",
+        "INT-0154",
+        "INT-0155",
+        "INT-0156"
+      ],
+      "spec": "scratch/s34-integ/groups/group-10.json",
+      "output": "scratch/s34-integ/judgments/group-10.jsonl"
+    },
+    {
+      "group_id": 11,
+      "sections": [
+        "SYNPATH: Molecular Optimization and Physics"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0157",
+        "INT-0158",
+        "INT-0159",
+        "INT-0160",
+        "INT-0161",
+        "INT-0162",
+        "INT-0163",
+        "INT-0164",
+        "INT-0165",
+        "INT-0166",
+        "INT-0167",
+        "INT-0168",
+        "INT-0169",
+        "INT-0170",
+        "INT-0171",
+        "INT-0172",
+        "INT-0173",
+        "INT-0174"
+      ],
+      "spec": "scratch/s34-integ/groups/group-11.json",
+      "output": "scratch/s34-integ/judgments/group-11.jsonl"
+    },
+    {
+      "group_id": 12,
+      "sections": [
+        "SYNPATH: Molecular Optimization and Physics"
+      ],
+      "items": 6,
+      "item_ids": [
+        "INT-0175",
+        "INT-0176",
+        "INT-0177",
+        "INT-0178",
+        "INT-0179",
+        "INT-0180"
+      ],
+      "spec": "scratch/s34-integ/groups/group-12.json",
+      "output": "scratch/s34-integ/judgments/group-12.jsonl"
+    },
+    {
+      "group_id": 13,
+      "sections": [
+        "SYNPATH: Model Training and Optimization"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0181",
+        "INT-0182",
+        "INT-0183",
+        "INT-0184",
+        "INT-0185",
+        "INT-0186",
+        "INT-0188",
+        "INT-0189",
+        "INT-0190",
+        "INT-0191",
+        "INT-0193",
+        "INT-0194",
+        "INT-0195",
+        "INT-0196",
+        "INT-0197",
+        "INT-0198",
+        "INT-0199",
+        "INT-0200"
+      ],
+      "spec": "scratch/s34-integ/groups/group-13.json",
+      "output": "scratch/s34-integ/judgments/group-13.jsonl"
+    },
+    {
+      "group_id": 14,
+      "sections": [
+        "SYNPATH: Model Training and Optimization"
+      ],
+      "items": 9,
+      "item_ids": [
+        "INT-0201",
+        "INT-0202",
+        "INT-0203",
+        "INT-0204",
+        "INT-0205",
+        "INT-0206",
+        "INT-0207",
+        "INT-0208",
+        "INT-0209"
+      ],
+      "spec": "scratch/s34-integ/groups/group-14.json",
+      "output": "scratch/s34-integ/judgments/group-14.jsonl"
+    },
+    {
+      "group_id": 15,
+      "sections": [
+        "VAULTX: Advanced Structural Attention"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0559",
+        "INT-0560",
+        "INT-0561",
+        "INT-0562",
+        "INT-0563",
+        "INT-0564",
+        "INT-0565",
+        "INT-0566"
+      ],
+      "spec": "scratch/s34-integ/groups/group-15.json",
+      "output": "scratch/s34-integ/judgments/group-15.jsonl"
+    },
+    {
+      "group_id": 16,
+      "sections": [
+        "VAULTX: Advanced Mathematical Learning"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0567",
+        "INT-0568",
+        "INT-0569",
+        "INT-0570",
+        "INT-0571",
+        "INT-0572",
+        "INT-0573",
+        "INT-0574"
+      ],
+      "spec": "scratch/s34-integ/groups/group-16.json",
+      "output": "scratch/s34-integ/judgments/group-16.jsonl"
+    },
+    {
+      "group_id": 17,
+      "sections": [
+        "VAULTX: Equivariant Protein Backbones"
+      ],
+      "items": 10,
+      "item_ids": [
+        "INT-0549",
+        "INT-0550",
+        "INT-0551",
+        "INT-0552",
+        "INT-0553",
+        "INT-0554",
+        "INT-0555",
+        "INT-0556",
+        "INT-0557",
+        "INT-0558"
+      ],
+      "spec": "scratch/s34-integ/groups/group-17.json",
+      "output": "scratch/s34-integ/judgments/group-17.jsonl"
+    }
+  ]
+}
