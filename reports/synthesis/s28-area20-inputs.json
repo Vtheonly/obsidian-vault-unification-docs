@@ -1,0 +1,31 @@
+{
+ "area": "20 - Vault and Project Context",
+ "slug": "area20",
+ "partial_batch": false,
+ "only_filter": null,
+ "notes": 17,
+ "source_files": 17,
+ "kus": 949,
+ "kus_by_disposition": {
+  "Contextualized": 949
+ },
+ "kus_multi_destination_within_area": 0,
+ "concepts_anchored": 0,
+ "total_source_words": 39597,
+ "scratch_dir": "scratch/synth/area20",
+ "problems": [],
+ "deterministic": true,
+ "inputs": {
+  "structure": "state/synthesis/canonical-structure-v1.json",
+  "file_mapping": "state/synthesis/file-mapping-v1.jsonl",
+  "ledger": "state/dispositions/001-disp001-rule-driven.jsonl",
+  "ku_batches": "state/knowledge-units/*.jsonl (71 files)",
+  "dossiers": "state/dossiers/*-v2.json (6 files)"
+ },
+ "area_config": {
+  "moc_target": "area 20 has no area-root MOC (the target vault's live navigation lives in the topical MOCs of areas 04-19; these notes are the archived context layer) — link at least two same-area siblings from the note's natural cluster: the master-ai navigation cluster (Master AI README, Master AI MOC, Master AI Index, Master Roadmap, Learning Roadmap, Reading Orders), the master-ai management-log cluster (Vault Management README, Architecture Decisions Log, Completed Work Log, Current Iteration Log, Next Iteration Log, Remaining Work Log, Vault Status Log, Coverage Audit Log, Research Queue), or the ai-course cluster (AI Course Master Index, AI Course Merge Report); plus topical concept notes when the archived text names them (no area-20 basename collides vault-wide, so the plain [[Note Name]] short form is correct for every link)",
+  "colliding": "no area-20 basename collides vault-wide (verified against the full 544-note canonical structure at session 28); apply the binding link-rules list for any generated-set collision",
+  "explicit_types": 0,
+  "default_note_type": "reference"
+ }
+}

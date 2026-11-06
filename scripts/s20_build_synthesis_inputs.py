@@ -427,6 +427,40 @@ AREA_CONFIG: dict[str, dict[str, object]] = {
             "the binding link-rules list"
         ),
     },
+    "20 - Vault and Project Context": {
+        # session 28: the Contextualized archival layer. All 17 notes are
+        # 1:1 archives of one source vault-management/context file each —
+        # indexes, navigation maps, roadmaps, reading orders, and the source
+        # vault's own decision/work/audit/status/research logs. Uniform
+        # "reference" type (the area-19 glossary precedent): these notes
+        # record and contextualize project history, they do not teach
+        # concepts, so the reference bands (high structure /
+        # source-coverage / provenance, low definitions / depth) are the
+        # correct quality standard.
+        "note_types": {},
+        "default_note_type": "reference",
+        "moc_target": (
+            "area 20 has no area-root MOC (the target vault's live navigation "
+            "lives in the topical MOCs of areas 04-19; these notes are the "
+            "archived context layer) — link at least two same-area siblings "
+            "from the note's natural cluster: the master-ai navigation "
+            "cluster (Master AI README, Master AI MOC, Master AI Index, "
+            "Master Roadmap, Learning Roadmap, Reading Orders), the "
+            "master-ai management-log cluster (Vault Management README, "
+            "Architecture Decisions Log, Completed Work Log, Current "
+            "Iteration Log, Next Iteration Log, Remaining Work Log, Vault "
+            "Status Log, Coverage Audit Log, Research Queue), or the "
+            "ai-course cluster (AI Course Master Index, AI Course Merge "
+            "Report); plus topical concept notes when the archived text "
+            "names them (no area-20 basename collides vault-wide, so the "
+            "plain [[Note Name]] short form is correct for every link)"
+        ),
+        "colliding": (
+            "no area-20 basename collides vault-wide (verified against the "
+            "full 544-note canonical structure at session 28); apply the "
+            "binding link-rules list for any generated-set collision"
+        ),
+    },
 }
 
 # Kept for backwards compatibility with the session-20 records: the area-04
