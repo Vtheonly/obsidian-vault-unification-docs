@@ -24,7 +24,7 @@
         "words_outside_fences": 990007,
         "words_total": 1157937
     },
-    "current_task_id": "SYNTH-001",
+    "current_task_id": "VERIF-001",
     "execution_environment": "Z AI / GLM 5.3 with available subagents",
     "framework_evidence": {
         "capabilities": "reports/bootstrap/boot-004-capabilities.json",
@@ -96,7 +96,7 @@
     },
     "knowledge_registry_initialized": true,
     "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-03-synth001-session24.json",
-    "notes": "Session 24 (2026-11-03, continuation of an interrupted start): SYNTH-001 user-directed batch complete — areas 01 - Foundations (20 notes), 02 - Mathematics (18), 03 - Python and Data Tooling (29) + the 17 - Papers Swin Transformer pull-forward (1, covering Swin V1 + Swin V2); AdamW covered by the area-02 Adam Optimizer Derivation note. 327/544 canonical notes verified. Gates 4/4 pass with ZERO waivers; audits 4/4 valid=true 0 findings over 2,855 KUs (4,983 markers); lint 0 errors/20 documented warnings (17 pre-existing + 3 verbatim-source dollar prices); 53 findings repaired via 4 anchored probe-idempotent scripts; 15/15 semantic probes; 744/744 tests; sources immutable. Next: session 25 bulk batch (areas 15-19, ~200 notes), session 26 area 20 + cross-batch consistency + 3 gap treatments + final verification.",
+    "notes": "Vault delivered at session 28 (544/544 notes, all gates green; reports/release/final-report.md). Session 29 independently reproduced the final full-corpus audit (0 findings, 42,156 markers), registry rebuild (Unaccounted=0), links (0 problems), lint (0 errors), and 752/752 tests, then opened VERIF-001: stratified semantic spot-verification of 246 KUs (state/synthesis/s29-semantic-sample.jsonl).",
     "output_synthesis_started": true,
     "phase_zero_rebaseline": {
         "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
@@ -245,7 +245,7 @@
         }
     ],
     "source_vaults_located": true,
-    "stage": "synthesis-in-progress-areas-01-14-complete",
+    "stage": "post-delivery-verification",
     "status": "in_progress",
     "verification_pilot_evidence": {
         "defect_classes": 12,

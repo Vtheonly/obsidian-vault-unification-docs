@@ -1,0 +1,260 @@
+{
+ "task_id": "VERIF-001",
+ "purpose": "post-delivery stratified semantic spot-verification (final-report §5.1 limitation #1)",
+ "population": {
+  "kus_total": 27536,
+  "by_disposition": {
+   "Preserved": 18478,
+   "Contextualized": 950,
+   "Consolidated": 8106,
+   "Superseded": 2
+  },
+  "by_unit_type": {
+   "prose": 13450,
+   "math_block": 2037,
+   "callout": 2089,
+   "list": 7044,
+   "code_block": 1741,
+   "table": 645,
+   "frontmatter": 378,
+   "quote": 150,
+   "empty_section": 2
+  }
+ },
+ "sample": {
+  "drawn": 246,
+  "fraction": 0.00893,
+  "by_disposition": {
+   "Preserved": 81,
+   "Contextualized": 42,
+   "Consolidated": 121,
+   "Superseded": 2
+  },
+  "by_unit_type": {
+   "prose": 115,
+   "math_block": 15,
+   "callout": 17,
+   "list": 73,
+   "code_block": 12,
+   "table": 6,
+   "empty_section": 2,
+   "quote": 3,
+   "frontmatter": 3
+  },
+  "by_destination_area": {
+   "01 - Foundations": 18,
+   "02 - Mathematics": 9,
+   "03 - Python and Data Tooling": 3,
+   "04 - Machine Learning": 26,
+   "05 - Neural Network Foundations": 28,
+   "06 - Computer Vision": 21,
+   "07 - Sequence Models": 4,
+   "08 - Attention and Transformers": 17,
+   "09 - NLP and Language Models": 2,
+   "10 - Large Language Models": 2,
+   "11 - Foundation Models and Multimodal": 8,
+   "12 - Generative Models": 2,
+   "13 - Training and Adaptation": 9,
+   "14 - Inference and Production": 11,
+   "15 - Agents and Tooling": 10,
+   "16 - Interpretability and Research": 6,
+   "17 - Papers": 11,
+   "18 - Projects": 3,
+   "19 - Reference and Practice": 14,
+   "20 - Vault and Project Context": 42
+  },
+  "method": "census of (disposition x unit_type) cells with population<=3; stratified allocation Contextualized 40 / Consolidated 118 / Preserved 80 (minus census members), proportional across unit_types by largest remainder, minimum 1 per non-empty cell; within-cell selection evenly spaced over ku_id-sorted members (no RNG); area floor: every destination area >= 2 sampled KUs (Consolidated > Contextualized > Preserved priority); allocation overweights prose/list/callout deliberately — math/code/table already carry verbatim fingerprints in the lexical marker net (final-report gate 7), so reading-level effort targets the claims the marker net covers least"
+ },
+ "allocation_log": [
+  {
+   "disposition": "Superseded",
+   "unit_type": "empty_section",
+   "population": 2,
+   "drawn": 2,
+   "method": "census"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "callout",
+   "population": 601,
+   "drawn": 9,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "code_block",
+   "population": 365,
+   "drawn": 5,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "frontmatter",
+   "population": 60,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "list",
+   "population": 2412,
+   "drawn": 35,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "math_block",
+   "population": 629,
+   "drawn": 9,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "prose",
+   "population": 3793,
+   "drawn": 55,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "quote",
+   "population": 54,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Consolidated",
+   "unit_type": "table",
+   "population": 192,
+   "drawn": 3,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Contextualized",
+   "unit_type": "callout",
+   "population": 9,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Contextualized",
+   "unit_type": "code_block",
+   "population": 9,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Contextualized",
+   "unit_type": "frontmatter",
+   "population": 15,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Contextualized",
+   "unit_type": "list",
+   "population": 477,
+   "drawn": 20,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Contextualized",
+   "unit_type": "prose",
+   "population": 405,
+   "drawn": 17,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Contextualized",
+   "unit_type": "quote",
+   "population": 20,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Contextualized",
+   "unit_type": "table",
+   "population": 15,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "callout",
+   "population": 1479,
+   "drawn": 7,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "code_block",
+   "population": 1367,
+   "drawn": 6,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "frontmatter",
+   "population": 303,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "list",
+   "population": 4155,
+   "drawn": 18,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "math_block",
+   "population": 1408,
+   "drawn": 6,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "prose",
+   "population": 9252,
+   "drawn": 40,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "quote",
+   "population": 76,
+   "drawn": 1,
+   "method": "stratified even-spaced by ku_id"
+  },
+  {
+   "disposition": "Preserved",
+   "unit_type": "table",
+   "population": 438,
+   "drawn": 2,
+   "method": "stratified even-spaced by ku_id"
+  }
+ ],
+ "area_floor_log": [
+  {
+   "area": "10 - Large Language Models",
+   "added_to_reach_floor": 2
+  },
+  {
+   "area": "12 - Generative Models",
+   "added_to_reach_floor": 1
+  }
+ ],
+ "areas_covered": 20,
+ "judgment_protocol": {
+  "verdicts": [
+   "present",
+   "partial",
+   "absent",
+   "superseded-info-retained (Superseded KUs only)"
+  ],
+  "evidence_rule": "every judgment must quote verbatim span(s) from the destination note that carry the knowledge; quotes are mechanically verified to appear in the note file",
+  "denominator": "sampled KUs with a completed judgment"
+ },
+ "sample_file": "state/synthesis/s29-semantic-sample.jsonl"
+}
