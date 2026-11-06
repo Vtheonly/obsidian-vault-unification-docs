@@ -1,0 +1,230 @@
+{
+  "campaign": "INTEG-002",
+  "cluster": "MEDNLP",
+  "items_total": 368,
+  "verdict_counts": {
+    "covered": 89,
+    "partial": 70,
+    "absent": 197,
+    "equivalent": 12
+  },
+  "retained_or_existing": 171,
+  "genuinely_missing": 197,
+  "by_section": {
+    "Transformer Architectures": {
+      "covered": 26,
+      "total": 29,
+      "partial": 3
+    },
+    "Classical NLP Representations": {
+      "covered": 7,
+      "total": 10,
+      "partial": 1,
+      "equivalent": 2
+    },
+    "Medical and Biomedical Language Models": {
+      "covered": 7,
+      "total": 20,
+      "absent": 8,
+      "partial": 5
+    },
+    "Medical NLP and Clinical Text Processing": {
+      "partial": 5,
+      "total": 25,
+      "absent": 18,
+      "covered": 2
+    },
+    "Vector Embeddings and Mathematics": {
+      "partial": 4,
+      "total": 17,
+      "equivalent": 1,
+      "absent": 4,
+      "covered": 8
+    },
+    "Medical Knowledge Systems and Vocabularies": {
+      "absent": 27,
+      "total": 27
+    },
+    "Diseases, Syndromes and Medical Conditions Named in the Notes": {
+      "absent": 15,
+      "total": 16,
+      "partial": 1
+    },
+    "Phenotypes, Symptoms and Clinical Findings Named": {
+      "absent": 23,
+      "total": 23
+    },
+    "Genes, Proteins, Drugs and Procedures Named": {
+      "absent": 8,
+      "total": 8
+    },
+    "Clinical Information Extraction": {
+      "partial": 9,
+      "total": 22,
+      "absent": 5,
+      "covered": 6,
+      "equivalent": 2
+    },
+    "Clinical Retrieval": {
+      "equivalent": 2,
+      "total": 16,
+      "covered": 10,
+      "partial": 3,
+      "absent": 1
+    },
+    "Medical Ontologies and Semantic Hierarchies": {
+      "absent": 17,
+      "total": 26,
+      "partial": 8,
+      "covered": 1
+    },
+    "Knowledge Graphs and Biological Reasoning": {
+      "covered": 3,
+      "total": 34,
+      "absent": 25,
+      "partial": 5,
+      "equivalent": 1
+    },
+    "Graph Similarity and Information Theory": {
+      "partial": 2,
+      "total": 13,
+      "absent": 9,
+      "covered": 2
+    },
+    "Graph Algorithms and Explainability": {
+      "partial": 3,
+      "total": 15,
+      "absent": 10,
+      "covered": 1,
+      "equivalent": 1
+    },
+    "Graph Neural Networks and Knowledge Graph Learning": {
+      "partial": 2,
+      "total": 17,
+      "absent": 14,
+      "covered": 1
+    },
+    "Neural Ranking": {
+      "partial": 8,
+      "total": 22,
+      "absent": 8,
+      "equivalent": 1,
+      "covered": 5
+    },
+    "Statistical Validation and Evaluation": {
+      "covered": 10,
+      "total": 28,
+      "absent": 5,
+      "partial": 11,
+      "equivalent": 2
+    }
+  },
+  "method": {
+    "design": "full-cluster census (no sampling): all 368 MEDNLP items judged",
+    "groups": "28 bounded subagent groups (max 18 items; grouped by section, sections never merged)",
+    "judges": "28 independent general-purpose subagents reading destination notes and grepping the vault for surface forms + alternative terminology before any absent verdict",
+    "depth_standard": "campaign plan section 5 (what it is / why it exists / how it works conceptually / relations to other concepts; project usage not required for 'covered')",
+    "evidence_rule": "covered/equivalent/partial require a verbatim quote (>= 12 words for covered/equivalent) mechanically validated as a whitespace-normalized substring of the cited note (scripts/s32_validate_judgments.py, exit 0: 368/368 PASSED)",
+    "orchestrator_rereview": {
+      "method": "stratified even-spaced sample (every 9th record of the 368, 41 items = 11.1%): 23 absent verified by independent orchestrator greps of the agent search terms (all hits confirmed false positives: 'fluid' matching LUI, teacher-forcing 'instructor', image-anisotropy vs representation anisotropy, mermaid 'graph TD' declarations); 18 covered/partial/equivalent verified by reading the cited destination notes and judging the verdict + quote depth against the campaign depth standard",
+      "sample_size": 41,
+      "agreement": 41,
+      "disagreements": [],
+      "notes": "The 41-item sample spans all 18 MEDNLP sections and all four verdicts (12 covered / 4 partial / 2 equivalent / 23 absent). Notable confirmed judgment calls: Top-K Candidate Retrieval covered via the canonical retrieval-step explanation in Cosine Similarity.md; DAGs covered via the computational-graph treatment; Explainable AI equivalent under the vault's 'interpretability' terminology; Bootstrap Confidence Intervals equivalent under 'The bootstrap'; Graph Explainability absent (interpretability notes cover CNNs/LLMs, no graph-model explainability); Domain-Specific BERT partial (troubleshooting row only — BioBERT/ClinicalBERT family absent)."
+    },
+    "limitations": [
+      "single-judge-per-item design mitigated by mandatory multi-term search before absent verdicts + the 11.1% orchestrator re-review; borderline covered/partial calls carry uncertainty noted by judges",
+      "judgments reflect the vault as of session 31 state (no vault mutations occurred during judging)",
+      "'covered' does not include project usage; project context integration happens in the S37+ execution waves"
+    ]
+  },
+  "destination_notes_cited": [
+    "01 - Foundations/AI ML and DL Hierarchy/History and Evolution of AI.md",
+    "01 - Foundations/AI ML and DL Hierarchy/Introduction to Machine Learning.md",
+    "01 - Foundations/Data Science Foundations/Data-Driven Decision Making.md",
+    "01 - Foundations/Data Science Foundations/The Data Science Workflow.md",
+    "01 - Foundations/Mathematical Foundations/Linear Algebra Fundamentals.md",
+    "02 - Mathematics/Linear Algebra/Cosine Similarity.md",
+    "02 - Mathematics/Linear Algebra/Dot Product.md",
+    "02 - Mathematics/Linear Algebra/Vectors.md",
+    "02 - Mathematics/Probability/Probability Essentials.md",
+    "02 - Mathematics/Statistics/Estimators and Bias.md",
+    "02 - Mathematics/Statistics/Hypothesis Testing.md",
+    "03 - Python and Data Tooling/Data Cleaning and Preprocessing/Categorical Encoding and Text Normalization.md",
+    "03 - Python and Data Tooling/Data Cleaning and Preprocessing/Outlier Detection and Treatment.md",
+    "03 - Python and Data Tooling/Python Programming/Object Oriented Programming.md",
+    "04 - Machine Learning/Clustering and Dimensionality Reduction/Principal Component Analysis.md",
+    "04 - Machine Learning/Clustering and Dimensionality Reduction/t-SNE and UMAP.md",
+    "04 - Machine Learning/Generalization and Regularization/Bias Variance Tradeoff.md",
+    "04 - Machine Learning/Model Evaluation/Model Evaluation Metrics.md",
+    "04 - Machine Learning/Nearest Neighbors/K-Nearest Neighbors.md",
+    "04 - Machine Learning/Optimization Algorithms/Loss Functions.md",
+    "05 - Neural Network Foundations/Backpropagation/Backpropagation and Gradient Flow in CNNs.md",
+    "05 - Neural Network Foundations/Neural Network Basics/Activation Functions.md",
+    "05 - Neural Network Foundations/Neural Network Basics/Perceptrons and Multi-Layer Perceptrons.md",
+    "06 - Computer Vision/Architecture and Connectivity/The Degradation Problem and Residual Connections.md",
+    "06 - Computer Vision/Pipeline Evaluation and Interpretability/CNN Interpretability.md",
+    "06 - Computer Vision/Pipeline Evaluation and Interpretability/Common Mistakes and How to Fix Them.md",
+    "06 - Computer Vision/Training and Transfer Learning/Transfer Learning and Fine-Tuning.md",
+    "07 - Sequence Models/Sequence to Sequence/Beam Search and Decoding Strategies.md",
+    "08 - Attention and Transformers/Attention Mechanism/Bahdanau Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Multi-Head Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Positional Encoding.md",
+    "08 - Attention and Transformers/Attention Mechanism/Queries Keys and Values.md",
+    "08 - Attention and Transformers/Attention Mechanism/RoPE.md",
+    "08 - Attention and Transformers/Attention Mechanism/Scaled Dot-Product Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Self-Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Sinusoidal and Learned Positional Encodings.md",
+    "08 - Attention and Transformers/Encoder Decoder Design Space/Autoregressive vs Parallel Encoding.md",
+    "08 - Attention and Transformers/Encoder Decoder Design Space/BERT vs GPT vs T5.md",
+    "08 - Attention and Transformers/Transformer Architecture/BERT.md",
+    "08 - Attention and Transformers/Transformer Architecture/Embedding Layer.md",
+    "08 - Attention and Transformers/Transformer Architecture/GPT Family.md",
+    "08 - Attention and Transformers/Transformer Architecture/The Transformer.md",
+    "08 - Attention and Transformers/Transformer Architecture/Transformer Decoder Block.md",
+    "08 - Attention and Transformers/Vision Transformers/CLS Token.md",
+    "09 - NLP and Language Models/Embeddings/Contextual Embeddings ELMo to BERT.md",
+    "09 - NLP and Language Models/Embeddings/Word2Vec GloVe and FastText.md",
+    "09 - NLP and Language Models/NLP and Language Models MOC.md",
+    "09 - NLP and Language Models/Pre-Transformer NLP/BM25.md",
+    "09 - NLP and Language Models/Pre-Transformer NLP/TF-IDF.md",
+    "09 - NLP and Language Models/Tokenization/Tokenization Overview.md",
+    "09 - NLP and Language Models/Tokenization/WordPiece.md",
+    "10 - Large Language Models/Architecture/Decoder-Only Architecture.md",
+    "10 - Large Language Models/Capabilities/In-Context Learning.md",
+    "10 - Large Language Models/Context and KV Cache/KV Cache Mechanics.md",
+    "10 - Large Language Models/Limitations/Hallucination.md",
+    "10 - Large Language Models/Sampling/Sampling Strategies.md",
+    "11 - Foundation Models and Multimodal/Foundation Models/Embedding Model Training.md",
+    "11 - Foundation Models and Multimodal/Foundation Models/Embedding Models for Retrieval.md",
+    "13 - Training and Adaptation/Fine-Tuning/LoRA.md",
+    "13 - Training and Adaptation/Pretraining/Pretraining Objectives and Scaling Laws.md",
+    "14 - Inference and Production/AI Infrastructure/Vector Storage with pgvector.md",
+    "14 - Inference and Production/Inference/Constrained Decoding.md",
+    "14 - Inference and Production/LLMOps and MLOps/LLM-as-Judge Evaluation.md",
+    "14 - Inference and Production/Production AI/Guardrails.md",
+    "14 - Inference and Production/Production AI/PII and Data Leakage.md",
+    "15 - Agents and Tooling/AI Agents/Chain of Thought.md",
+    "15 - Agents and Tooling/AI Agents/Function Calling.md",
+    "15 - Agents and Tooling/Frameworks and Tools/PydanticAI.md",
+    "15 - Agents and Tooling/Memory Systems/Memory Types.md",
+    "15 - Agents and Tooling/Memory Systems/Vector Memory Backends.md",
+    "15 - Agents and Tooling/Model Context Protocol/MCP Components.md",
+    "15 - Agents and Tooling/Multi-Agent Systems/Multi-Agent Architectures.md",
+    "15 - Agents and Tooling/Retrieval Augmented Generation/Chunking, Hybrid Search, and Reranking.md",
+    "15 - Agents and Tooling/Retrieval Augmented Generation/RAG Pipeline Overview.md",
+    "17 - Papers/Agents and RAG/RAG.md",
+    "17 - Papers/Alignment and RLHF/InstructGPT.md",
+    "17 - Papers/Attention and Transformers/BERT.md",
+    "17 - Papers/Reasoning/Graph of Thoughts.md",
+    "17 - Papers/Reasoning/Tree of Thoughts.md",
+    "17 - Papers/Scaling and Training/LoRA.md",
+    "18 - Projects/Capstones/Build a Knowledge-Graph Construction Pipeline.md",
+    "18 - Projects/Capstones/Build a Model Distillation Pipeline.md",
+    "18 - Projects/Capstones/Build a Multimodal RAG Pipeline.md",
+    "18 - Projects/Capstones/Build a RAG Evaluation Harness.md",
+    "18 - Projects/Mini-Projects/Build a Mini RAG Pipeline.md",
+    "19 - Reference and Practice/Glossary/Acronyms Index.md"
+  ],
+  "validation": "scripts/s32_validate_judgments.py: VALIDATION PASSED 368/368 (schema, exact set coverage, quotes verbatim-verified, absent discipline)"
+}

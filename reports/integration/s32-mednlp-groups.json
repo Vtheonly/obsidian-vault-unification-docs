@@ -1,0 +1,704 @@
+{
+  "campaign": "INTEG-002",
+  "cluster": "MEDNLP",
+  "items_total": 368,
+  "groups_total": 28,
+  "max_items_per_group": 18,
+  "grouping": "by MEDNLP section (first-occurrence order), consecutive chunks at 18 items; sections never merged",
+  "lexical_hint_source": "state/integration/coverage-lexical-v1.jsonl",
+  "judgment_schema": {
+    "required": [
+      "item_id",
+      "verdict",
+      "destination_note",
+      "evidence_quote",
+      "equivalent_name",
+      "rationale",
+      "search_terms_tried"
+    ],
+    "verdicts": [
+      "covered",
+      "equivalent",
+      "partial",
+      "absent"
+    ]
+  },
+  "groups": [
+    {
+      "group_id": 1,
+      "sections": [
+        "Transformer Architectures"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0031",
+        "INT-0032",
+        "INT-0046",
+        "INT-0047",
+        "INT-0310",
+        "INT-0317",
+        "INT-0322",
+        "INT-0456",
+        "INT-0463",
+        "INT-0464",
+        "INT-0468",
+        "INT-0529",
+        "INT-0633",
+        "INT-0634",
+        "INT-0635",
+        "INT-0636",
+        "INT-0637",
+        "INT-0638"
+      ],
+      "spec": "scratch/s32-integ/groups/group-01.json",
+      "output": "scratch/s32-integ/judgments/group-01.jsonl"
+    },
+    {
+      "group_id": 2,
+      "sections": [
+        "Transformer Architectures"
+      ],
+      "items": 11,
+      "item_ids": [
+        "INT-0639",
+        "INT-0640",
+        "INT-0641",
+        "INT-0642",
+        "INT-0643",
+        "INT-0644",
+        "INT-0645",
+        "INT-0646",
+        "INT-0647",
+        "INT-0648",
+        "INT-0649"
+      ],
+      "spec": "scratch/s32-integ/groups/group-02.json",
+      "output": "scratch/s32-integ/judgments/group-02.jsonl"
+    },
+    {
+      "group_id": 3,
+      "sections": [
+        "Classical NLP Representations"
+      ],
+      "items": 10,
+      "item_ids": [
+        "INT-0318",
+        "INT-0624",
+        "INT-0625",
+        "INT-0626",
+        "INT-0627",
+        "INT-0628",
+        "INT-0629",
+        "INT-0630",
+        "INT-0631",
+        "INT-0632"
+      ],
+      "spec": "scratch/s32-integ/groups/group-03.json",
+      "output": "scratch/s32-integ/judgments/group-03.jsonl"
+    },
+    {
+      "group_id": 4,
+      "sections": [
+        "Medical and Biomedical Language Models"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0518",
+        "INT-0519",
+        "INT-0650",
+        "INT-0651",
+        "INT-0652",
+        "INT-0653",
+        "INT-0654",
+        "INT-0655",
+        "INT-0656",
+        "INT-0657",
+        "INT-0658",
+        "INT-0659",
+        "INT-0660",
+        "INT-0661",
+        "INT-0662",
+        "INT-0663",
+        "INT-0664",
+        "INT-0665"
+      ],
+      "spec": "scratch/s32-integ/groups/group-04.json",
+      "output": "scratch/s32-integ/judgments/group-04.jsonl"
+    },
+    {
+      "group_id": 5,
+      "sections": [
+        "Medical and Biomedical Language Models"
+      ],
+      "items": 2,
+      "item_ids": [
+        "INT-0666",
+        "INT-0667"
+      ],
+      "spec": "scratch/s32-integ/groups/group-05.json",
+      "output": "scratch/s32-integ/judgments/group-05.jsonl"
+    },
+    {
+      "group_id": 6,
+      "sections": [
+        "Medical NLP and Clinical Text Processing"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0599",
+        "INT-0600",
+        "INT-0601",
+        "INT-0602",
+        "INT-0603",
+        "INT-0604",
+        "INT-0605",
+        "INT-0606",
+        "INT-0607",
+        "INT-0608",
+        "INT-0609",
+        "INT-0610",
+        "INT-0611",
+        "INT-0612",
+        "INT-0613",
+        "INT-0614",
+        "INT-0615",
+        "INT-0616"
+      ],
+      "spec": "scratch/s32-integ/groups/group-06.json",
+      "output": "scratch/s32-integ/judgments/group-06.jsonl"
+    },
+    {
+      "group_id": 7,
+      "sections": [
+        "Medical NLP and Clinical Text Processing"
+      ],
+      "items": 7,
+      "item_ids": [
+        "INT-0617",
+        "INT-0618",
+        "INT-0619",
+        "INT-0620",
+        "INT-0621",
+        "INT-0622",
+        "INT-0623"
+      ],
+      "spec": "scratch/s32-integ/groups/group-07.json",
+      "output": "scratch/s32-integ/judgments/group-07.jsonl"
+    },
+    {
+      "group_id": 8,
+      "sections": [
+        "Vector Embeddings and Mathematics"
+      ],
+      "items": 17,
+      "item_ids": [
+        "INT-0668",
+        "INT-0669",
+        "INT-0670",
+        "INT-0671",
+        "INT-0672",
+        "INT-0673",
+        "INT-0674",
+        "INT-0675",
+        "INT-0676",
+        "INT-0677",
+        "INT-0678",
+        "INT-0679",
+        "INT-0680",
+        "INT-0681",
+        "INT-0682",
+        "INT-0683",
+        "INT-0684"
+      ],
+      "spec": "scratch/s32-integ/groups/group-08.json",
+      "output": "scratch/s32-integ/judgments/group-08.jsonl"
+    },
+    {
+      "group_id": 9,
+      "sections": [
+        "Medical Knowledge Systems and Vocabularies"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0685",
+        "INT-0686",
+        "INT-0687",
+        "INT-0688",
+        "INT-0689",
+        "INT-0690",
+        "INT-0691",
+        "INT-0692",
+        "INT-0693",
+        "INT-0694",
+        "INT-0695",
+        "INT-0696",
+        "INT-0697",
+        "INT-0698",
+        "INT-0699",
+        "INT-0700",
+        "INT-0701",
+        "INT-0702"
+      ],
+      "spec": "scratch/s32-integ/groups/group-09.json",
+      "output": "scratch/s32-integ/judgments/group-09.jsonl"
+    },
+    {
+      "group_id": 10,
+      "sections": [
+        "Medical Knowledge Systems and Vocabularies"
+      ],
+      "items": 9,
+      "item_ids": [
+        "INT-0703",
+        "INT-0704",
+        "INT-0705",
+        "INT-0706",
+        "INT-0707",
+        "INT-0708",
+        "INT-0709",
+        "INT-0710",
+        "INT-0711"
+      ],
+      "spec": "scratch/s32-integ/groups/group-10.json",
+      "output": "scratch/s32-integ/judgments/group-10.jsonl"
+    },
+    {
+      "group_id": 11,
+      "sections": [
+        "Diseases, Syndromes and Medical Conditions Named in the Notes"
+      ],
+      "items": 16,
+      "item_ids": [
+        "INT-0712",
+        "INT-0713",
+        "INT-0714",
+        "INT-0715",
+        "INT-0716",
+        "INT-0717",
+        "INT-0718",
+        "INT-0719",
+        "INT-0720",
+        "INT-0721",
+        "INT-0722",
+        "INT-0723",
+        "INT-0724",
+        "INT-0725",
+        "INT-0726",
+        "INT-0727"
+      ],
+      "spec": "scratch/s32-integ/groups/group-11.json",
+      "output": "scratch/s32-integ/judgments/group-11.jsonl"
+    },
+    {
+      "group_id": 12,
+      "sections": [
+        "Phenotypes, Symptoms and Clinical Findings Named"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0728",
+        "INT-0729",
+        "INT-0730",
+        "INT-0731",
+        "INT-0732",
+        "INT-0733",
+        "INT-0734",
+        "INT-0735",
+        "INT-0736",
+        "INT-0737",
+        "INT-0738",
+        "INT-0739",
+        "INT-0740",
+        "INT-0741",
+        "INT-0742",
+        "INT-0743",
+        "INT-0744",
+        "INT-0745"
+      ],
+      "spec": "scratch/s32-integ/groups/group-12.json",
+      "output": "scratch/s32-integ/judgments/group-12.jsonl"
+    },
+    {
+      "group_id": 13,
+      "sections": [
+        "Phenotypes, Symptoms and Clinical Findings Named"
+      ],
+      "items": 5,
+      "item_ids": [
+        "INT-0746",
+        "INT-0747",
+        "INT-0748",
+        "INT-0749",
+        "INT-0750"
+      ],
+      "spec": "scratch/s32-integ/groups/group-13.json",
+      "output": "scratch/s32-integ/judgments/group-13.jsonl"
+    },
+    {
+      "group_id": 14,
+      "sections": [
+        "Genes, Proteins, Drugs and Procedures Named"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0751",
+        "INT-0752",
+        "INT-0753",
+        "INT-0754",
+        "INT-0755",
+        "INT-0756",
+        "INT-0757",
+        "INT-0758"
+      ],
+      "spec": "scratch/s32-integ/groups/group-14.json",
+      "output": "scratch/s32-integ/judgments/group-14.jsonl"
+    },
+    {
+      "group_id": 15,
+      "sections": [
+        "Clinical Information Extraction"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0759",
+        "INT-0760",
+        "INT-0761",
+        "INT-0762",
+        "INT-0763",
+        "INT-0764",
+        "INT-0765",
+        "INT-0766",
+        "INT-0767",
+        "INT-0768",
+        "INT-0769",
+        "INT-0770",
+        "INT-0771",
+        "INT-0772",
+        "INT-0773",
+        "INT-0774",
+        "INT-0775",
+        "INT-0776"
+      ],
+      "spec": "scratch/s32-integ/groups/group-15.json",
+      "output": "scratch/s32-integ/judgments/group-15.jsonl"
+    },
+    {
+      "group_id": 16,
+      "sections": [
+        "Clinical Information Extraction"
+      ],
+      "items": 4,
+      "item_ids": [
+        "INT-0777",
+        "INT-0778",
+        "INT-0779",
+        "INT-0780"
+      ],
+      "spec": "scratch/s32-integ/groups/group-16.json",
+      "output": "scratch/s32-integ/judgments/group-16.jsonl"
+    },
+    {
+      "group_id": 17,
+      "sections": [
+        "Clinical Retrieval"
+      ],
+      "items": 16,
+      "item_ids": [
+        "INT-0781",
+        "INT-0782",
+        "INT-0783",
+        "INT-0784",
+        "INT-0785",
+        "INT-0786",
+        "INT-0787",
+        "INT-0788",
+        "INT-0789",
+        "INT-0790",
+        "INT-0791",
+        "INT-0792",
+        "INT-0793",
+        "INT-0794",
+        "INT-0795",
+        "INT-0796"
+      ],
+      "spec": "scratch/s32-integ/groups/group-17.json",
+      "output": "scratch/s32-integ/judgments/group-17.jsonl"
+    },
+    {
+      "group_id": 18,
+      "sections": [
+        "Statistical Validation and Evaluation"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0924",
+        "INT-0925",
+        "INT-0926",
+        "INT-0927",
+        "INT-0928",
+        "INT-0929",
+        "INT-0930",
+        "INT-0931",
+        "INT-0932",
+        "INT-0933",
+        "INT-0934",
+        "INT-0935",
+        "INT-0936",
+        "INT-0937",
+        "INT-0938",
+        "INT-0939",
+        "INT-0940",
+        "INT-0941"
+      ],
+      "spec": "scratch/s32-integ/groups/group-18.json",
+      "output": "scratch/s32-integ/judgments/group-18.jsonl"
+    },
+    {
+      "group_id": 19,
+      "sections": [
+        "Statistical Validation and Evaluation"
+      ],
+      "items": 10,
+      "item_ids": [
+        "INT-0942",
+        "INT-0943",
+        "INT-0944",
+        "INT-0945",
+        "INT-0946",
+        "INT-0947",
+        "INT-0948",
+        "INT-0949",
+        "INT-0950",
+        "INT-0951"
+      ],
+      "spec": "scratch/s32-integ/groups/group-19.json",
+      "output": "scratch/s32-integ/judgments/group-19.jsonl"
+    },
+    {
+      "group_id": 20,
+      "sections": [
+        "Medical Ontologies and Semantic Hierarchies"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0797",
+        "INT-0798",
+        "INT-0799",
+        "INT-0800",
+        "INT-0801",
+        "INT-0802",
+        "INT-0803",
+        "INT-0804",
+        "INT-0805",
+        "INT-0806",
+        "INT-0807",
+        "INT-0808",
+        "INT-0809",
+        "INT-0810",
+        "INT-0811",
+        "INT-0812",
+        "INT-0813",
+        "INT-0814"
+      ],
+      "spec": "scratch/s32-integ/groups/group-20.json",
+      "output": "scratch/s32-integ/judgments/group-20.jsonl"
+    },
+    {
+      "group_id": 21,
+      "sections": [
+        "Medical Ontologies and Semantic Hierarchies"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0815",
+        "INT-0816",
+        "INT-0817",
+        "INT-0818",
+        "INT-0819",
+        "INT-0820",
+        "INT-0821",
+        "INT-0822"
+      ],
+      "spec": "scratch/s32-integ/groups/group-21.json",
+      "output": "scratch/s32-integ/judgments/group-21.jsonl"
+    },
+    {
+      "group_id": 22,
+      "sections": [
+        "Knowledge Graphs and Biological Reasoning"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0823",
+        "INT-0824",
+        "INT-0825",
+        "INT-0826",
+        "INT-0827",
+        "INT-0828",
+        "INT-0829",
+        "INT-0830",
+        "INT-0831",
+        "INT-0832",
+        "INT-0833",
+        "INT-0834",
+        "INT-0835",
+        "INT-0836",
+        "INT-0837",
+        "INT-0838",
+        "INT-0839",
+        "INT-0840"
+      ],
+      "spec": "scratch/s32-integ/groups/group-22.json",
+      "output": "scratch/s32-integ/judgments/group-22.jsonl"
+    },
+    {
+      "group_id": 23,
+      "sections": [
+        "Knowledge Graphs and Biological Reasoning"
+      ],
+      "items": 16,
+      "item_ids": [
+        "INT-0841",
+        "INT-0842",
+        "INT-0843",
+        "INT-0844",
+        "INT-0845",
+        "INT-0846",
+        "INT-0847",
+        "INT-0848",
+        "INT-0849",
+        "INT-0850",
+        "INT-0851",
+        "INT-0852",
+        "INT-0853",
+        "INT-0854",
+        "INT-0855",
+        "INT-0856"
+      ],
+      "spec": "scratch/s32-integ/groups/group-23.json",
+      "output": "scratch/s32-integ/judgments/group-23.jsonl"
+    },
+    {
+      "group_id": 24,
+      "sections": [
+        "Graph Similarity and Information Theory"
+      ],
+      "items": 13,
+      "item_ids": [
+        "INT-0857",
+        "INT-0858",
+        "INT-0859",
+        "INT-0860",
+        "INT-0861",
+        "INT-0862",
+        "INT-0863",
+        "INT-0864",
+        "INT-0865",
+        "INT-0866",
+        "INT-0867",
+        "INT-0868",
+        "INT-0869"
+      ],
+      "spec": "scratch/s32-integ/groups/group-24.json",
+      "output": "scratch/s32-integ/judgments/group-24.jsonl"
+    },
+    {
+      "group_id": 25,
+      "sections": [
+        "Graph Algorithms and Explainability"
+      ],
+      "items": 15,
+      "item_ids": [
+        "INT-0870",
+        "INT-0871",
+        "INT-0872",
+        "INT-0873",
+        "INT-0874",
+        "INT-0875",
+        "INT-0876",
+        "INT-0877",
+        "INT-0878",
+        "INT-0879",
+        "INT-0880",
+        "INT-0881",
+        "INT-0882",
+        "INT-0883",
+        "INT-0884"
+      ],
+      "spec": "scratch/s32-integ/groups/group-25.json",
+      "output": "scratch/s32-integ/judgments/group-25.jsonl"
+    },
+    {
+      "group_id": 26,
+      "sections": [
+        "Graph Neural Networks and Knowledge Graph Learning"
+      ],
+      "items": 17,
+      "item_ids": [
+        "INT-0885",
+        "INT-0886",
+        "INT-0887",
+        "INT-0888",
+        "INT-0889",
+        "INT-0890",
+        "INT-0891",
+        "INT-0892",
+        "INT-0893",
+        "INT-0894",
+        "INT-0895",
+        "INT-0896",
+        "INT-0897",
+        "INT-0898",
+        "INT-0899",
+        "INT-0900",
+        "INT-0901"
+      ],
+      "spec": "scratch/s32-integ/groups/group-26.json",
+      "output": "scratch/s32-integ/judgments/group-26.jsonl"
+    },
+    {
+      "group_id": 27,
+      "sections": [
+        "Neural Ranking"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0902",
+        "INT-0903",
+        "INT-0904",
+        "INT-0905",
+        "INT-0906",
+        "INT-0907",
+        "INT-0908",
+        "INT-0909",
+        "INT-0910",
+        "INT-0911",
+        "INT-0912",
+        "INT-0913",
+        "INT-0914",
+        "INT-0915",
+        "INT-0916",
+        "INT-0917",
+        "INT-0918",
+        "INT-0919"
+      ],
+      "spec": "scratch/s32-integ/groups/group-27.json",
+      "output": "scratch/s32-integ/judgments/group-27.jsonl"
+    },
+    {
+      "group_id": 28,
+      "sections": [
+        "Neural Ranking"
+      ],
+      "items": 4,
+      "item_ids": [
+        "INT-0920",
+        "INT-0921",
+        "INT-0922",
+        "INT-0923"
+      ],
+      "spec": "scratch/s32-integ/groups/group-28.json",
+      "output": "scratch/s32-integ/judgments/group-28.jsonl"
+    }
+  ]
+}

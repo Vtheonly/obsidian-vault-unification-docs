@@ -24,7 +24,7 @@
         "words_outside_fences": 990007,
         "words_total": 1157937
     },
-    "current_task_id": "INTEG-002",
+    "current_task_id": "INTEG-003",
     "execution_environment": "Z AI / GLM 5.3 with available subagents",
     "framework_evidence": {
         "capabilities": "reports/bootstrap/boot-004-capabilities.json",
@@ -95,8 +95,8 @@
         }
     },
     "knowledge_registry_initialized": true,
-    "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-06-integ-session31.json",
-    "notes": "INTEG campaign (user directive commit 77cf6cf, 15-session budget S31-S45): setup complete at session 31 \u2014 methodology docs/INTEGRATION_CAMPAIGN_PLAN.md, deterministic inventory (1,233 unique items from the taxonomy), lexical coverage evidence over the 544 delivered notes. Next: semantic coverage judgments per cluster (S32 MEDNLP first).",
+    "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-06-integ-session32.json",
+    "notes": "INTEG campaign S32 complete: MEDNLP cluster fully judged (368/368, no sampling) \u2014 89 covered / 12 equivalent / 70 partial / 197 absent; all quotes mechanically verified; 11.1% orchestrator re-review 41/41 agreement. Next: S33 2D3D cluster (291 items), then S34 SYNPATH+VAULTX, S35 rest, S36 decisions.",
     "output_synthesis_started": true,
     "phase_zero_rebaseline": {
         "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
@@ -245,7 +245,7 @@
         }
     ],
     "source_vaults_located": true,
-    "stage": "integration-campaign (S31 setup complete; S32 semantic audit next)",
+    "stage": "integration-campaign (S32 MEDNLP judgments complete; S33 2D3D next)",
     "status": "in_progress",
     "verification_pilot_evidence": {
         "defect_classes": 12,

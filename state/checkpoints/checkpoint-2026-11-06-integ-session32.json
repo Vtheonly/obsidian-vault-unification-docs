@@ -1,0 +1,71 @@
+{
+  "session": 32,
+  "task_id": "INTEG-002",
+  "date": "2026-11-06",
+  "phase": "integration-campaign-audit",
+  "work_completed": [
+    "packed the 368 MEDNLP items into 28 bounded judgment groups (section-coherent, max 18 items; lexical hints attached) via scripts/s32_pack_groups.py",
+    "ran 28 independent subagent judgment groups (all completed cleanly on first run): each judge read candidate notes and grepped the vault for surface + alternative terminology before any absent verdict",
+    "mechanically validated all 368 judgments (schema, exact set coverage, verbatim-quote verification, absent discipline): VALIDATION PASSED 368/368",
+    "orchestrator re-review of a stratified 41-item sample (11.1%): 41/41 agreement",
+    "wrote the canonical judgment file + aggregate report; queued INTEG-003 (S33: 2D3D); updated ledger/handoff/README"
+  ],
+  "changed_paths": [
+    "scripts/s32_pack_groups.py (new)",
+    "scripts/s32_validate_judgments.py (new)",
+    "state/integration/judgments-mednlp-v1.jsonl (new; 368 records)",
+    "reports/integration/s32-mednlp-groups.json (new; committed manifest)",
+    "reports/integration/s32-mednlp-judgments.json (new; aggregate)",
+    "state/task-queue.jsonl (INTEG-002 completed; INTEG-003 queued)",
+    "state/current-state.json",
+    "state/checkpoints/checkpoint-2026-11-06-integ-session32.json",
+    "docs/ACCELERATED_COMPLETION_POLICY.md (ledger row 32)",
+    "docs/agent-handoff/next-agent.md (rewritten for session 33)",
+    "README.md (campaign progress)"
+  ],
+  "tests_run": [
+    {
+      "command": "python3 -m pytest -q (full suite at session end)",
+      "result": "836 passed"
+    },
+    {
+      "command": "vu verify-manifest x2 (sources)",
+      "result": "276/276 + 333/333 byte-identical"
+    },
+    {
+      "command": "python3 scripts/s32_validate_judgments.py",
+      "result": "VALIDATION PASSED 368/368"
+    }
+  ],
+  "git_state": {
+    "branch": "main",
+    "base_commit": "b451679 (session-31 close)",
+    "session_commits": "recorded in the session commit message",
+    "push_verification": "per AGENTS.md section 13: push after commit and verify remote ref"
+  },
+  "open_findings": [
+    "MEDNLP absent-rate 54% (197/368) confirms the campaign premise: the medical-domain layer must be built almost from scratch as cluster-domain notes (decision C/D) in the S37+ waves",
+    "70 partial items define the decision-B expansion workload for MEDNLP destinations (e.g. ranking-metric prose, FAISS/NetworkX library intros, Domain-Specific BERT concept)",
+    "12 equivalence mappings recorded for terminology consistency in the S36 decision ledger"
+  ],
+  "next_task": {
+    "task_id": "INTEG-003",
+    "title": "Semantic coverage judgments — 2D3D cluster (291 items)",
+    "dependencies": [
+      "INTEG-002 (completed)"
+    ],
+    "resume": "Follow AGENTS.md section 2 startup; read docs/INTEGRATION_CAMPAIGN_PLAN.md and this checkpoint; reuse the S32 machinery: adapt scripts/s32_pack_groups.py to the 2D3D cluster (291 items), run bounded judgment groups, validate with the same mechanical checks, re-review >=10%, aggregate, and queue INTEG-004 (S34: SYNPATH+VAULTX)."
+  },
+  "accelerated_mode": {
+    "session_number": 32,
+    "budget_sessions_consumed": 2,
+    "budget_sessions_remaining": 13,
+    "deliverable_metric_moved": "campaign items semantically judged (cumulative)",
+    "before": "0/1,233 items judged (S31 produced lexical evidence only)",
+    "after": "368/1,233 items judged at the depth standard (MEDNLP cluster complete; 29.8% of the inventory) — 89 covered / 12 equivalent / 70 partial / 197 absent",
+    "denominator": "1,233 unique inventory items; 368 MEDNLP items judged 368/368 (full census, no sampling)",
+    "failed_session": false,
+    "cause_if_failed": null,
+    "deadline_position": "INTEG campaign session 2 of 15 (S31-S45); on plan (S32 objective met within its session)"
+  }
+}

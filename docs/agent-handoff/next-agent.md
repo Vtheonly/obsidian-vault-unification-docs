@@ -2,96 +2,93 @@
 
 ## Project state
 
-**TWO PHASES COMPLETE + INTEGRATION CAMPAIGN OPEN (session 31, 2026-11-06).**
-(1) The unified vault was delivered at session 28 and re-verified through
-sessions 29–30 (544/544 notes, all gates green). (2) The user then supplied a
-new directive (commit `77cf6cf`: `index of the missing things.txt` + a
-binding commit-message methodology) and a **15-session budget (S31–S45)**.
-Session 31 completed the campaign setup; **INTEG-002 (S32: MEDNLP semantic
-coverage judgments) is queued as the next bounded unit.**
+**INTEGRATION CAMPAIGN IN PROGRESS (sessions 31–45, user directive commit
+`77cf6cf`); S31 (setup) and S32 (MEDNLP judgments) COMPLETE.** The unified
+vault (544 notes, delivered session 28, gates green) is being extended with
+the user's 1,233-item project taxonomy. **INTEG-003 (S33: 2D3D semantic
+coverage judgments, 291 items) is queued as the next bounded unit.**
 
 - **Campaign plan (binding):** `docs/INTEGRATION_CAMPAIGN_PLAN.md` — A/B/C/D
-  integration decisions with D-before-C rule, depth standard (what/why/how/
-  project-use/details/relations), 100%-coverage hard gate
-  (fully-addressed / 1,233 unique items), per-wave mutation battery, session
-  allocation S31–S45 with adaptive reallocation rules.
-- **Inventory (S31):** `vu integ-inventory` parsed the taxonomy
-  deterministically — **1,283 raw / 1,233 unique items** across 9 clusters
-  (MEDNLP 368, 2D3D 291, SYNPATH 209, NLME 97, MATHSOLVER 91, MAPDIG 81,
-  WEATHER 78, MASTER-INDEX 35, VAULTX 28); 85 documented exclusions (1
-  preamble + 84 transcript-noise lines 719–802, every line recorded with
-  number + reason); 24 context records (Repository: lines, group labels,
-  distinctions — they constrain integration content). Outputs:
-  `state/integration/inventory-v1.jsonl` + `clusters-v1.json`; regression pin
-  `tests/test_integration.py::test_real_taxonomy_regression_pin`.
-- **Lexical coverage (S31):** `vu integ-coverage` matched every item's
-  surfaces (name + alias, Brit/US/plural-flexible) against the 544 notes:
-  **title 73 / heading 46 / partial 484 / body-multi 76 / body-single 18 /
-  none 536** (`state/integration/coverage-lexical-v1.jsonl`,
-  `reports/integration/s31-coverage-lexical.json`). Lexical bands are
-  **evidence, never decisions** — e.g. `Message Passing Neural Networks` is
-  lexically `none` but GNN concepts live in the vault under other surface
-  forms, while `Geometric Deep Learning` (also `none`) is genuinely absent
-  from both source vaults.
-- **Tooling:** new module `src/vault_unification/integration.py` + CLI
-  commands `vu integ-inventory` / `vu integ-coverage` (path-safe, atomic
-  writes, JSON reports with git stamps); 37 new tests (836/836 total);
-  determinism probes byte-identical; sources 276/276 + 333/333 byte-identical.
-- **Session-31 recovery note:** two earlier sessions were interrupted
-  mid-implementation (uncommitted WIP: campaign plan, integration module,
-  partial CLI wiring). The WIP was recovered from the working tree, reviewed
-  line-by-line, completed, and tested; a real alias-split bug
-  (LaTeX-escaped parentheticals) was caught by the new unit tests and fixed
-  **before** any state was generated.
-- Findings ledger F-0001..F-0047 unchanged (0 open).
-- Checkpoint: `state/checkpoints/checkpoint-2026-11-06-integ-session31.json`
-  (accelerated_mode: INTEG session 1/15, 14 remaining, no failed session).
+  decisions, depth standard, 100%-coverage hard gate, per-wave mutation
+  battery, session allocation S31–S45 with adaptive rules.
+- **S31 (complete, commit b451679):** deterministic inventory
+  (`state/integration/inventory-v1.jsonl`, 1,233 items / 9 clusters / 85
+  documented exclusions) + lexical coverage evidence
+  (`coverage-lexical-v1.jsonl`: title 73 / heading 46 / partial 484 /
+  body-multi 76 / body-single 18 / none 536 — evidence only, never
+  decisions) + `vu integ-inventory` / `vu integ-coverage` commands (37 new
+  tests; LaTeX-escaped alias bug fixed pre-generation; determinism probes
+  byte-identical).
+- **S32 (complete, INTEG-002):** MEDNLP cluster fully judged — **368/368
+  items, full census (no sampling), 28 subagent groups, all first-run
+  clean**. Result: **89 covered / 12 equivalent / 70 partial / 197 absent**.
+  Every covered/equivalent/partial judgment carries a verbatim quote
+  mechanically verified as a substring of its cited note
+  (`scripts/s32_validate_judgments.py`: PASSED 368/368). Orchestrator
+  re-review: stratified 41-item sample (11.1%) — **41/41 agreement**.
+  Artifacts: `state/integration/judgments-mednlp-v1.jsonl`,
+  `reports/integration/s32-mednlp-groups.json`,
+  `reports/integration/s32-mednlp-judgments.json`.
+- **S32 key findings:** the medical layer is ~54% genuinely missing — the
+  entire terminology stack (UMLS, SNOMED CT, ICD-10, RxNorm, LOINC, MeSH,
+  HGNC, OMIM, MONDO, HPO, Orphanet) has **zero vault occurrences**; likewise
+  clinical IE (negation/assertion/temporality), the clinical-BERT family,
+  RDF/OWL/SKOS + triple stores, the GNN/KG-embedding family, and
+  ontology-based similarity. General-ML items are largely covered
+  (attention, tokenization, embeddings, retrieval/ANN, metrics, sampling).
+  70 partial items define the decision-B expansion workload. 12
+  terminology-equivalence mappings recorded for the S36 decision ledger
+  (Explainable AI≡interpretability, Bootstrap CIs≡The bootstrap,
+  Retrieve-then-Rank≡Reranking, Deterministic Generation≡greedy decoding,
+  Neural Ranker≡cross-encoder reranker, Structured Generation≡constrained
+  decoding, …).
+- No vault mutations during judging; sources 276/276 + 333/333
+  byte-identical; 836/836 tests. Findings ledger F-0001..F-0047 unchanged.
+- Checkpoints: `checkpoint-2026-11-06-integ-session31.json`,
+  `checkpoint-2026-11-06-integ-session32.json` (accelerated_mode: INTEG
+  session 2/15, 13 remaining, no failed session).
 
 ## If a future session runs
 
 1. Follow the startup protocol (AGENTS.md §2): verify this handoff against
-   repository evidence — the session-31 checkpoint, the task-queue rows
-   INTEG-001/INTEG-002, `state/integration/*`, and
-   `reports/integration/s31-*.json`. Do not redo completed work without a
-   regression trigger.
-2. **Next task (INTEG-002, S32):** semantic coverage judgments for the
-   **MEDNLP cluster (368 items)** per campaign plan §5: one judgment per item
-   (`covered` / `partial` / `absent` / `equivalent`) at the depth standard,
-   from bounded subagent groups reading the destination notes; every
-   covered/equivalent judgment cites a destination + verbatim evidence quote
-   (mechanically verified as a substring — reuse the s29/s30 machinery);
-   orchestrator re-reviews ≥10%. Lexical bands from
-   `coverage-lexical-v1.jsonl` are per-item hints inside the judging prompts;
-   terminology-equivalence search is mandatory (e.g. `K-Nearest Neighbour
-   Matching` ≡ American-spelling notes; `MPNN` ≡ GNN note). No vault mutation
-   during judging.
-3. Then S33 (2D3D), S34 (SYNPATH+VAULTX), S35 (rest) per plan §8; S36
-   decision ledger; S37–S43 execution waves; S44 independent re-verification;
-   S45 close. Adaptive rules in plan §8 (evidence-driven reallocation, never
-   silent).
-4. **Project-context authority rule (plan §2):** the list and its
-   annotations are the ONLY authoritative source of project usage. Never
-   invent project usage, code, or results. Where the user's earlier project
-   notes exist inside the source vaults, those notes remain the source of
-   record and are cited normally.
-5. Environment note: the sandbox venv may need `pip install -e .` before the
-   suite passes (subprocess test imports the package outside the repo root);
-   environment artifact, not a regression.
-6. Standing rules for any vault mutation: sources immutable; anchored
+   repository evidence — the session-32 checkpoint, task-queue rows
+   INTEG-002/INTEG-003, the judgment file + aggregate, and the validation
+   script (re-runnable: `python3 scripts/s32_validate_judgments.py` must
+   print VALIDATION PASSED 368/368).
+2. **Next task (INTEG-003, S33):** 2D3D cluster semantic judgments (291
+   items). Reuse the S32 machinery: adapt `scripts/s32_pack_groups.py` (the
+   only cluster-specific parts are the cluster id, inventory filter, and
+   output paths — parameterize or copy the pattern), run bounded judgment
+   groups with the same instructions (grep surface + alternative terminology
+   before any absent verdict; verbatim quotes ≥12 words for
+   covered/equivalent), validate mechanically (same checks), re-review ≥10%,
+   aggregate, queue INTEG-004 (S34: SYNPATH + VAULTX, 237 items).
+3. Then S35 (MAPDIG + MATHSOLVER + WEATHER + NLME + MASTER-INDEX, 382
+   items) completes the audit phase; S36 decision ledger; S37–S43 execution
+   waves; S44 independent re-verification; S45 close.
+4. 2D3D expectations (from S31 lexical evidence): high absent rate on
+   3D-reconstruction vocabulary (NeRF/3DGS/MVS — the lexical none-band
+   concentrated in SYNPATH/2D3D), covered/partial on general CV (SIFT,
+   segmentation, camera geometry basics).
+5. **Project-context authority rule (plan §2):** never invent project usage;
+   the list's annotations are the only authoritative project context.
+6. Environment note: the sandbox venv may need `pip install -e .` before the
+   suite passes (environment artifact, not a regression).
+7. Standing rules for any vault mutation: sources immutable; anchored
    probe-idempotent repair scripts; lint + links + full-corpus audit +
-   dup-scan + see-also-audit + full suite after the last mutation; continuous
-   commit-and-push with remote-ref verification (AGENTS.md §13).
+   dup-scan + see-also-audit + full suite after the last mutation;
+   continuous commit-and-push with remote-ref verification (AGENTS.md §13).
 
 ## Explicit non-claims
 
-- The lexical coverage report is **surface-form evidence only**; it does not
-  decide coverage for any item (the 484 `partial` and 536 `none` bands
-  especially await semantic judgment).
-- No integration decisions (A/B/C/D) exist yet; the decision ledger opens at
-  S32+ judgments and is formalized at S36.
-- 44 of 81 master-index principal-concept crossrefs are surface-unmatched
-  (recorded in `clusters-v1.json`); they are cross-references, not items, and
-  are resolved during the semantic phase.
-- The delivered vault's metrics are unchanged this session (no mutations);
-  the campaign's coverage metric (0 → 1,233 inventoried) is setup evidence,
-  not integrated knowledge.
+- Judgments exist for MEDNLP only (368/1,233 = 29.8% of the inventory);
+   2D3D, SYNPATH, VAULTX, MAPDIG, MATHSOLVER, WEATHER, NLME, MASTER-INDEX
+   are not yet semantically judged.
+- "Covered/equivalent" means concept-level coverage at the depth standard;
+   it does NOT include the user's project usage — project context is
+   integrated in the S37+ execution waves per the campaign plan.
+- The 70 partial and 197 absent MEDNLP items are findings about the vault,
+   not yet integration decisions; the A/B/C/D ledger opens at S36.
+- Single-judge-per-item design is mitigated by mandatory multi-term search +
+   the 11.1% re-review (41/41); borderline calls carry judge-noted
+   uncertainty in the rationales.
