@@ -24,7 +24,7 @@
         "words_outside_fences": 990007,
         "words_total": 1157937
     },
-    "current_task_id": "INTEG-004",
+    "current_task_id": "INTEG-005",
     "execution_environment": "Z AI / GLM 5.3 with available subagents",
     "framework_evidence": {
         "capabilities": "reports/bootstrap/boot-004-capabilities.json",
@@ -95,8 +95,8 @@
         }
     },
     "knowledge_registry_initialized": true,
-    "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-06-integ-session33.json",
-    "notes": "INTEG campaign S32+S33 complete (both executed in this wall-clock session): MEDNLP (368/368: 89 covered / 12 equivalent / 70 partial / 197 absent) and 2D3D (291/291: 28 covered / 8 equivalent / 64 partial / 191 absent) fully judged with mechanically verified quotes and 41/41 + 30/30 orchestrator re-review agreement. 659/1,233 items judged (53.4%). Next: S34 SYNPATH+VAULTX (237 items), S35 rest, S36 decisions.",
+    "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-07-integ-session34.json",
+    "notes": "INTEG campaign S34 complete: SYNPATH+VAULTX 235/235 judged (36 covered / 6 equivalent / 41 partial / 152 absent) with mechanically verified quotes and 33/33 orchestrator re-review agreement. 894/1,233 items judged (72.5%). F-0048 carry-over rule + F-0049 denominator correction established. Next: S35 (remaining clusters, 374 unique items / 345 fresh), then S36 decisions.",
     "output_synthesis_started": true,
     "phase_zero_rebaseline": {
         "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
@@ -245,7 +245,7 @@
         }
     ],
     "source_vaults_located": true,
-    "stage": "integration-campaign (S32 MEDNLP + S33 2D3D judgments complete; S34 SYNPATH+VAULTX next)",
+    "stage": "integration-campaign (S32 MEDNLP + S33 2D3D + S34 SYNPATH/VAULTX judgments complete; S35 remaining clusters next)",
     "status": "in_progress",
     "verification_pilot_evidence": {
         "defect_classes": 12,

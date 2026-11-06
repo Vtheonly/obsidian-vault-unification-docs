@@ -185,8 +185,8 @@ Workload-calibrated; each session is a bounded unit with its own gate.
 | **S31** | Setup | Methodology (this doc), inventory parse, lexical coverage mechanism + first report, campaign tasks registered | inventory complete with documented exclusions; coverage report reproducible; tests green; committed & pushed |
 | **S32** | Audit | Semantic coverage judgments — MEDNLP cluster (largest, 368 items) | every MEDNLP item has a judgment; ≥10% orchestrator re-review; evidence quotes verified; ledger rows valid |
 | **S33** | Audit | Semantic judgments — 2D3D (291 items) | same gate |
-| **S34** | Audit | Semantic judgments — SYNPATH + VAULT-X (209 + 28 items) | same gate |
-| **S35** | Audit | Semantic judgments — MAPDIG + MATHSOLVER + WEATHER + NLME + MASTER-INDEX (81 + 91 + 78 + 97 + 35 items) | same gate |
+| **S34** | Audit | Semantic judgments — SYNPATH + VAULT-X (209 + 28 items; 235 unique after F-0049 union accounting — INT-0052/INT-0202 belong to both clusters) | same gate |
+| **S35** | Audit | Semantic judgments — MAPDIG + MATHSOLVER + WEATHER + NLME + MASTER-INDEX (81 + 91 + 78 + 97 + 35 items; 374 unique after union accounting, 345 fresh after the 29 F-0048 carry-overs) | same gate |
 | **S36** | Planning | Decision ledger complete (A/B/C/D + destination for every item); integration plan (waves, note-level placement); coverage report v1 (per-item rows) | 100% of items have decisions; B/C/D work items enumerated with destinations; plan committed |
 | **S37–S43** | Execution | 7 integration waves, cluster-ordered (largest first: SYNPATH, 2D3D, MEDNLP, then MAPDIG/WEATHER/NLME/MATHSOLVER/MASTER-INDEX); each wave = author/expand + connect + full mutation battery | per-wave: all wave items completed at depth; lint/links/audit/dup-scan/tests green; battery evidence committed; running coverage ledger updated |
 | **S44** | Verification | Independent second-pass item-by-item verification against the ORIGINAL list (fresh subagents, no memory of S32–S35 judgments); duplication + terminology consistency audits | 100% re-verified; every defect repaired or ledgered; coverage report v2 |

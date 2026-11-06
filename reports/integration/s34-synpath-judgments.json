@@ -1,0 +1,179 @@
+{
+  "campaign": "INTEG-004",
+  "clusters": [
+    "SYNPATH",
+    "VAULTX"
+  ],
+  "items_total": 235,
+  "items_fresh_judged": 229,
+  "items_carried_over": 6,
+  "verdict_counts": {
+    "absent": 152,
+    "partial": 41,
+    "covered": 36,
+    "equivalent": 6
+  },
+  "retained_or_existing": 83,
+  "genuinely_missing": 152,
+  "by_section": {
+    "SYNPATH: Geometric Deep Learning": {
+      "absent": 16,
+      "total": 18,
+      "partial": 2
+    },
+    "SYNPATH: Geometric Feature Encoding": {
+      "absent": 6,
+      "total": 11,
+      "covered": 2,
+      "partial": 3
+    },
+    "SYNPATH: Attention Mechanisms": {
+      "covered": 11,
+      "total": 16,
+      "absent": 4,
+      "partial": 1
+    },
+    "SYNPATH: Attention Masking and Spatial Masking": {
+      "partial": 9,
+      "total": 30,
+      "covered": 3,
+      "equivalent": 2,
+      "absent": 16
+    },
+    "SYNPATH: Molecular Generation": {
+      "partial": 1,
+      "total": 17,
+      "absent": 16
+    },
+    "SYNPATH: Hierarchical Policy Learning": {
+      "partial": 5,
+      "total": 14,
+      "absent": 8,
+      "equivalent": 1
+    },
+    "SYNPATH: Chemical AI and Reaction Learning": {
+      "absent": 16,
+      "total": 16
+    },
+    "SYNPATH: Molecular Geometry and Stereochemistry": {
+      "absent": 16,
+      "total": 17,
+      "partial": 1
+    },
+    "SYNPATH: Generative Reinforcement Learning": {
+      "covered": 4,
+      "total": 17,
+      "absent": 10,
+      "partial": 3
+    },
+    "SYNPATH: Molecular Optimization and Physics": {
+      "absent": 24,
+      "total": 24
+    },
+    "SYNPATH: Model Training and Optimization": {
+      "covered": 13,
+      "total": 29,
+      "partial": 7,
+      "absent": 8,
+      "equivalent": 1
+    },
+    "VAULTX: Equivariant Protein Backbones": {
+      "partial": 3,
+      "total": 10,
+      "absent": 6,
+      "covered": 1
+    },
+    "VAULTX: Advanced Structural Attention": {
+      "absent": 3,
+      "total": 8,
+      "partial": 4,
+      "equivalent": 1
+    },
+    "VAULTX: Advanced Mathematical Learning": {
+      "absent": 3,
+      "total": 8,
+      "covered": 2,
+      "equivalent": 1,
+      "partial": 2
+    }
+  },
+  "method": {
+    "design": "full-cluster census (no sampling): all 235 unique SYNPATH+VAULTX items judged once each",
+    "denominator_note": "235 unique items = 209 SYNPATH + 28 VAULTX − 2 dual-cluster items (INT-0052 Spatial Distance Bias, INT-0202 Vector-Jacobian Products) counted once; the plan's '237' arithmetic double-counted them (F-0049)",
+    "carry_over": "6 items with prior canonical judgments (INT-0031/0032/0046/0047 from MEDNLP, INT-0187/0192 from 2D3D) carried over verbatim with carry_over_from provenance per the one-item-one-judgment rule (F-0048)",
+    "groups": "17 bounded subagent groups (max 18 items; grouped by cluster+section, sections never merged)",
+    "judges": "17 independent general-purpose subagents reading destination notes and grepping the vault for surface forms + alternative terminology before any absent verdict (chemistry/equivariance/RL terminology hints added to the S34 judging instructions)",
+    "depth_standard": "campaign plan section 5 (what it is / why it exists / how it works conceptually / relations to other concepts; project usage not required for 'covered')",
+    "evidence_rule": "covered/equivalent/partial require a verbatim quote (>= 12 words for covered/equivalent) mechanically validated as a whitespace-normalized substring of the cited note (scripts/s34_validate_judgments.py, exit 0: 235/235 PASSED)",
+    "orchestrator_rereview": {
+      "method": "stratified even-spaced sample (every 8th record of the 235 = 30 items, 12.8%) plus 3 added equivalent-verdict items (the trickiest class) = 33 items (14.0%): 20 absent verified by independent orchestrator greps over all 544 notes of the item names, the judges' search terms, and orchestrator-chosen alternatives (all 544-note scans: PaiNN/SchNet/GemNet/EGNN/synthon/retrosynthesis/torsion/dihedral/chemoselectiv*/deprotect*/resonance/heavy-atom/drug-like/Lipinski/QED/ligand/SE(3)/conformer/stereochem*/SMILES/invariant-point all 0 occurrences; every nonzero hit independently read and confirmed a false positive: 'receptor' = retinal photoreceptors, 'graph neural' x3 = bare name-drops in other contexts, 'message passing' x2 = multi-agent homonym, 'e(3)' x2 = np.eye(3)/range(3) code); 6 covered + 3 equivalent verified by reading the cited destination notes and judging verdict + quote depth against the campaign depth standard; 4 partial verified by reading the cited sections and confirming the below-depth-but-present characterization",
+      "sample_size": 33,
+      "agreement": 33,
+      "disagreements": [],
+      "notes": "Sample spans all 14 sections and all 4 verdict classes. Notable confirmed judgment calls: INT-0033 QKV covered (dedicated Queries Keys and Values note: database analogy, matrix form, three roles); INT-0041 Softmax Attention covered (dedicated Scaled Dot-Product Attention note + Linear Attention baseline framing + MiniMax-01 hybrid analysis — consistent with the prior MEDNLP judgment of INT-0031, the same underlying mechanism); INT-0209 Checkpoint Recovery covered via the capstone's dedicated Sharded-checkpointing + Recovery-from-failures sections; INT-0053 Distance-Based Attention Bias EQUIVALENT via ALiBi (full-depth additive score bias by distance); INT-0103 Conditional Probability Factorization EQUIVALENT via the chain-rule-of-probability treatment (formula + LM training + generation connections); INT-0207 Gradient Stability EQUIVALENT via the gradient-flow concept in Vanishing and Exploding Gradients. All 20 sampled absent verdicts confirmed: the molecular-chemistry / geometric-RL vocabulary has zero genuine vault occurrences."
+    },
+    "limitations": [
+      "single-judge-per-item design mitigated by mandatory multi-term search before absent verdicts + the 14.0% orchestrator re-review; borderline covered/partial calls carry uncertainty noted by judges",
+      "judgments reflect the vault as of session 33 state (no vault mutations occurred during judging)",
+      "'covered' does not include project usage; project context integration happens in the S37+ execution waves"
+    ]
+  },
+  "destination_notes_cited": [
+    "01 - Foundations/AI ML and DL Hierarchy/Types of Learning.md",
+    "01 - Foundations/Mathematical Foundations/Linear Algebra Fundamentals.md",
+    "02 - Mathematics/Calculus/Gradient and Chain Rule.md",
+    "02 - Mathematics/Linear Algebra/Vectors.md",
+    "02 - Mathematics/Probability/Probability Essentials.md",
+    "04 - Machine Learning/Nearest Neighbors/K-Nearest Neighbors.md",
+    "04 - Machine Learning/Optimization Algorithms/Loss Functions.md",
+    "04 - Machine Learning/Optimization Algorithms/Optimizers and Learning Rate Schedulers.md",
+    "04 - Machine Learning/Reinforcement Learning/Markov Decision Processes and Bellman Equations.md",
+    "04 - Machine Learning/Reinforcement Learning/Policy Gradients and Actor Critic.md",
+    "04 - Machine Learning/Reinforcement Learning/Proximal Policy Optimization.md",
+    "04 - Machine Learning/Support Vector Machines/Kernel Trick.md",
+    "05 - Neural Network Foundations/Backpropagation/Backpropagation and Gradient Flow in CNNs.md",
+    "05 - Neural Network Foundations/Backpropagation/Backpropagation.md",
+    "05 - Neural Network Foundations/Training Dynamics and Stability/Data Augmentation.md",
+    "05 - Neural Network Foundations/Training Dynamics and Stability/Vanishing and Exploding Gradients.md",
+    "06 - Computer Vision/CNN Foundations and Philosophy/Introduction and Foundations of CNNs.md",
+    "06 - Computer Vision/Core Operators and Geometry/Advanced Pooling and Global Average Pooling.md",
+    "06 - Computer Vision/Core Operators and Geometry/Core Operators and Geometry Summary.md",
+    "06 - Computer Vision/Spatial Filtering/Geometric Transformations and Interpolation.md",
+    "06 - Computer Vision/Training and Transfer Learning/Transfer Learning and Fine-Tuning.md",
+    "06 - Computer Vision/Training and Transfer Learning/Transfer Learning and ResNet Summary.md",
+    "07 - Sequence Models/Sequence to Sequence/Teacher Forcing and Exposure Bias.md",
+    "07 - Sequence Models/Sequence to Sequence/The Encoder-Decoder Pattern.md",
+    "08 - Attention and Transformers/Attention Mechanism/ALiBi.md",
+    "08 - Attention and Transformers/Attention Mechanism/Bahdanau Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Multi-Head Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Origins of Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Positional Encoding.md",
+    "08 - Attention and Transformers/Attention Mechanism/Queries Keys and Values.md",
+    "08 - Attention and Transformers/Attention Mechanism/Scaled Dot-Product Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Self-Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Sinusoidal and Learned Positional Encodings.md",
+    "08 - Attention and Transformers/Efficient Attention/Sliding Window Attention.md",
+    "08 - Attention and Transformers/Efficient Attention/Sparse Attention.md",
+    "08 - Attention and Transformers/Transformer Architecture/Feed-Forward Network.md",
+    "08 - Attention and Transformers/Transformer Architecture/Pre-Norm vs Post-Norm.md",
+    "08 - Attention and Transformers/Transformer Architecture/Residual Connections.md",
+    "08 - Attention and Transformers/Transformer Architecture/Transformer Decoder Block.md",
+    "11 - Foundation Models and Multimodal/Multimodal AI/Cross-Modal Attention.md",
+    "11 - Foundation Models and Multimodal/Multimodal AI/DiT and FLUX.md",
+    "12 - Generative Models/Autoencoders/Denoising and Sparse Autoencoders.md",
+    "12 - Generative Models/Diffusion Models/Score-Based and Latent Diffusion.md",
+    "13 - Training and Adaptation/Fine-Tuning/DPO Derivation.md",
+    "13 - Training and Adaptation/Fine-Tuning/RLHF with PPO.md",
+    "13 - Training and Adaptation/Optimization/Loss Spikes and Stability.md",
+    "13 - Training and Adaptation/Optimization/Mixed Precision Training.md",
+    "13 - Training and Adaptation/Pretraining/Pretraining Objectives and Scaling Laws.md",
+    "14 - Inference and Production/Inference/Constrained Decoding.md",
+    "15 - Agents and Tooling/AI Agents/Planner-Executor Pattern.md",
+    "17 - Papers/Attention and Transformers/Swin Transformer.md",
+    "17 - Papers/Multimodal/Flamingo.md",
+    "17 - Papers/State Space Models and Linear Attention/MiniMax-01.md",
+    "18 - Projects/Capstones/Build a Distributed Training Pipeline.md",
+    "18 - Projects/Implementations/Build a Tiny LLM Trainer.md"
+  ],
+  "validation": "scripts/s34_validate_judgments.py: VALIDATION PASSED 235/235 (schema, exact set coverage, quotes verbatim-verified, absent discipline, carry-over re-validated against current vault state)"
+}

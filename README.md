@@ -11,14 +11,18 @@ concepts from their real projects to be integrated into the delivered vault
 under a 100%-coverage hard gate, without duplication or disconnection.
 Binding methodology: `docs/INTEGRATION_CAMPAIGN_PLAN.md`. Session 31 (setup)
 completed the deterministic inventory (9 clusters, documented exclusions) and
-the lexical coverage mechanism; sessions 32–33 completed the MEDNLP and
-2D3D semantic judgment censuses — 659/1,233 items judged (53.4%): MEDNLP
-368/368 (89 covered / 12 equivalent / 70 partial / 197 absent — the medical
-layer ~54% missing) and 2D3D 291/291 (28 covered / 8 equivalent / 64
-partial / 191 absent — the 3D-reconstruction layer ~66% missing); all
-quotes mechanically verified; re-review agreements 41/41 and 30/30. Next:
-S34 (SYNPATH+VAULTX, 237 items), S35 (remaining clusters), then decisions
-and integration waves.
+the lexical coverage mechanism; sessions 32–34 completed the MEDNLP, 2D3D,
+and SYNPATH+VAULTX semantic judgment censuses — 894/1,233 items judged
+(72.5%): MEDNLP 368/368 (89 covered / 12 equivalent / 70 partial / 197
+absent — the medical layer ~54% missing), 2D3D 291/291 (28 / 8 / 64 / 191 —
+the 3D-reconstruction layer ~66% missing), SYNPATH+VAULTX 235/235 (36 / 6 /
+41 / 152 — the molecular-chemistry, geometric-DL, GFlowNet, and
+protein-backbone layers entirely absent; general attention/training core
+covered); all quotes mechanically verified; re-review agreements 41/41,
+30/30, and 33/33. Session 34 also established the F-0048 one-item-one-
+judgment carry-over rule and corrected the S34/S35 denominators (F-0049).
+Next: S35 (remaining clusters, 374 unique items), then S36 decisions and
+integration waves.
 Campaign state: `state/integration/`; reports: `reports/integration/`.
 
 - **Knowledge accounting:** 27,536/27,536 KUs dispositioned (Preserved 18,478

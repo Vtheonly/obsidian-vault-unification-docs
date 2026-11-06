@@ -1,0 +1,84 @@
+{
+  "session": 34,
+  "task_id": "INTEG-004",
+  "date": "2026-11-07",
+  "phase": "integration-campaign-audit",
+  "work_completed": [
+    "startup verification independently reproduced the session-33 baseline: 836/836 tests, sources 276/276 + 333/333 byte-identical (verify-manifest 0 changed/added/removed), HEAD == origin/main at bc7f6e9",
+    "s33 + s32 validators re-run from reconstructed scratch (canonical files byte-identical after rewrite): VALIDATION PASSED 291/291 and 368/368 with verdict counts matching the handoff claims",
+    "packed the 235 unique SYNPATH+VAULTX items into 17 bounded judgment groups (cluster+section-coherent, max 18; lexical hints attached; chemistry/equivariance/RL alternative-terminology hints added to the judging instructions) via scripts/s34_pack_groups.py; 6 pre-judged items carried over per the F-0048 rule instead of re-judged",
+    "ran 17 independent subagent judgment groups (all completed cleanly on first run): each judge read candidate notes and grepped the vault for surface + alternative terminology before any absent verdict",
+    "mechanically validated all 235 judgments (schema, exact set coverage incl. carry-overs, verbatim-quote verification, absent discipline): VALIDATION PASSED 235/235",
+    "orchestrator re-review of a stratified 33-item sample (14.0%): 33/33 agreement (20 absent grep-verified; 9 covered/equivalent destination-read verified; 4 partial section-verified)",
+    "wrote the canonical judgment file + aggregate report; appended findings F-0048/F-0049/F-0050; queued INTEG-005 (S35: remaining clusters); updated current-state/ledger/README/handoff"
+  ],
+  "changed_paths": [
+    "scripts/s34_pack_groups.py (new)",
+    "scripts/s34_validate_judgments.py (new)",
+    "scripts/s34_closeout.py (new)",
+    "state/integration/judgments-synpath-v1.jsonl (new; 235 records, 6 with carry_over_from)",
+    "reports/integration/s34-synpath-groups.json (new; committed manifest with carry-over meta)",
+    "reports/integration/s34-synpath-judgments.json (new; aggregate)",
+    "state/findings.jsonl (F-0048, F-0049, F-0050 appended)",
+    "state/task-queue.jsonl (INTEG-004 completed; INTEG-005 queued)",
+    "state/current-state.json",
+    "state/checkpoints/checkpoint-2026-11-07-integ-session34.json",
+    "docs/ACCELERATED_COMPLETION_POLICY.md (ledger row 34)",
+    "docs/agent-handoff/next-agent.md (rewritten for session 35)",
+    "README.md (campaign progress)"
+  ],
+  "tests_run": [
+    {
+      "command": "python3 -m pytest -q (full suite at session end)",
+      "result": "836 passed"
+    },
+    {
+      "command": "vu verify-manifest x2 (sources)",
+      "result": "276/276 + 333/333 byte-identical"
+    },
+    {
+      "command": "python3 scripts/s34_validate_judgments.py",
+      "result": "VALIDATION PASSED 235/235"
+    },
+    {
+      "command": "python3 scripts/s33_validate_judgments.py (startup re-verification)",
+      "result": "VALIDATION PASSED 291/291, canonical file byte-identical"
+    },
+    {
+      "command": "python3 scripts/s32_validate_judgments.py (startup re-verification)",
+      "result": "VALIDATION PASSED 368/368, canonical file byte-identical"
+    }
+  ],
+  "git_state": {
+    "branch": "main",
+    "base_commit": "bc7f6e9 (session-33 close); machinery unit pushed as 6b62e66 and remote-verified before judging",
+    "session_commits": "recorded in the session commit message",
+    "push_verification": "per AGENTS.md section 13: push after commit and verify remote ref (git rev-parse origin/main + merge-base --is-ancestor)"
+  },
+  "open_findings": [
+    "SYNPATH+VAULTX absent rate 64.7% (152/235): the molecular-chemistry layer (synthons, retrosynthesis, reaction templates, SMARTS, torsions, stereochemistry, force fields, drug-likeness scoring), the geometric-deep-learning layer (GNNs, message passing, PaiNN/SchNet/GemNet/EGNN, SE(3) equivariance), the GFlowNet stack, and the protein-backbone layer (Equiformer, IPA, receptor ensembles) must be built as cluster-domain notes (decision C/D) in the S37+ waves — SYNPATH is the largest wave and runs first",
+    "41 partial items: the generic mechanisms exist (attention masking, distance biases, autodiff/checkpointing/stability, MDP/sampling, MLM/denoising, equivariance in the CNN sense) but the molecular/geometric instantiations are missing — decision B expansions",
+    "6 equivalence mappings recorded this session (Distance-Based Attention Bias≡ALiBi, Additive Distance Bias≡ALiBi, Conditional Probability Factorization≡chain rule of probability, Gradient Stability≡gradient flow, Categorical Action Mask≡choice-constrained decoding, plus carried-over equivalences) — reuse in the S36 ledger",
+    "S35 must apply the F-0048 carry-over rule (29 pre-judged items among its 374) and the F-0049 union accounting"
+  ],
+  "next_task": {
+    "task_id": "INTEG-005",
+    "title": "Semantic coverage judgments — remaining clusters MAPDIG+MATHSOLVER+WEATHER+NLME+MASTER-INDEX (374 unique items, 345 fresh)",
+    "dependencies": [
+      "INTEG-004 (completed)"
+    ],
+    "resume": "Follow AGENTS.md section 2 startup; read docs/INTEGRATION_CAMPAIGN_PLAN.md, the F-0048/F-0049 findings, and this checkpoint; reuse the S34 machinery: adapt scripts/s34_pack_groups.py to the remaining clusters (374 unique items, 345 fresh after 29 F-0048 carry-overs), run bounded judgment groups, validate mechanically, re-review >=10%, aggregate, and open INTEG-006 (S36: decision ledger for all 1,233 items)."
+  },
+  "accelerated_mode": {
+    "session_number": 34,
+    "budget_sessions_consumed": 4,
+    "budget_sessions_remaining": 11,
+    "deliverable_metric_moved": "campaign items semantically judged (cumulative)",
+    "before": "659/1,233 items judged (MEDNLP + 2D3D complete; 53.4%)",
+    "after": "894/1,233 items judged (MEDNLP + 2D3D + SYNPATH/VAULTX complete; 72.5%) — this session added 235 judgments: 36 covered / 6 equivalent / 41 partial / 152 absent",
+    "denominator": "1,233 unique inventory items; 235 unique SYNPATH+VAULTX items judged 235/235 (full census, no sampling; F-0049 corrected the plan's 237 arithmetic)",
+    "failed_session": false,
+    "cause_if_failed": null,
+    "deadline_position": "INTEG campaign session 4 of 15 (S31-S45); on plan (S34 objective completed within its budgeted session)"
+  }
+}
