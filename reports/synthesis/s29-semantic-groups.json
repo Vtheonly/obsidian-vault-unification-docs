@@ -1,0 +1,153 @@
+{
+ "task_id": "VERIF-001",
+ "purpose": "judgment group manifest (deterministic from committed sample)",
+ "method": "KUs sorted by primary destination then ku_id; greedy grouping capped at 18 KUs and 300 KB of distinct destination-note text per group",
+ "groups_total": 18,
+ "kus_total": 246,
+ "groups": [
+  {
+   "group_id": 1,
+   "kus": 18,
+   "distinct_notes": 10,
+   "note_kb_total": 215.0,
+   "spec": "scratch/s29-verify/groups/group-01.json",
+   "output": "scratch/s29-verify/judgments/group-01.jsonl"
+  },
+  {
+   "group_id": 2,
+   "kus": 16,
+   "distinct_notes": 15,
+   "note_kb_total": 262.1,
+   "spec": "scratch/s29-verify/groups/group-02.json",
+   "output": "scratch/s29-verify/judgments/group-02.jsonl"
+  },
+  {
+   "group_id": 3,
+   "kus": 17,
+   "distinct_notes": 5,
+   "note_kb_total": 243.3,
+   "spec": "scratch/s29-verify/groups/group-03.json",
+   "output": "scratch/s29-verify/judgments/group-03.jsonl"
+  },
+  {
+   "group_id": 4,
+   "kus": 10,
+   "distinct_notes": 8,
+   "note_kb_total": 292.2,
+   "spec": "scratch/s29-verify/groups/group-04.json",
+   "output": "scratch/s29-verify/judgments/group-04.jsonl"
+  },
+  {
+   "group_id": 5,
+   "kus": 4,
+   "distinct_notes": 3,
+   "note_kb_total": 66.7,
+   "spec": "scratch/s29-verify/groups/group-05.json",
+   "output": "scratch/s29-verify/judgments/group-05.jsonl"
+  },
+  {
+   "group_id": 6,
+   "kus": 7,
+   "distinct_notes": 3,
+   "note_kb_total": 276.6,
+   "spec": "scratch/s29-verify/groups/group-06.json",
+   "output": "scratch/s29-verify/judgments/group-06.jsonl"
+  },
+  {
+   "group_id": 7,
+   "kus": 8,
+   "distinct_notes": 3,
+   "note_kb_total": 222.0,
+   "spec": "scratch/s29-verify/groups/group-07.json",
+   "output": "scratch/s29-verify/judgments/group-07.jsonl"
+  },
+  {
+   "group_id": 8,
+   "kus": 11,
+   "distinct_notes": 6,
+   "note_kb_total": 285.8,
+   "spec": "scratch/s29-verify/groups/group-08.json",
+   "output": "scratch/s29-verify/judgments/group-08.jsonl"
+  },
+  {
+   "group_id": 9,
+   "kus": 9,
+   "distinct_notes": 6,
+   "note_kb_total": 258.2,
+   "spec": "scratch/s29-verify/groups/group-09.json",
+   "output": "scratch/s29-verify/judgments/group-09.jsonl"
+  },
+  {
+   "group_id": 10,
+   "kus": 18,
+   "distinct_notes": 12,
+   "note_kb_total": 290.9,
+   "spec": "scratch/s29-verify/groups/group-10.json",
+   "output": "scratch/s29-verify/judgments/group-10.jsonl"
+  },
+  {
+   "group_id": 11,
+   "kus": 18,
+   "distinct_notes": 14,
+   "note_kb_total": 238.3,
+   "spec": "scratch/s29-verify/groups/group-11.json",
+   "output": "scratch/s29-verify/judgments/group-11.jsonl"
+  },
+  {
+   "group_id": 12,
+   "kus": 18,
+   "distinct_notes": 12,
+   "note_kb_total": 159.6,
+   "spec": "scratch/s29-verify/groups/group-12.json",
+   "output": "scratch/s29-verify/judgments/group-12.jsonl"
+  },
+  {
+   "group_id": 13,
+   "kus": 18,
+   "distinct_notes": 16,
+   "note_kb_total": 251.6,
+   "spec": "scratch/s29-verify/groups/group-13.json",
+   "output": "scratch/s29-verify/judgments/group-13.jsonl"
+  },
+  {
+   "group_id": 14,
+   "kus": 18,
+   "distinct_notes": 16,
+   "note_kb_total": 219.5,
+   "spec": "scratch/s29-verify/groups/group-14.json",
+   "output": "scratch/s29-verify/judgments/group-14.jsonl"
+  },
+  {
+   "group_id": 15,
+   "kus": 16,
+   "distinct_notes": 13,
+   "note_kb_total": 252.6,
+   "spec": "scratch/s29-verify/groups/group-15.json",
+   "output": "scratch/s29-verify/judgments/group-15.jsonl"
+  },
+  {
+   "group_id": 16,
+   "kus": 18,
+   "distinct_notes": 2,
+   "note_kb_total": 150.2,
+   "spec": "scratch/s29-verify/groups/group-16.json",
+   "output": "scratch/s29-verify/judgments/group-16.jsonl"
+  },
+  {
+   "group_id": 17,
+   "kus": 18,
+   "distinct_notes": 6,
+   "note_kb_total": 139.1,
+   "spec": "scratch/s29-verify/groups/group-17.json",
+   "output": "scratch/s29-verify/judgments/group-17.jsonl"
+  },
+  {
+   "group_id": 18,
+   "kus": 4,
+   "distinct_notes": 3,
+   "note_kb_total": 19.6,
+   "spec": "scratch/s29-verify/groups/group-18.json",
+   "output": "scratch/s29-verify/judgments/group-18.jsonl"
+  }
+ ]
+}

@@ -275,17 +275,7 @@ $$ L_\delta(y, \hat{y}) = \begin{cases} \frac{1}{2}(y - \hat{y})^2 & \text{si } 
 
 where *si* means "if" and *sinon* means "otherwise".
 
-The original course material wrote the same definition with French condition labels — worth recognizing because it is the form the exercise notes use:
 
-$$ L_\delta(y, \hat{y}) = \begin{cases} \frac{1}{2}(y - \hat{y})^2 & \text{si } |y - \hat{y}| \le \delta \\ \delta(|y - \hat{y}| - \frac{1}{2}\delta) & \text{sinon} \end{cases} $$
-
-where *si* means "if" and *sinon* means "otherwise".
-
-The original course material wrote the same definition with French condition labels — worth recognizing because it is the form the exercise notes use:
-
-$$ L_\delta(y, \hat{y}) = \begin{cases} \frac{1}{2}(y - \hat{y})^2 & \text{si } |y - \hat{y}| \le \delta \\ \delta(|y - \hat{y}| - \frac{1}{2}\delta) & \text{sinon} \end{cases} $$
-
-where *si* means "if" and *sinon* means "otherwise".
 - The parameter $\delta$ controls the transition point. A small $\delta$ makes the model more robust to outliers (switches to linear sooner), while a large $\delta$ makes it behave more like MSE.
 
 The Huber loss is a piecewise function that transitions between MSE and MAE at the threshold $\delta$, which is often set to 1.0. Below the threshold it acts like MSE: smooth, differentiable at zero, with a gradient that naturally decreases as the error shrinks — perfect for fine-tuning near the optimum. Above the threshold, it acts like MAE: a linear penalty that does not let outliers dominate. The $-\frac{1}{2}\delta^2$ term ensures the function is continuous and differentiable at the transition point $\delta$.

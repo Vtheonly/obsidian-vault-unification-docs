@@ -171,7 +171,7 @@ $$ \frac{\partial J(\theta)}{\partial \theta_j} = \frac{1}{m} \sum_{i=1}^{m} (h_
 
 ### Are the gradient formulas identical? A deeper look
 
-The same calculation in the $w_j$ notation makes the structure explicit — a fascinating mathematical coincidence: a fascinating mathematical coincidence: a fascinating mathematical coincidence: the gradient for updating the weights in linear regression (using MSE) and logistic regression (using log loss) yields the **exact same final formulaic structure**:
+The same calculation in the $w_j$ notation makes the structure explicit — a fascinating mathematical coincidence: the gradient for updating the weights in linear regression (using MSE) and logistic regression (using log loss) yields the **exact same final formulaic structure**:
 
 $$ \frac{\partial J}{\partial w_j} = \frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i) x_{ij} $$
 

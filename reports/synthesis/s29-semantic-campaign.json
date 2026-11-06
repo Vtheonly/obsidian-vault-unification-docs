@@ -1,0 +1,176 @@
+{
+ "task_id": "VERIF-001",
+ "title": "Post-delivery stratified semantic spot-verification",
+ "date": "2026-11-06",
+ "population": {
+  "kus_total": 27536,
+  "notes_total": 544
+ },
+ "sample": {
+  "drawn": 246,
+  "fraction": 0.00893,
+  "method": "see reports/synthesis/s29-semantic-sample.json",
+  "areas_covered": 20
+ },
+ "judgments": {
+  "total": 246,
+  "by_verdict": {
+   "present": 242,
+   "superseded-info-retained": 2,
+   "partial": 2
+  },
+  "present_rate": 0.9837,
+  "retained_total": 244,
+  "by_disposition": {
+   "Consolidated": {
+    "present": 120,
+    "partial": 1
+   },
+   "Contextualized": {
+    "present": 41,
+    "partial": 1
+   },
+   "Preserved": {
+    "present": 81
+   },
+   "Superseded": {
+    "superseded-info-retained": 2
+   }
+  },
+  "by_unit_type": {
+   "callout": {
+    "present": 17
+   },
+   "code_block": {
+    "present": 12
+   },
+   "empty_section": {
+    "superseded-info-retained": 2
+   },
+   "frontmatter": {
+    "present": 3
+   },
+   "list": {
+    "present": 71,
+    "partial": 2
+   },
+   "math_block": {
+    "present": 15
+   },
+   "prose": {
+    "present": 115
+   },
+   "quote": {
+    "present": 3
+   },
+   "table": {
+    "present": 6
+   }
+  },
+  "by_area": {
+   "01 - Foundations": {
+    "present": 18
+   },
+   "02 - Mathematics": {
+    "present": 9
+   },
+   "03 - Python and Data Tooling": {
+    "present": 3
+   },
+   "04 - Machine Learning": {
+    "present": 25,
+    "superseded-info-retained": 1
+   },
+   "05 - Neural Network Foundations": {
+    "present": 27,
+    "superseded-info-retained": 1
+   },
+   "06 - Computer Vision": {
+    "present": 21
+   },
+   "07 - Sequence Models": {
+    "present": 4
+   },
+   "08 - Attention and Transformers": {
+    "present": 16,
+    "partial": 1
+   },
+   "09 - NLP and Language Models": {
+    "present": 2
+   },
+   "10 - Large Language Models": {
+    "present": 2
+   },
+   "11 - Foundation Models and Multimodal": {
+    "present": 8
+   },
+   "12 - Generative Models": {
+    "present": 2
+   },
+   "13 - Training and Adaptation": {
+    "present": 9
+   },
+   "14 - Inference and Production": {
+    "present": 11
+   },
+   "15 - Agents and Tooling": {
+    "present": 10
+   },
+   "16 - Interpretability and Research": {
+    "present": 6
+   },
+   "17 - Papers": {
+    "present": 11
+   },
+   "18 - Projects": {
+    "present": 3
+   },
+   "19 - Reference and Practice": {
+    "present": 14
+   },
+   "20 - Vault and Project Context": {
+    "present": 41,
+    "partial": 1
+   }
+  }
+ },
+ "evidence_integrity": {
+  "mechanical_validation": "PASSED: 246/246 judgments, every evidence_quote verified as a whitespace-normalized substring of its cited destination note (s29_validate_judgments.py)",
+  "orchestrator_review": "28/246 KUs re-reviewed independently (all 4 non-present + 24 even-spaced present): 28/28 agreement; 1 judgment repaired for destination_note field conformance (verdict unchanged); 6 present verdicts deep-verified at full-context level (Q&A answers, 5-point lists, link chains)",
+  "subagent_reporting_notes": "2 quality flags did not reproduce under orchestrator verification (claimed 3x sentence repetitions in K-Nearest Neighbors.md are 1x each) — flagged as subagent reporting inaccuracies, excluded from findings; all other verified flags are recorded as F-0035..F-0041"
+ },
+ "findings": {
+  "new": [
+   "F-0035",
+   "F-0036",
+   "F-0037",
+   "F-0038",
+   "F-0039",
+   "F-0040",
+   "F-0041"
+  ],
+  "repaired_this_session": [
+   "F-0035",
+   "F-0036",
+   "F-0037",
+   "F-0038",
+   "F-0039"
+  ],
+  "accepted_sic": [
+   "F-0040",
+   "F-0041"
+  ],
+  "partial_verdict_kus": [
+   "KU-e139f00c9e5651ab",
+   "KU-2fd0a537e0a20f6c"
+  ],
+  "absent_verdict_kus": []
+ },
+ "limitations": [
+  "0.89% stratified sample with area floor; NOT a full per-unit semantic proof (final report §5.1 boundary stands)",
+  "judgments are AI reading-level assessments by subagent groups; orchestrator re-reviewed 28 (11.4%)",
+  "evidence quotes prove the cited span exists; the verdict weighs the span against the excerpt's knowledge",
+  "quality flags are observations from judgment context, not a systematic editorial sweep"
+ ],
+ "judgments_file": "reports/synthesis/s29-semantic-judgments.jsonl"
+}

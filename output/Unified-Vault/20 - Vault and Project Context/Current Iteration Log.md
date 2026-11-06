@@ -76,7 +76,7 @@ Five capstone projects joined the projects collection:
 
 Interview prep grew by one conceptual note and one coding note:
 
-- 06 — [[Conceptual Interview Questions|Conceptual Interview Questions 2]] (25+ Q&A covering [[Reasoning Models|reasoning models]], VLMs, [[MCP Overview|MCP]], GRPO, hybrid architectures, [[Scaling Laws (Kaplan and Chinchilla)|scaling laws]], [[Speculative Decoding|spec decoding]], [[DPO|DPO variants]], GraphRAG, [[Long-Context Architectures|long-context]], 2026 frontier).
+- 06 — [[Conceptual Interview Questions|Conceptual Interview Questions 2]] (25+ Q&A covering [[Reasoning Models|reasoning models]], VLMs, [[MCP Overview|MCP]], GRPO, hybrid architectures, [[Scaling Laws (Kaplan and Chinchilla)|scaling laws]], [[Speculative Decoding|spec decoding]], [[Quantization|quantization]], [[DPO|DPO variants]], GraphRAG, [[Long-Context Architectures|long-context]], 2026 frontier).
 - 05 — [[Coding Interview Questions|Coding Interview Questions 3]] (YaRN, [[GQA]], RoPE scaling, [[KV Cache Mechanics|KV cache compression]], [[Medusa and EAGLE|EAGLE-2 spec decoding]], [[Quantization|GPTQ quantization]] — all from-scratch implementations).
 
 ### GAP 6 — 2026 source verification

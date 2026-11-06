@@ -1,0 +1,81 @@
+{
+ "command": "s29_semantic_repairs",
+ "probe_only": false,
+ "results": [
+  {
+   "finding_id": "F-0036",
+   "file": "output/Unified-Vault/20 - Vault and Project Context/Current Iteration Log.md",
+   "probe": {
+    "anchor_applicable": true,
+    "already_done": false
+   },
+   "status": "applied",
+   "bytes_before": 6196,
+   "bytes_after": 6227,
+   "verify": {
+    "anchor_applicable_after": false,
+    "done_after": true
+   }
+  },
+  {
+   "finding_id": "F-0035",
+   "file": "output/Unified-Vault/08 - Attention and Transformers/Attention Mechanism/Multi-Head Attention.md",
+   "probe": {
+    "anchor_applicable": true,
+    "already_done": false
+   },
+   "status": "applied",
+   "bytes_before": 24563,
+   "bytes_after": 24771,
+   "verify": {
+    "anchor_applicable_after": true,
+    "done_after": true
+   }
+  },
+  {
+   "finding_id": "F-0037",
+   "file": "output/Unified-Vault/04 - Machine Learning/Regression/Logistic Regression.md",
+   "probe": {
+    "anchor_applicable": true,
+    "already_done": false
+   },
+   "status": "applied",
+   "bytes_before": 21799,
+   "bytes_after": 21719,
+   "verify": {
+    "anchor_applicable_after": false,
+    "done_after": true
+   }
+  },
+  {
+   "finding_id": "F-0038",
+   "file": "output/Unified-Vault/04 - Machine Learning/Optimization Algorithms/Loss Functions.md",
+   "probe": {
+    "anchor_applicable": true,
+    "already_done": false
+   },
+   "status": "applied",
+   "bytes_before": 56313,
+   "bytes_after": 55537,
+   "verify": {
+    "anchor_applicable_after": false,
+    "done_after": true
+   }
+  },
+  {
+   "finding_id": "F-0039",
+   "file": "output/Unified-Vault/04 - Machine Learning/Nearest Neighbors/K-Nearest Neighbors.md",
+   "probe": {
+    "anchor_applicable": true,
+    "already_done": false
+   },
+   "status": "applied",
+   "bytes_before": 36813,
+   "bytes_after": 36812,
+   "verify": {
+    "anchor_applicable_after": false,
+    "done_after": true
+   }
+  }
+ ]
+}

@@ -190,10 +190,9 @@ If $K$ is too small (e.g., $k=1$ or $k=2$), the model considers very few neighbo
 
 "High variance" is the formal name for this fragility: if you change the training data slightly, the prediction might change completely.
 
-### Large K
+### Large K: underfitting and high bias
 
 At the other extreme, $k=20$ or $k=100$ smooths the boundary so aggressively that local structure disappears and the model underfits — the majority class dominates every neighborhood.
-: underfitting and high bias
 
 If $K$ is too large (e.g., $K=20$ or $K=100$), the model considers a large portion of the dataset — and in the extreme case $K=N$ (the total number of samples), everyone is a neighbor.
 
