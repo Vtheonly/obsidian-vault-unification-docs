@@ -2,85 +2,77 @@
 
 ## Project state
 
-**PROJECT COMPLETE — UNIFIED VAULT DELIVERED (session 28, 2026-11-06).**
-All release gates pass with machine-verified evidence. The final acceptance
-report is `reports/release/final-report.md` — read it first.
+**VAULT DELIVERED (session 28) + POST-DELIVERY SEMANTIC VERIFICATION
+COMPLETE (session 29, 2026-11-06).** All release gates remain green; the
+s28 delivery was independently reproduced at s29 start, and a stratified
+semantic spot-verification campaign (VERIF-001) ran to completion with
+repairs.
 
-- **Deliverable:** `output/Unified-Vault/` — **544/544 planned notes** across
-  20 areas, synthesized and rewritten (not concatenated) from both immutable
-  source vaults.
-- **Knowledge accounting:** 27,536/27,536 KUs dispositioned; Unaccounted = 0;
-  needs_review = 0 (registry rebuilt + validated at s28).
-- **Full-corpus audit:** 8 checks over 27,536 KUs / 544 notes — **0
-  findings**; **42,156 markers verified present, 0 missing** (26,308 term +
-  14,119 math + 1,729 code).
-- **Links/lint/tests:** 11,999 links, 0 problems; lint 0 errors / 85
-  classified verbatim-source warnings; 752/752 tests; sources byte-identical
-  to manifests throughout (276/276 + 333/333).
-- **Deadline record (honest):** ADR-0012's end-of-session-26 deadline was
-  missed; sessions 27–28 delivered under the §5.5 honesty rule — floor never
-  weakened. Ledger rows 25–28 in `docs/ACCELERATED_COMPLETION_POLICY.md`.
-- Git: every green unit was committed and pushed immediately with remote-ref
-  verification (s28 pushes: 1dc506e, d1213a6, 44367c6, + final commit).
-
-## What session 28 did (evidence-backed)
-
-1. **Area 20 (17 notes) generated and verified** via 7 bounded subagent
-   groups: audit valid=true 0 findings over 949 Contextualized KUs; gate
-   pass with 1 evidence-backed tertile-composition waiver (source-measured
-   1.67→0.88 example markers/1k across the same tertiles; 100% per-note
-   marker retention; 0 below band). 91 findings repaired via the anchored
-   probe-idempotent `scripts/s28_marker_repairs_area20.py` (37 entries; the
-   blockquoted-fence source-form restoration for the Research Queue policy
-   labels, TOC anchor slugs, "Domain NN" heading unnumbering, archived-path
-   keep-both restorations, wikilink syntax examples fenced).
-2. **3/3 confirmed gaps treated** through the sanctioned discovery machinery:
-   replay of the 17-round decision chain (byte-identical to the committed
-   index), batch17 accepts (D-DISC002-B17-0001..0003), exactly 3 index
-   records confirmed_gap→accepted, discovery-validate green (60,154
-   records). Dedicated sections: Second Moment (Optimizers note),
-   Bradley-Terry (Probability Essentials + DPO cross-link), Async Def
-   (Functions note). Affected areas re-audited/re-gated green.
-   Record: `state/synthesis/gap-treatments-v1.json`.
-3. **Cross-batch consistency:** corpus assessment with union provenance
-   (0 below band); corpus drift re-audit — concept/example/overview/tutorial
-   clean at corpus scale (retires the s21–23 waivers); derivation/reference
-   drifts root-caused as content-family tertile artifacts (flat overall
-   means 0.944/0.944 and 0.906/0.904; per-note retention verified, including
-   a manual check that all concrete example content in Backpropagation.md
-   survived its 27→13 discourse-marker consolidation). F-0014 grep: 0
-   occurrences vault-wide.
-4. **Final verification:** full-corpus audit (above), registry rebuild +
-   validate (Unaccounted=0), link check, lint, independence greps (0
-   source-vault/locator/project references), 9 open findings closed with
-   evidence (0 open; F-0016 open-operational and F-0018 partially-fixed are
-   documented environment/historical items), final report written.
+- **Deliverable:** `output/Unified-Vault/` — **544/544 notes** across 20
+  areas, re-verified green at s29: full-corpus audit valid=true 0 findings
+  (27,536 KUs / 42,156 markers / 0 missing, byte-identical reproduction of
+  the s28 result), registry rebuilt from committed batches (Unaccounted=0),
+  links 12,002 / 0 problems, lint 0 errors / 85 warnings, 752/752 tests,
+  sources 276/276 + 333/333 byte-identical.
+- **VERIF-001 (s29):** 246-KU deterministic stratified sample
+  (`state/synthesis/s29-semantic-sample.jsonl`; census cells +
+  Contextualized 42 / Consolidated 121 / Preserved 80 + area floor, 20/20
+  areas, prose/list/callout overweighted where the lexical marker net is
+  weakest). 18 bounded subagent groups judged every KU with verbatim
+  destination quotes (mechanically validated: every quote a substring of
+  its cited note). Result: **244/246 (99.2%) retained, 2 partial
+  (repaired), 0 absent**. Orchestrator re-reviewed 28/246: 28/28
+  agreement. Evidence: `reports/synthesis/s29-semantic-campaign.json`,
+  `reports/synthesis/s29-semantic-judgments.jsonl`.
+- **Findings:** F-0035..F-0039 fixed via anchored probe-idempotent
+  `scripts/s29_semantic_repairs.py` (MHA See-Also +2 links; quantization
+  restored to a coverage list; phrase stutter collapsed; Huber block
+  de-tripled; KNN heading fragment merged). F-0040/F-0041 accepted sic
+  (source-inherited inconsistencies preserved verbatim per keep-both).
+  0 open output defects.
+- Git: s29 pushes 02a576a, 5361640 (+ the closing commit), each
+  remote-verified 0/0 divergence. Checkpoint:
+  `state/checkpoints/checkpoint-2026-11-06-verif001-session29.json`.
 
 ## If a future session runs
 
-1. Follow the startup protocol (AGENTS.md §2): verify this completion
-   against repository evidence — manifests (276/276 + 333/333), registry
-   (`vu kureg-init/load/apply/validate` — the DB is git-ignored, rebuild
-   from the committed batches + ledger), the final report's cited reports,
-   and the git log. Do not redo completed work without a regression trigger.
-2. Possible user-directed continuations (none authorized yet):
-   - deepen semantic verification beyond the lexical marker net
-     (final-report §5.1 limitation);
+1. Follow the startup protocol (AGENTS.md §2): verify this handoff against
+   repository evidence — git log, the s29 checkpoint, the campaign report,
+   findings ledger, and the s28 final report
+   (`reports/release/final-report.md`). Do not redo completed work without
+   a regression trigger.
+2. Environment note: the sandbox venv may need `pip install -e .` before
+   the suite passes (one subprocess test imports the package outside the
+   repo root); this is an environment artifact, not a regression.
+3. Natural continuations (none queued; register on user direction):
+   - **VERIF-002**: extend the semantic campaign — the sampler
+     (`scripts/s29_semantic_sample.py`) is deterministic and can draw a
+     fresh non-overlapping increment (a 246-KU unit per session is proven);
+   - vault-wide **See-Also cross-link audit** (F-0035 remaining_risk:
+     every source See-Also link checked for target existence + carry-over;
+     mechanical framework tool candidate);
+   - corpus-wide **duplicate-phrase scan** (F-0037/F-0038 remaining_risk;
+     the lint and prose-quality checks cannot detect intra-line or
+     block-level duplication);
    - review the 46,978 low-signal provisional discovery candidates
-     (documented exclusion);
+     (documented exclusion from s28);
    - presentation changes to the area-20 archival layer.
-3. Standing rules still apply if any vault mutation happens: sources
-   immutable; anchored probe-idempotent repair scripts; gates + audits
-   after mutations; full suite after the last mutation; continuous
-   commit-and-push with remote verification.
+4. Standing rules for any vault mutation: sources immutable; anchored
+   probe-idempotent repair scripts; lint + links + full-corpus audit +
+   full suite after the last mutation; continuous commit-and-push with
+   remote-ref verification.
 
 ## Explicit non-claims
 
-- Verification is lexical-marker + structural, not a per-unit semantic proof
-  (ADR-0011 tiered mode; final-report §5.1).
-- The 46,978 low-signal provisional candidates remain an exclusion, not a
-  resolution; Tier A auto-accepts retain ~17% single-side over-inclusion.
-- Source-internal contradictions are preserved keep-both (e.g. the Conv2d
-  bias-init discrepancy), not adjudicated.
-- F-0016/F-0018 are open-operational/partially-fixed environment items —
-  documented, not defects in the deliverable.
+- The 246-KU campaign is a 0.89% stratified sample, not a full per-unit
+  semantic proof (final-report §5.1 boundary stands); semantic evidence
+  now covers 246 KUs at reading level plus the 42,156-marker lexical net
+  over all 27,536 KUs.
+- Two subagent quality flags did not reproduce under orchestrator
+  verification (documented in the campaign report); all recorded findings
+  were orchestrator-confirmed by direct read.
+- F-0040/F-0041 preserve source-internal inconsistencies verbatim (sic)
+  — the reader sees the inconsistency of the record, per the keep-both
+  convention; they are documented, not defects of the synthesis.
+- F-0016 (open-operational) and F-0018 (partially-fixed) remain
+  documented environment/historical items, not deliverable defects.

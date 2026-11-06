@@ -96,7 +96,7 @@
     },
     "knowledge_registry_initialized": true,
     "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-03-synth001-session24.json",
-    "notes": "Vault delivered at session 28 (544/544 notes, all gates green; reports/release/final-report.md). Session 29 independently reproduced the final full-corpus audit (0 findings, 42,156 markers), registry rebuild (Unaccounted=0), links (0 problems), lint (0 errors), and 752/752 tests, then opened VERIF-001: stratified semantic spot-verification of 246 KUs (state/synthesis/s29-semantic-sample.jsonl).",
+    "notes": "Vault delivered at session 28 (544/544 notes, all gates green; reports/release/final-report.md). Session 29 independently reproduced the final verification (full-corpus audit, registry rebuild, links, lint, 752/752 tests), then completed VERIF-001: stratified semantic spot-verification of 246 KUs — 244/246 (99.2%) retained, 2 partial verdicts repaired via anchored scripts, 2 source-inherited sic items documented (F-0040/F-0041). Post-repair battery fully green (reports/synthesis/s29-semantic-campaign.json).",
     "output_synthesis_started": true,
     "phase_zero_rebaseline": {
         "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
@@ -245,7 +245,7 @@
         }
     ],
     "source_vaults_located": true,
-    "stage": "post-delivery-verification",
+    "stage": "post-delivery-verification-complete",
     "status": "in_progress",
     "verification_pilot_evidence": {
         "defect_classes": 12,
