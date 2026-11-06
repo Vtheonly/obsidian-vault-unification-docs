@@ -1,0 +1,956 @@
+{
+  "campaign": "INTEG-005",
+  "clusters": [
+    "MAPDIG",
+    "MATHSOLVER",
+    "WEATHER",
+    "NLME",
+    "MASTER-INDEX"
+  ],
+  "items_total": 374,
+  "items_fresh_judged": 345,
+  "items_carried_over": 29,
+  "carry_over": {
+    "rule": "F-0048 one item = one judgment: items already judged in a prior canonical judgment file are carried over verbatim (verdict, destination, quote, rationale) with carry_over_from provenance, not re-judged — the vault is byte-identical since those judgments, and the S36 decision ledger is keyed by item id",
+    "items": [
+      {
+        "item_id": "INT-0001",
+        "name": "Geometric Deep Learning",
+        "prior_file": "judgments-synpath-v1.jsonl",
+        "prior_verdict": "absent"
+      },
+      {
+        "item_id": "INT-0030",
+        "name": "Attention Mechanisms",
+        "prior_file": "judgments-synpath-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0031",
+        "name": "Scaled Dot-Product Attention",
+        "prior_file": "judgments-synpath-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0032",
+        "name": "Multi-Head Attention",
+        "prior_file": "judgments-synpath-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0034",
+        "name": "Cross-Attention",
+        "prior_file": "judgments-synpath-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0045",
+        "name": "Feed-Forward Networks",
+        "prior_file": "judgments-synpath-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0046",
+        "name": "Attention Masking",
+        "prior_file": "judgments-synpath-v1.jsonl",
+        "prior_verdict": "partial"
+      },
+      {
+        "item_id": "INT-0140",
+        "name": "Reinforcement Learning",
+        "prior_file": "judgments-synpath-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0187",
+        "name": "Curriculum Learning",
+        "prior_file": "judgments-synpath-v1.jsonl",
+        "prior_verdict": "partial"
+      },
+      {
+        "item_id": "INT-0192",
+        "name": "Data Augmentation",
+        "prior_file": "judgments-synpath-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0210",
+        "name": "Computer Vision",
+        "prior_file": "judgments-2d3d-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0213",
+        "name": "Feature Extraction",
+        "prior_file": "judgments-2d3d-v1.jsonl",
+        "prior_verdict": "equivalent"
+      },
+      {
+        "item_id": "INT-0214",
+        "name": "Feature Matching",
+        "prior_file": "judgments-2d3d-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0217",
+        "name": "Keypoint Detection",
+        "prior_file": "judgments-2d3d-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0220",
+        "name": "RANSAC",
+        "prior_file": "judgments-2d3d-v1.jsonl",
+        "prior_verdict": "partial"
+      },
+      {
+        "item_id": "INT-0224",
+        "name": "ORB",
+        "prior_file": "judgments-2d3d-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0234",
+        "name": "Semantic Segmentation",
+        "prior_file": "judgments-2d3d-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0310",
+        "name": "Transformer Architecture",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0317",
+        "name": "Sinusoidal Positional Encoding",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0318",
+        "name": "Token Embeddings",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0322",
+        "name": "Causal Masking",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0456",
+        "name": "Decoder-Only Transformers",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0463",
+        "name": "Self-Attention",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0464",
+        "name": "Causal Attention",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0468",
+        "name": "Rotary Positional Embeddings",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0518",
+        "name": "Parameter-Efficient Fine-Tuning",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0519",
+        "name": "LoRA",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0529",
+        "name": "Knowledge Distillation",
+        "prior_file": "judgments-mednlp-v1.jsonl",
+        "prior_verdict": "covered"
+      },
+      {
+        "item_id": "INT-0567",
+        "name": "Differentiable Computing",
+        "prior_file": "judgments-synpath-v1.jsonl",
+        "prior_verdict": "absent"
+      }
+    ]
+  },
+  "groups_total": 36,
+  "max_items_per_group": 18,
+  "grouping": "by first matching cluster (MAPDIG, MATHSOLVER, WEATHER, NLME, MASTER-INDEX order) and section (first-occurrence order), consecutive chunks at 18 items; sections never merged; MASTER-INDEX table-field items grouped under the pseudo-section '(master index fields)'",
+  "lexical_hint_source": "state/integration/coverage-lexical-v1.jsonl",
+  "judgment_schema": {
+    "required": [
+      "item_id",
+      "verdict",
+      "destination_note",
+      "evidence_quote",
+      "equivalent_name",
+      "rationale",
+      "search_terms_tried"
+    ],
+    "verdicts": [
+      "covered",
+      "equivalent",
+      "partial",
+      "absent"
+    ]
+  },
+  "groups": [
+    {
+      "group_id": 1,
+      "sections": [
+        "MAPDIG: Computer Vision"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0211",
+        "INT-0212",
+        "INT-0215",
+        "INT-0216",
+        "INT-0218",
+        "INT-0219",
+        "INT-0221",
+        "INT-0222"
+      ],
+      "spec": "scratch/s35-integ/groups/group-01.json",
+      "output": "scratch/s35-integ/judgments/group-01.jsonl"
+    },
+    {
+      "group_id": 2,
+      "sections": [
+        "MAPDIG: Feature Extraction and Matching Models"
+      ],
+      "items": 9,
+      "item_ids": [
+        "INT-0223",
+        "INT-0225",
+        "INT-0226",
+        "INT-0227",
+        "INT-0228",
+        "INT-0229",
+        "INT-0230",
+        "INT-0231",
+        "INT-0232"
+      ],
+      "spec": "scratch/s35-integ/groups/group-02.json",
+      "output": "scratch/s35-integ/judgments/group-02.jsonl"
+    },
+    {
+      "group_id": 3,
+      "sections": [
+        "MAPDIG: Image Segmentation"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0233",
+        "INT-0235",
+        "INT-0236",
+        "INT-0237",
+        "INT-0238",
+        "INT-0239",
+        "INT-0240",
+        "INT-0241"
+      ],
+      "spec": "scratch/s35-integ/groups/group-03.json",
+      "output": "scratch/s35-integ/judgments/group-03.jsonl"
+    },
+    {
+      "group_id": 4,
+      "sections": [
+        "MAPDIG: Segmentation Models and Algorithms"
+      ],
+      "items": 14,
+      "item_ids": [
+        "INT-0242",
+        "INT-0243",
+        "INT-0244",
+        "INT-0245",
+        "INT-0246",
+        "INT-0247",
+        "INT-0248",
+        "INT-0249",
+        "INT-0250",
+        "INT-0251",
+        "INT-0252",
+        "INT-0253",
+        "INT-0254",
+        "INT-0255"
+      ],
+      "spec": "scratch/s35-integ/groups/group-04.json",
+      "output": "scratch/s35-integ/judgments/group-04.jsonl"
+    },
+    {
+      "group_id": 5,
+      "sections": [
+        "MAPDIG: Segmentation Fusion"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0256",
+        "INT-0257",
+        "INT-0258",
+        "INT-0259",
+        "INT-0260",
+        "INT-0261",
+        "INT-0262",
+        "INT-0263"
+      ],
+      "spec": "scratch/s35-integ/groups/group-05.json",
+      "output": "scratch/s35-integ/judgments/group-05.jsonl"
+    },
+    {
+      "group_id": 6,
+      "sections": [
+        "MAPDIG: Segmentation Refinement"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0264",
+        "INT-0265",
+        "INT-0266",
+        "INT-0267",
+        "INT-0268",
+        "INT-0269",
+        "INT-0270",
+        "INT-0271"
+      ],
+      "spec": "scratch/s35-integ/groups/group-06.json",
+      "output": "scratch/s35-integ/judgments/group-06.jsonl"
+    },
+    {
+      "group_id": 7,
+      "sections": [
+        "MAPDIG: Additional Documented Techniques"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0272",
+        "INT-0273",
+        "INT-0274",
+        "INT-0275",
+        "INT-0276",
+        "INT-0277",
+        "INT-0278",
+        "INT-0279"
+      ],
+      "spec": "scratch/s35-integ/groups/group-07.json",
+      "output": "scratch/s35-integ/judgments/group-07.jsonl"
+    },
+    {
+      "group_id": 8,
+      "sections": [
+        "MAPDIG: Spatial and Topological Processing"
+      ],
+      "items": 11,
+      "item_ids": [
+        "INT-0280",
+        "INT-0281",
+        "INT-0282",
+        "INT-0283",
+        "INT-0284",
+        "INT-0285",
+        "INT-0286",
+        "INT-0287",
+        "INT-0288",
+        "INT-0289",
+        "INT-0290"
+      ],
+      "spec": "scratch/s35-integ/groups/group-08.json",
+      "output": "scratch/s35-integ/judgments/group-08.jsonl"
+    },
+    {
+      "group_id": 9,
+      "sections": [
+        "MATHSOLVER: Transformer Decoder"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0311",
+        "INT-0312",
+        "INT-0313",
+        "INT-0314",
+        "INT-0315",
+        "INT-0316",
+        "INT-0319",
+        "INT-0320"
+      ],
+      "spec": "scratch/s35-integ/groups/group-09.json",
+      "output": "scratch/s35-integ/judgments/group-09.jsonl"
+    },
+    {
+      "group_id": 10,
+      "sections": [
+        "MATHSOLVER: Training and Loss Functions"
+      ],
+      "items": 9,
+      "item_ids": [
+        "INT-0346",
+        "INT-0347",
+        "INT-0348",
+        "INT-0349",
+        "INT-0350",
+        "INT-0351",
+        "INT-0352",
+        "INT-0353",
+        "INT-0354"
+      ],
+      "spec": "scratch/s35-integ/groups/group-10.json",
+      "output": "scratch/s35-integ/judgments/group-10.jsonl"
+    },
+    {
+      "group_id": 11,
+      "sections": [
+        "MATHSOLVER: Mathematical Recognition"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0291",
+        "INT-0292",
+        "INT-0293",
+        "INT-0294",
+        "INT-0295",
+        "INT-0296",
+        "INT-0297",
+        "INT-0298"
+      ],
+      "spec": "scratch/s35-integ/groups/group-11.json",
+      "output": "scratch/s35-integ/judgments/group-11.jsonl"
+    },
+    {
+      "group_id": 12,
+      "sections": [
+        "MATHSOLVER: Vision Encoder"
+      ],
+      "items": 11,
+      "item_ids": [
+        "INT-0299",
+        "INT-0300",
+        "INT-0301",
+        "INT-0302",
+        "INT-0303",
+        "INT-0304",
+        "INT-0305",
+        "INT-0306",
+        "INT-0307",
+        "INT-0308",
+        "INT-0309"
+      ],
+      "spec": "scratch/s35-integ/groups/group-12.json",
+      "output": "scratch/s35-integ/judgments/group-12.jsonl"
+    },
+    {
+      "group_id": 13,
+      "sections": [
+        "MATHSOLVER: Attention Masking"
+      ],
+      "items": 6,
+      "item_ids": [
+        "INT-0321",
+        "INT-0323",
+        "INT-0324",
+        "INT-0325",
+        "INT-0326",
+        "INT-0327"
+      ],
+      "spec": "scratch/s35-integ/groups/group-13.json",
+      "output": "scratch/s35-integ/judgments/group-13.jsonl"
+    },
+    {
+      "group_id": 14,
+      "sections": [
+        "MATHSOLVER: Sequence Generation"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0328",
+        "INT-0329",
+        "INT-0330",
+        "INT-0331",
+        "INT-0332",
+        "INT-0333",
+        "INT-0334",
+        "INT-0335"
+      ],
+      "spec": "scratch/s35-integ/groups/group-14.json",
+      "output": "scratch/s35-integ/judgments/group-14.jsonl"
+    },
+    {
+      "group_id": 15,
+      "sections": [
+        "MATHSOLVER: Tokenization and Language Representation"
+      ],
+      "items": 10,
+      "item_ids": [
+        "INT-0336",
+        "INT-0337",
+        "INT-0338",
+        "INT-0339",
+        "INT-0340",
+        "INT-0341",
+        "INT-0342",
+        "INT-0343",
+        "INT-0344",
+        "INT-0345"
+      ],
+      "spec": "scratch/s35-integ/groups/group-15.json",
+      "output": "scratch/s35-integ/judgments/group-15.jsonl"
+    },
+    {
+      "group_id": 16,
+      "sections": [
+        "MATHSOLVER: Model Evaluation"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0355",
+        "INT-0356",
+        "INT-0357",
+        "INT-0358",
+        "INT-0359",
+        "INT-0360",
+        "INT-0361",
+        "INT-0362"
+      ],
+      "spec": "scratch/s35-integ/groups/group-16.json",
+      "output": "scratch/s35-integ/judgments/group-16.jsonl"
+    },
+    {
+      "group_id": 17,
+      "sections": [
+        "MATHSOLVER: Mathematical Solving — Non-Neural AI/Computation"
+      ],
+      "items": 14,
+      "item_ids": [
+        "INT-0363",
+        "INT-0364",
+        "INT-0365",
+        "INT-0366",
+        "INT-0367",
+        "INT-0368",
+        "INT-0369",
+        "INT-0370",
+        "INT-0371",
+        "INT-0372",
+        "INT-0373",
+        "INT-0374",
+        "INT-0375",
+        "INT-0376"
+      ],
+      "spec": "scratch/s35-integ/groups/group-17.json",
+      "output": "scratch/s35-integ/judgments/group-17.jsonl"
+    },
+    {
+      "group_id": 18,
+      "sections": [
+        "WEATHER: Time-Series Forecasting"
+      ],
+      "items": 10,
+      "item_ids": [
+        "INT-0377",
+        "INT-0378",
+        "INT-0379",
+        "INT-0380",
+        "INT-0381",
+        "INT-0382",
+        "INT-0383",
+        "INT-0384",
+        "INT-0385",
+        "INT-0386"
+      ],
+      "spec": "scratch/s35-integ/groups/group-18.json",
+      "output": "scratch/s35-integ/judgments/group-18.jsonl"
+    },
+    {
+      "group_id": 19,
+      "sections": [
+        "WEATHER: Convolutional Neural Networks"
+      ],
+      "items": 7,
+      "item_ids": [
+        "INT-0387",
+        "INT-0388",
+        "INT-0389",
+        "INT-0390",
+        "INT-0391",
+        "INT-0392",
+        "INT-0393"
+      ],
+      "spec": "scratch/s35-integ/groups/group-19.json",
+      "output": "scratch/s35-integ/judgments/group-19.jsonl"
+    },
+    {
+      "group_id": 20,
+      "sections": [
+        "WEATHER: Recurrent Neural Networks"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0394",
+        "INT-0395",
+        "INT-0396",
+        "INT-0397",
+        "INT-0398",
+        "INT-0399",
+        "INT-0400",
+        "INT-0401"
+      ],
+      "spec": "scratch/s35-integ/groups/group-20.json",
+      "output": "scratch/s35-integ/judgments/group-20.jsonl"
+    },
+    {
+      "group_id": 21,
+      "sections": [
+        "WEATHER: Hybrid Machine Learning"
+      ],
+      "items": 9,
+      "item_ids": [
+        "INT-0402",
+        "INT-0403",
+        "INT-0404",
+        "INT-0405",
+        "INT-0406",
+        "INT-0407",
+        "INT-0408",
+        "INT-0409",
+        "INT-0410"
+      ],
+      "spec": "scratch/s35-integ/groups/group-21.json",
+      "output": "scratch/s35-integ/judgments/group-21.jsonl"
+    },
+    {
+      "group_id": 22,
+      "sections": [
+        "WEATHER: Physics-Informed Machine Learning"
+      ],
+      "items": 9,
+      "item_ids": [
+        "INT-0411",
+        "INT-0412",
+        "INT-0413",
+        "INT-0414",
+        "INT-0415",
+        "INT-0416",
+        "INT-0417",
+        "INT-0418",
+        "INT-0419"
+      ],
+      "spec": "scratch/s35-integ/groups/group-22.json",
+      "output": "scratch/s35-integ/judgments/group-22.jsonl"
+    },
+    {
+      "group_id": 23,
+      "sections": [
+        "WEATHER: Temporal Feature Engineering"
+      ],
+      "items": 9,
+      "item_ids": [
+        "INT-0420",
+        "INT-0421",
+        "INT-0422",
+        "INT-0423",
+        "INT-0424",
+        "INT-0425",
+        "INT-0426",
+        "INT-0427",
+        "INT-0428"
+      ],
+      "spec": "scratch/s35-integ/groups/group-23.json",
+      "output": "scratch/s35-integ/judgments/group-23.jsonl"
+    },
+    {
+      "group_id": 24,
+      "sections": [
+        "WEATHER: Signal Processing and Fault Detection"
+      ],
+      "items": 11,
+      "item_ids": [
+        "INT-0429",
+        "INT-0430",
+        "INT-0431",
+        "INT-0432",
+        "INT-0433",
+        "INT-0434",
+        "INT-0435",
+        "INT-0436",
+        "INT-0437",
+        "INT-0438",
+        "INT-0439"
+      ],
+      "spec": "scratch/s35-integ/groups/group-24.json",
+      "output": "scratch/s35-integ/judgments/group-24.jsonl"
+    },
+    {
+      "group_id": 25,
+      "sections": [
+        "WEATHER: Fault Classification"
+      ],
+      "items": 15,
+      "item_ids": [
+        "INT-0440",
+        "INT-0441",
+        "INT-0442",
+        "INT-0443",
+        "INT-0444",
+        "INT-0445",
+        "INT-0446",
+        "INT-0447",
+        "INT-0448",
+        "INT-0449",
+        "INT-0450",
+        "INT-0451",
+        "INT-0452",
+        "INT-0453",
+        "INT-0454"
+      ],
+      "spec": "scratch/s35-integ/groups/group-25.json",
+      "output": "scratch/s35-integ/judgments/group-25.jsonl"
+    },
+    {
+      "group_id": 26,
+      "sections": [
+        "NLME: Transformer Attention"
+      ],
+      "items": 8,
+      "item_ids": [
+        "INT-0465",
+        "INT-0466",
+        "INT-0467",
+        "INT-0469",
+        "INT-0470",
+        "INT-0471",
+        "INT-0472",
+        "INT-0473"
+      ],
+      "spec": "scratch/s35-integ/groups/group-26.json",
+      "output": "scratch/s35-integ/judgments/group-26.jsonl"
+    },
+    {
+      "group_id": 27,
+      "sections": [
+        "NLME: Training and Optimization"
+      ],
+      "items": 11,
+      "item_ids": [
+        "INT-0527",
+        "INT-0528",
+        "INT-0530",
+        "INT-0531",
+        "INT-0532",
+        "INT-0533",
+        "INT-0534",
+        "INT-0535",
+        "INT-0536",
+        "INT-0537",
+        "INT-0538"
+      ],
+      "spec": "scratch/s35-integ/groups/group-27.json",
+      "output": "scratch/s35-integ/judgments/group-27.jsonl"
+    },
+    {
+      "group_id": 28,
+      "sections": [
+        "NLME: Large Language Models"
+      ],
+      "items": 7,
+      "item_ids": [
+        "INT-0455",
+        "INT-0457",
+        "INT-0458",
+        "INT-0459",
+        "INT-0460",
+        "INT-0461",
+        "INT-0462"
+      ],
+      "spec": "scratch/s35-integ/groups/group-28.json",
+      "output": "scratch/s35-integ/judgments/group-28.jsonl"
+    },
+    {
+      "group_id": 29,
+      "sections": [
+        "NLME: Linear and Associative Memory"
+      ],
+      "items": 12,
+      "item_ids": [
+        "INT-0474",
+        "INT-0475",
+        "INT-0476",
+        "INT-0477",
+        "INT-0478",
+        "INT-0479",
+        "INT-0480",
+        "INT-0481",
+        "INT-0482",
+        "INT-0483",
+        "INT-0484",
+        "INT-0485"
+      ],
+      "spec": "scratch/s35-integ/groups/group-29.json",
+      "output": "scratch/s35-integ/judgments/group-29.jsonl"
+    },
+    {
+      "group_id": 30,
+      "sections": [
+        "NLME: Delta Rule Learning"
+      ],
+      "items": 9,
+      "item_ids": [
+        "INT-0486",
+        "INT-0487",
+        "INT-0488",
+        "INT-0489",
+        "INT-0490",
+        "INT-0491",
+        "INT-0492",
+        "INT-0493",
+        "INT-0494"
+      ],
+      "spec": "scratch/s35-integ/groups/group-30.json",
+      "output": "scratch/s35-integ/judgments/group-30.jsonl"
+    },
+    {
+      "group_id": 31,
+      "sections": [
+        "NLME: Neural Gating Mechanisms"
+      ],
+      "items": 10,
+      "item_ids": [
+        "INT-0495",
+        "INT-0496",
+        "INT-0497",
+        "INT-0498",
+        "INT-0499",
+        "INT-0500",
+        "INT-0501",
+        "INT-0502",
+        "INT-0503",
+        "INT-0504"
+      ],
+      "spec": "scratch/s35-integ/groups/group-31.json",
+      "output": "scratch/s35-integ/judgments/group-31.jsonl"
+    },
+    {
+      "group_id": 32,
+      "sections": [
+        "NLME: Memory Management"
+      ],
+      "items": 13,
+      "item_ids": [
+        "INT-0505",
+        "INT-0506",
+        "INT-0507",
+        "INT-0508",
+        "INT-0509",
+        "INT-0510",
+        "INT-0511",
+        "INT-0512",
+        "INT-0513",
+        "INT-0514",
+        "INT-0515",
+        "INT-0516",
+        "INT-0517"
+      ],
+      "spec": "scratch/s35-integ/groups/group-32.json",
+      "output": "scratch/s35-integ/judgments/group-32.jsonl"
+    },
+    {
+      "group_id": 33,
+      "sections": [
+        "NLME: Parameter-Efficient Model Adaptation"
+      ],
+      "items": 7,
+      "item_ids": [
+        "INT-0520",
+        "INT-0521",
+        "INT-0522",
+        "INT-0523",
+        "INT-0524",
+        "INT-0525",
+        "INT-0526"
+      ],
+      "spec": "scratch/s35-integ/groups/group-33.json",
+      "output": "scratch/s35-integ/judgments/group-33.jsonl"
+    },
+    {
+      "group_id": 34,
+      "sections": [
+        "NLME: Evaluation"
+      ],
+      "items": 10,
+      "item_ids": [
+        "INT-0539",
+        "INT-0540",
+        "INT-0541",
+        "INT-0542",
+        "INT-0543",
+        "INT-0544",
+        "INT-0545",
+        "INT-0546",
+        "INT-0547",
+        "INT-0548"
+      ],
+      "spec": "scratch/s35-integ/groups/group-34.json",
+      "output": "scratch/s35-integ/judgments/group-34.jsonl"
+    },
+    {
+      "group_id": 35,
+      "sections": [
+        "MASTER-INDEX: (master index fields)"
+      ],
+      "items": 18,
+      "item_ids": [
+        "INT-0575",
+        "INT-0576",
+        "INT-0577",
+        "INT-0578",
+        "INT-0579",
+        "INT-0580",
+        "INT-0581",
+        "INT-0582",
+        "INT-0583",
+        "INT-0584",
+        "INT-0585",
+        "INT-0586",
+        "INT-0587",
+        "INT-0588",
+        "INT-0589",
+        "INT-0590",
+        "INT-0591",
+        "INT-0592"
+      ],
+      "spec": "scratch/s35-integ/groups/group-35.json",
+      "output": "scratch/s35-integ/judgments/group-35.jsonl"
+    },
+    {
+      "group_id": 36,
+      "sections": [
+        "MASTER-INDEX: (master index fields)"
+      ],
+      "items": 6,
+      "item_ids": [
+        "INT-0593",
+        "INT-0594",
+        "INT-0595",
+        "INT-0596",
+        "INT-0597",
+        "INT-0598"
+      ],
+      "spec": "scratch/s35-integ/groups/group-36.json",
+      "output": "scratch/s35-integ/judgments/group-36.jsonl"
+    }
+  ]
+}
