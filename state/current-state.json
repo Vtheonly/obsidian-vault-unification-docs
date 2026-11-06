@@ -24,7 +24,7 @@
         "words_outside_fences": 990007,
         "words_total": 1157937
     },
-    "current_task_id": "VERIF-001",
+    "current_task_id": "AUDIT-012",
     "execution_environment": "Z AI / GLM 5.3 with available subagents",
     "framework_evidence": {
         "capabilities": "reports/bootstrap/boot-004-capabilities.json",
@@ -96,7 +96,7 @@
     },
     "knowledge_registry_initialized": true,
     "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-03-synth001-session24.json",
-    "notes": "Vault delivered at session 28 (544/544 notes, all gates green; reports/release/final-report.md). Session 29 independently reproduced the final verification (full-corpus audit, registry rebuild, links, lint, 752/752 tests), then completed VERIF-001: stratified semantic spot-verification of 246 KUs — 244/246 (99.2%) retained, 2 partial verdicts repaired via anchored scripts, 2 source-inherited sic items documented (F-0040/F-0041). Post-repair battery fully green (reports/synthesis/s29-semantic-campaign.json).",
+    "notes": "Vault delivered at session 28 (544/544 notes, all gates green); s29 completed VERIF-001 semantic spot-verification (244/246 retained, 5 repairs). Session 30 opened the two mechanical audits closing the documented remaining risks from F-0035 (See-Also carry-over) and F-0037/F-0038 (duplication), to be followed by the VERIF-002 semantic sample increment on the post-repair state.",
     "output_synthesis_started": true,
     "phase_zero_rebaseline": {
         "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
@@ -245,7 +245,7 @@
         }
     ],
     "source_vaults_located": true,
-    "stage": "post-delivery-verification-complete",
+    "stage": "post-delivery-verification",
     "status": "in_progress",
     "verification_pilot_evidence": {
         "defect_classes": 12,
