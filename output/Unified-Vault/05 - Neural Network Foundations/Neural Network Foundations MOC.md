@@ -62,3 +62,6 @@ The adjacent areas pick up exactly where this one ends: the mathematics behind n
 - [[Backpropagation]] — the heart of the area.
 - [[Recurrent Neural Networks]] — the sequence-modeling background for attention.
 - [[Machine Learning MOC]] — the classical-ML foundation this area builds on.
+- [[Mathematics MOC]]
+- [[NLP and Language Models MOC]]
+- [[Attention and Transformers MOC]]

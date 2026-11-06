@@ -160,3 +160,4 @@ The main pitfalls: **treating linear attention as equivalent to full attention**
 - [[From RNNs to Attention]] — the recurrence view that linear attention reconnects to Transformers.
 - [[RoPE]] and [[YaRN and NTK-Aware Scaling]] — the extrapolation route Linformer lacks.
 - [[Scaled Dot-Product Attention]]
+- [[Mamba]]

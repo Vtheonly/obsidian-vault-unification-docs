@@ -124,3 +124,4 @@ Five directions stand out. **Repository-aware models** would maintain a persiste
 - [[Large Language Models MOC]] — general LLM background.
 - [[Speculative Decoding]] — one of the serving tricks behind sub-300ms completions.
 - [[Hallucination]] — the general failure mode behind hallucinated APIs.
+- [[Attention and Transformers MOC]]

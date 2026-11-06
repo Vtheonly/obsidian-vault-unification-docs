@@ -219,3 +219,4 @@ The primary papers behind each family, plus the practical documentation:
 - [[Word2Vec GloVe and FastText]]
 - [[Perplexity]]
 - [[Embedding Layer]]
+- [[Large Language Models MOC]]

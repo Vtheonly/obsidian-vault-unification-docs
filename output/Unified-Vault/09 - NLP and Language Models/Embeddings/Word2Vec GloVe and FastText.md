@@ -305,3 +305,6 @@ Historically, Word2Vec kicked off the embedding revolution in 2013 — the idea 
 - [[SentencePiece]]
 - [[Embedding Layer]]
 - [[08 - Attention and Transformers/Transformer Architecture/BERT|BERT]] — the contextual embedding revolution
+- [[Agents and Tooling MOC]]
+- [[Cosine Similarity]]
+- [[Vectors]]

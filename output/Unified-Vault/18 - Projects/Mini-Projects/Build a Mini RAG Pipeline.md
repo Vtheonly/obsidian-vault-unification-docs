@@ -538,3 +538,4 @@ A smaller "draft" model proposes an answer; the larger "target" model verifies. 
 - [[Speculative Decoding]] — the draft/target verification pattern behind Speculative RAG.
 - [[LangChain]] — a RAG framework this project makes transparent.
 - [[LlamaIndex]] — a RAG framework this project makes transparent.
+- [[Vector Storage with pgvector]]

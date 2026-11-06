@@ -212,3 +212,4 @@ For AI engineers, Reflexion is a practical pattern you can add to any agent. The
 - [[Self-Consistency]] — the diversity-based alternative to reflection.
 - [[Tree of Thoughts and Self Consistency]] — the combined treatment of both inference-time techniques.
 - [[DeepSeek-R1]] — a reasoning model that internalizes the reflection loop.
+- [[Agents and Tooling MOC]]

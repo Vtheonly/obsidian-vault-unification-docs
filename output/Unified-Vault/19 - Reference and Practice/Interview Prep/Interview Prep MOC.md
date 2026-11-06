@@ -93,3 +93,4 @@ The mapping below connects each interview topic to the concept notes that back i
 - [[Build Attention and Transformer From Scratch]] — hands-on build of the Transformer components the coding bank tests.
 - [[Build a Mini RAG Pipeline]] — hands-on build of the retrieval pipeline behind the RAG design prompts.
 - [[Build a Mini Agent]] — hands-on build of the agent loop behind the agent-platform design prompt.
+- [[Interview Prep MOC]]

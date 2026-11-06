@@ -308,3 +308,5 @@ The canonical references are LeCun et al. (1998), *Gradient-Based Learning Appli
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Weight Initialization|Weight Initialization]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Data Augmentation|Data Augmentation]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Vanishing and Exploding Gradients|Vanishing and Exploding Gradients]]
+- [[Residual Connections]]
+- [[ViT Architecture]]

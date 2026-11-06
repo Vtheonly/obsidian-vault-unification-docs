@@ -359,3 +359,4 @@ For primary sources, see Kwon et al. (2023), *Efficient Memory Management for La
 - [[Speculative Decoding]] — complementary decoding optimization.
 - [[Constrained Decoding]] — per-request decoding options in the scheduler.
 - [[Production AI Stack]] — where the serving engine fits in production.
+- [[SGLang]]

@@ -129,3 +129,6 @@ The roadmap beyond the current notes is where emerging multimodal research is co
 - [[Inference and Production MOC]] — running these models in production.
 - [[ViT Architecture]] — the underlying vision architecture, from the Vision Transformer paper (2020).
 - [[Embedding Models for Retrieval]] — where embedding models matter most: retrieval-augmented generation.
+- [[Interpretability and Research MOC]]
+- [[Agents and Tooling MOC]]
+- [[Vision Transformer]]

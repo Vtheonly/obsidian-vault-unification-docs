@@ -66,5 +66,7 @@ The neighbouring area maps:
 - [[NLP and Language Models MOC]] — the modeling lineage that produced the LLM.
 - [[Training and Adaptation MOC]] — pretraining, fine-tuning, and alignment.
 - [[Inference and Production MOC]] — running LLMs in production.
+- [[Interpretability and Research MOC]]
+- [[Agents and Tooling MOC]]
 
 Two further directions extend the same material beyond this area's notes: per-model deep dives into the architectural specifics of individual model families, and using LLMs as agents, where the capabilities and limitations mapped above become the operating constraints of tool-using systems.

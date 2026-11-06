@@ -183,3 +183,4 @@ For AI engineers, Constitutional AI matters for two reasons. First, if you're al
 - [[RLHF with PPO]] — the three-stage human-feedback pipeline whose reward model Stage 2 replaces with AI preferences.
 - [[Proximal Policy Optimization]] — the policy optimizer used in the RL stage.
 - [[Process Reward Models]] — step-level reward models for reasoning, another move beyond a single scalar outcome reward.
+- [[LLM Security and Prompt Injection]]

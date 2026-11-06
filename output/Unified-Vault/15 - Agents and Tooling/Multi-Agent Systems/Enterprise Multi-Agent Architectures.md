@@ -193,3 +193,5 @@ For strict enterprise requirements (multi-tenancy, audit, compliance), many team
 - [[CrewAI]] — role-based multi-agent framework.
 - [[Framework Selection Guide]] — choosing a framework.
 - [[Build a Multi-Agent System]] — a project implementing these patterns.
+- [[Production AI Stack]]
+- [[Inference and Production MOC]]

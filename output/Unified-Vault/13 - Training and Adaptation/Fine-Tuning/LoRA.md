@@ -430,3 +430,6 @@ Related notes across the fine-tuning family:
 - [[Mixed Precision Training]] — the bf16 training practice LoRA relies on
 - [[Quantization]] — weight quantization, the complement that yields QLoRA
 - [[06 - Computer Vision/Training and Transfer Learning/Transfer Learning and Fine-Tuning|Transfer Learning and Fine-Tuning]] — the broader transfer-learning tradition LoRA extends
+- [[Matrix Multiplication]]
+- [[Matrix Decomposition]]
+- [[17 - Papers/Scaling and Training/LoRA.md|LoRA]]

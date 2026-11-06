@@ -147,3 +147,4 @@ Four traps recur. Forgetting to monitor expert load — if one expert gets 80% o
 - [[Feed-Forward Network]], [[GPT Family]], [[Transformer Block]]
 - [[GQA MQA and MLA]] — DeepSeek also introduced MLA
 - [[The Transformer]], [[Choosing the Right Architecture]]
+- [[Interpretability and Research MOC]]

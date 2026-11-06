@@ -220,3 +220,5 @@ The learning rate deserves special mention in the RLHF setting: it runs one to t
 - [[Q-Learning and Deep Q Networks]]
 - [[Policy Gradients and Actor Critic]]
 - [[Machine Learning MOC]]
+- [[DPO Derivation]]
+- [[RLHF with PPO]]

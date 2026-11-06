@@ -237,3 +237,4 @@ Related notes across alignment and fine-tuning:
 - [[13 - Training and Adaptation/Fine-Tuning/LoRA|LoRA]] — usually combined with DPO
 - [[Instruction Tuning and Chat Templates]] — the SFT stage that produces the reference model
 - [[Proximal Policy Optimization]] — the PPO mechanics DPO sidesteps
+- [[Entropy Cross-Entropy and KL Divergence]]

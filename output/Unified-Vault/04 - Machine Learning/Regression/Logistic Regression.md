@@ -269,3 +269,4 @@ Always start with a simple baseline — logistic regression with feature enginee
 - [[Bias Variance Tradeoff]]
 - [[Gradient Boosting]]
 - [[Support Vector Machines]]
+- [[Entropy Cross-Entropy and KL Divergence]]

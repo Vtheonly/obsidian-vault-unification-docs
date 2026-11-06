@@ -72,3 +72,6 @@ Read [[Proximal Policy Optimization]] — it's the prerequisite for understandin
 - The mathematics behind ML (calculus, linear algebra, probability) lives in the Mathematics area.
 - Neural networks and deep learning build directly on the optimization notes here.
 - Fine-tuning is where PPO is put to work in RLHF; pretraining at scale extends the training notes.
+- [[Mathematics MOC]]
+- [[Neural Network Foundations MOC]]
+- [[Training and Adaptation MOC]]

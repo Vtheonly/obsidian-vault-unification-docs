@@ -156,3 +156,4 @@ Three reasons. (1) **Simple structure**: plain ViT (no shifted windows, no hiera
 - [[CLIP]], [[LLaVA]] and [[Multimodal AI Overview]] — the contrastive and VLM consumers of DeiT-v2-style encoders.
 - [[Vision Foundation Models]] — the foundation-model context.
 - [[BLIP-2]] and [[Flamingo]] — other vision-language architectures that need a vision encoder.
+- [[Foundation Models and Multimodal MOC]]

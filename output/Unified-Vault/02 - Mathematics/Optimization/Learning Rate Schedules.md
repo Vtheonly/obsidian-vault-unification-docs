@@ -352,3 +352,4 @@ plt.title('LR Schedule Comparison')
 - [[13 - Training and Adaptation/Fine-Tuning/LoRA|LoRA]] — different LR for fine-tuning.
 - [[QLoRA]] — even lower LR for quantized fine-tuning.
 - [[DPO Derivation]] — the preference-loss fine-tuning that uses very low LR.
+- [[Training and Adaptation MOC]]

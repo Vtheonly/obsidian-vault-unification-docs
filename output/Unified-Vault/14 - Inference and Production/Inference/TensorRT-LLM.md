@@ -240,3 +240,4 @@ Build engines once per (model, GPU type, TRT-LLM version) and cache them in arti
 - [[Speculative Decoding]] — draft-model and Medusa-style acceleration.
 - [[Constrained Decoding]] — JSON schema and regex support via xgrammar and outlines.
 - [[Production AI Stack]] — where the serving engine sits in a production deployment.
+- [[15 - Agents and Tooling/Frameworks and Tools/TensorRT-LLM.md|TensorRT-LLM]]

@@ -378,3 +378,5 @@ These distinctions come up frequently in interviews; the short-form answers are 
 - [[Production Monitoring]] — observability for MCP tool calls.
 - [[Cost Optimization]] — chargeback and cost allocation.
 - [[Build an MCP Server]] — implementing the servers the gateway fronts.
+- [[Production AI Stack]]
+- [[Inference and Production MOC]]

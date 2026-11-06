@@ -188,3 +188,6 @@ For AI engineers working on vision tasks, Swin remains a strong choice for dense
 - [[ViT Architecture]] and [[Patch Tokenization]] — the flat vision-Transformer design Swin departs from.
 - [[Inductive Bias]] — the CNN-versus-ViT inductive-bias discussion that motivates hierarchical designs.
 - [[06 - Computer Vision/Architecture and Connectivity/Evolution of CNN Architectures|Evolution of CNN Architectures]] — the CNN lineage whose multi-scale habits Swin imports.
+- [[Longformer]]
+- [[Vision Transformer]]
+- [[Papers MOC]]

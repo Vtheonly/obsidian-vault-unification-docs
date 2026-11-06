@@ -157,3 +157,4 @@ By 2026, MTP is becoming standard for frontier-scale pretraining. The training-t
 - [[DeepSeek Architecture]] — where MTP sits in the DeepSeek family design.
 - [[Speculative Decoding]] — the inference framework MTP feeds.
 - [[Pretraining Objectives and Scaling Laws]] — pretraining objective context.
+- [[Inference and Production MOC]]

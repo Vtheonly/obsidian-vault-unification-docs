@@ -256,3 +256,5 @@ Reasoning models sit at the intersection of several threads. Test-time compute s
 - [[13 - Training and Adaptation/Fine-Tuning/LoRA|LoRA]] — parameter-efficient fine-tuning used for distillation of reasoning models.
 - [[Cost Optimization]] — the routing and caching patterns in production context.
 - [[LLM-as-Judge Evaluation]] — judge models double as query routers.
+- [[Chain of Thought]]
+- [[Test-Time Compute Scaling]]

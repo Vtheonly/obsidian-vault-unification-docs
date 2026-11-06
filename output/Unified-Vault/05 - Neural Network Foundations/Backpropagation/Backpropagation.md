@@ -1530,3 +1530,7 @@ The canonical references are Goodfellow et al., *Deep Learning*, Chapter 6.5; Ru
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Batch Normalization|Batch Normalization]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Dropout and Regularization|Dropout and Regularization]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Hyperparameters and Network Configuration|Hyperparameters and Network Configuration]]
+- [[Backpropagation]]
+- [[Gradient and Chain Rule]]
+- [[Optimization Essentials]]
+- [[Residual Connections]]

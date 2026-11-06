@@ -290,3 +290,5 @@ The canonical references are Sutskever et al. (2014), *Sequence to Sequence Lear
 - [[Convolutional Neural Networks]]
 - [[Backpropagation]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Vanishing and Exploding Gradients|Vanishing and Exploding Gradients]]
+- [[08 - Attention and Transformers/Attention Mechanism/Bahdanau Attention.md|Bahdanau Attention]]
+- [[Origins of Attention]]

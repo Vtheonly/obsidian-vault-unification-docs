@@ -176,3 +176,4 @@ For AI engineers, Mistral 7B remains a strong choice for cost-sensitive deployme
 - [[Longformer]] and [[BigBird]] — the earlier windowed/sparse attention lineage
 - [[Mistral and Mixtral Architecture]] and [[Llama Mistral Qwen Comparison]] — architecture-focused treatments
 - [[Papers MOC]]
+- [[GQA MQA and MLA]]

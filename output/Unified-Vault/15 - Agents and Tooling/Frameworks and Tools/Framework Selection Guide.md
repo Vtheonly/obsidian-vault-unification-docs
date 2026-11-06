@@ -199,3 +199,5 @@ Framework choice affects **development speed, production reliability, and team p
 - [[SGLang]] — the agentic-workload serving engine.
 - [[Ollama and llama.cpp]] — local LLM runtimes.
 - [[RAG Pipeline Overview]] — what a RAG system entails before choosing its framework.
+- [[Continuous Batching]]
+- [[14 - Inference and Production/Inference/vLLM.md|vLLM]]

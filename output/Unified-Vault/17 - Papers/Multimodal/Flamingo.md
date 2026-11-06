@@ -201,3 +201,4 @@ Flamingo showed that few-shot prompting works for visual tasks, not just text. T
 - [[Cross-Modal Attention]] — the cross-attention mechanism.
 - [[In-Context Learning]] — the few-shot capability Flamingo ported to vision.
 - [[Build a Vision-Language Model]] — building a modern descendant of this lineage.
+- [[Vision Transformer]]

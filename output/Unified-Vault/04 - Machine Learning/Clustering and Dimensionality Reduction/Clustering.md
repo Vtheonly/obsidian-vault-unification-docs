@@ -272,3 +272,4 @@ Related notes in the vault:
 - [[Clustering Evaluation Metrics]]
 - [[K-Nearest Neighbors]]
 - [[Bias Variance Tradeoff]]
+- [[Matrix Decomposition]]

@@ -356,3 +356,5 @@ The primary papers are Dosovitskiy et al. (2020), *An Image is Worth 16x16 Words
 - [[GQA MQA and MLA]], [[Sliding Window Attention]], [[Linear Attention]] — efficiency tools used by ViT descendants
 - [[06 - Computer Vision/Architecture and Connectivity/Evolution of CNN Architectures|Evolution of CNN Architectures]] and [[06 - Computer Vision/CNN Foundations and Philosophy/Introduction and Foundations of CNNs|Introduction and Foundations of CNNs]] — the CNN lineage ViT replaced at scale
 - [[06 - Computer Vision/Core Operators and Geometry/Activation and Pooling Layers|Activation and Pooling Layers]] — activations (GELU vs ReLU) and pooling (GAP) in the CNN context
+- [[Convolutional Neural Networks]]
+- [[Foundation Models and Multimodal MOC]]

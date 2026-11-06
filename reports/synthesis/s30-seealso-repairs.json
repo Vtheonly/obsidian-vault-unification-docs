@@ -1,0 +1,933 @@
+{
+ "summary": {
+  "command": "s30-seealso-repairs",
+  "input": "reports/synthesis/s30-see-also-audit.json",
+  "pairs_processed": 177,
+  "links_added": 0,
+  "notes_mutated": 0,
+  "skipped_already_covered": 183,
+  "skipped_no_heading": 0,
+  "verify_failures": 0,
+  "deterministic": true
+ },
+ "mutations": [],
+ "skipped_already": [
+  {
+   "dest": "01 - Foundations/AI ML and DL Hierarchy/AI vs ML vs DL.md",
+   "canonical": "15 - Agents and Tooling/AI Agents/Agent vs Workflow vs LLM Application.md",
+   "link": "[[Agent vs Workflow vs LLM Application]]"
+  },
+  {
+   "dest": "01 - Foundations/AI ML and DL Hierarchy/AI vs ML vs DL.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "01 - Foundations/AI Engineering/The Modern AI Stack.md",
+   "canonical": "01 - Foundations/Data Science Foundations/Roles and Careers in Data and AI.md",
+   "link": "[[Roles and Careers in Data and AI]]"
+  },
+  {
+   "dest": "01 - Foundations/Foundations MOC.md",
+   "canonical": "01 - Foundations/Foundations MOC.md",
+   "link": "[[Foundations MOC]]"
+  },
+  {
+   "dest": "02 - Mathematics/Linear Algebra/Cosine Similarity.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "02 - Mathematics/Optimization/Learning Rate Schedules.md",
+   "canonical": "13 - Training and Adaptation/Training and Adaptation MOC.md",
+   "link": "[[Training and Adaptation MOC]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Model Evaluation/Model Evaluation Metrics.md",
+   "canonical": "02 - Mathematics/Information Theory/Entropy Cross-Entropy and KL Divergence.md",
+   "link": "[[Entropy Cross-Entropy and KL Divergence]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Model Evaluation/Regression Evaluation Metrics.md",
+   "canonical": "02 - Mathematics/Information Theory/Entropy Cross-Entropy and KL Divergence.md",
+   "link": "[[Entropy Cross-Entropy and KL Divergence]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Model Evaluation/Model Evaluation Metrics.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Model Evaluation/Regression Evaluation Metrics.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Generalization and Regularization/Regularization Techniques.md",
+   "canonical": "02 - Mathematics/Optimization/Adam Optimizer Derivation.md",
+   "link": "[[Adam Optimizer Derivation]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Generalization and Regularization/Regularization Techniques.md",
+   "canonical": "08 - Attention and Transformers/Transformer Architecture/Normalization Layers.md",
+   "link": "[[Normalization Layers]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Generalization and Regularization/Regularization Techniques.md",
+   "canonical": "13 - Training and Adaptation/Fine-Tuning/LoRA.md",
+   "link": "[[13 - Training and Adaptation/Fine-Tuning/LoRA.md|LoRA]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Machine Learning MOC.md",
+   "canonical": "02 - Mathematics/Mathematics MOC.md",
+   "link": "[[Mathematics MOC]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Machine Learning MOC.md",
+   "canonical": "05 - Neural Network Foundations/Neural Network Foundations MOC.md",
+   "link": "[[Neural Network Foundations MOC]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Machine Learning MOC.md",
+   "canonical": "13 - Training and Adaptation/Training and Adaptation MOC.md",
+   "link": "[[Training and Adaptation MOC]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Machine Learning MOC.md",
+   "canonical": "13 - Training and Adaptation/Training and Adaptation MOC.md",
+   "link": "[[Training and Adaptation MOC]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Reinforcement Learning/Markov Decision Processes and Bellman Equations.md",
+   "canonical": "13 - Training and Adaptation/Fine-Tuning/RLHF with PPO.md",
+   "link": "[[RLHF with PPO]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Reinforcement Learning/Policy Gradients and Actor Critic.md",
+   "canonical": "13 - Training and Adaptation/Fine-Tuning/RLHF with PPO.md",
+   "link": "[[RLHF with PPO]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Reinforcement Learning/Proximal Policy Optimization.md",
+   "canonical": "13 - Training and Adaptation/Fine-Tuning/DPO Derivation.md",
+   "link": "[[DPO Derivation]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Reinforcement Learning/Proximal Policy Optimization.md",
+   "canonical": "13 - Training and Adaptation/Fine-Tuning/RLHF with PPO.md",
+   "link": "[[RLHF with PPO]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Regression/Linear Regression.md",
+   "canonical": "02 - Mathematics/Information Theory/Entropy Cross-Entropy and KL Divergence.md",
+   "link": "[[Entropy Cross-Entropy and KL Divergence]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Regression/Logistic Regression.md",
+   "canonical": "02 - Mathematics/Information Theory/Entropy Cross-Entropy and KL Divergence.md",
+   "link": "[[Entropy Cross-Entropy and KL Divergence]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Clustering and Dimensionality Reduction/Clustering.md",
+   "canonical": "02 - Mathematics/Linear Algebra/Matrix Decomposition.md",
+   "link": "[[Matrix Decomposition]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Clustering and Dimensionality Reduction/Principal Component Analysis.md",
+   "canonical": "02 - Mathematics/Linear Algebra/Matrix Decomposition.md",
+   "link": "[[Matrix Decomposition]]"
+  },
+  {
+   "dest": "04 - Machine Learning/Clustering and Dimensionality Reduction/t-SNE and UMAP.md",
+   "canonical": "02 - Mathematics/Linear Algebra/Matrix Decomposition.md",
+   "link": "[[Matrix Decomposition]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Architectures/Convolutional Neural Networks.md",
+   "canonical": "08 - Attention and Transformers/Transformer Architecture/Residual Connections.md",
+   "link": "[[Residual Connections]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Architectures/Convolutional Neural Networks.md",
+   "canonical": "08 - Attention and Transformers/Vision Transformers/ViT Architecture.md",
+   "link": "[[ViT Architecture]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Architectures/Recurrent Neural Networks.md",
+   "canonical": "17 - Papers/State Space Models and Linear Attention/Mamba.md",
+   "link": "[[Mamba]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Architectures/Seq2Seq and the Information Bottleneck.md",
+   "canonical": "08 - Attention and Transformers/Attention Mechanism/Bahdanau Attention.md",
+   "link": "[[08 - Attention and Transformers/Attention Mechanism/Bahdanau Attention.md|Bahdanau Attention]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Architectures/Seq2Seq and the Information Bottleneck.md",
+   "canonical": "08 - Attention and Transformers/Attention Mechanism/Origins of Attention.md",
+   "link": "[[Origins of Attention]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Neural Network Basics/Perceptrons and Multi-Layer Perceptrons.md",
+   "canonical": "08 - Attention and Transformers/Transformer Architecture/Transformer Block.md",
+   "link": "[[Transformer Block]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Neural Network Basics/Perceptrons and Multi-Layer Perceptrons.md",
+   "canonical": "02 - Mathematics/Linear Algebra/Matrix Multiplication.md",
+   "link": "[[Matrix Multiplication]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Neural Network Basics/Perceptrons and Multi-Layer Perceptrons.md",
+   "canonical": "08 - Attention and Transformers/Transformer Architecture/Feed-Forward Network.md",
+   "link": "[[Feed-Forward Network]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Neural Network Basics/Perceptrons and Multi-Layer Perceptrons.md",
+   "canonical": "08 - Attention and Transformers/Transformer Architecture/Mixture of Experts.md",
+   "link": "[[Mixture of Experts]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Neural Network Basics/Activation Functions.md",
+   "canonical": "08 - Attention and Transformers/Transformer Architecture/Normalization Layers.md",
+   "link": "[[Normalization Layers]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Neural Network Basics/Activation Functions.md",
+   "canonical": "08 - Attention and Transformers/Transformer Architecture/Transformer Block.md",
+   "link": "[[Transformer Block]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Neural Network Foundations MOC.md",
+   "canonical": "02 - Mathematics/Mathematics MOC.md",
+   "link": "[[Mathematics MOC]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Neural Network Foundations MOC.md",
+   "canonical": "09 - NLP and Language Models/NLP and Language Models MOC.md",
+   "link": "[[NLP and Language Models MOC]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Neural Network Foundations MOC.md",
+   "canonical": "08 - Attention and Transformers/Attention and Transformers MOC.md",
+   "link": "[[Attention and Transformers MOC]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Backpropagation/Backpropagation.md",
+   "canonical": "05 - Neural Network Foundations/Backpropagation/Backpropagation.md",
+   "link": "[[Backpropagation]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Backpropagation/Backpropagation.md",
+   "canonical": "02 - Mathematics/Calculus/Gradient and Chain Rule.md",
+   "link": "[[Gradient and Chain Rule]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Backpropagation/Backpropagation.md",
+   "canonical": "02 - Mathematics/Optimization/Optimization Essentials.md",
+   "link": "[[Optimization Essentials]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Backpropagation/Backpropagation.md",
+   "canonical": "08 - Attention and Transformers/Transformer Architecture/Residual Connections.md",
+   "link": "[[Residual Connections]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Training Dynamics and Stability/Weight Initialization.md",
+   "canonical": "02 - Mathematics/Probability/Gaussian Distribution.md",
+   "link": "[[Gaussian Distribution]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Training Dynamics and Stability/Weight Initialization.md",
+   "canonical": "13 - Training and Adaptation/Fine-Tuning/LoRA.md",
+   "link": "[[13 - Training and Adaptation/Fine-Tuning/LoRA.md|LoRA]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Training Dynamics and Stability/Vanishing and Exploding Gradients.md",
+   "canonical": "08 - Attention and Transformers/Transformer Architecture/Residual Connections.md",
+   "link": "[[Residual Connections]]"
+  },
+  {
+   "dest": "05 - Neural Network Foundations/Training Dynamics and Stability/Vanishing and Exploding Gradients.md",
+   "canonical": "08 - Attention and Transformers/Transformer Architecture/Normalization Layers.md",
+   "link": "[[Normalization Layers]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/Embeddings/Word2Vec GloVe and FastText.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/Embeddings/Word2Vec GloVe and FastText.md",
+   "canonical": "02 - Mathematics/Linear Algebra/Cosine Similarity.md",
+   "link": "[[Cosine Similarity]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/Embeddings/Word2Vec GloVe and FastText.md",
+   "canonical": "02 - Mathematics/Linear Algebra/Vectors.md",
+   "link": "[[Vectors]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/Embeddings/Contextual Embeddings ELMo to BERT.md",
+   "canonical": "11 - Foundation Models and Multimodal/Foundation Models/Embedding Models for Retrieval.md",
+   "link": "[[Embedding Models for Retrieval]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/Language Modeling/Perplexity.md",
+   "canonical": "10 - Large Language Models/Large Language Models MOC.md",
+   "link": "[[Large Language Models MOC]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/Language Modeling/Perplexity.md",
+   "canonical": "02 - Mathematics/Information Theory/Entropy Cross-Entropy and KL Divergence.md",
+   "link": "[[Entropy Cross-Entropy and KL Divergence]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/Language Modeling/Perplexity.md",
+   "canonical": "02 - Mathematics/Probability/Probability Essentials.md",
+   "link": "[[Probability Essentials]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/NLP and Language Models MOC.md",
+   "canonical": "10 - Large Language Models/Large Language Models MOC.md",
+   "link": "[[Large Language Models MOC]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/NLP and Language Models MOC.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/Pre-Transformer NLP/TF-IDF.md",
+   "canonical": "15 - Agents and Tooling/Retrieval Augmented Generation/Chunking, Hybrid Search, and Reranking.md",
+   "link": "[[Chunking, Hybrid Search, and Reranking]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/Pre-Transformer NLP/TF-IDF.md",
+   "canonical": "11 - Foundation Models and Multimodal/Foundation Models/Embedding Models for Retrieval.md",
+   "link": "[[Embedding Models for Retrieval]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/Pre-Transformer NLP/TF-IDF.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/Pre-Transformer NLP/BM25.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/Pre-Transformer NLP/BM25.md",
+   "canonical": "15 - Agents and Tooling/Retrieval Augmented Generation/Chunking, Hybrid Search, and Reranking.md",
+   "link": "[[Chunking, Hybrid Search, and Reranking]]"
+  },
+  {
+   "dest": "09 - NLP and Language Models/Tokenization/Tokenization Overview.md",
+   "canonical": "10 - Large Language Models/Large Language Models MOC.md",
+   "link": "[[Large Language Models MOC]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Efficient Attention/FlashAttention.md",
+   "canonical": "14 - Inference and Production/Inference/PagedAttention.md",
+   "link": "[[PagedAttention]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Efficient Attention/FlashAttention.md",
+   "canonical": "14 - Inference and Production/Inference and Production MOC.md",
+   "link": "[[Inference and Production MOC]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Efficient Attention/Linear Attention.md",
+   "canonical": "17 - Papers/State Space Models and Linear Attention/Mamba.md",
+   "link": "[[Mamba]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Attention and Transformers MOC.md",
+   "canonical": "02 - Mathematics/Mathematics MOC.md",
+   "link": "[[Mathematics MOC]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Attention and Transformers MOC.md",
+   "canonical": "08 - Attention and Transformers/Attention and Transformers MOC.md",
+   "link": "[[Attention and Transformers MOC]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Attention and Transformers MOC.md",
+   "canonical": "10 - Large Language Models/Large Language Models MOC.md",
+   "link": "[[Large Language Models MOC]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Attention and Transformers MOC.md",
+   "canonical": "14 - Inference and Production/Inference and Production MOC.md",
+   "link": "[[Inference and Production MOC]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Efficient Attention/GQA MQA and MLA.md",
+   "canonical": "16 - Interpretability and Research/Model Architecture Research/Open Source/DeepSeek Architecture.md",
+   "link": "[[DeepSeek Architecture]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Efficient Attention/GQA MQA and MLA.md",
+   "canonical": "10 - Large Language Models/Context and KV Cache/KV Cache Mechanics.md",
+   "link": "[[KV Cache Mechanics]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Efficient Attention/Sliding Window Attention.md",
+   "canonical": "10 - Large Language Models/Context and KV Cache/KV Cache Mechanics.md",
+   "link": "[[KV Cache Mechanics]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Attention Mechanism/Origins of Attention.md",
+   "canonical": "05 - Neural Network Foundations/Neural Network Foundations MOC.md",
+   "link": "[[Neural Network Foundations MOC]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Attention Mechanism/YaRN and NTK-Aware Scaling.md",
+   "canonical": "10 - Large Language Models/Context and KV Cache/KV Cache Mechanics.md",
+   "link": "[[KV Cache Mechanics]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Attention Mechanism/Self-Attention.md",
+   "canonical": "02 - Mathematics/Linear Algebra/Dot Product.md",
+   "link": "[[Dot Product]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Attention Mechanism/Self-Attention.md",
+   "canonical": "10 - Large Language Models/Context and KV Cache/KV Cache Mechanics.md",
+   "link": "[[KV Cache Mechanics]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Transformer Architecture/Transformer Block.md",
+   "canonical": "10 - Large Language Models/Large Language Models MOC.md",
+   "link": "[[Large Language Models MOC]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Transformer Architecture/Residual Connections.md",
+   "canonical": "05 - Neural Network Foundations/Backpropagation/Backpropagation.md",
+   "link": "[[Backpropagation]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Transformer Architecture/Normalization Layers.md",
+   "canonical": "05 - Neural Network Foundations/Neural Network Basics/Activation Functions.md",
+   "link": "[[Activation Functions]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Transformer Architecture/Feed-Forward Network.md",
+   "canonical": "05 - Neural Network Foundations/Neural Network Basics/Activation Functions.md",
+   "link": "[[Activation Functions]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Transformer Architecture/Feed-Forward Network.md",
+   "canonical": "16 - Interpretability and Research/Interpretability/Mechanistic Interpretability.md",
+   "link": "[[Mechanistic Interpretability]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Transformer Architecture/GPT Family.md",
+   "canonical": "16 - Interpretability and Research/Interpretability and Research MOC.md",
+   "link": "[[Interpretability and Research MOC]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Attention and Transformers MOC.md",
+   "canonical": "08 - Attention and Transformers/Attention and Transformers MOC.md",
+   "link": "[[Attention and Transformers MOC]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Attention and Transformers MOC.md",
+   "canonical": "10 - Large Language Models/Large Language Models MOC.md",
+   "link": "[[Large Language Models MOC]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Attention and Transformers MOC.md",
+   "canonical": "16 - Interpretability and Research/Interpretability and Research MOC.md",
+   "link": "[[Interpretability and Research MOC]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Attention and Transformers MOC.md",
+   "canonical": "14 - Inference and Production/Inference and Production MOC.md",
+   "link": "[[Inference and Production MOC]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Vision Transformers/ViT Architecture.md",
+   "canonical": "05 - Neural Network Foundations/Architectures/Convolutional Neural Networks.md",
+   "link": "[[Convolutional Neural Networks]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Vision Transformers/ViT Architecture.md",
+   "canonical": "11 - Foundation Models and Multimodal/Foundation Models and Multimodal MOC.md",
+   "link": "[[Foundation Models and Multimodal MOC]]"
+  },
+  {
+   "dest": "08 - Attention and Transformers/Transformer Architecture/Mixture of Experts.md",
+   "canonical": "16 - Interpretability and Research/Interpretability and Research MOC.md",
+   "link": "[[Interpretability and Research MOC]]"
+  },
+  {
+   "dest": "10 - Large Language Models/Capabilities/In-Context Learning.md",
+   "canonical": "16 - Interpretability and Research/Interpretability/Mechanistic Interpretability.md",
+   "link": "[[Mechanistic Interpretability]]"
+  },
+  {
+   "dest": "10 - Large Language Models/Capabilities/In-Context Learning.md",
+   "canonical": "15 - Agents and Tooling/AI Agents/Agent vs Workflow vs LLM Application.md",
+   "link": "[[Agent vs Workflow vs LLM Application]]"
+  },
+  {
+   "dest": "10 - Large Language Models/Capabilities/In-Context Learning.md",
+   "canonical": "15 - Agents and Tooling/AI Agents/Chain of Thought.md",
+   "link": "[[Chain of Thought]]"
+  },
+  {
+   "dest": "10 - Large Language Models/Evaluation/LLM Benchmarks.md",
+   "canonical": "14 - Inference and Production/Inference and Production MOC.md",
+   "link": "[[Inference and Production MOC]]"
+  },
+  {
+   "dest": "10 - Large Language Models/Limitations/Hallucination.md",
+   "canonical": "15 - Agents and Tooling/Retrieval Augmented Generation/RAG Pipeline Overview.md",
+   "link": "[[RAG Pipeline Overview]]"
+  },
+  {
+   "dest": "10 - Large Language Models/Limitations/Hallucination.md",
+   "canonical": "15 - Agents and Tooling/AI Agents/Reflection.md",
+   "link": "[[Reflection]]"
+  },
+  {
+   "dest": "10 - Large Language Models/Limitations/Hallucination.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "10 - Large Language Models/Limitations/Hallucination.md",
+   "canonical": "14 - Inference and Production/Inference and Production MOC.md",
+   "link": "[[Inference and Production MOC]]"
+  },
+  {
+   "dest": "10 - Large Language Models/Large Language Models MOC.md",
+   "canonical": "16 - Interpretability and Research/Interpretability and Research MOC.md",
+   "link": "[[Interpretability and Research MOC]]"
+  },
+  {
+   "dest": "10 - Large Language Models/Large Language Models MOC.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "10 - Large Language Models/Sampling/Sampling Strategies.md",
+   "canonical": "02 - Mathematics/Information Theory/Entropy Cross-Entropy and KL Divergence.md",
+   "link": "[[Entropy Cross-Entropy and KL Divergence]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Foundation Models/Code Models.md",
+   "canonical": "08 - Attention and Transformers/Attention and Transformers MOC.md",
+   "link": "[[Attention and Transformers MOC]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Foundation Models/Embedding Models for Retrieval.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Foundation Models/Embedding Model Training.md",
+   "canonical": "15 - Agents and Tooling/Retrieval Augmented Generation/RAG Pipeline Overview.md",
+   "link": "[[RAG Pipeline Overview]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Foundation Models/Embedding Model Training.md",
+   "canonical": "15 - Agents and Tooling/Retrieval Augmented Generation/Chunking, Hybrid Search, and Reranking.md",
+   "link": "[[Chunking, Hybrid Search, and Reranking]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Foundation Models/Embedding Model Training.md",
+   "canonical": "15 - Agents and Tooling/Memory Systems/Vector Memory Backends.md",
+   "link": "[[Vector Memory Backends]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Foundation Models and Multimodal MOC.md",
+   "canonical": "16 - Interpretability and Research/Interpretability and Research MOC.md",
+   "link": "[[Interpretability and Research MOC]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Foundation Models and Multimodal MOC.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Multimodal AI/Multimodal Foundation Models.md",
+   "canonical": "18 - Projects/Capstones/Build a Vision-Language Model.md",
+   "link": "[[Build a Vision-Language Model]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Foundation Models/Reasoning Models.md",
+   "canonical": "15 - Agents and Tooling/AI Agents/Chain of Thought.md",
+   "link": "[[Chain of Thought]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Foundation Models/Reasoning Models.md",
+   "canonical": "16 - Interpretability and Research/Research Frontiers/Reasoning/Test-Time Compute Scaling.md",
+   "link": "[[Test-Time Compute Scaling]]"
+  },
+  {
+   "dest": "13 - Training and Adaptation/Distributed Training/Distributed Training.md",
+   "canonical": "14 - Inference and Production/Inference and Production MOC.md",
+   "link": "[[Inference and Production MOC]]"
+  },
+  {
+   "dest": "13 - Training and Adaptation/Training and Adaptation MOC.md",
+   "canonical": "02 - Mathematics/Optimization/Adam Optimizer Derivation.md",
+   "link": "[[Adam Optimizer Derivation]]"
+  },
+  {
+   "dest": "13 - Training and Adaptation/Training and Adaptation MOC.md",
+   "canonical": "02 - Mathematics/Optimization/Learning Rate Schedules.md",
+   "link": "[[Learning Rate Schedules]]"
+  },
+  {
+   "dest": "13 - Training and Adaptation/Training and Adaptation MOC.md",
+   "canonical": "16 - Interpretability and Research/Interpretability and Research MOC.md",
+   "link": "[[Interpretability and Research MOC]]"
+  },
+  {
+   "dest": "13 - Training and Adaptation/Optimization/Mixed Precision Training.md",
+   "canonical": "02 - Mathematics/Optimization/Optimization Essentials.md",
+   "link": "[[Optimization Essentials]]"
+  },
+  {
+   "dest": "13 - Training and Adaptation/Optimization/Mixed Precision Training.md",
+   "canonical": "02 - Mathematics/Optimization/Learning Rate Schedules.md",
+   "link": "[[Learning Rate Schedules]]"
+  },
+  {
+   "dest": "13 - Training and Adaptation/Optimization/Loss Spikes and Stability.md",
+   "canonical": "02 - Mathematics/Optimization/Optimization Essentials.md",
+   "link": "[[Optimization Essentials]]"
+  },
+  {
+   "dest": "13 - Training and Adaptation/Optimization/Loss Spikes and Stability.md",
+   "canonical": "02 - Mathematics/Optimization/Learning Rate Schedules.md",
+   "link": "[[Learning Rate Schedules]]"
+  },
+  {
+   "dest": "13 - Training and Adaptation/Pretraining/Pretraining Objectives and Scaling Laws.md",
+   "canonical": "02 - Mathematics/Optimization/Learning Rate Schedules.md",
+   "link": "[[Learning Rate Schedules]]"
+  },
+  {
+   "dest": "13 - Training and Adaptation/Pretraining/Pretraining Objectives and Scaling Laws.md",
+   "canonical": "02 - Mathematics/Optimization/Adam Optimizer Derivation.md",
+   "link": "[[Adam Optimizer Derivation]]"
+  },
+  {
+   "dest": "13 - Training and Adaptation/Fine-Tuning/DPO Derivation.md",
+   "canonical": "02 - Mathematics/Information Theory/Entropy Cross-Entropy and KL Divergence.md",
+   "link": "[[Entropy Cross-Entropy and KL Divergence]]"
+  },
+  {
+   "dest": "13 - Training and Adaptation/Fine-Tuning/LoRA.md",
+   "canonical": "02 - Mathematics/Linear Algebra/Matrix Multiplication.md",
+   "link": "[[Matrix Multiplication]]"
+  },
+  {
+   "dest": "13 - Training and Adaptation/Fine-Tuning/LoRA.md",
+   "canonical": "02 - Mathematics/Linear Algebra/Matrix Decomposition.md",
+   "link": "[[Matrix Decomposition]]"
+  },
+  {
+   "dest": "13 - Training and Adaptation/Fine-Tuning/LoRA.md",
+   "canonical": "17 - Papers/Scaling and Training/LoRA.md",
+   "link": "[[17 - Papers/Scaling and Training/LoRA.md|LoRA]]"
+  },
+  {
+   "dest": "14 - Inference and Production/Inference/Constrained Decoding.md",
+   "canonical": "15 - Agents and Tooling/AI Agents/Function Calling.md",
+   "link": "[[Function Calling]]"
+  },
+  {
+   "dest": "14 - Inference and Production/Inference/Constrained Decoding.md",
+   "canonical": "15 - Agents and Tooling/Frameworks and Tools/SGLang.md",
+   "link": "[[SGLang]]"
+  },
+  {
+   "dest": "14 - Inference and Production/Inference/PagedAttention.md",
+   "canonical": "10 - Large Language Models/Large Language Models MOC.md",
+   "link": "[[Large Language Models MOC]]"
+  },
+  {
+   "dest": "14 - Inference and Production/Inference/Quantization.md",
+   "canonical": "10 - Large Language Models/Large Language Models MOC.md",
+   "link": "[[Large Language Models MOC]]"
+  },
+  {
+   "dest": "14 - Inference and Production/Inference/Continuous Batching.md",
+   "canonical": "15 - Agents and Tooling/Frameworks and Tools/SGLang.md",
+   "link": "[[SGLang]]"
+  },
+  {
+   "dest": "14 - Inference and Production/Inference/TensorRT-LLM.md",
+   "canonical": "15 - Agents and Tooling/Frameworks and Tools/TensorRT-LLM.md",
+   "link": "[[15 - Agents and Tooling/Frameworks and Tools/TensorRT-LLM.md|TensorRT-LLM]]"
+  },
+  {
+   "dest": "16 - Interpretability and Research/Interpretability/Mechanistic Interpretability.md",
+   "canonical": "14 - Inference and Production/Inference and Production MOC.md",
+   "link": "[[Inference and Production MOC]]"
+  },
+  {
+   "dest": "15 - Agents and Tooling/Multi-Agent Systems/Multi-Agent Architectures.md",
+   "canonical": "14 - Inference and Production/Inference and Production MOC.md",
+   "link": "[[Inference and Production MOC]]"
+  },
+  {
+   "dest": "15 - Agents and Tooling/Multi-Agent Systems/Enterprise Multi-Agent Architectures.md",
+   "canonical": "14 - Inference and Production/AI Infrastructure/Production AI Stack.md",
+   "link": "[[Production AI Stack]]"
+  },
+  {
+   "dest": "15 - Agents and Tooling/Multi-Agent Systems/Enterprise Multi-Agent Architectures.md",
+   "canonical": "14 - Inference and Production/Inference and Production MOC.md",
+   "link": "[[Inference and Production MOC]]"
+  },
+  {
+   "dest": "15 - Agents and Tooling/Multi-Agent Systems/Enterprise Multi-Agent Architectures.md",
+   "canonical": "14 - Inference and Production/Inference and Production MOC.md",
+   "link": "[[Inference and Production MOC]]"
+  },
+  {
+   "dest": "15 - Agents and Tooling/Model Context Protocol/MCP Enterprise Integration.md",
+   "canonical": "14 - Inference and Production/AI Infrastructure/Production AI Stack.md",
+   "link": "[[Production AI Stack]]"
+  },
+  {
+   "dest": "15 - Agents and Tooling/Model Context Protocol/MCP Enterprise Integration.md",
+   "canonical": "14 - Inference and Production/Inference and Production MOC.md",
+   "link": "[[Inference and Production MOC]]"
+  },
+  {
+   "dest": "14 - Inference and Production/AI Infrastructure/Vector Storage with pgvector.md",
+   "canonical": "15 - Agents and Tooling/Retrieval Augmented Generation/RAG Pipeline Overview.md",
+   "link": "[[RAG Pipeline Overview]]"
+  },
+  {
+   "dest": "14 - Inference and Production/AI Infrastructure/Vector Storage with pgvector.md",
+   "canonical": "15 - Agents and Tooling/Retrieval Augmented Generation/Chunking, Hybrid Search, and Reranking.md",
+   "link": "[[Chunking, Hybrid Search, and Reranking]]"
+  },
+  {
+   "dest": "14 - Inference and Production/AI Infrastructure/Vector Storage with pgvector.md",
+   "canonical": "15 - Agents and Tooling/Memory Systems/Memory Operations.md",
+   "link": "[[Memory Operations]]"
+  },
+  {
+   "dest": "14 - Inference and Production/AI Infrastructure/Vector Storage with pgvector.md",
+   "canonical": "15 - Agents and Tooling/Memory Systems/Vector Memory Backends.md",
+   "link": "[[Vector Memory Backends]]"
+  },
+  {
+   "dest": "14 - Inference and Production/LLMOps and MLOps/LLM-as-Judge Evaluation.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "14 - Inference and Production/Production AI/Reference Production Architectures.md",
+   "canonical": "14 - Inference and Production/Production AI/PII and Data Leakage.md",
+   "link": "[[PII and Data Leakage]]"
+  },
+  {
+   "dest": "14 - Inference and Production/Inference and Production MOC.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "14 - Inference and Production/Production AI/LLM Security and Prompt Injection.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Multimodal AI/Whisper.md",
+   "canonical": "17 - Papers/Attention and Transformers/Attention Is All You Need.md",
+   "link": "[[Attention Is All You Need]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Multimodal AI/DiT and FLUX.md",
+   "canonical": "17 - Papers/Attention and Transformers/Vision Transformer.md",
+   "link": "[[Vision Transformer]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Foundation Models and Multimodal MOC.md",
+   "canonical": "17 - Papers/Attention and Transformers/Vision Transformer.md",
+   "link": "[[Vision Transformer]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Foundation Models and Multimodal MOC.md",
+   "canonical": "16 - Interpretability and Research/Interpretability and Research MOC.md",
+   "link": "[[Interpretability and Research MOC]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Multimodal AI/CLIP.md",
+   "canonical": "17 - Papers/Attention and Transformers/Vision Transformer.md",
+   "link": "[[Vision Transformer]]"
+  },
+  {
+   "dest": "11 - Foundation Models and Multimodal/Multimodal AI/LLaVA.md",
+   "canonical": "17 - Papers/Attention and Transformers/Vision Transformer.md",
+   "link": "[[Vision Transformer]]"
+  },
+  {
+   "dest": "16 - Interpretability and Research/Research Frontiers/State Space Models/Mamba-2 and Structured Attention.md",
+   "canonical": "17 - Papers/Efficiency/FlashAttention.md",
+   "link": "[[17 - Papers/Efficiency/FlashAttention.md|FlashAttention]]"
+  },
+  {
+   "dest": "15 - Agents and Tooling/Frameworks and Tools/Framework Selection Guide.md",
+   "canonical": "14 - Inference and Production/Inference/Continuous Batching.md",
+   "link": "[[Continuous Batching]]"
+  },
+  {
+   "dest": "15 - Agents and Tooling/Frameworks and Tools/Framework Selection Guide.md",
+   "canonical": "14 - Inference and Production/Inference/vLLM.md",
+   "link": "[[14 - Inference and Production/Inference/vLLM.md|vLLM]]"
+  },
+  {
+   "dest": "17 - Papers/Landmark LLMs/DeepSeek-V2 and V3.md",
+   "canonical": "08 - Attention and Transformers/Efficient Attention/GQA MQA and MLA.md",
+   "link": "[[GQA MQA and MLA]]"
+  },
+  {
+   "dest": "17 - Papers/Agents and RAG/Reflexion.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "17 - Papers/Agents and RAG/RAG.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "17 - Papers/Agents and RAG/RAG.md",
+   "canonical": "17 - Papers/Agents and RAG/RAG.md",
+   "link": "[[RAG]]"
+  },
+  {
+   "dest": "17 - Papers/Alignment and RLHF/Constitutional AI.md",
+   "canonical": "14 - Inference and Production/Production AI/LLM Security and Prompt Injection.md",
+   "link": "[[LLM Security and Prompt Injection]]"
+  },
+  {
+   "dest": "17 - Papers/Efficiency/PagedAttention and vLLM.md",
+   "canonical": "17 - Papers/Efficiency/PagedAttention and vLLM.md",
+   "link": "[[PagedAttention and vLLM]]"
+  },
+  {
+   "dest": "17 - Papers/Efficiency/EAGLE-3.md",
+   "canonical": "14 - Inference and Production/Inference and Production MOC.md",
+   "link": "[[Inference and Production MOC]]"
+  },
+  {
+   "dest": "17 - Papers/Efficiency/Multi-Token Prediction.md",
+   "canonical": "14 - Inference and Production/Inference and Production MOC.md",
+   "link": "[[Inference and Production MOC]]"
+  },
+  {
+   "dest": "17 - Papers/Landmark LLMs/LLaMA.md",
+   "canonical": "13 - Training and Adaptation/Pretraining/Pretraining Objectives and Scaling Laws.md",
+   "link": "[[Pretraining Objectives and Scaling Laws]]"
+  },
+  {
+   "dest": "17 - Papers/Landmark LLMs/LLaMA.md",
+   "canonical": "08 - Attention and Transformers/Transformer Architecture/GPT Family.md",
+   "link": "[[GPT Family]]"
+  },
+  {
+   "dest": "17 - Papers/Landmark LLMs/Mistral 7B.md",
+   "canonical": "08 - Attention and Transformers/Efficient Attention/GQA MQA and MLA.md",
+   "link": "[[GQA MQA and MLA]]"
+  },
+  {
+   "dest": "17 - Papers/Multimodal/Flamingo.md",
+   "canonical": "17 - Papers/Attention and Transformers/Vision Transformer.md",
+   "link": "[[Vision Transformer]]"
+  },
+  {
+   "dest": "17 - Papers/Attention and Transformers/Swin Transformer.md",
+   "canonical": "17 - Papers/Efficiency/Longformer.md",
+   "link": "[[Longformer]]"
+  },
+  {
+   "dest": "17 - Papers/Attention and Transformers/Swin Transformer.md",
+   "canonical": "17 - Papers/Attention and Transformers/Vision Transformer.md",
+   "link": "[[Vision Transformer]]"
+  },
+  {
+   "dest": "17 - Papers/Attention and Transformers/Swin Transformer.md",
+   "canonical": "17 - Papers/Papers MOC.md",
+   "link": "[[Papers MOC]]"
+  },
+  {
+   "dest": "17 - Papers/Attention and Transformers/DeiT v2.md",
+   "canonical": "11 - Foundation Models and Multimodal/Foundation Models and Multimodal MOC.md",
+   "link": "[[Foundation Models and Multimodal MOC]]"
+  },
+  {
+   "dest": "18 - Projects/Capstones/Build a Multi-Agent System.md",
+   "canonical": "18 - Projects/Implementations/Build Attention and Transformer From Scratch.md",
+   "link": "[[Build Attention and Transformer From Scratch]]"
+  },
+  {
+   "dest": "18 - Projects/Capstones/Build a Fine-Tuning Pipeline with LoRA and DPO.md",
+   "canonical": "13 - Training and Adaptation/Training and Adaptation MOC.md",
+   "link": "[[Training and Adaptation MOC]]"
+  },
+  {
+   "dest": "18 - Projects/Capstones/Build an RLHF Pipeline with PPO.md",
+   "canonical": "13 - Training and Adaptation/Training and Adaptation MOC.md",
+   "link": "[[Training and Adaptation MOC]]"
+  },
+  {
+   "dest": "18 - Projects/Capstones/Build a Knowledge-Graph Construction Pipeline.md",
+   "canonical": "15 - Agents and Tooling/Agents and Tooling MOC.md",
+   "link": "[[Agents and Tooling MOC]]"
+  },
+  {
+   "dest": "18 - Projects/Projects MOC.md",
+   "canonical": "18 - Projects/Projects MOC.md",
+   "link": "[[Projects MOC]]"
+  },
+  {
+   "dest": "18 - Projects/Mini-Projects/Build a Mini RAG Pipeline.md",
+   "canonical": "14 - Inference and Production/AI Infrastructure/Vector Storage with pgvector.md",
+   "link": "[[Vector Storage with pgvector]]"
+  },
+  {
+   "dest": "19 - Reference and Practice/Interview Prep/Coding Interview Questions.md",
+   "canonical": "19 - Reference and Practice/Interview Prep/Coding Interview Questions.md",
+   "link": "[[Coding Interview Questions]]"
+  },
+  {
+   "dest": "19 - Reference and Practice/Interview Prep/Coding Interview Questions.md",
+   "canonical": "19 - Reference and Practice/Interview Prep/Coding Interview Questions.md",
+   "link": "[[Coding Interview Questions]]"
+  },
+  {
+   "dest": "19 - Reference and Practice/Interview Prep/Coding Interview Questions.md",
+   "canonical": "19 - Reference and Practice/Interview Prep/Coding Interview Questions.md",
+   "link": "[[Coding Interview Questions]]"
+  },
+  {
+   "dest": "19 - Reference and Practice/Interview Prep/Conceptual Interview Questions.md",
+   "canonical": "19 - Reference and Practice/Interview Prep/Conceptual Interview Questions.md",
+   "link": "[[Conceptual Interview Questions]]"
+  },
+  {
+   "dest": "19 - Reference and Practice/Interview Prep/Interview Prep MOC.md",
+   "canonical": "19 - Reference and Practice/Interview Prep/Interview Prep MOC.md",
+   "link": "[[Interview Prep MOC]]"
+  },
+  {
+   "dest": "19 - Reference and Practice/Interview Prep/System Design Interview Questions.md",
+   "canonical": "19 - Reference and Practice/Interview Prep/System Design Interview Questions.md",
+   "link": "[[System Design Interview Questions]]"
+  }
+ ],
+ "skipped_no_heading": [],
+ "verify_failures": []
+}

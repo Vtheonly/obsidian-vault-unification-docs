@@ -146,3 +146,4 @@ For teams building on the stack, three rules of thumb:
 - [[AI vs ML vs DL]]
 - [[01 - Foundations/AI ML and DL Hierarchy/Applications of Deep Learning|Applications of Deep Learning]]
 - [[History and Evolution of AI]]
+- [[Roles and Careers in Data and AI]]

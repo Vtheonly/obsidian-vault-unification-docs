@@ -194,3 +194,5 @@ Reading the original paper is the fastest way to understand what RAG is and why 
 - [[T5 and BART]] — the generator family RAG built on.
 - [[Hallucination]] — the failure mode retrieval mitigates.
 - [[Build a Mini RAG Pipeline]] and [[Build a RAG Evaluation Harness]] — hands-on RAG projects.
+- [[Agents and Tooling MOC]]
+- [[RAG]]

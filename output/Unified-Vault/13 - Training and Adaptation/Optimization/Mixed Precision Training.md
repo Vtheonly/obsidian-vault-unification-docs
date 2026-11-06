@@ -228,3 +228,5 @@ Two of these deserve emphasis: periodic FP32 validation is the cheap way to catc
 - [[Optimizers and Learning Rate Schedulers]] — optimizers used with mixed precision and how schedules interact with precision.
 - [[Quantization]] — inference-time quantization (related but distinct).
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Weight Initialization|Weight Initialization]] — the FP32 initializers that must be cast, not re-derived, in FP16.
+- [[Optimization Essentials]]
+- [[Learning Rate Schedules]]

@@ -652,3 +652,4 @@ The canonical references are Hochreiter & Schmidhuber (1997), *Long Short-Term M
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Vanishing and Exploding Gradients|Vanishing and Exploding Gradients]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Weight Initialization|Weight Initialization]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Batch Normalization|Batch Normalization]]
+- [[Mamba]]

@@ -308,3 +308,4 @@ The primary papers, one per strategy:
 - [[Speculative Decoding]] — the draft model must match the target's sampling.
 - [[Gateway and Router Patterns]] — per-request sampling params.
 - [[Inference and Production MOC]] — the production-side companion area.
+- [[Entropy Cross-Entropy and KL Divergence]]

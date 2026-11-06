@@ -196,3 +196,4 @@ The original paper is Liu, H., Li, C., Wu, Q., & Lee, Y. J. (2023). *Visual Inst
 - [[Whisper]] — the parallel open-source template for speech.
 - [[Hallucination]] — the failure mode LLaVA shares with text LLMs.
 - [[13 - Training and Adaptation/Fine-Tuning/LoRA|LoRA]] — the parameter-efficient option for stage 2.
+- [[Vision Transformer]]

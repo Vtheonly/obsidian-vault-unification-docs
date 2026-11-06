@@ -514,3 +514,5 @@ Why can't a data engineer and an ML engineer simply replace each other? A **data
 - [[Gradients and Gradient Descent]]
 - [[04 - Machine Learning/Regression/Linear Regression|Linear Regression]]
 - [[04 - Machine Learning/Regression/Logistic Regression|Logistic Regression]]
+- [[Agent vs Workflow vs LLM Application]]
+- [[Agents and Tooling MOC]]

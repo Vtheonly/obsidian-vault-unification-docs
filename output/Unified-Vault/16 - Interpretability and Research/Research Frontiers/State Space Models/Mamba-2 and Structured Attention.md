@@ -155,3 +155,4 @@ For AI engineers, Mamba-2 matters when choosing between SSM, attention, or hybri
 - [[Self-Attention]] — the other side of the duality.
 - [[RWKV and RetNet]] — alternative hybrids.
 - [[Hyena and Long Convolutions]] — the long-convolution alternative.
+- [[17 - Papers/Efficiency/FlashAttention.md|FlashAttention]]

@@ -227,3 +227,4 @@ Attention is a soft, differentiable lookup — a weighted average of values, wei
 - [[The Bottleneck Problem]]
 - [[Long-Range Dependencies]]
 - [[07 - Sequence Models/Motivation and Recurrence/Vanishing and Exploding Gradients|Vanishing and Exploding Gradients]]
+- [[Neural Network Foundations MOC]]

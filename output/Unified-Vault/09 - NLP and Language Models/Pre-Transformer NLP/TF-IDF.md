@@ -260,3 +260,6 @@ Salton et al. (1975), *A Vector Space Model for Automatic Indexing*. Manning, Ra
 - [[Contextual Embeddings ELMo to BERT]] — contextual embeddings
 - [[N-Gram Language Models]] — pre-neural language modeling
 - [[Tokenization Overview]] — the preprocessing (lowercasing, stemming, stop words) TF-IDF depends on
+- [[Chunking, Hybrid Search, and Reranking]]
+- [[Embedding Models for Retrieval]]
+- [[Agents and Tooling MOC]]

@@ -265,3 +265,7 @@ For most applications, this threshold is far away. Start with pgvector; migrate 
 - [[Embedding Models for Retrieval]] — the models that produce the embeddings stored and searched here.
 - [[Observability Stack]] — latency percentiles, cache ratios, and alerting for production services.
 - [[Messaging with Kafka and Celery]] — queue-backed asynchronous work such as background embedding jobs.
+- [[RAG Pipeline Overview]]
+- [[Chunking, Hybrid Search, and Reranking]]
+- [[Memory Operations]]
+- [[Vector Memory Backends]]

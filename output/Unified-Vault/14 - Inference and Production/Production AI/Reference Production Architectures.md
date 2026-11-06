@@ -255,3 +255,4 @@ Most production systems combine patterns. A customer support platform might use 
 - [[14 - Inference and Production/Inference/vLLM|vLLM]] — the default LLM backend and stateless replica server
 - [[KV Cache Mechanics]] — the model-server cache prefix caching shares
 - [[LLM-as-Judge Evaluation]] — the faithfulness checker behind RAG quality control
+- [[PII and Data Leakage]]

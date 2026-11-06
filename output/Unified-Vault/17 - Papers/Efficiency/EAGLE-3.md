@@ -162,3 +162,4 @@ By 2026, EAGLE-3 is the default spec-decoding method in production. The next res
 - [[14 - Inference and Production/Inference/TensorRT-LLM|TensorRT-LLM]] — another engine integrating EAGLE-3.
 - [[SGLang]] and [[TGI]] — serving engines with native EAGLE-3 support.
 - [[Continuous Batching]] — the throughput-oriented alternative whose interaction with spec decoding remains open.
+- [[Inference and Production MOC]]

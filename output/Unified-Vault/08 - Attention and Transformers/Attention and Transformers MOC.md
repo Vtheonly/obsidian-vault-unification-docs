@@ -222,5 +222,10 @@ The goal is deep understanding of the core Transformer, not exhaustive coverage 
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Batch Normalization|Batch Normalization]] — the normalization scheme LayerNorm replaces in Transformers.
 - [[06 - Computer Vision/CNN Foundations and Philosophy/Introduction and Foundations of CNNs|Introduction and Foundations of CNNs]] — the vision counterpart ViT challenges.
 - [[NLP and Language Models MOC]] — modern LLMs use all of these attention variants; tokenization and language-modeling evaluation continue there.
+- [[Mathematics MOC]]
+- [[Attention and Transformers MOC]]
+- [[Large Language Models MOC]]
+- [[Inference and Production MOC]]
+- [[Interpretability and Research MOC]]
 
 The next architectural family — generative models, where decoder-only Transformers power autoregressive generation — begins where this area ends.

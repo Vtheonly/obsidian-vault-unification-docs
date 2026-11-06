@@ -196,3 +196,6 @@ For production, the most important evaluation is **retrieval recall@K on your ow
 - [[BM25]] — the lexical baseline used to mine hard negatives.
 - [[Vector Storage with pgvector]] — where the resulting embeddings are stored.
 - [[14 - Inference and Production/Inference/vLLM|vLLM]] — serving stack for batch embedding.
+- [[RAG Pipeline Overview]]
+- [[Chunking, Hybrid Search, and Reranking]]
+- [[Vector Memory Backends]]

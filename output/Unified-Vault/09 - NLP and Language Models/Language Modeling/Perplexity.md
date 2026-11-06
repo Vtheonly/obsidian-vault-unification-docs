@@ -243,3 +243,6 @@ Goodfellow et al., *Deep Learning* — Chapter 3.13 (Information Theory) — gro
 - [[GPT Family]] — PPL is the training objective of decoder-only autoregressive LMs
 - [[RoPE]] — naive extension past training length hurts long-context PPL
 - [[YaRN and NTK-Aware Scaling]] — long-context PPL evaluation and extension schemes
+- [[Large Language Models MOC]]
+- [[Entropy Cross-Entropy and KL Divergence]]
+- [[Probability Essentials]]

@@ -223,3 +223,4 @@ Four pitfalls cover most failures. A wrong scaling factor — too aggressive mea
 - [[Sinusoidal and Learned Positional Encodings]] — why absolute encodings can't do this
 - [[08 - Attention and Transformers/Efficient Attention/FlashAttention|FlashAttention]] — required for long-context memory
 - [[GQA MQA and MLA]] — keeping the KV cache manageable at length
+- [[KV Cache Mechanics]]

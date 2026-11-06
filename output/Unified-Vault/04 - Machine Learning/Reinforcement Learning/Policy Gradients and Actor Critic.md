@@ -217,3 +217,4 @@ Two details deserve attention. The advantages are computed against `v.detach()`,
 - [[Q-Learning and Deep Q Networks]]
 - [[Proximal Policy Optimization]]
 - [[Machine Learning MOC]]
+- [[RLHF with PPO]]

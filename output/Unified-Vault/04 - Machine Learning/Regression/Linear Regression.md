@@ -939,3 +939,4 @@ On teste le modèle final sur les 10 000 images de test. Cette étape est crucia
 - [[Optimizers and Learning Rate Schedulers]]
 - [[Model Evaluation Metrics]]
 - [[Gradient Boosting]]
+- [[Entropy Cross-Entropy and KL Divergence]]

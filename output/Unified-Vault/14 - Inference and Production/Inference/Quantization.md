@@ -324,3 +324,4 @@ Use FP8 for weights (70 GB) + FP8 KV cache. Total: ~70 GB weights + ~10 GB KV ca
 - [[QLoRA]] — NF4 quantization for fine-tuning.
 - [[Continuous Batching]] — quantization raises how many requests fit per GPU.
 - [[14 - Inference and Production/Inference/vLLM|vLLM]] and [[14 - Inference and Production/Inference/TensorRT-LLM|TensorRT-LLM]] — serving engines with GPTQ/AWQ/FP8 support.
+- [[Large Language Models MOC]]

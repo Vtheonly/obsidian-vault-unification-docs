@@ -263,3 +263,5 @@ Which constraint type to pick: JSON schema for structured data output (tool call
 - [[14 - Inference and Production/Inference/TensorRT-LLM|TensorRT-LLM]] — production engine with constrained decoding support.
 - [[Speculative Decoding]] — another decoding-time optimization.
 - [[Guardrails]] — constrained decoding as a safety tool.
+- [[Function Calling]]
+- [[SGLang]]

@@ -320,3 +320,6 @@ The distinctions interviewers probe about ICL compress into six questions.
 - [[KV Cache Mechanics]] — the machinery that makes caching a shared few-shot prefix across requests worthwhile.
 - [[Instruction Tuning and Chat Templates]] — SFT builds on ICL.
 - [[DPO Derivation]] — preference learning refines ICL behavior.
+- [[Mechanistic Interpretability]]
+- [[Agent vs Workflow vs LLM Application]]
+- [[Chain of Thought]]

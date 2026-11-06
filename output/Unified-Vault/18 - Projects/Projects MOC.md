@@ -79,3 +79,4 @@ Five projects are planned to extend the collection next:
 - [[Machine Learning MOC]] — the reinforcement-learning foundations, PPO included, under the alignment capstones.
 - [[Large Language Models MOC]] — the LLM foundations under the tiny trainer and the fine-tuning pipelines.
 - [[Interpretability and Research MOC]] — the research frontier, state space models and long context, that the mini SSM and long-context harness touch.
+- [[Projects MOC]]

@@ -234,3 +234,5 @@ The classic GQA bug is **forgetting to expand K/V across heads after caching**: 
 - [[Sparse Attention]] — restricts the attention pattern itself.
 - [[Mixture of Experts]] — DeepSeek-V2/V3 pair MLA with a MoE architecture.
 - [[The Transformer]]
+- [[DeepSeek Architecture]]
+- [[KV Cache Mechanics]]

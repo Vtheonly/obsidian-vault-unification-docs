@@ -154,3 +154,4 @@ Four mistakes recur. Mixing up base vs instruct models — base models don't fol
 - [[Feed-Forward Network]], [[Normalization Layers]], [[Mixture of Experts]]
 - [[GQA MQA and MLA]], [[RoPE]], [[Sliding Window Attention]], [[YaRN and NTK-Aware Scaling]]
 - [[Embedding Layer]]
+- [[Interpretability and Research MOC]]

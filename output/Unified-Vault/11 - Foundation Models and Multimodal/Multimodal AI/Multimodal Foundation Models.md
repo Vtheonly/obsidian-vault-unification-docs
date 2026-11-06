@@ -134,3 +134,4 @@ Five directions dominate the agenda. True omnimodal models would handle text + i
 - [[Reasoning Models]] and [[Code Models]] — sister domains.
 - [[Embedding Model Training]] — related training approach.
 - [[Hallucination]], [[RLHF with PPO]], and [[Instruction Tuning and Chat Templates]] — training and failure-mode background.
+- [[Build a Vision-Language Model]]

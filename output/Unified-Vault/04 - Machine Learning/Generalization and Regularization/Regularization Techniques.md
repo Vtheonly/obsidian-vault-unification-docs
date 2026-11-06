@@ -239,5 +239,9 @@ The modern recipe for large models combines weight decay + dropout (lightly) + l
 - Kukačka et al. (2017), *Regularization for Deep Learning: A Taxonomy* (great survey).
 
 ## See also
+- [[Adam Optimizer Derivation]]
+- [[Normalization Layers]]
+- [[13 - Training and Adaptation/Fine-Tuning/LoRA.md|LoRA]]
+
 
 [[Bias Variance Tradeoff]] explains why these techniques work — variance reduction is the mechanism behind every one of them. [[Optimizers and Learning Rate Schedulers]] covers AdamW and the decoupled weight-decay implementation; [[Model Evaluation Metrics]] covers the validation signals that drive early stopping; [[Loss Functions]] is the base objective the penalties modify; [[Gradient Descent]] is the optimizer whose noise provides implicit regularization; and [[Random Forests and Bagging]] develops the ensemble view dropout approximates at the activation level. Ridge and lasso in their classical linear-model setting connect to [[Regression Fundamentals]]. The map of all machine-learning topics is at [[Machine Learning MOC]].

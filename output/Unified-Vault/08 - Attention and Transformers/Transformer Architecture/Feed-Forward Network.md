@@ -154,3 +154,5 @@ Four traps recur. A wrong FFN hidden dimension for SwiGLU — it must be $\frac{
 - [[Mixture of Experts]], [[Normalization Layers]], [[GPT Family]]
 - [[Embedding Layer]]
 - [[06 - Computer Vision/Core Operators and Geometry/Activation and Pooling Layers|Activation and Pooling Layers]]
+- [[Activation Functions]]
+- [[Mechanistic Interpretability]]

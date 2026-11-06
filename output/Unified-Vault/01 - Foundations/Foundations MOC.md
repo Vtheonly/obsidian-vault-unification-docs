@@ -230,3 +230,4 @@ Some themes appear in multiple parts of the map — keep them in mind as you tra
 - [[Python Language Overview]] — the programming and data-tooling area.
 - [[Machine Learning MOC]] — where the ML notes apply these foundations.
 - [[Neural Network Foundations MOC]] — neural networks build directly on the math prerequisites here.
+- [[Foundations MOC]]

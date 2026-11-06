@@ -258,3 +258,5 @@ Every N steps (e.g., 10K), run a few batches in FP32 to validate that mixed prec
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Vanishing and Exploding Gradients|Vanishing and Exploding Gradients]] — the underlying gradient pathologies.
 - Building a distributed-training pipeline (a capstone project) — the hands-on treatment of checkpointing and recovery.
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Weight Initialization|Weight Initialization]] — initialization's role in early stability.
+- [[Optimization Essentials]]
+- [[Learning Rate Schedules]]

@@ -917,3 +917,5 @@ Beyond supervised metrics, retrieval systems (including RAG pipelines) are score
 - [[Clustering]]
 - [[Gradient Descent]]
 - [[Optimizers and Learning Rate Schedulers]]
+- [[Entropy Cross-Entropy and KL Divergence]]
+- [[Agents and Tooling MOC]]

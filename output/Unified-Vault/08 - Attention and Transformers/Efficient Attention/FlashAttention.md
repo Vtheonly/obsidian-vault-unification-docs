@@ -235,3 +235,5 @@ The recurring mistakes: a **head dimension not a multiple of 8** (Tensor Cores r
 - [[Linear Attention]] — approximate $O(n)$ methods FA displaced.
 - [[Sliding Window Attention]] — block-sparse pattern FA kernels accelerate.
 - [[GQA MQA and MLA]] — KV-cache-side efficiency, complementary to FA.
+- [[PagedAttention]]
+- [[Inference and Production MOC]]

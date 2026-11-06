@@ -485,3 +485,4 @@ For complex tasks with shared state, the **blackboard** pattern (from classic AI
 - [[Planner-Executor Pattern]] — the pattern implemented here.
 - [[LangGraph]], [[AutoGen]], [[CrewAI]], and [[OpenAI SDK and Agents SDK]] — production frameworks.
 - [[Autonomous Agent Lifecycles]] and [[Human-in-the-Loop Patterns]] — long-running and approval patterns.
+- [[Build Attention and Transformer From Scratch]]

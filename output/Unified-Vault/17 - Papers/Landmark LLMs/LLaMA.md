@@ -177,3 +177,5 @@ For AI engineers, LLaMA is the foundation of the open-weights LLM world. If you'
 - [[Mistral 7B]] and [[DeepSeek-V2 and V3]] — successors in the open-weights lineage
 - [[Llama Family Architecture]] and [[Llama Mistral Qwen Comparison]] — architecture-focused treatments
 - [[Papers MOC]]
+- [[Pretraining Objectives and Scaling Laws]]
+- [[GPT Family]]

@@ -229,3 +229,4 @@ Four recurring mistakes:
 - [[Guardrails]] — production application.
 - [[13 - Training and Adaptation/Fine-Tuning/LoRA|LoRA]] — representation engineering can be seen as "LoRA for behavior".
 - [[GPT-2]] — the model used in the logit lens worked example.
+- [[Inference and Production MOC]]

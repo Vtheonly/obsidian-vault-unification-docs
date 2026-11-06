@@ -402,3 +402,5 @@ The primary sources behind the results above are worth reading directly:
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Batch Normalization|Batch Normalization]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Dropout and Regularization|Dropout and Regularization]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Hyperparameters and Network Configuration|Hyperparameters and Network Configuration]]
+- [[Normalization Layers]]
+- [[Transformer Block]]

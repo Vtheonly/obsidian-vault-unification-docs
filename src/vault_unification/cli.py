@@ -32,6 +32,7 @@ from . import kuextract as kuextract_mod
 from . import kufidelity as kufidelity_mod
 from . import linkcheck as linkcheck_mod
 from . import mdextract as mdextract_mod
+from . import seealsoaudit as seealsoaudit_mod
 from . import omission as omission_mod
 from . import overlap as overlap_mod
 from . import registry as registry_mod
@@ -760,6 +761,18 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="path the database must not be written under (repeatable); default: <repo>/source-vaults when present",
     )
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- see-also-audit ----
+    p = sub.add_parser(
+        "see-also-audit",
+        help="mechanical See-Also cross-link carry-over audit over source vaults vs the unified vault (AUDIT-012)",
+    )
+    p.add_argument("--master-root", required=True, help="Master AI (vault B) root, read-only")
+    p.add_argument("--course-root", required=True, help="AI Course (vault A) root, read-only")
+    p.add_argument("--file-mapping", required=True, help="file-mapping JSONL (vault, source_path -> canonical_paths)")
+    p.add_argument("--output-root", required=True, help="unified vault root, read-only during scanning")
+    p.add_argument("--decisions", help="optional orchestrator decisions JSONL (resolve/exclude rows with rationale) applied deterministically")
     p.add_argument("--report", help="optional JSON report path")
 
     return parser
@@ -1975,8 +1988,38 @@ def cmd_check_prompt(args) -> int:
     return 0 if result["ok"] else 1
 
 
+def cmd_see_also_audit(args) -> int:
+    result = seealsoaudit_mod.audit_see_also(
+        master_root=args.master_root,
+        course_root=args.course_root,
+        file_mapping=args.file_mapping,
+        output_root=args.output_root,
+        decisions=getattr(args, "decisions", None),
+    )
+    payload = {"command": "see-also-audit", "result": result}
+    _write_report_safe(args, "see-also-audit", payload)
+    _emit_summary(
+        {
+            "unique_source_note_target_pairs": result["denominators"][
+                "unique_source_note_target_pairs"
+            ],
+            "see_also_link_occurrences": result["denominators"][
+                "see_also_link_occurrences"
+            ],
+            "results": result["results"],
+            "dropped_requires_review": result["results"]["dropped"],
+        }
+    )
+    # exit 1 when any pair needs orchestrator review (dropped defects or
+    # ambiguity), mirroring check-links' problem semantics
+    reviewable = result["results"]["dropped"] + result["results"]["ambiguous_source_target"] \
+        + result["results"]["source_note_unmapped"] + result["results"]["dest_missing"]
+    return 1 if reviewable else 0
+
+
 HANDLERS = {
     "selftest": cmd_selftest,
+    "see-also-audit": cmd_see_also_audit,
     "check-paths": cmd_check_paths,
     "inventory": cmd_inventory,
     "verify-manifest": cmd_verify_manifest,

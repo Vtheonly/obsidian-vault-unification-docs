@@ -555,3 +555,5 @@ Attention quantization is another lever: FP8 attention (Hopper+) doubles through
 - [[From RNNs to Attention]]
 - [[Long-Range Dependencies]]
 - [[The Bottleneck Problem]]
+- [[Dot Product]]
+- [[KV Cache Mechanics]]

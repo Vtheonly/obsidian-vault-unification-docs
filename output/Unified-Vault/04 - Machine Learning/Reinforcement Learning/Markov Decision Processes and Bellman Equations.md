@@ -200,3 +200,4 @@ Four failure modes recur whenever MDPs are used to model real problems:
 - [[Policy Gradients and Actor Critic]]
 - [[Proximal Policy Optimization]]
 - [[Machine Learning MOC]]
+- [[RLHF with PPO]]

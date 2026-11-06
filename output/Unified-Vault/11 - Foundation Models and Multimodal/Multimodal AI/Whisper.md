@@ -191,3 +191,4 @@ The original paper is Radford, A., Kim, J. W., Xu, T., Brockman, G., McLeavey, C
 - [[Cross-Modal Attention]] — the encoder-decoder cross-attention pattern Whisper's decoder relies on.
 - [[LLaVA]] — the analogous open-source template on the vision-language side.
 - [[Hallucination]] — the failure mode behind Whisper's hallucinated transcripts on silent audio.
+- [[Attention Is All You Need]]

@@ -174,3 +174,4 @@ Related notes across training, fine-tuning, and serving:
 - [[GPU Infrastructure and Sizing]] — the NVLink/InfiniBand/Ethernet hierarchy and cluster topology planning
 - [[14 - Inference and Production/Inference/vLLM|vLLM]] — tensor parallelism at inference; distributed inference uses similar techniques
 - Building a distributed training pipeline (a capstone project) — hands-on FSDP implementation with checkpointing
+- [[Inference and Production MOC]]

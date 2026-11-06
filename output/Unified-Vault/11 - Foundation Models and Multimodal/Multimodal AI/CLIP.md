@@ -174,3 +174,4 @@ The original paper is arXiv:2103.00020. OpenCLIP lives at github.com/mlfoundatio
 - [[Vision Foundation Models]] — the encoder landscape, including DINOv2.
 - [[Embedding Models for Retrieval]] — retrieval over contrastive embeddings.
 - [[Embedding Model Training]] — training objectives for embedding models.
+- [[Vision Transformer]]

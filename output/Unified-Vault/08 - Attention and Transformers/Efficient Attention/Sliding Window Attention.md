@@ -256,3 +256,4 @@ The main pitfalls: **treating SWA as equivalent to full attention** (quality dif
 - [[RoPE]] — positional encoding whose in-window positions must stay correct.
 - [[Long-Range Dependencies]] — the capability SWA trades away.
 - [[06 - Computer Vision/CNN Foundations and Philosophy/Introduction and Foundations of CNNs|Introduction and Foundations of CNNs]] — the stacking-local-operations principle SWA borrows.
+- [[KV Cache Mechanics]]

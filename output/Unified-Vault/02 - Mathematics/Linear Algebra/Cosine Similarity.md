@@ -318,3 +318,4 @@ The table's math is worth reading once outside the grid: the Manhattan entry is 
 - [[Embedding Models for Retrieval]] — models designed for cosine similarity.
 - [[CLIP]] — contrastive multimodal embeddings.
 - [[Principal Component Analysis]] and [[t-SNE and UMAP]] — dimensionality-reduction mitigations for the curse of dimensionality.
+- [[Agents and Tooling MOC]]

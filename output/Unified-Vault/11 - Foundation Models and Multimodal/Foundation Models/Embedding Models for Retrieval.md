@@ -225,3 +225,4 @@ These models descend from the static-embedding tradition (Word2Vec, GloVe, FastT
 - [[Contextual Embeddings ELMo to BERT]] — the pre-BERT history of the encoder lineage.
 - [[Word2Vec GloVe and FastText]] — the static-embedding ancestors.
 - [[Vector Storage with pgvector]] — the storage layer for these embeddings.
+- [[Agents and Tooling MOC]]

@@ -291,3 +291,4 @@ BERT kicked off the modern NLP era — the pretrain-then-fine-tune paradigm orig
 - [[GPT Family]]
 - [[T5 and BART]]
 - [[Perplexity]]
+- [[Embedding Models for Retrieval]]

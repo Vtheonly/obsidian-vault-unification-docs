@@ -138,5 +138,8 @@ The neighbouring area maps:
 - [[Inference and Production MOC]] — what comes after training: running the fine-tuned model.
 - [[Attention and Transformers MOC]] — the architectures being trained.
 - [[Optimizers and Learning Rate Schedulers]] — the Adam optimizer and the learning-rate schedules behind most pretraining runs.
+- [[Adam Optimizer Derivation]]
+- [[Learning Rate Schedules]]
+- [[Interpretability and Research MOC]]
 
 The pretraining half produces the base model, the fine-tuning half turns it into a product, and [[Inference and Production MOC]] is where it goes to work.

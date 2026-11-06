@@ -760,3 +760,4 @@ Hands-on builds that exercise the same designs:
 - [[Build an Agent Observability Platform]]
 - [[Build a Speculative Decoding Server]]
 - [[Build a Model Distillation Pipeline]]
+- [[System Design Interview Questions]]

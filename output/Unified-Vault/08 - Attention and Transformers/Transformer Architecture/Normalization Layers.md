@@ -162,3 +162,4 @@ Five traps recur. Using BatchNorm in Transformers — it doesn't work, because b
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Batch Normalization|Batch Normalization]]
 - [[05 - Neural Network Foundations/Training Dynamics and Stability/Weight Initialization|Weight Initialization]]
 - [[06 - Computer Vision/Core Operators and Geometry/Activation and Pooling Layers|Activation and Pooling Layers]]
+- [[Activation Functions]]

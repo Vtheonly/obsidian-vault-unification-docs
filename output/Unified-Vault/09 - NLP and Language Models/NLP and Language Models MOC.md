@@ -49,3 +49,5 @@ Transformers operate on **tokens** and produce **embeddings**. To understand the
 - [[Attention and Transformers MOC]] — what replaced RNNs.
 - [[The Transformer]] — the architecture that consumes the tokens and embeddings this area introduces.
 - [[GPT Family]] — the modern language models.
+- [[Large Language Models MOC]]
+- [[Agents and Tooling MOC]]

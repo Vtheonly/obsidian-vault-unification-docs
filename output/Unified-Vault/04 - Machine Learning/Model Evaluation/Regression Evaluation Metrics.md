@@ -243,3 +243,5 @@ For deeper study, three references stand out: Hastie, Tibshirani, and Friedman, 
 - [[Gradient Descent]]
 - [[Bias Variance Tradeoff]]
 - [[Regularization Techniques]]
+- [[Entropy Cross-Entropy and KL Divergence]]
+- [[Agents and Tooling MOC]]

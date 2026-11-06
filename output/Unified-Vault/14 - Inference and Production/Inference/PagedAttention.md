@@ -165,3 +165,4 @@ For primary sources, see Kwon et al. (2023), *Efficient Memory Management for La
 - [[Speculative Decoding]] — draft and target share prefix blocks.
 - [[Quantization]] — orthogonal to paging; combine with INT8 KV cache for further savings.
 - [[08 - Attention and Transformers/Efficient Attention/FlashAttention|FlashAttention]] — the complementary kernel-level attention optimization.
+- [[Large Language Models MOC]]

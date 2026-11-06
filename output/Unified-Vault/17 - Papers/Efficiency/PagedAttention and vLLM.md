@@ -182,3 +182,4 @@ For AI engineers in 2024–2026, vLLM is the reference implementation for self-h
 - [[Continuous Batching]] — the scheduling strategy paired with paging.
 - [[14 - Inference and Production/Inference/TensorRT-LLM|TensorRT-LLM]], [[SGLang]] and [[TGI]] — successor and rival serving engines.
 - [[Build a Speculative Decoding Server]] — a serving project that builds on these engines.
+- [[PagedAttention and vLLM]]

@@ -1916,6 +1916,9 @@ These six questions and model answers cover the distinctions interviewers most o
 10. **Modern architectures use all four solutions together**: ReLU + BatchNorm + Residual Connections + Gradient Clipping. This combination enables training of networks with hundreds or thousands of layers.
 
 ## See also
+- [[Residual Connections]]
+- [[Normalization Layers]]
+
 
 [[Neural Network Foundations MOC]] maps the whole area. The algorithm whose gradients are at stake is developed in [[Backpropagation]], with the CNN-specific treatment in [[05 - Neural Network Foundations/Backpropagation/Backpropagation and Gradient Flow in CNNs|Backpropagation and Gradient Flow in CNNs]] and the vectorized formulation in [[Matrix Implementation of Backpropagation]]; the activation functions whose derivative bounds drive the whole analysis are cataloged in [[Activation Functions]]. The two sibling remedies most intertwined with this note are [[05 - Neural Network Foundations/Training Dynamics and Stability/Weight Initialization|Weight Initialization]] (Xavier/He schemes and the pre-2010 history) and [[05 - Neural Network Foundations/Training Dynamics and Stability/Batch Normalization|Batch Normalization]] (the full normalization machinery, including LayerNorm alternatives); learning-rate and clipping-threshold choices connect to [[05 - Neural Network Foundations/Training Dynamics and Stability/Hyperparameters and Network Configuration|Hyperparameters and Network Configuration]]. The networks these pathologies strike are covered in [[Artificial Neural Networks]], [[Perceptrons and Multi-Layer Perceptrons]], [[Forward Propagation]], [[Neural Network Architecture and Notation]], [[Convolutional Neural Networks]], and [[Recurrent Neural Networks]], and the regularization perspective on the same training-dynamics territory is in [[05 - Neural Network Foundations/Training Dynamics and Stability/Dropout and Regularization|Dropout and Regularization]].
 

@@ -206,3 +206,4 @@ For AI engineers, DeepSeek-V2/V3 matter for two reasons. First, MLA and auxiliar
 - [[Mixture of Experts]] — the sparse-compute foundation
 - [[DeepSeek Architecture]] — architecture-focused treatment
 - [[Papers MOC]]
+- [[GQA MQA and MLA]]

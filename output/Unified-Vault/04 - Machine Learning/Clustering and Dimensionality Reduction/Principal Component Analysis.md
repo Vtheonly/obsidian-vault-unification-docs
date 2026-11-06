@@ -182,3 +182,4 @@ Related notes in the vault:
 - [[Support Vector Machines]]
 - [[Kernel Trick]]
 - [[Bias Variance Tradeoff]]
+- [[Matrix Decomposition]]

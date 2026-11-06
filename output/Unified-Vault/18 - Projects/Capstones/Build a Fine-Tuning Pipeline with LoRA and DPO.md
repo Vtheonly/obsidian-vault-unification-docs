@@ -406,3 +406,4 @@ The diagnostic table maps observed symptoms to their usual causes and fixes:
 - [[Build a Model Distillation Pipeline]] — synthetic SFT data from a teacher.
 - [[Build a Quantization Toolkit]] — the perplexity implementation and post-merge quantization workflow.
 - [[Build a Speculative Decoding Server]] — speeding up the deployed model.
+- [[Training and Adaptation MOC]]

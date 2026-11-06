@@ -378,3 +378,5 @@ The primary sources behind the numbers in this note:
 - [[BERT vs GPT vs T5]] — the objectives compared from the architecture side
 - [[In-Context Learning]] — a capability that emerges with scale, not smoothly with loss
 - [[Large Language Models MOC]] — the models this recipe produces
+- [[Learning Rate Schedules]]
+- [[Adam Optimizer Derivation]]

@@ -269,3 +269,4 @@ The original DiT paper is arXiv:2212.09748. FLUX weights and documentation live 
 - [[Quantization]] — INT8/FP8 quantization for FLUX inference.
 - [[Multimodal Foundation Models]] and [[LLaVA]] — the understanding side of multimodal models.
 - [[Vision Foundation Models]] — the vision encoder landscape.
+- [[Vision Transformer]]

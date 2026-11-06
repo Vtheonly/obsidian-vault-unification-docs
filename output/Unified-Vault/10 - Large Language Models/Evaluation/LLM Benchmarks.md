@@ -228,3 +228,4 @@ Related notes for the concepts this note touches:
 - [[LLM-as-Judge Evaluation]] — judge-based benchmarks and judge bias mitigation.
 - [[A-B Testing and Shadow Deployment]] — production evaluation.
 - [[Pretraining Objectives and Scaling Laws]] — benchmark scores scale with compute.
+- [[Inference and Production MOC]]
