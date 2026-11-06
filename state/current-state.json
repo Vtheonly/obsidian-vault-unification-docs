@@ -24,7 +24,7 @@
         "words_outside_fences": 990007,
         "words_total": 1157937
     },
-    "current_task_id": "INTEG-005",
+    "current_task_id": "INTEG-006",
     "execution_environment": "Z AI / GLM 5.3 with available subagents",
     "framework_evidence": {
         "capabilities": "reports/bootstrap/boot-004-capabilities.json",
@@ -95,8 +95,8 @@
         }
     },
     "knowledge_registry_initialized": true,
-    "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-07-integ-session34.json",
-    "notes": "INTEG campaign S34 complete: SYNPATH+VAULTX 235/235 judged (36 covered / 6 equivalent / 41 partial / 152 absent) with mechanically verified quotes and 33/33 orchestrator re-review agreement. 894/1,233 items judged (72.5%). F-0048 carry-over rule + F-0049 denominator correction established. Next: S35 (remaining clusters, 374 unique items / 345 fresh), then S36 decisions.",
+    "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-07-integ-session35.json",
+    "notes": "INTEG campaign audit phase complete (S32 MEDNLP + S33 2D3D + S34 SYNPATH/VAULTX + S35 remaining clusters): 1,233/1,233 items judged with mechanically verified evidence and 41/41 + 30/30 + 33/33 + 42/42 orchestrator re-review agreement; zero cross-file verdict conflicts. Campaign-wide: 277 covered / 77 equivalent / 253 partial / 626 absent. Next: S36 decision ledger (INTEG-006), then S37-S43 execution waves.",
     "output_synthesis_started": true,
     "phase_zero_rebaseline": {
         "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
@@ -245,7 +245,7 @@
         }
     ],
     "source_vaults_located": true,
-    "stage": "integration-campaign (S32 MEDNLP + S33 2D3D + S34 SYNPATH/VAULTX judgments complete; S35 remaining clusters next)",
+    "stage": "integration-campaign (AUDIT PHASE COMPLETE: all 1,233 items judged; S36 decision ledger next)",
     "status": "in_progress",
     "verification_pilot_evidence": {
         "defect_classes": 12,

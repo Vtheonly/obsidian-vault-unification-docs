@@ -1,0 +1,411 @@
+{
+  "campaign": "INTEG-005",
+  "clusters": [
+    "MAPDIG",
+    "MATHSOLVER",
+    "WEATHER",
+    "NLME",
+    "MASTER-INDEX"
+  ],
+  "items_total": 374,
+  "items_fresh_judged": 345,
+  "items_carried_over": 29,
+  "verdict_counts": {
+    "absent": 88,
+    "covered": 150,
+    "partial": 84,
+    "equivalent": 52
+  },
+  "retained_or_existing": 286,
+  "genuinely_missing": 88,
+  "by_section": {
+    "MASTER-INDEX: (master index fields)": {
+      "absent": 7,
+      "total": 28,
+      "partial": 4,
+      "covered": 11,
+      "equivalent": 6
+    },
+    "NLME: Transformer Attention": {
+      "covered": 12,
+      "total": 13,
+      "equivalent": 1
+    },
+    "MATHSOLVER: Transformer Decoder": {
+      "covered": 13,
+      "total": 14,
+      "equivalent": 1
+    },
+    "MATHSOLVER: Training and Loss Functions": {
+      "partial": 1,
+      "total": 11,
+      "covered": 7,
+      "equivalent": 1,
+      "absent": 2
+    },
+    "MAPDIG: Computer Vision": {
+      "covered": 8,
+      "total": 13,
+      "equivalent": 2,
+      "partial": 1,
+      "absent": 2
+    },
+    "MAPDIG: Feature Extraction and Matching Models": {
+      "covered": 2,
+      "total": 10,
+      "absent": 7,
+      "equivalent": 1
+    },
+    "MAPDIG: Image Segmentation": {
+      "covered": 5,
+      "total": 9,
+      "equivalent": 3,
+      "partial": 1
+    },
+    "MAPDIG: Segmentation Models and Algorithms": {
+      "covered": 9,
+      "total": 14,
+      "absent": 2,
+      "partial": 3
+    },
+    "MAPDIG: Segmentation Fusion": {
+      "equivalent": 1,
+      "total": 8,
+      "absent": 3,
+      "partial": 3,
+      "covered": 1
+    },
+    "MAPDIG: Segmentation Refinement": {
+      "partial": 2,
+      "total": 8,
+      "absent": 2,
+      "covered": 3,
+      "equivalent": 1
+    },
+    "MAPDIG: Additional Documented Techniques": {
+      "covered": 5,
+      "total": 8,
+      "equivalent": 1,
+      "absent": 1,
+      "partial": 1
+    },
+    "MAPDIG: Spatial and Topological Processing": {
+      "partial": 3,
+      "total": 11,
+      "covered": 1,
+      "absent": 7
+    },
+    "MATHSOLVER: Mathematical Recognition": {
+      "partial": 2,
+      "total": 8,
+      "absent": 6
+    },
+    "MATHSOLVER: Vision Encoder": {
+      "covered": 8,
+      "total": 11,
+      "partial": 1,
+      "equivalent": 2
+    },
+    "MATHSOLVER: Attention Masking": {
+      "equivalent": 3,
+      "total": 7,
+      "covered": 1,
+      "partial": 3
+    },
+    "MATHSOLVER: Sequence Generation": {
+      "covered": 5,
+      "total": 8,
+      "equivalent": 2,
+      "partial": 1
+    },
+    "MATHSOLVER: Tokenization and Language Representation": {
+      "absent": 2,
+      "total": 10,
+      "covered": 5,
+      "equivalent": 1,
+      "partial": 2
+    },
+    "MATHSOLVER: Model Evaluation": {
+      "absent": 3,
+      "total": 8,
+      "covered": 1,
+      "partial": 4
+    },
+    "MATHSOLVER: Mathematical Solving — Non-Neural AI/Computation": {
+      "absent": 12,
+      "total": 14,
+      "partial": 2
+    },
+    "WEATHER: Time-Series Forecasting": {
+      "partial": 5,
+      "total": 10,
+      "equivalent": 1,
+      "absent": 4
+    },
+    "WEATHER: Convolutional Neural Networks": {
+      "covered": 4,
+      "total": 7,
+      "equivalent": 3
+    },
+    "WEATHER: Recurrent Neural Networks": {
+      "covered": 4,
+      "total": 8,
+      "equivalent": 2,
+      "partial": 2
+    },
+    "WEATHER: Hybrid Machine Learning": {
+      "partial": 4,
+      "total": 9,
+      "covered": 4,
+      "absent": 1
+    },
+    "WEATHER: Physics-Informed Machine Learning": {
+      "absent": 9,
+      "total": 9
+    },
+    "WEATHER: Temporal Feature Engineering": {
+      "absent": 3,
+      "total": 9,
+      "partial": 4,
+      "covered": 2
+    },
+    "WEATHER: Signal Processing and Fault Detection": {
+      "covered": 2,
+      "total": 11,
+      "partial": 3,
+      "equivalent": 2,
+      "absent": 4
+    },
+    "WEATHER: Fault Classification": {
+      "partial": 3,
+      "total": 15,
+      "equivalent": 4,
+      "absent": 7,
+      "covered": 1
+    },
+    "NLME: Large Language Models": {
+      "covered": 5,
+      "total": 8,
+      "partial": 1,
+      "equivalent": 2
+    },
+    "NLME: Linear and Associative Memory": {
+      "partial": 7,
+      "total": 12,
+      "absent": 1,
+      "covered": 3,
+      "equivalent": 1
+    },
+    "NLME: Delta Rule Learning": {
+      "covered": 3,
+      "total": 9,
+      "equivalent": 2,
+      "partial": 4
+    },
+    "NLME: Neural Gating Mechanisms": {
+      "covered": 5,
+      "total": 10,
+      "partial": 5
+    },
+    "NLME: Memory Management": {
+      "equivalent": 5,
+      "total": 13,
+      "partial": 3,
+      "absent": 3,
+      "covered": 2
+    },
+    "NLME: Parameter-Efficient Model Adaptation": {
+      "covered": 5,
+      "total": 9,
+      "partial": 3,
+      "equivalent": 1
+    },
+    "NLME: Training and Optimization": {
+      "covered": 9,
+      "total": 12,
+      "partial": 1,
+      "equivalent": 2
+    },
+    "NLME: Evaluation": {
+      "covered": 4,
+      "total": 10,
+      "equivalent": 1,
+      "partial": 5
+    }
+  },
+  "campaign_audit_phase": {
+    "complete": true,
+    "unique_items_judged": 1233,
+    "inventory_items": 1233,
+    "union_exact_set_match": true,
+    "cross_file_verdict_conflicts": 0,
+    "campaign_wide_verdicts": {
+      "covered": 277,
+      "partial": 253,
+      "absent": 626,
+      "equivalent": 77
+    },
+    "files": [
+      "judgments-mednlp-v1.jsonl",
+      "judgments-2d3d-v1.jsonl",
+      "judgments-synpath-v1.jsonl",
+      "judgments-rest-v1.jsonl"
+    ],
+    "note": "every one of the 1,233 unique inventory items now carries exactly one depth-standard judgment with mechanically verified evidence; the S36 decision ledger can open on a complete input"
+  },
+  "method": {
+    "design": "full-cluster census (no sampling): all 374 unique remaining-cluster items judged once each",
+    "denominator_note": "374 unique items = 81 MAPDIG + 91 MATHSOLVER + 78 WEATHER + 97 NLME + 35 MASTER-INDEX − 19 intra-set cross-cluster duplicates (F-0049 union accounting)",
+    "carry_over": "29 items with prior canonical judgments carried over verbatim per F-0048 (23 from MEDNLP/2D3D, 6 from SYNPATH)",
+    "groups": "36 bounded subagent groups (max 18 items; grouped by first-matching cluster + section, sections never merged; MASTER-INDEX fields under a pseudo-section)",
+    "judges": "36 independent general-purpose subagents (35 first-run clean; group-23 first launch failed with an infrastructure timeout before writing anything — relaunched cleanly and completed, documented per the s30 precedent; no partial/corrupt output was ever accepted)",
+    "depth_standard": "campaign plan section 5 (what it is / why it exists / how it works conceptually / relations to other concepts; project usage not required for 'covered'); broad MASTER-INDEX field labels additionally require the vault to span the field's core with the cited note as a genuine anchor",
+    "evidence_rule": "covered/equivalent/partial require a verbatim quote (>= 12 words for covered/equivalent) mechanically validated as a whitespace-normalized substring of the cited note (scripts/s35_validate_judgments.py, exit 0: 374/374 PASSED)",
+    "orchestrator_rereview": {
+      "method": "stratified even-spaced sample (every 9th record of the 374 = 42 items, 11.2%) spanning all 5 clusters (MAPDIG 9, MATHSOLVER 10, WEATHER 9, NLME 10, MASTER-INDEX 4) and all 4 verdicts (9 absent / 12 covered / 10 equivalent / 11 partial): 9 absent verified by independent orchestrator greps over all 544 notes (LightGlue/multi-image consensus/overlap detection/logarithmic equation/finite difference/lag feature/detail coefficient/arc fault/voltage sag/graph learning/node embedding/link prediction/geometric deep learning all 0 occurrences; 'superglue' 3 hits = the SuperGLUE benchmark in T5.md and 'short-circuit' 2 hits = ResNet-skip and sampling metaphors — both read and confirmed false positives exactly as the judges documented); 22 covered/equivalent/partial verified by reading cited destinations and judging the verdict + quote depth against the campaign depth standard",
+      "sample_size": 42,
+      "agreement": 42,
+      "disagreements": [],
+      "notes": "Notable confirmed judgment calls: INT-0461 Autoregressive Language Modeling EQUIVALENT via CLM (the Decoder-Only note itself states 'also called autoregressive language modeling'); INT-0488 Error-Correcting Memory Updates EQUIVALENT via DeltaNet's delta rule; INT-0533 Segmented Recurrence Training EQUIVALENT via Transformer-XL's gradient-detached segment cache; INT-0506 Neural Memory Bank EQUIVALENT via MemGPT's external context; INT-0585 Transformers + INT-0594 Neural Memory COVERED as broad field labels with genuine anchors (Attention MOC; DeltaNet and Titans' dedicated neural-memory section); all 11 sampled partials confirmed as below-depth-but-present (padding-mask aside, point-prompt Q&A mention, polygonization gap, XGBoost+NN stacking bullet, RWKV read-out formula, Titans surprise updates, LoCoMo/LongMemEval mentions, head-replacement exemplar, window-of-history baseline, sequence-level loss aside, sin/cos-for-positions). All 9 sampled absent verdicts confirmed."
+    },
+    "limitations": [
+      "single-judge-per-item design mitigated by mandatory multi-term search before absent verdicts + the 11.2% orchestrator re-review; borderline covered/partial/equivalent calls carry uncertainty noted by judges",
+      "judgments reflect the vault as of session 34 state (no vault mutations occurred during judging)",
+      "'covered' does not include project usage; project context integration happens in the S37+ execution waves"
+    ]
+  },
+  "destination_notes_cited": [
+    "01 - Foundations/AI ML and DL Hierarchy/AI vs ML vs DL.md",
+    "01 - Foundations/AI ML and DL Hierarchy/Applications of Deep Learning.md",
+    "01 - Foundations/AI ML and DL Hierarchy/History and Evolution of AI.md",
+    "01 - Foundations/AI ML and DL Hierarchy/Introduction to Machine Learning.md",
+    "02 - Mathematics/Calculus/Gradient and Chain Rule.md",
+    "02 - Mathematics/Information Theory/Entropy Cross-Entropy and KL Divergence.md",
+    "02 - Mathematics/Optimization/Adam Optimizer Derivation.md",
+    "02 - Mathematics/Optimization/Learning Rate Schedules.md",
+    "02 - Mathematics/Optimization/Optimization Essentials.md",
+    "02 - Mathematics/Probability/Bayes Theorem.md",
+    "02 - Mathematics/Statistics/Estimators and Bias.md",
+    "03 - Python and Data Tooling/Data Cleaning and Preprocessing/Duplicate Detection and Record Linkage.md",
+    "03 - Python and Data Tooling/Data Cleaning and Preprocessing/Feature Scaling and Normalization.md",
+    "03 - Python and Data Tooling/Data Cleaning and Preprocessing/Outlier Detection and Treatment.md",
+    "04 - Machine Learning/Clustering and Dimensionality Reduction/Clustering.md",
+    "04 - Machine Learning/Nearest Neighbors/K-Nearest Neighbors.md",
+    "04 - Machine Learning/Optimization Algorithms/Loss Functions.md",
+    "04 - Machine Learning/Reinforcement Learning/Markov Decision Processes and Bellman Equations.md",
+    "04 - Machine Learning/Tree-Based Models/Gradient Boosting.md",
+    "04 - Machine Learning/Tree-Based Models/Random Forests and Bagging.md",
+    "05 - Neural Network Foundations/Architectures/Convolutional Neural Networks.md",
+    "05 - Neural Network Foundations/Architectures/Recurrent Neural Networks.md",
+    "05 - Neural Network Foundations/Architectures/Seq2Seq and the Information Bottleneck.md",
+    "05 - Neural Network Foundations/Backpropagation/Backpropagation.md",
+    "05 - Neural Network Foundations/Neural Network Basics/Artificial Neural Networks.md",
+    "05 - Neural Network Foundations/Training Dynamics and Stability/Batch Normalization.md",
+    "05 - Neural Network Foundations/Training Dynamics and Stability/Data Augmentation.md",
+    "05 - Neural Network Foundations/Training Dynamics and Stability/Dropout and Regularization.md",
+    "05 - Neural Network Foundations/Training Dynamics and Stability/Weight Initialization.md",
+    "06 - Computer Vision/Architecture and Connectivity/Hierarchical Feature Extraction.md",
+    "06 - Computer Vision/Architecture and Connectivity/Local Connectivity and Parameter Sharing.md",
+    "06 - Computer Vision/Architecture and Connectivity/The Degradation Problem and Residual Connections.md",
+    "06 - Computer Vision/CNN Foundations and Philosophy/From Basic Convolution to Learned Weights.md",
+    "06 - Computer Vision/CNN Foundations and Philosophy/Introduction and Foundations of CNNs.md",
+    "06 - Computer Vision/Core Operators and Geometry/Activation and Pooling Layers.md",
+    "06 - Computer Vision/Core Operators and Geometry/Core Operators and Geometry Summary.md",
+    "06 - Computer Vision/Core Operators and Geometry/The Convolution Operation.md",
+    "06 - Computer Vision/Frequency Domain and Restoration/Image Degradation and Noise Models.md",
+    "06 - Computer Vision/Frequency Domain and Restoration/Introduction to the Frequency Domain.md",
+    "06 - Computer Vision/Frequency Domain and Restoration/The Fourier Transform.md",
+    "06 - Computer Vision/Image Fundamentals/Color Spaces and Models.md",
+    "06 - Computer Vision/Image Fundamentals/Image Representation Types.md",
+    "06 - Computer Vision/Modern Computer Vision Tasks/Detection and Segmentation.md",
+    "06 - Computer Vision/Morphological Processing and Segmentation/Connected Components and Region Properties.md",
+    "06 - Computer Vision/Morphological Processing and Segmentation/Morphological Algorithms.md",
+    "06 - Computer Vision/Morphological Processing and Segmentation/Opening and Closing.md",
+    "06 - Computer Vision/Morphological Processing and Segmentation/Thresholding and Otsu's Method.md",
+    "06 - Computer Vision/Morphological Processing and Segmentation/Watershed Segmentation.md",
+    "06 - Computer Vision/Spatial Filtering/Canny and LoG Edge Detection.md",
+    "06 - Computer Vision/Spatial Filtering/Edge Preserving Filters.md",
+    "06 - Computer Vision/Spatial Filtering/Feature Descriptors - SIFT, SURF, ORB, HOG.md",
+    "06 - Computer Vision/Spatial Filtering/Gabor Filters.md",
+    "06 - Computer Vision/Spatial Filtering/Geometric Transformations and Interpolation.md",
+    "06 - Computer Vision/Spatial Filtering/Image Pyramids and Multi-Scale Representation.md",
+    "06 - Computer Vision/Spatial Filtering/Sharpening and Edge Detection.md",
+    "06 - Computer Vision/Training and Transfer Learning/Transfer Learning and Fine-Tuning.md",
+    "07 - Sequence Models/Chapter Overview.md",
+    "07 - Sequence Models/LSTM and GRU/LSTM.md",
+    "07 - Sequence Models/Motivation and Recurrence/Backpropagation Through Time.md",
+    "07 - Sequence Models/Motivation and Recurrence/The Recurrent Neuron.md",
+    "07 - Sequence Models/Motivation and Recurrence/Why Sequence Models.md",
+    "07 - Sequence Models/Pitfalls and Limits/Long-Range Dependencies.md",
+    "07 - Sequence Models/Sequence to Sequence/Beam Search and Decoding Strategies.md",
+    "07 - Sequence Models/Sequence to Sequence/Teacher Forcing and Exposure Bias.md",
+    "07 - Sequence Models/Sequence to Sequence/The Encoder-Decoder Pattern.md",
+    "08 - Attention and Transformers/Attention Mechanism/ALiBi.md",
+    "08 - Attention and Transformers/Attention Mechanism/Bahdanau Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Luong Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Multi-Head Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Origins of Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Queries Keys and Values.md",
+    "08 - Attention and Transformers/Attention Mechanism/RoPE.md",
+    "08 - Attention and Transformers/Attention Mechanism/Scaled Dot-Product Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Self-Attention.md",
+    "08 - Attention and Transformers/Attention Mechanism/Sinusoidal and Learned Positional Encodings.md",
+    "08 - Attention and Transformers/Attention and Transformers MOC.md",
+    "08 - Attention and Transformers/Efficient Attention/FlashAttention.md",
+    "08 - Attention and Transformers/Efficient Attention/GQA MQA and MLA.md",
+    "08 - Attention and Transformers/Efficient Attention/Linear Attention.md",
+    "08 - Attention and Transformers/Encoder Decoder Design Space/Autoregressive vs Parallel Encoding.md",
+    "08 - Attention and Transformers/Transformer Architecture/BERT.md",
+    "08 - Attention and Transformers/Transformer Architecture/Embedding Layer.md",
+    "08 - Attention and Transformers/Transformer Architecture/Feed-Forward Network.md",
+    "08 - Attention and Transformers/Transformer Architecture/Mixture of Experts.md",
+    "08 - Attention and Transformers/Transformer Architecture/Normalization Layers.md",
+    "08 - Attention and Transformers/Transformer Architecture/Residual Connections.md",
+    "08 - Attention and Transformers/Transformer Architecture/The Transformer.md",
+    "08 - Attention and Transformers/Transformer Architecture/Transformer Decoder Block.md",
+    "08 - Attention and Transformers/Vision Transformers/Patch Tokenization.md",
+    "08 - Attention and Transformers/Vision Transformers/ViT Architecture.md",
+    "09 - NLP and Language Models/Tokenization/BPE.md",
+    "09 - NLP and Language Models/Tokenization/Tokenization Overview.md",
+    "09 - NLP and Language Models/Tokenization/WordPiece.md",
+    "10 - Large Language Models/Architecture/Decoder-Only Architecture.md",
+    "10 - Large Language Models/Context and KV Cache/KV Cache Mechanics.md",
+    "10 - Large Language Models/Evaluation/LLM Benchmarks.md",
+    "10 - Large Language Models/Large Language Models MOC.md",
+    "10 - Large Language Models/Sampling/Sampling Strategies.md",
+    "11 - Foundation Models and Multimodal/Foundation Models/Vision Foundation Models.md",
+    "13 - Training and Adaptation/Fine-Tuning/LoRA.md",
+    "13 - Training and Adaptation/Optimization/Loss Spikes and Stability.md",
+    "13 - Training and Adaptation/Optimization/Mixed Precision Training.md",
+    "13 - Training and Adaptation/Pretraining/Pretraining Objectives and Scaling Laws.md",
+    "13 - Training and Adaptation/Training Data/Data Pipelines and Deduplication.md",
+    "13 - Training and Adaptation/Training and Adaptation MOC.md",
+    "14 - Inference and Production/Production AI/Failure Modes and Graceful Degradation.md",
+    "15 - Agents and Tooling/Frameworks and Tools/LangGraph.md",
+    "15 - Agents and Tooling/Memory Systems/MemGPT and Letta.md",
+    "15 - Agents and Tooling/Memory Systems/Memory Operations.md",
+    "15 - Agents and Tooling/Multi-Agent Systems/Coordination and Consensus.md",
+    "16 - Interpretability and Research/Model Architecture Research/Open Source/Llama Family Architecture.md",
+    "16 - Interpretability and Research/Research Frontiers/Hybrid Architectures/RWKV and RetNet.md",
+    "16 - Interpretability and Research/Research Frontiers/Long-Context/Long-Context Architectures.md",
+    "16 - Interpretability and Research/Research Frontiers/State Space Models/DeltaNet and Titans.md",
+    "16 - Interpretability and Research/Research Frontiers/State Space Models/Mamba-2 and Structured Attention.md",
+    "16 - Interpretability and Research/Research Frontiers/State Space Models/SSMs Mamba and Frontiers.md",
+    "17 - Papers/Attention and Transformers/Swin Transformer.md",
+    "17 - Papers/Attention and Transformers/T5.md",
+    "17 - Papers/Efficiency/FlashAttention-2 and FlashAttention-3.md",
+    "17 - Papers/Efficiency/Longformer.md",
+    "17 - Papers/Efficiency/Performer.md",
+    "17 - Papers/Efficiency/Transformer-XL.md",
+    "17 - Papers/Landmark LLMs/Mistral 7B.md",
+    "17 - Papers/Reasoning/Self-Consistency.md",
+    "17 - Papers/State Space Models and Linear Attention/Titans.md",
+    "18 - Projects/Capstones/Build a Long-Context Evaluation Harness.md",
+    "18 - Projects/Capstones/Build a Model Distillation Pipeline.md",
+    "18 - Projects/Capstones/Build a RAG Evaluation Harness.md",
+    "18 - Projects/Capstones/Build a Reasoning Model Fine-Tune.md",
+    "18 - Projects/Implementations/Build a Tiny LLM Trainer.md",
+    "19 - Reference and Practice/Quizzes/Deep Learning Chapter 2 CNN/The Degradation Problem and Residual Connections.md"
+  ],
+  "validation": "scripts/s35_validate_judgments.py: VALIDATION PASSED 374/374 (schema, exact set coverage, quotes verbatim-verified, absent discipline, carry-over re-validation)"
+}
