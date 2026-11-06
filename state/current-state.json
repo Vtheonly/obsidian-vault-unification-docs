@@ -24,7 +24,7 @@
         "words_outside_fences": 990007,
         "words_total": 1157937
     },
-    "current_task_id": null,
+    "current_task_id": "INTEG-002",
     "execution_environment": "Z AI / GLM 5.3 with available subagents",
     "framework_evidence": {
         "capabilities": "reports/bootstrap/boot-004-capabilities.json",
@@ -95,8 +95,8 @@
         }
     },
     "knowledge_registry_initialized": true,
-    "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-06-session30.json",
-    "notes": "Vault delivered at session 28; s29 VERIF-001; session 30 completed AUDIT-012 (See-Also carry-over: 175 links repaired, F-0042/F-0043), AUDIT-013 (dup scan: 2 stutters repaired, F-0044), and VERIF-002 (fresh 242-KU semantic increment: 241/242 retained, 2 synthesis defects repaired F-0046, 10 source-inherited sic documented F-0047, cumulative semantic coverage 488/27,536 = 1.77%). All gates green on the final state: lint 0 errors, links 12,177/0, full-corpus audit valid=true 0 findings, dup-scan 0, see-also 1,773/1,773, 799/799 tests, sources 276/276+333/333 byte-identical.",
+    "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-06-integ-session31.json",
+    "notes": "INTEG campaign (user directive commit 77cf6cf, 15-session budget S31-S45): setup complete at session 31 \u2014 methodology docs/INTEGRATION_CAMPAIGN_PLAN.md, deterministic inventory (1,233 unique items from the taxonomy), lexical coverage evidence over the 544 delivered notes. Next: semantic coverage judgments per cluster (S32 MEDNLP first).",
     "output_synthesis_started": true,
     "phase_zero_rebaseline": {
         "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",
@@ -175,7 +175,7 @@
             ],
             "task": "DISC-002",
             "validation": "reports/discovery/disc002-validate-merged.json (60,154 records, 0 errors)",
-            "replay_writer_note": "recorded 88a538eb sha256 is script-writer-specific (ensure_ascii=False); CLI replay is byte-different but content-identical — compare parsed content (F-0019)",
+            "replay_writer_note": "recorded 88a538eb sha256 is script-writer-specific (ensure_ascii=False); CLI replay is byte-different but content-identical \u2014 compare parsed content (F-0019)",
             "signal_pool": "EXHAUSTED (session 16): 0 unreviewed candidates match the signal rule; 46,978 low-signal provisional remain as the documented exclusion"
         },
         "discovery_full_corpus": {
@@ -245,7 +245,7 @@
         }
     ],
     "source_vaults_located": true,
-    "stage": "post-delivery-verification (session 30 complete)",
+    "stage": "integration-campaign (S31 setup complete; S32 semantic audit next)",
     "status": "in_progress",
     "verification_pilot_evidence": {
         "defect_classes": 12,

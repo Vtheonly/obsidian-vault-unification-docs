@@ -2,79 +2,96 @@
 
 ## Project state
 
-**VAULT DELIVERED (session 28) + POST-DELIVERY VERIFICATION DEEPENED
-(sessions 29-30, 2026-11-06).** All release gates remain green; both s29
-remaining-risk classes (See-Also carry-over, duplication) are now closed by
-dedicated mechanical audit commands, and semantic spot-verification coverage
-has doubled.
+**TWO PHASES COMPLETE + INTEGRATION CAMPAIGN OPEN (session 31, 2026-11-06).**
+(1) The unified vault was delivered at session 28 and re-verified through
+sessions 29–30 (544/544 notes, all gates green). (2) The user then supplied a
+new directive (commit `77cf6cf`: `index of the missing things.txt` + a
+binding commit-message methodology) and a **15-session budget (S31–S45)**.
+Session 31 completed the campaign setup; **INTEG-002 (S32: MEDNLP semantic
+coverage judgments) is queued as the next bounded unit.**
 
-- **Deliverable:** `output/Unified-Vault/` — **544/544 notes**, re-verified
-  green at every step of session 30: full-corpus audit valid=true 0 findings
-  (27,536 KUs / 42,156 markers / 0 missing), lint 0 errors / 85 warnings,
-  links 12,177 / 0 problems, 799/799 tests, sources 276/276 + 333/333
-  byte-identical.
-- **AUDIT-012 (s30):** new `vu see-also-audit` command (27 tests) verified
-  all 1,773 source See-Also pairs (1,901 occurrences; both vaults'
-  conventions). Found 177 dropped (F-0042), repaired 175 links in 108 notes;
-  34 vault-management pointers documented as exclusions (F-0043) with 62
-  recorded decisions (`state/synthesis/s30-seealso-decisions.jsonl`).
-  Post-repair: 1,739 carried + 34 excluded = 1,773/1,773, exit 0.
-- **AUDIT-013 (s30):** new `vu dup-scan` command (20 tests incl. seeded
-  F-0037/F-0038 shapes) scanned 544 notes / 103,039 lines: exactly 2 findings
-  (KNN x3 stutters, both generation artifacts), repaired (F-0044); 0 tandem
-  block repeats vault-wide.
-- **VERIF-002 (s30):** fresh non-overlapping 242-KU stratified sample
-  (cumulative 488/27,536 = 1.77%), 17 subagent groups, mechanically validated
-  quotes (242/242). Result: 239 present + 2 partial + 1 absent = 241/242
-  (99.6%) retained. Orchestrator re-review 25/25 agreement. All 3 non-present
-  verdicts traced to source-side dangling pointers (targets nonexistent in
-  both source vaults) or the F-0043 exclusion (F-0045). Quality flags triaged
-  against sources: 2 synthesis defects repaired (F-0046 — one over-aggressive
-  repair was caught by the marker audit and reverted same-session), 10
-  source-inherited sic documented (F-0047).
-- Findings ledger now F-0001..F-0047 (3 fixed this session, rest
-  accepted/documented with evidence; F-0016/F-0018 remain documented
-  environment/historical items).
-- Git: session-30 pushes 3f5ef2f, 950f62e, 2812539, a7ceca2 (+ the closing
-  commits), each remote-verified 0/0 divergence. Checkpoint:
-  `state/checkpoints/checkpoint-2026-11-06-session30.json`.
+- **Campaign plan (binding):** `docs/INTEGRATION_CAMPAIGN_PLAN.md` — A/B/C/D
+  integration decisions with D-before-C rule, depth standard (what/why/how/
+  project-use/details/relations), 100%-coverage hard gate
+  (fully-addressed / 1,233 unique items), per-wave mutation battery, session
+  allocation S31–S45 with adaptive reallocation rules.
+- **Inventory (S31):** `vu integ-inventory` parsed the taxonomy
+  deterministically — **1,283 raw / 1,233 unique items** across 9 clusters
+  (MEDNLP 368, 2D3D 291, SYNPATH 209, NLME 97, MATHSOLVER 91, MAPDIG 81,
+  WEATHER 78, MASTER-INDEX 35, VAULTX 28); 85 documented exclusions (1
+  preamble + 84 transcript-noise lines 719–802, every line recorded with
+  number + reason); 24 context records (Repository: lines, group labels,
+  distinctions — they constrain integration content). Outputs:
+  `state/integration/inventory-v1.jsonl` + `clusters-v1.json`; regression pin
+  `tests/test_integration.py::test_real_taxonomy_regression_pin`.
+- **Lexical coverage (S31):** `vu integ-coverage` matched every item's
+  surfaces (name + alias, Brit/US/plural-flexible) against the 544 notes:
+  **title 73 / heading 46 / partial 484 / body-multi 76 / body-single 18 /
+  none 536** (`state/integration/coverage-lexical-v1.jsonl`,
+  `reports/integration/s31-coverage-lexical.json`). Lexical bands are
+  **evidence, never decisions** — e.g. `Message Passing Neural Networks` is
+  lexically `none` but GNN concepts live in the vault under other surface
+  forms, while `Geometric Deep Learning` (also `none`) is genuinely absent
+  from both source vaults.
+- **Tooling:** new module `src/vault_unification/integration.py` + CLI
+  commands `vu integ-inventory` / `vu integ-coverage` (path-safe, atomic
+  writes, JSON reports with git stamps); 37 new tests (836/836 total);
+  determinism probes byte-identical; sources 276/276 + 333/333 byte-identical.
+- **Session-31 recovery note:** two earlier sessions were interrupted
+  mid-implementation (uncommitted WIP: campaign plan, integration module,
+  partial CLI wiring). The WIP was recovered from the working tree, reviewed
+  line-by-line, completed, and tested; a real alias-split bug
+  (LaTeX-escaped parentheticals) was caught by the new unit tests and fixed
+  **before** any state was generated.
+- Findings ledger F-0001..F-0047 unchanged (0 open).
+- Checkpoint: `state/checkpoints/checkpoint-2026-11-06-integ-session31.json`
+  (accelerated_mode: INTEG session 1/15, 14 remaining, no failed session).
 
 ## If a future session runs
 
 1. Follow the startup protocol (AGENTS.md §2): verify this handoff against
-   repository evidence — git log, the session-30 checkpoint, the three s30
-   command reports (see-also-audit, dup-scan, semantic-campaign), and the
-   findings ledger. Do not redo completed work without a regression trigger.
-2. Environment note: the sandbox venv may need `pip install -e .` before the
+   repository evidence — the session-31 checkpoint, the task-queue rows
+   INTEG-001/INTEG-002, `state/integration/*`, and
+   `reports/integration/s31-*.json`. Do not redo completed work without a
+   regression trigger.
+2. **Next task (INTEG-002, S32):** semantic coverage judgments for the
+   **MEDNLP cluster (368 items)** per campaign plan §5: one judgment per item
+   (`covered` / `partial` / `absent` / `equivalent`) at the depth standard,
+   from bounded subagent groups reading the destination notes; every
+   covered/equivalent judgment cites a destination + verbatim evidence quote
+   (mechanically verified as a substring — reuse the s29/s30 machinery);
+   orchestrator re-reviews ≥10%. Lexical bands from
+   `coverage-lexical-v1.jsonl` are per-item hints inside the judging prompts;
+   terminology-equivalence search is mandatory (e.g. `K-Nearest Neighbour
+   Matching` ≡ American-spelling notes; `MPNN` ≡ GNN note). No vault mutation
+   during judging.
+3. Then S33 (2D3D), S34 (SYNPATH+VAULTX), S35 (rest) per plan §8; S36
+   decision ledger; S37–S43 execution waves; S44 independent re-verification;
+   S45 close. Adaptive rules in plan §8 (evidence-driven reallocation, never
+   silent).
+4. **Project-context authority rule (plan §2):** the list and its
+   annotations are the ONLY authoritative source of project usage. Never
+   invent project usage, code, or results. Where the user's earlier project
+   notes exist inside the source vaults, those notes remain the source of
+   record and are cited normally.
+5. Environment note: the sandbox venv may need `pip install -e .` before the
    suite passes (subprocess test imports the package outside the repo root);
    environment artifact, not a regression.
-3. Natural continuations (none queued; register on user direction):
-   - **VERIF-003**: further non-overlapping semantic increments (the sampler
-     design is committed and proven; ~110 sessions to full coverage at the
-     246/session rate — sampling remains the honest boundary, see final
-     report §5.1);
-   - **non-consecutive duplication audit**: VERIF-002 quality flags observed
-     consolidation overlap in GQA-MQA-MLA and Based (each source note covered
-     the topic twice); requires a new calibrated tool + explicit scope
-     decision, since cross-section overlap from distinct source notes is
-     currently allowed;
-   - review of the 46,978 low-signal provisional discovery candidates
-     (documented exclusion from s28);
-   - presentation changes to the area-20 archival layer.
-4. Standing rules for any vault mutation: sources immutable; anchored
-   probe-idempotent repair scripts; lint + links + full-corpus audit + dup-scan
-   + see-also-audit + full suite after the last mutation; continuous
-   commit-and-push with remote-ref verification.
+6. Standing rules for any vault mutation: sources immutable; anchored
+   probe-idempotent repair scripts; lint + links + full-corpus audit +
+   dup-scan + see-also-audit + full suite after the last mutation; continuous
+   commit-and-push with remote-ref verification (AGENTS.md §13).
 
 ## Explicit non-claims
 
-- Cumulative semantic evidence is a 1.77% stratified sample (488 KUs) at
-  reading level plus the 42,156-marker lexical net over all 27,536 KUs; it is
-  not a full per-unit semantic proof (final-report §5.1 boundary stands).
-- The See-Also carry-over check proves link presence (any wikilink resolving
-  to the canonical target), not the editorial quality of the added items;
-  source link annotations were not carried as link text.
-- dup-scan detection is exact-match after whitespace collapsing; drifted or
-  non-consecutive duplication is out of its scope by design.
-- The VERIF-002 quality-flag triage covers only what judging groups observed
-  while reading destination notes.
+- The lexical coverage report is **surface-form evidence only**; it does not
+  decide coverage for any item (the 484 `partial` and 536 `none` bands
+  especially await semantic judgment).
+- No integration decisions (A/B/C/D) exist yet; the decision ledger opens at
+  S32+ judgments and is formalized at S36.
+- 44 of 81 master-index principal-concept crossrefs are surface-unmatched
+  (recorded in `clusters-v1.json`); they are cross-references, not items, and
+  are resolved during the semantic phase.
+- The delivered vault's metrics are unchanged this session (no mutations);
+  the campaign's coverage metric (0 → 1,233 inventoried) is setup evidence,
+  not integrated knowledge.

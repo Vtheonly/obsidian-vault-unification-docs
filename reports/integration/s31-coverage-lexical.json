@@ -1,0 +1,121 @@
+{
+  "command": "integ-coverage",
+  "result": {
+    "aggregate": {
+      "items_total": 1233,
+      "notes_scanned": 544,
+      "band_counts": {
+        "title": 73,
+        "heading": 46,
+        "partial": 484,
+        "body-multi": 76,
+        "body-single": 18,
+        "none": 536
+      },
+      "cluster_bands": {
+        "SYNPATH": {
+          "partial": 100,
+          "none": 94,
+          "body-single": 1,
+          "body-multi": 3,
+          "title": 5,
+          "heading": 6
+        },
+        "MASTER-INDEX": {
+          "partial": 12,
+          "heading": 7,
+          "title": 2,
+          "none": 12,
+          "body-multi": 1,
+          "body-single": 1
+        },
+        "NLME": {
+          "partial": 63,
+          "title": 16,
+          "heading": 5,
+          "body-single": 1,
+          "body-multi": 3,
+          "none": 9
+        },
+        "MATHSOLVER": {
+          "title": 13,
+          "partial": 46,
+          "heading": 7,
+          "none": 22,
+          "body-single": 2,
+          "body-multi": 1
+        },
+        "MEDNLP": {
+          "title": 29,
+          "partial": 94,
+          "heading": 16,
+          "none": 185,
+          "body-multi": 37,
+          "body-single": 7
+        },
+        "VAULTX": {
+          "none": 11,
+          "body-multi": 2,
+          "partial": 13,
+          "title": 1,
+          "heading": 1
+        },
+        "2D3D": {
+          "heading": 6,
+          "title": 7,
+          "partial": 95,
+          "body-single": 4,
+          "body-multi": 21,
+          "none": 158
+        },
+        "MAPDIG": {
+          "partial": 36,
+          "heading": 3,
+          "body-single": 2,
+          "none": 25,
+          "body-multi": 7,
+          "title": 8
+        },
+        "WEATHER": {
+          "partial": 42,
+          "none": 23,
+          "title": 7,
+          "body-multi": 3,
+          "heading": 2,
+          "body-single": 1
+        }
+      },
+      "method": {
+        "match_order": [
+          "title",
+          "heading",
+          "partial",
+          "body-multi",
+          "body-single",
+          "none"
+        ],
+        "title": "normalized equality (ASCII fold, lowercase, punctuation->space, Brit->US) of name or alias vs note title or frontmatter alias",
+        "heading": "normalized equality vs heading text (numbering prefix and decoration stripped)",
+        "partial": "substring relation between surface and title/heading; only for multi-token or >=8-char surfaces (acronyms require equality)",
+        "body": "word-boundary flexible token regex (separator-flexible, optional plural s/es, Brit/US alternation) over note bodies (frontmatter excluded, fences included), prefiltered by per-note token sets",
+        "limitation": "lexical evidence only; terminology differences require the semantic judgment phase (campaign plan section 5)"
+      }
+    },
+    "items_path": "state/integration/coverage-lexical-v1.jsonl"
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "integ-coverage",
+    "args": {
+      "command": "integ-coverage",
+      "inventory": "state/integration/inventory-v1.jsonl",
+      "vault_root": "output/Unified-Vault",
+      "items_out": "state/integration/coverage-lexical-v1.jsonl",
+      "report": "reports/integration/s31-coverage-lexical.json"
+    },
+    "utc_timestamp": "2026-11-06T16:06:02+00:00",
+    "git_commit": "77cf6cf"
+  }
+}

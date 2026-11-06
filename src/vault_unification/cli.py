@@ -34,6 +34,7 @@ from . import linkcheck as linkcheck_mod
 from . import mdextract as mdextract_mod
 from . import seealsoaudit as seealsoaudit_mod
 from . import dupscan as dupscan_mod
+from . import integration as integration_mod
 from . import omission as omission_mod
 from . import overlap as overlap_mod
 from . import registry as registry_mod
@@ -48,9 +49,10 @@ from .artifactlint import ArtifactLintError
 from .discovery import DiscoveryError
 from .dispositions import DispositionError
 from .notequality import QualityError
-from .pathsafety import PathSafetyError, ensure_dest_safe, validate_roots
+from .pathsafety import PathSafetyError, ensure_dest_safe, validate_roots, atomic_write_text
 from .promptspec import PromptSpecError
 from .repair import RepairError
+from .integration import IntegrationError
 from .reporting import write_json_report
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -782,6 +784,26 @@ def build_parser() -> argparse.ArgumentParser:
         help="corpus-wide duplicate-phrase (stutter) and duplicate-block (tandem) scan (AUDIT-013)",
     )
     p.add_argument("--root", required=True, help="vault root to scan, read-only")
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- integ-inventory ----
+    p = sub.add_parser(
+        "integ-inventory",
+        help="parse the integration-campaign taxonomy file into the canonical item inventory (INTEG-001)",
+    )
+    p.add_argument("--list-file", required=True, help="path to the user's taxonomy file (read-only)")
+    p.add_argument("--items-out", required=True, help="destination JSONL for the item inventory")
+    p.add_argument("--clusters-out", required=True, help="destination JSON for clusters, context records and exclusions")
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- integ-coverage ----
+    p = sub.add_parser(
+        "integ-coverage",
+        help="lexical coverage matching of inventory items against the unified vault (INTEG-001; evidence for the semantic judgment sessions)",
+    )
+    p.add_argument("--inventory", required=True, help="item inventory JSONL (from integ-inventory)")
+    p.add_argument("--vault-root", required=True, help="unified vault root, read-only")
+    p.add_argument("--items-out", required=True, help="destination JSONL for per-item lexical coverage evidence")
     p.add_argument("--report", help="optional JSON report path")
 
     return parser
@@ -2042,10 +2064,151 @@ def cmd_dup_scan(args) -> int:
     return 1 if result["results"]["findings_total"] else 0
 
 
+def cmd_integ_inventory(args) -> int:
+    """INTEG-001: parse the taxonomy file into the canonical item inventory."""
+    protected = _default_protected_roots(None)
+    for dest_name in ("items_out", "clusters_out", "report"):
+        dest = getattr(args, dest_name, None)
+        if not dest:
+            continue
+        try:
+            ensure_dest_safe(dest, protected)
+        except PathSafetyError as exc:
+            print(f"error: {dest_name} destination: {exc}", file=sys.stderr)
+            return 1
+    try:
+        inventory = integration_mod.parse_integration_list(args.list_file)
+    except IntegrationError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    try:
+        items_path = Path(args.items_out)
+        items_path.parent.mkdir(parents=True, exist_ok=True)
+        atomic_write_text(
+            items_path, "".join(ln + "\n" for ln in integration_mod.inventory_items_jsonl(inventory))
+        )
+        clusters_payload = {
+            "source_file": inventory["source_file"],
+            "source_sha256": inventory["source_sha256"],
+            "clusters": inventory["clusters"],
+            "excluded_lines": inventory["excluded_lines"],
+            "noise_block": inventory["noise_block"],
+            "parse_stats": inventory["parse_stats"],
+        }
+        clusters_path = Path(args.clusters_out)
+        atomic_write_text(
+            clusters_path, json.dumps(clusters_payload, indent=2, sort_keys=False) + "\n"
+        )
+    except OSError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    payload = {
+        "command": "integ-inventory",
+        "result": {
+            "parse_stats": inventory["parse_stats"],
+            "items_path": str(items_path),
+            "clusters_path": str(clusters_path),
+            "source_sha256": inventory["source_sha256"],
+            "noise_block": inventory["noise_block"],
+        },
+    }
+    if args.report:
+        try:
+            ensure_dest_safe(args.report, protected)
+        except PathSafetyError as exc:
+            print(f"error: report destination: {exc}", file=sys.stderr)
+            return 1
+        write_json_report(
+            args.report,
+            "integ-inventory",
+            payload,
+            args=vars(args) | {"report": str(args.report)},
+            repo_root=REPO_ROOT,
+        )
+    stats = inventory["parse_stats"]
+    _emit_summary(
+        {
+            "clusters": stats["clusters_total"],
+            "sections": stats["sections_total"],
+            "unique_items": stats["unique_items"],
+            "raw_item_lines": stats["raw_item_lines"],
+            "items_with_alias": stats["items_with_alias"],
+            "items_in_multiple_sections": stats["names_in_multiple_sections"],
+            "excluded_lines": stats["excluded_lines_total"],
+            "context_records": stats["context_records_total"],
+            "principal_concepts_crossrefs": stats["principal_concepts_crossrefs"],
+            "principal_concepts_unmatched": len(stats["principal_concepts_unmatched"]),
+            "source_sha256": inventory["source_sha256"],
+        }
+    )
+    return 0
+
+
+def cmd_integ_coverage(args) -> int:
+    """INTEG-001: lexical coverage evidence for every inventory item."""
+    protected = _default_protected_roots(None) + [Path(args.vault_root)]
+    for dest_name in ("items_out", "report"):
+        dest = getattr(args, dest_name, None)
+        if not dest:
+            continue
+        try:
+            ensure_dest_safe(dest, protected)
+        except PathSafetyError as exc:
+            print(f"error: {dest_name} destination: {exc}", file=sys.stderr)
+            return 1
+    try:
+        items = integration_mod.load_inventory_items(args.inventory)
+        coverage = integration_mod.build_coverage(items, args.vault_root)
+    except IntegrationError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    try:
+        items_path = Path(args.items_out)
+        items_path.parent.mkdir(parents=True, exist_ok=True)
+        atomic_write_text(
+            items_path, "".join(ln + "\n" for ln in integration_mod.coverage_items_jsonl(coverage))
+        )
+    except OSError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+    payload = {
+        "command": "integ-coverage",
+        "result": {
+            "aggregate": coverage["aggregate"],
+            "items_path": str(items_path),
+        },
+    }
+    if args.report:
+        try:
+            ensure_dest_safe(args.report, protected)
+        except PathSafetyError as exc:
+            print(f"error: report destination: {exc}", file=sys.stderr)
+            return 1
+        write_json_report(
+            args.report,
+            "integ-coverage",
+            payload,
+            args=vars(args) | {"report": str(args.report)},
+            repo_root=REPO_ROOT,
+        )
+    agg = coverage["aggregate"]
+    _emit_summary(
+        {
+            "items_total": agg["items_total"],
+            "notes_scanned": agg["notes_scanned"],
+            "band_counts": agg["band_counts"],
+            "limitation": agg["method"]["limitation"],
+        }
+    )
+    return 0
+
+
 HANDLERS = {
     "selftest": cmd_selftest,
     "see-also-audit": cmd_see_also_audit,
     "dup-scan": cmd_dup_scan,
+    "integ-inventory": cmd_integ_inventory,
+    "integ-coverage": cmd_integ_coverage,
     "check-paths": cmd_check_paths,
     "inventory": cmd_inventory,
     "verify-manifest": cmd_verify_manifest,
@@ -2108,6 +2271,7 @@ def main(argv: list[str] | None = None) -> int:
         DiscoveryError,
         FidelityError,
         DispositionError,
+        IntegrationError,
     ) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1

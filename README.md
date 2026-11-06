@@ -5,6 +5,17 @@
 areas, synthesized and rewritten from both source vaults. Final acceptance
 evidence: `reports/release/final-report.md`.
 
+**INTEGRATION CAMPAIGN IN PROGRESS (sessions 31–45, user directive commit
+`77cf6cf`).** The user supplied a taxonomy of 1,283 raw / 1,233 unique
+concepts from their real projects to be integrated into the delivered vault
+under a 100%-coverage hard gate, without duplication or disconnection.
+Binding methodology: `docs/INTEGRATION_CAMPAIGN_PLAN.md`. Session 31 (setup)
+completed the deterministic inventory (9 clusters, documented exclusions) and
+the lexical coverage mechanism; next: semantic coverage judgments per cluster
+(INTEG-002: MEDNLP, 368 items), then decisions, integration waves, and
+independent re-verification. Campaign state: `state/integration/`;
+reports: `reports/integration/`.
+
 - **Knowledge accounting:** 27,536/27,536 KUs dispositioned (Preserved 18,478
   / Consolidated 8,106 / Contextualized 950 / Superseded 2); Unaccounted = 0;
   registry validated (needs_review = 0).
@@ -48,6 +59,7 @@ docs/
   VERIFICATION_SPECIFICATION.md
   OPERATING_PROTOCOL.md
   SESSION_HANDOFF.md
+  INTEGRATION_CAMPAIGN_PLAN.md
   MILESTONES_AND_ACCEPTANCE.md
   RISKS_AND_DECISIONS.md
   SOURCE_POLICY.md

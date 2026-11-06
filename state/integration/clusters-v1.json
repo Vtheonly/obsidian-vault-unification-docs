@@ -1,0 +1,1108 @@
+{
+  "source_file": "index of the missing things.txt",
+  "source_sha256": "1b733ff56ab2f682ca8940694ad60b42ebfbad330b54217263323dde34f0efcf",
+  "clusters": [
+    {
+      "cluster_id": "SYNPATH",
+      "title": "SynPath \u2014 Protein-Based Molecular Generation",
+      "first_line": 2,
+      "repository": "3d-syntree / 3d-synV2",
+      "sections": [
+        {
+          "number": "1.1",
+          "title": "Geometric Deep Learning",
+          "line": 4
+        },
+        {
+          "number": "1.2",
+          "title": "Geometric Feature Encoding",
+          "line": 23
+        },
+        {
+          "number": "1.3",
+          "title": "Attention Mechanisms",
+          "line": 35
+        },
+        {
+          "number": "1.4",
+          "title": "Attention Masking and Spatial Masking",
+          "line": 52
+        },
+        {
+          "number": "1.5",
+          "title": "Molecular Generation",
+          "line": 83
+        },
+        {
+          "number": "1.6",
+          "title": "Hierarchical Policy Learning",
+          "line": 101
+        },
+        {
+          "number": "1.7",
+          "title": "Chemical AI and Reaction Learning",
+          "line": 116
+        },
+        {
+          "number": "1.8",
+          "title": "Molecular Geometry and Stereochemistry",
+          "line": 133
+        },
+        {
+          "number": "1.9",
+          "title": "Generative Reinforcement Learning",
+          "line": 151
+        },
+        {
+          "number": "1.10",
+          "title": "Molecular Optimization and Physics",
+          "line": 169
+        },
+        {
+          "number": "1.11",
+          "title": "Model Training and Optimization",
+          "line": 194
+        }
+      ],
+      "context": [
+        {
+          "line": 3,
+          "kind": "context",
+          "text": "Repository: 3d-syntree / 3d-synV2"
+        }
+      ]
+    },
+    {
+      "cluster_id": "MAPDIG",
+      "title": "Map Digitizer v2",
+      "first_line": 225,
+      "repository": "map_digitizer_v2",
+      "sections": [
+        {
+          "number": "2.1",
+          "title": "Computer Vision",
+          "line": 227
+        },
+        {
+          "number": "2.2",
+          "title": "Feature Extraction and Matching Models",
+          "line": 241
+        },
+        {
+          "number": "2.3",
+          "title": "Image Segmentation",
+          "line": 253
+        },
+        {
+          "number": "2.4",
+          "title": "Segmentation Models and Algorithms",
+          "line": 263
+        },
+        {
+          "number": "2.5",
+          "title": "Segmentation Fusion",
+          "line": 278
+        },
+        {
+          "number": "2.6",
+          "title": "Segmentation Refinement",
+          "line": 287
+        },
+        {
+          "number": "2.7",
+          "title": "Additional Documented Techniques",
+          "line": 296
+        },
+        {
+          "number": "2.8",
+          "title": "Spatial and Topological Processing",
+          "line": 306
+        }
+      ],
+      "context": [
+        {
+          "line": 226,
+          "kind": "context",
+          "text": "Repository: map_digitizer_v2"
+        },
+        {
+          "line": 305,
+          "kind": "context",
+          "text": "These additional model names are documented as optional ecosystem/backends; they should not all be interpreted as active inference components in the default pipeline."
+        }
+      ]
+    },
+    {
+      "cluster_id": "MATHSOLVER",
+      "title": "Math Solver",
+      "first_line": 319,
+      "repository": "math_solver",
+      "sections": [
+        {
+          "number": "3.1",
+          "title": "Mathematical Recognition",
+          "line": 321
+        },
+        {
+          "number": "3.2",
+          "title": "Vision Encoder",
+          "line": 330
+        },
+        {
+          "number": "3.3",
+          "title": "Transformer Decoder",
+          "line": 342
+        },
+        {
+          "number": "3.4",
+          "title": "Attention Masking",
+          "line": 357
+        },
+        {
+          "number": "3.5",
+          "title": "Sequence Generation",
+          "line": 365
+        },
+        {
+          "number": "3.6",
+          "title": "Tokenization and Language Representation",
+          "line": 374
+        },
+        {
+          "number": "3.7",
+          "title": "Training and Loss Functions",
+          "line": 385
+        },
+        {
+          "number": "3.8",
+          "title": "Model Evaluation",
+          "line": 397
+        },
+        {
+          "number": "3.9",
+          "title": "Mathematical Solving \u2014 Non-Neural AI/Computation",
+          "line": 406
+        }
+      ],
+      "context": [
+        {
+          "line": 320,
+          "kind": "context",
+          "text": "Repository: math_solver"
+        },
+        {
+          "line": 421,
+          "kind": "context",
+          "text": "Important distinction: Your equation-solving engine uses symbolic computation and rule-based classification. That classifier is not a neural-network classifier. The major deep-learning component is the TAMER mathematical OCR system connected through the GPU worker."
+        }
+      ]
+    },
+    {
+      "cluster_id": "WEATHER",
+      "title": "Weather \u2014 Solar and Wind Forecasting",
+      "first_line": 423,
+      "repository": "Weather",
+      "sections": [
+        {
+          "number": "4.1",
+          "title": "Time-Series Forecasting",
+          "line": 425
+        },
+        {
+          "number": "4.2",
+          "title": "Convolutional Neural Networks",
+          "line": 436
+        },
+        {
+          "number": "4.3",
+          "title": "Recurrent Neural Networks",
+          "line": 444
+        },
+        {
+          "number": "4.4",
+          "title": "Hybrid Machine Learning",
+          "line": 453
+        },
+        {
+          "number": "4.5",
+          "title": "Physics-Informed Machine Learning",
+          "line": 463
+        },
+        {
+          "number": "4.6",
+          "title": "Temporal Feature Engineering",
+          "line": 473
+        },
+        {
+          "number": "4.7",
+          "title": "Signal Processing and Fault Detection",
+          "line": 483
+        },
+        {
+          "number": "4.8",
+          "title": "Fault Classification",
+          "line": 495
+        }
+      ],
+      "context": [
+        {
+          "line": 424,
+          "kind": "context",
+          "text": "Repository: Weather"
+        },
+        {
+          "line": 511,
+          "kind": "context",
+          "text": "Important distinction: The microgrid fault classifier is currently rule-based on DWT energy patterns, not a trained neural classifier."
+        }
+      ]
+    },
+    {
+      "cluster_id": "NLME",
+      "title": "InfiniChatbot \u2014 Neural Latent Memory Engine",
+      "first_line": 513,
+      "repository": "infiniChatbot",
+      "sections": [
+        {
+          "number": "5.1",
+          "title": "Large Language Models",
+          "line": 517
+        },
+        {
+          "number": "5.2",
+          "title": "Transformer Attention",
+          "line": 526
+        },
+        {
+          "number": "5.3",
+          "title": "Linear and Associative Memory",
+          "line": 540
+        },
+        {
+          "number": "5.4",
+          "title": "Delta Rule Learning",
+          "line": 553
+        },
+        {
+          "number": "5.5",
+          "title": "Neural Gating Mechanisms",
+          "line": 563
+        },
+        {
+          "number": "5.6",
+          "title": "Memory Management",
+          "line": 574
+        },
+        {
+          "number": "5.7",
+          "title": "Parameter-Efficient Model Adaptation",
+          "line": 589
+        },
+        {
+          "number": "5.8",
+          "title": "Training and Optimization",
+          "line": 599
+        },
+        {
+          "number": "5.9",
+          "title": "Evaluation",
+          "line": 613
+        }
+      ],
+      "context": [
+        {
+          "line": 514,
+          "kind": "context",
+          "text": "Repository: infiniChatbot"
+        },
+        {
+          "line": 516,
+          "kind": "context",
+          "text": "The repository contains a detailed technical architecture document for the Neural Latent Memory Engine (NLME)."
+        },
+        {
+          "line": 624,
+          "kind": "context",
+          "text": "Status note: these concepts are described in the repository's architecture specification. The repository tree currently exposes the README rather than the corresponding complete executable model implementation."
+        }
+      ]
+    },
+    {
+      "cluster_id": "VAULTX",
+      "title": "Additional AI concepts in your Obsidian AI Projects vault",
+      "first_line": 626,
+      "repository": null,
+      "sections": [
+        {
+          "number": "6.1",
+          "title": "Equivariant Protein Backbones",
+          "line": 630
+        },
+        {
+          "number": "6.2",
+          "title": "Advanced Structural Attention",
+          "line": 641
+        },
+        {
+          "number": "6.3",
+          "title": "Advanced Mathematical Learning",
+          "line": 651
+        }
+      ],
+      "context": [
+        {
+          "line": 627,
+          "kind": "context",
+          "text": "Obsidian \u2014 AI Projects"
+        },
+        {
+          "line": 629,
+          "kind": "context",
+          "text": "These are additional concepts found in your SynPath technical and foundational notes. They should be distinguished from what is already present in the current code branch."
+        }
+      ]
+    },
+    {
+      "cluster_id": "MASTER-INDEX",
+      "title": "Consolidated master index",
+      "first_line": 662,
+      "repository": null,
+      "sections": [],
+      "context": [
+        {
+          "line": 663,
+          "kind": "context",
+          "text": "This is the list of the principal AI fields represented across your projects, without repeating every implementation-specific sub-concept."
+        },
+        {
+          "line": 664,
+          "kind": "context",
+          "text": "#\tMain AI field\tPrincipal concepts"
+        },
+        {
+          "line": 701,
+          "kind": "context",
+          "text": "One important distinction: Your strongest implemented AI architecture is currently in SynPath, while Map Digitizer and Weather combine trained models with substantial classical algorithms. The InfiniChatbot repository is currently an architecture specification, not a verified executable implementation."
+        }
+      ]
+    },
+    {
+      "cluster_id": "MEDNLP",
+      "title": "Medical NLP \u2014 Unified Medical Knowledge Architecture",
+      "first_line": 803,
+      "repository": null,
+      "sections": [
+        {
+          "number": "1.1",
+          "title": "Medical NLP and Clinical Text Processing",
+          "line": 805
+        },
+        {
+          "number": "1.2",
+          "title": "Classical NLP Representations",
+          "line": 831
+        },
+        {
+          "number": "1.3",
+          "title": "Transformer Architectures",
+          "line": 842
+        },
+        {
+          "number": "1.4",
+          "title": "Medical and Biomedical Language Models",
+          "line": 872
+        },
+        {
+          "number": "1.5",
+          "title": "Vector Embeddings and Mathematics",
+          "line": 893
+        },
+        {
+          "number": "1.6",
+          "title": "Medical Knowledge Systems and Vocabularies",
+          "line": 911
+        },
+        {
+          "number": "1.7",
+          "title": "Diseases, Syndromes and Medical Conditions Named in the Notes",
+          "line": 940
+        },
+        {
+          "number": "1.8",
+          "title": "Phenotypes, Symptoms and Clinical Findings Named",
+          "line": 957
+        },
+        {
+          "number": "1.9",
+          "title": "Genes, Proteins, Drugs and Procedures Named",
+          "line": 981
+        },
+        {
+          "number": "1.10",
+          "title": "Clinical Information Extraction",
+          "line": 991
+        },
+        {
+          "number": "1.11",
+          "title": "Clinical Retrieval",
+          "line": 1014
+        },
+        {
+          "number": "1.12",
+          "title": "Medical Ontologies and Semantic Hierarchies",
+          "line": 1031
+        },
+        {
+          "number": "1.13",
+          "title": "Knowledge Graphs and Biological Reasoning",
+          "line": 1058
+        },
+        {
+          "number": "1.14",
+          "title": "Graph Similarity and Information Theory",
+          "line": 1094
+        },
+        {
+          "number": "1.15",
+          "title": "Graph Algorithms and Explainability",
+          "line": 1108
+        },
+        {
+          "number": "1.16",
+          "title": "Graph Neural Networks and Knowledge Graph Learning",
+          "line": 1124
+        },
+        {
+          "number": "1.17",
+          "title": "Neural Ranking",
+          "line": 1142
+        },
+        {
+          "number": "1.18",
+          "title": "Statistical Validation and Evaluation",
+          "line": 1165
+        }
+      ],
+      "context": [
+        {
+          "line": 804,
+          "kind": "context",
+          "text": "Open Medical-NLP-Reconstructed \u00b7 Master Index"
+        },
+        {
+          "line": 926,
+          "kind": "group-label",
+          "text": "Named medical vocabularies and databases:"
+        },
+        {
+          "line": 987,
+          "kind": "group-label",
+          "text": "The notes also use APC as an example of an ambiguous abbreviation:"
+        },
+        {
+          "line": 1083,
+          "kind": "group-label",
+          "text": "Graph libraries and systems:"
+        }
+      ]
+    },
+    {
+      "cluster_id": "2D3D",
+      "title": "2D3D \u2014 Computer Vision and 3D Reconstruction",
+      "first_line": 1196,
+      "repository": null,
+      "sections": [
+        {
+          "number": "2.1",
+          "title": "Camera Models and Geometry",
+          "line": 1198
+        },
+        {
+          "number": "2.2",
+          "title": "Epipolar and Multi-View Geometry",
+          "line": 1222
+        },
+        {
+          "number": "2.3",
+          "title": "Structure from Motion (SfM)",
+          "line": 1238
+        },
+        {
+          "number": "2.4",
+          "title": "Bundle Adjustment and Optimization",
+          "line": 1260
+        },
+        {
+          "number": "2.5",
+          "title": "Triangulation and Point Clouds",
+          "line": 1272
+        },
+        {
+          "number": "2.6",
+          "title": "Classical Multi-View Stereo (MVS)",
+          "line": 1283
+        },
+        {
+          "number": "2.7",
+          "title": "Neural Depth Estimation",
+          "line": 1299
+        },
+        {
+          "number": "2.8",
+          "title": "Deep Learning Multi-View Stereo",
+          "line": 1317
+        },
+        {
+          "number": "2.9",
+          "title": "Depth Fusion and Volumetric Reconstruction",
+          "line": 1345
+        },
+        {
+          "number": "2.10",
+          "title": "Mesh Generation and Topology",
+          "line": 1366
+        },
+        {
+          "number": "2.11",
+          "title": "Neural 3D Representations",
+          "line": 1388
+        },
+        {
+          "number": "2.12",
+          "title": "Disentangled Learning and Primitive-Based Reconstruction",
+          "line": 1413
+        },
+        {
+          "number": "2.13",
+          "title": "Semantic and Structural Building Decomposition",
+          "line": 1437
+        },
+        {
+          "number": "2.14",
+          "title": "Video-to-3D Reconstruction Pipeline",
+          "line": 1478
+        },
+        {
+          "number": "2.15",
+          "title": "Training and Data Engineering",
+          "line": 1495
+        }
+      ],
+      "context": [
+        {
+          "line": 1197,
+          "kind": "context",
+          "text": "Open the 2D3D project folder"
+        },
+        {
+          "line": 1414,
+          "kind": "context",
+          "text": "Additional research direction in the notes"
+        },
+        {
+          "line": 1438,
+          "kind": "context",
+          "text": "Additional research direction in the notes"
+        },
+        {
+          "line": 1460,
+          "kind": "group-label",
+          "text": "Named architectural components:"
+        },
+        {
+          "line": 1471,
+          "kind": "group-label",
+          "text": "Named datasets and research directions:"
+        }
+      ]
+    }
+  ],
+  "excluded_lines": [
+    {
+      "line": 1,
+      "text": "Understood. You want a complete AI concept taxonomy: main concepts, sub-concepts, and their associated techniques. No lengthy explanations.",
+      "reason": "context-before-any-cluster"
+    },
+    {
+      "line": 719,
+      "text": "TAHT ISNTA L ALL THE RPROEJCT WHAT ANOUT THE MEIDCLA ONE THE ONE WITH SECINNES AN SEICNES NAMED AND THE CONEDPET USED IN IT ",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 720,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 721,
+      "text": "https://github.com/Vtheonly/Obsidian_Notes/tree/main/AI/AI%20Projects/Medical-NLP-Reconstructed",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 722,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 723,
+      "text": "https://github.com/Vtheonly/Obsidian_Notes/tree/main/AI/AI%20Projects/2D3D",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 724,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 725,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 726,
+      "text": "I WANT THE NAMED OF THE CONEPTS",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 727,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 728,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 729,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 730,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 731,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 732,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 733,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 734,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 735,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 736,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 737,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 738,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 739,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 740,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 741,
+      "text": "Worked for 6m 2s",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 742,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 743,
+      "text": "I\u2019ll inspect both Obsidian project folders directly, including their nested note files, then return only the named concepts and sub-concepts\u2014especially the medical/science project you pointed out.",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 744,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 745,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 746,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 747,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 748,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 749,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 750,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 751,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 752,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 753,
+      "text": "Planned repository search",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 754,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 755,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 756,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 757,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 758,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 759,
+      "text": "Reviewed named concepts",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 760,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 761,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 762,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 763,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 764,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 765,
+      "text": "Inspected medical NLP repository directories and recursively retrieved notes",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 766,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 767,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 768,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 769,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 770,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 771,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 772,
+      "text": "I found the medical project\u2019s full structure. It is not just \u201cmedical NLP\u201d: it has dedicated sections for ClinicalBERT/PubMedBERT/SapBERT, BioBERT, UMLS identifiers, disease ontologies, clinical entity extraction, knowledge graphs, and neural ranking. I\u2019m checking the actual notes now so I can include the named diseases, standards, models, and algorithms rather than just the folder headings.",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 773,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 774,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 775,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 776,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 777,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 778,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 779,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 780,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 781,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 782,
+      "text": "Cataloged medical terms and grouped project concepts",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 783,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 784,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 785,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 786,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 787,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 788,
+      "text": "Compiled comprehensive medical NLP and 2D/3D vision concepts",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 789,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 790,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 791,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 792,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 793,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 794,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 795,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 796,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 797,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 798,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 799,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 800,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 801,
+      "text": "",
+      "reason": "transcript-noise-block"
+    },
+    {
+      "line": 802,
+      "text": "You're right. I missed two major project folders. I inspected both, including their nested notes. Here are the named concepts and sub-concepts, without explanations.",
+      "reason": "transcript-noise-block"
+    }
+  ],
+  "noise_block": {
+    "start_line": 719,
+    "end_line": 802
+  },
+  "parse_stats": {
+    "clusters_total": 9,
+    "sections_total": 81,
+    "raw_item_lines": 1283,
+    "unique_items": 1233,
+    "items_with_alias": 66,
+    "names_in_multiple_sections": 39,
+    "excluded_lines_total": 85,
+    "context_records_total": 24,
+    "principal_concepts_crossrefs": 81,
+    "principal_concepts_unmatched": [
+      "INT-0001:PaiNN",
+      "INT-0046:Padding",
+      "INT-0046:causal",
+      "INT-0046:spatial",
+      "INT-0046:legality masks",
+      "INT-0140:Policies",
+      "INT-0140:trajectories",
+      "INT-0140:rewards",
+      "INT-0192:Geometric and temporal perturbations",
+      "INT-0210:Registration",
+      "INT-0210:segmentation",
+      "INT-0455:LLaMA",
+      "INT-0529:KL divergence",
+      "INT-0529:teacher\u2013student learning",
+      "INT-0567:Autograd",
+      "INT-0567:VJPs",
+      "INT-0575:SE(3)",
+      "INT-0575:invariance",
+      "INT-0575:equivariance",
+      "INT-0576:Bipartite graphs",
+      "INT-0578:Conditional policies",
+      "INT-0578:action factorization",
+      "INT-0579:synthons",
+      "INT-0580:Conformers",
+      "INT-0580:torsions",
+      "INT-0580:stereochemistry",
+      "INT-0581:Energy functions",
+      "INT-0581:physical constraints",
+      "INT-0584:consensus fusion",
+      "INT-0585:Swin Transformer",
+      "INT-0587:rule-based classification",
+      "INT-0588:Forecasting",
+      "INT-0588:temporal modeling",
+      "INT-0589:LSTMs",
+      "INT-0590:XGBoost\u2013LSTM hybrid models",
+      "INT-0591:multiresolution analysis",
+      "INT-0592:Threshold detection",
+      "INT-0592:statistical patterns",
+      "INT-0594:Associative memory",
+      "INT-0594:latent memory",
+      "INT-0595:error-correcting updates",
+      "INT-0596:selective fine-tuning",
+      "INT-0597:Masked recovery",
+      "INT-0598:stable training"
+    ]
+  }
+}
