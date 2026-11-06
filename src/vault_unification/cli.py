@@ -33,6 +33,7 @@ from . import kufidelity as kufidelity_mod
 from . import linkcheck as linkcheck_mod
 from . import mdextract as mdextract_mod
 from . import seealsoaudit as seealsoaudit_mod
+from . import dupscan as dupscan_mod
 from . import omission as omission_mod
 from . import overlap as overlap_mod
 from . import registry as registry_mod
@@ -773,6 +774,14 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--file-mapping", required=True, help="file-mapping JSONL (vault, source_path -> canonical_paths)")
     p.add_argument("--output-root", required=True, help="unified vault root, read-only during scanning")
     p.add_argument("--decisions", help="optional orchestrator decisions JSONL (resolve/exclude rows with rationale) applied deterministically")
+    p.add_argument("--report", help="optional JSON report path")
+
+    # ---- dup-scan ----
+    p = sub.add_parser(
+        "dup-scan",
+        help="corpus-wide duplicate-phrase (stutter) and duplicate-block (tandem) scan (AUDIT-013)",
+    )
+    p.add_argument("--root", required=True, help="vault root to scan, read-only")
     p.add_argument("--report", help="optional JSON report path")
 
     return parser
@@ -2017,9 +2026,26 @@ def cmd_see_also_audit(args) -> int:
     return 1 if reviewable else 0
 
 
+def cmd_dup_scan(args) -> int:
+    result = dupscan_mod.dup_scan(args.root)
+    payload = {"command": "dup-scan", "result": result}
+    _write_report_safe(args, "dup-scan", payload)
+    _emit_summary(
+        {
+            "notes_scanned": result["scope"]["notes_scanned"],
+            "lines_scanned": result["scope"]["lines_scanned_excl_fences_tables"],
+            "findings": result["results"]["findings_total"],
+            "by_class": result["results"]["by_class"],
+            "by_severity": result["results"]["by_severity"],
+        }
+    )
+    return 1 if result["results"]["findings_total"] else 0
+
+
 HANDLERS = {
     "selftest": cmd_selftest,
     "see-also-audit": cmd_see_also_audit,
+    "dup-scan": cmd_dup_scan,
     "check-paths": cmd_check_paths,
     "inventory": cmd_inventory,
     "verify-manifest": cmd_verify_manifest,

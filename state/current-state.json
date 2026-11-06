@@ -24,7 +24,7 @@
         "words_outside_fences": 990007,
         "words_total": 1157937
     },
-    "current_task_id": "AUDIT-013",
+    "current_task_id": "VERIF-002",
     "execution_environment": "Z AI / GLM 5.3 with available subagents",
     "framework_evidence": {
         "capabilities": "reports/bootstrap/boot-004-capabilities.json",
@@ -96,7 +96,7 @@
     },
     "knowledge_registry_initialized": true,
     "last_verified_checkpoint": "state/checkpoints/checkpoint-2026-11-03-synth001-session24.json",
-    "notes": "Vault delivered at session 28 (544/544, all gates green); s29 completed VERIF-001 (244/246 retained, 5 repairs). Session 30 completed AUDIT-012: the new vu see-also-audit command mechanically verified all 1,773 source See-Also pairs (1,901 occurrences), found 177 dropped links (F-0042), repaired 175 links in 108 notes, documented 34 vault-management exclusions (F-0043); post-repair battery fully green (audit 1,739+34=1,773/1,773, lint 0 errors, links 12,177/0, full-corpus audit valid=true 0 findings, 779/779 tests). AUDIT-013 (corpus-wide duplicate-phrase scan) is next, then VERIF-002.",
+    "notes": "Vault delivered at session 28; s29 completed VERIF-001; session 30 completed AUDIT-012 (See-Also carry-over: 175 links repaired, 34 exclusions documented, F-0042/F-0043) and AUDIT-013 (duplicate scan: 2 stutters repaired, F-0044). Both new gates (vu see-also-audit, vu dup-scan) exit 0; battery fully green (lint 0 errors, links 12,177/0, full-corpus audit valid=true 0 findings, 799/799 tests). Next: VERIF-002 semantic sample increment on the post-repair state.",
     "output_synthesis_started": true,
     "phase_zero_rebaseline": {
         "authorized": "2026-10-27 user direction (docs/PHASE_ZERO_REBASELINE_AND_FRAMEWORK_REFACTOR.md)",

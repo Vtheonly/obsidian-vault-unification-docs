@@ -115,7 +115,7 @@ $$ d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} $$
 
 $$ d(x, y) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2} $$
 
-Euclidean distance is the standard use case for continuous variables, it works well when the dimensions are correlated, and it is best for continuous numerical data where "straight-line" proximity makes sense. In norm notation, Euclidean distance is the $L_2$ norm and Manhattan is the $L_1$ norm — two members of the $L_p$ (Minkowski) family. In norm notation, Euclidean distance is the $L_2$ norm and Manhattan is the $L_1$ norm — two members of the $L_p$ (Minkowski) family. In norm notation, Euclidean distance is the $L_2$ norm and Manhattan is the $L_1$ norm — two members of the $L_p$ (Minkowski) family.
+Euclidean distance is the standard use case for continuous variables, it works well when the dimensions are correlated, and it is best for continuous numerical data where "straight-line" proximity makes sense. In norm notation, Euclidean distance is the $L_2$ norm and Manhattan is the $L_1$ norm — two members of the $L_p$ (Minkowski) family.
 
 ### Manhattan distance ($L^1$ norm)
 
@@ -306,7 +306,7 @@ We have a training database of 8 animals and a **New Animal** — with features 
 
 ### The data
 
-We are provided with a labeled dataset of 8 animals (training data) and their respective features. We are provided with a labeled dataset of 8 animals (training data) and their respective features. We are provided with a labeled dataset of 8 animals (training data) and their respective features. In the canonical version of the table, entry #1 is the "New" point being tested and entries 2–8 are the training data:
+We are provided with a labeled dataset of 8 animals (training data) and their respective features. In the canonical version of the table, entry #1 is the "New" point being tested and entries 2–8 are the training data:
 
 | ID | Head Length | Size | Class | Distance (calculated) |
 | :--- | :--- | :--- | :--- | :--- |

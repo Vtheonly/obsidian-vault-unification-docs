@@ -1,0 +1,45 @@
+{
+  "command": "dup-scan",
+  "result": {
+    "command": "dup-scan",
+    "root": "output/Unified-Vault",
+    "scope": {
+      "notes_scanned": 544,
+      "lines_scanned_excl_fences_tables": 103039,
+      "blocks_scanned": 39500,
+      "unreadable": []
+    },
+    "exclusions": [
+      "code fences (verbatim source material; lint owns code checks)",
+      "table rows (repeated rows are data; source tables preserved verbatim)",
+      "frontmatter",
+      "phrases containing arrows (pipeline notation)",
+      "phrases whose final token ends with ',' or ';' (enumeration continuation)",
+      "phrases with <60% alphabetic tokens (math/numeric/symbolic content)"
+    ],
+    "limitations": [
+      "exact matching after whitespace collapsing (case-sensitive); drifted duplicates not detected",
+      "non-consecutive duplication is out of scope (can be intentional structure)"
+    ],
+    "results": {
+      "findings_total": 0,
+      "by_class": {},
+      "by_severity": {}
+    },
+    "findings": [],
+    "deterministic": true
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "dup-scan",
+    "args": {
+      "command": "dup-scan",
+      "root": "output/Unified-Vault",
+      "report": "/home/z/my-project/repo/reports/synthesis/s30-dup-scan.json"
+    },
+    "utc_timestamp": "2026-11-06T10:13:35+00:00",
+    "git_commit": "950f62e"
+  }
+}
