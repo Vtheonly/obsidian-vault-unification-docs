@@ -1,0 +1,42 @@
+{
+  "command": "check-links",
+  "result": {
+    "root": "output/Unified-Vault",
+    "markdown_files_checked": 544,
+    "links_checked": 11999,
+    "problems": [],
+    "external_links": [
+      {
+        "file": "03 - Python and Data Tooling/Python Environment Setup/Installation and Distributions.md",
+        "line": 31,
+        "url": "https://www.python.org/downloads"
+      },
+      {
+        "file": "03 - Python and Data Tooling/Python Environment Setup/Installation and Distributions.md",
+        "line": 61,
+        "url": "https://www.anaconda.com/download"
+      },
+      {
+        "file": "20 - Vault and Project Context/Master AI README.md",
+        "line": 135,
+        "url": "https://github.com/Vtheonly/ObsidainAgentGithubUplaod"
+      }
+    ],
+    "folder_links": [],
+    "folder_link_count": 0,
+    "problem_counts": {}
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "check-links",
+    "args": {
+      "command": "check-links",
+      "root": "output/Unified-Vault",
+      "report": "/home/z/my-project/repo/reports/synthesis/s28-final-check-links.json"
+    },
+    "utc_timestamp": "2026-11-06T02:55:45+00:00",
+    "git_commit": "44367c6"
+  }
+}

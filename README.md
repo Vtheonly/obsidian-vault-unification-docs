@@ -1,83 +1,39 @@
 ## Repository status
 
-BINDING ACCELERATED-COMPLETION POLICY in force since session 17
-(2026-11-01, ADR-0012): `docs/ACCELERATED_COMPLETION_POLICY.md` +
-AGENTS.md §12. Final vault deadline: end of session 26 (user directive:
-"less than 12 additional sessions"). Progress is measured by
-deliverables only (dossier pairs classified / 69,185; KU dispositions
-assigned / 27,536; release-gate predicates; verified notes); the
-universal per-unit dual review is removed in favor of ADR-0011 tiered
-verification; the quality floor (source immutability, full test suite,
-machine-verified citations, release gates) is inviolate.
+**PROJECT COMPLETE — UNIFIED VAULT DELIVERED (session 28, 2026-11-06).**
+`output/Unified-Vault/` holds **544/544 planned canonical notes** across 20
+areas, synthesized and rewritten from both source vaults. Final acceptance
+evidence: `reports/release/final-report.md`.
 
-GATED SYNTHESIS IN PROGRESS (session 23, 2026-11-03 — SYNTH-001). Areas
-04–14 are synthesized end-to-end and GREEN through the full gate chain:
-**259/544 canonical notes** (04 - Machine Learning 27; 05 - Neural Network
-Foundations 21; 06 - Computer Vision 79; 07 - Sequence Models 14; 08 -
-Attention and Transformers 38; 09 - NLP and Language Models 11; 10 - Large
-Language Models 7; 11 - Foundation Models and Multimodal 13; 12 - Generative
-Models 12; 13 - Training and Adaptation 11; 14 - Inference and Production
-26). Session 23 generated all 69 new notes via 33 bounded subagent groups,
-ran all five audits to **valid=true with 0 findings** (3,252 KUs / 15,538
-markers verified present: 14,521 term + 838 math + 179 code), lint 0 errors /
-17 documented verbatim-source warnings, gates pass (3 evidence-backed
-concept-type drift waivers with source math-density measurements; areas
-13–14 clean). 28 + 5 round-2 anchored marker repairs (keep-both rule for
-duplicated source content) + 2 lint fence-label repairs (F-0031 precedent).
-744/744 tests; sources immutable 276/333 at start and end. REMAINING: 9
-areas / 285 notes (sessions 24–25: areas 15–19, 01–03, 20), cross-batch
-consistency + the three confirmed-gap treatments + corpus-wide drift
-re-audit of all 10 waivers (session 25), final verification and delivery
-(session 26).
+- **Knowledge accounting:** 27,536/27,536 KUs dispositioned (Preserved 18,478
+  / Consolidated 8,106 / Contextualized 950 / Superseded 2); Unaccounted = 0;
+  registry validated (needs_review = 0).
+- **Full-corpus audit (s28):** all 8 checks over 27,536 KUs / 544 notes —
+  **0 findings**; **42,156 markers verified present, 0 missing** (26,308 term
+  + 14,119 math + 1,729 code).
+- **Links:** 11,999 checked, 0 problems; lint 0 errors / 85 classified
+  verbatim-source warnings.
+- **Corpus-wide drift re-audit:** concept/example/overview/tutorial clean at
+  corpus scale; derivation/reference drifts root-caused as content-family
+  tertile artifacts (flat overall means, 100% verified per-note marker
+  retention). All 14 per-area waivers re-audited.
+- **Confirmed gaps:** 3/3 treated via dedicated sections (Second Moment,
+  Bradley-Terry, Async Def) through the sanctioned discovery machinery
+  (`state/synthesis/gap-treatments-v1.json`).
+- **Findings ledger:** 0 open (9 closed with evidence at s28).
+- **Tests:** 752/752; sources byte-identical to manifests throughout
+  (276/276 + 333/333).
+- **Deadline record (honest):** the ADR-0012 deadline (end of session 26) was
+  missed; sessions 27–28 completed verification and delivery under the §5.5
+  honesty rule — the quality floor was never weakened. Delivered at session 28.
+- Known limitations (lexical-not-semantic marker verification, 46,978
+  low-signal provisional candidates documented as an exclusion, Tier A ~17%
+  over-inclusion, keep-both source contradictions) are stated in the final
+  report §5.
 
-DISPOSITION ASSIGNMENT IS COMPLETE (session 19, 2026-11-01 — the S21–22
-phase target finished two sessions early). All 27,536/27,536 KUs received
-exactly one disposition with planned destinations; Unaccounted = 0
-(Preserved 18,478 / Consolidated 8,106 / Contextualized 950 / Superseded 2)
-under the ADR-0014 rule engine (`vu assign-dispositions` + committed
-ledger `state/dispositions/001-disp001-rule-driven.jsonl` + registry
-overlay `vu kureg-apply-dispositions`; rebuilt registry validates green
-with 0 warnings). The rule engine consumes the committed synthesis plan:
-`state/synthesis/canonical-structure-v1.json` (20-area unified backbone,
-544 planned canonical notes) and `state/synthesis/file-mapping-v1.jsonl`
-(609 source files mapped by 13 bounded subagents + one
-orchestrator-reviewed context group; machine-verified, 0 problems).
-Session 19 also completed dossier v2 (EXT-011: six `<domain>-v2.json`
-dossiers covering all 5,168 per-domain extension participants plus the 514
-original participants; byte-identical `--check`), repaired finding F-0022
-(all 7,034 evidence entries in 009..014 had empty `lines` — field-name bug
-in the session-18 assembly script; new term-level schema +
-`--extension-classifications` validator with batch cross-checks, ADR-0013),
-and fixed F-0023 (registry destinations UNIQUE(path, heading) cannot
-dedupe NULL headings). 708/708 tests.
-
-DISC-002 signal-pool review is COMPLETE (session 16, 2026-11-01, ADR-0011
-user-authorized accelerated mode). All 4,274 remaining signal-rule
-candidates were decided in one session through a tiered pipeline:
-calibrated bulk classes (zero counter-examples in the 2,063-decision
-calibration set), 290 citation-backed covers, 3,666 parallel-subagent
-review decisions with full orchestrator verification (mechanical citation
-checks, 150-reject sample re-review at ~97% agreement, 11 citation-backed
-overrides, one gap_watch overturned to cover). Result: 667 covers +
-3,607 rejects + 0 new confirmed gaps (total remains 3: second moment,
-bradley-terry, async def). Index status: 46,978 provisional (documented
-low-signal exclusion) / 7,893 already_covered / 5,278 rejected / 3
-confirmed_gap / 1 merged / 1 deferred; validate green; 663/663 tests.
-
-DISC-002 dossier-extension classification is COMPLETE (session 18,
-2026-11-01, one session ahead of the S18–20 phase window): all 69,185
-extension pairs decided (5,441 participate / 63,744 reject-pair; 5,168
-distinct participant KUs; 294 extension records in
-state/classifications/009..014; 4,893 review verdicts in 008) through a
-calibrated tiering engine (state/term-maps/dext-tier-config-v1.json +
-scripts/s18_dext_tiering.py; C1/C2 zero-counter-example calibration, two
-ADR-0011 pull-backs after sampled wrong-class members) plus four subagent
-review rounds with mechanical completeness/citation verification and
-orchestrator sampling (99.4% reject agreement; Tier A residual ~17%
-safe-direction over-inclusion documented). Next: dossier v2 regeneration
-(ext006 config extension), disposition assignment (27,536 KUs, Unaccounted
-→ 0), then gated synthesis — synthesis must start by session 23; final
-vault by end of session 26.
+Earlier phase history: DISC-002 signal-pool + dossier-extension + dispositions
+(sessions 16–19), gated synthesis areas 04–14 (sessions 20–24), areas 15–19
+(sessions 25–27), area 20 + final verification (session 28).
 
 ## Suggested top-level layout
 

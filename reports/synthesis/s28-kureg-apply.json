@@ -1,0 +1,35 @@
+{
+  "command": "kureg-apply-dispositions",
+  "result": {
+    "db_path": "state/registries/kuregistry.db",
+    "ledger_file": "state/dispositions/001-disp001-rule-driven.jsonl",
+    "records_in_file": 27536,
+    "applied": 27536,
+    "revised": 0,
+    "idempotent_skipped": 0,
+    "counts_after_apply": {
+      "total_kus": 27536,
+      "by_disposition": {
+        "Consolidated": 8106,
+        "Contextualized": 950,
+        "Preserved": 18478,
+        "Superseded": 2
+      }
+    }
+  },
+  "report_meta": {
+    "framework": "vault_unification",
+    "framework_version": "0.9.0",
+    "report_schema_version": "1.0",
+    "command": "kureg-apply-dispositions",
+    "args": {
+      "command": "kureg-apply-dispositions",
+      "db": "state/registries/kuregistry.db",
+      "dispositions": "state/dispositions/001-disp001-rule-driven.jsonl",
+      "protected_root": null,
+      "report": "reports/synthesis/s28-kureg-apply.json"
+    },
+    "utc_timestamp": "2026-11-06T02:58:30+00:00",
+    "git_commit": "44367c6"
+  }
+}

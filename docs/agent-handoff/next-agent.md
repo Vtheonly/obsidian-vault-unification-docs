@@ -2,131 +2,85 @@
 
 ## Project state
 
-- Current milestone: **SYNTHESIS FINAL PHASE — AREAS 01–19 COMPLETE AND
-  VERIFIED (527/544)**. Session 27 (2026-11-06, commit `dcea8fb`) cleared
-  the sessions-25/26 verification debt: all five areas 15–19 audits
-  **valid=true, 0 findings** over 8,610 KUs / 11,394 verified markers;
-  gates 5/5 pass (2 evidence-backed content-family drift waivers, source
-  measurements recorded in the gate reports); lint **0 errors / 84
-  documented verbatim-source warnings** over all 527 notes; 752/752 tests;
-  sources immutable 276/276 + 333/333 at start and end.
-- Deliverable metric: canonical notes verified **327 → 527/544**.
-- **Budget position (honest):** ADR-0012's hard deadline (end of session 26)
-  was missed — sessions 25/26 generated but did not verify, and session 27
-  completed the verification. This is recorded in the session ledger as an
-  overrun (§5.5 escalation, floor never weakened). **Only the user may
-  re-baseline or extend the deadline**; the remaining scope is one focused
-  session's worth (see Next task).
-- Completed and verified: BOOT-000..004, EXT-001..011, REBASE-000, AUDIT-011,
-  FRAME-001, DISC-001, FRAME-002, REGEN-001, DISC-002, DISP-001. SYNTH-001
-  in_progress (areas 01–19 done; area 20 + final verification remain).
-- Git: HEAD == origin/main == `dcea8fb`, clean tree, three pushes this
-  session (`4f5c6b9`, `9ddf5f2`, `dcea8fb`), each verified via fetch +
-  rev-parse.
+**PROJECT COMPLETE — UNIFIED VAULT DELIVERED (session 28, 2026-11-06).**
+All release gates pass with machine-verified evidence. The final acceptance
+report is `reports/release/final-report.md` — read it first.
 
-## Session 27 summary (evidence-backed)
+- **Deliverable:** `output/Unified-Vault/` — **544/544 planned notes** across
+  20 areas, synthesized and rewritten (not concatenated) from both immutable
+  source vaults.
+- **Knowledge accounting:** 27,536/27,536 KUs dispositioned; Unaccounted = 0;
+  needs_review = 0 (registry rebuilt + validated at s28).
+- **Full-corpus audit:** 8 checks over 27,536 KUs / 544 notes — **0
+  findings**; **42,156 markers verified present, 0 missing** (26,308 term +
+  14,119 math + 1,729 code).
+- **Links/lint/tests:** 11,999 links, 0 problems; lint 0 errors / 85
+  classified verbatim-source warnings; 752/752 tests; sources byte-identical
+  to manifests throughout (276/276 + 333/333).
+- **Deadline record (honest):** ADR-0012's end-of-session-26 deadline was
+  missed; sessions 27–28 delivered under the §5.5 honesty rule — floor never
+  weakened. Ledger rows 25–28 in `docs/ACCELERATED_COMPLETION_POLICY.md`.
+- Git: every green unit was committed and pushed immediately with remote-ref
+  verification (s28 pushes: 1dc506e, d1213a6, 44367c6, + final commit).
 
-- Verified the inherited s25/s26 state first (527/544 on disk, zero
-  unplanned files, claims cross-checked against canonical structure and
-  git history), then: rebuilt scratch inputs deterministically (byte-identical
-  reports), drove lint to 0 errors (14 ambiguous links → path form after the
-  area-19 quiz basename collisions, 3 F-0031 fence labels, 1 table cell),
-  added framework **F-0033/F-0034** (tilde-fence extraction with nested-fence
-  precedence; unlabelled-quotation exemption — corpus survey: exactly 1 KU
-  affected; contiguous-containment code matching — truncated KU excerpts vs
-  preserved note fences), 8 new unit tests (744→752), root-caused all 91
-  audit findings and repaired 90 via `scripts/s27_marker_repairs_area15..19.py`
-  (probe-idempotent, double-run no-op verified): 26 bare-fence equations
-  restored as ```text fences, 10 mermaid subgraph labels + 1 arrow restored
-  verbatim, ASCII-dash forms, chapter-NN references, math-span line-structure
-  restorations (the audit's inline spans pair $-signs PER LINE — restore the
-  source's sentence/line structure), source-own forms kept sic
-  (Self-RAF, communityfine-tunes, the 2024-2024 typo'd path), keep-both
-  carriers for escaped table cells. 1 gate repair (KG Pipeline tutorial
-  examples band via grounded source-verbatim WORKS_FOR/FOUNDED_BY/LOCATED_IN
-  instance markers).
-- Waiver evidence (areas 16/17, both `drift::concept` on the examples
-  dimension): area16 first-third sources 2.11 vs last-third 0.66 example
-  markers/1k words (3.2× source-side drop); area17 labeled-fence density 15
-  vs 8 across the two 18-note halves (marker density identical 1.33/1k). The
-  output drift is milder than the source drift in both cases.
+## What session 28 did (evidence-backed)
 
-## Next task (SYNTH-001 final phase — one focused session)
+1. **Area 20 (17 notes) generated and verified** via 7 bounded subagent
+   groups: audit valid=true 0 findings over 949 Contextualized KUs; gate
+   pass with 1 evidence-backed tertile-composition waiver (source-measured
+   1.67→0.88 example markers/1k across the same tertiles; 100% per-note
+   marker retention; 0 below band). 91 findings repaired via the anchored
+   probe-idempotent `scripts/s28_marker_repairs_area20.py` (37 entries; the
+   blockquoted-fence source-form restoration for the Research Queue policy
+   labels, TOC anchor slugs, "Domain NN" heading unnumbering, archived-path
+   keep-both restorations, wikilink syntax examples fenced).
+2. **3/3 confirmed gaps treated** through the sanctioned discovery machinery:
+   replay of the 17-round decision chain (byte-identical to the committed
+   index), batch17 accepts (D-DISC002-B17-0001..0003), exactly 3 index
+   records confirmed_gap→accepted, discovery-validate green (60,154
+   records). Dedicated sections: Second Moment (Optimizers note),
+   Bradley-Terry (Probability Essentials + DPO cross-link), Async Def
+   (Functions note). Affected areas re-audited/re-gated green.
+   Record: `state/synthesis/gap-treatments-v1.json`.
+3. **Cross-batch consistency:** corpus assessment with union provenance
+   (0 below band); corpus drift re-audit — concept/example/overview/tutorial
+   clean at corpus scale (retires the s21–23 waivers); derivation/reference
+   drifts root-caused as content-family tertile artifacts (flat overall
+   means 0.944/0.944 and 0.906/0.904; per-note retention verified, including
+   a manual check that all concrete example content in Backpropagation.md
+   survived its 27→13 discourse-marker consolidation). F-0014 grep: 0
+   occurrences vault-wide.
+4. **Final verification:** full-corpus audit (above), registry rebuild +
+   validate (Unaccounted=0), link check, lint, independence greps (0
+   source-vault/locator/project references), 9 open findings closed with
+   evidence (0 open; F-0016 open-operational and F-0018 partially-fixed are
+   documented environment/historical items), final report written.
 
-1. **Read first**: AGENTS.md §12–13 → `docs/ACCELERATED_COMPLETION_POLICY.md`
-   (ledger rows 25–27 record the deadline overrun) → this file →
-   `state/checkpoints/checkpoint-2026-11-06-synth001-session27.json`.
-2. **Verify baseline** (policy §7): HEAD == origin/main, clean tree,
-   `python3 -m pip install -e .`, full suite green (**752 expected**),
-   manifests 276/276 + 333/333.
-3. **Area 20 (17 notes, "20 - Vault and Project Context")**: add the
-   full-area `AREA_CONFIG` entry to `scripts/s20_build_synthesis_inputs.py`
-   (note types from the canonical-structure rationales; MOC target; the
-   area is the Contextualized archival layer — presentation decided at the
-   release audit) → extend/re-run the link-rules script → build inputs →
-   check prompts → generate (subagent waves capped at 4 notes / ~12K source
-   words, orientation notes LAST; scratch wave plans via the s25_pack_waves
-   pattern) → `python3 scripts/s21_run_gates.py area20` →
-   `vu audit-output --source-root "source-vaults/AI " --output-root
-   output/Unified-Vault --ku-batch scratch/synth/area20/audit-kus.jsonl
-   --report reports/synthesis/s2X-area20-audit.json` → anchored
-   probe-idempotent repairs if findings (all s27 repair scripts are
-   templates). Push each green unit immediately (§13).
-4. **Cross-batch consistency + gaps**: corpus-wide drift re-audit incl.
-   **ALL 12 waivers** (s21–23: 10; s27: 2 — list in the gate reports);
-   F-0014 grep pass over areas 15–20 note bodies (marker headings must never
-   appear as knowledge — verified absent areas 01–14 at s24); terminology
-   and cross-area wikilink sweep now that all notes exist (bare links whose
-   basenames collide must be path-form — the lint's LINK_AMBIGUOUS is the
-   detector); the three confirmed-gap dedicated treatments (second moment,
-   bradley-terry, async def).
-5. **Final verification and delivery**: release-gate predicates from
-   `docs/MILESTONES_AND_ACCEPTANCE.md`; final audit over ALL 27,536 KUs;
-   final report with denominators; Unaccounted = 0 re-check; sources
-   immutable; full suite after the last mutation.
+## If a future session runs
 
-## Standing rules (enforced)
-
-- Never mark a task completed before its commit hash exists in the record.
-- Re-run the full suite after the LAST mutation of the session.
-- Sources are immutable; all outputs are evidence, never edits.
-- Every completion claim needs a report path or test run as evidence.
-- Marker-retention repairs go through anchored, PROBE-idempotent scripts
-  citing their source KUs — never hand-edits without a record. Keep BOTH
-  duplicate source treatments; hyphenated vs spaced forms are different
-  markers; NFKC superscript lesson (s24); **math spans pair $-signs per
-  LINE** (s27) — restore the source's line structure when a span fails.
-- Drift waivers are for EXPLAINED artifacts with source measurements +
-  audit 0 findings + 0 below band — never for hiding a regression.
-- **Continuous persistence (ADR-0015 / AGENTS.md §13):** commit and push
-  each bounded green unit immediately; verify the remote ref after every
-  push; record SHAs in the checkpoint.
-- ADR-0011 discipline stands; subagent outputs are verified (gates +
-  audits + sampling), never trusted.
-- Delta-verification discipline: write the arithmetic of expectations down
-  BEFORE running.
-- Fresh-sandbox setup: `python3 -m pip install -e .` BEFORE the baseline
-  pytest. F-0016: long runs must fit one tool call (< 10 min). F-0020:
-  invoke via `vu`. Scratch is git-ignored and regenerable: rerun the
-  recorded scripts after a sandbox recycle — never hand-rebuild
-  (s20_build_synthesis_inputs.py per area; s25_link_rules.py;
-  s25_launch_manifest.py; s21_run_gates.py per slug).
-- Display artifact: the IM channel strips `[m` from displayed output —
-  verify suspected defects byte-level (hex) before acting.
+1. Follow the startup protocol (AGENTS.md §2): verify this completion
+   against repository evidence — manifests (276/276 + 333/333), registry
+   (`vu kureg-init/load/apply/validate` — the DB is git-ignored, rebuild
+   from the committed batches + ledger), the final report's cited reports,
+   and the git log. Do not redo completed work without a regression trigger.
+2. Possible user-directed continuations (none authorized yet):
+   - deepen semantic verification beyond the lexical marker net
+     (final-report §5.1 limitation);
+   - review the 46,978 low-signal provisional discovery candidates
+     (documented exclusion);
+   - presentation changes to the area-20 archival layer.
+3. Standing rules still apply if any vault mutation happens: sources
+   immutable; anchored probe-idempotent repair scripts; gates + audits
+   after mutations; full suite after the last mutation; continuous
+   commit-and-push with remote verification.
 
 ## Explicit non-claims
 
-- Area 20 (17 notes) is NOT generated; the vault has 527/544 notes.
-- The corpus-wide drift re-audit (12 waivers) and the F-0014 grep pass over
-  areas 15–19 have NOT been run yet; the areas 15–19 gates passed on
-  per-area drift with 2 waivers.
-- The semantic-fidelity layer for areas 01–19 prose is the cross-batch
-  consistency pass plus the release audit — marker retention proves
-  lexical/formula preservation, not full semantic equivalence.
-- The three confirmed gaps (second moment, bradley-terry, async def) still
-  need their dedicated treatments.
-- The 46,978 low-signal provisional discovery candidates remain a
-  documented exclusion (not silently resolved).
-- Tier A dossier-extension auto-accepts retain ~17% single-side
-  over-inclusion (safe direction, documented in the session-18 report).
-- Release gates have NOT all passed yet; the project is NOT complete.
+- Verification is lexical-marker + structural, not a per-unit semantic proof
+  (ADR-0011 tiered mode; final-report §5.1).
+- The 46,978 low-signal provisional candidates remain an exclusion, not a
+  resolution; Tier A auto-accepts retain ~17% single-side over-inclusion.
+- Source-internal contradictions are preserved keep-both (e.g. the Conv2d
+  bias-init discrepancy), not adjudicated.
+- F-0016/F-0018 are open-operational/partially-fixed environment items —
+  documented, not defects in the deliverable.

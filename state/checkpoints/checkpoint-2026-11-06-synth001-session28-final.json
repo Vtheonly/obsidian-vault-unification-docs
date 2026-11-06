@@ -1,0 +1,67 @@
+{
+  "session": "28",
+  "date": "2026-11-06",
+  "task_id": "SYNTH-001 (final phase) — COMPLETED",
+  "phase": "final-verification-and-delivery",
+  "accelerated_mode": {
+    "session_number": 28,
+    "budget_sessions_consumed": 13,
+    "budget_sessions_remaining": 0,
+    "deliverable_metric_moved": "canonical notes generated and verified (gates + audits) / planned notes",
+    "before": 527,
+    "after": 544,
+    "denominator": 544,
+    "failed_session": false,
+    "cause_if_failed": null,
+    "deadline_position": "DELIVERED at session 28. The ADR-0012 hard deadline (end of session 26) was overrun; sessions 27-28 completed verification and delivery under policy 5.5 (floor never weakened, overrun recorded, never silently slipped). All release gates now pass with machine-verified evidence; see reports/release/final-report.md."
+  },
+  "work_completed": [
+    "Verified the inherited s27 state against repository evidence: HEAD==origin/main==9e70b39, clean tree (2125 mode-only diffs from sandbox), 752/752 tests after editable install, sources immutable 276/276 + 333/333",
+    "Area 20 (17 notes) end-to-end: AREA_CONFIG entry (archival reference layer), s28 link rules (0 area-20 collisions vault-wide), inputs 17/17 notes + 949 Contextualized KUs (0 problems), checkprompts 17/17 green, wave plan 7 groups, generation via 7 parallel subagent groups, 91 audit findings root-caused and repaired (37 anchored probe-idempotent repair entries in s28_marker_repairs_area20.py: TOC anchor slugs restored verbatim, wikilink syntax examples fenced per F-0029/F-0031 conventions, Research Queue blockquoted policy fences restored in the source's own form, Master Roadmap 31 domain headings unnumbered via content-preserving 'Domain NN' form, archived file paths restored keep-both, source records restored verbatim incl. ObsidainAgentGithubUplaod typo sic), audit valid=true 0 findings, gate pass (1 evidence-backed tertile-composition waiver: source-measured 1.67->0.88 markers/1k = 48% same-tertile source drop, 100% per-note marker retention, 0 below band)",
+    "Confirmed-gap treatments 3/3: dedicated sections in Optimizers (first/second moments + uncentered Adam rationale), Probability Essentials (Bradley-Terry under MLE) + DPO cross-link, Functions and Lambda Expressions (async def); phase-A replay (discover-gaps + 17 recorded decision rounds) byte-identical to the committed index; batch17 accept decisions -> exactly 3 index records confirmed_gap->accepted; discovery-validate valid=true (60,154 records, 0 errors); affected areas re-verified (audits 02/03/04/13 valid=true 0 findings; gates 4/4 pass)",
+    "Cross-batch consistency: corpus-wide assessment with union provenance (544 notes / 28,754 memberships, 0 dimensions below band); corpus drift re-audit — concept/example/overview/tutorial NO drift at corpus scale (retires the s21-23 waivers), derivation/reference drifts root-caused as content-family/tertile-composition artifacts with flat overall means (0.944/0.944, 0.906/0.904) and verified per-note retention (Backpropagation 27->13 discourse-marker case investigated: all concrete example content present); F-0014 grep pass 0 occurrences vault-wide; wikilink sweep via lint LINK_AMBIGUOUS=0",
+    "Final verification: full-corpus audit over ALL 27,536 KUs (8 checks, 0 findings, 42,156 markers verified 0 missing); registry rebuilt + validated (27,536 applied, Unaccounted=0, needs_review=0); vu check-links 11,999 links 0 problems; lint 0 errors / 85 classified warnings; independence greps clean (0 source-vault/locator/project references); 9 open findings closed with evidence (0 open); final acceptance report written (reports/release/final-report.md)",
+    "Continuous persistence: 4 verified pushes this session (1dc506e area-20 prep, d1213a6 area-20 complete, 44367c6 gap treatments, plus the final state commit), each verified via fetch + rev-parse"
+  ],
+  "changed_paths": [
+    "output/Unified-Vault/20 - Vault and Project Context/ (17 new notes) + 7 repaired area-20 notes + 4 gap-treatment host notes (02/03/04/13)",
+    "scripts/s20_build_synthesis_inputs.py (area-20 AREA_CONFIG), scripts/s28_link_rules.py, s28_pack_waves.py, s28_launch_manifest.py, s28_marker_repairs_area20.py, s28_gap_replay.py, s28_gap_treatments.py, s28_close_findings.py",
+    "state/concept-candidates/002-disc002-decisions-batch17.jsonl (new), 002-disc002-full-corpus.index.jsonl (3 records accepted), state/synthesis/gap-treatments-v1.json (new), state/findings.jsonl (9 closed), state/task-queue.jsonl (SYNTH-001 completed), state/registries/kuregistry.db (git-ignored, rebuilt + validated)",
+    "reports/release/final-report.md (new), reports/synthesis/s28-*.json (30+ reports), reports/discovery/s28-gap-*.json",
+    "docs/ACCELERATED_COMPLETION_POLICY.md (ledger row 28), README.md (completion status), docs/agent-handoff/next-agent.md"
+  ],
+  "tests_run": [
+    {"command": "python3 -m pytest tests/ -q (baseline)", "result": "752 passed, 0 failed", "evidence": "session start"},
+    {"command": "python3 -m pytest tests/ -q (after area-20 mutations)", "result": "752 passed, 0 failed", "evidence": "commit d1213a6"},
+    {"command": "python3 -m pytest tests/ -q (after gap treatments, last mutation)", "result": "752 passed, 0 failed", "evidence": "commit 44367c6"},
+    {"command": "vu verify-manifest both vaults (start, mid, end)", "result": "276/276 + 333/333 unchanged throughout", "evidence": "reports/synthesis/s28-immutable-*.json"},
+    {"command": "vu audit-output area20 (final)", "result": "valid=true 0 findings; 949 KUs", "evidence": "reports/synthesis/s28-area20-audit.json"},
+    {"command": "python3 scripts/s21_run_gates.py area20 --waiver drift::reference=...", "result": "pass (17 notes, 1 evidence-backed waiver)", "evidence": "reports/synthesis/s21-area20-gate.json"},
+    {"command": "vu audit-output areas 02/03/04/13 (post-treatment)", "result": "4x valid=true 0 findings (1354+398+1829+552 KUs)", "evidence": "reports/synthesis/s28-area0[234]-reaudit.json, s28-area13-reaudit.json"},
+    {"command": "python3 scripts/s21_run_gates.py area02/03/13 (no waivers) + area04 (original waiver)", "result": "4/4 pass", "evidence": "reports/synthesis/s21-area0[234]-gate.json, s21-area13-gate.json"},
+    {"command": "vu audit-output FULL CORPUS (27,536 KUs)", "result": "valid=true 0 findings; 42,156 markers verified present (26,308 term + 14,119 math + 1,729 code)", "evidence": "reports/synthesis/s28-final-full-corpus-audit.json"},
+    {"command": "vu kureg-init+load+apply-dispositions+validate (registry rebuild)", "result": "27,536 applied, unaccounted=0, needs_review=0", "evidence": "reports/synthesis/s28-kureg-apply.json, s28-kureg-validate.json"},
+    {"command": "vu check-links output/Unified-Vault", "result": "11,999 links checked, 0 problems", "evidence": "reports/synthesis/s28-final-check-links.json"},
+    {"command": "vu lint-artifacts output/Unified-Vault (final)", "result": "0 errors / 85 classified warnings", "evidence": "reports/synthesis/s28-lint-final.json"},
+    {"command": "vu discovery-decide/index/validate (gap treatments)", "result": "batch17 3 accepts; index diff exactly 3 records; validate valid=true 60,154 records 0 errors", "evidence": "reports/discovery/s28-gap-batch17-*.json"},
+    {"command": "python3 scripts/s28_gap_replay.py", "result": "replayed post-batch16 index byte-identical to committed index", "evidence": "reports/discovery/s28-gap-replay-index.json"}
+  ],
+  "git_state": {
+    "head": "see final commit",
+    "origin_main": "same as head after final push",
+    "working_tree": "clean (content)",
+    "pushes_this_session": ["1dc506e (area-20 prep)", "d1213a6 (area-20 complete)", "44367c6 (gap treatments)", "final state commit"],
+    "push_verification": "git fetch + rev-parse HEAD origin/main equal after every push"
+  },
+  "open_findings": [
+    "F-0016 (open-operational, moderate): background processes reaped between tool calls — permanent environment characteristic, documented",
+    "F-0018 (partially-fixed, low): historical helper scripts with sandbox-absolute paths; all s20-s28 pipeline scripts use the relative REPO pattern",
+    "Documented exclusions (not silently resolved): 46,978 low-signal provisional discovery candidates; Tier A dossier-extension ~17% single-side over-inclusion (safe direction)",
+    "Lexical-not-semantic verification limitation stated in final report 5.1"
+  ],
+  "next_task": {
+    "task_id": null,
+    "title": "PROJECT COMPLETE — no next task",
+    "note": "All release gates pass with machine-verified evidence (reports/release/final-report.md). A future session should verify this completion against repository evidence per the startup protocol (manifests, registry, audits, final report) and would only act on a new user directive (e.g. addressing the documented limitations: semantic-verification deepening, low-signal candidate review, or presentation changes to the area-20 archival layer)."
+  }
+}
